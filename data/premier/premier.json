@@ -1,0 +1,92 @@
+{
+  "tables": [
+    {
+      "name": "premier_league_2024_2025_arsenal_matches",
+      "keys": [
+        "day_of_the_week"
+      ],
+      "columns": [
+        {
+          "name": "day_of_the_week",
+          "dtype": "string"
+        },
+        {
+          "name": "opponent_team",
+          "dtype": "string"
+        },
+        {
+          "name": "match_date_month",
+          "dtype": "integer"
+        },
+        {
+          "name": "match_date_year",
+          "dtype": "integer"
+        },
+        {
+          "name": "match_date_day",
+          "dtype": "integer"
+        }
+      ]
+    },
+    {
+      "name": "premier_league_2024_2025_key_events",
+      "keys": [
+        "player_name"
+      ],
+      "columns": [
+        {
+          "name": "player_name",
+          "dtype": "string"
+        },
+        {
+          "name": "team",
+          "dtype": "string"
+        },
+        {
+          "name": "goal_scored",
+          "dtype": "integer"
+        }
+      ]
+    },
+    {
+      "name": "premier_league_2024_2025_match_result",
+      "keys": [
+        "oid"
+      ],
+      "columns": [
+        {
+          "name": "oid",
+          "dtype": "integer"
+        },
+        {
+          "name": "date",
+          "dtype": "string"
+        },
+        {
+          "name": "home_team",
+          "dtype": "string"
+        },
+        {
+          "name": "away_team",
+          "dtype": "string"
+        },
+        {
+          "name": "home_goals",
+          "dtype": "integer"
+        },
+        {
+          "name": "away_goals",
+          "dtype": "integer"
+        },
+        {
+          "name": "player_of_the_match",
+          "dtype": "string"
+        },
+        {
+          "name": "player_of_the_match_team",
+          "dtype": "string"
+        }
+      ]
+    }
+  ]
+}

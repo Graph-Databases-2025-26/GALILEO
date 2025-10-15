@@ -1,0 +1,8 @@
+--query1
+What is the call sign of Airline 'JetBlue Airways'?
+
+--query2
+How many flights do we have in US?
+
+--query3
+Which airline has call sign 'ual'?

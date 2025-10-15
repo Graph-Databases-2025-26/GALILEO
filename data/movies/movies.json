@@ -1,0 +1,48 @@
+{
+  "tables": [
+    {
+      "name": "movie",
+      "keys": [
+        "primarytitle"
+      ],
+      "columns": [
+        {
+          "name": "primarytitle",
+          "dtype": "string"
+        },
+        {
+          "name": "originaltitle",
+          "dtype": "string"
+        },
+        {
+          "name": "startyear",
+          "dtype": "integer"
+        },
+        {
+          "name": "endyear",
+          "dtype": "integer"
+        },
+        {
+          "name": "runtimeminutes",
+          "dtype": "integer"
+        },
+        {
+          "name": "genres",
+          "dtype": "string"
+        },
+        {
+          "name": "director",
+          "dtype": "string"
+        },
+        {
+          "name": "birthyear",
+          "dtype": "integer"
+        },
+        {
+          "name": "deathyear",
+          "dtype": "integer"
+        }
+      ]
+    }
+  ]
+}

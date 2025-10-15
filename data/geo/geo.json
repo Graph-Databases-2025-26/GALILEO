@@ -1,0 +1,177 @@
+{
+  "tables": [
+    {
+      "name": "usa_border_info",
+      "keys": [
+        "state_name"
+      ],
+      "columns": [
+        {
+          "name": "state_name",
+          "dtype": "string"
+        },
+        {
+          "name": "border",
+          "dtype": "string"
+        }
+      ]
+    },
+    {
+      "name": "usa_city",
+      "keys": [
+        "city_name",
+        "state_name"
+      ],
+      "columns": [
+        {
+          "name": "city_name",
+          "dtype": "string"
+        },
+        {
+          "name": "population",
+          "dtype": "integer"
+        },
+        {
+          "name": "country_name",
+          "dtype": "string"
+        },
+        {
+          "name": "state_name",
+          "dtype": "string"
+        }
+      ]
+    },
+    {
+      "name": "usa_highlow",
+      "keys": [
+        "state_name"
+      ],
+      "columns": [
+        {
+          "name": "state_name",
+          "dtype": "string"
+        },
+        {
+          "name": "highest_elevation_in_meters",
+          "dtype": "integer"
+        },
+        {
+          "name": "lowest_point",
+          "dtype": "string"
+        },
+        {
+          "name": "highest_point",
+          "dtype": "string"
+        },
+        {
+          "name": "lowest_elevation_in_meters",
+          "dtype": "integer"
+        }
+      ]
+    },
+    {
+      "name": "usa_lake",
+      "keys": [
+        "lake_name"
+      ],
+      "columns": [
+        {
+          "name": "lake_name",
+          "dtype": "string"
+        },
+        {
+          "name": "area_squared_km",
+          "dtype": "integer"
+        },
+        {
+          "name": "country_name",
+          "dtype": "string"
+        },
+        {
+          "name": "state_name",
+          "dtype": "string"
+        }
+      ]
+    },
+    {
+      "name": "usa_mountain",
+      "keys": [
+        "mountain_name"
+      ],
+      "columns": [
+        {
+          "name": "mountain_name",
+          "dtype": "string"
+        },
+        {
+          "name": "mountain_altitude_in_meters",
+          "dtype": "integer"
+        },
+        {
+          "name": "country_name",
+          "dtype": "string"
+        },
+        {
+          "name": "state_name",
+          "dtype": "string"
+        }
+      ]
+    },
+    {
+      "name": "usa_river",
+      "keys": [
+        "river_name"
+      ],
+      "columns": [
+        {
+          "name": "river_name",
+          "dtype": "string"
+        },
+        {
+          "name": "length_in_km",
+          "dtype": "integer"
+        },
+        {
+          "name": "country_name",
+          "dtype": "string"
+        },
+        {
+          "name": "usa_state_traversed",
+          "dtype": "string"
+        }
+      ]
+    },
+    {
+      "name": "usa_state",
+      "keys": [
+        "state_name"
+      ],
+      "columns": [
+        {
+          "name": "state_name",
+          "dtype": "string"
+        },
+        {
+          "name": "population",
+          "dtype": "integer"
+        },
+        {
+          "name": "area_squared_miles",
+          "dtype": "integer"
+        },
+        {
+          "name": "country_name",
+          "dtype": "string"
+        },
+        {
+          "name": "capital",
+          "dtype": "string"
+        },
+        {
+          "name": "density",
+          "dtype": "number"
+        }
+      ]
+    }
+  ]
+}

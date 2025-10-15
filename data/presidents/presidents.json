@@ -1,0 +1,37 @@
+{
+  "tables": [
+    {
+      "name": "world_presidents",
+      "keys": [
+        "name",
+        "country"
+      ],
+      "columns": [
+        {
+          "name": "name",
+          "dtype": "string"
+        },
+        {
+          "name": "start_year",
+          "dtype": "integer"
+        },
+        {
+          "name": "end_year",
+          "dtype": "integer"
+        },
+        {
+          "name": "cardinal_number",
+          "dtype": "string"
+        },
+        {
+          "name": "party",
+          "dtype": "string"
+        },
+        {
+          "name": "country",
+          "dtype": "string"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,244 @@
+{
+  "tables": [
+    {
+      "name": "airlines",
+      "keys": [
+        "iata"
+      ],
+      "columns": [
+        {
+          "name": "alid",
+          "dtype": "integer"
+        },
+        {
+          "name": "name",
+          "dtype": "string"
+        },
+        {
+          "name": "iata",
+          "dtype": "string"
+        },
+        {
+          "name": "icao",
+          "dtype": "string"
+        },
+        {
+          "name": "callsign",
+          "dtype": "string"
+        },
+        {
+          "name": "country",
+          "dtype": "string"
+        },
+        {
+          "name": "active",
+          "dtype": "string"
+        }
+      ]
+    },
+    {
+      "name": "airports",
+      "keys": [
+        "iata"
+      ],
+      "columns": [
+        {
+          "name": "apid",
+          "dtype": "integer"
+        },
+        {
+          "name": "name",
+          "dtype": "string"
+        },
+        {
+          "name": "city",
+          "dtype": "string"
+        },
+        {
+          "name": "country",
+          "dtype": "string"
+        },
+        {
+          "name": "x",
+          "dtype": "number"
+        },
+        {
+          "name": "y",
+          "dtype": "number"
+        },
+        {
+          "name": "elevation_in_ft",
+          "dtype": "integer"
+        },
+        {
+          "name": "iata",
+          "dtype": "string"
+        },
+        {
+          "name": "icao",
+          "dtype": "string"
+        }
+      ]
+    },
+    {
+      "name": "routes",
+      "keys": [
+        "rid"
+      ],
+      "columns": [
+        {
+          "name": "rid",
+          "dtype": "integer"
+        },
+        {
+          "name": "dst_apid",
+          "dtype": "integer"
+        },
+        {
+          "name": "dst_ap",
+          "dtype": "string"
+        },
+        {
+          "name": "src_apid",
+          "dtype": "integer"
+        },
+        {
+          "name": "src_ap",
+          "dtype": "string"
+        },
+        {
+          "name": "alid",
+          "dtype": "integer"
+        },
+        {
+          "name": "airline",
+          "dtype": "string"
+        },
+        {
+          "name": "codeshare",
+          "dtype": "string"
+        }
+      ]
+    },
+    {
+      "name": "target_airlines",
+      "keys": [
+        "iata"
+      ],
+      "columns": [
+        {
+          "name": "alid",
+          "dtype": "integer"
+        },
+        {
+          "name": "name",
+          "dtype": "string"
+        },
+        {
+          "name": "iata",
+          "dtype": "string"
+        },
+        {
+          "name": "icao",
+          "dtype": "string"
+        },
+        {
+          "name": "callsign",
+          "dtype": "string"
+        },
+        {
+          "name": "country",
+          "dtype": "string"
+        },
+        {
+          "name": "active",
+          "dtype": "string"
+        }
+      ]
+    },
+    {
+      "name": "target_airports",
+      "keys": [
+        "iata"
+      ],
+      "columns": [
+        {
+          "name": "apid",
+          "dtype": "integer"
+        },
+        {
+          "name": "name",
+          "dtype": "string"
+        },
+        {
+          "name": "city",
+          "dtype": "string"
+        },
+        {
+          "name": "country",
+          "dtype": "string"
+        },
+        {
+          "name": "x",
+          "dtype": "number"
+        },
+        {
+          "name": "y",
+          "dtype": "number"
+        },
+        {
+          "name": "elevation_in_ft",
+          "dtype": "integer"
+        },
+        {
+          "name": "iata",
+          "dtype": "string"
+        },
+        {
+          "name": "icao",
+          "dtype": "string"
+        }
+      ]
+    },
+    {
+      "name": "target_routes",
+      "keys": [
+        "rid"
+      ],
+      "columns": [
+        {
+          "name": "rid",
+          "dtype": "integer"
+        },
+        {
+          "name": "dst_apid",
+          "dtype": "integer"
+        },
+        {
+          "name": "dst_ap",
+          "dtype": "string"
+        },
+        {
+          "name": "src_apid",
+          "dtype": "integer"
+        },
+        {
+          "name": "src_ap",
+          "dtype": "string"
+        },
+        {
+          "name": "alid",
+          "dtype": "integer"
+        },
+        {
+          "name": "airline",
+          "dtype": "string"
+        },
+        {
+          "name": "codeshare",
+          "dtype": "string"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,95 @@
+--query1
+how big is new mexico
+
+--query2
+what are the major cities in the usa
+
+--query3
+how many capitals does rhode island have
+
+--query4
+how many people live in tempe
+
+--query5
+how many states are in the usa
+
+--query6
+give me the major lakes in california
+
+--query7
+what is the average population of the us by state
+
+--query8
+how many rivers are there in us
+
+--query9
+how long is the rio grande river
+
+--query10
+name all the lakes of us
+
+--query11
+what states contain at least one major rivers
+
+--query12
+what state is springfield in
+
+--query13
+name the major lakes in michigan
+
+--query14
+what are the major lakes in united states
+
+--query15
+which states have a major city named austin
+
+--query16
+how many states have a city named springfield
+
+--query17
+what is the population of seattle washington
+
+--query18
+how many states are next to major rivers
+
+--query19
+name the capitals in the usa
+
+--query20
+how many rivers are in idaho
+
+--query21
+where is massachusetts
+
+--query22
+the capital of the state where there is tempe
+
+--query23
+which capitals are not major cities
+
+--query24
+List the state name, population and area from USA states
+
+--query25
+List the state name, capital and area from USA states
+
+--query26
+List the state name, population and area from USA states where the capital is Frankfort
+
+--query27
+List the state name, population and capital from USA states where the population is greater than 5000000
+
+--query28
+List the state name and capital from USA states where the population is greater than 5000000 and the density is lower than 1000
+
+--query29
+List the state name, capital, density and population from USA states where the population is greater than 5000000, the density is lower than 1000 and the area is lower than 50000
+
+--query30
+List the state name and capital ordered by capital from USA states where the population is greater than 3000000 and the area is greater than 50000
+
+--query31
+List the state name capital and population ordered by population from USA states where the population is greater than 3000000 and lower than 8000000 and the area is greater than 50000
+
+--query32
+List the state name, the capital, the popoulation and the area from USA states where the population is 4700000 and the are is 56153

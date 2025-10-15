@@ -1,0 +1,29 @@
+--query1
+List the rank and company names of the top 10 companies according to the Fortune 2024 ranking.
+
+--query2
+Give me a list of all companies and their CEOs that are headquartered in Oklahoma, according to the 'fortune_2024' data.
+
+--query3
+List the company names and the states where they are headquartered for any companies in the Fortune 2024 list that have more than one million employees
+
+--query4
+List the names of the cities where the headquarters of all the airline companies in the Fortune 2024 list are located
+
+--query5
+List the companies from the Fortune 2024 list that are in the Technology sector, are profitable, and have their founder as the current CEO
+
+--query6
+List the CEOs from the Fortune 2024 list who are female and lead privately held companies
+
+--query7
+List the airline companies from the Fortune 2024 list that are also included in the 'Best Companies to Work For' ranking
+
+--query8
+List the companies in Texas with female CEOs that were profitable in 2024, according to the Fortune 2024 list.
+
+--query9
+List the company name, headquarters state, stock ticker, CEO, whether the founder is the CEO, whether the CEO is female, and the number of employees for the company named 'Nvidia' from the 'fortune_2024' database.
+
+--query10
+List company name, headquarters state, stock ticker, CEO, whether the founder is the CEO, whether the CEO is female, and the number of employees, for companies headquartered in 'Santa Clara' with a rank below 70 from the 'fortune_2024' database.

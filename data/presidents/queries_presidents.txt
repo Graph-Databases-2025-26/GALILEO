@@ -1,0 +1,77 @@
+--query1
+List the name and party of Venezuela presidents.
+
+--query2
+List the name and party of Venezuela presidents where party is Liberal
+
+--query3
+Count the number of Venezuela presidents where party is Liberal
+
+--query4
+List the name of Venezuela presidents where party is Liberal
+
+--query5
+List the name of Venezuela presidents after 1858 where party is Liberal
+
+--query6
+List the name, the start year, the end year, the number of president and the party of Venezuela presidents
+
+--query7
+List the party name and the number of presidents of the party with more Venezuela presidents
+
+--query8
+count Venezuela presidents who began their terms in the 1990 and finish it in 2000.
+
+--query9
+List the name of the last Venezuela president where party is Military
+
+--query10
+List the name, the party, the start and end year and the cardinal number of Democratic Action Venezuela president who served between 1900 and 2000
+
+--query11
+List the name, the party, the start and end year and the cardinal number of Conservative president who served between 1800 and 1900
+
+--query12
+List the party name and the number of times that the party have elected a Venezuela president between the 1800 and 1900.
+
+--query13
+List the party name and the number of times that the party have elected a Venezuela president between the 1900 and 2000.
+
+--query14
+List the name and party of USA presidents.
+
+--query15
+List the name and party of USA presidents where party is Republican
+
+--query16
+Count the number of US presidents where party is Republican
+
+--query17
+List the name of USA presidents where party is Republican
+
+--query18
+List the name of USA presidents after 1980 where party is Republican
+
+--query19
+List the name, the start year, the end year, the number of president and the party of USA presidents
+
+--query20
+List the party name and the number of presidents of the party with more USA presidents
+
+--query21
+count U.S. presidents who began their terms in the 1990 and finish it in 2000.
+
+--query22
+List the name of the last USA president where party is Whig
+
+--query23
+List the name, the party, the start and end year and the cardinal number of Democratic USA president who served between 1850 and 1900
+
+--query24
+List the name, the party, the start and end year and the cardinal number of Democratic USA president who served between 1850 and 1900
+
+--query25
+List the party name and the number of times that the party have elected a USA president between the 1800 and 1900.
+
+--query26
+List the party name and the number of times that the party have elected a USA president between the 1900 and 2000.

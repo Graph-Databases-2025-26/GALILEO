@@ -1,0 +1,4 @@
+CREATE SCHEMA IF NOT EXISTS target;
+CREATE TABLE target.fortune_2024(Rank BIGINT, Company VARCHAR, Ticker VARCHAR, Sector VARCHAR, Industry VARCHAR, Profitable BOOLEAN, Founder_is_CEO BOOLEAN, FemaleCEO BOOLEAN, Growth_in_Jobs BOOLEAN, Change_in_Rank DOUBLE, Gained_in_Rank BOOLEAN, Dropped_in_Rank BOOLEAN, Newcomer_to_the_Fortune500 BOOLEAN, Global500 BOOLEAN, Worlds_Most_Admired_Companies BOOLEAN, Best_Companies_to_Work_For BOOLEAN, Number_of_employees BIGINT, MarketCap_March28_M DOUBLE, Revenues_M DOUBLE, RevenuePercentChange DOUBLE, Profits_M DOUBLE, ProfitsPercentChange DOUBLE, Assets_M DOUBLE, CEO VARCHAR, Country VARCHAR, HeadquartersCity VARCHAR, HeadquartersState VARCHAR, Website VARCHAR, CompanyType VARCHAR, Footnote VARCHAR, MarketCap_Updated_M DOUBLE, Updated DATE);
+
+COPY target.fortune_2024 FROM 'target_fortune1000_2024.csv';

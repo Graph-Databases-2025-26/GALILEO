@@ -1,0 +1,156 @@
+{
+  "tables": [
+    {
+      "name": "target_usa_airline_companies",
+      "keys": [
+        "uid"
+      ],
+      "columns": [
+        {
+          "name": "uid",
+          "dtype": "integer"
+        },
+        {
+          "name": "airline",
+          "dtype": "string"
+        },
+        {
+          "name": "call_sign",
+          "dtype": "string"
+        },
+        {
+          "name": "country",
+          "dtype": "string"
+        }
+      ]
+    },
+    {
+      "name": "target_usa_airports",
+      "keys": [
+        "city"
+      ],
+      "columns": [
+        {
+          "name": "city",
+          "dtype": "string"
+        },
+        {
+          "name": "airportcode",
+          "dtype": "string"
+        },
+        {
+          "name": "airportname",
+          "dtype": "string"
+        },
+        {
+          "name": "country",
+          "dtype": "string"
+        },
+        {
+          "name": "countryabbrev",
+          "dtype": "string"
+        }
+      ]
+    },
+    {
+      "name": "target_usa_flights",
+      "keys": [
+        "airline"
+      ],
+      "columns": [
+        {
+          "name": "airline",
+          "dtype": "integer"
+        },
+        {
+          "name": "flightno",
+          "dtype": "integer"
+        },
+        {
+          "name": "sourceairport",
+          "dtype": "string"
+        },
+        {
+          "name": "destairport",
+          "dtype": "string"
+        }
+      ]
+    },
+    {
+      "name": "usa_airline_companies",
+      "keys": [
+        "uid"
+      ],
+      "columns": [
+        {
+          "name": "uid",
+          "dtype": "integer"
+        },
+        {
+          "name": " airline",
+          "dtype": "string"
+        },
+        {
+          "name": " call_sign",
+          "dtype": "string"
+        },
+        {
+          "name": " country",
+          "dtype": "string"
+        }
+      ]
+    },
+    {
+      "name": "usa_airports",
+      "keys": [
+        "city "
+      ],
+      "columns": [
+        {
+          "name": "city ",
+          "dtype": "string"
+        },
+        {
+          "name": "airportcode ",
+          "dtype": "string"
+        },
+        {
+          "name": " airportname ",
+          "dtype": "string"
+        },
+        {
+          "name": "country ",
+          "dtype": "string"
+        },
+        {
+          "name": " countryabbrev  ",
+          "dtype": "string"
+        }
+      ]
+    },
+    {
+      "name": "usa_flights",
+      "keys": [
+        "airline"
+      ],
+      "columns": [
+        {
+          "name": "airline",
+          "dtype": "integer"
+        },
+        {
+          "name": " flightno",
+          "dtype": "integer"
+        },
+        {
+          "name": " sourceairport",
+          "dtype": "string"
+        },
+        {
+          "name": " destairport",
+          "dtype": "string"
+        }
+      ]
+    }
+  ]
+}

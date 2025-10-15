@@ -1,0 +1,244 @@
+{
+  "tables": [
+    {
+      "name": "city",
+      "keys": [
+        "id"
+      ],
+      "columns": [
+        {
+          "name": "id",
+          "dtype": "integer"
+        },
+        {
+          "name": "name",
+          "dtype": "string"
+        },
+        {
+          "name": "country_code_3_letters",
+          "dtype": "string"
+        },
+        {
+          "name": "district",
+          "dtype": "string"
+        },
+        {
+          "name": "population",
+          "dtype": "integer"
+        }
+      ]
+    },
+    {
+      "name": "country",
+      "keys": [
+        "code_3_letters"
+      ],
+      "columns": [
+        {
+          "name": "code_3_letters",
+          "dtype": "string"
+        },
+        {
+          "name": "name",
+          "dtype": "string"
+        },
+        {
+          "name": "continent",
+          "dtype": "string"
+        },
+        {
+          "name": "region",
+          "dtype": "string"
+        },
+        {
+          "name": "surface_area_in_km2",
+          "dtype": "number"
+        },
+        {
+          "name": "independence_year",
+          "dtype": "integer"
+        },
+        {
+          "name": "population",
+          "dtype": "integer"
+        },
+        {
+          "name": "life_expectancy",
+          "dtype": "number"
+        },
+        {
+          "name": "gnp",
+          "dtype": "number"
+        },
+        {
+          "name": "gnp_old",
+          "dtype": "integer"
+        },
+        {
+          "name": "local_name",
+          "dtype": "string"
+        },
+        {
+          "name": "government_form",
+          "dtype": "string"
+        },
+        {
+          "name": "head_of_state",
+          "dtype": "string"
+        },
+        {
+          "name": "capital",
+          "dtype": "integer"
+        },
+        {
+          "name": "code_2_letters",
+          "dtype": "string"
+        }
+      ]
+    },
+    {
+      "name": "country_language",
+      "keys": [
+        "country_code_3_letters"
+      ],
+      "columns": [
+        {
+          "name": "country_code_3_letters",
+          "dtype": "string"
+        },
+        {
+          "name": "language",
+          "dtype": "string"
+        },
+        {
+          "name": "is_official",
+          "dtype": "string"
+        },
+        {
+          "name": "percentage",
+          "dtype": "number"
+        }
+      ]
+    },
+    {
+      "name": "target_city",
+      "keys": [
+        "id"
+      ],
+      "columns": [
+        {
+          "name": "id",
+          "dtype": "integer"
+        },
+        {
+          "name": "name",
+          "dtype": "string"
+        },
+        {
+          "name": "country_code_3_letters",
+          "dtype": "string"
+        },
+        {
+          "name": "district",
+          "dtype": "string"
+        },
+        {
+          "name": "population",
+          "dtype": "integer"
+        }
+      ]
+    },
+    {
+      "name": "target_country",
+      "keys": [
+        "code_3_letters"
+      ],
+      "columns": [
+        {
+          "name": "code_3_letters",
+          "dtype": "string"
+        },
+        {
+          "name": "name",
+          "dtype": "string"
+        },
+        {
+          "name": "continent",
+          "dtype": "string"
+        },
+        {
+          "name": "region",
+          "dtype": "string"
+        },
+        {
+          "name": "surface_area_in_km2",
+          "dtype": "number"
+        },
+        {
+          "name": "independence_year",
+          "dtype": "integer"
+        },
+        {
+          "name": "population",
+          "dtype": "integer"
+        },
+        {
+          "name": "life_expectancy",
+          "dtype": "number"
+        },
+        {
+          "name": "gnp",
+          "dtype": "number"
+        },
+        {
+          "name": "gnp_old",
+          "dtype": "integer"
+        },
+        {
+          "name": "local_name",
+          "dtype": "string"
+        },
+        {
+          "name": "government_form",
+          "dtype": "string"
+        },
+        {
+          "name": "head_of_state",
+          "dtype": "string"
+        },
+        {
+          "name": "capital",
+          "dtype": "integer"
+        },
+        {
+          "name": "code_2_letters",
+          "dtype": "string"
+        }
+      ]
+    },
+    {
+      "name": "target_country_language",
+      "keys": [
+        "country_code_3_letters"
+      ],
+      "columns": [
+        {
+          "name": "country_code_3_letters",
+          "dtype": "string"
+        },
+        {
+          "name": "language",
+          "dtype": "string"
+        },
+        {
+          "name": "is_official",
+          "dtype": "boolean"
+        },
+        {
+          "name": "percentage",
+          "dtype": "number"
+        }
+      ]
+    }
+  ]
+}

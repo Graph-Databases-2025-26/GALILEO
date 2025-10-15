@@ -1,0 +1,140 @@
+{
+  "tables": [
+    {
+      "name": "fortune1000_2024",
+      "keys": [
+        "Rank"
+      ],
+      "columns": [
+        {
+          "name": "Rank",
+          "dtype": "integer"
+        },
+        {
+          "name": "Company",
+          "dtype": "string"
+        },
+        {
+          "name": "Ticker",
+          "dtype": "string"
+        },
+        {
+          "name": "Sector",
+          "dtype": "string"
+        },
+        {
+          "name": "Industry",
+          "dtype": "string"
+        },
+        {
+          "name": "Profitable",
+          "dtype": "boolean"
+        },
+        {
+          "name": "Founder_is_CEO",
+          "dtype": "boolean"
+        },
+        {
+          "name": "FemaleCEO",
+          "dtype": "boolean"
+        },
+        {
+          "name": "Growth_in_Jobs",
+          "dtype": "boolean"
+        },
+        {
+          "name": "Change_in_Rank",
+          "dtype": "integer"
+        },
+        {
+          "name": "Gained_in_Rank",
+          "dtype": "boolean"
+        },
+        {
+          "name": "Dropped_in_Rank",
+          "dtype": "boolean"
+        },
+        {
+          "name": "Newcomer_to_the_Fortune500",
+          "dtype": "boolean"
+        },
+        {
+          "name": "Global500",
+          "dtype": "boolean"
+        },
+        {
+          "name": "Worlds_Most_Admired_Companies",
+          "dtype": "boolean"
+        },
+        {
+          "name": "Best_Companies_to_Work_For",
+          "dtype": "boolean"
+        },
+        {
+          "name": "Number_of_employees",
+          "dtype": "integer"
+        },
+        {
+          "name": "MarketCap_March28_M",
+          "dtype": "number"
+        },
+        {
+          "name": "Revenues_M",
+          "dtype": "number"
+        },
+        {
+          "name": "RevenuePercentChange",
+          "dtype": "number"
+        },
+        {
+          "name": "Profits_M",
+          "dtype": "number"
+        },
+        {
+          "name": "ProfitsPercentChange",
+          "dtype": "number"
+        },
+        {
+          "name": "Assets_M",
+          "dtype": "number"
+        },
+        {
+          "name": "CEO",
+          "dtype": "string"
+        },
+        {
+          "name": "Country",
+          "dtype": "string"
+        },
+        {
+          "name": "HeadquartersCity",
+          "dtype": "string"
+        },
+        {
+          "name": "HeadquartersState",
+          "dtype": "string"
+        },
+        {
+          "name": "Website",
+          "dtype": "string"
+        },
+        {
+          "name": "CompanyType",
+          "dtype": "string"
+        },
+        {
+          "name": "Footnote",
+          "dtype": "string"
+        },
+        {
+          "name": "MarketCap_Updated_M",
+          "dtype": "integer"
+        },
+        {
+          "name": "Updated",
+          "dtype": "string"
+        }
+      ]
+    }
+  ]
+}

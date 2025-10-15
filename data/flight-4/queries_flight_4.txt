@@ -1,0 +1,8 @@
+--query1
+Find the name of airports whose altitude is between -50 and 50
+
+--query2
+What is the maximum elevation of all airports in the country of Iceland?
+
+--query3
+Find the name, city, country, and altitude (or elevation) of the airports in the city of New York.

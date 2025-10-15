@@ -1,0 +1,26 @@
+--query1
+List the title of the movies directed by Richard Thorpe
+
+--query2
+List the title of the movies directed by Steven Spielberg
+
+--query3
+List the title and year of the movies directed by Richard Thorpe after the 1950
+
+--query4
+List the title and year of the movies directed by Steven Spielberg after the 2000
+
+--query5
+List the title, year, genres and birthyear of the movies directed by Steven Spielberg after the 2000
+
+--query6
+List the title, year, genres, birthyear, deathyear and runtimeminutes of the movies directed by Steven Spielberg between the 1990 and the 2000
+
+--query7
+List the year and the number of produced movies in that year directed by Steven Spielberg.
+
+--query8
+Return the most prolific year of Tim Burton
+
+--query9
+Return the oldest film director

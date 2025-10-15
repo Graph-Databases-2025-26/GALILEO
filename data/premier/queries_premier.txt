@@ -1,0 +1,14 @@
+--query1
+List the date (year, month, day) and opponent for each of Arsenal's 2024-25 Premier League season matches
+
+--query2
+Count the number of Arsenal matches in the Premier League for the month of August during the 2024-2025 season
+
+--query3
+List the names of the players who were awarded 'Player of the Match' during the 2024-2025 Premier League season
+
+--query4
+List the names of the players who were awarded 'Player of the Match' while playing for Manchester United during the 2024-2025 Premier League season
+
+--query5
+Retrieve the match details from the 2024-2025 Premier League season, including the home team, away team, and the number of goals scored by both teams

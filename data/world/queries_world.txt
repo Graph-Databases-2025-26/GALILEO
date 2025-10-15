@@ -1,0 +1,11 @@
+--query1
+How many type of governments are in Africa?
+
+--query2
+What are the names of countries that became independent after 1950?
+
+--query3
+What is the average GNP and total population in all nations whose government is US territory?
+
+--query4
+What are the regions that use English or Dutch?
