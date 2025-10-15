@@ -3,7 +3,7 @@ import os
 from typing import List, Dict, Any
 
 # IMPORTANT: Replace 'path/to/your/project_db.duckdb' with the actual path to your file
-DB_FILE_PATH = 'db_instance/project.duckdb'
+DB_FILE_PATH = 'project.duckdb'
 
 
 def test_duckdb_connection(db_path: str) -> None:

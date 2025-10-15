@@ -7,9 +7,9 @@ PROJECT_ROOT = "."
 
 # Paths definitions
 # Folder from which load teh data
-DATA_SOURCE_DIR = os.path.join(PROJECT_ROOT, "data")
+DATA_SOURCE_DIR = os.path.join(PROJECT_ROOT, "../data")
 # Folder in which save the database instance
-DB_PATH = os.path.join(PROJECT_ROOT, "db_instance", "project.duckdb")
+DB_PATH = os.path.join(PROJECT_ROOT, "project.duckdb")
 
 # Connection to DuckDB
 # Connection: if the file doesn't exist, create it
