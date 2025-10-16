@@ -40,7 +40,7 @@ Our focus is on **GALOIS**, a framework that integrates LLMs into query executio
 
 ***
 
-### 1. ⚙️ `01-setup-environment/` (Scope: Setup and Data)
+### 1. ⚙️ `setup-environment/` (Scope: Setup and Data)
 
 Contains everything needed for the initial configuration, database connection, and management of test data.
 
@@ -54,7 +54,7 @@ Contains everything needed for the initial configuration, database connection, a
 
 ***
 
-### 2. 🚦 `02-baselines/` (Scope: Reference Systems)
+### 2. 🚦 `baselines/` (Scope: Reference Systems)
 
 Dedicated to the implementation and execution of the reference systems required for comparative evaluation.
 
@@ -66,7 +66,7 @@ Dedicated to the implementation and execution of the reference systems required 
 
 ***
 
-### 3. 🚀 `03-galois-core-system/` (Scope: LLM Core System)
+### 3. 🚀 `galois-core-system/` (Scope: LLM Core System)
 
 Contains the implementation of the LLM system based on the **Galois** paper, which is the core of the project.
 
@@ -78,7 +78,7 @@ Contains the implementation of the LLM system based on the **Galois** paper, whi
 
 ***
 
-### 4. ✅ `04-verification-tools/` (Scope: Testing and Verification)
+### 4. ✅ `verification-test-tools/` (Scope: Testing and Verification)
 
 Tools to ensure code correctness and verification.
 
