@@ -28,7 +28,7 @@ def test_duckdb_connection(db_path: str) -> None:
 
         # 3. Define a simple, robust test query
         # This query checks how many tables are in the main schema
-        test_query = "SELECT region FROM country WHERE continent='Europe';"
+        test_query = "SELECT region FROM target.country WHERE continent='Europe';"
 
         # 4. Execute the query
         result = con.execute(test_query).fetchall()

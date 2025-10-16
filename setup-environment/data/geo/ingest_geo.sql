@@ -1,4 +1,4 @@
-CREATE SCHEMA target;
+CREATE SCHEMA IF NOT EXISTS target;
 CREATE TABLE target.usa_border_info(state_name VARCHAR, border VARCHAR);
 CREATE TABLE target.usa_city(city_name VARCHAR, population BIGINT, country_name VARCHAR, state_name VARCHAR);
 CREATE TABLE target.usa_highlow(state_name VARCHAR, highest_elevation_in_meters BIGINT, lowest_point VARCHAR, highest_point VARCHAR, lowest_elevation_in_meters BIGINT);

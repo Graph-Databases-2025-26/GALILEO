@@ -9,7 +9,7 @@ CREATE TABLE target.world_presidents (
     country STRING
 );
 
-COPY target.world_presidents FROM '../world_presidents.csv';
+COPY target.world_presidents FROM 'world_presidents.csv';
 
 
 

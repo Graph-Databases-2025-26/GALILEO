@@ -5,56 +5,85 @@ import glob
 # base path for the project
 PROJECT_ROOT = "."
 
-# Paths definitions
 # Folder from which load teh data
 DATA_SOURCE_DIR = os.path.join(PROJECT_ROOT, "../data")
 # Folder in which save the database instance
 DB_PATH = os.path.join(PROJECT_ROOT, "project.duckdb")
 
-# Connection to DuckDB
-# Connection: if the file doesn't exist, create it
-con = duckdb.connect(DB_PATH)
+""""""
+# Function for creating tables and loading data using the "ingest_'foldername'.sql"
+def execute_ingest_sql(con, folder_path: str):
+    """
+    Execute the ingest_<name>.sql file in the specified folder.
+    The ingest_<name>.sql file should contain the SQL query to create the table and load the data.
+    """
 
+    cwd = os.getcwd()  # save original cwd
+    os.chdir(folder_path)  # move cwd in the sql file folder
 
-# Function for creating tables from CSV and JSON files
-def load_files_from_folder(folder):
-    """Scan a folder and create tables DuckDB from CSV and JSON files."""
-    for file_path in glob.glob(os.path.join(folder, "*")):
-        name, ext = os.path.splitext(os.path.basename(file_path))
+    try:
+        # Searchinf for the ingest_<name>.sql file
+        ingest_sql_files = sorted(glob.glob( "ingest_*.sql"))
 
-        # Make the name compatible with SQL (substitute - and whitespaces with _)
-        name = name.replace("-", "_").replace(" ", "_").replace(".", "_")
+        if not ingest_sql_files:
+            print(f"ERROR: ingest_<name>.sql file not found in {folder_path}")
+            return
 
-        # Ignore .txt, .sql, .json files
-        if ext.lower() in [".sql", ".txt"]:
-            continue
+        print(f"\n Folder: {folder_path}")
+        for ingest_file in ingest_sql_files:
+            print(f"  Run: {ingest_file}")
+            try:
+                with open(ingest_file, "r", encoding="utf-8") as f:
+                    sql_script = f.read()
+                con.execute(sql_script)
+                con.commit()
+                print(f" Execution done: {os.path.basename(ingest_file)}")
+            except Exception as e:
+                print(f" Error in {ingest_file}: {e}")
+    finally:
+        os.chdir(cwd)
 
-        if ext.lower() == ".csv":
-            print(f"Import CSV: {file_path} -> Table: {name}")
-            # read_csv_auto for CSV reading process
-            con.execute(f'CREATE OR REPLACE TABLE "{name}" AS SELECT * FROM read_csv_auto(\'{file_path}\');')
-        elif ext.lower() == ".json":
-            print(f"Importo JSON: {file_path} -> Tabella: {name}")
-            # read_json_auto for JSON reading process
-            con.execute(f'CREATE OR REPLACE TABLE "{name}" AS SELECT * FROM read_json_auto(\'{file_path}\');')
+# --- Main ---
+if __name__ == "__main__":
+    print(f" Starting database creation from: {DATA_SOURCE_DIR}")
 
+    # recreate the db from scratch for avoiding conflicts
+    if os.path.exists(DB_PATH):
+        os.remove(DB_PATH)
 
-# Subfolders scanning
-print(f"Inizio importazione da: {DATA_SOURCE_DIR}\n")
+    # Create or open the DuckDB database
+    con = duckdb.connect(DB_PATH)
+    print(f" Connection established with {DB_PATH}")
 
-for subdir in os.listdir(DATA_SOURCE_DIR):
-    path = os.path.join(DATA_SOURCE_DIR, subdir)
-    if os.path.isdir(path):
-        load_files_from_folder(path)
+    # Scan all subfolders inside ../data/
+    subfolders = [
+        os.path.join(DATA_SOURCE_DIR, d)
+        for d in os.listdir(DATA_SOURCE_DIR)
+        if os.path.isdir(os.path.join(DATA_SOURCE_DIR, d))
+    ]
 
-con.commit()
+    # Execute all ingest_*.sql files found in each subfolder
+    for folder in sorted(subfolders):
+        execute_ingest_sql(con, folder)
 
-print("\n" + "=" * 50)
-print("✅ Import completed! Tables are available:")
-print(con.execute("SHOW TABLES").fetchdf())
-print("=" * 50)
+    # Show all tables created
+    print("\n Tables created in the database:")
+    try:
+        tables_df = con.execute("""
+                                SELECT table_schema, table_name
+                                FROM information_schema.tables
+                                WHERE table_type = 'BASE TABLE'
+                                ORDER BY table_schema, table_name
+                                """).fetchdf()
 
-# Close the connection and write the .duckdb file definitely
-con.close()
+        if tables_df.empty:
+            print("No tables found in the database.")
+        else:
+            print(tables_df)
 
-print(f"\nDuckDB connection closed. The DB file is in: {DB_PATH}")
+    except Exception as e:
+        print(f"Unable to list tables: {e}")
+
+    # Close the connection
+    con.close()
+    print(f"\n Connection closed. Database saved at: {DB_PATH}")
