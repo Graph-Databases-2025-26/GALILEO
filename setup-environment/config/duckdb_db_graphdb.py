@@ -22,7 +22,7 @@ def execute_ingest_sql(con, folder_path: str):
     os.chdir(folder_path)  # move cwd in the sql file folder
 
     try:
-        # Searchinf for the ingest_<name>.sql file
+        # Searching for the ingest_<name>.sql file
         ingest_sql_files = sorted(glob.glob( "ingest_*.sql"))
 
         if not ingest_sql_files:
@@ -47,14 +47,6 @@ def execute_ingest_sql(con, folder_path: str):
 if __name__ == "__main__":
     print(f" Starting database creation from: {DATA_SOURCE_DIR}")
 
-    # recreate the db from scratch for avoiding conflicts
-    if os.path.exists(DB_PATH):
-        os.remove(DB_PATH)
-
-    # Create or open the DuckDB database
-    con = duckdb.connect(DB_PATH)
-    print(f" Connection established with {DB_PATH}")
-
     # Scan all subfolders inside ../data/
     subfolders = [
         os.path.join(DATA_SOURCE_DIR, d)
@@ -62,28 +54,45 @@ if __name__ == "__main__":
         if os.path.isdir(os.path.join(DATA_SOURCE_DIR, d))
     ]
 
-    # Execute all ingest_*.sql files found in each subfolder
+    # Process each dataset folder independently
     for folder in sorted(subfolders):
+        dataset_name = os.path.basename(folder)
+        db_path = os.path.join(folder, f"{dataset_name}.duckdb")
+
+        print(f"\n Creating database for dataset: {dataset_name}")
+        print(f" Path: {db_path}")
+
+        # Remove existing database if present
+        if os.path.exists(db_path):
+            os.remove(db_path)
+            print(f" Removed old database: {db_path}")
+
+        # Create new database
+        con = duckdb.connect(db_path)
+        print(f" Connection established")
+
+        # Execute ingest SQL scripts
         execute_ingest_sql(con, folder)
 
-    # Show all tables created
-    print("\n Tables created in the database:")
-    try:
-        tables_df = con.execute("""
-                                SELECT table_schema, table_name
-                                FROM information_schema.tables
-                                WHERE table_type = 'BASE TABLE'
-                                ORDER BY table_schema, table_name
-                                """).fetchdf()
+        # Show created tables
+        print("\n  Tables created in this database:")
+        try:
+            tables_df = con.execute("""
+                                    SELECT table_schema, table_name
+                                    FROM information_schema.tables
+                                    WHERE table_type = 'BASE TABLE'
+                                    ORDER BY table_schema, table_name
+                                    """).fetchdf()
 
-        if tables_df.empty:
-            print("No tables found in the database.")
-        else:
-            print(tables_df)
+            if tables_df.empty:
+                print(" No tables found.")
+            else:
+                print(tables_df)
+        except Exception as e:
+            print(f" Unable to list tables: {e}")
 
-    except Exception as e:
-        print(f"Unable to list tables: {e}")
+        # Close connection
+        con.close()
+        print(f" Connection closed. Database saved at: {db_path}")
 
-    # Close the connection
-    con.close()
-    print(f"\n Connection closed. Database saved at: {DB_PATH}")
+    print("\n All dataset databases have been created successfully!")

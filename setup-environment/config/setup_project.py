@@ -11,7 +11,7 @@ PIP  = VENV / ("Scripts/pip" if os.name == "nt" else "bin/pip") #pip executable 
 PY   = VENV / ("Scripts/python" if os.name == "nt" else "bin/python") 
 
 REQS = ROOT / "requirements.txt" #requirements file path
-TEST = ROOT / "setup-environment" / "config" / "test_connection.py" #test connection script path
+TEST = ROOT / "setup-environment" / "config" / "db_connection.py" #test connection script path
 
 def run(cmd: list[str | Path], *, check: bool = True) -> None: #helper to run a command
     printable = " ".join(map(str, cmd)) #convert command to string for printing

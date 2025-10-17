@@ -3,26 +3,14 @@ import os
 import json
 import glob
 import sys
+from db_connection import connect_to_duckdb
 
 # --- Paths ---
-DB_FILE_PATH = "../../project.duckdb"  # Path to DuckDB file
-QUERIES_DIR = "../data"  # Folder containing .sql files
-OUTPUT_DIR = "../../verification-test-tools/tests"  # Folder to save JSON results
+BASE_DIR = os.path.dirname(os.path.abspath(__file__)) #current script path
+DB_FILE_PATH = os.path.abspath(os.path.join(BASE_DIR, "../data"))  # Path to DuckDB file
+OUTPUT_DIR = os.path.abspath(os.path.join(BASE_DIR, "../../verification-test-tools/tests" )) # Folder to save JSON results
 
 os.makedirs(OUTPUT_DIR, exist_ok=True)
-
-
-def test_duckdb_connection(db_path: str):
-    """
-    Check if the database file exists and establish a connection.
-    Returns a DuckDB connection object.
-    """
-    if not os.path.exists(db_path):
-        raise FileNotFoundError(f"❌ Database file not found: {db_path}")
-
-    con = duckdb.connect(database=db_path, read_only=False)
-    print(f"✅ Connection established with {db_path}")
-    return con
 
 
 def load_queries_from_folder(folder_path: str):
@@ -42,9 +30,8 @@ def load_queries_from_folder(folder_path: str):
                 if q:  # Skip empty strings
                     print(f"Query: {q}")
                     queries.append((os.path.basename(file_path), q))
-    length=len(queries)
-    print(f"length of queries: {length}")
-    print(f"Trovate {len(queries)} query nei file 'queries_*.sql'")
+
+    print(f"Found {len(queries)} queries in 'queries_*.sql' file")
     return queries
 
 
@@ -82,24 +69,24 @@ if __name__ == "__main__":
         sys.exit(1)  # break the script with an error
 
     # the name of the sub-directory is the first input parameter
-    table_folder_name = sys.argv[1]
+    dataset_name = sys.argv[1]
 
     # Building the right path
-    SPECIFIC_QUERIES_DIR = os.path.join(QUERIES_DIR, table_folder_name)
-
-    # Test DB connection
-    con = test_duckdb_connection(DB_FILE_PATH)
+    dataset_folder = os.path.join(DB_FILE_PATH, dataset_name)
 
     # Store the result in the right folder
-    output_per_table = os.path.join(OUTPUT_DIR, table_folder_name)
+    output_per_table = os.path.join(OUTPUT_DIR, dataset_name)
     os.makedirs(output_per_table, exist_ok=True)
 
-    queries = load_queries_from_folder(SPECIFIC_QUERIES_DIR)
+    # Test DB connection
+    con = connect_to_duckdb(dataset_name)
+
+    queries = load_queries_from_folder(dataset_folder)
 
     if not queries:
-        print(f"No query founded in {SPECIFIC_QUERIES_DIR}")
+        print(f"No query founded in {dataset_folder}")
     else:
-        print(f"Founded {len(queries)} query for the table '{table_folder_name}'. Start execution...")
+        print(f"Founded {len(queries)} query for the table '{dataset_name}'. Start execution...")
         # execute_queries_and_save_json(con, queries, output_dir=output_per_table)
         execute_queries_and_save_json(con, queries, output_per_table)
 
