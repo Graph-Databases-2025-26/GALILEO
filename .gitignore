@@ -23,3 +23,11 @@ htmlcov/
 # Ignore OS files
 .DS_Store
 Thumbs.db
+
+# Ignore DuckDB binary databases
+*.duckdb
+
+
+# Ignore temporary result logs
+*.text
+

@@ -1,3 +1,4 @@
+from pathlib import Path
 import duckdb
 import os
 import glob
@@ -9,6 +10,16 @@ PROJECT_ROOT = "."
 DATA_SOURCE_DIR = os.path.join(PROJECT_ROOT, "../data")
 # Folder in which save the database instance
 DB_PATH = os.path.join(PROJECT_ROOT, "project.duckdb")
+
+HERE = Path(__file__).resolve().parent               # .../setup-environment/config
+SETUP_ENV = HERE.parent                              # .../setup-environment
+DATA_SOURCE_DIR = SETUP_ENV / "data"                 # default: .../setup-environment/data
+
+# Optional fallback if your team keeps datasets at repo_root/data
+PROJECT_ROOT = SETUP_ENV.parent                      # repo root
+ALT_DATA = PROJECT_ROOT / "data"                     # .../data
+if not DATA_SOURCE_DIR.exists() and ALT_DATA.exists():
+    DATA_SOURCE_DIR = ALT_DATA
 
 """"""
 # Function for creating tables and loading data using the "ingest_'foldername'.sql"
@@ -47,24 +58,24 @@ def execute_ingest_sql(con, folder_path: str):
 if __name__ == "__main__":
     print(f" Starting database creation from: {DATA_SOURCE_DIR}")
 
+    if not DATA_SOURCE_DIR.exists():
+       raise FileNotFoundError(f"Data folder not found at {DATA_SOURCE_DIR}")
+
+
     # Scan all subfolders inside ../data/
-    subfolders = [
-        os.path.join(DATA_SOURCE_DIR, d)
-        for d in os.listdir(DATA_SOURCE_DIR)
-        if os.path.isdir(os.path.join(DATA_SOURCE_DIR, d))
-    ]
+    subfolders = [p for p in DATA_SOURCE_DIR.iterdir() if p.is_dir()]
 
     # Process each dataset folder independently
-    for folder in sorted(subfolders):
-        dataset_name = os.path.basename(folder)
-        db_path = os.path.join(folder, f"{dataset_name}.duckdb")
+    for folder in sorted(subfolders, key =lambda p: p.name.lower()):
+        dataset_name = folder.name
+        db_path = folder / f"{dataset_name}.duckdb"
 
         print(f"\n Creating database for dataset: {dataset_name}")
         print(f" Path: {db_path}")
 
         # Remove existing database if present
-        if os.path.exists(db_path):
-            os.remove(db_path)
+        if db_path.exists():
+            db_path.unlink()
             print(f" Removed old database: {db_path}")
 
         # Create new database
