@@ -1,22 +1,25 @@
-# test_explain_world.py
 from pathlib import Path
-from galois_core_system.src.explain.duckdb_explain import get_explain_json, save_explain_json
+from galois_core_system.src.explain.duckdb_explain import (
+    get_explain,
+    get_explain_analyze,
+    save_explain_pair,
+)
 
 ROOT = Path(__file__).resolve().parent
 DB   = ROOT / "setup-environment" / "data" / "world" / "world.duckdb"
-SQL  = """
-SELECT id, name 
-FROM target.city 
-WHERE country_code_3_letters='ITA' 
-ORDER BY id 
-LIMIT 3
-"""
 
-plan = get_explain_json(DB, SQL)
-print("Top-level keys:", list(plan.keys()))
+# NOTE: correct column is 'country_code_3_letters' in your world dataset
+SQL  = "SELECT id, name FROM target.city WHERE country_code_3_letters='ITA' ORDER BY id LIMIT 3"
 
-OUT = ROOT / "galois_core_system" / "results" / "plan_world_ita.json"
-OUT.parent.mkdir(parents=True, exist_ok=True)
-save_explain_json(DB, SQL, OUT)
-print("Wrote:", OUT)
+# 1) Use them individually
+plan = get_explain(DB, SQL)
+print("EXPLAIN keys:", list(plan.keys()))
 
+plan_an = get_explain_analyze(DB, SQL)
+print("ANALYZE keys:", list(plan_an.keys()))
+
+# 2) Or save both at once
+OUT_BASE = ROOT / "galois_core_system" / "results" / "plan_world_ita"
+p_explain, p_analyze = save_explain_pair(DB, SQL, OUT_BASE)
+print("Wrote:", p_explain)
+print("Wrote:", p_analyze)
