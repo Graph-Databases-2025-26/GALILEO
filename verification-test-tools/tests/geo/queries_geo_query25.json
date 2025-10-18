@@ -1,0 +1,257 @@
+[
+  {
+    "state_name": "alabama",
+    "capital": "montgomery",
+    "area_squared_miles": 51700.0
+  },
+  {
+    "state_name": "alaska",
+    "capital": "juneau",
+    "area_squared_miles": 591000.0
+  },
+  {
+    "state_name": "arizona",
+    "capital": "phoenix",
+    "area_squared_miles": 114000.0
+  },
+  {
+    "state_name": "arkansas",
+    "capital": "little rock",
+    "area_squared_miles": 53200.0
+  },
+  {
+    "state_name": "california",
+    "capital": "sacramento",
+    "area_squared_miles": 158000.0
+  },
+  {
+    "state_name": "colorado",
+    "capital": "denver",
+    "area_squared_miles": 104000.0
+  },
+  {
+    "state_name": "connecticut",
+    "capital": "hartford",
+    "area_squared_miles": 5020.0
+  },
+  {
+    "state_name": "delaware",
+    "capital": "dover",
+    "area_squared_miles": 2044.0
+  },
+  {
+    "state_name": "district of columbia",
+    "capital": "washington",
+    "area_squared_miles": 1100.0
+  },
+  {
+    "state_name": "florida",
+    "capital": "tallahassee",
+    "area_squared_miles": 68664.0
+  },
+  {
+    "state_name": "georgia",
+    "capital": "atlanta",
+    "area_squared_miles": 58900.0
+  },
+  {
+    "state_name": "hawaii",
+    "capital": "honolulu",
+    "area_squared_miles": 6471.0
+  },
+  {
+    "state_name": "idaho",
+    "capital": "boise",
+    "area_squared_miles": 83000.0
+  },
+  {
+    "state_name": "illinois",
+    "capital": "springfield",
+    "area_squared_miles": 56300.0
+  },
+  {
+    "state_name": "indiana",
+    "capital": "indianapolis",
+    "area_squared_miles": 36200.0
+  },
+  {
+    "state_name": "iowa",
+    "capital": "des moines",
+    "area_squared_miles": 56300.0
+  },
+  {
+    "state_name": "kansas",
+    "capital": "topeka",
+    "area_squared_miles": 82300.0
+  },
+  {
+    "state_name": "kentucky",
+    "capital": "frankfort",
+    "area_squared_miles": 82300.0
+  },
+  {
+    "state_name": "louisiana",
+    "capital": "baton rouge",
+    "area_squared_miles": 47700.0
+  },
+  {
+    "state_name": "maine",
+    "capital": "augusta",
+    "area_squared_miles": 33265.0
+  },
+  {
+    "state_name": "maryland",
+    "capital": "annapolis",
+    "area_squared_miles": 10460.0
+  },
+  {
+    "state_name": "massachusetts",
+    "capital": "boston",
+    "area_squared_miles": 8284.0
+  },
+  {
+    "state_name": "michigan",
+    "capital": "lansing",
+    "area_squared_miles": 58500.0
+  },
+  {
+    "state_name": "minnesota",
+    "capital": "st. paul",
+    "area_squared_miles": 84400.0
+  },
+  {
+    "state_name": "mississippi",
+    "capital": "jackson",
+    "area_squared_miles": 47700.0
+  },
+  {
+    "state_name": "missouri",
+    "capital": "jefferson city",
+    "area_squared_miles": 69700.0
+  },
+  {
+    "state_name": "montana",
+    "capital": "helena",
+    "area_squared_miles": 147000.0
+  },
+  {
+    "state_name": "nebraska",
+    "capital": "lincoln",
+    "area_squared_miles": 77300.0
+  },
+  {
+    "state_name": "nevada",
+    "capital": "carson city",
+    "area_squared_miles": 110500.0
+  },
+  {
+    "state_name": "new hampshire",
+    "capital": "concord",
+    "area_squared_miles": 9279.0
+  },
+  {
+    "state_name": "new jersey",
+    "capital": "trenton",
+    "area_squared_miles": 7787.0
+  },
+  {
+    "state_name": "new mexico",
+    "capital": "santa fe",
+    "area_squared_miles": 121600.0
+  },
+  {
+    "state_name": "new york",
+    "capital": "albany",
+    "area_squared_miles": 49100.0
+  },
+  {
+    "state_name": "north carolina",
+    "capital": "raleigh",
+    "area_squared_miles": 52670.0
+  },
+  {
+    "state_name": "north dakota",
+    "capital": "bismarck",
+    "area_squared_miles": 70700.0
+  },
+  {
+    "state_name": "ohio",
+    "capital": "columbus",
+    "area_squared_miles": 41300.0
+  },
+  {
+    "state_name": "oklahoma",
+    "capital": "oklahoma city",
+    "area_squared_miles": 69950.0
+  },
+  {
+    "state_name": "oregon",
+    "capital": "salem",
+    "area_squared_miles": 97073.0
+  },
+  {
+    "state_name": "pennsylvania",
+    "capital": "harrisburg",
+    "area_squared_miles": 45308.0
+  },
+  {
+    "state_name": "rhode island",
+    "capital": "providence",
+    "area_squared_miles": 1212.0
+  },
+  {
+    "state_name": "south carolina",
+    "capital": "columbia",
+    "area_squared_miles": 31113.0
+  },
+  {
+    "state_name": "south dakota",
+    "capital": "pierre",
+    "area_squared_miles": 77116.0
+  },
+  {
+    "state_name": "tennessee",
+    "capital": "nashville",
+    "area_squared_miles": 42140.0
+  },
+  {
+    "state_name": "texas",
+    "capital": "austin",
+    "area_squared_miles": 266807.0
+  },
+  {
+    "state_name": "utah",
+    "capital": "salt lake city",
+    "area_squared_miles": 84900.0
+  },
+  {
+    "state_name": "vermont",
+    "capital": "montpelier",
+    "area_squared_miles": 9614.0
+  },
+  {
+    "state_name": "virginia",
+    "capital": "richmond",
+    "area_squared_miles": 40760.0
+  },
+  {
+    "state_name": "washington",
+    "capital": "olympia",
+    "area_squared_miles": 68139.0
+  },
+  {
+    "state_name": "west virginia",
+    "capital": "charleston",
+    "area_squared_miles": 24200.0
+  },
+  {
+    "state_name": "wisconsin",
+    "capital": "madison",
+    "area_squared_miles": 56153.0
+  },
+  {
+    "state_name": "wyoming",
+    "capital": "cheyenne",
+    "area_squared_miles": 97809.0
+  }
+]

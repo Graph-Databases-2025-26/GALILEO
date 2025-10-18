@@ -1,0 +1,86 @@
+[
+  {
+    "name": "José Antonio Páez",
+    "party": "Conservative",
+    "start_year": 1830,
+    "end_year": 1835,
+    "cardinal_number": "1st"
+  },
+  {
+    "name": "Andrés Narvarte",
+    "party": "Conservative",
+    "start_year": 1835,
+    "end_year": 1835,
+    "cardinal_number": "2nd"
+  },
+  {
+    "name": "José María Vargas",
+    "party": "Conservative",
+    "start_year": 1835,
+    "end_year": 1835,
+    "cardinal_number": "3rd"
+  },
+  {
+    "name": "José María Carreño",
+    "party": "Conservative",
+    "start_year": 1835,
+    "end_year": 1835,
+    "cardinal_number": "4th"
+  },
+  {
+    "name": "José María Vargas",
+    "party": "Conservative",
+    "start_year": 1835,
+    "end_year": 1836,
+    "cardinal_number": "5th"
+  },
+  {
+    "name": "Andrés Narvarte",
+    "party": "Conservative",
+    "start_year": 1836,
+    "end_year": 1837,
+    "cardinal_number": "6th"
+  },
+  {
+    "name": "José María Carreño",
+    "party": "Conservative",
+    "start_year": 1837,
+    "end_year": 1837,
+    "cardinal_number": "7th"
+  },
+  {
+    "name": "Carlos Soublette",
+    "party": "Conservative",
+    "start_year": 1837,
+    "end_year": 1839,
+    "cardinal_number": "8th"
+  },
+  {
+    "name": "José Antonio Páez",
+    "party": "Conservative",
+    "start_year": 1839,
+    "end_year": 1843,
+    "cardinal_number": "9th"
+  },
+  {
+    "name": "Carlos Soublette",
+    "party": "Conservative",
+    "start_year": 1843,
+    "end_year": 1847,
+    "cardinal_number": "10th"
+  },
+  {
+    "name": "José Tadeo Monagas",
+    "party": "Conservative",
+    "start_year": 1847,
+    "end_year": 1851,
+    "cardinal_number": "11th"
+  },
+  {
+    "name": "Raimundo Andueza",
+    "party": "Conservative",
+    "start_year": 1890,
+    "end_year": 1892,
+    "cardinal_number": "33th"
+  }
+]

@@ -1,0 +1,22 @@
+[
+  {
+    "party": "Democratic",
+    "num": 7
+  },
+  {
+    "party": "Republican",
+    "num": 6
+  },
+  {
+    "party": "Whig",
+    "num": 4
+  },
+  {
+    "party": "Democratic Republican",
+    "num": 4
+  },
+  {
+    "party": "Democratic/Union",
+    "num": 1
+  }
+]

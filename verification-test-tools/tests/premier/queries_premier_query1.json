@@ -1,0 +1,38 @@
+[
+  {
+    "opponent_team": "Aston Villa",
+    "match_date_year": 2024,
+    "match_date_month": 8,
+    "match_date_day": 24
+  },
+  {
+    "opponent_team": "Brighton & Hove Albion",
+    "match_date_year": 2024,
+    "match_date_month": 8,
+    "match_date_day": 31
+  },
+  {
+    "opponent_team": "Leicester City",
+    "match_date_year": 2024,
+    "match_date_month": 9,
+    "match_date_day": 28
+  },
+  {
+    "opponent_team": "Manchester City",
+    "match_date_year": 2024,
+    "match_date_month": 9,
+    "match_date_day": 22
+  },
+  {
+    "opponent_team": "Wolverhampton Wanderers",
+    "match_date_year": 2024,
+    "match_date_month": 8,
+    "match_date_day": 17
+  },
+  {
+    "opponent_team": "Tottenham Hotspur",
+    "match_date_year": 2024,
+    "match_date_month": 9,
+    "match_date_day": 15
+  }
+]

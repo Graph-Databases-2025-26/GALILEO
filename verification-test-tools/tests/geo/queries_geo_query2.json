@@ -1,0 +1,326 @@
+[
+  {
+    "city_name": "birmingham"
+  },
+  {
+    "city_name": "mobile"
+  },
+  {
+    "city_name": "montgomery"
+  },
+  {
+    "city_name": "anchorage"
+  },
+  {
+    "city_name": "phoenix"
+  },
+  {
+    "city_name": "tucson"
+  },
+  {
+    "city_name": "mesa"
+  },
+  {
+    "city_name": "tempe"
+  },
+  {
+    "city_name": "little rock"
+  },
+  {
+    "city_name": "los angeles"
+  },
+  {
+    "city_name": "san diego"
+  },
+  {
+    "city_name": "san francisco"
+  },
+  {
+    "city_name": "san jose"
+  },
+  {
+    "city_name": "long beach"
+  },
+  {
+    "city_name": "oakland"
+  },
+  {
+    "city_name": "sacramento"
+  },
+  {
+    "city_name": "anaheim"
+  },
+  {
+    "city_name": "fresno"
+  },
+  {
+    "city_name": "santa ana"
+  },
+  {
+    "city_name": "riverside"
+  },
+  {
+    "city_name": "huntington beach"
+  },
+  {
+    "city_name": "denver"
+  },
+  {
+    "city_name": "colorado springs"
+  },
+  {
+    "city_name": "aurora"
+  },
+  {
+    "city_name": "washington"
+  },
+  {
+    "city_name": "jacksonville"
+  },
+  {
+    "city_name": "miami"
+  },
+  {
+    "city_name": "tampa"
+  },
+  {
+    "city_name": "st. petersburg"
+  },
+  {
+    "city_name": "fort lauderdale"
+  },
+  {
+    "city_name": "atlanta"
+  },
+  {
+    "city_name": "columbus"
+  },
+  {
+    "city_name": "honolulu"
+  },
+  {
+    "city_name": "ewa"
+  },
+  {
+    "city_name": "chicago"
+  },
+  {
+    "city_name": "indianapolis"
+  },
+  {
+    "city_name": "fort wayne"
+  },
+  {
+    "city_name": "gary"
+  },
+  {
+    "city_name": "des moines"
+  },
+  {
+    "city_name": "wichita"
+  },
+  {
+    "city_name": "kansas city"
+  },
+  {
+    "city_name": "louisville"
+  },
+  {
+    "city_name": "lexington"
+  },
+  {
+    "city_name": "new orleans"
+  },
+  {
+    "city_name": "baton rouge"
+  },
+  {
+    "city_name": "shreveport"
+  },
+  {
+    "city_name": "metairie"
+  },
+  {
+    "city_name": "baltimore"
+  },
+  {
+    "city_name": "boston"
+  },
+  {
+    "city_name": "worcester"
+  },
+  {
+    "city_name": "springfield"
+  },
+  {
+    "city_name": "detroit"
+  },
+  {
+    "city_name": "grand rapids"
+  },
+  {
+    "city_name": "warren"
+  },
+  {
+    "city_name": "flint"
+  },
+  {
+    "city_name": "minneapolis"
+  },
+  {
+    "city_name": "st. paul"
+  },
+  {
+    "city_name": "jackson"
+  },
+  {
+    "city_name": "st. louis"
+  },
+  {
+    "city_name": "kansas city"
+  },
+  {
+    "city_name": "omaha"
+  },
+  {
+    "city_name": "lincoln"
+  },
+  {
+    "city_name": "las vegas"
+  },
+  {
+    "city_name": "newark"
+  },
+  {
+    "city_name": "jersey city"
+  },
+  {
+    "city_name": "albuquerque"
+  },
+  {
+    "city_name": "new york"
+  },
+  {
+    "city_name": "buffalo"
+  },
+  {
+    "city_name": "rochester"
+  },
+  {
+    "city_name": "yonkers"
+  },
+  {
+    "city_name": "syracuse"
+  },
+  {
+    "city_name": "charlotte"
+  },
+  {
+    "city_name": "greensboro"
+  },
+  {
+    "city_name": "cleveland"
+  },
+  {
+    "city_name": "columbus"
+  },
+  {
+    "city_name": "cincinnati"
+  },
+  {
+    "city_name": "toledo"
+  },
+  {
+    "city_name": "akron"
+  },
+  {
+    "city_name": "dayton"
+  },
+  {
+    "city_name": "oklahoma city"
+  },
+  {
+    "city_name": "tulsa"
+  },
+  {
+    "city_name": "portland"
+  },
+  {
+    "city_name": "philadelphia"
+  },
+  {
+    "city_name": "pittsburgh"
+  },
+  {
+    "city_name": "providence"
+  },
+  {
+    "city_name": "memphis"
+  },
+  {
+    "city_name": "nashville"
+  },
+  {
+    "city_name": "knoxville"
+  },
+  {
+    "city_name": "chattanooga"
+  },
+  {
+    "city_name": "houston"
+  },
+  {
+    "city_name": "dallas"
+  },
+  {
+    "city_name": "san antonio"
+  },
+  {
+    "city_name": "el paso"
+  },
+  {
+    "city_name": "fort worth"
+  },
+  {
+    "city_name": "austin"
+  },
+  {
+    "city_name": "corpus christi"
+  },
+  {
+    "city_name": "lubbock"
+  },
+  {
+    "city_name": "arlington"
+  },
+  {
+    "city_name": "salt lake city"
+  },
+  {
+    "city_name": "norfolk"
+  },
+  {
+    "city_name": "virginia beach"
+  },
+  {
+    "city_name": "richmond"
+  },
+  {
+    "city_name": "arlington"
+  },
+  {
+    "city_name": "seattle"
+  },
+  {
+    "city_name": "spokane"
+  },
+  {
+    "city_name": "tacoma"
+  },
+  {
+    "city_name": "milwaukee"
+  },
+  {
+    "city_name": "madison"
+  }
+]

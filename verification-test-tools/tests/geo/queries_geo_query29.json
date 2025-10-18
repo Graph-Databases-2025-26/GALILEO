@@ -1,0 +1,44 @@
+[
+  {
+    "state_name": "indiana",
+    "capital": "indianapolis",
+    "density": 151.657458563536,
+    "population": 5490000
+  },
+  {
+    "state_name": "massachusetts",
+    "capital": "boston",
+    "density": 692.539835828102,
+    "population": 5737000
+  },
+  {
+    "state_name": "new jersey",
+    "capital": "trenton",
+    "density": 945.807114421472,
+    "population": 7365000
+  },
+  {
+    "state_name": "new york",
+    "capital": "albany",
+    "density": 357.596741344195,
+    "population": 17558000
+  },
+  {
+    "state_name": "ohio",
+    "capital": "columbus",
+    "density": 261.501210653753,
+    "population": 10800000
+  },
+  {
+    "state_name": "pennsylvania",
+    "capital": "harrisburg",
+    "density": 261.830140372561,
+    "population": 11863000
+  },
+  {
+    "state_name": "virginia",
+    "capital": "richmond",
+    "density": 131.177625122669,
+    "population": 5346800
+  }
+]

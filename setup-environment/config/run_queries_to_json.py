@@ -49,7 +49,8 @@ def execute_queries_and_save_json(con, queries, output_dir):
             data = [dict(zip(columns, row)) for row in rows]
 
             # Create JSON filename based on SQL file name
-            json_name = os.path.splitext(filename)[0] + ".json"
+            base_name = os.path.splitext(filename)[0]
+            json_name = f"{base_name}_query{i}.json"
             output_path = os.path.join(output_dir, json_name)
 
             with open(output_path, "w", encoding="utf-8") as f:
