@@ -1,0 +1,17 @@
+physical_plan ┌───────────────────────────┐
+│         SEQ_SCAN          │
+│    ────────────────────   │
+│           Table:          │
+│premier_league_2024_2025_ma│
+│         tch_result        │
+│                           │
+│   Type: Sequential Scan   │
+│                           │
+│        Projections:       │
+│         home_team         │
+│         away_team         │
+│         home_goals        │
+│         away_goals        │
+│                           │
+│          ~52 rows         │
+└───────────────────────────┘

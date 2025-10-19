@@ -1,0 +1,47 @@
+physical_plan ┌───────────────────────────┐
+│         PROJECTION        │
+│    ────────────────────   │
+│__internal_decompress_integ│
+│    ral_bigint(#0, 1897)   │
+│             #1            │
+│                           │
+│          ~4 rows          │
+└─────────────┬─────────────┘
+┌─────────────┴─────────────┐
+│   PERFECT_HASH_GROUP_BY   │
+│    ────────────────────   │
+│         Groups: #0        │
+│                           │
+│        Aggregates:        │
+│        count_star()       │
+└─────────────┬─────────────┘
+┌─────────────┴─────────────┐
+│         PROJECTION        │
+│    ────────────────────   │
+│         startyear         │
+│                           │
+│          ~5 rows          │
+└─────────────┬─────────────┘
+┌─────────────┴─────────────┐
+│         PROJECTION        │
+│    ────────────────────   │
+│__internal_compress_integra│
+│    l_utinyint(#0, 1897)   │
+│                           │
+│          ~5 rows          │
+└─────────────┬─────────────┘
+┌─────────────┴─────────────┐
+│         SEQ_SCAN          │
+│    ────────────────────   │
+│        Table: movie       │
+│   Type: Sequential Scan   │
+│                           │
+│        Projections:       │
+│         startyear         │
+│                           │
+│          Filters:         │
+│director='Steven Spielberg'│
+│  (startyear IS NOT NULL)  │
+│                           │
+│          ~5 rows          │
+└───────────────────────────┘

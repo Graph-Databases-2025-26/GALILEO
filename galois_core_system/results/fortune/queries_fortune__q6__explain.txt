@@ -1,0 +1,13 @@
+physical_plan ┌───────────────────────────┐
+│         SEQ_SCAN          │
+│    ────────────────────   │
+│    Table: fortune_2024    │
+│   Type: Sequential Scan   │
+│      Projections: CEO     │
+│                           │
+│          Filters:         │
+│       FemaleCEO=true      │
+│   CompanyType='Private'   │
+│                           │
+│         ~500 rows         │
+└───────────────────────────┘

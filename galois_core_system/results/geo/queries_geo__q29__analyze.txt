@@ -1,0 +1,50 @@
+analyzed_plan ┌─────────────────────────────────────┐
+│┌───────────────────────────────────┐│
+││    Query Profiling Information    ││
+│└───────────────────────────────────┘│
+└─────────────────────────────────────┘
+EXPLAIN ANALYZE --query29 SELECT us.state_name, us.capital, us.density, us.population FROM target.usa_state us WHERE us.population > 5000000 AND us.density < 1000 AND us.area_squared_miles < 50000;
+┌────────────────────────────────────────────────┐
+│┌──────────────────────────────────────────────┐│
+││              Total Time: 0.0008s             ││
+│└──────────────────────────────────────────────┘│
+└────────────────────────────────────────────────┘
+┌───────────────────────────┐
+│           QUERY           │
+└─────────────┬─────────────┘
+┌─────────────┴─────────────┐
+│      EXPLAIN_ANALYZE      │
+│    ────────────────────   │
+│           0 rows          │
+│          (0.00s)          │
+└─────────────┬─────────────┘
+┌─────────────┴─────────────┐
+│         PROJECTION        │
+│    ────────────────────   │
+│         state_name        │
+│          capital          │
+│          density          │
+│         population        │
+│                           │
+│           7 rows          │
+│          (0.00s)          │
+└─────────────┬─────────────┘
+┌─────────────┴─────────────┐
+│         TABLE_SCAN        │
+│    ────────────────────   │
+│      Table: usa_state     │
+│   Type: Sequential Scan   │
+│                           │
+│        Projections:       │
+│         population        │
+│          density          │
+│         state_name        │
+│          capital          │
+│                           │
+│          Filters:         │
+│     population>5000000    │
+│ area_squared_miles<50000.0│
+│                           │
+│           7 rows          │
+│          (0.00s)          │
+└───────────────────────────┘

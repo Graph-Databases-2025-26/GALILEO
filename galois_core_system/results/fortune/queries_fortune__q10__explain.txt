@@ -1,0 +1,22 @@
+physical_plan ┌───────────────────────────┐
+│         SEQ_SCAN          │
+│    ────────────────────   │
+│    Table: fortune_2024    │
+│   Type: Sequential Scan   │
+│                           │
+│        Projections:       │
+│          Company          │
+│     HeadquartersState     │
+│           Ticker          │
+│            CEO            │
+│       Founder_is_CEO      │
+│         FemaleCEO         │
+│    Number_of_employees    │
+│                           │
+│          Filters:         │
+│  HeadquartersCity='Santa  │
+│           Clara'          │
+│          Rank<70          │
+│                           │
+│          ~6 rows          │
+└───────────────────────────┘

@@ -1,0 +1,14 @@
+physical_plan ┌───────────────────────────┐
+│         SEQ_SCAN          │
+│    ────────────────────   │
+│      Table: usa_lake      │
+│   Type: Sequential Scan   │
+│                           │
+│        Projections:       │
+│         lake_name         │
+│                           │
+│          Filters:         │
+│  state_name='california'  │
+│                           │
+│          ~2 rows          │
+└───────────────────────────┘

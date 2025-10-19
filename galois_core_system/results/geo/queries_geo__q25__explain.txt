@@ -1,0 +1,13 @@
+physical_plan ┌───────────────────────────┐
+│         SEQ_SCAN          │
+│    ────────────────────   │
+│      Table: usa_state     │
+│   Type: Sequential Scan   │
+│                           │
+│        Projections:       │
+│         state_name        │
+│          capital          │
+│     area_squared_miles    │
+│                           │
+│          ~51 rows         │
+└───────────────────────────┘

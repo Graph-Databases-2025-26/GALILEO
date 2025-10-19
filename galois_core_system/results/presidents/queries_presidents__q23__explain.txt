@@ -1,0 +1,34 @@
+physical_plan ┌───────────────────────────┐
+│         PROJECTION        │
+│    ────────────────────   │
+│            name           │
+│           party           │
+│         start_year        │
+│          end_year         │
+│      cardinal_number      │
+│                           │
+│          ~6 rows          │
+└─────────────┬─────────────┘
+┌─────────────┴─────────────┐
+│         SEQ_SCAN          │
+│    ────────────────────   │
+│           Table:          │
+│      world_presidents     │
+│                           │
+│   Type: Sequential Scan   │
+│                           │
+│        Projections:       │
+│         start_year        │
+│          end_year         │
+│           party           │
+│            name           │
+│      cardinal_number      │
+│                           │
+│          Filters:         │
+│  country='United States'  │
+│      start_year>1850      │
+│       end_year<1900       │
+│     party='Democratic'    │
+│                           │
+│          ~6 rows          │
+└───────────────────────────┘

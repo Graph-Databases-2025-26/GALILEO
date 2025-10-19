@@ -1,0 +1,41 @@
+analyzed_plan ┌─────────────────────────────────────┐
+│┌───────────────────────────────────┐│
+││    Query Profiling Information    ││
+│└───────────────────────────────────┘│
+└─────────────────────────────────────┘
+EXPLAIN ANALYZE --query9 select company, headquartersstate, ticker, ceo, founder_is_ceo, femaleceo, number_of_employees from target.fortune_2024 where company = 'Nvidia';
+┌────────────────────────────────────────────────┐
+│┌──────────────────────────────────────────────┐│
+││              Total Time: 0.0008s             ││
+│└──────────────────────────────────────────────┘│
+└────────────────────────────────────────────────┘
+┌───────────────────────────┐
+│           QUERY           │
+└─────────────┬─────────────┘
+┌─────────────┴─────────────┐
+│      EXPLAIN_ANALYZE      │
+│    ────────────────────   │
+│           0 rows          │
+│          (0.00s)          │
+└─────────────┬─────────────┘
+┌─────────────┴─────────────┐
+│         TABLE_SCAN        │
+│    ────────────────────   │
+│    Table: fortune_2024    │
+│   Type: Sequential Scan   │
+│                           │
+│        Projections:       │
+│          Company          │
+│     HeadquartersState     │
+│           Ticker          │
+│            CEO            │
+│       Founder_is_CEO      │
+│         FemaleCEO         │
+│    Number_of_employees    │
+│                           │
+│          Filters:         │
+│      Company='Nvidia'     │
+│                           │
+│           1 row           │
+│          (0.00s)          │
+└───────────────────────────┘

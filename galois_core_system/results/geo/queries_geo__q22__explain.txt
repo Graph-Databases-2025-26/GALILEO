@@ -1,0 +1,31 @@
+physical_plan ┌───────────────────────────┐
+│         PROJECTION        │
+│    ────────────────────   │
+│          capital          │
+│                           │
+│           ~1 row          │
+└─────────────┬─────────────┘
+┌─────────────┴─────────────┐
+│         HASH_JOIN         │
+│    ────────────────────   │
+│      Join Type: INNER     │
+│                           │
+│        Conditions:        ├──────────────┐
+│  state_name = state_name  │              │
+│                           │              │
+│           ~1 row          │              │
+└─────────────┬─────────────┘              │
+┌─────────────┴─────────────┐┌─────────────┴─────────────┐
+│         SEQ_SCAN          ││         SEQ_SCAN          │
+│    ────────────────────   ││    ────────────────────   │
+│      Table: usa_state     ││      Table: usa_city      │
+│   Type: Sequential Scan   ││   Type: Sequential Scan   │
+│                           ││                           │
+│        Projections:       ││        Projections:       │
+│         state_name        ││         state_name        │
+│          capital          ││                           │
+│                           ││          Filters:         │
+│                           ││     city_name='tempe'     │
+│                           ││                           │
+│          ~51 rows         ││           ~1 row          │
+└───────────────────────────┘└───────────────────────────┘

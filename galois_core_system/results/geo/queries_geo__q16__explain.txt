@@ -1,0 +1,28 @@
+physical_plan ┌───────────────────────────┐
+│    UNGROUPED_AGGREGATE    │
+│    ────────────────────   │
+│        Aggregates:        │
+│     count(DISTINCT #0)    │
+└─────────────┬─────────────┘
+┌─────────────┴─────────────┐
+│         PROJECTION        │
+│    ────────────────────   │
+│         state_name        │
+│                           │
+│           ~1 row          │
+└─────────────┬─────────────┘
+┌─────────────┴─────────────┐
+│         SEQ_SCAN          │
+│    ────────────────────   │
+│      Table: usa_city      │
+│   Type: Sequential Scan   │
+│                           │
+│        Projections:       │
+│         state_name        │
+│                           │
+│          Filters:         │
+│  city_name='springfield'  │
+│      population>72000     │
+│                           │
+│           ~1 row          │
+└───────────────────────────┘

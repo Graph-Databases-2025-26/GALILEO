@@ -1,0 +1,15 @@
+physical_plan ┌───────────────────────────┐
+│         SEQ_SCAN          │
+│    ────────────────────   │
+│    Table: fortune_2024    │
+│   Type: Sequential Scan   │
+│                           │
+│        Projections:       │
+│          Company          │
+│     HeadquartersState     │
+│                           │
+│          Filters:         │
+│Number_of_employees>1000000│
+│                           │
+│         ~200 rows         │
+└───────────────────────────┘

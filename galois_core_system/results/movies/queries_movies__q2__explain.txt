@@ -1,0 +1,14 @@
+physical_plan ┌───────────────────────────┐
+│         SEQ_SCAN          │
+│    ────────────────────   │
+│        Table: movie       │
+│   Type: Sequential Scan   │
+│                           │
+│        Projections:       │
+│       originaltitle       │
+│                           │
+│          Filters:         │
+│director='Steven Spielberg'│
+│                           │
+│          ~5 rows          │
+└───────────────────────────┘

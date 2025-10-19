@@ -1,0 +1,26 @@
+physical_plan ┌───────────────────────────┐
+│    UNGROUPED_AGGREGATE    │
+│    ────────────────────   │
+│    Aggregates: max(#0)    │
+└─────────────┬─────────────┘
+┌─────────────┴─────────────┐
+│         PROJECTION        │
+│    ────────────────────   │
+│      elevation_in_ft      │
+│                           │
+│          ~98 rows         │
+└─────────────┬─────────────┘
+┌─────────────┴─────────────┐
+│         SEQ_SCAN          │
+│    ────────────────────   │
+│      Table: airports      │
+│   Type: Sequential Scan   │
+│                           │
+│        Projections:       │
+│      elevation_in_ft      │
+│                           │
+│          Filters:         │
+│     country='Iceland'     │
+│                           │
+│          ~98 rows         │
+└───────────────────────────┘

@@ -1,0 +1,27 @@
+physical_plan ┌───────────────────────────┐
+│    UNGROUPED_AGGREGATE    │
+│    ────────────────────   │
+│        Aggregates:        │
+│     count(DISTINCT #0)    │
+└─────────────┬─────────────┘
+┌─────────────┴─────────────┐
+│         PROJECTION        │
+│    ────────────────────   │
+│      government_form      │
+│                           │
+│          ~40 rows         │
+└─────────────┬─────────────┘
+┌─────────────┴─────────────┐
+│         SEQ_SCAN          │
+│    ────────────────────   │
+│       Table: country      │
+│   Type: Sequential Scan   │
+│                           │
+│        Projections:       │
+│      government_form      │
+│                           │
+│          Filters:         │
+│     continent='Africa'    │
+│                           │
+│          ~40 rows         │
+└───────────────────────────┘

@@ -1,0 +1,21 @@
+physical_plan ┌───────────────────────────┐
+│    UNGROUPED_AGGREGATE    │
+│    ────────────────────   │
+│        Aggregates:        │
+│        count_star()       │
+└─────────────┬─────────────┘
+┌─────────────┴─────────────┐
+│         SEQ_SCAN          │
+│    ────────────────────   │
+│           Table:          │
+│      world_presidents     │
+│                           │
+│   Type: Sequential Scan   │
+│                           │
+│          Filters:         │
+│  country='United States'  │
+│    start_year>=1990 AND   │
+│       start_year<2000     │
+│                           │
+│          ~56 rows         │
+└───────────────────────────┘

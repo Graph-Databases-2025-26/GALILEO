@@ -1,0 +1,55 @@
+analyzed_plan ┌─────────────────────────────────────┐
+│┌───────────────────────────────────┐│
+││    Query Profiling Information    ││
+│└───────────────────────────────────┘│
+└─────────────────────────────────────┘
+EXPLAIN ANALYZE --query6 SELECT m.originaltitle, m.startyear, m.genres, m.birthyear, m.deathyear, m.runtimeminutes FROM target.movie m WHERE m.director = 'Steven Spielberg' AND m.startyear > 1990 AND m.startyear < 2000;
+┌────────────────────────────────────────────────┐
+│┌──────────────────────────────────────────────┐│
+││              Total Time: 0.0084s             ││
+│└──────────────────────────────────────────────┘│
+└────────────────────────────────────────────────┘
+┌───────────────────────────┐
+│           QUERY           │
+└─────────────┬─────────────┘
+┌─────────────┴─────────────┐
+│      EXPLAIN_ANALYZE      │
+│    ────────────────────   │
+│           0 rows          │
+│          (0.00s)          │
+└─────────────┬─────────────┘
+┌─────────────┴─────────────┐
+│         PROJECTION        │
+│    ────────────────────   │
+│       originaltitle       │
+│         startyear         │
+│           genres          │
+│         birthyear         │
+│         deathyear         │
+│       runtimeminutes      │
+│                           │
+│           6 rows          │
+│          (0.00s)          │
+└─────────────┬─────────────┘
+┌─────────────┴─────────────┐
+│         TABLE_SCAN        │
+│    ────────────────────   │
+│        Table: movie       │
+│   Type: Sequential Scan   │
+│                           │
+│        Projections:       │
+│         startyear         │
+│       originaltitle       │
+│           genres          │
+│         birthyear         │
+│         deathyear         │
+│       runtimeminutes      │
+│                           │
+│          Filters:         │
+│director='Steven Spielberg'│
+│     startyear>1990 AND    │
+│       startyear<2000      │
+│                           │
+│           6 rows          │
+│          (0.03s)          │
+└───────────────────────────┘

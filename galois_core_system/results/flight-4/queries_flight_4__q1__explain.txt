@@ -1,0 +1,13 @@
+physical_plan ┌───────────────────────────┐
+│         SEQ_SCAN          │
+│    ────────────────────   │
+│      Table: airports      │
+│   Type: Sequential Scan   │
+│     Projections: name     │
+│                           │
+│          Filters:         │
+│  elevation_in_ft>=-50 AND │
+│     elevation_in_ft<=50   │
+│                           │
+│        ~1,436 rows        │
+└───────────────────────────┘

@@ -1,0 +1,14 @@
+physical_plan ┌───────────────────────────┐
+│         SEQ_SCAN          │
+│    ────────────────────   │
+│      Table: usa_state     │
+│   Type: Sequential Scan   │
+│                           │
+│        Projections:       │
+│        country_name       │
+│                           │
+│          Filters:         │
+│ state_name='massachusetts'│
+│                           │
+│           ~1 row          │
+└───────────────────────────┘

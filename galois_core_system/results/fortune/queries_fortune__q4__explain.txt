@@ -1,0 +1,14 @@
+physical_plan ┌───────────────────────────┐
+│         SEQ_SCAN          │
+│    ────────────────────   │
+│    Table: fortune_2024    │
+│   Type: Sequential Scan   │
+│                           │
+│        Projections:       │
+│      HeadquartersCity     │
+│                           │
+│          Filters:         │
+│    Industry='Airlines'    │
+│                           │
+│          ~11 rows         │
+└───────────────────────────┘

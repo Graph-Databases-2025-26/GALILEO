@@ -1,0 +1,15 @@
+physical_plan ┌───────────────────────────┐
+│         SEQ_SCAN          │
+│    ────────────────────   │
+│      Table: usa_state     │
+│   Type: Sequential Scan   │
+│                           │
+│        Projections:       │
+│         state_name        │
+│          capital          │
+│                           │
+│          Filters:         │
+│     population>5000000    │
+│                           │
+│          ~10 rows         │
+└───────────────────────────┘

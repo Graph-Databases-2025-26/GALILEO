@@ -1,0 +1,27 @@
+physical_plan ┌───────────────────────────┐
+│         PROJECTION        │
+│    ────────────────────   │
+│            name           │
+│            city           │
+│          country          │
+│      elevation_in_ft      │
+│                           │
+│          ~2 rows          │
+└─────────────┬─────────────┘
+┌─────────────┴─────────────┐
+│         SEQ_SCAN          │
+│    ────────────────────   │
+│      Table: airports      │
+│   Type: Sequential Scan   │
+│                           │
+│        Projections:       │
+│            city           │
+│            name           │
+│          country          │
+│      elevation_in_ft      │
+│                           │
+│          Filters:         │
+│      city='New York'      │
+│                           │
+│          ~2 rows          │
+└───────────────────────────┘

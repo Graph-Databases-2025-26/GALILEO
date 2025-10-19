@@ -1,0 +1,15 @@
+physical_plan ┌───────────────────────────┐
+│         SEQ_SCAN          │
+│    ────────────────────   │
+│      Table: usa_lake      │
+│   Type: Sequential Scan   │
+│                           │
+│        Projections:       │
+│         lake_name         │
+│                           │
+│          Filters:         │
+│   area_squared_km>750.0   │
+│   state_name='michigan'   │
+│                           │
+│          ~2 rows          │
+└───────────────────────────┘

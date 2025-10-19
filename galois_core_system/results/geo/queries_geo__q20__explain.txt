@@ -1,0 +1,20 @@
+physical_plan ┌───────────────────────────┐
+│    UNGROUPED_AGGREGATE    │
+│    ────────────────────   │
+│        Aggregates:        │
+│        count_star()       │
+└─────────────┬─────────────┘
+┌─────────────┴─────────────┐
+│         SEQ_SCAN          │
+│    ────────────────────   │
+│      Table: usa_river     │
+│   Type: Sequential Scan   │
+│                           │
+│        Projections:       │
+│         river_name        │
+│                           │
+│          Filters:         │
+│usa_state_traversed='idaho'│
+│                           │
+│          ~4 rows          │
+└───────────────────────────┘

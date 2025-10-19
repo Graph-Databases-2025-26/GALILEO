@@ -1,0 +1,26 @@
+physical_plan ┌───────────────────────────┐
+│         PROJECTION        │
+│    ────────────────────   │
+│            name           │
+│           party           │
+│                           │
+│          ~6 rows          │
+└─────────────┬─────────────┘
+┌─────────────┴─────────────┐
+│         SEQ_SCAN          │
+│    ────────────────────   │
+│           Table:          │
+│      world_presidents     │
+│                           │
+│   Type: Sequential Scan   │
+│                           │
+│        Projections:       │
+│           party           │
+│            name           │
+│                           │
+│          Filters:         │
+│    country='Venezuela'    │
+│      party='Liberal'      │
+│                           │
+│          ~6 rows          │
+└───────────────────────────┘
