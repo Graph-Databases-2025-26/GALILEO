@@ -1,0 +1,74 @@
+\documentclass[12pt,a4paper]{article}
+
+% Useful packages
+\usepackage[utf8]{inputenc}
+\usepackage[italian]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{array}
+
+% Margini
+\usepackage[margin=2.5cm]{geometry}
+
+% Document Informations
+\title{Report for deliverable with deadline 31 october 2025}
+\author{Francesco Pivotto 2158296\\ Giorgia Amato 2159999\\ Alessio Demo 2142885 }
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+\newpage
+
+\section{Statistics for the datasets in the experiments}
+
+Table~\ref{tab:datasets} provides an overview of the datasets used our project. The datasets are divided into two main categories based on the type of task: IK (Incomplete Knowledge) and MC (Multiple Choice).
+The MC-type datasets include PREMIER, sourced from BBC, and FORTUNE, based on Kaggle data.
+Finally, GEO-TEST represents the test dataset, also derived from Spider [68], used to validate the model's performance.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{lcccc}
+\toprule
+\textbf{Dataset} & \textbf{Dataset} & \textbf{\# of} & \textbf{Avg. expected} & \textbf{Type} \\
+\textbf{name} & \textbf{source} & \textbf{queries} & \textbf{cells} & \\
+\midrule
+FLIGHT2 & Spider [68] & 3 & 267.5 & IK \\
+FLIGHT4 & Spider [68] & 3 & 267.5 & IK \\
+FORTUNE & Kaggle & 10 & 7.9 & MC \\
+GEO & Spider [68] & 32 & 22.8 & IK \\
+MOVIES & IMDB & 9 & 54.7 & IK \\
+PREMIER & BBC & 5 & 57.8 & MC \\
+PRESIDENTS & Wiki & 26 & 42.2 & IK \\
+WORLD & Spider [68] & 4 & 33.2 & IK \\
+
+
+
+\midrule
+GEO-TEST & Spider [68] & 10 & 24.1 & IK \\
+\bottomrule
+\end{tabular}
+\caption{DDescription of used datasets}
+\label{tab:datasets}
+\end{table}
+
+\section{Corpo del documento}
+Contenuto principale.
+
+\subsection{Sottosezione}
+Dettagli aggiuntivi.
+
+\section{Conclusioni}
+Considerazioni finali.
+
+\begin{thebibliography}{9}
+\bibitem{esempio}
+Autore, \emph{Titolo}, Editore, Anno.
+\end{thebibliography}
+
+\end{document}
