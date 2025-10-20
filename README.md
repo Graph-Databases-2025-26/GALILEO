@@ -13,7 +13,7 @@
 
 ---
 
-## 🎯 Project Description
+##  Project Description
 We are a student group exploring how **Large Language Models (LLMs)** can collaborate with **databases**.  
 Our focus is on **GALOIS**, a framework that integrates LLMs into query execution pipelines.
 
@@ -40,7 +40,7 @@ Our focus is on **GALOIS**, a framework that integrates LLMs into query executio
 
 ***
 
-### 1. ⚙️ `setup-environment/` (Scope: Setup and Data)
+### 1.  `setup-environment/` (Scope: Setup and Data)
 
 Contains everything needed for the initial configuration, database connection, and management of test data.
 
@@ -54,7 +54,7 @@ Contains everything needed for the initial configuration, database connection, a
 
 ***
 
-### 2. 🚦 `baselines/` (Scope: Reference Systems)
+### 2.  `baselines/` (Scope: Reference Systems)
 
 Dedicated to the implementation and execution of the reference systems required for comparative evaluation.
 
@@ -66,7 +66,7 @@ Dedicated to the implementation and execution of the reference systems required 
 
 ***
 
-### 3. 🚀 `galois-core-system/` (Scope: LLM Core System)
+### 3.  `galois-core-system/` (Scope: LLM Core System)
 
 Contains the implementation of the LLM system based on the **Galois** paper, which is the core of the project.
 
@@ -85,3 +85,107 @@ Tools to ensure code correctness and verification.
 | Subfolder/File | Purpose |
 | :--- | :--- |
 | **`tests/`** | Modules for unit tests and integration tests, used to validate individual components. |
+
+---
+
+## Architecture of the system:
+### 🛠 Dependency Stack and Key Requirements
+
+This project relies on a Python **dependency stack** designed to ensure robustness, efficient data analysis, and flexible configuration. All libraries required for execution (excluding development-only dependencies) are listed in `requirements.txt`.
+
+### **Core Frameworks & Data Analysis (DataFrames)**
+
+* **DataFrames/Analysis:** **`pandas`** and **`numpy`** are used in our project for the efficient manipulation and analysis of tabular data structures (DataFrames) and complex numerical calculations.
+
+---
+
+### **Database and SQL**
+
+For connectivity, analysis, and management of structured data:
+
+* **Database In-Process:** **`duckdb`** is used as a high-performance analytical database, ideal for rapid processing of data volumes directly within the application process.
+* **SQL Parsing:** **`sqlglot`** is employed for the manipulation, translation, and abstract analysis of SQL queries.
+
+---
+
+### **Config, Secrets, and Data Validation (Pydantic)**
+
+Robust configuration management and input data validation are ensured via:
+
+* **Configuration/Secrets:** **`python-dotenv`** loads environment variables (including secrets) from the `.env` file.
+* **Data Validation:** **`pydantic`** and its associated modules (**`pydantic-settings`**) are crucial for defining clear data schemas, validating runtime data, and managing project settings in a typed, safe manner.
+* **Config Parsing (YAML):** **`pyyaml`** handles reading and writing configuration files in YAML format.
+
+---
+
+### **Templating**
+
+For the dynamic generation of code, reports, or structured output:
+
+* **Templates:** **`jinja2`** serves as the templating engine, widely used to generate code (e.g., SQL) or documents based on predefined template structures.
+
+---
+
+### **Logging and Utilities**
+
+For monitoring and diagnostics:
+
+* **Logging:** **`loguru`** is the chosen logging library for its simplicity, structured output, improving system log readability.
+
+---
+
+### **Development and Testing (Tests)**
+
+These libraries are required only for the development environment and for running the project's test suite:
+
+* **Test Runner:** **`pytest`** is the standard testing framework used to execute all tests.
+* **Code Coverage:** **`coverage`** and **`pytest-cov`** measure the percentage of source code covered by automated tests.
+* **Mocking:** **`pytest-mock`** facilitates the creation of mock objects and stubs to isolate external dependencies during unit tests.
+
+---
+
+## Implementation Steps 
+
+###  Database Preparation and Connection
+
+### 1. Opening the Connection (db.connection.py)
+
+The `db.connection.py` script is responsible for opening and managing the connection to the specific DuckDB database for the dataset being used.
+
+**Operational Details:**
+
+* **Path Calculation:** Calculates the exact path of the database file: `../data/<dataset_name>/<dataset_name>.duckdb`.
+* **Existence Check:** Performs a check to ensure the database file exists at the specified path.
+* **Connection Creation:** Creates and returns a DuckDB connection object (`duckdb.connect()`).
+* **Feedback:** Prints a confirmation message indicating that the connection has been successfully established.
+
+---
+
+### 2. Ingestion and Setup (duckdb_db_graphdb.py)
+
+The `duckdb_db_graphdb.py` script is used to initialize the database environment, creating or recreating the DuckDB databases for each dataset and populating them with initial data.
+
+**Operational Details:**
+
+* **Path Setup:** Sets essential paths (`data`, `project.duckdb`, etc.).
+* **Dataset Scan:** Scans all subfolders inside `../data` (e.g., `geo`, `movies`, `world`, etc.), where each folder represents a dataset.
+* **For Each Dataset:**
+    1.  **Cleanup:** If it exists, deletes the old database (`dataset_name.duckdb`).
+    2.  **Creation:** Creates a new, empty DuckDB database.
+    3.  **SQL Script Execution:** Automatically runs all ingestion SQL scripts (`ingest_*.sql`) within that dataset folder (table creation, data loading, etc.).
+    4.  **Verification:** Displays a list of the newly created tables for verification.
+    5.  **Closure:** Closes the connection and persists the database state.
+
+---
+
+### 3. ⚙ Query Execution and Result Saving (JSON)
+
+Following the database setup, the `run_queries_to_json.py` script manages the automatic execution of analysis queries and the saving of results for verification.
+
+**Operational Details (`run_queries_to_json.py`):**
+
+* **Target:** The script targets a specific dataset folder (e.g., `../data/geo/`).
+* **Automatic Execution:** It automatically executes all SQL queries defined in files matching the pattern `queries_*.sql` within the selected dataset folder.
+* **Output:** It saves the result of each executed SQL query into a dedicated **JSON** file.
+* **Save Path:** The JSON files are deposited in the path: `../../verification-test-tools/tests/<dataset_name>/`.
+* **Function:** This process is crucial for generating the reference results needed for testing and data verification.
