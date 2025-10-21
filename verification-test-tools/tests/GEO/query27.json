@@ -1,0 +1,77 @@
+[
+  {
+    "state_name": "california",
+    "population": 23670000,
+    "capital": "sacramento"
+  },
+  {
+    "state_name": "florida",
+    "population": 9746000,
+    "capital": "tallahassee"
+  },
+  {
+    "state_name": "georgia",
+    "population": 5463000,
+    "capital": "atlanta"
+  },
+  {
+    "state_name": "illinois",
+    "population": 11400000,
+    "capital": "springfield"
+  },
+  {
+    "state_name": "indiana",
+    "population": 5490000,
+    "capital": "indianapolis"
+  },
+  {
+    "state_name": "massachusetts",
+    "population": 5737000,
+    "capital": "boston"
+  },
+  {
+    "state_name": "michigan",
+    "population": 9262000,
+    "capital": "lansing"
+  },
+  {
+    "state_name": "new jersey",
+    "population": 7365000,
+    "capital": "trenton"
+  },
+  {
+    "state_name": "new york",
+    "population": 17558000,
+    "capital": "albany"
+  },
+  {
+    "state_name": "north carolina",
+    "population": 5882000,
+    "capital": "raleigh"
+  },
+  {
+    "state_name": "ohio",
+    "population": 10800000,
+    "capital": "columbus"
+  },
+  {
+    "state_name": "pennsylvania",
+    "population": 11863000,
+    "capital": "harrisburg"
+  },
+  {
+    "state_name": "texas",
+    "population": 14229000,
+    "capital": "austin"
+  },
+  {
+    "state_name": "virginia",
+    "population": 5346800,
+    "capital": "richmond"
+  },
+  {
+    "state_name": "wisconsin",
+    "population": 5893000,
+    "capital": "madison"
+  }
+]

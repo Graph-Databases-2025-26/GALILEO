@@ -1,0 +1,5 @@
+[
+  {
+    "count(DISTINCT usa_state_traversed)": 34
+  }
+]

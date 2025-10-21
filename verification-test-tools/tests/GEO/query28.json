@@ -1,0 +1,62 @@
+[
+  {
+    "state_name": "california",
+    "capital": "sacramento"
+  },
+  {
+    "state_name": "florida",
+    "capital": "tallahassee"
+  },
+  {
+    "state_name": "georgia",
+    "capital": "atlanta"
+  },
+  {
+    "state_name": "illinois",
+    "capital": "springfield"
+  },
+  {
+    "state_name": "indiana",
+    "capital": "indianapolis"
+  },
+  {
+    "state_name": "massachusetts",
+    "capital": "boston"
+  },
+  {
+    "state_name": "michigan",
+    "capital": "lansing"
+  },
+  {
+    "state_name": "new jersey",
+    "capital": "trenton"
+  },
+  {
+    "state_name": "new york",
+    "capital": "albany"
+  },
+  {
+    "state_name": "north carolina",
+    "capital": "raleigh"
+  },
+  {
+    "state_name": "ohio",
+    "capital": "columbus"
+  },
+  {
+    "state_name": "pennsylvania",
+    "capital": "harrisburg"
+  },
+  {
+    "state_name": "texas",
+    "capital": "austin"
+  },
+  {
+    "state_name": "virginia",
+    "capital": "richmond"
+  },
+  {
+    "state_name": "wisconsin",
+    "capital": "madison"
+  }
+]

@@ -49,8 +49,7 @@ def execute_queries_and_save_json(con, queries, output_dir):
             data = [dict(zip(columns, row)) for row in rows]
 
             # Create JSON filename based on SQL file name
-            base_name = os.path.splitext(filename)[0]
-            json_name = f"{base_name}_query{i}.json"
+            json_name = f"query{i}.json"
             output_path = os.path.join(output_dir, json_name)
 
             with open(output_path, "w", encoding="utf-8") as f:
@@ -73,6 +72,20 @@ if __name__ == "__main__":
 
     # Building the right path
     dataset_folder = os.path.join(DB_FILE_PATH, dataset_name)
+    if not os.path.exists(dataset_folder):
+        # 2. If the folder doesn't exist, try the path using all lowercase (e.g., flight-2)
+        dataset_folder_lower = os.path.join(DB_FILE_PATH, dataset_name.lower())
+
+        if os.path.exists(dataset_folder_lower):
+            # Use the lowercase path if it exists
+            dataset_folder = dataset_folder_lower
+        else:
+            # 3. If neither version exists, halt the script and notify the error.
+            print(
+                f" Error: Dataset folder not found. Check that directory '{dataset_name}' or '{dataset_name.lower()}' exists in {DB_FILE_PATH}")
+            sys.exit(1)  # Stops execution
+
+    print(f"Dataset folder: {dataset_folder}")
 
     # Store the result in the right folder
     output_per_table = os.path.join(OUTPUT_DIR, dataset_name)

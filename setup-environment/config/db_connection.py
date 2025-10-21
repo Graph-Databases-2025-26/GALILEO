@@ -19,7 +19,21 @@ def connect_to_duckdb(dataset_name: str):
     data_dir = os.path.abspath(os.path.join(base_dir, "../data"))
 
     dataset_folder = os.path.join(data_dir, dataset_name)
-    db_path = os.path.join(dataset_folder, f"{dataset_name}.duckdb")
+
+    if not os.path.exists(dataset_folder):
+        # if the folder doesn't exists, try with lower-case (es. flight-2)
+        dataset_folder_lower = os.path.join(data_dir, dataset_name.lower())
+
+        if os.path.exists(dataset_folder_lower):
+            dataset_folder = dataset_folder_lower
+        else:
+            # If both pattern doesn't exists -> error
+            raise FileNotFoundError(
+                f" Folder not found. Check if the folder exists '{dataset_name}' o '{dataset_name.lower()}' in {data_dir}"
+            )
+
+    db_file_name_lower = dataset_name.lower()
+    db_path = os.path.join(dataset_folder, f"{db_file_name_lower}.duckdb")
 
     if not os.path.exists(db_path):
         raise FileNotFoundError(f"❌ Database not found: {db_path}")

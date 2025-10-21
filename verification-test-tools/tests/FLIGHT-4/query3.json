@@ -1,0 +1,26 @@
+[
+  {
+    "name": "La Guardia Airport",
+    "city": "New York",
+    "country": "United States",
+    "elevation_in_ft": 21
+  },
+  {
+    "name": "John F Kennedy International Airport",
+    "city": "New York",
+    "country": "United States",
+    "elevation_in_ft": 13
+  },
+  {
+    "name": "Indianola Municipal Airport",
+    "city": "New York",
+    "country": "United States",
+    "elevation_in_ft": 126
+  },
+  {
+    "name": "One Police Plaza Heliport",
+    "city": "New York",
+    "country": "United States",
+    "elevation_in_ft": 244
+  }
+]

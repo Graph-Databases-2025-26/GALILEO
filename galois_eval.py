@@ -35,12 +35,12 @@ Implements the logic of the Java classes:
 
 Layout:
   ground_root/
-    MOVIES/  Q1.csv|json, Q2...
+    movies/  Q1.csv|json, Q2...
   submissions_root/
-    MOVIES/  Q1.csv|json, Q2...         <-- each file is ONE query (simple or full JSON; CSV also allowed for rows)
+    movies/  Q1.csv|json, Q2...         <-- each file is ONE query (simple or full JSON; CSV also allowed for rows)
 
 Usage:
-  python galois_eval.py --ground ground/ --submissions submissions/ --datasets MOVIES
+  python galois_eval.py --ground ground/ --submissions submissions/ --datasets movies
 Options:
   --cell-metric exact|similarity        (default: exact)
   --tuple-metric constraint|similarity  (default: constraint)

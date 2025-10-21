@@ -1,0 +1,257 @@
+[
+  {
+    "state_name": "alabama",
+    "population": 3894000,
+    "area_squared_miles": 51700.0
+  },
+  {
+    "state_name": "alaska",
+    "population": 401800,
+    "area_squared_miles": 591000.0
+  },
+  {
+    "state_name": "arizona",
+    "population": 2718000,
+    "area_squared_miles": 114000.0
+  },
+  {
+    "state_name": "arkansas",
+    "population": 2286000,
+    "area_squared_miles": 53200.0
+  },
+  {
+    "state_name": "california",
+    "population": 23670000,
+    "area_squared_miles": 158000.0
+  },
+  {
+    "state_name": "colorado",
+    "population": 2889000,
+    "area_squared_miles": 104000.0
+  },
+  {
+    "state_name": "connecticut",
+    "population": 3107000,
+    "area_squared_miles": 5020.0
+  },
+  {
+    "state_name": "delaware",
+    "population": 594000,
+    "area_squared_miles": 2044.0
+  },
+  {
+    "state_name": "district of columbia",
+    "population": 638000,
+    "area_squared_miles": 1100.0
+  },
+  {
+    "state_name": "florida",
+    "population": 9746000,
+    "area_squared_miles": 68664.0
+  },
+  {
+    "state_name": "georgia",
+    "population": 5463000,
+    "area_squared_miles": 58900.0
+  },
+  {
+    "state_name": "hawaii",
+    "population": 964000,
+    "area_squared_miles": 6471.0
+  },
+  {
+    "state_name": "idaho",
+    "population": 944000,
+    "area_squared_miles": 83000.0
+  },
+  {
+    "state_name": "illinois",
+    "population": 11400000,
+    "area_squared_miles": 56300.0
+  },
+  {
+    "state_name": "indiana",
+    "population": 5490000,
+    "area_squared_miles": 36200.0
+  },
+  {
+    "state_name": "iowa",
+    "population": 2913000,
+    "area_squared_miles": 56300.0
+  },
+  {
+    "state_name": "kansas",
+    "population": 2364000,
+    "area_squared_miles": 82300.0
+  },
+  {
+    "state_name": "kentucky",
+    "population": 2364000,
+    "area_squared_miles": 82300.0
+  },
+  {
+    "state_name": "louisiana",
+    "population": 4206000,
+    "area_squared_miles": 47700.0
+  },
+  {
+    "state_name": "maine",
+    "population": 1125000,
+    "area_squared_miles": 33265.0
+  },
+  {
+    "state_name": "maryland",
+    "population": 4217000,
+    "area_squared_miles": 10460.0
+  },
+  {
+    "state_name": "massachusetts",
+    "population": 5737000,
+    "area_squared_miles": 8284.0
+  },
+  {
+    "state_name": "michigan",
+    "population": 9262000,
+    "area_squared_miles": 58500.0
+  },
+  {
+    "state_name": "minnesota",
+    "population": 4076000,
+    "area_squared_miles": 84400.0
+  },
+  {
+    "state_name": "mississippi",
+    "population": 2520000,
+    "area_squared_miles": 47700.0
+  },
+  {
+    "state_name": "missouri",
+    "population": 4916000,
+    "area_squared_miles": 69700.0
+  },
+  {
+    "state_name": "montana",
+    "population": 786700,
+    "area_squared_miles": 147000.0
+  },
+  {
+    "state_name": "nebraska",
+    "population": 1569000,
+    "area_squared_miles": 77300.0
+  },
+  {
+    "state_name": "nevada",
+    "population": 800500,
+    "area_squared_miles": 110500.0
+  },
+  {
+    "state_name": "new hampshire",
+    "population": 920600,
+    "area_squared_miles": 9279.0
+  },
+  {
+    "state_name": "new jersey",
+    "population": 7365000,
+    "area_squared_miles": 7787.0
+  },
+  {
+    "state_name": "new mexico",
+    "population": 1303000,
+    "area_squared_miles": 121600.0
+  },
+  {
+    "state_name": "new york",
+    "population": 17558000,
+    "area_squared_miles": 49100.0
+  },
+  {
+    "state_name": "north carolina",
+    "population": 5882000,
+    "area_squared_miles": 52670.0
+  },
+  {
+    "state_name": "north dakota",
+    "population": 652700,
+    "area_squared_miles": 70700.0
+  },
+  {
+    "state_name": "ohio",
+    "population": 10800000,
+    "area_squared_miles": 41300.0
+  },
+  {
+    "state_name": "oklahoma",
+    "population": 3025000,
+    "area_squared_miles": 69950.0
+  },
+  {
+    "state_name": "oregon",
+    "population": 2633000,
+    "area_squared_miles": 97073.0
+  },
+  {
+    "state_name": "pennsylvania",
+    "population": 11863000,
+    "area_squared_miles": 45308.0
+  },
+  {
+    "state_name": "rhode island",
+    "population": 947200,
+    "area_squared_miles": 1212.0
+  },
+  {
+    "state_name": "south carolina",
+    "population": 3121800,
+    "area_squared_miles": 31113.0
+  },
+  {
+    "state_name": "south dakota",
+    "population": 690767,
+    "area_squared_miles": 77116.0
+  },
+  {
+    "state_name": "tennessee",
+    "population": 4591000,
+    "area_squared_miles": 42140.0
+  },
+  {
+    "state_name": "texas",
+    "population": 14229000,
+    "area_squared_miles": 266807.0
+  },
+  {
+    "state_name": "utah",
+    "population": 1461000,
+    "area_squared_miles": 84900.0
+  },
+  {
+    "state_name": "vermont",
+    "population": 511500,
+    "area_squared_miles": 9614.0
+  },
+  {
+    "state_name": "virginia",
+    "population": 5346800,
+    "area_squared_miles": 40760.0
+  },
+  {
+    "state_name": "washington",
+    "population": 4113200,
+    "area_squared_miles": 68139.0
+  },
+  {
+    "state_name": "west virginia",
+    "population": 1950000,
+    "area_squared_miles": 24200.0
+  },
+  {
+    "state_name": "wisconsin",
+    "population": 5893000,
+    "area_squared_miles": 56153.0
+  },
+  {
+    "state_name": "wyoming",
+    "population": 469557,
+    "area_squared_miles": 97809.0
+  }
+]

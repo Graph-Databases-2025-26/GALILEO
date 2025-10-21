@@ -1,0 +1,11 @@
+[
+  {
+    "Company": "Nvidia",
+    "HeadquartersState": "California",
+    "Ticker": "NVDA",
+    "CEO": "Jensen Huang",
+    "Founder_is_CEO": true,
+    "FemaleCEO": false,
+    "Number_of_employees": 29600
+  }
+]
