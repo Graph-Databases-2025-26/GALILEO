@@ -1,0 +1,18 @@
+model:
+  provider: openai
+  name: gpt-4o-mini
+  temperature: 0.0
+confidence:
+  tau: 0.7
+  key_fn: "LLM keys" #insert the API keys for LLM
+execution:
+  max_retries: 3
+  backoff_sec: 1.5
+  scan: "auto"
+io:
+  queries_dir: "../data"
+  prompts_dir: "./prompts"
+  outputs_dir: "../../verification-test-tool/tests"
+logging:
+  level: "INFO"
+  json: true
