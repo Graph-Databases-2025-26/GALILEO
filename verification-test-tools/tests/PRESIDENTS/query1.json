@@ -32,30 +32,6 @@
     "party": "Popular Will"
   },
   {
-    "name": "Julián Castro",
-    "party": "Military"
-  },
-  {
-    "name": "Joaquín Crespo",
-    "party": "Military"
-  },
-  {
-    "name": "Juan Bautista Pérez",
-    "party": "Independent"
-  },
-  {
-    "name": "Isaías Medina",
-    "party": "Democratic Party"
-  },
-  {
-    "name": "Rómulo Gallegos",
-    "party": "Democratic Action"
-  },
-  {
-    "name": "Carlos Andrés Pérez",
-    "party": "Democratic Action"
-  },
-  {
     "name": "Andrés Narvarte",
     "party": "Conservative"
   },
@@ -84,6 +60,30 @@
     "party": "National Convergence"
   },
   {
+    "name": "Julián Castro",
+    "party": "Military"
+  },
+  {
+    "name": "Joaquín Crespo",
+    "party": "Military"
+  },
+  {
+    "name": "Juan Bautista Pérez",
+    "party": "Independent"
+  },
+  {
+    "name": "Isaías Medina",
+    "party": "Democratic Party"
+  },
+  {
+    "name": "Rómulo Gallegos",
+    "party": "Democratic Action"
+  },
+  {
+    "name": "Carlos Andrés Pérez",
+    "party": "Democratic Action"
+  },
+  {
     "name": "José Antonio Páez",
     "party": "Military"
   },
@@ -94,22 +94,6 @@
   {
     "name": "Rafael Caldera",
     "party": "Copei"
-  },
-  {
-    "name": "Guillermo Tell Villegas",
-    "party": "Liberal"
-  },
-  {
-    "name": "José Gregorio Valera",
-    "party": "Liberal"
-  },
-  {
-    "name": "Ignacio Andrade",
-    "party": "Liberal"
-  },
-  {
-    "name": "Germán Suárez Flamerich",
-    "party": "Independent"
   },
   {
     "name": "José María Vargas",
@@ -138,6 +122,22 @@
   {
     "name": "Hugo Chávez",
     "party": "United Socialist"
+  },
+  {
+    "name": "Guillermo Tell Villegas",
+    "party": "Liberal"
+  },
+  {
+    "name": "José Gregorio Valera",
+    "party": "Liberal"
+  },
+  {
+    "name": "Ignacio Andrade",
+    "party": "Liberal"
+  },
+  {
+    "name": "Germán Suárez Flamerich",
+    "party": "Independent"
   },
   {
     "name": "José Tadeo Monagas",
