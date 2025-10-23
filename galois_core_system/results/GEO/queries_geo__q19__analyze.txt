@@ -1,3 +1,5 @@
+analyzed_plan
+
 analyzed_plan ┌─────────────────────────────────────┐
 │┌───────────────────────────────────┐│
 ││    Query Profiling Information    ││
@@ -6,7 +8,7 @@ analyzed_plan ┌─────────────────────
 EXPLAIN ANALYZE --query19 SELECT DISTINCT capital FROM target.usa_state;
 ┌────────────────────────────────────────────────┐
 │┌──────────────────────────────────────────────┐│
-││              Total Time: 0.0024s             ││
+││              Total Time: 0.0019s             ││
 │└──────────────────────────────────────────────┘│
 └────────────────────────────────────────────────┘
 ┌───────────────────────────┐
@@ -33,7 +35,7 @@ EXPLAIN ANALYZE --query19 SELECT DISTINCT capital FROM target.usa_state;
 │         Groups: #0        │
 │                           │
 │          51 rows          │
-│          (0.01s)          │
+│          (0.00s)          │
 └─────────────┬─────────────┘
 ┌─────────────┴─────────────┐
 │         PROJECTION        │

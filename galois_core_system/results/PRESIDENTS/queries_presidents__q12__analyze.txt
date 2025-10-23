@@ -1,3 +1,5 @@
+analyzed_plan
+
 analyzed_plan ┌─────────────────────────────────────┐
 │┌───────────────────────────────────┐│
 ││    Query Profiling Information    ││
@@ -6,7 +8,7 @@ analyzed_plan ┌─────────────────────
 EXPLAIN ANALYZE --query12         SELECT p.party, count(p.party) num FROM target.world_presidents p WHERE p.country ='Venezuela' AND start_year > 1800 AND end_year < 1900 group by p.party order by num desc;
 ┌────────────────────────────────────────────────┐
 │┌──────────────────────────────────────────────┐│
-││              Total Time: 0.0023s             ││
+││              Total Time: 0.0024s             ││
 │└──────────────────────────────────────────────┘│
 └────────────────────────────────────────────────┘
 ┌───────────────────────────┐

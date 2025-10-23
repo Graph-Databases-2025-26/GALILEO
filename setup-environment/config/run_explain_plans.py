@@ -1,4 +1,3 @@
-# setup-environment/config/run_explain_plans.py
 """
 Batch-generate EXPLAIN + EXPLAIN ANALYZE outputs for each SQL statement
 in queries_*.sql under setup-environment/data/<dataset>/.
@@ -11,22 +10,20 @@ Usage:
 from pathlib import Path
 import sys
 
-# -------------------------------------------------------------------
-# Make the repo root importable so we can import galois_core_system...
-# -------------------------------------------------------------------
+# Make the repo root importable so we can import galois_core_system
 HERE = Path(__file__).resolve()
 ROOT = HERE.parents[2]  # .../<repo-root>
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-# --- DEBUG: verify which duckdb_explain is being imported ---
+# DEBUG: verify which duckdb_explain is being imported ---
 import galois_core_system.src.explain.duckdb_explain as dx
 print("[debug] using:", dx.__file__)
 print("[debug] has save_both:", hasattr(dx, "save_both"))
 print("[debug] _run_explain_text joins all rows?",
       hasattr(dx, "_run_explain_text") and "fetchall" in dx._run_explain_text.__code__.co_names)
 
-# now safe to import your explain helpers
+# import explain helpers
 from galois_core_system.src.explain.duckdb_explain import save_both
 
 DATA_ROOT = (HERE.parent / "../data").resolve()
@@ -39,7 +36,6 @@ def find_datasets() -> list[Path]:
 
 def load_statements(sql_file: Path) -> list[str]:
     """
-    Naive splitter on ';' — fine for the simple SELECT queries in this project.
     Ensures each statement ends with a semicolon for clearer logs (optional).
     """
     text = sql_file.read_text(encoding="utf-8")
@@ -48,8 +44,8 @@ def load_statements(sql_file: Path) -> list[str]:
 
 
 def process_dataset(dataset_dir: Path) -> int:
-    dataset = dataset_dir.name
-    db_path = dataset_dir / f"{dataset}.duckdb"
+    dataset = dataset_dir.name 
+    db_path = dataset_dir / f"{dataset}.duckdb" 
     if not db_path.exists():
         print(f"  ✗ No DB file: {db_path}  (run duckdb_db_graphdb.py first)")
         return 0

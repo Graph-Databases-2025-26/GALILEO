@@ -42,15 +42,49 @@ def get_explain_text(db_path: Path | str, sql: str) -> Dict[str, str]:
 def get_explain_analyze_text(db_path: Path | str, sql: str) -> Dict[str, str]:
     return {"format": "text_analyze", "plan_text": _run_explain_text(db_path, sql, analyze=True)}
 
+import os
+import json
+from pathlib import Path
+from typing import Dict
+
+
 def save_text_plan(plan: Dict[str, str], out_json: Path | str, out_txt: Path | str | None = None) -> Path:
+    """
+    Write the plan dict to JSON.
+    If out_txt is provided, also write a clean .txt with a header line and
+    a blank line before the box, with normalized Unix newlines.
+    """
+    # 1) JSON
     out_json = Path(out_json)
     out_json.parent.mkdir(parents=True, exist_ok=True)
     out_json.write_text(json.dumps(plan, indent=2), encoding="utf-8")
+
     if out_txt:
         out_txt = Path(out_txt)
         out_txt.parent.mkdir(parents=True, exist_ok=True)
-        out_txt.write_text(plan["plan_text"], encoding="utf-8")
+
+        # 2) Normalize, pick a header, and force a blank line
+        raw = plan.get("plan_text", "")
+
+        # normalize all Windows newlines to \n
+        norm = raw.replace("\r\n", "\n").replace("\r", "\n").lstrip()
+
+        # pick a simple header
+        lower = norm.lower()
+        if "analyze" in lower:
+            header = "analyzed_plan"
+        else:
+            header = "physical_plan"
+
+        # header + blank line + plan
+        content = header + "\n\n" + norm
+
+        # enforce unix newlines in the written file (so VS Code doesn't merge lines)
+        with open(out_txt, "w", encoding="utf-8", newline="\n") as f:
+            f.write(content)
+
     return out_json
+
 
 # -------- Compatibility aliases (tests/teammates may import these) --------
 

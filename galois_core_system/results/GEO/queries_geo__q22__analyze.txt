@@ -1,3 +1,5 @@
+analyzed_plan
+
 analyzed_plan ┌─────────────────────────────────────┐
 │┌───────────────────────────────────┐│
 ││    Query Profiling Information    ││
@@ -6,7 +8,7 @@ analyzed_plan ┌─────────────────────
 EXPLAIN ANALYZE --query22 SELECT t2.capital FROM target.usa_city AS t1 JOIN target.usa_state AS t2 ON t1.state_name = t2.state_name WHERE t1.city_name = 'tempe';
 ┌────────────────────────────────────────────────┐
 │┌──────────────────────────────────────────────┐│
-││              Total Time: 0.0016s             ││
+││              Total Time: 0.0021s             ││
 │└──────────────────────────────────────────────┘│
 └────────────────────────────────────────────────┘
 ┌───────────────────────────┐

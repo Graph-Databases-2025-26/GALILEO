@@ -1,3 +1,5 @@
+analyzed_plan
+
 analyzed_plan ┌─────────────────────────────────────┐
 │┌───────────────────────────────────┐│
 ││    Query Profiling Information    ││
@@ -6,7 +8,7 @@ analyzed_plan ┌─────────────────────
 EXPLAIN ANALYZE --query9 SELECT m.director, (m.startyear - m.birthyear) as director_age FROM target.movie m WHERE m.startyear is not null AND m.birthyear is not null order by director_age desc limit 1;
 ┌────────────────────────────────────────────────┐
 │┌──────────────────────────────────────────────┐│
-││              Total Time: 0.0068s             ││
+││              Total Time: 0.0063s             ││
 │└──────────────────────────────────────────────┘│
 └────────────────────────────────────────────────┘
 ┌───────────────────────────┐

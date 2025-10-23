@@ -1,3 +1,5 @@
+analyzed_plan
+
 analyzed_plan ┌─────────────────────────────────────┐
 │┌───────────────────────────────────┐│
 ││    Query Profiling Information    ││
@@ -6,7 +8,7 @@ analyzed_plan ┌─────────────────────
 EXPLAIN ANALYZE --query3 SELECT m.originaltitle, m.startyear FROM target.movie m WHERE m.director='Richard Thorpe' AND m.startyear > 1950;
 ┌────────────────────────────────────────────────┐
 │┌──────────────────────────────────────────────┐│
-││              Total Time: 0.0088s             ││
+││              Total Time: 0.0110s             ││
 │└──────────────────────────────────────────────┘│
 └────────────────────────────────────────────────┘
 ┌───────────────────────────┐
@@ -42,5 +44,5 @@ EXPLAIN ANALYZE --query3 SELECT m.originaltitle, m.startyear FROM target.movie m
 │       startyear>1950      │
 │                           │
 │          25 rows          │
-│          (0.03s)          │
+│          (0.05s)          │
 └───────────────────────────┘

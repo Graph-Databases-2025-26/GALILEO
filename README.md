@@ -189,3 +189,50 @@ Following the database setup, the `run_queries_to_json.py` script manages the au
 * **Output:** It saves the result of each executed SQL query into a dedicated **JSON** file.
 * **Save Path:** The JSON files are deposited in the path: `../../verification-test-tools/tests/<dataset_name>/`.
 * **Function:** This process is crucial for generating the reference results needed for testing and data verification.
+
+---
+
+### 4. 🧩 Logical and Physical Plan Extraction (EXPLAIN & EXPLAIN ANALYZE)
+
+After generating the query results, the next step is to automatically extract both the **logical** and **physical** query plans for all datasets.
+
+This process provides insights into how **DuckDB** internally executes each SQL query, forming the basis for the optimization analysis in later phases.
+
+#### Scripts Involved:
+* `setup-environment/config/run_explain_plans.py`
+* `galois_core_system/src/explain/duckdb_explain.py`
+
+---
+
+#### **Operational Details (`run_explain_plans.py`):**
+
+1. **Dataset Iteration:**  
+   Iterates through each dataset folder inside `setup-environment/data/` (e.g., `world`, `geo`, `flight-2`, `movies`, etc.).
+
+2. **Query Extraction:**  
+   Automatically reads all `.sql` files (e.g., `queries_world.sql`), splitting them into individual queries.
+
+3. **Plan Generation:**  
+   For each query, connects to the corresponding `.duckdb` database and executes:
+   ```sql
+   EXPLAIN <query>;
+   EXPLAIN ANALYZE <query>;
+* **`EXPLAIN`** → Produces the **logical plan** showing the operator tree  
+  (e.g., `Projection`, `Filter`, `TableScan`, `Join`, `OrderBy`, etc.)
+
+* **`EXPLAIN ANALYZE`** → Executes the query and reports **profiling data** such as  
+  row counts, execution time, and cost estimation per operator.
+
+4. **Saving the Output:**  
+   The function `save_both()` (in `duckdb_explain.py`) automatically stores both outputs in:
+   `galois_core_system/results/<dataset>/`
+   
+   Producing four files for each query:
+   `<query_name>__explain.txt`
+   `<query_name>__explain.json`
+   `<query_name>__analyze.txt`
+   `<query_name>__analyze.json`
+
+5. **Text & JSON Representation:**
+   **.txt** for human-readable format with ASCII boxes (logical/physical plan)
+   **.jso**  for machine-readable structured format (escaped Unicode characters)

@@ -1,3 +1,5 @@
+analyzed_plan
+
 analyzed_plan ┌─────────────────────────────────────┐
 │┌───────────────────────────────────┐│
 ││    Query Profiling Information    ││
@@ -6,7 +8,7 @@ analyzed_plan ┌─────────────────────
 EXPLAIN ANALYZE --query1 SELECT DISTINCT p.name, p.party FROM target.world_presidents p WHERE p.country='Venezuela';
 ┌────────────────────────────────────────────────┐
 │┌──────────────────────────────────────────────┐│
-││              Total Time: 0.0019s             ││
+││              Total Time: 0.0033s             ││
 │└──────────────────────────────────────────────┘│
 └────────────────────────────────────────────────┘
 ┌───────────────────────────┐
@@ -26,7 +28,7 @@ EXPLAIN ANALYZE --query1 SELECT DISTINCT p.name, p.party FROM target.world_presi
 │             #1            │
 │                           │
 │          52 rows          │
-│          (0.00s)          │
+│          (0.01s)          │
 └─────────────┬─────────────┘
 ┌─────────────┴─────────────┐
 │         PROJECTION        │

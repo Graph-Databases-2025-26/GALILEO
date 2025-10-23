@@ -1,3 +1,5 @@
+physical_plan
+
 physical_plan ┌───────────────────────────┐
 │         SEQ_SCAN          │
 │    ────────────────────   │
@@ -10,5 +12,5 @@ physical_plan ┌─────────────────────
 │          Filters:         │
 │director='Steven Spielberg'│
 │                           │
-│          ~5 rows          │
+│          ~4 rows          │
 └───────────────────────────┘

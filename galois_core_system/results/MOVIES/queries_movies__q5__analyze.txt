@@ -1,3 +1,5 @@
+analyzed_plan
+
 analyzed_plan ┌─────────────────────────────────────┐
 │┌───────────────────────────────────┐│
 ││    Query Profiling Information    ││
@@ -6,7 +8,7 @@ analyzed_plan ┌─────────────────────
 EXPLAIN ANALYZE --query5 SELECT m.originaltitle, m.startyear, m.genres, m.birthyear FROM target.movie m WHERE m.director='Steven Spielberg' AND m.startyear > 2000;
 ┌────────────────────────────────────────────────┐
 │┌──────────────────────────────────────────────┐│
-││              Total Time: 0.0082s             ││
+││              Total Time: 0.0104s             ││
 │└──────────────────────────────────────────────┘│
 └────────────────────────────────────────────────┘
 ┌───────────────────────────┐
@@ -46,5 +48,5 @@ EXPLAIN ANALYZE --query5 SELECT m.originaltitle, m.startyear, m.genres, m.birthy
 │       startyear>2000      │
 │                           │
 │          17 rows          │
-│          (0.03s)          │
+│          (0.04s)          │
 └───────────────────────────┘

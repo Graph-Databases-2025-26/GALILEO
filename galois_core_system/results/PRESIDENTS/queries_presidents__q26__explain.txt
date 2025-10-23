@@ -1,3 +1,5 @@
+physical_plan
+
 physical_plan ┌───────────────────────────┐
 │          ORDER_BY         │
 │    ────────────────────   │

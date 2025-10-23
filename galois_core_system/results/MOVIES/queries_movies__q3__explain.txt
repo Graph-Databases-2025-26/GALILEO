@@ -1,10 +1,12 @@
+physical_plan
+
 physical_plan ┌───────────────────────────┐
 │         PROJECTION        │
 │    ────────────────────   │
 │       originaltitle       │
 │         startyear         │
 │                           │
-│          ~5 rows          │
+│          ~4 rows          │
 └─────────────┬─────────────┘
 ┌─────────────┴─────────────┐
 │         SEQ_SCAN          │
@@ -20,5 +22,5 @@ physical_plan ┌─────────────────────
 │ director='Richard Thorpe' │
 │       startyear>1950      │
 │                           │
-│          ~5 rows          │
+│          ~4 rows          │
 └───────────────────────────┘

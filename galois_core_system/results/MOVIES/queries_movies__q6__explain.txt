@@ -1,3 +1,5 @@
+physical_plan
+
 physical_plan ┌───────────────────────────┐
 │         PROJECTION        │
 │    ────────────────────   │
@@ -8,7 +10,7 @@ physical_plan ┌─────────────────────
 │         deathyear         │
 │       runtimeminutes      │
 │                           │
-│          ~5 rows          │
+│          ~4 rows          │
 └─────────────┬─────────────┘
 ┌─────────────┴─────────────┐
 │         SEQ_SCAN          │
@@ -29,5 +31,5 @@ physical_plan ┌─────────────────────
 │     startyear>1990 AND    │
 │       startyear<2000      │
 │                           │
-│          ~5 rows          │
+│          ~4 rows          │
 └───────────────────────────┘
