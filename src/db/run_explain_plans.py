@@ -16,18 +16,12 @@ ROOT = HERE.parents[2]  # .../<repo-root>
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-# DEBUG: verify which duckdb_explain is being imported ---
-import galois_core_system.src.explain.duckdb_explain as dx
-print("[debug] using:", dx.__file__)
-print("[debug] has save_both:", hasattr(dx, "save_both"))
-print("[debug] _run_explain_text joins all rows?",
-      hasattr(dx, "_run_explain_text") and "fetchall" in dx._run_explain_text.__code__.co_names)
+from . import duckdb_explain as dx
+from .duckdb_explain import save_both
 
-# import explain helpers
-from galois_core_system.src.explain.duckdb_explain import save_both
 
-DATA_ROOT = (HERE.parent / "../data").resolve()
-RESULTS_ROOT = (ROOT / "galois_core_system" / "results").resolve()
+DATA_ROOT =  ROOT / "data"
+RESULTS_ROOT = ROOT / "results" 
 
 
 def find_datasets() -> list[Path]:
@@ -51,7 +45,6 @@ def process_dataset(dataset_dir: Path) -> int:
         return 0
 
     out_dir = RESULTS_ROOT / dataset
-    out_dir.mkdir(parents=True, exist_ok=True)
 
     sql_files = sorted(dataset_dir.glob("queries_*.sql"))
     if not sql_files:

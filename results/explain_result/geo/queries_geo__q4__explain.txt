@@ -1,0 +1,13 @@
+│         SEQ_SCAN          │
+│    ────────────────────   │
+│      Table: usa_city      │
+│   Type: Sequential Scan   │
+│                           │
+│        Projections:       │
+│         population        │
+│                           │
+│          Filters:         │
+│     city_name='tempe'     │
+│                           │
+│           ~1 row          │
+└───────────────────────────┘

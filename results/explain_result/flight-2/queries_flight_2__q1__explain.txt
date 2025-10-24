@@ -1,0 +1,15 @@
+│         SEQ_SCAN          │
+│    ────────────────────   │
+│           Table:          │
+│   usa_airline_companies   │
+│                           │
+│   Type: Sequential Scan   │
+│                           │
+│        Projections:       │
+│         call_sign         │
+│                           │
+│          Filters:         │
+│ airline='jetblue airways' │
+│                           │
+│           ~1 row          │
+└───────────────────────────┘

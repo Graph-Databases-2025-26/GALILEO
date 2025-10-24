@@ -1,0 +1,15 @@
+│         SEQ_SCAN          │
+│    ────────────────────   │
+│    Table: fortune_2024    │
+│   Type: Sequential Scan   │
+│                           │
+│        Projections:       │
+│          Company          │
+│            CEO            │
+│                           │
+│          Filters:         │
+│     HeadquartersState=    │
+│         'Oklahoma'        │
+│                           │
+│          ~26 rows         │
+└───────────────────────────┘

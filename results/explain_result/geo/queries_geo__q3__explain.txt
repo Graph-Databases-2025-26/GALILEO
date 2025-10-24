@@ -1,0 +1,17 @@
+│    UNGROUPED_AGGREGATE    │
+│    ────────────────────   │
+│        Aggregates:        │
+│        count_star()       │
+└─────────────┬─────────────┘
+┌─────────────┴─────────────┐
+│         SEQ_SCAN          │
+│    ────────────────────   │
+│      Table: usa_state     │
+│   Type: Sequential Scan   │
+│    Projections: capital   │
+│                           │
+│          Filters:         │
+│ state_name='rhode island' │
+│                           │
+│           ~1 row          │
+└───────────────────────────┘

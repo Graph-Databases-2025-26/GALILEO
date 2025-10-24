@@ -1,0 +1,14 @@
+│         SEQ_SCAN          │
+│    ────────────────────   │
+│      Table: usa_city      │
+│   Type: Sequential Scan   │
+│                           │
+│        Projections:       │
+│         population        │
+│                           │
+│          Filters:         │
+│    city_name='seattle'    │
+│  state_name='washington'  │
+│                           │
+│           ~1 row          │
+└───────────────────────────┘

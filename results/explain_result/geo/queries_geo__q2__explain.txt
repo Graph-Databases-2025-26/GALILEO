@@ -1,0 +1,13 @@
+│         SEQ_SCAN          │
+│    ────────────────────   │
+│      Table: usa_city      │
+│   Type: Sequential Scan   │
+│                           │
+│        Projections:       │
+│         city_name         │
+│                           │
+│          Filters:         │
+│     population>150000     │
+│                           │
+│          ~77 rows         │
+└───────────────────────────┘

@@ -1,0 +1,13 @@
+│         SEQ_SCAN          │
+│    ────────────────────   │
+│           Table:          │
+│   usa_airline_companies   │
+│                           │
+│   Type: Sequential Scan   │
+│    Projections: airline   │
+│                           │
+│          Filters:         │
+│      call_sign='ual'      │
+│                           │
+│           ~1 row          │
+└───────────────────────────┘

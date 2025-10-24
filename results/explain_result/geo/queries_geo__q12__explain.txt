@@ -1,0 +1,14 @@
+│         SEQ_SCAN          │
+│    ────────────────────   │
+│      Table: usa_city      │
+│   Type: Sequential Scan   │
+│                           │
+│        Projections:       │
+│         state_name        │
+│                           │
+│          Filters:         │
+│  city_name='springfield'  │
+│      population>62000     │
+│                           │
+│           ~1 row          │
+└───────────────────────────┘

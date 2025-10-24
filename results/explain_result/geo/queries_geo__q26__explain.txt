@@ -1,0 +1,15 @@
+│         SEQ_SCAN          │
+│    ────────────────────   │
+│      Table: usa_state     │
+│   Type: Sequential Scan   │
+│                           │
+│        Projections:       │
+│         state_name        │
+│         population        │
+│     area_squared_miles    │
+│                           │
+│          Filters:         │
+│    capital='frankfort'    │
+│                           │
+│          ~2 rows          │
+└───────────────────────────┘

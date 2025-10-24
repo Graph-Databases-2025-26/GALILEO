@@ -1,0 +1,13 @@
+│         SEQ_SCAN          │
+│    ────────────────────   │
+│    Table: fortune_2024    │
+│   Type: Sequential Scan   │
+│    Projections: Company   │
+│                           │
+│          Filters:         │
+│ Best_Companies_to_Work_For│
+│           =true           │
+│    Industry='Airlines'    │
+│                           │
+│          ~11 rows         │
+└───────────────────────────┘

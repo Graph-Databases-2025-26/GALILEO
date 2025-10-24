@@ -1,0 +1,27 @@
+│         PROJECTION        │
+│    ────────────────────   │
+│         state_name        │
+│          capital          │
+│          density          │
+│         population        │
+│                           │
+│          ~10 rows         │
+└─────────────┬─────────────┘
+┌─────────────┴─────────────┐
+│         SEQ_SCAN          │
+│    ────────────────────   │
+│      Table: usa_state     │
+│   Type: Sequential Scan   │
+│                           │
+│        Projections:       │
+│         population        │
+│          density          │
+│         state_name        │
+│          capital          │
+│                           │
+│          Filters:         │
+│     population>5000000    │
+│ area_squared_miles<50000.0│
+│                           │
+│          ~10 rows         │
+└───────────────────────────┘

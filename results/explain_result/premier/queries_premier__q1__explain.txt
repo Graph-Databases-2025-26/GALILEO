@@ -1,0 +1,16 @@
+│         SEQ_SCAN          │
+│    ────────────────────   │
+│           Table:          │
+│premier_league_2024_2025_ar│
+│       senal_matches       │
+│                           │
+│   Type: Sequential Scan   │
+│                           │
+│        Projections:       │
+│       opponent_team       │
+│      match_date_year      │
+│      match_date_month     │
+│       match_date_day      │
+│                           │
+│          ~6 rows          │
+└───────────────────────────┘

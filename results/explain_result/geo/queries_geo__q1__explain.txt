@@ -1,0 +1,13 @@
+│         SEQ_SCAN          │
+│    ────────────────────   │
+│      Table: usa_state     │
+│   Type: Sequential Scan   │
+│                           │
+│        Projections:       │
+│     area_squared_miles    │
+│                           │
+│          Filters:         │
+│  state_name='new mexico'  │
+│                           │
+│           ~1 row          │
+└───────────────────────────┘

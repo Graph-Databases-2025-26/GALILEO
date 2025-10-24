@@ -1,0 +1,19 @@
+│         SEQ_SCAN          │
+│    ────────────────────   │
+│           Table:          │
+│      world_presidents     │
+│                           │
+│   Type: Sequential Scan   │
+│                           │
+│        Projections:       │
+│            name           │
+│         start_year        │
+│          end_year         │
+│      cardinal_number      │
+│           party           │
+│                           │
+│          Filters:         │
+│  country='United States'  │
+│                           │
+│          ~56 rows         │
+└───────────────────────────┘

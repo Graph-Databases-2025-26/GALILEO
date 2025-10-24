@@ -1,0 +1,30 @@
+│    UNGROUPED_AGGREGATE    │
+│    ────────────────────   │
+│        Aggregates:        │
+│          avg(#0)          │
+│    sum_no_overflow(#1)    │
+└─────────────┬─────────────┘
+┌─────────────┴─────────────┐
+│         PROJECTION        │
+│    ────────────────────   │
+│            gnp            │
+│         population        │
+│                           │
+│          ~8 rows          │
+└─────────────┬─────────────┘
+┌─────────────┴─────────────┐
+│         SEQ_SCAN          │
+│    ────────────────────   │
+│       Table: country      │
+│   Type: Sequential Scan   │
+│                           │
+│        Projections:       │
+│            gnp            │
+│         population        │
+│                           │
+│          Filters:         │
+│    government_form='US    │
+│         Territory'        │
+│                           │
+│          ~8 rows          │
+└───────────────────────────┘

@@ -50,40 +50,54 @@ from typing import Dict
 
 def save_text_plan(plan: Dict[str, str], out_json: Path | str, out_txt: Path | str | None = None) -> Path:
     """
-    Write the plan dict to JSON.
-    If out_txt is provided, also write a clean .txt with a header line and
-    a blank line before the box, with normalized Unix newlines.
+    Write the plan dict to JSON and TXT.
+    - JSON → results/explain_result_json/<dataset>/
+    - TXT  → results/explain_result/<dataset>/
+    - TXT cleans out header lines like 'analyzed_plan' and 'physical_plan'
+      and any inline 'EXPLAIN ...' line, keeping only the box.
     """
-    # 1) JSON
     out_json = Path(out_json)
-    out_json.parent.mkdir(parents=True, exist_ok=True)
-    out_json.write_text(json.dumps(plan, indent=2), encoding="utf-8")
+    out_txt = Path(out_txt) if out_txt else None
 
+    # normalize + clean headers
+    raw = plan.get("plan_text", "")
+    norm = raw.replace("\r\n", "\n").replace("\r", "\n").lstrip()
+    clean_lines = []
+    for line in norm.splitlines():
+        ls = line.strip().lower()
+        if ls.startswith("analyzed_plan"):
+            continue
+        if ls.startswith("physical_plan"):
+            continue
+        if ls.startswith("explain analyze") or ls.startswith("explain "):
+            continue
+        clean_lines.append(line)
+    clean_text = "\n".join(clean_lines).strip() + "\n"
+
+    # derive dataset name from the original out_json path (without creating it)
+    dataset = out_json.parent.name  # e.g. 'flight-2'
+
+    # JSON → results/explain_result_json/<dataset>/
+    json_dir = Path("results") / "explain_result_json" / dataset
+    json_dir.mkdir(parents=True, exist_ok=True)
+    json_path = json_dir / out_json.name
+    json_path.write_text(json.dumps(plan, indent=2), encoding="utf-8")
+
+    # TXT → results/explain_result/<dataset>/
     if out_txt:
-        out_txt = Path(out_txt)
-        out_txt.parent.mkdir(parents=True, exist_ok=True)
+        txt_dir = Path("results") / "explain_result" / dataset
+        txt_dir.mkdir(parents=True, exist_ok=True)
+        txt_path = txt_dir / out_txt.name
+        with open(txt_path, "w", encoding="utf-8", newline="\n") as f:
+            f.write(clean_text)
+        print(f"    ✓ Saved TXT plan → {txt_path}")
+    else:
+        txt_path = None
 
-        # 2) Normalize, pick a header, and force a blank line
-        raw = plan.get("plan_text", "")
+    print(f"    ✓ Saved JSON plan → {json_path}")
+    return json_path
 
-        # normalize all Windows newlines to \n
-        norm = raw.replace("\r\n", "\n").replace("\r", "\n").lstrip()
 
-        # pick a simple header
-        lower = norm.lower()
-        if "analyze" in lower:
-            header = "analyzed_plan"
-        else:
-            header = "physical_plan"
-
-        # header + blank line + plan
-        content = header + "\n\n" + norm
-
-        # enforce unix newlines in the written file (so VS Code doesn't merge lines)
-        with open(out_txt, "w", encoding="utf-8", newline="\n") as f:
-            f.write(content)
-
-    return out_json
 
 
 # -------- Compatibility aliases (tests/teammates may import these) --------
