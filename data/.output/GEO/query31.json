@@ -1,0 +1,42 @@
+[
+  {
+    "state_name": "oklahoma",
+    "capital": "oklahoma city",
+    "population": 3025000
+  },
+  {
+    "state_name": "alabama",
+    "capital": "montgomery",
+    "population": 3894000
+  },
+  {
+    "state_name": "minnesota",
+    "capital": "st. paul",
+    "population": 4076000
+  },
+  {
+    "state_name": "washington",
+    "capital": "olympia",
+    "population": 4113200
+  },
+  {
+    "state_name": "missouri",
+    "capital": "jefferson city",
+    "population": 4916000
+  },
+  {
+    "state_name": "georgia",
+    "capital": "atlanta",
+    "population": 5463000
+  },
+  {
+    "state_name": "north carolina",
+    "capital": "raleigh",
+    "population": 5882000
+  },
+  {
+    "state_name": "wisconsin",
+    "capital": "madison",
+    "population": 5893000
+  }
+]

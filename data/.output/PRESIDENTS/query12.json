@@ -1,0 +1,22 @@
+[
+  {
+    "party": "Liberal",
+    "num": 15
+  },
+  {
+    "party": "Conservative",
+    "num": 12
+  },
+  {
+    "party": "Military",
+    "num": 5
+  },
+  {
+    "party": "Independent",
+    "num": 3
+  },
+  {
+    "party": "Liberal Party",
+    "num": 1
+  }
+]

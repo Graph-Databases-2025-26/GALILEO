@@ -1,0 +1,457 @@
+[
+  {
+    "name": "José Antonio Páez",
+    "start_year": 1830,
+    "end_year": 1835,
+    "cardinal_number": "1st",
+    "party": "Conservative"
+  },
+  {
+    "name": "Andrés Narvarte",
+    "start_year": 1835,
+    "end_year": 1835,
+    "cardinal_number": "2nd",
+    "party": "Conservative"
+  },
+  {
+    "name": "José María Vargas",
+    "start_year": 1835,
+    "end_year": 1835,
+    "cardinal_number": "3rd",
+    "party": "Conservative"
+  },
+  {
+    "name": "José María Carreño",
+    "start_year": 1835,
+    "end_year": 1835,
+    "cardinal_number": "4th",
+    "party": "Conservative"
+  },
+  {
+    "name": "José María Vargas",
+    "start_year": 1835,
+    "end_year": 1836,
+    "cardinal_number": "5th",
+    "party": "Conservative"
+  },
+  {
+    "name": "Andrés Narvarte",
+    "start_year": 1836,
+    "end_year": 1837,
+    "cardinal_number": "6th",
+    "party": "Conservative"
+  },
+  {
+    "name": "José María Carreño",
+    "start_year": 1837,
+    "end_year": 1837,
+    "cardinal_number": "7th",
+    "party": "Conservative"
+  },
+  {
+    "name": "Carlos Soublette",
+    "start_year": 1837,
+    "end_year": 1839,
+    "cardinal_number": "8th",
+    "party": "Conservative"
+  },
+  {
+    "name": "José Antonio Páez",
+    "start_year": 1839,
+    "end_year": 1843,
+    "cardinal_number": "9th",
+    "party": "Conservative"
+  },
+  {
+    "name": "Carlos Soublette",
+    "start_year": 1843,
+    "end_year": 1847,
+    "cardinal_number": "10th",
+    "party": "Conservative"
+  },
+  {
+    "name": "José Tadeo Monagas",
+    "start_year": 1847,
+    "end_year": 1851,
+    "cardinal_number": "11th",
+    "party": "Conservative"
+  },
+  {
+    "name": "José Gregorio Monagas",
+    "start_year": 1851,
+    "end_year": 1855,
+    "cardinal_number": "12th",
+    "party": "Liberal"
+  },
+  {
+    "name": "José Tadeo Monagas",
+    "start_year": 1855,
+    "end_year": 1858,
+    "cardinal_number": "13th",
+    "party": "Liberal"
+  },
+  {
+    "name": "Pedro Gual Escandón",
+    "start_year": 1858,
+    "end_year": 1858,
+    "cardinal_number": "14th",
+    "party": "Liberal"
+  },
+  {
+    "name": "Julián Castro",
+    "start_year": 1858,
+    "end_year": 1859,
+    "cardinal_number": "15th",
+    "party": "Military"
+  },
+  {
+    "name": "Pedro Gual Escandón",
+    "start_year": 1859,
+    "end_year": 1859,
+    "cardinal_number": "16th",
+    "party": "Independent"
+  },
+  {
+    "name": "Manuel Felipe de Tovar",
+    "start_year": 1859,
+    "end_year": 1861,
+    "cardinal_number": "17th",
+    "party": "Liberal"
+  },
+  {
+    "name": "Pedro Gual Escandón",
+    "start_year": 1861,
+    "end_year": 1861,
+    "cardinal_number": "18th",
+    "party": "Liberal"
+  },
+  {
+    "name": "José Antonio Páez",
+    "start_year": 1861,
+    "end_year": 1863,
+    "cardinal_number": "19th",
+    "party": "Military"
+  },
+  {
+    "name": "Juan Crisóstomo Falcón",
+    "start_year": 1863,
+    "end_year": 1868,
+    "cardinal_number": "20th",
+    "party": "Military"
+  },
+  {
+    "name": "Manuel Ezequiel Bruzual",
+    "start_year": 1868,
+    "end_year": 1868,
+    "cardinal_number": "21th",
+    "party": "Independent"
+  },
+  {
+    "name": "Guillermo Tell Villegas",
+    "start_year": 1868,
+    "end_year": 1869,
+    "cardinal_number": "22th",
+    "party": "Liberal"
+  },
+  {
+    "name": "José Ruperto Monagas",
+    "start_year": 1869,
+    "end_year": 1870,
+    "cardinal_number": "23th",
+    "party": "Military"
+  },
+  {
+    "name": "Guillermo Tell Villegas",
+    "start_year": 1870,
+    "end_year": 1870,
+    "cardinal_number": "24th",
+    "party": "Liberal Party"
+  },
+  {
+    "name": "Antonio Guzmán Blanco",
+    "start_year": 1870,
+    "end_year": 1877,
+    "cardinal_number": "25th",
+    "party": "Liberal"
+  },
+  {
+    "name": "Francisco Linares",
+    "start_year": 1877,
+    "end_year": 1878,
+    "cardinal_number": "26th",
+    "party": "Liberal"
+  },
+  {
+    "name": "José Gregorio Valera",
+    "start_year": 1878,
+    "end_year": 1878,
+    "cardinal_number": "27th",
+    "party": "Liberal"
+  },
+  {
+    "name": "Antonio Guzmán Blanco",
+    "start_year": 1879,
+    "end_year": 1884,
+    "cardinal_number": "28th",
+    "party": "Liberal"
+  },
+  {
+    "name": "Joaquín Crespo",
+    "start_year": 1884,
+    "end_year": 1886,
+    "cardinal_number": "29th",
+    "party": "Liberal"
+  },
+  {
+    "name": "Antonio Guzmán Blanco",
+    "start_year": 1886,
+    "end_year": 1887,
+    "cardinal_number": "30th",
+    "party": "Liberal"
+  },
+  {
+    "name": "Hermógenes López",
+    "start_year": 1887,
+    "end_year": 1888,
+    "cardinal_number": "31th",
+    "party": "Independent"
+  },
+  {
+    "name": "Juan Pablo Rojas Paúl",
+    "start_year": 1888,
+    "end_year": 1890,
+    "cardinal_number": "32th",
+    "party": "Liberal"
+  },
+  {
+    "name": "Raimundo Andueza",
+    "start_year": 1890,
+    "end_year": 1892,
+    "cardinal_number": "33th",
+    "party": "Conservative"
+  },
+  {
+    "name": "Guillermo Tell Villegas",
+    "start_year": 1892,
+    "end_year": 1892,
+    "cardinal_number": "34th",
+    "party": "Liberal"
+  },
+  {
+    "name": "Joaquín Crespo",
+    "start_year": 1892,
+    "end_year": 1898,
+    "cardinal_number": "35th",
+    "party": "Military"
+  },
+  {
+    "name": "Ignacio Andrade",
+    "start_year": 1898,
+    "end_year": 1899,
+    "cardinal_number": "36th",
+    "party": "Liberal"
+  },
+  {
+    "name": "Cipriano Castro",
+    "start_year": 1899,
+    "end_year": 1908,
+    "cardinal_number": "37th",
+    "party": "Military"
+  },
+  {
+    "name": "Juan Vicente Gómez",
+    "start_year": 1908,
+    "end_year": 1913,
+    "cardinal_number": "38th",
+    "party": "Military"
+  },
+  {
+    "name": "José Gil",
+    "start_year": 1913,
+    "end_year": 1914,
+    "cardinal_number": "39th",
+    "party": "Independent"
+  },
+  {
+    "name": "Victorino Márquez",
+    "start_year": 1914,
+    "end_year": 1922,
+    "cardinal_number": "40th",
+    "party": "Independent"
+  },
+  {
+    "name": "Juan Vicente Gómez",
+    "start_year": 1922,
+    "end_year": 1929,
+    "cardinal_number": "41th",
+    "party": "Military"
+  },
+  {
+    "name": "Juan Bautista Pérez",
+    "start_year": 1929,
+    "end_year": 1931,
+    "cardinal_number": "42th",
+    "party": "Independent"
+  },
+  {
+    "name": "Juan Vicente Gómez",
+    "start_year": 1931,
+    "end_year": 1935,
+    "cardinal_number": "43th",
+    "party": "Military"
+  },
+  {
+    "name": "Eleazar López",
+    "start_year": 1935,
+    "end_year": 1941,
+    "cardinal_number": "44th",
+    "party": "Independent"
+  },
+  {
+    "name": "Isaías Medina",
+    "start_year": 1941,
+    "end_year": 1945,
+    "cardinal_number": "45th",
+    "party": "Democratic Party"
+  },
+  {
+    "name": "Rómulo Betancourt",
+    "start_year": 1945,
+    "end_year": 1948,
+    "cardinal_number": "46th",
+    "party": "Democratic Action"
+  },
+  {
+    "name": "Rómulo Gallegos",
+    "start_year": 1948,
+    "end_year": 1948,
+    "cardinal_number": "47th",
+    "party": "Democratic Action"
+  },
+  {
+    "name": "Carlos Delgado Chalbaud",
+    "start_year": 1948,
+    "end_year": 1950,
+    "cardinal_number": "48th",
+    "party": "Military"
+  },
+  {
+    "name": "Germán Suárez Flamerich",
+    "start_year": 1950,
+    "end_year": 1952,
+    "cardinal_number": "49th",
+    "party": "Independent"
+  },
+  {
+    "name": "Marcos Pérez Jiménez",
+    "start_year": 1952,
+    "end_year": 1958,
+    "cardinal_number": "50th",
+    "party": "Military"
+  },
+  {
+    "name": "Wolfgang Larrazábal",
+    "start_year": 1958,
+    "end_year": 1958,
+    "cardinal_number": "51th",
+    "party": "Independent"
+  },
+  {
+    "name": "Edgar Sanabria",
+    "start_year": 1958,
+    "end_year": 1959,
+    "cardinal_number": "52th",
+    "party": "Independent"
+  },
+  {
+    "name": "Rómulo Betancourt",
+    "start_year": 1959,
+    "end_year": 1964,
+    "cardinal_number": "53th",
+    "party": "Democratic Action"
+  },
+  {
+    "name": "Raúl Leoni",
+    "start_year": 1964,
+    "end_year": 1969,
+    "cardinal_number": "54th",
+    "party": "Democratic Action"
+  },
+  {
+    "name": "Rafael Caldera",
+    "start_year": 1969,
+    "end_year": 1974,
+    "cardinal_number": "55th",
+    "party": "Copei"
+  },
+  {
+    "name": "Carlos Andrés Pérez",
+    "start_year": 1974,
+    "end_year": 1979,
+    "cardinal_number": "56th",
+    "party": "Democratic Action"
+  },
+  {
+    "name": "Luis Herrera Campins",
+    "start_year": 1979,
+    "end_year": 1984,
+    "cardinal_number": "57th",
+    "party": "Copei"
+  },
+  {
+    "name": "Jaime Lusinchi",
+    "start_year": 1984,
+    "end_year": 1989,
+    "cardinal_number": "58th",
+    "party": "Democratic Action"
+  },
+  {
+    "name": "Carlos Andrés Pérez",
+    "start_year": 1989,
+    "end_year": 1993,
+    "cardinal_number": "59th",
+    "party": "Democratic Action"
+  },
+  {
+    "name": "Octavio Lepage",
+    "start_year": 1993,
+    "end_year": 1993,
+    "cardinal_number": "60th",
+    "party": "Democratic Action"
+  },
+  {
+    "name": "Ramón J. Velásquez",
+    "start_year": 1993,
+    "end_year": 1994,
+    "cardinal_number": "61th",
+    "party": "Democratic Action"
+  },
+  {
+    "name": "Rafael Caldera",
+    "start_year": 1994,
+    "end_year": 1999,
+    "cardinal_number": "62th",
+    "party": "National Convergence"
+  },
+  {
+    "name": "Hugo Chávez",
+    "start_year": 1999,
+    "end_year": 2013,
+    "cardinal_number": "63th",
+    "party": "United Socialist"
+  },
+  {
+    "name": "Nicolás Maduro",
+    "start_year": 2013,
+    "end_year": 2024,
+    "cardinal_number": "64th",
+    "party": "United Socialist"
+  },
+  {
+    "name": "Juan Guaidó",
+    "start_year": 2019,
+    "end_year": 2023,
+    "cardinal_number": "65th",
+    "party": "Popular Will"
+  }
+]
