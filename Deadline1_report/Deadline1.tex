@@ -14,7 +14,7 @@
 \usepackage[margin=2.5cm]{geometry}
 
 % Document Informations
-\title{Report for deliverable with deadline 31 october 2025}
+\title{31 october 2025 Deadline Report}
 \author{Francesco Pivotto 2158296\\ Giorgia Amato 2159999\\ Alessio Demo 2142885 }
 \date{\today}
 
@@ -25,8 +25,46 @@
 \tableofcontents
 \newpage
 
-\section{Statistics for the datasets in the experiments}
+\section{Introduction }
+In this part of our project, we deal with the database containing all the data that we need for our purpose.
+In details we need to establish a connection to connect the database with the data resources, that allows us to create an "running instance" of the database which we can use to query the database itself and store
+the results returned, in particular in our case the results will be stored in a custom JSON format called 'Simple JSON format' provided by the tutor.
+Next we will carry out the evaluation of the results  produced by our system using the ground truth data as comparator.\\
+Let's go into details.
 
+\section{Repository Structure}
+The Structure of out project is organized in scopes (data resources that include database data - ground truth data and output results, configuration stuff,  source scripts, tests), so we have:\\
+\begin{itemize}
+    \item \textbf{data} folder: Contains all the datasets with the ingest, queries and table creation files, in this folder we store also the ground truth data and the results delivered by our system.
+    \item \textbf{config} folder: All the scripts and config files for the initialization of the system are there.
+    \item \textbf{src} folder: Here we have the scripts that develop the core functionalities of our system and also other useful utils. 
+    \item \textbf{test} folder: Finally this folder contains the unit tests that check the system correctness.
+\end{itemize}
+
+\section{Implementation Details}
+
+\subsection{Database-Dataset Connection and Management}
+For our purpose we will use DuckDB as database manager, we believe that it is the ideal for our project since it is very powerful and rapid in the data processing within the system, moreover duckDB is an embedded database manager and can run within the instance of our system instead of establishing a server connection like postgres.
+At more technical level the \textbf{db\_connection.py} connects to a DuckDB database file associated with a specific dataset.
+The next step is \textbf{duckdb\_db\_graphdb.py} which allows us to automatically build DuckDB databases from a directory of datasets, each containing an SQL ingestion script that creates the data tables and populates them,  this allows us to have an instance of the db representing a particular dataset  in which we can run queries.
+
+\subsection{Query Execution}
+The queries can be execute by means \textbf{run\_queries\_to\_json.py} script that automates the execution of SQL queries on DuckDB databases and exports their results to JSON files, one per query.\\
+Going more deep the script executes each query and saves the results as JSON:
+
+\begin{enumerate}
+    \item Iterates through each query tuple.
+    \item Executes the SQL query using the provided DuckDB connection.
+    \item Fetches the resulting rows and column names.
+    \item Converts the result into a list of dictionaries.
+    \item Saves each query result as a JSON file in the output directory.
+\end{enumerate}
+
+\subsection{Evaluation}
+We have the \textbf{galois\_eval.py} provided by Tutor, that is a command-line evaluator that computes performance metrics for query results across different datasets.
+Briefly it standardizes different result formats, normalizes textual/numeric data, computes multiple precision–recall-based metrics, aggregates them across datasets, and outputs results in several human- or machine-readable formats.
+
+\subsection{Statistics for the datasets in the experiments}
 Table~\ref{tab:datasets} provides an overview of the datasets used our project. The datasets are divided into two main categories based on the type of task: IK (Incomplete Knowledge) and MC (Multiple Choice).
 The MC-type datasets include PREMIER, sourced from BBC, and FORTUNE, based on Kaggle data.
 Finally, GEO-TEST represents the test dataset, also derived from Spider [68], used to validate the model's performance.
@@ -57,18 +95,6 @@ GEO-TEST & Spider [68] & 10 & 24.1 & IK \\
 \label{tab:datasets}
 \end{table}
 
-\section{Corpo del documento}
-Contenuto principale.
 
-\subsection{Sottosezione}
-Dettagli aggiuntivi.
-
-\section{Conclusioni}
-Considerazioni finali.
-
-\begin{thebibliography}{9}
-\bibitem{esempio}
-Autore, \emph{Titolo}, Editore, Anno.
-\end{thebibliography}
 
 \end{document}
