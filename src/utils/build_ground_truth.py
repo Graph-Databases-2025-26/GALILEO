@@ -16,7 +16,6 @@ Folder structure expected (as in data.zip):
 Outputs:
   ground/<DATASET>/query{i}.json
 """
-
 import argparse, json, os, re, sys
 from pathlib import Path
 import duckdb, pandas as pd
@@ -64,11 +63,34 @@ def load_csvs_into_duckdb(con: duckdb.DuckDBPyConnection, ds_dir: Path, schema: 
     con.execute(f'CREATE SCHEMA IF NOT EXISTS "{schema}"')
     for csv_path in sorted(ds_dir.glob("*.csv")):
         table = csv_path.stem
-        # Create or replace under the target schema
-        con.execute(
-            f'CREATE OR REPLACE TABLE "{schema}"."{table}" AS SELECT * FROM read_csv_auto(?, header=True)',
-            [str(csv_path)]
-        )
+        if table == "movies":
+            # keep schema variable consistent everywhere
+            con.execute(f'''
+                CREATE SCHEMA IF NOT EXISTS "{schema}";
+                CREATE OR REPLACE TABLE "{schema}".movies(
+                primarytitle VARCHAR,
+                originaltitle VARCHAR,
+                startyear BIGINT,
+                endyear BIGINT,
+                runtimeminutes BIGINT,
+                genres VARCHAR,
+                director VARCHAR,
+                birthyear BIGINT,
+                deathyear BIGINT
+                );
+            ''')
+            # use a parameter for the path and let DuckDB handle quoting
+            con.execute(
+                f'''COPY "{schema}".movies FROM ? 
+                    (FORMAT CSV, HEADER TRUE, DELIMITER ',', QUOTE '"', ESCAPE '"', NULL 'null');''',
+                [str(csv_path)]  # or csv_path.as_posix()
+            )
+        else:
+            con.execute(
+                f'CREATE OR REPLACE TABLE "{schema}"."{table}" AS '
+                'SELECT * FROM read_csv_auto(?, header=True)',
+                [str(csv_path)]
+            )
 
 def add_compat_aliases(con: duckdb.DuckDBPyConnection, schema: str, dataset_name: str):
     # Aliases needed because some SQLs reference slightly different table names than CSV file names.
