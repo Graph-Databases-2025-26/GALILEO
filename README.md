@@ -108,6 +108,14 @@ For connectivity, analysis, and management of structured data:
 
 ---
 
+### **LLM orchestrator**
+
+*Our system leverages LangChain to manage interactions with Google Gemini AI models through the **`langchain-google-genai`** package.
+The reason why we choose LangChain is the modularity of this framework for handling prompts and conversational pipelines, while the Gemini integration enables access to Google’s advanced language understanding and generation capabilities.
+In summary this setup is flexible and scalable in order to establish a communication between our system and LLM.
+
+---
+
 ### **Config, Secrets, and Data Validation (Pydantic)**
 
 Robust configuration management and input data validation are ensured via:
