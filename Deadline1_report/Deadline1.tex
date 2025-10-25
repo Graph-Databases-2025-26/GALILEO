@@ -10,6 +10,7 @@
 \usepackage{booktabs}
 \usepackage{array}
 
+
 % Margini
 \usepackage[margin=2.5cm]{geometry}
 
@@ -59,6 +60,77 @@ Going more deep the script executes each query and saves the results as JSON:
     \item Converts the result into a list of dictionaries.
     \item Saves each query result as a JSON file in the output directory.
 \end{enumerate}
+
+\subsubsection{Explain Plans (DuckDB)}
+\label{sec:explain-plans}
+
+The \texttt{EXPLAIN} module was implemented to validate the SQL execution
+pipeline on DuckDB and to visualise the difference between logical and
+physical plans, providing a reliable baseline for the comparison with the
+GALOIS framework. 
+
+\paragraph{Implementation Overview}
+The functionality is implemented in the main script
+\path{src/db/run_explain_plans.py}, which delegates the
+actual DuckDB interaction to the adapter
+\path{src/db/duckdb\_explain.py}. The script can be executed by passing
+either a specific dataset name (e.g., \texttt{world}) or the keyword
+\texttt{all}. For each dataset located in
+\path{<repo-root>/data/<dataset>}, the corresponding database
+\texttt{<dataset>.duckdb} and all \texttt{queries\_*.sql} files are loaded,
+split into single statements, and both \texttt{EXPLAIN} and
+\texttt{EXPLAIN ANALYZE} are executed.
+
+The module’s core responsibilities are:
+\begin{enumerate}
+  \item \textbf{Dataset iteration:} enumerates datasets and SQL files and assigns a stable query identifier
+        (e.g., \path{queries\_world\_\_q3});
+  \item \textbf{Parsing:} splits multi-statement SQL files on semicolons while preserving comments for traceability;
+  \item \textbf{Execution:} connects to the dataset’s \texttt{.duckdb} database and issues both \texttt{EXPLAIN} and
+        \texttt{EXPLAIN ANALYZE};
+  \item \textbf{Persistence:} stores all outputs through the \texttt{save\_both()} function.
+\end{enumerate}
+
+\paragraph{Output Structure}
+The results are written under the global \texttt{results/} directory in two
+parallel trees:
+\begin{itemize}
+  \item \path{explain_result/} for text files (\texttt{.txt}) for human inspection;
+  \item \path{explain_result_json/} equivalent JSON files for machine processing.
+\end{itemize}
+
+Each of these folders contains one subdirectory per dataset
+(\texttt{flight-2}, \texttt{flight-4}, \texttt{fortune}, \texttt{geo},
+\texttt{premier}, \texttt{presidents}, \texttt{world}). For every SQL statement,
+four output files are produced sharing the same base name (e.g.,
+\texttt{queries\_world\_\_q3}):
+\begin{itemize}
+  \item \texttt{\_\_explain.txt} and \texttt{\_\_explain.json} for logical and physical plans;
+  \item \texttt{\_\_analyze.txt} and \texttt{\_\_analyze.json} for runtime statistics and operator timings.
+\end{itemize}
+
+\paragraph{Example}
+A representative example from the \texttt{world} dataset is:
+\begin{verbatim}
+SELECT count(DISTINCT government_form)
+FROM target.country
+WHERE continent = 'Africa';
+\end{verbatim}
+
+This query counts the number of distinct government forms for African countries.
+The generated logical plan follows a typical structure
+(\emph{Aggregate} $\rightarrow$ \emph{Filter} $\rightarrow$ \emph{TableScan}),
+while the physical plan contains the corresponding operators
+(\emph{HASH\_AGGREGATE} $\rightarrow$ \emph{FILTER} $\rightarrow$
+\emph{SEQ\_SCAN}). The analyzed output reports the number of processed rows and
+the execution time per operator.
+
+\paragraph{Role in the Project}
+This component ensures that the database layer behaves as expected and that
+query plans can be reliably generated and compared. The outputs will later be
+used to align relational operators with their LLM-based equivalents within the
+GALOIS pipeline.
+
 
 \subsection{Evaluation}
 We have the \textbf{galois\_eval.py} provided by Tutor, that is a command-line evaluator that computes performance metrics for query results across different datasets.
