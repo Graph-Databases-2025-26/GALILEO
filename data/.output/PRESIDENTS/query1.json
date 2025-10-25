@@ -1,15 +1,79 @@
 [
   {
-    "name": "José Antonio Páez",
+    "name": "Pedro Gual Escandón",
+    "party": "Independent"
+  },
+  {
+    "name": "Guillermo Tell Villegas",
+    "party": "Liberal Party"
+  },
+  {
+    "name": "Cipriano Castro",
     "party": "Military"
   },
   {
-    "name": "Francisco Linares",
+    "name": "José Gil",
+    "party": "Independent"
+  },
+  {
+    "name": "Victorino Márquez",
+    "party": "Independent"
+  },
+  {
+    "name": "Rómulo Betancourt",
+    "party": "Democratic Action"
+  },
+  {
+    "name": "Ramón J. Velásquez",
+    "party": "Democratic Action"
+  },
+  {
+    "name": "Juan Guaidó",
+    "party": "Popular Will"
+  },
+  {
+    "name": "Guillermo Tell Villegas",
     "party": "Liberal"
   },
   {
+    "name": "José Gregorio Valera",
+    "party": "Liberal"
+  },
+  {
+    "name": "Ignacio Andrade",
+    "party": "Liberal"
+  },
+  {
+    "name": "Germán Suárez Flamerich",
+    "party": "Independent"
+  },
+  {
+    "name": "Andrés Narvarte",
+    "party": "Conservative"
+  },
+  {
+    "name": "Carlos Soublette",
+    "party": "Conservative"
+  },
+  {
+    "name": "José Gregorio Monagas",
+    "party": "Liberal"
+  },
+  {
+    "name": "Juan Crisóstomo Falcón",
+    "party": "Military"
+  },
+  {
+    "name": "Antonio Guzmán Blanco",
+    "party": "Liberal"
+  },
+  {
+    "name": "Octavio Lepage",
+    "party": "Democratic Action"
+  },
+  {
     "name": "Rafael Caldera",
-    "party": "Copei"
+    "party": "National Convergence"
   },
   {
     "name": "José María Vargas",
@@ -40,38 +104,6 @@
     "party": "United Socialist"
   },
   {
-    "name": "Guillermo Tell Villegas",
-    "party": "Liberal"
-  },
-  {
-    "name": "José Gregorio Valera",
-    "party": "Liberal"
-  },
-  {
-    "name": "Ignacio Andrade",
-    "party": "Liberal"
-  },
-  {
-    "name": "Germán Suárez Flamerich",
-    "party": "Independent"
-  },
-  {
-    "name": "José Tadeo Monagas",
-    "party": "Liberal"
-  },
-  {
-    "name": "Pedro Gual Escandón",
-    "party": "Liberal"
-  },
-  {
-    "name": "Raimundo Andueza",
-    "party": "Conservative"
-  },
-  {
-    "name": "Carlos Delgado Chalbaud",
-    "party": "Military"
-  },
-  {
     "name": "Julián Castro",
     "party": "Military"
   },
@@ -96,32 +128,32 @@
     "party": "Democratic Action"
   },
   {
-    "name": "Andrés Narvarte",
-    "party": "Conservative"
-  },
-  {
-    "name": "Carlos Soublette",
-    "party": "Conservative"
-  },
-  {
-    "name": "José Gregorio Monagas",
-    "party": "Liberal"
-  },
-  {
-    "name": "Juan Crisóstomo Falcón",
+    "name": "José Antonio Páez",
     "party": "Military"
   },
   {
-    "name": "Antonio Guzmán Blanco",
+    "name": "Francisco Linares",
     "party": "Liberal"
   },
   {
-    "name": "Octavio Lepage",
-    "party": "Democratic Action"
+    "name": "Rafael Caldera",
+    "party": "Copei"
   },
   {
-    "name": "Rafael Caldera",
-    "party": "National Convergence"
+    "name": "José Tadeo Monagas",
+    "party": "Liberal"
+  },
+  {
+    "name": "Pedro Gual Escandón",
+    "party": "Liberal"
+  },
+  {
+    "name": "Raimundo Andueza",
+    "party": "Conservative"
+  },
+  {
+    "name": "Carlos Delgado Chalbaud",
+    "party": "Military"
   },
   {
     "name": "José Antonio Páez",
@@ -174,37 +206,5 @@
   {
     "name": "Nicolás Maduro",
     "party": "United Socialist"
-  },
-  {
-    "name": "Pedro Gual Escandón",
-    "party": "Independent"
-  },
-  {
-    "name": "Guillermo Tell Villegas",
-    "party": "Liberal Party"
-  },
-  {
-    "name": "Cipriano Castro",
-    "party": "Military"
-  },
-  {
-    "name": "José Gil",
-    "party": "Independent"
-  },
-  {
-    "name": "Victorino Márquez",
-    "party": "Independent"
-  },
-  {
-    "name": "Rómulo Betancourt",
-    "party": "Democratic Action"
-  },
-  {
-    "name": "Ramón J. Velásquez",
-    "party": "Democratic Action"
-  },
-  {
-    "name": "Juan Guaidó",
-    "party": "Popular Will"
   }
 ]

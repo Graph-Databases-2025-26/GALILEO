@@ -6,6 +6,21 @@
     "region": "Eastern Africa"
   },
   {
+    "region": "Eastern Asia"
+  },
+  {
+    "region": "Polynesia"
+  },
+  {
+    "region": "Southeast Asia"
+  },
+  {
+    "region": "Nordic Countries"
+  },
+  {
+    "region": "Southern Europe"
+  },
+  {
     "region": "Western Europe"
   },
   {
@@ -27,15 +42,6 @@
     "region": "Western Africa"
   },
   {
-    "region": "Nordic Countries"
-  },
-  {
-    "region": "Southern Europe"
-  },
-  {
-    "region": "Eastern Asia"
-  },
-  {
     "region": "Middle East"
   },
   {
@@ -52,11 +58,5 @@
   },
   {
     "region": "Melanesia"
-  },
-  {
-    "region": "Polynesia"
-  },
-  {
-    "region": "Southeast Asia"
   }
 ]

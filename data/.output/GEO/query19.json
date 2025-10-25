@@ -1,17 +1,5 @@
 [
   {
-    "capital": "springfield"
-  },
-  {
-    "capital": "annapolis"
-  },
-  {
-    "capital": "albany"
-  },
-  {
-    "capital": "montpelier"
-  },
-  {
     "capital": "boise"
   },
   {
@@ -45,34 +33,40 @@
     "capital": "olympia"
   },
   {
-    "capital": "phoenix"
+    "capital": "montgomery"
   },
   {
-    "capital": "washington"
+    "capital": "juneau"
   },
   {
-    "capital": "des moines"
+    "capital": "hartford"
   },
   {
-    "capital": "augusta"
+    "capital": "helena"
   },
   {
-    "capital": "lincoln"
+    "capital": "carson city"
   },
   {
-    "capital": "concord"
+    "capital": "trenton"
   },
   {
-    "capital": "harrisburg"
+    "capital": "columbia"
   },
   {
-    "capital": "nashville"
+    "capital": "denver"
   },
   {
-    "capital": "austin"
+    "capital": "tallahassee"
   },
   {
-    "capital": "salt lake city"
+    "capital": "lansing"
+  },
+  {
+    "capital": "bismarck"
+  },
+  {
+    "capital": "charleston"
   },
   {
     "capital": "little rock"
@@ -117,39 +111,45 @@
     "capital": "cheyenne"
   },
   {
-    "capital": "montgomery"
+    "capital": "springfield"
   },
   {
-    "capital": "juneau"
+    "capital": "annapolis"
   },
   {
-    "capital": "hartford"
+    "capital": "albany"
   },
   {
-    "capital": "helena"
+    "capital": "montpelier"
   },
   {
-    "capital": "carson city"
+    "capital": "phoenix"
   },
   {
-    "capital": "trenton"
+    "capital": "washington"
   },
   {
-    "capital": "columbia"
+    "capital": "des moines"
   },
   {
-    "capital": "denver"
+    "capital": "augusta"
   },
   {
-    "capital": "tallahassee"
+    "capital": "lincoln"
   },
   {
-    "capital": "lansing"
+    "capital": "concord"
   },
   {
-    "capital": "bismarck"
+    "capital": "harrisburg"
   },
   {
-    "capital": "charleston"
+    "capital": "nashville"
+  },
+  {
+    "capital": "austin"
+  },
+  {
+    "capital": "salt lake city"
   }
 ]
