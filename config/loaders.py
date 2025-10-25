@@ -10,10 +10,12 @@ load_dotenv()
 # Chiavi API
 API_KEYS = {
     "grok": os.getenv("XAI_API_KEY"),
+    "gemini": os.getenv("GOOGLE_GEMINI_API_KEY"),
 }
 
 API_HOSTS = {
-    "grok": os.getenv("XAI_URL")
+    "grok": os.getenv("XAI_URL"),
+    "gemini": os.getenv("GOOGLE_GEMINI_ENDPOINT")
 }
 
 # Config YAML
