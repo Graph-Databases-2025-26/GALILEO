@@ -148,13 +148,13 @@ Finally, GEO-TEST represents the test dataset, also derived from Spider [68], us
 \textbf{Dataset} & \textbf{Dataset} & \textbf{\# of} & \textbf{Avg. expected} & \textbf{Type} \\
 \textbf{name} & \textbf{source} & \textbf{queries} & \textbf{cells} & \\
 \midrule
-FLIGHT2 & Spider [68] & 3 & 267.5 & IK \\
-FLIGHT4 & Spider [68] & 3 & 267.5 & IK \\
-FORTUNE & Kaggle & 10 & 7.9 & MC \\
-GEO & Spider [68] & 32 & 22.8 & IK \\
-MOVIES & IMDB & 9 & 54.7 & IK \\
-PREMIER & BBC & 5 & 57.8 & MC \\
-PRESIDENTS & Wiki & 26 & 42.2 & IK \\
+FLIGHT2 & Spider [68] & 3 & 1.0 & IK \\
+FLIGHT4 & Spider [68] & 3 & 534.0 & IK \\
+FORTUNE & Kaggle & 10 & 11.1 & MC \\
+GEO & Spider [68] & 32 & 23.1 & IK \\
+MOVIES & IMDB & 9 & 30.0 & IK \\
+PREMIER & BBC & 5 & 57.4 & MC \\
+PRESIDENTS & Wiki & 26 & 41.2 & IK \\
 WORLD & Spider [68] & 4 & 33.2 & IK \\
 
 
@@ -166,6 +166,11 @@ GEO-TEST & Spider [68] & 10 & 24.1 & IK \\
 \caption{Description of used datasets}
 \label{tab:datasets}
 \end{table}
+
+
+For the \textbf{Avg\_expected\_cells} parameter we have implemented an ad\-hoc script that calculates it, more technically the \textbf{avg\_cells\_metric.py} calculates for each dataset the sum of the cells returned by the results of each query and then adds them together.
+Finally, it calculates the metric by dividing the total number of cells by the number of queries for that specific dataset.
+
 
 
 

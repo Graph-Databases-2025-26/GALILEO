@@ -33,7 +33,7 @@ def execute_queries_and_save_json(con, queries, output_dir):
     Execute each query on the DuckDB connection and save results as JSON files.
     """
     for i, (filename, query) in enumerate(queries, start=1):
-        #print(f"\n▶️  Executing query {i} from file {filename}")
+        #print(f"\n  Executing query {i} from file {filename}")
         try:
             result = con.execute(query)
             rows = result.fetchall()
@@ -57,9 +57,9 @@ def execute_queries_and_save_json(con, queries, output_dir):
             with open(output_path, "w", encoding="utf-8") as f:
                 json.dump(data, f, indent=2, ensure_ascii=False)
 
-            #print(f"✅ Result saved in: {output_path}")
+            #print(f" Result saved in: {output_path}")
         except Exception as e:
-            print(f"❌ Error executing query from {filename}: {e}")
+            print(f" Error executing query from {filename}: {e}")
 
 def run_queries_to_json(dataset_name: str) -> None:
     data_dir = DATA / dataset_name
@@ -78,14 +78,14 @@ def run_queries_to_json(dataset_name: str) -> None:
 
 def main():
     if len(sys.argv) < 2:
-        print("❌ Specifica il nome del dataset come argomento.")
+        print(" Specifica il nome del dataset come argomento.")
         print("Esempio: python3 main.py test_dataset")
         return
 
     dataset_name = sys.argv[1]
-    print(f"▶️ Avvio test per il dataset: {dataset_name}")
+    print(f"▶ Avvio test per il dataset: {dataset_name}")
     run_queries_to_json(dataset_name)
-    print(f"✅ Test completato per il dataset: {dataset_name}")
+    print(f" Test completato per il dataset: {dataset_name}")
 
 if __name__ == "__main__":
     main()

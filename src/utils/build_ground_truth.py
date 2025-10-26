@@ -94,8 +94,9 @@ def load_csvs_into_duckdb(con: duckdb.DuckDBPyConnection, ds_dir: Path, schema: 
 
 def add_compat_aliases(con: duckdb.DuckDBPyConnection, schema: str, dataset_name: str):
     # Aliases needed because some SQLs reference slightly different table names than CSV file names.
+    dataset_name_lower = dataset_name.lower()
     aliases = []
-    if dataset_name == "fortune":
+    if dataset_name_lower == "fortune":
         # CSV is fortune1000_2024, SQL uses fortune_2024
         aliases.append(("fortune_2024", "fortune1000_2024"))
     # You can extend here if more mismatches appear.
