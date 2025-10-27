@@ -1,0 +1,32 @@
+│         PROJECTION        │
+│    ────────────────────   │
+│       originaltitle       │
+│         startyear         │
+│           genres          │
+│         birthyear         │
+│         deathyear         │
+│       runtimeminutes      │
+│                           │
+│          ~4 rows          │
+└─────────────┬─────────────┘
+┌─────────────┴─────────────┐
+│         SEQ_SCAN          │
+│    ────────────────────   │
+│       Table: movies       │
+│   Type: Sequential Scan   │
+│                           │
+│        Projections:       │
+│         startyear         │
+│       originaltitle       │
+│           genres          │
+│         birthyear         │
+│         deathyear         │
+│       runtimeminutes      │
+│                           │
+│          Filters:         │
+│director='Steven Spielberg'│
+│     startyear>1990 AND    │
+│       startyear<2000      │
+│                           │
+│          ~4 rows          │
+└───────────────────────────┘

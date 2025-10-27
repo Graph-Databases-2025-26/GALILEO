@@ -1,32 +1,32 @@
-"""
-Google Generative AI (Gemini) connection with structured logging.
-- Measures latency for direct invoke and chain execution
-- Logs response length and errors
-"""
-
-import os
-import time
-import traceback
-
 from langchain_core.exceptions import LangChainException
+from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
+import time
+import os
+import traceback
+from dotenv import load_dotenv
 from langchain_google_genai import ChatGoogleGenerativeAI
 
 from src.utils.logging_config import logger, log_query_event
 
 
+# Configure the API KEY
+load_dotenv()
+google_api_key = os.getenv("GEMINI_API_KEY")
+ibm_api_key = os.getenv("IBM_API_KEY")
+
+if not google_api_key:
+    print("GOOGLE_API_KEY environment variable not set")
+    exit(1)
+
+os.environ["GOOGLE_API_KEY"] = google_api_key
 
 def query_llm(query: str, model: str = "gemini-2.5-flash", temperature: float = 0.7) -> str:
     """
     Send a prompt to Gemini and return the response as a string.
     Logs timings and errors with loguru.
     """
-    # Ensure key is present (prefer env var)
-    api_key = os.getenv("GOOGLE_API_KEY", "").strip()
-    if not api_key:
-        logger.error("GOOGLE_API_KEY environment variable not set")
-        raise SystemExit(1)
 
     try:
         logger.info(f"Initializing Google GenAI model={model} temperature={temperature}")
@@ -56,6 +56,8 @@ def query_llm(query: str, model: str = "gemini-2.5-flash", temperature: float = 
         logger.error(f"Generic error: {e}. Trace:\n{traceback.format_exc()}")
         return f"Generic error: {e}"
 
+# Query di test
+test_query = "name the major lakes in michigan?"
 
 if __name__ == "__main__":
     # Simple smoke test

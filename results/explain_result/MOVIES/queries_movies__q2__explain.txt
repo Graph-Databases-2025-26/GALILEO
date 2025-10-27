@@ -1,0 +1,13 @@
+│         SEQ_SCAN          │
+│    ────────────────────   │
+│       Table: movies       │
+│   Type: Sequential Scan   │
+│                           │
+│        Projections:       │
+│       originaltitle       │
+│                           │
+│          Filters:         │
+│director='Steven Spielberg'│
+│                           │
+│          ~4 rows          │
+└───────────────────────────┘

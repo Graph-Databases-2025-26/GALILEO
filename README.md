@@ -8,8 +8,9 @@
 **Members:**
 - Giorgia Amato – [giorgia.amato@studenti.unipd.it]  
 - [Alessio Demo] – [alessio.demo@studenti.unipd.it]  
-- [Francesco Pivotto] – [francesco.pivotto.1@studenti.unipd.it]  
-- [Teammate 4 Name] – []  
+- [Francesco Pivotto] – [francesco.pivotto.1@studenti.unipd.it]   
+
+
 
 ---
 
@@ -26,9 +27,9 @@ Our focus is on **GALOIS**, a framework that integrates LLMs into query executio
 
 ## Structure of the Repository
 
-**The Repository is organized by functional scopes, mirroring the development phases and the required Tasks.**
+**The Repository is organized by functional scopes, mirroring the development phases and the required tasks.**
 
-**The goal is to clearly separate the setup, the baselines, the core system, and the verification tools.**
+**The goal is to clearly separate the setup, the baselines, the core system, and the verification tools (results and testing).**
 
 ### Main Files
 
@@ -110,7 +111,7 @@ For connectivity, analysis, and management of structured data:
 
 ### **LLM orchestrator**
 
-*Our system leverages LangChain to manage interactions with Google Gemini AI models through the **`langchain-google-genai`** package.
+Our system leverages LangChain to manage interactions with Google Gemini AI models through the **`langchain-google-genai`** package.
 The reason why we choose LangChain is the modularity of this framework for handling prompts and conversational pipelines, while the Gemini integration enables access to Google’s advanced language understanding and generation capabilities.
 In summary this setup is flexible and scalable in order to establish a communication between our system and LLM.
 
@@ -121,7 +122,14 @@ In summary this setup is flexible and scalable in order to establish a communica
 Robust configuration management and input data validation are ensured via:
 
 * **Configuration/Secrets:** **`python-dotenv`** loads environment variables (including secrets) from the `.env` file.
-* **Data Validation:** **`pydantic`** and its associated modules (**`pydantic-settings`**) are crucial for defining clear data schemas, validating runtime data, and managing project settings in a typed, safe manner.
+* **Data Validation:** We use  **`pydantic`** define structured configuration models, validate the data, and enforce type safety.
+  * **Type validation**: ensures all config fields have the correct type.
+  * **Data parsing / coercion**: converts types automatically when possible.
+  * **Structured, nested models**: makes the configuration predictable and IDE-friendly.
+  * **Error reporting**: immediately raises errors if the YAML is malformed or missing fields.
+  * **Environment variable integration via BaseSettings**.
+
+
 * **Config Parsing (YAML):** **`pyyaml`** handles reading and writing configuration files in YAML format.
 
 ---
@@ -130,7 +138,7 @@ Robust configuration management and input data validation are ensured via:
 
 For the dynamic generation of code, reports, or structured output:
 
-* **Templates:** **`jinja2`** serves as the templating engine, widely used to generate code (e.g., SQL) or documents based on predefined template structures.
+* Templates:We use  **`jinja2`** that allows separate presentation logic from data: indeed we generate dynamic text files (like HTML, XML, JSON) or prompt statements by combining static content with data from our system.
 
 ---
 
@@ -139,6 +147,7 @@ For the dynamic generation of code, reports, or structured output:
 For monitoring and diagnostics:
 
 * **Logging:** **`loguru`** is the chosen logging library for its simplicity, structured output, improving system log readability.
+* **A folder named ** **`.log` ** contains all the logs generated during the running time. 
 
 ---
 
@@ -152,7 +161,31 @@ These libraries are required only for the development environment and for runnin
 
 ---
 
-## Implementation Steps 
+## How to run the system:
+For running the system the only script that you need is **`setup_project.py`** that is located in the root folder.
+In detail what **`setup_project.py`** does is the following:
+* Defines the main paths of the project (query results folder, ground truth folder exc...)
+* Creates an virtual environment for python 
+* Install the needed python dependencies from **requirements.txt** for the system
+* Tests the database connection
+* Executes queries for a set of datasets and saves results in JSON.
+* Evaluates the results against the ground truth.
+* Prints messages to track progress.
+
+
+**RUN THE SYSTEM**: To run the system, execute **`python3 setup_project.py`** from the root directory (**`/galois_proj/`**)
+
+Furthermore, if necessary, it's possible to execute individual scripts:
+* **Evaluation queries**: from the following directory: `/galois_proj/src/utils/` run: **`python3  galois_eval.py [-h] --ground GROUND --submissions SUBMISSIONS [--datasets [DATASETS ...]] [--cell-metric {exact,similarity}] [--tuple-metric {constraint,similarity}] [--format {table,csv,json,tex}]
+                      [--latex-caption LATEX_CAPTION] [--latex-label LATEX_LABEL] [--latex-booktabs] [--overall] [--jobs JOBS] [--jobs-queries JOBS_QUERIES]`** .
+* **Ground Truth generation**: from the following directory: `/galois_proj/src/utils/` run:  **`python3 build_ground_truth.py [-h] --data-root DATA_ROOT --ground-root GROUND_ROOT [--datasets [DATASETS ...]] [--schema-name SCHEMA_NAME]
+build_ground_truth.py: error: the following arguments are required: --data-root, --ground-root`**.
+* **Avg. expected cells metric**: For calculate this metric you need to locate in the root  folder `/galois_proj/` and run: **` python3 -m src.db.avg_cells_metric`**.
+* **EXPLAIN / ANALYZE plans generation in .txt and .json format:** from the root folder `/galois_proj/` run: **`python3 -m src.db.run_explain_plans all/<DATASETNAME>`** -> you can type ' all ' or ' ALL ' and the command works anyway, additionally you can specify a single dataset but you need to specify it in uppercase e.g. MOVIES.
+
+---
+
+## Implementation Design 
 
 ###  Database Preparation and Connection
 
@@ -186,7 +219,7 @@ The `duckdb_db_graphdb.py` script is used to initialize the database environment
 
 ---
 
-### 3. ⚙ Query Execution and Result Saving (JSON)
+### 3.  Query Execution and Result Saving (JSON)
 
 Following the database setup, the `run_queries_to_json.py` script manages the automatic execution of analysis queries and the saving of results for verification.
 
@@ -200,7 +233,7 @@ Following the database setup, the `run_queries_to_json.py` script manages the au
 
 ---
 
-### 4. 🧩 Logical and Physical Plan Extraction (EXPLAIN & EXPLAIN ANALYZE)
+### 4. Logical and Physical Plan Extraction (EXPLAIN & EXPLAIN ANALYZE)
 
 After generating the query results, the next step is to automatically extract both the **logical** and **physical** query plans for all datasets.
 
@@ -208,7 +241,6 @@ After generating the query results, the next step is to automatically extract bo
 * `src/db/run_explain_plans.py`
 * `src/db/duckdb_explain.py`
 
----
 
 #### **Operational Details (`run_explain_plans.py`):**
 
@@ -237,3 +269,8 @@ After generating the query results, the next step is to automatically extract bo
 5. **Text & JSON Representation:**
    **.txt** for human-readable format with ASCII boxes (logical/physical plan)
    **.jso**  for machine-readable structured format (escaped Unicode characters)
+
+---
+
+## Avg. Expected Cells Metric 
+Like in the GALOIS paper, we replicate the Table 2 of the paper, the **Avg_Expected_Cells** metric is calculated by  **`avg_cells_metric.py`**, for run it you have to locate in the root directory **`galois_proj/`** directory and next run: **`python -m src.db.avg_cells_metric`**.

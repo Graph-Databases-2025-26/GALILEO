@@ -32,32 +32,56 @@
     "party": "Popular Will"
   },
   {
-    "name": "José María Vargas",
+    "name": "Andrés Narvarte",
     "party": "Conservative"
   },
   {
-    "name": "Manuel Felipe de Tovar",
+    "name": "Carlos Soublette",
+    "party": "Conservative"
+  },
+  {
+    "name": "José Gregorio Monagas",
     "party": "Liberal"
   },
   {
-    "name": "José Ruperto Monagas",
+    "name": "Juan Crisóstomo Falcón",
     "party": "Military"
   },
   {
-    "name": "Juan Pablo Rojas Paúl",
+    "name": "Antonio Guzmán Blanco",
     "party": "Liberal"
   },
   {
-    "name": "Juan Vicente Gómez",
+    "name": "Octavio Lepage",
+    "party": "Democratic Action"
+  },
+  {
+    "name": "Rafael Caldera",
+    "party": "National Convergence"
+  },
+  {
+    "name": "Julián Castro",
     "party": "Military"
   },
   {
-    "name": "Luis Herrera Campins",
-    "party": "Copei"
+    "name": "Joaquín Crespo",
+    "party": "Military"
   },
   {
-    "name": "Hugo Chávez",
-    "party": "United Socialist"
+    "name": "Juan Bautista Pérez",
+    "party": "Independent"
+  },
+  {
+    "name": "Isaías Medina",
+    "party": "Democratic Party"
+  },
+  {
+    "name": "Rómulo Gallegos",
+    "party": "Democratic Action"
+  },
+  {
+    "name": "Carlos Andrés Pérez",
+    "party": "Democratic Action"
   },
   {
     "name": "José Antonio Páez",
@@ -86,6 +110,22 @@
   {
     "name": "Germán Suárez Flamerich",
     "party": "Independent"
+  },
+  {
+    "name": "José Tadeo Monagas",
+    "party": "Liberal"
+  },
+  {
+    "name": "Pedro Gual Escandón",
+    "party": "Liberal"
+  },
+  {
+    "name": "Raimundo Andueza",
+    "party": "Conservative"
+  },
+  {
+    "name": "Carlos Delgado Chalbaud",
+    "party": "Military"
   },
   {
     "name": "José Antonio Páez",
@@ -140,71 +180,31 @@
     "party": "United Socialist"
   },
   {
-    "name": "José Tadeo Monagas",
-    "party": "Liberal"
-  },
-  {
-    "name": "Pedro Gual Escandón",
-    "party": "Liberal"
-  },
-  {
-    "name": "Raimundo Andueza",
+    "name": "José María Vargas",
     "party": "Conservative"
   },
   {
-    "name": "Carlos Delgado Chalbaud",
-    "party": "Military"
-  },
-  {
-    "name": "Julián Castro",
-    "party": "Military"
-  },
-  {
-    "name": "Joaquín Crespo",
-    "party": "Military"
-  },
-  {
-    "name": "Juan Bautista Pérez",
-    "party": "Independent"
-  },
-  {
-    "name": "Isaías Medina",
-    "party": "Democratic Party"
-  },
-  {
-    "name": "Rómulo Gallegos",
-    "party": "Democratic Action"
-  },
-  {
-    "name": "Carlos Andrés Pérez",
-    "party": "Democratic Action"
-  },
-  {
-    "name": "Andrés Narvarte",
-    "party": "Conservative"
-  },
-  {
-    "name": "Carlos Soublette",
-    "party": "Conservative"
-  },
-  {
-    "name": "José Gregorio Monagas",
+    "name": "Manuel Felipe de Tovar",
     "party": "Liberal"
   },
   {
-    "name": "Juan Crisóstomo Falcón",
+    "name": "José Ruperto Monagas",
     "party": "Military"
   },
   {
-    "name": "Antonio Guzmán Blanco",
+    "name": "Juan Pablo Rojas Paúl",
     "party": "Liberal"
   },
   {
-    "name": "Octavio Lepage",
-    "party": "Democratic Action"
+    "name": "Juan Vicente Gómez",
+    "party": "Military"
   },
   {
-    "name": "Rafael Caldera",
-    "party": "National Convergence"
+    "name": "Luis Herrera Campins",
+    "party": "Copei"
+  },
+  {
+    "name": "Hugo Chávez",
+    "party": "United Socialist"
   }
 ]

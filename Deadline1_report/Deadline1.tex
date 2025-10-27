@@ -33,6 +33,35 @@ the results returned, in particular in our case the results will be stored in a 
 Next we will carry out the evaluation of the results  produced by our system using the ground truth data as comparator.\\
 Let's go into details.
 
+\section{Libraries \& Components}
+\subsection{System Architecture: Dependency Stack and Key Requirements:}
+The project is built upon a Python dependency stack prioritizing robustness, efficient data analysis, and flexible configuration. All essential libraries are listed in requirements.txt.
+\begin{enumerate}
+  \item Core Frameworks \& Data Analysis (DataFrames):
+  \textbf{pandas} and \textbf{numpy} are used for the efficient manipulation and analysis of tabular data structures (DataFrames) and complex numerical calculations.
+  \item Database and SQL:
+  \textbf{duckdb}: Utilized as a high-performance, in-process analytical database, ideal for rapid processing of data volumes directly within the application.
+  \textbf{sqlglot}: Employed for the abstract analysis, manipulation, and translation of SQL queries.
+  \item LLM Orchestrator (Large Language Model)
+  \textbf{LangChain}: The core framework managing interactions with AI models.
+  \textbf{langchain-google-genai}: Provides access to Google Gemini AI models. This setup ensures modularity, flexibility, and scalability in establishing the system's communication with the LLM.
+  \item  Configuration and Data Validation:
+  \textbf{pydantic}: Essential for data validation and structured configuration management. It enforces type safety, handles data parsing/coercion, defines structured nested models, and raises immediate errors on malformed input.
+  \textbf{python-dotenv}: Loads environment variables (including secrets) from the .env file.
+  \textbf{pyyaml}: Handles reading and writing configuration files in YAML format.
+  \item  Templating: \textbf{jinja2}: The templating engine used for the dynamic generation of structured output, such as code, reports (HTML, XML, JSON), or complex prompt statements, by separating presentation logic from data.
+  \item Logging and Utilities
+  \textbf{loguru}: The chosen logging library for its simplicity and structured output, which enhances system log readability.
+  Logs: All runtime logs are stored in the .log folder.
+  \item Development and Testing
+  These dependencies are specific to the development environment and the test suite:
+  \textbf{pytest}: The standard testing framework for executing all tests.
+  coverage and \textbf{pytest-cov}: Used to measure the percentage of source code covered by automated tests (Code Coverage).
+  \textbf{pytest-mock}: Facilitates the creation of mock objects and stubs to isolate external dependencies during unit tests.
+
+
+\end{enumerate}
+
 \section{Repository Structure}
 The Structure of out project is organized in scopes (data resources that include database data - ground truth data and output results, configuration stuff,  source scripts, tests), so we have:\\
 \begin{itemize}
@@ -43,6 +72,20 @@ The Structure of out project is organized in scopes (data resources that include
 \end{itemize}
 
 \section{Implementation Details}
+
+\subsection{Configuration handling}
+All the system configuration details are reported  in \textbf{.yaml} file, and the \textbf{src/settings.py} is the central hub for all configuration data. It handles the critical process of loading and validating the external YAML file, ensuring the application always runs with correct and predictable parameters.
+Going more deeply:
+\begin{itemize}
+  \item Parsing (YAML): The script uses \textbf{pyyaml} to read and parse the content of the config.yaml file into a standard Python dictionary.
+  \item Structured Validation (Pydantic): The parsed data is immediately processed and validated using Pydantic.
+    \begin{itemize}
+      \item   Structure: We define precise, nested classes (like ModelConfig, IOConfig, ExecutionConfig, etc.) that mirror the expected structure of the YAML file. The main class, AppConfig, aggregates all these sections.
+      \item Type\ Safety: Pydantic strictly enforces data types (e.g., ensuring temperature is a float, and max\_retries is an int). This eliminates common runtime errors caused by misconfigured settings.
+      \item Predictability: By validating the structure and types upfront, we guarantee that all required fields are present and correctly formatted, making the configuration predictable and reliable.
+    \end{itemize}  
+  \item Global Access: The configuration is loaded into a single, global instance called settings. This allows any module in the project to access any configuration detail easily and consistently, such as settings.gemini.temperature.
+\end{itemize}
 
 \subsection{Database-Dataset Connection and Management}
 For our purpose we will use DuckDB as database manager, we believe that it is the ideal for our project since it is very powerful and rapid in the data processing within the system, moreover duckDB is an embedded database manager and can run within the instance of our system instead of establishing a server connection like postgres.
@@ -165,7 +208,7 @@ WORLD & Spider [68] & 4 & 33.2 & IK \\
 \end{table}
 
 
-For the \textbf{Avg\_expected\_cells} parameter we have implemented an ad\-hoc script that calculates it, more technically the \textbf{avg\_cells\_metric.py} calculates for each dataset the sum of the cells returned by the results of each query and then adds them together.
+For the \textbf{Avg\_expected\_cells} parameter we have implemented an ad hoc script that calculates it, more technically the \textbf{avg\_cells\_metric.py} calculates for each dataset the sum of the cells returned by the results of each query and then adds them together.
 Finally, it calculates the metric by dividing the total number of cells by the number of queries for that specific dataset.
 
 

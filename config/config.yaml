@@ -1,6 +1,6 @@
 model:
-  provider: openai
-  name: gpt-4o-mini
+  provider: Google Gemini
+  name: gemini-2.5-flash
   temperature: 0.0
 
 confidence:

@@ -3,6 +3,7 @@ from __future__ import annotations
 from src.utils import ROOT, VENV, PY, REQS
 from pathlib import Path
 import os, sys, subprocess
+from src.settings import settings
 
 GROUND_PATH = ROOT / "data" / ".ground_truth"
 SUBMISSIONS_PATH = ROOT / "data" / ".output"
@@ -17,6 +18,11 @@ def run(cmd: list[str | Path], *, check: bool = True) -> None: #helper to run a 
     subprocess.run([str(c) for c in cmd], check=check) #execute command
 
 def main() -> None:
+
+    print(settings.model.name)
+    print(settings.logging.level)
+    print(settings.io.outputs_dir)
+
     print(f" setup_project.py starting at ROOT = {ROOT}")
 
     # Create venv if missing

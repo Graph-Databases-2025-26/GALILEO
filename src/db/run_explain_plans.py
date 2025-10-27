@@ -42,7 +42,7 @@ def load_statements(sql_file: Path) -> list[str]:
 
 def process_dataset(dataset_dir: Path) -> int:
     dataset = dataset_dir.name
-    db_path = dataset_dir / f"{dataset}.duckdb"
+    db_path = dataset_dir / f"{dataset.lower()}.duckdb"
     if not db_path.exists():
         logger.warning(f"No DB file: {db_path}  (run duckdb_db_graphdb.py first)")
         return 0
@@ -79,11 +79,11 @@ def process_dataset(dataset_dir: Path) -> int:
 
 def main():
     if len(sys.argv) < 2:
-        logger.error("Usage: python setup-environment/config/run_explain_plans.py <dataset>|all")
+        logger.error("Usage: python -m src.db.run_explain_plans.py <dataset>|all")
         sys.exit(1)
 
-    arg = sys.argv[1].lower()
-    if arg == "all":
+    arg = sys.argv[1].upper()
+    if arg == "all" or arg == "ALL":
         datasets = find_datasets()
         if not datasets:
             logger.error(f"No datasets found in {DATA_ROOT}")

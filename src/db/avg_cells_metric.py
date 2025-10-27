@@ -1,5 +1,7 @@
 import os
 import json
+
+from ..settings import LoggingConfig
 from ..utils.constants import GROUND_PATH
 
 GROUND_DIR = GROUND_PATH
@@ -23,7 +25,6 @@ for dataset in sorted(os.listdir(GROUND_DIR)):
                 n_rows = len(data)
                 n_cols = len(data[0]) if isinstance(data[0], dict) else 0
                 total_cells += n_rows * n_cols
-                print(f"Total number of cells:{total_cells}")
         except Exception as e:
             print(f" Error reading {jf}: {e}")
 
