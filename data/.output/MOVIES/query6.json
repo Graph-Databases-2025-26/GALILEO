@@ -1,1 +1,50 @@
-[]
+[
+  {
+    "originaltitle": "Jurassic Park",
+    "startyear": 1993,
+    "genres": "Action,Adventure,Sci-Fi",
+    "birthyear": 1946,
+    "deathyear": null,
+    "runtimeminutes": 127
+  },
+  {
+    "originaltitle": "Amistad",
+    "startyear": 1997,
+    "genres": "Biography,Drama,History",
+    "birthyear": 1946,
+    "deathyear": null,
+    "runtimeminutes": 155
+  },
+  {
+    "originaltitle": "The Lost World: Jurassic Park",
+    "startyear": 1997,
+    "genres": "Action,Adventure,Sci-Fi",
+    "birthyear": 1946,
+    "deathyear": null,
+    "runtimeminutes": 129
+  },
+  {
+    "originaltitle": "Saving Private Ryan",
+    "startyear": 1998,
+    "genres": "Drama,War",
+    "birthyear": 1946,
+    "deathyear": null,
+    "runtimeminutes": 169
+  },
+  {
+    "originaltitle": "Hook",
+    "startyear": 1991,
+    "genres": "Adventure,Comedy,Family",
+    "birthyear": 1946,
+    "deathyear": null,
+    "runtimeminutes": 142
+  },
+  {
+    "originaltitle": "Schindler's List",
+    "startyear": 1993,
+    "genres": "Biography,Drama,History",
+    "birthyear": 1946,
+    "deathyear": null,
+    "runtimeminutes": 195
+  }
+]

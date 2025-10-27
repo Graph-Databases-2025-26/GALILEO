@@ -1,1 +1,104 @@
-[]
+[
+  {
+    "originaltitle": "War Horse",
+    "startyear": 2011,
+    "genres": "Action,Adventure,Drama",
+    "birthyear": 1946
+  },
+  {
+    "originaltitle": "Untitled Steven Spielberg/Universal Pictures Film",
+    "startyear": 2026,
+    "genres": null,
+    "birthyear": 1946
+  },
+  {
+    "originaltitle": "The BFG",
+    "startyear": 2016,
+    "genres": "Adventure,Family,Fantasy",
+    "birthyear": 1946
+  },
+  {
+    "originaltitle": "Catch Me If You Can",
+    "startyear": 2002,
+    "genres": "Biography,Crime,Drama",
+    "birthyear": 1946
+  },
+  {
+    "originaltitle": "Munich",
+    "startyear": 2005,
+    "genres": "Action,Drama,History",
+    "birthyear": 1946
+  },
+  {
+    "originaltitle": "Lincoln",
+    "startyear": 2012,
+    "genres": "Biography,Drama,History",
+    "birthyear": 1946
+  },
+  {
+    "originaltitle": "West Side Story",
+    "startyear": 2021,
+    "genres": "Crime,Drama,Musical",
+    "birthyear": 1946
+  },
+  {
+    "originaltitle": "A.I. Artificial Intelligence",
+    "startyear": 2001,
+    "genres": "Adventure,Drama,Sci-Fi",
+    "birthyear": 1946
+  },
+  {
+    "originaltitle": "Ready Player One",
+    "startyear": 2018,
+    "genres": "Action,Adventure,Sci-Fi",
+    "birthyear": 1946
+  },
+  {
+    "originaltitle": "The Post",
+    "startyear": 2017,
+    "genres": "Biography,Drama,History",
+    "birthyear": 1946
+  },
+  {
+    "originaltitle": "The Adventures of Tintin",
+    "startyear": 2011,
+    "genres": "Action,Adventure,Animation",
+    "birthyear": 1946
+  },
+  {
+    "originaltitle": "The Fabelmans",
+    "startyear": 2022,
+    "genres": "Drama",
+    "birthyear": 1946
+  },
+  {
+    "originaltitle": "Bridge of Spies",
+    "startyear": 2015,
+    "genres": "Drama,History,Thriller",
+    "birthyear": 1946
+  },
+  {
+    "originaltitle": "The Terminal",
+    "startyear": 2004,
+    "genres": "Comedy,Drama,Romance",
+    "birthyear": 1946
+  },
+  {
+    "originaltitle": "War of the Worlds",
+    "startyear": 2005,
+    "genres": "Action,Adventure,Sci-Fi",
+    "birthyear": 1946
+  },
+  {
+    "originaltitle": "Minority Report",
+    "startyear": 2002,
+    "genres": "Action,Crime,Mystery",
+    "birthyear": 1946
+  },
+  {
+    "originaltitle": "Indiana Jones and the Kingdom of the Crystal Skull",
+    "startyear": 2008,
+    "genres": "Action,Adventure",
+    "birthyear": 1946
+  }
+]

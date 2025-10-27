@@ -61,13 +61,14 @@ if __name__ == "__main__":
     if not DATA_SOURCE_DIR.exists():
        raise FileNotFoundError(f"Data folder not found at {DATA_SOURCE_DIR}")
 
-
+    # Datasets
+    TARGET_DATASETS = {"FLIGHT-2", "FLIGHT-4", "FORTUNE", "GEO", "MOVIES", "PRESIDENTS", "PREMIER", "WORLD"}
     # Scan all subfolders inside ../data/
-    subfolders = [p for p in DATA_SOURCE_DIR.iterdir() if p.is_dir()]
+    subfolders = [p for p in DATA_SOURCE_DIR.iterdir() if p.is_dir() and p.name in TARGET_DATASETS]
 
     # Process each dataset folder independently
     for folder in sorted(subfolders, key =lambda p: p.name.lower()):
-        dataset_name = folder.name
+        dataset_name = folder.name.lower()
         db_path = folder / f"{dataset_name}.duckdb"
 
         print(f"\n Creating database for dataset: {dataset_name}")

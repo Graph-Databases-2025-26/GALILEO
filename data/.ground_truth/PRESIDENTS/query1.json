@@ -60,18 +60,6 @@
     "party": "National Convergence"
   },
   {
-    "name": "José Antonio Páez",
-    "party": "Military"
-  },
-  {
-    "name": "Francisco Linares",
-    "party": "Liberal"
-  },
-  {
-    "name": "Rafael Caldera",
-    "party": "Copei"
-  },
-  {
     "name": "Julián Castro",
     "party": "Military"
   },
@@ -94,6 +82,18 @@
   {
     "name": "Carlos Andrés Pérez",
     "party": "Democratic Action"
+  },
+  {
+    "name": "José Antonio Páez",
+    "party": "Military"
+  },
+  {
+    "name": "Francisco Linares",
+    "party": "Liberal"
+  },
+  {
+    "name": "Rafael Caldera",
+    "party": "Copei"
   },
   {
     "name": "José María Vargas",

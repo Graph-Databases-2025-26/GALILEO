@@ -1,12 +1,24 @@
 [
   {
-    "capital": "boise"
+    "capital": "montgomery"
   },
   {
-    "capital": "jackson"
+    "capital": "juneau"
   },
   {
-    "capital": "providence"
+    "capital": "hartford"
+  },
+  {
+    "capital": "helena"
+  },
+  {
+    "capital": "carson city"
+  },
+  {
+    "capital": "trenton"
+  },
+  {
+    "capital": "columbia"
   },
   {
     "capital": "sacramento"
@@ -33,42 +45,6 @@
     "capital": "olympia"
   },
   {
-    "capital": "montgomery"
-  },
-  {
-    "capital": "juneau"
-  },
-  {
-    "capital": "hartford"
-  },
-  {
-    "capital": "helena"
-  },
-  {
-    "capital": "carson city"
-  },
-  {
-    "capital": "trenton"
-  },
-  {
-    "capital": "columbia"
-  },
-  {
-    "capital": "denver"
-  },
-  {
-    "capital": "tallahassee"
-  },
-  {
-    "capital": "lansing"
-  },
-  {
-    "capital": "bismarck"
-  },
-  {
-    "capital": "charleston"
-  },
-  {
     "capital": "little rock"
   },
   {
@@ -88,39 +64,6 @@
   },
   {
     "capital": "pierre"
-  },
-  {
-    "capital": "dover"
-  },
-  {
-    "capital": "boston"
-  },
-  {
-    "capital": "santa fe"
-  },
-  {
-    "capital": "raleigh"
-  },
-  {
-    "capital": "richmond"
-  },
-  {
-    "capital": "madison"
-  },
-  {
-    "capital": "cheyenne"
-  },
-  {
-    "capital": "springfield"
-  },
-  {
-    "capital": "annapolis"
-  },
-  {
-    "capital": "albany"
-  },
-  {
-    "capital": "montpelier"
   },
   {
     "capital": "phoenix"
@@ -151,5 +94,62 @@
   },
   {
     "capital": "salt lake city"
+  },
+  {
+    "capital": "springfield"
+  },
+  {
+    "capital": "annapolis"
+  },
+  {
+    "capital": "albany"
+  },
+  {
+    "capital": "montpelier"
+  },
+  {
+    "capital": "dover"
+  },
+  {
+    "capital": "boston"
+  },
+  {
+    "capital": "santa fe"
+  },
+  {
+    "capital": "raleigh"
+  },
+  {
+    "capital": "richmond"
+  },
+  {
+    "capital": "madison"
+  },
+  {
+    "capital": "cheyenne"
+  },
+  {
+    "capital": "denver"
+  },
+  {
+    "capital": "tallahassee"
+  },
+  {
+    "capital": "lansing"
+  },
+  {
+    "capital": "bismarck"
+  },
+  {
+    "capital": "charleston"
+  },
+  {
+    "capital": "boise"
+  },
+  {
+    "capital": "jackson"
+  },
+  {
+    "capital": "providence"
   }
 ]
