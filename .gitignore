@@ -31,3 +31,7 @@ Thumbs.db
 # Ignore temporary result logs
 *.text
 
+# Ignore logs
+logs/
+*.log
+*.zip

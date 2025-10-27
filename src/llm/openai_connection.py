@@ -1,5 +1,9 @@
 import openai
 import json
+import time
+
+from src.utils.logging_config import logger, log_query_event
+
 
 # Configure your API key
 openai.api_key = "YOUR_OPENAI_API_KEY"
@@ -17,6 +21,19 @@ def query_llm(prompt: str, model: str = "gpt-5-mini") -> list:
         ],
         temperature=0
     )
+    elapsed_ms = (time.time() - start) * 1000.0  
+
+    # Log usage if available
+    usage = getattr(response, "usage", None)  
+    if usage:
+        logger.info(
+            f"openai_response model={model} latency_ms={elapsed_ms:.1f} "
+            f"prompt_tokens={getattr(usage,'prompt_tokens',None)} "
+            f"completion_tokens={getattr(usage,'completion_tokens',None)} "
+            f"total_tokens={getattr(usage,'total_tokens',None)}"
+        )
+    else:
+        logger.info(f"openai_response model={model} latency_ms={elapsed_ms:.1f}")
 
     # Extract text from the response
     text = response.choices[0].message.content.strip()
@@ -39,10 +56,10 @@ if __name__ == "__main__":
 
     # Chiamata LLM con NL
     nl_result = query_llm(nl_prompt)
-    print("NL Result:")
+    logger.info("NL Result:")
     print(json.dumps(nl_result, indent=2))
 
     # Chiamata LLM con SQL
     sql_result = query_llm(sql_prompt)
-    print("\nSQL Result:")
+    logger.info("SQL Result:")
     print(json.dumps(sql_result, indent=2))

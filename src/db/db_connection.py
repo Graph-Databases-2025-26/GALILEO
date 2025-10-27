@@ -3,6 +3,7 @@
 import duckdb
 import os
 from src.utils import DATA
+from src.utils.logging_config import logger
 
 def connect_to_duckdb(dataset_name: str):
     """
@@ -21,24 +22,29 @@ def connect_to_duckdb(dataset_name: str):
     dataset_folder = os.path.join(data_dir, dataset_name)
 
     if not os.path.exists(dataset_folder):
-        # if the folder doesn't exists, try with lower-case (es. flight-2)
+        # try lower-case (e.g., "flight-2")
         dataset_folder_lower = os.path.join(data_dir, dataset_name.lower())
-
         if os.path.exists(dataset_folder_lower):
+            logger.warning(
+                f"Dataset folder '{dataset_name}' not found, using lowercase folder '{dataset_name.lower()}'"
+            )
             dataset_folder = dataset_folder_lower
         else:
-            # If both pattern doesn't exists -> error
-            raise FileNotFoundError(
-                f" Folder not found. Check if the folder exists '{dataset_name}' o '{dataset_name.lower()}' in {data_dir}"
+            msg = (
+                f"Folder not found for dataset '{dataset_name}' or '{dataset_name.lower()}' in {data_dir}"
             )
+            logger.error(msg)
+            raise FileNotFoundError(msg)
 
     db_file_name_lower = dataset_name.lower()
     db_path = os.path.join(dataset_folder, f"{db_file_name_lower}.duckdb")
 
     if not os.path.exists(db_path):
-        raise FileNotFoundError(f"❌ Database not found: {db_path}")
+        msg = f"Database not found: {db_path}"
+        logger.error(msg)
+        raise FileNotFoundError(msg)
 
     # Create connection
     con = duckdb.connect(database=db_path, read_only=False)
-    #print(f"Connection established with {db_path}")
+    logger.info(f"DuckDB connection established → {db_path}")
     return con

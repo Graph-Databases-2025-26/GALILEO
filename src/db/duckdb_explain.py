@@ -12,19 +12,23 @@ from __future__ import annotations
 from pathlib import Path
 from typing import Dict
 import json
+import time
 import duckdb
+import os
+
+from src.utils.logging_config import logger, log_query_event
+
 
 def _ensure_db(db_path: Path | str) -> Path:
     p = Path(db_path)
     if not p.exists():
+        logger.warning(f"Database file not found: {p}")
         raise FileNotFoundError(f"Database file not found: {p}")
     return p
 
 def _run_explain_text(db_path: Path | str, sql: str, analyze: bool) -> str:
     """
     Run EXPLAIN (or EXPLAIN ANALYZE) and return the ASCII plan as one string.
-    DuckDB 1.4.x returns EXPLAIN as multiple rows and (in some builds) multiple columns.
-    We join ALL columns in each row, then join all rows.
     """
     db = _ensure_db(db_path)
     con = duckdb.connect(str(db), read_only=True)
@@ -37,15 +41,18 @@ def _run_explain_text(db_path: Path | str, sql: str, analyze: bool) -> str:
         con.close()
 
 def get_explain_text(db_path: Path | str, sql: str) -> Dict[str, str]:
-    return {"format": "text", "plan_text": _run_explain_text(db_path, sql, analyze=False)}
+    start = time.time()  
+    result = {"format": "text", "plan_text": _run_explain_text(db_path, sql, analyze=False)}
+    elapsed = (time.time() - start) * 1000.0  
+    logger.info(f"EXPLAIN completed latency_ms={elapsed:.1f}")  
+    return result
 
 def get_explain_analyze_text(db_path: Path | str, sql: str) -> Dict[str, str]:
-    return {"format": "text_analyze", "plan_text": _run_explain_text(db_path, sql, analyze=True)}
-
-import os
-import json
-from pathlib import Path
-from typing import Dict
+    start = time.time()  
+    result = {"format": "text", "plan_text": _run_explain_text(db_path, sql, analyze=True)}
+    elapsed = (time.time() - start) * 1000.0  
+    logger.info(f"EXPLAIN ANALYZE completed latency_ms={elapsed:.1f}")  
+    return result
 
 
 def save_text_plan(plan: Dict[str, str], out_json: Path | str, out_txt: Path | str | None = None) -> Path:
@@ -53,8 +60,6 @@ def save_text_plan(plan: Dict[str, str], out_json: Path | str, out_txt: Path | s
     Write the plan dict to JSON and TXT.
     - JSON → results/explain_result_json/<dataset>/
     - TXT  → results/explain_result/<dataset>/
-    - TXT cleans out header lines like 'analyzed_plan' and 'physical_plan'
-      and any inline 'EXPLAIN ...' line, keeping only the box.
     """
     out_json = Path(out_json)
     out_txt = Path(out_txt) if out_txt else None
@@ -90,13 +95,12 @@ def save_text_plan(plan: Dict[str, str], out_json: Path | str, out_txt: Path | s
         txt_path = txt_dir / out_txt.name
         with open(txt_path, "w", encoding="utf-8", newline="\n") as f:
             f.write(clean_text)
-        print(f"    ✓ Saved TXT plan → {txt_path}")
+        logger.info(f"Saved TXT plan → {txt_path}")  # NEW
     else:
         txt_path = None
 
-    print(f"    ✓ Saved JSON plan → {json_path}")
+    logger.info(f"Saved JSON plan → {json_path}")  # NEW
     return json_path
-
 
 
 

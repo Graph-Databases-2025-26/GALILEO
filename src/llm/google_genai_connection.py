@@ -1,72 +1,64 @@
-from langchain_core.exceptions import LangChainException
-from langchain_google_genai import ChatGoogleGenerativeAI
-from langchain_core.prompts import ChatPromptTemplate
-from langchain_core.output_parsers import StrOutputParser
+"""
+Google Generative AI (Gemini) connection with structured logging.
+- Measures latency for direct invoke and chain execution
+- Logs response length and errors
+"""
+
 import os
+import time
 import traceback
 
-# Configure the API KEY
-try:
-    os.environ["GOOGLE_API_KEY"] = "You have to insert you own API key"
-except KeyError:
-    print("GOOGLE_API_KEY environment variable not set")
-    exit(1)
+from langchain_core.exceptions import LangChainException
+from langchain_core.prompts import ChatPromptTemplate
+from langchain_core.output_parsers import StrOutputParser
+from langchain_google_genai import ChatGoogleGenerativeAI
 
-def query_llm(query: str, model: str = "gemini-2.5-flash"):
+from src.utils.logging_config import logger, log_query_event
+
+
+
+def query_llm(query: str, model: str = "gemini-2.5-flash", temperature: float = 0.7) -> str:
     """
-    Send a prompt to LLM and return the response as a string.
+    Send a prompt to Gemini and return the response as a string.
+    Logs timings and errors with loguru.
     """
-    print("Inizio query_llm")
+    # Ensure key is present (prefer env var)
+    api_key = os.getenv("GOOGLE_API_KEY", "").strip()
+    if not api_key:
+        logger.error("GOOGLE_API_KEY environment variable not set")
+        raise SystemExit(1)
+
     try:
-        # Initialize the LLM
-        print("LLM Initialization ...")
-        llm = ChatGoogleGenerativeAI(
-            model=model,
-            temperature=0.7,
-            max_tokens=2000
-        )
-        print(f"LLM inizialized!: {model}")
+        logger.info(f"Initializing Google GenAI model={model} temperature={temperature}")
+        llm = ChatGoogleGenerativeAI(model=model, temperature=temperature, max_tokens=2000)
 
-        # Create a prompt template for direct test
+        # 1) Direct invoke (quick probe / warmup)
         direct_prompt = f"Answer the question in a generic way: {query}"
-        print(f"Direct prompt: {direct_prompt}")
-        raw_response = llm.invoke(direct_prompt)
-        print(f"Risposta grezza del modello: {raw_response}")
+        t0 = time.time()
+        _ = llm.invoke(direct_prompt)
+        logger.info(f"gemini_invoke latency_ms={(time.time() - t0) * 1000.0:.1f}")
 
-        # Create a prompt template for chain
-        print("Creazione prompt template per chain...")
-        prompt = ChatPromptTemplate.from_template(
-            "Rispondi in italiano alla seguente domanda in modo chiaro e conciso: {query}"
-        )
-        print(f"Template prompt created: {prompt.format(query=query)}")
-
-        # Create the chain
-        print("Building the chain...")
+        # 2) Chain with a template (example in Italian to match your slides)
+        template = "Rispondi in italiano alla seguente domanda in modo chiaro e conciso: {query}"
+        prompt = ChatPromptTemplate.from_template(template)
         chain = prompt | llm | StrOutputParser()
-        print("Chain created")
 
-        # Execute the chain
-        print(f"Execute chain with query: {query}")
+        t1 = time.time()
         response = chain.invoke({"query": query})
-        print(f"Response: {response}")
+        latency_ms = (time.time() - t1) * 1000.0
+        logger.info(f"gemini_chain latency_ms={latency_ms:.1f} response_len={len(str(response))}")
         return response
 
     except LangChainException as e:
-        error_msg = f"LangChain's error: {str(e)}"
-        print(error_msg)
-        return error_msg
+        logger.error(f"LangChain error: {e}")
+        return f"LangChain error: {e}"
     except Exception as e:
-        error_msg = f"Generic error: {str(e)}. Details: {traceback.format_exc()}"
-        print(error_msg)
-        return error_msg
+        logger.error(f"Generic error: {e}. Trace:\n{traceback.format_exc()}")
+        return f"Generic error: {e}"
 
-# Query di test
-test_query = "name the major lakes in michigan?"
 
-# Esegui il test
-print("Test running...")
-result = query_llm(test_query)
-
-# Stampa il risultato
-print("\nModel response:")
-print(result)
+if __name__ == "__main__":
+    # Simple smoke test
+    q = "Elenca 3 città italiane famose per l'arte."
+    ans = query_llm(q)
+    logger.info(f"Gemini response: {ans}")

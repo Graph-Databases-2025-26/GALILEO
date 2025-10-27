@@ -2,6 +2,9 @@ from pathlib import Path
 import duckdb
 import os
 import glob
+import time
+
+from src.utils.logging_config import logger
 
 # base path for the project
 PROJECT_ROOT = "."
@@ -37,26 +40,26 @@ def execute_ingest_sql(con, folder_path: str):
         ingest_sql_files = sorted(glob.glob( "ingest_*.sql"))
 
         if not ingest_sql_files:
-            print(f"ERROR: ingest_<name>.sql file not found in {folder_path}")
+            logger.error(f"ingest_<name>.sql file not found in {folder_path}")
             return
 
         print(f"\n Folder: {folder_path}")
         for ingest_file in ingest_sql_files:
-            print(f"  Run: {ingest_file}")
+            logger.info(f"Run: {ingest_file}")
             try:
                 with open(ingest_file, "r", encoding="utf-8") as f:
                     sql_script = f.read()
                 con.execute(sql_script)
                 con.commit()
-                print(f" Execution done: {os.path.basename(ingest_file)}")
+                logger.info(f"Execution done: {os.path.basename(ingest_file)}")
             except Exception as e:
-                print(f" Error in {ingest_file}: {e}")
+                logger.error(f"Error in {ingest_file}: {e}")
     finally:
         os.chdir(cwd)
 
 # --- Main ---
 if __name__ == "__main__":
-    print(f" Starting database creation from: {DATA_SOURCE_DIR}")
+    logger.info(f"Starting database creation from: {DATA_SOURCE_DIR}")
 
     if not DATA_SOURCE_DIR.exists():
        raise FileNotFoundError(f"Data folder not found at {DATA_SOURCE_DIR}")
@@ -71,40 +74,47 @@ if __name__ == "__main__":
         dataset_name = folder.name.lower()
         db_path = folder / f"{dataset_name}.duckdb"
 
-        print(f"\n Creating database for dataset: {dataset_name}")
-        print(f" Path: {db_path}")
+        logger.info(f"Creating database for dataset: {dataset_name}")
+        logger.info(f"Path: {db_path}")
 
         # Remove existing database if present
         if db_path.exists():
-            db_path.unlink()
-            print(f" Removed old database: {db_path}")
+            try:
+                db_path.unlink()
+                logger.info(f"Removed old database: {db_path}")
+            except Exception as e:
+                logger.error(f"Unable to remove old database {db_path}: {e}")
+                continue
+
 
         # Create new database
+        t0 = time.time()
         con = duckdb.connect(db_path)
-        print(f" Connection established")
+        logger.info("Connection established")
 
         # Execute ingest SQL scripts
         execute_ingest_sql(con, folder)
 
         # Show created tables
-        print("\n  Tables created in this database:")
+        logger.info("Listing created tables...")
         try:
             tables_df = con.execute("""
-                                    SELECT table_schema, table_name
-                                    FROM information_schema.tables
-                                    WHERE table_type = 'BASE TABLE'
-                                    ORDER BY table_schema, table_name
-                                    """).fetchdf()
+                SELECT table_schema, table_name
+                FROM information_schema.tables
+                WHERE table_type = 'BASE TABLE'
+                ORDER BY table_schema, table_name
+            """).fetchdf()
 
             if tables_df.empty:
-                print(" No tables found.")
+                logger.warning("No tables found.")
             else:
-                print(tables_df)
+                logger.info(f"Created tables ({len(tables_df)}):\n{tables_df}")
         except Exception as e:
-            print(f" Unable to list tables: {e}")
+            logger.error(f"Unable to list tables: {e}")
 
         # Close connection
         con.close()
-        print(f" Connection closed. Database saved at: {db_path}")
+        elapsed_ms = (time.time() - t0) * 1000.0
+        logger.info(f"Connection closed. Database saved at: {db_path} | latency_ms={elapsed_ms:.1f}")
 
-    print("\n All dataset databases have been created successfully!")
+    logger.info("All dataset databases have been created successfully!")
