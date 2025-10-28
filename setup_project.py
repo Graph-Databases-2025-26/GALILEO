@@ -55,22 +55,7 @@ def main() -> None:
     logger.info(f"Output directory: {settings.io.outputs_dir}")
     logger.info(f"setup_project.py starting at ROOT = {ROOT}")
 
-    # Create venv if missing
-    if not VENV.exists():
-        logger.info(" Creating virtual environment...")
-        run([sys.executable, "-m", "venv", str(VENV)])
-    else:
-        logger.info(" Virtual environment already exists")
-
-    # Install dependencies
-    if REQS.exists():
-        logger.info("\n Installing dependencies from requirements.txt...")
-
-    # Always use 'python -m pip' 
-        run([str(PY), "-m", "pip", "install", "--upgrade", "pip"], check=False)
-        run([str(PY), "-m", "pip", "install", "-r", str(REQS)])
-    else:
-        logger.warning(f"  requirements.txt not found at {REQS}; skipping installs")
+#---- requirements and environment
 
     selected_datasets = get_dataset_selection()
 
