@@ -178,15 +178,15 @@ In detail what **`setup_project.py`** does is the following:
 
 
 **RUN THE SYSTEM**: To run the system:
-* If you are in a WINDOWS environment and you are using the windows native command line: execute **`python main.py &&  python setup_project.py <parameters>`** from the root directory (**`/galileo_proj/`**).
-* If you are in a WINDOWS environment and you are using bash command line or a IDE terminal (e.g. PyCharm) : execute **`python main.py;  python setup_project.py <parameters> `** from the root directory (**`/galileo_proj/`**).
-* If you are in a LINUX environment: execute **`python main.py &&  python setup_project.py <parameters>`** from the root directory (**`/galileo_proj/`**).
+* If you are in a WINDOWS environment and you are using the windows native command line: execute **`python setup_project.py &&  python main.py <parameters>`** from the root directory (**`/galileo_proj/`**).
+* If you are in a WINDOWS environment and you are using bash command line or a IDE terminal (e.g. PyCharm) : execute **`python setup_project.py;  python main.py  <parameters> `** from the root directory (**`/galileo_proj/`**).
+* If you are in a LINUX environment: execute **`python setup_project.py &&  python main.py <parameters>`** from the root directory (**`/galileo_proj/`**).
 
 
 Regarding the parameters you can specify which datasets to process directly from the command line or via YAML configuration:
 REMEMBER: THE COMMAND LINE HAS THE PRIORITY
-* **To process all datasets**: **`python setup_project.py ALL`** 
-* **To process one or more specific datasets**: **`python3 setup_project.py GEO MOVIES FLIGHT-4`** 
+* **To process all datasets**: **`python main.py ALL`** 
+* **To process one or more specific datasets**: **`python main.py GEO MOVIES FLIGHT-4`** 
 * **Alternative via Configuration File**: If no command-line arguments are given, the script will fall back to the YAML configuration in which you can define the datasets in **`config/config.yaml`** changing the selected datasets under the **`database`** attribute.
 
 Furthermore, if necessary, it's possible to execute individual scripts:
