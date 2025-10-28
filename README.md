@@ -173,15 +173,21 @@ In detail what **`setup_project.py`** does is the following:
 * Prints messages to track progress.
 
 
-**RUN THE SYSTEM**: To run the system, execute **`python3 setup_project.py`** from the root directory (**`/galois_proj/`**)
+**RUN THE SYSTEM**: To run the system, execute **`python setup_project.py`** from the root directory (**`/galileo_proj/`**).
+
+You can specify which datasets to process directly from the command line or via YAML configuration:
+REMEMBER: THE COMMAND LINE HAS THE PRIORITY
+* **To process all datasets**: **`python setup_project.py ALL`** 
+* **To process one or more specific datasets**: **`python3 setup_project.py GEO MOVIES FLIGHT-4`** 
+* **Alternative via Configuration File**: If no command-line arguments are given, the script will fall back to the YAML configuration in which you can define the datasets in **`config/config.yaml`** changing the selected datasets under the **`database`** attribute.
 
 Furthermore, if necessary, it's possible to execute individual scripts:
-* **Evaluation queries**: from the following directory: `/galois_proj/src/utils/` run: **`python3  galois_eval.py [-h] --ground GROUND --submissions SUBMISSIONS [--datasets [DATASETS ...]] [--cell-metric {exact,similarity}] [--tuple-metric {constraint,similarity}] [--format {table,csv,json,tex}]
+* **Evaluation queries**: from the following directory: `/galileo_proj/src/utils/` run: **`python3  galileo_eval.py [-h] --ground GROUND --submissions SUBMISSIONS [--datasets [DATASETS ...]] [--cell-metric {exact,similarity}] [--tuple-metric {constraint,similarity}] [--format {table,csv,json,tex}]
                       [--latex-caption LATEX_CAPTION] [--latex-label LATEX_LABEL] [--latex-booktabs] [--overall] [--jobs JOBS] [--jobs-queries JOBS_QUERIES]`** .
-* **Ground Truth generation**: from the following directory: `/galois_proj/src/utils/` run:  **`python3 build_ground_truth.py [-h] --data-root DATA_ROOT --ground-root GROUND_ROOT [--datasets [DATASETS ...]] [--schema-name SCHEMA_NAME]
+* **Ground Truth generation**: from the following directory: `/galileo_proj/src/utils/` run:  **`python3 build_ground_truth.py [-h] --data-root DATA_ROOT --ground-root GROUND_ROOT [--datasets [DATASETS ...]] [--schema-name SCHEMA_NAME]
 build_ground_truth.py: error: the following arguments are required: --data-root, --ground-root`**.
-* **Avg. expected cells metric**: For calculate this metric you need to locate in the root  folder `/galois_proj/` and run: **` python3 -m src.db.avg_cells_metric`**.
-* **EXPLAIN / ANALYZE plans generation in .txt and .json format:** from the root folder `/galois_proj/` run: **`python3 -m src.db.run_explain_plans all/<DATASETNAME>`** -> you can type ' all ' or ' ALL ' and the command works anyway, additionally you can specify a single dataset but you need to specify it in uppercase e.g. MOVIES.
+* **Avg. expected cells metric**: For calculate this metric you need to locate in the root  folder `/galileo_proj/` and run: **` python3 -m src.db.avg_cells_metric`**.
+* **EXPLAIN / ANALYZE plans generation in .txt and .json format:** from the root folder `/galileo_proj/` run: **`python3 -m src.db.run_explain_plans all/<DATASETNAME>`** -> you can type ' all ' or ' ALL ' and the command works anyway, additionally you can specify a single dataset but you need to specify it in uppercase e.g. MOVIES.
 
 ---
 
@@ -273,4 +279,4 @@ After generating the query results, the next step is to automatically extract bo
 ---
 
 ## Avg. Expected Cells Metric 
-Like in the GALOIS paper, we replicate the Table 2 of the paper, the **Avg_Expected_Cells** metric is calculated by  **`avg_cells_metric.py`**, for run it you have to locate in the root directory **`galois_proj/`** directory and next run: **`python -m src.db.avg_cells_metric`**.
+Like in the GALOIS paper, we replicate the Table 2 of the paper, the **Avg_Expected_Cells** metric is calculated by  **`avg_cells_metric.py`**, for run it you have to locate in the root directory **`galileo_proj/`** directory and next run: **`python -m src.db.avg_cells_metric`**.

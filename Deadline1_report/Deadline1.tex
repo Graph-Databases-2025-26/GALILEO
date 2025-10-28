@@ -73,6 +73,18 @@ The Structure of out project is organized in scopes (data resources that include
 
 \section{Implementation Details}
 
+\subsection{How the project can be launched}
+To get started, you just need to launch the main setup script (\textbf{galileo\_proj/setup\_project.py}). We’ve designed it to be flexible, so you can run it with or without specifying datasets — either directly from the command line or through a configuration file.
+\subsubsection{Basic Execution}
+If you simply want to run the full setup without worrying about parameters, just type: \textbf{python setup\_project.py all}, this will automatically process all available datasets.
+\subsubsection{Running with Specific Datasets}
+If you want to focus on one or more specific datasets, you can pass them as arguments when launching the script. For example: \textbf{python setup\_project.py GEO MOVIES}, this will automatically process all available datasets.
+\subsubsection{Using the YAML Configuration}
+If you don’t pass any arguments from the command line, the script will automatically fall back to this configuration.
+You can define the datasets in the configuration file located at: \textbf{config/config.yaml}, just edit the \textbf{database} attribute
+\subsubsection{Default Behavior}
+No arguments? No YAML entry? No problem. The script will default to processing all datasets, so you’re always covered.
+
 \subsection{Configuration handling}
 All the system configuration details are reported  in \textbf{.yaml} file, and the \textbf{src/settings.py} is the central hub for all configuration data. It handles the critical process of loading and validating the external YAML file, ensuring the application always runs with correct and predictable parameters.
 Going more deeply:

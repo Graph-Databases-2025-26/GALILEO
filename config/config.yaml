@@ -1,6 +1,9 @@
+database:
+  run:  GEO
+
 model:
   provider: Google Gemini
-  name: gemini-2.5-flash
+  name: gemini-2.5-flasho
   temperature: 0.0
 
 confidence:

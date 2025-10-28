@@ -3,8 +3,10 @@ import duckdb
 import os
 import glob
 import time
+import sys
 
 from src.utils.logging_config import logger
+from src.utils.constants import DATASETS
 
 # base path for the project
 PROJECT_ROOT = "."
@@ -57,6 +59,23 @@ def execute_ingest_sql(con, folder_path: str):
     finally:
         os.chdir(cwd)
 
+# Select which datasets to process
+def get_selected_datasets() -> list[str]:
+    if len(sys.argv) > 1:
+        arg = sys.argv[1].upper()
+        logger.info(f"Input parameter: {arg}")
+    else:
+        arg = "ALL"
+        logger.info("No provided parameter, dafault: ALL")
+
+    if arg == "ALL":
+        return DATASETS
+    elif arg in DATASETS:
+        return [arg]
+    else:
+        logger.warning(f"Dataset '{arg}' not valid. The available datasets are: {DATASETS}")
+        return []
+
 # --- Main ---
 if __name__ == "__main__":
     logger.info(f"Starting database creation from: {DATA_SOURCE_DIR}")
@@ -64,10 +83,12 @@ if __name__ == "__main__":
     if not DATA_SOURCE_DIR.exists():
        raise FileNotFoundError(f"Data folder not found at {DATA_SOURCE_DIR}")
 
-    # Datasets
-    TARGET_DATASETS = {"FLIGHT-2", "FLIGHT-4", "FORTUNE", "GEO", "MOVIES", "PRESIDENTS", "PREMIER", "WORLD"}
+    selected_datasets = get_selected_datasets()
+    if not selected_datasets:
+        logger.warning("Any valid dataset provided")
+        sys.exit(1)
     # Scan all subfolders inside ../data/
-    subfolders = [p for p in DATA_SOURCE_DIR.iterdir() if p.is_dir() and p.name in TARGET_DATASETS]
+    subfolders = [p for p in DATA_SOURCE_DIR.iterdir() if p.is_dir() and p.name in selected_datasets]
 
     # Process each dataset folder independently
     for folder in sorted(subfolders, key =lambda p: p.name.lower()):
