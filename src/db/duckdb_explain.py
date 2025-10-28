@@ -1,5 +1,4 @@
 """
-duckdb_explain.py
 Utilities to export DuckDB execution plans for a SQL query.
 
 - get_explain()           -> {"format":"text", "plan_text": "..."}
@@ -95,11 +94,10 @@ def save_text_plan(plan: Dict[str, str], out_json: Path | str, out_txt: Path | s
         txt_path = txt_dir / out_txt.name
         with open(txt_path, "w", encoding="utf-8", newline="\n") as f:
             f.write(clean_text)
-        logger.info(f"Saved TXT plan → {txt_path}")  # NEW
-    else:
+        logger.info(f"Saved TXT plan → {txt_path}")  
         txt_path = None
 
-    logger.info(f"Saved JSON plan → {json_path}")  # NEW
+    logger.info(f"Saved JSON plan → {json_path}")  
     return json_path
 
 

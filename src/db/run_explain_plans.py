@@ -1,10 +1,10 @@
 """
 Batch-generate EXPLAIN + EXPLAIN ANALYZE outputs for each SQL statement
-in queries_*.sql under setup-environment/data/<dataset>/.
+in queries_*.sql 
 
 Usage:
-  (.venv) python setup-environment/config/run_explain_plans.py world
-  (.venv) python setup-environment/config/run_explain_plans.py all
+  (.venv) python -m src.db.run_explain_plans world
+  (.venv) python -m src.db.run_explain_plans all
 """
 
 from pathlib import Path
@@ -28,15 +28,15 @@ RESULTS_ROOT = ROOT / "results"
 
 
 def find_datasets() -> list[Path]:
-    return sorted([p for p in DATA_ROOT.iterdir() if p.is_dir()])
+    return sorted([p for p in DATA_ROOT.iterdir() if p.is_dir()]) # dataset dirs
 
 
 def load_statements(sql_file: Path) -> list[str]:
     """
-    Ensures each statement ends with a semicolon for clearer logs (optional).
+    Ensures each statement ends with a semicolon for clearer logs 
     """
-    text = sql_file.read_text(encoding="utf-8")
-    stmts = [s.strip() for s in text.split(";") if s.strip()]
+    text = sql_file.read_text(encoding="utf-8") 
+    stmts = [s.strip() for s in text.split(";") if s.strip()] 
     return [s if s.endswith(";") else s + ";" for s in stmts]
 
 
@@ -54,7 +54,7 @@ def process_dataset(dataset_dir: Path) -> int:
         logger.info(f"No queries_*.sql in {dataset_dir}")
         return 0
 
-    dataset_start = time.time()  # NEW
+    dataset_start = time.time()  
     total = 0
     for sql_path in sql_files:
         stmts = load_statements(sql_path)
@@ -71,8 +71,8 @@ def process_dataset(dataset_dir: Path) -> int:
                 total += 1
             except Exception as e:
                 logger.error(f"✗ {base.name} -> {e}")
-    elapsed_ms = (time.time() - dataset_start) * 1000.0  # NEW
-    log_query_event("dataset_completed", dataset=dataset, statements=total, latency_ms=f"{elapsed_ms:.1f}")
+    elapsed_ms  = (time.time() - dataset_start) * 1000.0  
+    log_query_event("dataset_completed", dataset=dataset, statements=total, latency_ms=f"{elapsed_ms:.1f}") 
     return total
 
 

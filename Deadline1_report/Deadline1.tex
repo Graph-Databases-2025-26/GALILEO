@@ -62,6 +62,18 @@ The project is built upon a Python dependency stack prioritizing robustness, eff
 
 \end{enumerate}
 
+\subsection{Logging Library}
+\label{subsec:logging-library}
+We implement structured logging with \texttt{loguru} instead of the basic Python \texttt{logging} module. 
+The goal is to have uniform, timestamped messages with contextual metadata (dataset, query, latency, token usage), visible in the console and saved to rotating log files.
+\paragraph{Rationale.}
+\begin{itemize}
+  \item \textbf{Structured and unified output:} provides a single, centralized configuration for message format, log levels, and output handlers.
+  \item \textbf{Enhanced observability:} captures execution timings (in milliseconds) for DuckDB \texttt{EXPLAIN}/\texttt{EXPLAIN ANALYZE} operations and LLM requests, including token usage statistics when available.
+  \item \textbf{Data persistence and maintenance:} ensures automatic log file rotation, retention, and compression to manage disk usage and prevent oversized log artifacts.
+\end{itemize}
+
+
 \section{Repository Structure}
 The Structure of out project is organized in scopes (data resources that include database data - ground truth data and output results, configuration stuff,  source scripts, tests), so we have:\\
 \begin{itemize}
@@ -186,6 +198,23 @@ query plans can be reliably generated and compared. The outputs will later be
 used to align relational operators with their LLM-based equivalents within the
 GALOIS pipeline.
 
+\subsection{Logging \& Observability}
+\label{subsec:logging-impl}
+
+\paragraph{Configuration.}
+Logging is centralised in \texttt{src/utils/logging\_config.py}. It creates a \texttt{logs/} folder at runtime and registers two sinks:
+\begin{itemize}
+  \item \textbf{Console} (level \texttt{INFO+}, colored): live progress while running.
+  \item \textbf{File} \texttt{logs/pipeline.log} (level \texttt{DEBUG+}): persistent, rotated at 5\,MB, retained for 10 days, compressed as \texttt{.zip}.
+\end{itemize}
+Python warnings are redirected to the logger so that \texttt{UserWarning}/\texttt{DeprecationWarning} also appear in the logs.
+
+\paragraph{How to change verbosity.}
+To reduce console noise, change the console sink level to \texttt{WARNING} in
+\texttt{logging\_config.py}. The file sink will still persist \texttt{DEBUG+}:
+\begin{verbatim}
+logger.add(sys.stdout, ..., level="WARNING")
+\end{verbatim}
 
 \subsection{Evaluation}
 We have the \textbf{galois\_eval.py} provided by Tutor, that is a command-line evaluator that computes performance metrics for query results across different datasets.
