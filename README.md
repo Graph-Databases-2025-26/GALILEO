@@ -178,8 +178,10 @@ In detail what **`setup_project.py`** does is the following:
 
 
 **RUN THE SYSTEM**: To run the system:
-* If you are in a WINDOWS environment and you are using the windows native command line: execute **`python main.py &  python setup_project.py <parameters>`** from the root directory (**`/galileo_proj/`**).
+* If you are in a WINDOWS environment and you are using the windows native command line: execute **`python main.py &&  python setup_project.py <parameters>`** from the root directory (**`/galileo_proj/`**).
 * If you are in a WINDOWS environment and you are using bash command line or a IDE terminal (e.g. PyCharm) : execute **`python main.py;  python setup_project.py <parameters> `** from the root directory (**`/galileo_proj/`**).
+* If you are in a LINUX environment: execute **`python main.py &&  python setup_project.py <parameters>`** from the root directory (**`/galileo_proj/`**).
+
 
 Regarding the parameters you can specify which datasets to process directly from the command line or via YAML configuration:
 REMEMBER: THE COMMAND LINE HAS THE PRIORITY
