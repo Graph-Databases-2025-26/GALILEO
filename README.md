@@ -25,6 +25,44 @@ Our focus is on **GALOIS**, a framework that integrates LLMs into query executio
 
 ---
 
+## How to run the system:
+For running the system the only scripts that you need is **`main.py`** **`setup_project.py`** that is located in the root folder.
+In detail:
+* **`setup_project.py`** install all the needed libraries for requirements.txt and creates the virtual environment.
+* **`main.py`** runs all the system functionalities
+
+In detail what **`setup_project.py`** does is the following:
+* Defines the main paths of the project (query results folder, ground truth folder exc...)
+* Creates an virtual environment for python 
+* Install the needed python dependencies from **requirements.txt** for the system
+* Tests the database connection
+* Executes queries for a set of datasets and saves results in JSON.
+* Evaluates the results against the ground truth.
+* Prints messages to track progress.
+
+
+**RUN THE SYSTEM**: To run the system:
+* If you are in a WINDOWS environment and you are using the windows native command line: execute **`python setup_project.py &&  python main.py <parameters>`** (e.g. **`python setup_project.py &&  python main.py world flight-2 presidents `**) from the root directory (**`/galileo_proj/`**).
+* If you are in a WINDOWS environment and you are using bash command line or a IDE terminal (e.g. PyCharm) : execute **`python setup_project.py;  python main.py  <parameters> `** from the root directory (**`/galileo_proj/`**).
+* If you are in a LINUX environment: execute **`python setup_project.py &&  python main.py <parameters>`** from the root directory (**`/galileo_proj/`**).
+
+
+Regarding the parameters you can specify which datasets to process directly from the command line or via YAML configuration:
+REMEMBER: THE COMMAND LINE HAS THE PRIORITY
+* **To process all datasets**: **`python main.py ALL`** 
+* **To process one or more specific datasets**: **`python main.py GEO MOVIES FLIGHT-4`** 
+* **Alternative via Configuration File**: If no command-line arguments are given, the script will fall back to the YAML configuration in which you can define the datasets in **`config/config.yaml`** changing the selected datasets under the **`database`** attribute.
+
+Furthermore, if necessary, it's possible to execute individual scripts:
+* **Evaluation queries**: from the following directory: `/galileo_proj/src/utils/` run: **`python3  galileo_eval.py [-h] --ground GROUND --submissions SUBMISSIONS [--datasets [DATASETS ...]] [--cell-metric {exact,similarity}] [--tuple-metric {constraint,similarity}] [--format {table,csv,json,tex}]
+                      [--latex-caption LATEX_CAPTION] [--latex-label LATEX_LABEL] [--latex-booktabs] [--overall] [--jobs JOBS] [--jobs-queries JOBS_QUERIES]`** .
+* **Ground Truth generation**: from the following directory: `/galileo_proj/src/utils/` run:  **`python3 build_ground_truth.py [-h] --data-root DATA_ROOT --ground-root GROUND_ROOT [--datasets [DATASETS ...]] [--schema-name SCHEMA_NAME]
+build_ground_truth.py: error: the following arguments are required: --data-root, --ground-root`**.
+* **Avg. expected cells metric**: For calculate this metric you need to locate in the root  folder `/galileo_proj/` and run: **` python3 -m src.db.avg_cells_metric`**.
+* **EXPLAIN / ANALYZE plans generation in .txt and .json format:** from the root folder `/galileo_proj/` run: **`python3 -m src.db.run_explain_plans <dataset1> [<dataset2> ...] | all`** -> you can type ' all ' or ' ALL ' and the command works anyway, additionally you can specify a single or multiple dataset, if you don't specify anything the system will process al datasets.
+
+---
+
 ## Structure of the Repository
 
 **The Repository is organized by functional scopes, mirroring the development phases and the required tasks.**
@@ -158,44 +196,6 @@ These libraries are required only for the development environment and for runnin
 * **Test Runner:** **`pytest`** is the standard testing framework used to execute all tests.
 * **Code Coverage:** **`coverage`** and **`pytest-cov`** measure the percentage of source code covered by automated tests.
 * **Mocking:** **`pytest-mock`** facilitates the creation of mock objects and stubs to isolate external dependencies during unit tests.
-
----
-
-## How to run the system:
-For running the system the only scripts that you need is **`main.py`** **`setup_project.py`** that is located in the root folder.
-In detail:
-* **`main.py`** install all the needed libraries for requirements.txt and creates the virtual environment.
-* **`setup_project.py`** runs all the system functionalities
-
-In detail what **`setup_project.py`** does is the following:
-* Defines the main paths of the project (query results folder, ground truth folder exc...)
-* Creates an virtual environment for python 
-* Install the needed python dependencies from **requirements.txt** for the system
-* Tests the database connection
-* Executes queries for a set of datasets and saves results in JSON.
-* Evaluates the results against the ground truth.
-* Prints messages to track progress.
-
-
-**RUN THE SYSTEM**: To run the system:
-* If you are in a WINDOWS environment and you are using the windows native command line: execute **`python setup_project.py &&  python main.py <parameters>`** from the root directory (**`/galileo_proj/`**).
-* If you are in a WINDOWS environment and you are using bash command line or a IDE terminal (e.g. PyCharm) : execute **`python setup_project.py;  python main.py  <parameters> `** from the root directory (**`/galileo_proj/`**).
-* If you are in a LINUX environment: execute **`python setup_project.py &&  python main.py <parameters>`** from the root directory (**`/galileo_proj/`**).
-
-
-Regarding the parameters you can specify which datasets to process directly from the command line or via YAML configuration:
-REMEMBER: THE COMMAND LINE HAS THE PRIORITY
-* **To process all datasets**: **`python main.py ALL`** 
-* **To process one or more specific datasets**: **`python main.py GEO MOVIES FLIGHT-4`** 
-* **Alternative via Configuration File**: If no command-line arguments are given, the script will fall back to the YAML configuration in which you can define the datasets in **`config/config.yaml`** changing the selected datasets under the **`database`** attribute.
-
-Furthermore, if necessary, it's possible to execute individual scripts:
-* **Evaluation queries**: from the following directory: `/galileo_proj/src/utils/` run: **`python3  galileo_eval.py [-h] --ground GROUND --submissions SUBMISSIONS [--datasets [DATASETS ...]] [--cell-metric {exact,similarity}] [--tuple-metric {constraint,similarity}] [--format {table,csv,json,tex}]
-                      [--latex-caption LATEX_CAPTION] [--latex-label LATEX_LABEL] [--latex-booktabs] [--overall] [--jobs JOBS] [--jobs-queries JOBS_QUERIES]`** .
-* **Ground Truth generation**: from the following directory: `/galileo_proj/src/utils/` run:  **`python3 build_ground_truth.py [-h] --data-root DATA_ROOT --ground-root GROUND_ROOT [--datasets [DATASETS ...]] [--schema-name SCHEMA_NAME]
-build_ground_truth.py: error: the following arguments are required: --data-root, --ground-root`**.
-* **Avg. expected cells metric**: For calculate this metric you need to locate in the root  folder `/galileo_proj/` and run: **` python3 -m src.db.avg_cells_metric`**.
-* **EXPLAIN / ANALYZE plans generation in .txt and .json format:** from the root folder `/galileo_proj/` run: **`python3 -m src.db.run_explain_plans all/<DATASETNAME>`** -> you can type ' all ' or ' ALL ' and the command works anyway, additionally you can specify a single dataset but you need to specify it in uppercase e.g. MOVIES.
 
 ---
 

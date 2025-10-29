@@ -43,35 +43,43 @@ The project is built upon a Python dependency stack prioritizing robustness, eff
   \textbf{duckdb}: Utilized as a high-performance, in-process analytical database, ideal for rapid processing of data volumes directly within the application.
   \textbf{sqlglot}: Employed for the abstract analysis, manipulation, and translation of SQL queries.
   \item LLM Orchestrator (Large Language Model)
-  \textbf{LangChain}: The core framework managing interactions with AI models.
-  \textbf{langchain-google-genai}: Provides access to Google Gemini AI models. This setup ensures modularity, flexibility, and scalability in establishing the system's communication with the LLM.
+  We have implemented a streamlined pipeline to interact with Google’s Gemini Large Language Model (LLM) using the LangChain framework.
+  \\\textbf{LangChain}: The core framework managing interactions with the AI model.
+  \\Going deeper in the technical stuff:
+  \begin{itemize}
+    \item  API Key Management Securely loads API keys from environment variables using dotenv, ensuring flexible and safe configuration.
+    \item  LLM Initialization Instantiates a ChatGoogleGenerativeAI object with customizable parameters such as model version (gemini-2.5-flash) and temperature.
+    \item  Model Warm-Up Performs a quick direct prompt to initialize the model and measure response latency.
+    \item  LangChain Prompt Chaining Uses a structured prompt template in Italian to generate clear and concise answers. The chain includes:
+        \begin{itemize}
+          \item  ChatPromptTemplate: dynamically formats the prompt
+          \item  ChatGoogleGenerativeAI: generates the response
+          \item  StrOutputParser: extracts the textual output
+        \end{itemize}
+  \end{itemize}
+
   \item  Configuration and Data Validation:
   \textbf{pydantic}: Essential for data validation and structured configuration management. It enforces type safety, handles data parsing/coercion, defines structured nested models, and raises immediate errors on malformed input.
   \textbf{python-dotenv}: Loads environment variables (including secrets) from the .env file.
   \textbf{pyyaml}: Handles reading and writing configuration files in YAML format.
-  \item  Templating: \textbf{jinja2}: The templating engine used for the dynamic generation of structured output, such as code, reports (HTML, XML, JSON), or complex prompt statements, by separating presentation logic from data.
+  \item  Templating: \textbf{jinja2}: The templating engine that will be used for the dynamic generation of structured output, such as code, reports (HTML, XML, JSON), or complex prompt statements, by separating presentation logic from data.
   \item Logging and Utilities
-  \textbf{loguru}: The chosen logging library for its simplicity and structured output, which enhances system log readability.
-  Logs: All runtime logs are stored in the .log folder.
+  \textbf{loguru}: We implement structured logging with \texttt{loguru} instead of the basic Python \texttt{logging} module. 
+The goal is to have uniform, timestamped messages with contextual metadata (dataset, query, latency, token usage), visible in the console and saved to rotating log files.
+Specifically, when the code is executed, a “logs” folder will be generated and inside it there will be a text file containing all the system logs.
+\begin{itemize}
+  \item \textbf{Structured and unified output:} provides a single, centralized configuration for message format, log levels, and output handlers.
+  \item \textbf{Enhanced observability:} captures execution timings (in milliseconds) for DuckDB \texttt{EXPLAIN}/\texttt{EXPLAIN ANALYZE} operations and LLM requests, including token usage statistics when available.
+  \item \textbf{Data persistence and maintenance:} ensures automatic log file rotation, retention, and compression to manage disk usage and prevent oversized log artifacts.
+\end{itemize}
+We will see later in the report more details about the Logs handling.
   \item Development and Testing
-  These dependencies are specific to the development environment and the test suite:
   \textbf{pytest}: The standard testing framework for executing all tests.
   coverage and \textbf{pytest-cov}: Used to measure the percentage of source code covered by automated tests (Code Coverage).
   \textbf{pytest-mock}: Facilitates the creation of mock objects and stubs to isolate external dependencies during unit tests.
 
 
 \end{enumerate}
-
-\subsection{Logging Library}
-\label{subsec:logging-library}
-We implement structured logging with \texttt{loguru} instead of the basic Python \texttt{logging} module. 
-The goal is to have uniform, timestamped messages with contextual metadata (dataset, query, latency, token usage), visible in the console and saved to rotating log files.
-\paragraph{Rationale.}
-\begin{itemize}
-  \item \textbf{Structured and unified output:} provides a single, centralized configuration for message format, log levels, and output handlers.
-  \item \textbf{Enhanced observability:} captures execution timings (in milliseconds) for DuckDB \texttt{EXPLAIN}/\texttt{EXPLAIN ANALYZE} operations and LLM requests, including token usage statistics when available.
-  \item \textbf{Data persistence and maintenance:} ensures automatic log file rotation, retention, and compression to manage disk usage and prevent oversized log artifacts.
-\end{itemize}
 
 
 \section{Repository Structure}
@@ -86,14 +94,19 @@ The Structure of out project is organized in scopes (data resources that include
 \section{Implementation Details}
 
 \subsection{How the project can be launched}
-To get started, you just need to launch the main setup script (\textbf{galileo\_proj/setup\_project.py}). We’ve designed it to be flexible, so you can run it with or without specifying datasets — either directly from the command line or through a configuration file.
+To get started, the only scripts that you need is \textbf{main.py} and \textbf{setup\_project.py} that is located in the root folder.
+\\In detail:
+\textbf{setup\_project.py} install all the needed libraries for requirements.txt and creates the virtual environment;
+\textbf{main.py} runs all the system functionalities. We’ve designed it to be flexible, so you can run it with or without specifying datasets — either directly from the command line or through the YAML configuration file.
+\\\textbf{ATTENTION}: If is the first time that you run the system, before running \textbf{main.py} you must run \textbf{setup\_project.py} for creating the virtual environment and the needed python libraries.
+You can run these scripts either with a single command  (in linux you can use '\&\&' to concatenate the two scripts and the same for command prompt in windows, in other hand if you are using bash prompt you need to use ';') or individually, both options work just fine.
 \subsubsection{Basic Execution}
 If you simply want to run the full setup without worrying about parameters, just type: \textbf{python setup\_project.py all}, this will automatically process all available datasets.
 \subsubsection{Running with Specific Datasets}
-If you want to focus on one or more specific datasets, you can pass them as arguments when launching the script. For example: \textbf{python setup\_project.py GEO MOVIES}, this will automatically process all available datasets.
+If you want to focus on one or more specific datasets, you can pass them as arguments when launching the scripts. For example: \textbf{python setup\_project.py \&\&  python main.py world flight\-2 presidents}.
 \subsubsection{Using the YAML Configuration}
 If you don’t pass any arguments from the command line, the script will automatically fall back to this configuration.
-You can define the datasets in the configuration file located at: \textbf{config/config.yaml}, just edit the \textbf{database} attribute
+You can define the datasets in the configuration file located at: \textbf{config/config.yaml}, just need to edit the \textbf{database} attribute.
 \subsubsection{Default Behavior}
 No arguments? No YAML entry? No problem. The script will default to processing all datasets, so you’re always covered.
 
@@ -117,7 +130,7 @@ At more technical level the \textbf{db\_connection.py} connects to a DuckDB data
 The next step is \textbf{duckdb\_db\_graphdb.py} which allows us to automatically build DuckDB databases from a directory of datasets, each containing an SQL ingestion script that creates the data tables and populates them,  this allows us to have an instance of the db representing a particular dataset  in which we can run queries.
 
 \subsection{Query Execution}
-The queries can be execute by means \textbf{run\_queries\_to\_json.py} script that automates the execution of SQL queries on DuckDB databases and exports their results to JSON files, one per query.\\
+The queries can be execute by means \textbf{run\_queries\_to\_json.py} script that automates the execution of SQL queries on DuckDB database and exports their results to JSON files, one per query.\\
 Going more deep the script executes each query and saves the results as JSON:
 
 \begin{enumerate}
@@ -132,7 +145,7 @@ Going more deep the script executes each query and saves the results as JSON:
 \label{sec:explain-plans}
 
 The \texttt{EXPLAIN} module was implemented to validate the SQL execution
-pipeline on DuckDB and to visualise the difference between logical and
+pipeline on DuckDB and to visualize the difference between logical and
 physical plans, providing a reliable baseline for the comparison with the
 GALOIS framework. 
 
@@ -202,7 +215,7 @@ GALOIS pipeline.
 \label{subsec:logging-impl}
 
 \paragraph{Configuration.}
-Logging is centralised in \texttt{src/utils/logging\_config.py}. It creates a \texttt{logs/} folder at runtime and registers two sinks:
+Logging is centralized in \texttt{src/utils/logging\_config.py}. It creates a \texttt{logs/} folder at runtime and registers two sinks:
 \begin{itemize}
   \item \textbf{Console} (level \texttt{INFO+}, colored): live progress while running.
   \item \textbf{File} \texttt{logs/pipeline.log} (level \texttt{DEBUG+}): persistent, rotated at 5\,MB, retained for 10 days, compressed as \texttt{.zip}.
@@ -220,10 +233,10 @@ logger.add(sys.stdout, ..., level="WARNING")
 We have the \textbf{galois\_eval.py} provided by Tutor, that is a command-line evaluator that computes performance metrics for query results across different datasets.
 Briefly it standardizes different result formats, normalizes textual/numeric data, computes multiple precision–recall-based metrics, aggregates them across datasets, and outputs results in several human- or machine-readable formats.
 
+\section{Results and Statistics}
 \subsection{Statistics for the datasets in the experiments}
 Table~\ref{tab:datasets} provides an overview of the datasets used our project. The datasets are divided into two main categories based on the type of task: IK (Incomplete Knowledge) and MC (Multiple Choice).
 The MC-type datasets include PREMIER, sourced from BBC, and FORTUNE, based on Kaggle data.
-Finally, GEO-TEST represents the test dataset, also derived from Spider [68], used to validate the model's performance.
 
 \begin{table}[h]
 \centering
@@ -232,8 +245,8 @@ Finally, GEO-TEST represents the test dataset, also derived from Spider [68], us
 \textbf{Dataset} & \textbf{Dataset} & \textbf{\# of} & \textbf{Avg. expected} & \textbf{Type} \\
 \textbf{name} & \textbf{source} & \textbf{queries} & \textbf{cells} & \\
 \midrule
-FLIGHT2 & Spider [68] & 3 & 1.0 & IK \\
-FLIGHT4 & Spider [68] & 3 & 534.0 & IK \\
+FLIGHT-2 & Spider [68] & 3 & 1.0 & IK \\
+FLIGHT-4 & Spider [68] & 3 & 534.0 & IK \\
 FORTUNE & Kaggle & 10 & 11.1 & MC \\
 GEO & Spider [68] & 32 & 23.1 & IK \\
 MOVIES & IMDB & 9 & 50.9 & IK \\
@@ -251,6 +264,8 @@ WORLD & Spider [68] & 4 & 33.2 & IK \\
 
 For the \textbf{Avg\_expected\_cells} parameter we have implemented an ad hoc script that calculates it, more technically the \textbf{avg\_cells\_metric.py} calculates for each dataset the sum of the cells returned by the results of each query and then adds them together.
 Finally, it calculates the metric by dividing the total number of cells by the number of queries for that specific dataset.
+In summary this table  highlights the diversity in dataset complexity and domain coverage, offering a benchmark for evaluating the performance of tabular data querying systems under different conditions, for example: Datasets like FLIGHT-2 involve simple, direct answers.
+In other hand the dataset FLIGHT-4  require highly complex and extensive responses.
 
 
 
