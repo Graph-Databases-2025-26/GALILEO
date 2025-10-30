@@ -72,13 +72,13 @@ build_ground_truth.py: error: the following arguments are required: --data-root,
 
 ### Main Directories
 
-| Directory       | Description                                                                                                     |
-| :---------------| :---------------------------------------------------------------------------------------------------------------|
-| **`/config`**   | Contains configuration files and logic for loading them. Includes: <br>   • `config.yaml` — Main configuration file.<br>   • `loaders.py` — Parses the YAML configuration into a Python structure.                                   |
-| **`/data`**    | Stores raw data, ground truth, and intermediate results. Contains: <br>   • `.ground_truth/` — Baseline truth for evaluation.<br>   • `.output/` — Generated results ready for comparison.                                                  |
-| **`/results`** | Holds the final outputs produced by the analysis process. Typically includes `.json` and `.txt` files from the `explain` and `analyze`   operations.                                                                                               |   
-| **`/src`**     | Main source folder containing the project’s operational logic. Includes: <br>   • `main.py` — Entry point for execution.<br>   • `/db` — Database interaction modules (e.g., `db_connection.py`, `run_queries_to_json.py`).<br>   • `/llm` — Interfaces with Large Language Models (e.g., `google_genai_connection.py`, `openai_connection.py`).<br>   • `/galois` — Implements query optimization and execution logic inspired by the Galois architecture.<br>   • `/utils` — Utility scripts (`constants.py`, `logging_config.py`, `build_ground_truth.py`, `galois_eval.py`).                                                                    |
-| **`/test`**    | Contains unit and integration testing scripts (e.g., `db_utils.py`).                                             |
+| Directory       | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| :---------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **`/config`**   | Contains configuration files and logic for loading them. Includes: <br>   • `config.yaml` — Main configuration file.<br>   • `loaders.py` — Parses the YAML configuration into a Python structure.                                                                                                                                                                                                                                                                                                                                                                                   |
+| **`/data`**    | Stores raw data, ground truth, and intermediate results. Contains: <br>   • `.ground_truth/` — Baseline truth for evaluation.<br>   • `.output/` — Generated results ready for comparison.                                                                                                                                                                                                                                                                                                                                                                                           |
+| **`/results`** | Holds the final outputs produced by the analysis process. Typically includes `.json` and `.txt` files from the `explain` and `analyze`   operations.                                                                                                                                                                                                                                                                                                                                                                                                                                 |   
+| **`/src`**     | Main source folder containing the project’s operational logic. Includes: <br>   • `main.py` — Entry point for execution.<br>   • `/db` — Database interaction modules (e.g., `db_connection.py`, `run_queries_to_json.py`).<br>   • `/llm` — Interfaces with Large Language Models (e.g., `google_genai_connection.py`, `watsonx_ai_connection.py`).<br>   • `/galois` — Implements query optimization and execution logic inspired by the Galois architecture.<br>   • `/utils` — Utility scripts (`constants.py`, `logging_config.py`, `build_ground_truth.py`, `galois_eval.py`). |
+| **`/test`**    | Contains unit and integration testing scripts (e.g., `db_utils.py`).                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
                                                          
 ---
 
@@ -113,11 +113,14 @@ For connectivity, analysis, and management of structured data:
 
 ---
 
-### **LLM orchestrator**
+### **LLM Models Used**
 
-Our system leverages LangChain to manage interactions with Google Gemini AI models through the **`langchain-google-genai`** package.
-The reason why we choose LangChain is the modularity of this framework for handling prompts and conversational pipelines, while the Gemini integration enables access to Google’s advanced language understanding and generation capabilities.
-In summary this setup is flexible and scalable in order to establish a communication between our system and LLM.
+Our system interacts with two different LLM providers: Google Gemini and IBM Watsonx.ai., let's see the details:
+* **Google Gemini AI:** The system leverages LangChain to manage interactions with Google Gemini AI models through the **`langchain-google-genai`** package.
+The reason why we choose LangChain is the modularity of this framework for handling prompts and conversational pipelines with LLMs.
+* **IBM Watsonx.ai:** The system also integrates with IBM Watsonx.ai models using the **`ibm_watsonx_ai.foundation_models.ModelInference`** orchestrator package that manages authentication, model selection, prompt submission, and response handling for foundation models in IBM watsonx.ai environments.
+Regarding watsonx we use the model  **openai/gpt-oss-120b**, but we have a large set of choices for that.
+In summary, this setup is flexible and scalable in order to establish a communication between our system and LLMs.
 
 ---
 

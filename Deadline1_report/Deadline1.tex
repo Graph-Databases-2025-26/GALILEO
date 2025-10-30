@@ -46,9 +46,9 @@ The project is built upon a Python dependency stack prioritizing robustness, eff
   \textbf{duckdb}: Utilized as a high-performance, in-process analytical database, ideal for rapid processing of data volumes directly within the application.
   \textbf{sqlglot}: Employed for the abstract analysis, manipulation, and translation of SQL queries.
   \item LLM Orchestrator (Large Language Model)
-  We have implemented a streamlined pipeline to interact with Google’s Gemini Large Language Model (LLM) using the LangChain framework.
+  We have implemented a streamlined pipeline to interact with Google’s Gemini Large Language Model (LLM) using the \textbf{LangChain} framework and with IBM watsonx ai using the \textbf{ModelInference} package from  \textbf{ibm\_watsonx\_ai.foundation\_models}.
   \\\textbf{LangChain}: The core framework managing interactions with the AI model.
-  \\Going deeper in the technical stuff:
+  \\Going deeper in the technical stuff fro Google Gemini LLM:
   \begin{itemize}
     \item  API Key Management Securely loads API keys from environment variables using dotenv, ensuring flexible and safe configuration.
     \item  LLM Initialization Instantiates a ChatGoogleGenerativeAI object with customizable parameters such as model version (gemini-2.5-flash) and temperature.
@@ -60,6 +60,14 @@ The project is built upon a Python dependency stack prioritizing robustness, eff
           \item  StrOutputParser: extracts the textual output
         \end{itemize}
   \end{itemize}
+  Then regarding IBM watsonx ai LLM:
+  \begin{itemize}
+    \item  API Key Management Securely loads API keys from environment variables using dotenv, ensuring flexible and safe configuration.
+    \item  The code builds a ModelInference object configured with the credentials, project ID, and chosen model.
+    \item  The system submits the prompt and receives the response from the LLM.
+    \item  Logging the prompt, response length, latency, and any errors (including Python stack traces if exceptions occur)
+  \end{itemize}
+  In summary he script sends a sample prompt and logs the LLM’s output.
 
   \item  Configuration and Data Validation:
   \textbf{pydantic}: Essential for data validation and structured configuration management. It enforces type safety, handles data parsing/coercion, defines structured nested models, and raises immediate errors on malformed input.

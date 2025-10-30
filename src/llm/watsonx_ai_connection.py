@@ -7,14 +7,19 @@ IBM watsonx.ai connection with structured logging.
 import os
 import time
 import traceback
+from dotenv import load_dotenv
+from ibm_watsonx_ai import Credentials
+from ibm_watsonx_ai.foundation_models import ModelInference
 
-from ibm_watsonx_ai import Credentials, Model
 from src.utils.logging_config import logger, log_query_event
 
 
+#CONFIGURE THE API KEY
+load_dotenv()
+api_key = os.getenv("WATSONX_API_KEY", "").strip()
 
 def query_watsonx(prompt: str,
-                   model_id: str = "ibm/granite-13b-chat-v2",
+                   model_id: str = "openai/gpt-oss-120b",
                    project_id: str | None = None) -> str:
     """
     Send a prompt to IBM watsonx.ai and return the generated text.
@@ -24,7 +29,7 @@ def query_watsonx(prompt: str,
       - WATSONX_PROJECT_ID (env or provided)
     """
     try:
-        api_key = os.getenv("WATSONX_API_KEY", "").strip()
+
         url = os.getenv("WATSONX_URL", "https://us-south.ml.cloud.ibm.com").strip()
         project = project_id or os.getenv("WATSONX_PROJECT_ID", "").strip()
 
@@ -37,7 +42,7 @@ def query_watsonx(prompt: str,
 
         logger.info(f"Initializing watsonx.ai model_id={model_id}")
         creds = Credentials(url=url, api_key=api_key)
-        model = Model(model_id=model_id, credentials=creds, project_id=project)
+        model = ModelInference(model_id=model_id, credentials=creds, project_id=project)
 
         t0 = time.time()
         response = model.generate(prompt=prompt)
