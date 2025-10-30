@@ -78,22 +78,24 @@ def process_dataset(dataset_dir: Path) -> int:
 
 
 def main():
-    if len(sys.argv) < 2:
-        logger.error("Usage: python -m src.db.run_explain_plans.py <dataset>|all")
-        sys.exit(1)
 
-    arg = sys.argv[1].upper()
-    if arg == "all" or arg == "ALL":
+    args = [a.strip().upper() for a in sys.argv[1:]]
+
+    if not args or "all" in args:
         datasets = find_datasets()
         if not datasets:
             logger.error(f"No datasets found in {DATA_ROOT}")
             sys.exit(1)
+
     else:
-        ds = (DATA_ROOT / arg)
-        if not ds.exists():
-            logger.error(f"Dataset not found: {ds}")
-            sys.exit(1)
-        datasets = [ds]
+        datasets = []
+        for name in args:
+            ds_path = DATA_ROOT / name
+            if not ds_path.exists():
+                logger.error(f"Dataset not found: {ds_path}")
+                sys.exit(1)
+            datasets.append(ds_path)
+
 
     logger.info("Starting EXPLAIN plan generation...")
     run_start = time.time() 
