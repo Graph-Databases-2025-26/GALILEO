@@ -235,8 +235,8 @@ The functionality is implemented in the main script
 \path{src/db/run_explain_plans.py}, which delegates the
 actual DuckDB interaction to the adapter
 \path{src/db/duckdb\_explain.py}. The script can be executed by passing
-either a specific dataset name (e.g., \texttt{world}) or the keyword
-\texttt{all}. For each dataset located in
+one or more dataset names (e.g., \texttt{world}) or the keyword
+\texttt{all} to process them all together. For each dataset located in
 \path{<repo-root>/data/<dataset>}, the corresponding database
 \texttt{<dataset>.duckdb} and all \texttt{queries\_*.sql} files are loaded,
 split into single statements, and both \texttt{EXPLAIN} and
