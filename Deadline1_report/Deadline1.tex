@@ -91,6 +91,12 @@ We will see later in the report more details about the Logs handling.
 The project follows a modular organization designed to separate configuration, data, source code, and testing components.  
 This layout enhances maintainability, scalability, and code clarity.
 
+Before seeing the project's structure, we want to highlight the different design patterns used: 
+The \textbf{src} folder is divided into logical packages (db, llm, utils, test, etc.), that highlights the separation of concerns, provides a easier navigation and a modular code organization.
+Moreover within the \textbf{src/llm} there are different files that interfaces between the systems and various language model providers, this behavior can be seen as an  \textbf{Adapter Pattern}.\\
+In our project we applied also  a \textbf{Repository Pattern} by means a single script for connecting the database e instantiating it within each dataset folder.
+Finally the main script provides a single interface that hides the complexity and the logic of underlying functionalities (db connection, sql queries handling, LLM interaction ...). 
+
 \subsection{Main Directories and Contents}
 
 \begin{table}[H]
