@@ -9,7 +9,10 @@
 \usepackage{hyperref}
 \usepackage{booktabs}
 \usepackage{array}
-
+\usepackage{float}
+\usepackage{booktabs}
+\usepackage{setspace} 
+\usepackage{float} 
 
 % Margini
 \usepackage[margin=2.5cm]{geometry}
@@ -82,14 +85,86 @@ We will see later in the report more details about the Logs handling.
 \end{enumerate}
 
 
-\section{Repository Structure}
-The Structure of out project is organized in scopes (data resources that include database data - ground truth data and output results, configuration stuff,  source scripts, tests), so we have:\\
-\begin{itemize}
-    \item \textbf{data} folder: Contains all the datasets with the ingest, queries and table creation files, in this folder we store also the ground truth data and the results delivered by our system.
-    \item \textbf{config} folder: All the scripts and config files for the initialization of the system are there.
-    \item \textbf{src} folder: Here we have the scripts that develop the core functionalities of our system and also other useful utils. 
-    \item \textbf{test} folder: Finally this folder contains the unit tests that check the system correctness.
-\end{itemize}
+
+\section{Project Structure}
+
+The project follows a modular organization designed to separate configuration, data, source code, and testing components.  
+This layout enhances maintainability, scalability, and code clarity.
+
+\subsection{Main Directories and Contents}
+
+\begin{table}[H]
+\centering
+\renewcommand{\arraystretch}{2.0}
+\begin{tabular}{p{0.18\linewidth} p{0.75\linewidth}}
+\toprule
+\textbf{Directory} & \textbf{Description and Contents} \\ 
+\midrule
+
+\textbf{/config} &
+Contains configuration files and the logic for their loading.  
+Includes:\vspace{-10pt}
+\begin{flushleft}
+\setstretch{1}
+\textbf{config.yaml} — Main configuration file.\\[1pt]
+\textbf{loaders.py} — Parses the YAML configuration into a Python structure.
+\end{flushleft}
+\\
+
+\textbf{/data} &
+Stores raw data, ground truth, and intermediate results.  
+Contains:\vspace{-10pt}
+\begin{flushleft}
+\setstretch{1}
+\textbf{/.ground\_truth} — Baseline truth for evaluation.\\[2pt]
+\textbf{/.output} — Generated results ready for comparison.
+\end{flushleft}
+\\
+
+\textbf{/results} &
+Holds the final outputs produced by the analysis process.  
+Typically includes \texttt{.json} and \texttt{.txt} files from the \texttt{explain} and \texttt{analyze} operations.
+\\
+
+\textbf{/src} &
+Main source folder containing the project’s operational logic.  
+Includes:\vspace{-10pt}
+\begin{flushleft}
+\setstretch{1}
+\textbf{main.py} — Entry point for execution.\\[2pt]
+\textbf{/db} — Database interaction modules (e.g., \texttt{db\_connection.py}, \texttt{run\_queries\_to\_json.py}).\\[2pt]
+\textbf{/llm} — Interfaces with Large Language Models (e.g., \texttt{google\_genai\_connection.py}, \texttt{openai\_connection.py}).\\[2pt]
+\textbf{/galois} — Implements query optimization and execution logic inspired by the Galois architecture.\\[2pt]
+\textbf{/utils} — Utility scripts: \texttt{constants.py}, \texttt{logging\_config.py}, \texttt{build\_ground\_truth.py}, \texttt{galois\_eval.py}.
+\end{flushleft}
+\\
+
+\textbf{/test} &
+Contains unit and integration testing scripts (e.g., \texttt{db\_utils.py}).
+\\
+
+\bottomrule
+\end{tabular}
+\caption{Main directories and their contents.}
+\end{table}
+
+\subsection{Root-Level Files}
+
+\begin{table}[H]
+\centering
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{p{0.25\linewidth} p{0.65\linewidth}}
+\toprule
+\textbf{File} & \textbf{Description} \\
+\midrule
+\textbf{README.md} & High-level project documentation. \\
+\textbf{requirements.txt} & List of required Python dependencies. \\
+\textbf{setup\_project.py} & Script for project initialization. \\
+\bottomrule
+\end{tabular}
+\caption{Root-level files.}
+\end{table}
+
 
 \section{Implementation Details}
 
