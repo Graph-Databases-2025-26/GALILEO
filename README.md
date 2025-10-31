@@ -35,31 +35,33 @@ In detail what **`setup_project.py`** does is the following:
 * Defines the main paths of the project (query results folder, ground truth folder exc...)
 * Creates an virtual environment for python 
 * Install the needed python dependencies from **requirements.txt** for the system
-* Tests the database connection
+
+In detail what **`main.py`** does is the following:
+* Create a database for each data folder specified as input
 * Executes queries for a set of datasets and saves results in JSON.
 * Evaluates the results against the ground truth.
 * Prints messages to track progress.
 
 
 **RUN THE SYSTEM**: To run the system:
-* If you are in a WINDOWS environment and you are using the windows native command line: execute **`python setup_project.py &&  python main.py <parameters>`** (e.g. **`python setup_project.py &&  python main.py world flight-2 presidents `**) from the root directory (**`/galileo_proj/`**).
-* If you are in a WINDOWS environment and you are using bash command line or a IDE terminal (e.g. PyCharm) : execute **`python setup_project.py;  python main.py  <parameters> `** from the root directory (**`/galileo_proj/`**).
-* If you are in a LINUX environment: execute **`python setup_project.py &&  python main.py <parameters>`** from the root directory (**`/galileo_proj/`**).
+* If you are in a WINDOWS environment and you are using the windows native command line: execute **`python setup_project.py &&  .venv\Scripts\python -m src.main <parameters>`** (e.g. **`python setup_project.py && .venv\Scripts\python -m src.main world flight-2 presidents `**) from the root directory (**`/GALILEO/`**).
+* If you are in a WINDOWS environment and you are using bash command line or a IDE terminal (e.g. PyCharm) : execute **`python setup_project.py;  .venv\Scripts\python -m src.main  <parameters> `** from the root directory (**`/GALILEO/`**).
+* If you are in a LINUX environment: execute **`python setup_project.py &&  .venv\bin\python -m src.main <parameters>`** from the root directory (**`/GALILEO/`**).
 
 
 Regarding the parameters you can specify which datasets to process directly from the command line or via YAML configuration:
 REMEMBER: THE COMMAND LINE HAS THE PRIORITY
-* **To process all datasets**: **`python main.py ALL`** 
-* **To process one or more specific datasets**: **`python main.py GEO MOVIES FLIGHT-4`** 
+* **To process all datasets**: **`.venv\Scripts\python -m src.main ALL`** 
+* **To process one or more specific datasets**: **`.venv\Scripts\python -m src.main GEO MOVIES FLIGHT-4`** 
 * **Alternative via Configuration File**: If no command-line arguments are given, the script will fall back to the YAML configuration in which you can define the datasets in **`config/config.yaml`** changing the selected datasets under the **`database`** attribute.
 
 Furthermore, if necessary, it's possible to execute individual scripts:
-* **Evaluation queries**: from the following directory: `/galileo_proj/src/utils/` run: **`python3  galileo_eval.py [-h] --ground GROUND --submissions SUBMISSIONS [--datasets [DATASETS ...]] [--cell-metric {exact,similarity}] [--tuple-metric {constraint,similarity}] [--format {table,csv,json,tex}]
+* **Evaluation queries**: from the following directory: `/GALILEO/src/utils/` run: **`python3  galileo_eval.py [-h] --ground GROUND --submissions SUBMISSIONS [--datasets [DATASETS ...]] [--cell-metric {exact,similarity}] [--tuple-metric {constraint,similarity}] [--format {table,csv,json,tex}]
                       [--latex-caption LATEX_CAPTION] [--latex-label LATEX_LABEL] [--latex-booktabs] [--overall] [--jobs JOBS] [--jobs-queries JOBS_QUERIES]`** .
-* **Ground Truth generation**: from the following directory: `/galileo_proj/src/utils/` run:  **`python3 build_ground_truth.py [-h] --data-root DATA_ROOT --ground-root GROUND_ROOT [--datasets [DATASETS ...]] [--schema-name SCHEMA_NAME]
+* **Ground Truth generation**: from the following directory: `/GALILEO/src/utils/` run:  **`python3 build_ground_truth.py [-h] --data-root DATA_ROOT --ground-root GROUND_ROOT [--datasets [DATASETS ...]] [--schema-name SCHEMA_NAME]
 build_ground_truth.py: error: the following arguments are required: --data-root, --ground-root`**.
-* **Avg. expected cells metric**: For calculate this metric you need to locate in the root  folder `/galileo_proj/` and run: **` python3 -m src.db.avg_cells_metric`**.
-* **EXPLAIN / ANALYZE plans generation in .txt and .json format:** from the root folder `/galileo_proj/` run: **`python3 -m src.db.run_explain_plans <dataset1> [<dataset2> ...] | all`** -> you can type ' all ' or ' ALL ' and the command works anyway, additionally you can specify a single or multiple dataset, if you don't specify anything the system will process al datasets.
+* **Avg. expected cells metric**: For calculate this metric you need to locate in the root  folder `/GALILEO/` and run: **` python3 -m src.db.avg_cells_metric`**.
+* **EXPLAIN / ANALYZE plans generation in .txt and .json format:** from the root folder `/GALILEO/` run: **`python3 -m src.db.run_explain_plans <dataset1> [<dataset2> ...] | all`** -> you can type ' all ' or ' ALL ' and the command works anyway, additionally you can specify a single or multiple dataset, if you don't specify anything the system will process al datasets.
 
 ---
 
@@ -256,4 +258,4 @@ After generating the query results, the next step is to automatically extract bo
 ---
 
 ## Avg. Expected Cells Metric 
-Like in the GALOIS paper, we replicate the Table 2 of the paper, the **Avg_Expected_Cells** metric is calculated by  **`avg_cells_metric.py`**, for run it you have to locate in the root directory **`galileo_proj/`** directory and next run: **`python -m src.db.avg_cells_metric`**.
+Like in the GALOIS paper, we replicate the Table 2 of the paper, the **Avg_Expected_Cells** metric is calculated by  **`avg_cells_metric.py`**, for run it you have to locate in the root directory **`GALILEO/`** directory and next run: **`python -m src.db.avg_cells_metric`**.

@@ -2,7 +2,7 @@
 
 import duckdb
 import os
-from src.utils import DATA
+from src.utils import DATA_DIR
 from src.utils.logging_config import logger
 
 def connect_to_duckdb(dataset_name: str):
@@ -17,7 +17,7 @@ def connect_to_duckdb(dataset_name: str):
     """
     # Compute paths relative to this file (config/)
     base_dir = os.path.dirname(os.path.abspath(__file__))
-    data_dir = DATA
+    data_dir = DATA_DIR
 
     dataset_folder = os.path.join(data_dir, dataset_name)
 

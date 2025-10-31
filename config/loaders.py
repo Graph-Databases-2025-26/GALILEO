@@ -1,30 +1,66 @@
+from pydantic import BaseModel, Field
+from pydantic_settings import BaseSettings
 from dotenv import load_dotenv
 from pathlib import Path
+from src import CONFIG_PATH
 import os, yaml
-
-CONFIG_PATH = Path(__file__).resolve().parent / "config.yaml"
 
 # Carica variabili d'ambiente
 load_dotenv()
 
-# Chiavi API
-API_KEYS = {
-    "grok": os.getenv("XAI_API_KEY"),
-    "gemini": os.getenv("GOOGLE_GEMINI_API_KEY"),
-}
+class ExecutionConfig(BaseModel):
+    max_retries: int
+    backoff_sec: float
+    scan: str
 
-API_HOSTS = {
-    "grok": os.getenv("XAI_URL"),
-    "gemini": os.getenv("GOOGLE_GEMINI_ENDPOINT")
-}
+class IOConfig(BaseModel):
+    queries_dir: Path
+    prompts_dir: Path
+    outputs_dir: Path
 
-# Config YAML
-with open(CONFIG_PATH, "r") as f:
-    CONFIG = yaml.safe_load(f)
+class LoggingConfig(BaseModel):
+    level: str
+    json_format: bool
 
-def get_llm_settings(llm_name):
-    return {
-        "api_key": API_KEYS.get(llm_name),
-        "api_host": API_HOSTS.get(llm_name),
-        "config": CONFIG.get(llm_name)
-    }
+class GeminiConfig(BaseModel):
+    model: str
+    temperature: float
+    max_output_tokens: int
+    api_key: str | None = Field(default=None, env="GOOGLE_API_KEY")
+    api_endpoint: str | None = Field(default=None, env="GOOGLE_API_ENDPOINT")
+
+
+class GrokConfig(BaseModel):
+    model: str
+    max_tokens: int
+    api_key: str | None = Field(default=None, env="XAI_API_KEY")
+    api_endpoint: str | None = Field(default=None, env="XAI_URL")
+
+class DatasetConfig(BaseModel):
+    run: str
+    
+class AppConfig(BaseSettings):
+    database: DatasetConfig
+    execution: ExecutionConfig
+    io: IOConfig
+    logging: LoggingConfig
+    gemini: GeminiConfig
+    grok: GrokConfig
+
+class Config_Loader:
+
+    def __init__(self, config_path: str | Path = str(CONFIG_PATH)) -> None:
+        self.config_path = Path(config_path)
+        self.config = self._load_config()
+
+    def _load_config(self) -> AppConfig:
+        if not self.config_path.exists():
+            raise FileNotFoundError(f"File di configurazione non trovato: {self.config_path}")
+
+        with open(self.config_path, "r", encoding="utf-8") as f:
+            data = yaml.safe_load(f)
+
+        return AppConfig(**data)  
+
+    def get_config(self) -> AppConfig:
+        return self.config

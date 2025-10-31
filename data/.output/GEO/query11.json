@@ -1,15 +1,12 @@
 [
   {
-    "usa_state_traversed": "missouri"
+    "usa_state_traversed": "illinois"
   },
   {
-    "usa_state_traversed": "north dakota"
+    "usa_state_traversed": "louisiana"
   },
   {
-    "usa_state_traversed": "utah"
-  },
-  {
-    "usa_state_traversed": "arkansa"
+    "usa_state_traversed": "alabama"
   },
   {
     "usa_state_traversed": "south dakota"
@@ -24,27 +21,6 @@
     "usa_state_traversed": "michigan"
   },
   {
-    "usa_state_traversed": "iowa"
-  },
-  {
-    "usa_state_traversed": "tennessee"
-  },
-  {
-    "usa_state_traversed": "mississippi"
-  },
-  {
-    "usa_state_traversed": "nebraska"
-  },
-  {
-    "usa_state_traversed": "arizona"
-  },
-  {
-    "usa_state_traversed": "ohio"
-  },
-  {
-    "usa_state_traversed": "kansas"
-  },
-  {
     "usa_state_traversed": "minnesota"
   },
   {
@@ -57,19 +33,16 @@
     "usa_state_traversed": "texas"
   },
   {
-    "usa_state_traversed": "illinois"
+    "usa_state_traversed": "missouri"
   },
   {
-    "usa_state_traversed": "louisiana"
+    "usa_state_traversed": "north dakota"
   },
   {
-    "usa_state_traversed": "alabama"
+    "usa_state_traversed": "utah"
   },
   {
-    "usa_state_traversed": "wisconsin"
-  },
-  {
-    "usa_state_traversed": "california"
+    "usa_state_traversed": "arkansa"
   },
   {
     "usa_state_traversed": "arkansas"
@@ -79,6 +52,12 @@
   },
   {
     "usa_state_traversed": "washington"
+  },
+  {
+    "usa_state_traversed": "wisconsin"
+  },
+  {
+    "usa_state_traversed": "california"
   },
   {
     "usa_state_traversed": "kentucky"
@@ -100,5 +79,26 @@
   },
   {
     "usa_state_traversed": "oregon"
+  },
+  {
+    "usa_state_traversed": "iowa"
+  },
+  {
+    "usa_state_traversed": "tennessee"
+  },
+  {
+    "usa_state_traversed": "mississippi"
+  },
+  {
+    "usa_state_traversed": "nebraska"
+  },
+  {
+    "usa_state_traversed": "arizona"
+  },
+  {
+    "usa_state_traversed": "ohio"
+  },
+  {
+    "usa_state_traversed": "kansas"
   }
 ]

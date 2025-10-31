@@ -32,34 +32,6 @@
     "party": "Popular Will"
   },
   {
-    "name": "Andrés Narvarte",
-    "party": "Conservative"
-  },
-  {
-    "name": "Carlos Soublette",
-    "party": "Conservative"
-  },
-  {
-    "name": "José Gregorio Monagas",
-    "party": "Liberal"
-  },
-  {
-    "name": "Juan Crisóstomo Falcón",
-    "party": "Military"
-  },
-  {
-    "name": "Antonio Guzmán Blanco",
-    "party": "Liberal"
-  },
-  {
-    "name": "Octavio Lepage",
-    "party": "Democratic Action"
-  },
-  {
-    "name": "Rafael Caldera",
-    "party": "National Convergence"
-  },
-  {
     "name": "Julián Castro",
     "party": "Military"
   },
@@ -82,18 +54,6 @@
   {
     "name": "Carlos Andrés Pérez",
     "party": "Democratic Action"
-  },
-  {
-    "name": "José Antonio Páez",
-    "party": "Military"
-  },
-  {
-    "name": "Francisco Linares",
-    "party": "Liberal"
-  },
-  {
-    "name": "Rafael Caldera",
-    "party": "Copei"
   },
   {
     "name": "Guillermo Tell Villegas",
@@ -126,6 +86,34 @@
   {
     "name": "Carlos Delgado Chalbaud",
     "party": "Military"
+  },
+  {
+    "name": "José María Vargas",
+    "party": "Conservative"
+  },
+  {
+    "name": "Manuel Felipe de Tovar",
+    "party": "Liberal"
+  },
+  {
+    "name": "José Ruperto Monagas",
+    "party": "Military"
+  },
+  {
+    "name": "Juan Pablo Rojas Paúl",
+    "party": "Liberal"
+  },
+  {
+    "name": "Juan Vicente Gómez",
+    "party": "Military"
+  },
+  {
+    "name": "Luis Herrera Campins",
+    "party": "Copei"
+  },
+  {
+    "name": "Hugo Chávez",
+    "party": "United Socialist"
   },
   {
     "name": "José Antonio Páez",
@@ -180,31 +168,43 @@
     "party": "United Socialist"
   },
   {
-    "name": "José María Vargas",
-    "party": "Conservative"
-  },
-  {
-    "name": "Manuel Felipe de Tovar",
-    "party": "Liberal"
-  },
-  {
-    "name": "José Ruperto Monagas",
+    "name": "José Antonio Páez",
     "party": "Military"
   },
   {
-    "name": "Juan Pablo Rojas Paúl",
+    "name": "Francisco Linares",
     "party": "Liberal"
   },
   {
-    "name": "Juan Vicente Gómez",
-    "party": "Military"
-  },
-  {
-    "name": "Luis Herrera Campins",
+    "name": "Rafael Caldera",
     "party": "Copei"
   },
   {
-    "name": "Hugo Chávez",
-    "party": "United Socialist"
+    "name": "Andrés Narvarte",
+    "party": "Conservative"
+  },
+  {
+    "name": "Carlos Soublette",
+    "party": "Conservative"
+  },
+  {
+    "name": "José Gregorio Monagas",
+    "party": "Liberal"
+  },
+  {
+    "name": "Juan Crisóstomo Falcón",
+    "party": "Military"
+  },
+  {
+    "name": "Antonio Guzmán Blanco",
+    "party": "Liberal"
+  },
+  {
+    "name": "Octavio Lepage",
+    "party": "Democratic Action"
+  },
+  {
+    "name": "Rafael Caldera",
+    "party": "National Convergence"
   }
 ]

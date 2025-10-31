@@ -1,32 +1,39 @@
-from src import VENV, REQS
-from src.utils import PY
-import sys, subprocess
 from pathlib import Path
-from src.utils.logging_config import logger
+import sys, subprocess, os
 
+ROOT = Path(__file__).resolve().parent
+VENV = ROOT / ".venv"
+REQS_PATH = ROOT / "requirements.txt"
+
+if(os.name == "nt"):
+    PIP = VENV / "Scripts" / "pip"
+    PY  = VENV / "Scripts" / "python"
+else:
+    PIP = VENV / "bin" / "pip"
+    PY  = VENV / "bin" / "python"
 
 def run(cmd: list[str | Path], *, check: bool = True) -> None: #helper to run a command
     printable = " ".join(map(str, cmd)) #convert command to string for printing
-    logger.info(f"\n Running: {printable}")
+    print(f"\n Running: {printable}")
     subprocess.run([str(c) for c in cmd], check=check) #execute command
 
 def main():
     # Create venv if missing
     if not VENV.exists():
-        logger.info(" Creating virtual environment...")
+        print(" Creating virtual environment...")
         run([sys.executable, "-m", "venv", str(VENV)])
     else:
-        logger.info(" Virtual environment already exists")
+        print(" Virtual environment already exists")
 
         # Install dependencies
-    if REQS.exists():
-        logger.info("\n Installing dependencies from requirements.txt...")
+    if REQS_PATH.exists():
+        print("\n Installing dependencies from requirements.txt...")
 
         # Always use 'python -m pip'
         run([str(PY), "-m", "pip", "install", "--upgrade", "pip"], check=False)
-        run([str(PY), "-m", "pip", "install", "-r", str(REQS)])
+        run([str(PY), "-m", "pip", "install", "-r", str(REQS_PATH)])
     else:
-        logger.warning(f"  requirements.txt not found at {REQS}; skipping installs")
-        
+        print(f"  requirements.txt not found at {REQS_PATH}; skipping installs")
+
 if __name__ == "__main__":
     main()

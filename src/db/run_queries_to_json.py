@@ -1,7 +1,7 @@
 import os, json, glob, sys, time
 from pathlib import Path
 from .db_connection import connect_to_duckdb
-from src.utils import DATA, SUBMISSIONS_PATH
+from src.utils import DATA_DIR, SUBMISSIONS_PATH
 from src.utils.logging_config import logger
 
 
@@ -71,9 +71,11 @@ def execute_queries_and_save_json(con, queries, output_dir):
 
         except Exception as e:
             logger.error(f"Error executing query from {filename}: {e}")
+        
+    print("\n")
 
 def run_queries_to_json(dataset_name: str) -> None:
-    data_dir = DATA / dataset_name
+    data_dir = DATA_DIR / dataset_name
     data_dir.mkdir(parents=True, exist_ok=True)
     
     con = connect_to_duckdb(dataset_name)

@@ -5,7 +5,9 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent.parent
 VENV = ROOT / ".venv"
 
-DATA = ROOT / "data"
+CONFIG_PATH = ROOT / "config" / "config.yaml"
+
+DATA_DIR = ROOT / "data"
 
 SUBMISSIONS_PATH = ROOT / "data" / ".output"
 
@@ -20,4 +22,6 @@ else:
     PIP = VENV / "bin" / "pip"
     PY  = VENV / "bin" / "python"
 
-REQS = ROOT / "requirements.txt"
+LOGS_DIR = ROOT / "logs"
+
+REQS_PATH = ROOT / "requirements.txt"

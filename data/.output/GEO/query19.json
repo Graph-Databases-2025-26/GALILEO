@@ -1,26 +1,5 @@
 [
   {
-    "capital": "springfield"
-  },
-  {
-    "capital": "annapolis"
-  },
-  {
-    "capital": "albany"
-  },
-  {
-    "capital": "montpelier"
-  },
-  {
-    "capital": "boise"
-  },
-  {
-    "capital": "jackson"
-  },
-  {
-    "capital": "providence"
-  },
-  {
     "capital": "montgomery"
   },
   {
@@ -42,28 +21,82 @@
     "capital": "columbia"
   },
   {
-    "capital": "sacramento"
+    "capital": "springfield"
   },
   {
-    "capital": "honolulu"
+    "capital": "annapolis"
   },
   {
-    "capital": "frankfort"
+    "capital": "albany"
   },
   {
-    "capital": "baton rouge"
+    "capital": "montpelier"
   },
   {
-    "capital": "columbus"
+    "capital": "boise"
   },
   {
-    "capital": "oklahoma city"
+    "capital": "jackson"
   },
   {
-    "capital": "salem"
+    "capital": "providence"
   },
   {
-    "capital": "olympia"
+    "capital": "little rock"
+  },
+  {
+    "capital": "atlanta"
+  },
+  {
+    "capital": "indianapolis"
+  },
+  {
+    "capital": "topeka"
+  },
+  {
+    "capital": "st. paul"
+  },
+  {
+    "capital": "jefferson city"
+  },
+  {
+    "capital": "pierre"
+  },
+  {
+    "capital": "denver"
+  },
+  {
+    "capital": "tallahassee"
+  },
+  {
+    "capital": "lansing"
+  },
+  {
+    "capital": "bismarck"
+  },
+  {
+    "capital": "charleston"
+  },
+  {
+    "capital": "dover"
+  },
+  {
+    "capital": "boston"
+  },
+  {
+    "capital": "santa fe"
+  },
+  {
+    "capital": "raleigh"
+  },
+  {
+    "capital": "richmond"
+  },
+  {
+    "capital": "madison"
+  },
+  {
+    "capital": "cheyenne"
   },
   {
     "capital": "phoenix"
@@ -96,60 +129,27 @@
     "capital": "salt lake city"
   },
   {
-    "capital": "denver"
+    "capital": "sacramento"
   },
   {
-    "capital": "tallahassee"
+    "capital": "honolulu"
   },
   {
-    "capital": "lansing"
+    "capital": "frankfort"
   },
   {
-    "capital": "bismarck"
+    "capital": "baton rouge"
   },
   {
-    "capital": "charleston"
+    "capital": "columbus"
   },
   {
-    "capital": "little rock"
+    "capital": "oklahoma city"
   },
   {
-    "capital": "atlanta"
+    "capital": "salem"
   },
   {
-    "capital": "indianapolis"
-  },
-  {
-    "capital": "topeka"
-  },
-  {
-    "capital": "st. paul"
-  },
-  {
-    "capital": "jefferson city"
-  },
-  {
-    "capital": "pierre"
-  },
-  {
-    "capital": "dover"
-  },
-  {
-    "capital": "boston"
-  },
-  {
-    "capital": "santa fe"
-  },
-  {
-    "capital": "raleigh"
-  },
-  {
-    "capital": "richmond"
-  },
-  {
-    "capital": "madison"
-  },
-  {
-    "capital": "cheyenne"
+    "capital": "olympia"
   }
 ]

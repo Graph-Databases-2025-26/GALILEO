@@ -3,27 +3,6 @@
     "region": "Eastern Asia"
   },
   {
-    "region": "Nordic Countries"
-  },
-  {
-    "region": "Southern Europe"
-  },
-  {
-    "region": "Middle East"
-  },
-  {
-    "region": "South America"
-  },
-  {
-    "region": "British Islands"
-  },
-  {
-    "region": "Polynesia"
-  },
-  {
-    "region": "Southeast Asia"
-  },
-  {
     "region": "Western Europe"
   },
   {
@@ -39,10 +18,16 @@
     "region": "Micronesia/Caribbean"
   },
   {
-    "region": "Southern Africa"
+    "region": "Nordic Countries"
   },
   {
-    "region": "Western Africa"
+    "region": "Southern Europe"
+  },
+  {
+    "region": "Australia and New Zealand"
+  },
+  {
+    "region": "Eastern Africa"
   },
   {
     "region": "Caribbean"
@@ -54,9 +39,24 @@
     "region": "Melanesia"
   },
   {
-    "region": "Australia and New Zealand"
+    "region": "Southern Africa"
   },
   {
-    "region": "Eastern Africa"
+    "region": "Western Africa"
+  },
+  {
+    "region": "Middle East"
+  },
+  {
+    "region": "South America"
+  },
+  {
+    "region": "British Islands"
+  },
+  {
+    "region": "Polynesia"
+  },
+  {
+    "region": "Southeast Asia"
   }
 ]

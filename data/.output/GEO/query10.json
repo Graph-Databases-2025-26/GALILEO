@@ -1,20 +1,5 @@
 [
   {
-    "lake_name": "lake okeechobee"
-  },
-  {
-    "lake_name": "lake michigan"
-  },
-  {
-    "lake_name": "great salt lake"
-  },
-  {
-    "lake_name": "red lake"
-  },
-  {
-    "lake_name": "flathead lake"
-  },
-  {
     "lake_name": "lake superior"
   },
   {
@@ -22,12 +7,6 @@
   },
   {
     "lake_name": "lake winnebago"
-  },
-  {
-    "lake_name": "iliamna lake"
-  },
-  {
-    "lake_name": "lake saint clair"
   },
   {
     "lake_name": "becharof lake"
@@ -40,6 +19,15 @@
   },
   {
     "lake_name": "lake of the woods"
+  },
+  {
+    "lake_name": "lake okeechobee"
+  },
+  {
+    "lake_name": "lake michigan"
+  },
+  {
+    "lake_name": "great salt lake"
   },
   {
     "lake_name": "lake erie"
@@ -64,5 +52,17 @@
   },
   {
     "lake_name": "lake huron"
+  },
+  {
+    "lake_name": "iliamna lake"
+  },
+  {
+    "lake_name": "lake saint clair"
+  },
+  {
+    "lake_name": "red lake"
+  },
+  {
+    "lake_name": "flathead lake"
   }
 ]

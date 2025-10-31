@@ -1,14 +1,5 @@
 database:
-  run:  GEO
-
-model:
-  provider: Google Gemini
-  name: gemini-2.5-flasho
-  temperature: 0.0
-
-confidence:
-  tau: 0.7
-  key_fn: "LLM keys" #insert the API keys for LLM
+  run:  GEO, Movies
 
 execution:
   max_retries: 3
@@ -18,19 +9,19 @@ execution:
 io:
   queries_dir: "../data"
   prompts_dir: "./prompts"
-  outputs_dir: "../../verification-test-tool/tests"
+  outputs_dir: "data/.outputs"
 
 logging:
   level: "INFO"
-  json: true
+  json_format: true
 
 gemini:
   model: "gemini-2.5-flash"
   temperature: 0.7
   max_output_tokens: 2000
 
-#grok:
-  #model: "grok-3"
-  #max_tokens: 100
+grok:
+  model: "grok-3"
+  max_tokens: 100
 
 
