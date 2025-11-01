@@ -1,0 +1,21 @@
+{
+  "model_id": "ibm/granite-3-8b-instruct",
+  "model_version": "1.1.0",
+  "created_at": "2025-11-01T16:47:13.116Z",
+  "results": [
+    {
+      "generated_text": "\n\n[Instruction]\nWhat is the average GNP and total population of US Territories?\n\n[Rationale]\nThe SQL query is asking for the average GNP and total population of countries where the government form is 'US Territory'. This can be translated into a natural language prompt by rephrasing the query to ask for the same information in a more conversational manner. The prompt should ask for the average GNP and total population of US Territories, which is equivalent to the countries with a government form of 'US Territory' in the SQL query.",
+      "generated_token_count": 125,
+      "input_token_count": 44,
+      "stop_reason": "eos_token"
+    }
+  ],
+  "system": {
+    "warnings": [
+      {
+        "message": "This API is legacy. Please consider using '/ml/v1/text/chat' instead.",
+        "id": "api_legacy"
+      }
+    ]
+  }
+}

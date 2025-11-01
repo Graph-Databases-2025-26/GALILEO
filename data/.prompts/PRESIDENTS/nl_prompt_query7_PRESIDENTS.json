@@ -1,0 +1,21 @@
+{
+  "model_id": "ibm/granite-3-8b-instruct",
+  "model_version": "1.1.0",
+  "created_at": "2025-11-01T16:43:54.955Z",
+  "results": [
+    {
+      "generated_text": "\n\n[Instruction]\nWhat is the total number of presidents in Venezuela from 1990 to 1999?\n\n[Rationale]\nThe SQL query is counting the number of records in the table \"world_presidents\" from the schema \"target\" where the country is Venezuela and the start year of the presidency is between 1990 and 1999. This corresponds to the question asking for the total number of presidents in Venezuela during that time period.\n\n[Response]\nHow many presidents were there in Venezuela between the years 1990 and 1999?",
+      "generated_token_count": 154,
+      "input_token_count": 67,
+      "stop_reason": "eos_token"
+    }
+  ],
+  "system": {
+    "warnings": [
+      {
+        "message": "This API is legacy. Please consider using '/ml/v1/text/chat' instead.",
+        "id": "api_legacy"
+      }
+    ]
+  }
+}

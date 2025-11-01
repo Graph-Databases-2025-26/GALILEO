@@ -1,0 +1,21 @@
+{
+  "model_id": "ibm/granite-3-8b-instruct",
+  "model_version": "1.1.0",
+  "created_at": "2025-11-01T16:41:53.274Z",
+  "results": [
+    {
+      "generated_text": "0\n\n[Instruction]\nWhat are the top 10 directors by age difference between their birth year and the start year of their first movie?\n\n[Rationale]\nThe SQL query is selecting the director and the age difference between their birth year and the start year of their first movie from the 'target.movies' table. It filters out any rows where either the start year or birth year is null, and orders the results by the age difference in descending order, limiting the output to the top 10 results.\n\nThe natural language prompt should reflect this, asking for the top 10 directors based on the age difference between their birth year and the start year of their first movie.\n\n[Response]\nWho are the top 10 directors, ranked by the age difference between their birth year and the start year of their first movie? Please provide their names and the respective age differences.",
+      "generated_token_count": 193,
+      "input_token_count": 70,
+      "stop_reason": "eos_token"
+    }
+  ],
+  "system": {
+    "warnings": [
+      {
+        "message": "This API is legacy. Please consider using '/ml/v1/text/chat' instead.",
+        "id": "api_legacy"
+      }
+    ]
+  }
+}

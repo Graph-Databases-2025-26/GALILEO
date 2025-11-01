@@ -1,0 +1,21 @@
+{
+  "model_id": "ibm/granite-3-8b-instruct",
+  "model_version": "1.1.0",
+  "created_at": "2025-11-01T16:44:53.840Z",
+  "results": [
+    {
+      "generated_text": "\n\n[Instruction]\nA prompt for a large language model to generate a SQL query to retrieve the names and parties of all presidents from the United States who were Republicans.",
+      "generated_token_count": 38,
+      "input_token_count": 54,
+      "stop_reason": "eos_token"
+    }
+  ],
+  "system": {
+    "warnings": [
+      {
+        "message": "This API is legacy. Please consider using '/ml/v1/text/chat' instead.",
+        "id": "api_legacy"
+      }
+    ]
+  }
+}

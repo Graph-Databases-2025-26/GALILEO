@@ -1,0 +1,21 @@
+{
+  "model_id": "ibm/granite-3-8b-instruct",
+  "model_version": "1.1.0",
+  "created_at": "2025-11-01T16:45:45.636Z",
+  "results": [
+    {
+      "generated_text": "\n\n[Instruction]\nWhat is the most common political party of the presidents of the United States?\n\n[Rationale]\nThe SQL query is designed to find the most common political party of the presidents of the United States. It does this by selecting the 'party' column from the 'world_presidents' table in the 'target' schema, counting the number of occurrences for each party, filtering for rows where the country is 'United States', grouping the results by party, ordering the groups in descending order based on the count, and finally limiting the output to just one row (the most common party).\n\nThe natural language prompt should reflect this process. It should ask for the most common political party of the presidents of the United States, implying that the query is looking for a single, most frequent party.\n\n[Response]\nWhat is the most frequently occurring political party among the presidents of the United States?",
+      "generated_token_count": 200,
+      "input_token_count": 61,
+      "stop_reason": "max_tokens"
+    }
+  ],
+  "system": {
+    "warnings": [
+      {
+        "message": "This API is legacy. Please consider using '/ml/v1/text/chat' instead.",
+        "id": "api_legacy"
+      }
+    ]
+  }
+}

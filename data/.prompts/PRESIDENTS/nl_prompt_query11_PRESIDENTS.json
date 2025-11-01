@@ -1,0 +1,21 @@
+{
+  "model_id": "ibm/granite-3-8b-instruct",
+  "model_version": "1.1.0",
+  "created_at": "2025-11-01T16:44:31.203Z",
+  "results": [
+    {
+      "generated_text": "\n\n🤖\n\"List the political parties of Venezuela that had the most presidents between 1800 and 1899, along with the respective count.\"",
+      "generated_token_count": 44,
+      "input_token_count": 82,
+      "stop_reason": "eos_token"
+    }
+  ],
+  "system": {
+    "warnings": [
+      {
+        "message": "This API is legacy. Please consider using '/ml/v1/text/chat' instead.",
+        "id": "api_legacy"
+      }
+    ]
+  }
+}

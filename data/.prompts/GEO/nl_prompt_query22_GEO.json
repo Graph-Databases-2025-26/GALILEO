@@ -1,0 +1,21 @@
+{
+  "model_id": "ibm/granite-3-8b-instruct",
+  "model_version": "1.1.0",
+  "created_at": "2025-11-01T16:39:36.983Z",
+  "results": [
+    {
+      "generated_text": "\n\n[Instruction]\nWhat are the capitals of states in the USA that have a population of less than 150,000 in their respective cities?\n\n[Rationale]\nThe SQL query is designed to retrieve the capitals of states in the USA where the population of the city is less than 150,000. The query joins the 'usa_city' table from the 'target' schema with the 'usa_state' table, matching cities with their respective state capitals. The WHERE clause filters the results to include only those cities with a population less than 150,000.\n\nThe natural language prompt should convey the same intent, asking for the capitals of states with a population condition on their respective cities.\n\nThe response is: \"What are the capitals of states in the USA that have a population of less than 150,00",
+      "generated_token_count": 200,
+      "input_token_count": 69,
+      "stop_reason": "max_tokens"
+    }
+  ],
+  "system": {
+    "warnings": [
+      {
+        "message": "This API is legacy. Please consider using '/ml/v1/text/chat' instead.",
+        "id": "api_legacy"
+      }
+    ]
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "model_id": "ibm/granite-3-8b-instruct",
+  "model_version": "1.1.0",
+  "created_at": "2025-11-01T16:42:34.028Z",
+  "results": [
+    {
+      "generated_text": " where home_team = 'Manchester United' and away_team = 'Chelsea'\n\n[Answer]\n\"Find the result of the match between Manchester United and Chelsea in the Premier League 2024-2025 season, specifically the goals scored by each team.\"",
+      "generated_token_count": 70,
+      "input_token_count": 57,
+      "stop_reason": "eos_token"
+    }
+  ],
+  "system": {
+    "warnings": [
+      {
+        "message": "This API is legacy. Please consider using '/ml/v1/text/chat' instead.",
+        "id": "api_legacy"
+      }
+    ]
+  }
+}

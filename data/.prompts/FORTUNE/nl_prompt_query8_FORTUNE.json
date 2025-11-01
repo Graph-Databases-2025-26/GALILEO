@@ -1,0 +1,21 @@
+{
+  "model_id": "ibm/granite-3-8b-instruct",
+  "model_version": "1.1.0",
+  "created_at": "2025-11-01T16:36:04.452Z",
+  "results": [
+    {
+      "generated_text": "\n\n[Instruction]\nWhat are the details of Nvidia's company, including its headquarters state, ticker, CEO, founder as CEO, gender of the CEO, and number of employees, as per the Fortune 2024 list?",
+      "generated_token_count": 59,
+      "input_token_count": 68,
+      "stop_reason": "eos_token"
+    }
+  ],
+  "system": {
+    "warnings": [
+      {
+        "message": "This API is legacy. Please consider using '/ml/v1/text/chat' instead.",
+        "id": "api_legacy"
+      }
+    ]
+  }
+}

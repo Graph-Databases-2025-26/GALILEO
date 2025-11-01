@@ -1,0 +1,21 @@
+{
+  "model_id": "ibm/granite-3-8b-instruct",
+  "model_version": "1.1.0",
+  "created_at": "2025-11-01T16:37:50.001Z",
+  "results": [
+    {
+      "generated_text": "\n\n[Instruction]\nWhat are the unique states that have rivers longer than 750 kilometers in the USA?",
+      "generated_token_count": 29,
+      "input_token_count": 46,
+      "stop_reason": "eos_token"
+    }
+  ],
+  "system": {
+    "warnings": [
+      {
+        "message": "This API is legacy. Please consider using '/ml/v1/text/chat' instead.",
+        "id": "api_legacy"
+      }
+    ]
+  }
+}

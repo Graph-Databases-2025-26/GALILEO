@@ -1,0 +1,21 @@
+{
+  "model_id": "ibm/granite-3-8b-instruct",
+  "model_version": "1.1.0",
+  "created_at": "2025-11-01T16:45:14.474Z",
+  "results": [
+    {
+      "generated_text": "\n\n[Instruction]\nWhat is the name of the Republican president of the United States?",
+      "generated_token_count": 22,
+      "input_token_count": 50,
+      "stop_reason": "eos_token"
+    }
+  ],
+  "system": {
+    "warnings": [
+      {
+        "message": "This API is legacy. Please consider using '/ml/v1/text/chat' instead.",
+        "id": "api_legacy"
+      }
+    ]
+  }
+}

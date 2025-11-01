@@ -1,0 +1,21 @@
+{
+  "model_id": "ibm/granite-3-8b-instruct",
+  "model_version": "1.1.0",
+  "created_at": "2025-11-01T16:37:26.195Z",
+  "results": [
+    {
+      "generated_text": "\n\n[Instruction]\nWhat is the number of unique river names in the 'target.usa_river' dataset that have a length greater than 400 kilometers?",
+      "generated_token_count": 39,
+      "input_token_count": 45,
+      "stop_reason": "eos_token"
+    }
+  ],
+  "system": {
+    "warnings": [
+      {
+        "message": "This API is legacy. Please consider using '/ml/v1/text/chat' instead.",
+        "id": "api_legacy"
+      }
+    ]
+  }
+}

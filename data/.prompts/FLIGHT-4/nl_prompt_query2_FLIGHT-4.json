@@ -1,0 +1,21 @@
+{
+  "model_id": "ibm/granite-3-8b-instruct",
+  "model_version": "1.1.0",
+  "created_at": "2025-11-01T16:34:53.692Z",
+  "results": [
+    {
+      "generated_text": "\n\n[Instruction]\nWhat is the name, city, country, and elevation in feet of the airports located in New York?",
+      "generated_token_count": 29,
+      "input_token_count": 44,
+      "stop_reason": "eos_token"
+    }
+  ],
+  "system": {
+    "warnings": [
+      {
+        "message": "This API is legacy. Please consider using '/ml/v1/text/chat' instead.",
+        "id": "api_legacy"
+      }
+    ]
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "model_id": "ibm/granite-3-8b-instruct",
+  "model_version": "1.1.0",
+  "created_at": "2025-11-01T16:37:43.653Z",
+  "results": [
+    {
+      "generated_text": "\n\n[Instruction]\nWhat are the unique names of lakes in the 'target.usa_lake' dataset that have an area greater than 450 square kilometers?",
+      "generated_token_count": 40,
+      "input_token_count": 44,
+      "stop_reason": "eos_token"
+    }
+  ],
+  "system": {
+    "warnings": [
+      {
+        "message": "This API is legacy. Please consider using '/ml/v1/text/chat' instead.",
+        "id": "api_legacy"
+      }
+    ]
+  }
+}

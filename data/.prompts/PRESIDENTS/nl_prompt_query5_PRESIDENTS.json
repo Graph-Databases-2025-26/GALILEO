@@ -1,0 +1,21 @@
+{
+  "model_id": "ibm/granite-3-8b-instruct",
+  "model_version": "1.1.0",
+  "created_at": "2025-11-01T16:43:34.967Z",
+  "results": [
+    {
+      "generated_text": "\n\n[Instruction]\nWhat are the names, start years, end years, cardinal numbers, and parties of the presidents of Venezuela?",
+      "generated_token_count": 35,
+      "input_token_count": 66,
+      "stop_reason": "eos_token"
+    }
+  ],
+  "system": {
+    "warnings": [
+      {
+        "message": "This API is legacy. Please consider using '/ml/v1/text/chat' instead.",
+        "id": "api_legacy"
+      }
+    ]
+  }
+}

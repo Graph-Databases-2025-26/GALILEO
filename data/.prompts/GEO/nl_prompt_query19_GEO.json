@@ -1,0 +1,21 @@
+{
+  "model_id": "ibm/granite-3-8b-instruct",
+  "model_version": "1.1.0",
+  "created_at": "2025-11-01T16:39:11.336Z",
+  "results": [
+    {
+      "generated_text": "\n\n[Instruction]\nWhat is the total number of rivers in the state of Idaho, USA?\n\n[Rationale]\nThe SQL query is counting the number of rivers in the 'target.usa_river' table where the 'usa_state_traversed' is 'idaho'. This corresponds to the natural language prompt asking for the total number of rivers in the state of Idaho, USA.\n\n[Response]\nWhat is the total number of rivers in the state of Idaho, USA?",
+      "generated_token_count": 116,
+      "input_token_count": 46,
+      "stop_reason": "eos_token"
+    }
+  ],
+  "system": {
+    "warnings": [
+      {
+        "message": "This API is legacy. Please consider using '/ml/v1/text/chat' instead.",
+        "id": "api_legacy"
+      }
+    ]
+  }
+}

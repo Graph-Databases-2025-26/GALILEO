@@ -1,0 +1,21 @@
+{
+  "model_id": "ibm/granite-3-8b-instruct",
+  "model_version": "1.1.0",
+  "created_at": "2025-11-01T16:36:11.384Z",
+  "results": [
+    {
+      "generated_text": "0\n\n[Instruction]\nWhat are the details of companies headquartered in Santa Clara, ranked below 700 in the Fortune 2024 list, including their company name, headquarters state, ticker symbol, CEO name, whether the founder is also the CEO, if the CEO is a woman, and the number of employees?",
+      "generated_token_count": 84,
+      "input_token_count": 80,
+      "stop_reason": "eos_token"
+    }
+  ],
+  "system": {
+    "warnings": [
+      {
+        "message": "This API is legacy. Please consider using '/ml/v1/text/chat' instead.",
+        "id": "api_legacy"
+      }
+    ]
+  }
+}

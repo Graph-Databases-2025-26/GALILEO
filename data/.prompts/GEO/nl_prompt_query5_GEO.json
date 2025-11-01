@@ -1,0 +1,21 @@
+{
+  "model_id": "ibm/granite-3-8b-instruct",
+  "model_version": "1.1.0",
+  "created_at": "2025-11-01T16:37:09.693Z",
+  "results": [
+    {
+      "generated_text": "\n\n[Instruction]\nWhat are the names of lakes in California with an area greater than 450 square kilometers?\n\n[Rationale]\nThe SQL query is asking for the names of lakes in the 'target.usa_lake' table where the state is 'california' and the area is greater than 450 square kilometers. This can be translated into a natural language prompt by rephrasing the query into a question format, asking for the names of lakes that meet these criteria.\n\n[Response]\nWhat are the names of lakes in California that have an area greater than 450 square kilometers?",
+      "generated_token_count": 144,
+      "input_token_count": 51,
+      "stop_reason": "eos_token"
+    }
+  ],
+  "system": {
+    "warnings": [
+      {
+        "message": "This API is legacy. Please consider using '/ml/v1/text/chat' instead.",
+        "id": "api_legacy"
+      }
+    ]
+  }
+}

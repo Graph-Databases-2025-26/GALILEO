@@ -1,0 +1,21 @@
+{
+  "model_id": "ibm/granite-3-8b-instruct",
+  "model_version": "1.1.0",
+  "created_at": "2025-11-01T16:47:04.337Z",
+  "results": [
+    {
+      "generated_text": "\n\n[Instruction]\nWhat are the names of countries that gained independence after 1950, excluding any countries with non-integer independence years?",
+      "generated_token_count": 38,
+      "input_token_count": 60,
+      "stop_reason": "eos_token"
+    }
+  ],
+  "system": {
+    "warnings": [
+      {
+        "message": "This API is legacy. Please consider using '/ml/v1/text/chat' instead.",
+        "id": "api_legacy"
+      }
+    ]
+  }
+}

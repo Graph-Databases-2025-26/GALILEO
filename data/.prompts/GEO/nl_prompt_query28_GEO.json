@@ -1,0 +1,21 @@
+{
+  "model_id": "ibm/granite-3-8b-instruct",
+  "model_version": "1.1.0",
+  "created_at": "2025-11-01T16:40:31.627Z",
+  "results": [
+    {
+      "generated_text": "0\n\n[Instruction]\nWhat is the name of the state, its capital, population, and density for states in the USA that have a population greater than 5 million, a density less than 1000 people per square mile, and an area less than 500,000 square miles?",
+      "generated_token_count": 70,
+      "input_token_count": 85,
+      "stop_reason": "eos_token"
+    }
+  ],
+  "system": {
+    "warnings": [
+      {
+        "message": "This API is legacy. Please consider using '/ml/v1/text/chat' instead.",
+        "id": "api_legacy"
+      }
+    ]
+  }
+}

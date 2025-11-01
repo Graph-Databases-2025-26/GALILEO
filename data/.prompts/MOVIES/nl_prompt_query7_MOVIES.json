@@ -1,0 +1,21 @@
+{
+  "model_id": "ibm/granite-3-8b-instruct",
+  "model_version": "1.1.0",
+  "created_at": "2025-11-01T16:41:46.004Z",
+  "results": [
+    {
+      "generated_text": "0\n\n[Instruction]\nWhat are the top 10 years with the most movies directed by Tim Burton, and how many movies were released in each of those years?\n\n[Rationale]\nThe SQL query is selecting the start year of the movies and counting the number of movies for each year where the director is Tim Burton. It then groups the results by year and orders them in descending order based on the count. The limit 10 at the end ensures that only the top 10 years are returned.\n\nThe natural language prompt should reflect this process and ask for the top 10 years with the most movies directed by Tim Burton and the number of movies released in each of those years.\n\n[Response]\nWhat are the top 10 years with the most movies directed by Tim Burton, and how many movies were released in each of those years?",
+      "generated_token_count": 187,
+      "input_token_count": 58,
+      "stop_reason": "eos_token"
+    }
+  ],
+  "system": {
+    "warnings": [
+      {
+        "message": "This API is legacy. Please consider using '/ml/v1/text/chat' instead.",
+        "id": "api_legacy"
+      }
+    ]
+  }
+}

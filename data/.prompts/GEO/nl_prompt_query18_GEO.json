@@ -1,0 +1,21 @@
+{
+  "model_id": "ibm/granite-3-8b-instruct",
+  "model_version": "1.1.0",
+  "created_at": "2025-11-01T16:39:01.183Z",
+  "results": [
+    {
+      "generated_text": " WHERE state_name = 'Alabama'\n\n[Instruction]\nWhat is the capital of Alabama?\n\n[Rationale]\nThe SQL query is asking for the distinct capital of the state named 'Alabama' from the table 'usa_state' in the schema 'target'. This can be translated to a natural language prompt by asking directly for the capital of Alabama.\n\n[Response]\nWhat is the capital of Alabama?",
+      "generated_token_count": 100,
+      "input_token_count": 30,
+      "stop_reason": "eos_token"
+    }
+  ],
+  "system": {
+    "warnings": [
+      {
+        "message": "This API is legacy. Please consider using '/ml/v1/text/chat' instead.",
+        "id": "api_legacy"
+      }
+    ]
+  }
+}

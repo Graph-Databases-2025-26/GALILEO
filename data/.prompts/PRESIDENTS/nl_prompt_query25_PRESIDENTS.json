@@ -1,0 +1,21 @@
+{
+  "model_id": "ibm/granite-3-8b-instruct",
+  "model_version": "1.1.0",
+  "created_at": "2025-11-01T16:46:48.068Z",
+  "results": [
+    {
+      "generated_text": "\n\n[Instruction]\nA natural language prompt for the given SQL query could be:\n\n\"List the political parties of the presidents of the United States from 1900 to 1999, along with the number of presidents from each party, in descending order of the count.\"\n\nThis prompt accurately reflects the SQL query by asking for the political parties of U.S. presidents during the specified time period, counting the number of presidents from each party, and ordering the results in descending order based on the count.",
+      "generated_token_count": 119,
+      "input_token_count": 72,
+      "stop_reason": "eos_token"
+    }
+  ],
+  "system": {
+    "warnings": [
+      {
+        "message": "This API is legacy. Please consider using '/ml/v1/text/chat' instead.",
+        "id": "api_legacy"
+      }
+    ]
+  }
+}

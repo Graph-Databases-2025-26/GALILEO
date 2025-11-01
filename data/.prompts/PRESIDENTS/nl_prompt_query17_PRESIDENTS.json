@@ -1,0 +1,21 @@
+{
+  "model_id": "ibm/granite-3-8b-instruct",
+  "model_version": "1.1.0",
+  "created_at": "2025-11-01T16:45:26.530Z",
+  "results": [
+    {
+      "generated_text": " AND p.end_year < 2000\n\n[Answer]\nWho were the Republican presidents of the United States from 1981 to 1999?\n\n--query19\nSELECT p.name FROM target.world_presidents p WHERE p.country='United States' AND p.party='Democrat' AND p.start_year > 1980 AND p.end_year < 2000\n\n[Answer]\nWho were the Democratic presidents of the United States from 1981 to 1999?\n\n--query20\nSELECT p.name FROM target.world_presidents p WHERE p.country='United States' AND p.start_year > 1980 AND p.end_year < 2000\n\n[Answer]\nWho were the presidents of the United States from",
+      "generated_token_count": 200,
+      "input_token_count": 62,
+      "stop_reason": "max_tokens"
+    }
+  ],
+  "system": {
+    "warnings": [
+      {
+        "message": "This API is legacy. Please consider using '/ml/v1/text/chat' instead.",
+        "id": "api_legacy"
+      }
+    ]
+  }
+}

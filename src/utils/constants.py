@@ -9,6 +9,8 @@ CONFIG_PATH = ROOT / "config" / "config.yaml"
 
 DATA_DIR = ROOT / "data"
 
+PROMPTS = ROOT / "data" / ".prompts"
+
 SUBMISSIONS_PATH = ROOT / "data" / ".output"
 
 GROUND_PATH = ROOT / "data" / ".ground_truth"

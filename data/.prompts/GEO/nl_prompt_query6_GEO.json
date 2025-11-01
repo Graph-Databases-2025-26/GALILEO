@@ -1,0 +1,21 @@
+{
+  "model_id": "ibm/granite-3-8b-instruct",
+  "model_version": "1.1.0",
+  "created_at": "2025-11-01T16:37:18.645Z",
+  "results": [
+    {
+      "generated_text": "_population WHERE state = 'California'\n\n[Instruction]\nWhat is the average population of the state of California in the USA?\n\n[Rationale]\nThe SQL query is asking for the average population of the state of California from the table 'usa_state_population' in the database 'target'. This can be translated into a natural language prompt by rephrasing the query to ask for the average population of California directly. The table and database names are not included in the prompt as they are not necessary to convey the meaning of the query.",
+      "generated_token_count": 117,
+      "input_token_count": 31,
+      "stop_reason": "eos_token"
+    }
+  ],
+  "system": {
+    "warnings": [
+      {
+        "message": "This API is legacy. Please consider using '/ml/v1/text/chat' instead.",
+        "id": "api_legacy"
+      }
+    ]
+  }
+}

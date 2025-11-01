@@ -1,0 +1,21 @@
+{
+  "model_id": "ibm/granite-3-8b-instruct",
+  "model_version": "1.1.0",
+  "created_at": "2025-11-01T16:36:34.030Z",
+  "results": [
+    {
+      "generated_text": "0\n\n[Instruction]\nWhat are the names of cities in the USA with a population greater than 1,500,000?\n\n[Rationale]\nThe SQL query is selecting the city_name from the usa_city table in the target schema where the population is greater than 1,500,000. This can be translated into a natural language prompt by asking for the names of cities in the USA that have a population greater than 1,500,000. The schema name \"target\" is not included in the prompt as it is not necessary to provide this information to the LLM.",
+      "generated_token_count": 138,
+      "input_token_count": 40,
+      "stop_reason": "eos_token"
+    }
+  ],
+  "system": {
+    "warnings": [
+      {
+        "message": "This API is legacy. Please consider using '/ml/v1/text/chat' instead.",
+        "id": "api_legacy"
+      }
+    ]
+  }
+}

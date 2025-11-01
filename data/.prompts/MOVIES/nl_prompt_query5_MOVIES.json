@@ -1,0 +1,21 @@
+{
+  "model_id": "ibm/granite-3-8b-instruct",
+  "model_version": "1.1.0",
+  "created_at": "2025-11-01T16:41:31.260Z",
+  "results": [
+    {
+      "generated_text": "\n\n[Answer]\n\"List the original titles, start years, genres, birth year, death year, and runtime of movies directed by Steven Spielberg that were released between 1990 and 1999.\"",
+      "generated_token_count": 52,
+      "input_token_count": 88,
+      "stop_reason": "eos_token"
+    }
+  ],
+  "system": {
+    "warnings": [
+      {
+        "message": "This API is legacy. Please consider using '/ml/v1/text/chat' instead.",
+        "id": "api_legacy"
+      }
+    ]
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "model_id": "ibm/granite-3-8b-instruct",
+  "model_version": "1.1.0",
+  "created_at": "2025-11-01T16:46:58.084Z",
+  "results": [
+    {
+      "generated_text": "\n\n[Answer] How many unique government forms are there in African countries?\n\n--query2\nSELECT count(distinct country) FROM target.country WHERE continent = 'Africa'\n\n[Answer] How many distinct countries are there in Africa?\n\n--query3\nSELECT count(distinct country) FROM target.country WHERE continent = 'Africa' AND life_expectancy > 70\n\n[Answer] How many distinct countries in Africa have a life expectancy greater than 70 years?\n\n--query4\nSELECT AVG(population) FROM target.country WHERE continent = 'Africa'\n\n[Answer] What is the average population of countries in Africa?\n\n--query5\nSELECT MAX(population) FROM target.country WHERE continent = 'Africa'\n\n[Answer] What is the maximum population of any country in Africa?\n\n--query6\n",
+      "generated_token_count": 200,
+      "input_token_count": 40,
+      "stop_reason": "max_tokens"
+    }
+  ],
+  "system": {
+    "warnings": [
+      {
+        "message": "This API is legacy. Please consider using '/ml/v1/text/chat' instead.",
+        "id": "api_legacy"
+      }
+    ]
+  }
+}

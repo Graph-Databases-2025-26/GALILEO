@@ -1,0 +1,21 @@
+{
+  "model_id": "ibm/granite-3-8b-instruct",
+  "model_version": "1.1.0",
+  "created_at": "2025-11-01T16:44:46.691Z",
+  "results": [
+    {
+      "generated_text": "\n\n[Instruction]\nA user wants to know the name and party of the president of the United States.\n\n[Response]\nWho is the president of the United States and what political party do they belong to?",
+      "generated_token_count": 50,
+      "input_token_count": 45,
+      "stop_reason": "eos_token"
+    }
+  ],
+  "system": {
+    "warnings": [
+      {
+        "message": "This API is legacy. Please consider using '/ml/v1/text/chat' instead.",
+        "id": "api_legacy"
+      }
+    ]
+  }
+}

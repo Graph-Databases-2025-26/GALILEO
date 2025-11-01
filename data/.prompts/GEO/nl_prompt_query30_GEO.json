@@ -1,0 +1,21 @@
+{
+  "model_id": "ibm/granite-3-8b-instruct",
+  "model_version": "1.1.0",
+  "created_at": "2025-11-01T16:40:46.154Z",
+  "results": [
+    {
+      "generated_text": " desc\n\n[Instruction]\nWhat are the names of the states in the USA with a population between 3 million and 8 million, excluding those with an area smaller than 50,000 square miles, listed in descending order by population? Also, provide the capital and population of each state.",
+      "generated_token_count": 66,
+      "input_token_count": 89,
+      "stop_reason": "eos_token"
+    }
+  ],
+  "system": {
+    "warnings": [
+      {
+        "message": "This API is legacy. Please consider using '/ml/v1/text/chat' instead.",
+        "id": "api_legacy"
+      }
+    ]
+  }
+}

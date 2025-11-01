@@ -7,19 +7,17 @@ IBM watsonx.ai connection with structured logging.
 import os
 import time
 import traceback
+import json
 from dotenv import load_dotenv
 from ibm_watsonx_ai import Credentials
 from ibm_watsonx_ai.foundation_models import ModelInference
+from openai import max_retries
 
 from src.utils.logging_config import logger, log_query_event
 
 
-#CONFIGURE THE API KEY
-load_dotenv()
-api_key = os.getenv("WATSONX_API_KEY", "").strip()
-
 def query_watsonx(prompt: str,
-                   model_id: str = "openai/gpt-oss-120b",
+                   model_id: str = "ibm/granite-3-8b-instruct",
                    project_id: str | None = None) -> str:
     """
     Send a prompt to IBM watsonx.ai and return the generated text.
@@ -28,6 +26,11 @@ def query_watsonx(prompt: str,
       - WATSONX_API_KEY (env)
       - WATSONX_PROJECT_ID (env or provided)
     """
+
+    # CONFIGURE THE API KEY
+    load_dotenv()
+    api_key = os.getenv("WATSONX_API_KEY", "").strip()
+
     try:
 
         url = os.getenv("WATSONX_URL", "https://us-south.ml.cloud.ibm.com").strip()
@@ -45,14 +48,21 @@ def query_watsonx(prompt: str,
         model = ModelInference(model_id=model_id, credentials=creds, project_id=project)
 
         t0 = time.time()
-        response = model.generate(prompt=prompt)
+        response = model.generate(prompt=prompt,  params={"max_new_tokens": 200})
         latency_ms = (time.time() - t0) * 1000.0
         logger.info(f"watsonx.generate latency_ms={latency_ms:.1f}")
 
-        # Some SDKs return complex objects; stringify safely
-        text = str(response)
-        logger.info(f"watsonx_response_len chars={len(text)}")
-        return text
+        # Supponiamo response sia JSON o un oggetto simile a dizionario
+        if isinstance(response, str):
+            response_json = json.loads(response)  # se è stringa JSON
+        else:
+            response_json = response  # se è già dict-like
+
+        # Estrai la parte di interesse
+        generated_text = response_json.get('results', [{}])[0].get('generated_text', '')
+
+        logger.info(f"watsonx_response_len chars={len(generated_text)}")
+        return response
 
     except Exception as e:
         logger.error(f"watsonx error: {e}\nTrace:\n{traceback.format_exc()}")
@@ -60,5 +70,6 @@ def query_watsonx(prompt: str,
 
 
 if __name__ == "__main__":
-    ans = query_watsonx("Hello, Watsonx!")
-    logger.info(f"Watsonx sample response: {ans[:200]}...")
+    ans = query_watsonx("Hi watsonx!")
+    logger.info(f"Watsonx sample response: {ans}...")
+

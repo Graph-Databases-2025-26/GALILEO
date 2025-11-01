@@ -1,0 +1,21 @@
+{
+  "model_id": "ibm/granite-3-8b-instruct",
+  "model_version": "1.1.0",
+  "created_at": "2025-11-01T16:35:50.012Z",
+  "results": [
+    {
+      "generated_text": "\n\n[Instruction]\nWhich companies in the 'Airlines' industry are considered the best places to work, according to the Fortune 2024 list?\n\n[Rationale]\nThe SQL query is selecting the 'company' column from the 'target.fortune_2024' table where the 'best_companies_to_work_for' column is true and the 'industry' column is 'Airlines'. This translates to a natural language prompt asking for the companies in the 'Airlines' industry that are considered the best places to work, according to the Fortune 2024 list.",
+      "generated_token_count": 134,
+      "input_token_count": 51,
+      "stop_reason": "eos_token"
+    }
+  ],
+  "system": {
+    "warnings": [
+      {
+        "message": "This API is legacy. Please consider using '/ml/v1/text/chat' instead.",
+        "id": "api_legacy"
+      }
+    ]
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "model_id": "ibm/granite-3-8b-instruct",
+  "model_version": "1.1.0",
+  "created_at": "2025-11-01T16:40:02.356Z",
+  "results": [
+    {
+      "generated_text": "\n\n[Instruction]\nWhat is the population and area of the state with its capital in Frankfort?\n\n[Rationale]\nThe SQL query is selecting the state name, population, and area (in square miles) from the 'target.usa_state' table where the capital is 'frankfort'. This translates to a natural language prompt asking for the population and area of the state with its capital in Frankfort.\n\n[Response]\nWhat is the population and area of the state with its capital in Frankfort?",
+      "generated_token_count": 114,
+      "input_token_count": 48,
+      "stop_reason": "eos_token"
+    }
+  ],
+  "system": {
+    "warnings": [
+      {
+        "message": "This API is legacy. Please consider using '/ml/v1/text/chat' instead.",
+        "id": "api_legacy"
+      }
+    ]
+  }
+}

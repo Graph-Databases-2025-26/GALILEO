@@ -1,0 +1,21 @@
+{
+  "model_id": "ibm/granite-3-8b-instruct",
+  "model_version": "1.1.0",
+  "created_at": "2025-11-01T16:43:44.826Z",
+  "results": [
+    {
+      "generated_text": "\n\n[Answer]\nWhich political party has the highest number of presidents in Venezuela?\n\n--query8\nSELECT p.party, count(p.party) num FROM target.world_presidents p WHERE p.country='Venezuela' group by p.party order by num desc limit 10\n\n[Answer]\nWhat are the top 10 political parties with the highest number of presidents in Venezuela?\n\n--query9\nSELECT p.party, count(p.party) num FROM target.world_presidents p WHERE p.country='Venezuela' group by p.party order by num desc limit 5\n\n[Answer]\nWhich are the top 5 political parties with the highest number of presidents in Venezuela?\n\n--query10\nSELECT p.party, count(p.party)",
+      "generated_token_count": 200,
+      "input_token_count": 63,
+      "stop_reason": "max_tokens"
+    }
+  ],
+  "system": {
+    "warnings": [
+      {
+        "message": "This API is legacy. Please consider using '/ml/v1/text/chat' instead.",
+        "id": "api_legacy"
+      }
+    ]
+  }
+}

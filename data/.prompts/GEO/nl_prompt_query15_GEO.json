@@ -1,0 +1,21 @@
+{
+  "model_id": "ibm/granite-3-8b-instruct",
+  "model_version": "1.1.0",
+  "created_at": "2025-11-01T16:38:36.130Z",
+  "results": [
+    {
+      "generated_text": "\n\n[Answer]\n\"How many distinct states are there in the 'target.usa_city' table where the city is named 'springfield' and the population is greater than 72,000?\"",
+      "generated_token_count": 47,
+      "input_token_count": 53,
+      "stop_reason": "eos_token"
+    }
+  ],
+  "system": {
+    "warnings": [
+      {
+        "message": "This API is legacy. Please consider using '/ml/v1/text/chat' instead.",
+        "id": "api_legacy"
+      }
+    ]
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "model_id": "ibm/granite-3-8b-instruct",
+  "model_version": "1.1.0",
+  "created_at": "2025-11-01T16:44:04.023Z",
+  "results": [
+    {
+      "generated_text": "\n\n[Instruction]\nWhat is the name of the last president of Venezuela who belonged to the military party?\n\n[Rationale]\nThe SQL query is designed to retrieve the name of the last president of Venezuela who was a member of the military party. The query selects the 'name' column from the 'world_presidents' table in the 'target' schema, filtering for rows where the 'country' is 'Venezuela' and the 'party' is 'Military'. The results are then ordered by the 'end_year' in descending order, ensuring the most recent president is selected. The 'limit 1' clause ensures only one result is returned.\n\nThe natural language prompt should reflect this query, asking for the name of the last president of Venezuela who was a member of the military party.\n\n[Response]\nWhat",
+      "generated_token_count": 200,
+      "input_token_count": 63,
+      "stop_reason": "max_tokens"
+    }
+  ],
+  "system": {
+    "warnings": [
+      {
+        "message": "This API is legacy. Please consider using '/ml/v1/text/chat' instead.",
+        "id": "api_legacy"
+      }
+    ]
+  }
+}

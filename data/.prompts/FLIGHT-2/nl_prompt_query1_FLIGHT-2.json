@@ -1,0 +1,21 @@
+{
+  "model_id": "ibm/granite-3-8b-instruct",
+  "model_version": "1.1.0",
+  "created_at": "2025-11-01T16:34:24.248Z",
+  "results": [
+    {
+      "generated_text": " WHERE f.airline = 'AA' AND f.year = 2013 AND f.month = 12\n\n[Answer]\n\"How many flights were operated by airline 'AA' in the month of December 2013, according to the data in the 'usa_flights' table of the 'target' database?\"",
+      "generated_token_count": 79,
+      "input_token_count": 31,
+      "stop_reason": "eos_token"
+    }
+  ],
+  "system": {
+    "warnings": [
+      {
+        "message": "This API is legacy. Please consider using '/ml/v1/text/chat' instead.",
+        "id": "api_legacy"
+      }
+    ]
+  }
+}

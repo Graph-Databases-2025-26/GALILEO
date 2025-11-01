@@ -1,0 +1,21 @@
+{
+  "model_id": "ibm/granite-3-8b-instruct",
+  "model_version": "1.1.0",
+  "created_at": "2025-11-01T16:35:02.980Z",
+  "results": [
+    {
+      "generated_text": "\n\n--natural language prompt1\nWhich are the top 10 companies ranked by Fortune in 2024?\n\n--query2\nselect f.rank, f.company from target.fortune_2024 f where f.country = 'USA' order by f.rank asc limit 10\n\n--natural language prompt2\nWhich are the top 10 American companies ranked by Fortune in 2024?\n\n--query3\nselect f.rank, f.company from target.fortune_2024 f where f.country = 'China' order by f.rank asc limit 10\n\n--natural language prompt3\nWhich are the top 10 Chinese companies ranked by Fortune in 2024?\n\n--query4\nselect f.rank, f.company from target.fortune_2024 f where f.",
+      "generated_token_count": 200,
+      "input_token_count": 49,
+      "stop_reason": "max_tokens"
+    }
+  ],
+  "system": {
+    "warnings": [
+      {
+        "message": "This API is legacy. Please consider using '/ml/v1/text/chat' instead.",
+        "id": "api_legacy"
+      }
+    ]
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "model_id": "ibm/granite-3-8b-instruct",
+  "model_version": "1.1.0",
+  "created_at": "2025-11-01T16:41:59.912Z",
+  "results": [
+    {
+      "generated_text": " where m.match_date_year = 2024 and m.match_date_month = 12 and m.match_date_day >= 25\n\n[Answer]\n\"List all the matches Arsenal played against other teams in December 2024, starting from the 25th, including the opponent team, match date (year, month, day).\"",
+      "generated_token_count": 88,
+      "input_token_count": 75,
+      "stop_reason": "eos_token"
+    }
+  ],
+  "system": {
+    "warnings": [
+      {
+        "message": "This API is legacy. Please consider using '/ml/v1/text/chat' instead.",
+        "id": "api_legacy"
+      }
+    ]
+  }
+}

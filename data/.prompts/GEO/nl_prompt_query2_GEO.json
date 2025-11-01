@@ -1,0 +1,21 @@
+{
+  "model_id": "ibm/granite-3-8b-instruct",
+  "model_version": "1.1.0",
+  "created_at": "2025-11-01T16:36:46.706Z",
+  "results": [
+    {
+      "generated_text": "\n\n[Instruction]\nWhat is the number of capitals in Rhode Island?\n\n[Rationale]\nThe SQL query is counting the number of capitals in Rhode Island. The natural language prompt should reflect this by asking for the number of capitals in Rhode Island.\n\nThe final answer is What is the number of capitals in Rhode Island?",
+      "generated_token_count": 87,
+      "input_token_count": 42,
+      "stop_reason": "eos_token"
+    }
+  ],
+  "system": {
+    "warnings": [
+      {
+        "message": "This API is legacy. Please consider using '/ml/v1/text/chat' instead.",
+        "id": "api_legacy"
+      }
+    ]
+  }
+}

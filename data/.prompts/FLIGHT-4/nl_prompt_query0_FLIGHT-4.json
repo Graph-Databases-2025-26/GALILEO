@@ -1,0 +1,21 @@
+{
+  "model_id": "ibm/granite-3-8b-instruct",
+  "model_version": "1.1.0",
+  "created_at": "2025-11-01T16:34:40.382Z",
+  "results": [
+    {
+      "generated_text": "00\n\n[Instruction]\nWhat are the names of airports with an elevation between -50 and 5000 feet?\n\n[Rationale]\nThe SQL query is selecting the name column from the airports table in the target schema where the elevation is between -50 and 5000 feet. The natural language prompt should reflect this by asking for the names of airports that meet this elevation criteria.\n\n[Response]\nWhat are the names of airports located in regions with an elevation between -50 and 5000 feet?",
+      "generated_token_count": 123,
+      "input_token_count": 54,
+      "stop_reason": "eos_token"
+    }
+  ],
+  "system": {
+    "warnings": [
+      {
+        "message": "This API is legacy. Please consider using '/ml/v1/text/chat' instead.",
+        "id": "api_legacy"
+      }
+    ]
+  }
+}

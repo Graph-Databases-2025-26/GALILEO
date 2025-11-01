@@ -1,0 +1,21 @@
+{
+  "model_id": "ibm/granite-3-8b-instruct",
+  "model_version": "1.1.0",
+  "created_at": "2025-11-01T16:37:02.233Z",
+  "results": [
+    {
+      "generated_text": "_population WHERE state_name = 'California'\n\n[Instruction]\nWhat is the population count of the state named 'California' in the 'usa_state_population' table of the 'target' database?",
+      "generated_token_count": 46,
+      "input_token_count": 33,
+      "stop_reason": "eos_token"
+    }
+  ],
+  "system": {
+    "warnings": [
+      {
+        "message": "This API is legacy. Please consider using '/ml/v1/text/chat' instead.",
+        "id": "api_legacy"
+      }
+    ]
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "model_id": "ibm/granite-3-8b-instruct",
+  "model_version": "1.1.0",
+  "created_at": "2025-11-01T16:42:15.563Z",
+  "results": [
+    {
+      "generated_text": "\nwhere m.match_date >= '2024-08-01' and m.match_date < '2025-01-01'\n\n[Answer]\n\"Who were the players of the match in the Premier League from August 1, 2024 to December 31, 2024?\"",
+      "generated_token_count": 81,
+      "input_token_count": 52,
+      "stop_reason": "eos_token"
+    }
+  ],
+  "system": {
+    "warnings": [
+      {
+        "message": "This API is legacy. Please consider using '/ml/v1/text/chat' instead.",
+        "id": "api_legacy"
+      }
+    ]
+  }
+}

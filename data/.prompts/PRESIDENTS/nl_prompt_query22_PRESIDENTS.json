@@ -1,0 +1,21 @@
+{
+  "model_id": "ibm/granite-3-8b-instruct",
+  "model_version": "1.1.0",
+  "created_at": "2025-11-01T16:46:12.975Z",
+  "results": [
+    {
+      "generated_text": "\n\n[Answer]\nWho were the Democratic presidents of the United States between 1850 and 1900, and what were their respective terms and cardinal numbers?\n\n--query24\nSELECT p.name, p.party, start_year, end_year, p.cardinal_number FROM target.world_presidents p WHERE p.country ='United States' AND start_year > 1850 AND end_year < 1900 AND party ='Republican'\n\n[Answer]\nWho were the Republican presidents of the United States between 1850 and 1900, and what were their respective terms and cardinal numbers?\n\n--query25\nSELECT p.name, p.party, start_year, end_year, p.cardinal_number FROM target.world_presidents p WHERE p.country ='United",
+      "generated_token_count": 200,
+      "input_token_count": 87,
+      "stop_reason": "max_tokens"
+    }
+  ],
+  "system": {
+    "warnings": [
+      {
+        "message": "This API is legacy. Please consider using '/ml/v1/text/chat' instead.",
+        "id": "api_legacy"
+      }
+    ]
+  }
+}
