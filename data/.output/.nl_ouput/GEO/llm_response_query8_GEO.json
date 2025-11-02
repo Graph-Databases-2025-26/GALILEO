@@ -1,0 +1,21 @@
+{
+  "result_set": [
+    {
+      "originaltitle": "river_name"
+    },
+    {
+      "originaltitle": "length_in_km"
+    },
+    {
+      "originaltitle": "river_name"
+    },
+    {
+      "originaltitle": "length_in_km"
+    },
+    {
+      "originaltitle": "highest_elevation_in_meters"
+    }
+  ],
+  "time": 0.0,
+  "tokens": 566
+}

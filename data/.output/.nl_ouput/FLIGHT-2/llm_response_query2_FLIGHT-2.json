@@ -1,0 +1,18 @@
+{
+  "result_set": [
+    {
+      "originaltitle": "COUNT(*)"
+    },
+    {
+      "originaltitle": "usa_flights"
+    },
+    {
+      "originaltitle": "COUNT(*)"
+    },
+    {
+      "originaltitle": "usa_flights"
+    }
+  ],
+  "time": 0.0,
+  "tokens": 358
+}

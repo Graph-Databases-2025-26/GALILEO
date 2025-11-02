@@ -1,0 +1,21 @@
+{
+  "result_set": [
+    {
+      "originaltitle": "New York City"
+    },
+    {
+      "originaltitle": "Los Angeles"
+    },
+    {
+      "originaltitle": "New York City"
+    },
+    {
+      "originaltitle": "Los Angeles"
+    },
+    {
+      "originaltitle": 4421
+    }
+  ],
+  "time": 0.0,
+  "tokens": 572
+}

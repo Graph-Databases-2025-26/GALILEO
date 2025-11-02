@@ -13,6 +13,8 @@ PROMPTS = ROOT / "data" / ".prompts"
 
 SUBMISSIONS_PATH = ROOT / "data" / ".output"
 
+NL_OUTPUT = ROOT / "data" / ".output" / ".nl_ouput"
+
 GROUND_PATH = ROOT / "data" / ".ground_truth"
 
 DATASETS = ["FLIGHT-2", "FLIGHT-4", "FORTUNE", "GEO", "MOVIES", "PREMIER", "PRESIDENTS", "WORLD"]
@@ -27,3 +29,12 @@ else:
 LOGS_DIR = ROOT / "logs"
 
 REQS_PATH = ROOT / "requirements.txt"
+
+SQL_TO_NL_PROMPT = (
+        "Translate the following SQL query into a clear, concise question in natural English. "
+        "Only output the question itself — do not include SQL code or explanations.\n\n"
+        "Example:\n"
+        "SQL: SELECT name FROM students;\n"
+        "Question: What are the names of the students?\n\n"
+)
+

@@ -1,0 +1,21 @@
+{
+  "result_set": [
+    {
+      "originaltitle": "California"
+    },
+    {
+      "originaltitle": "Texas"
+    },
+    {
+      "originaltitle": "California"
+    },
+    {
+      "originaltitle": "Texas"
+    },
+    {
+      "originaltitle": 4345
+    }
+  ],
+  "time": 0.0,
+  "tokens": 563
+}

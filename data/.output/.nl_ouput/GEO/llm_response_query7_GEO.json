@@ -1,0 +1,15 @@
+{
+  "result_set": [
+    {
+      "originaltitle": "population"
+    },
+    {
+      "originaltitle": "area_squared_miles"
+    },
+    {
+      "originaltitle": "highest_elevation_in_meters"
+    }
+  ],
+  "time": 0.0,
+  "tokens": 559
+}

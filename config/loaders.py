@@ -55,7 +55,7 @@ class Config_Loader:
 
     def _load_config(self) -> AppConfig:
         if not self.config_path.exists():
-            raise FileNotFoundError(f"File di configurazione non trovato: {self.config_path}")
+            raise FileNotFoundError(f"Configuration file not found: {self.config_path}")
 
         with open(self.config_path, "r", encoding="utf-8") as f:
             data = yaml.safe_load(f)
