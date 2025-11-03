@@ -1,0 +1,24 @@
+{
+  "result_set": [
+    {
+      "state_name": "Alaska",
+      "capital": "Juneau",
+      "density": 1.2,
+      "population": 731545
+    },
+    {
+      "state_name": "Nevada",
+      "capital": "Carson City",
+      "density": 24.4,
+      "population": 3080156
+    },
+    {
+      "state_name": "Wyoming",
+      "capital": "Cheyenne",
+      "density": 5.8,
+      "population": 578759
+    }
+  ],
+  "time": 0.0,
+  "tokens": 302
+}

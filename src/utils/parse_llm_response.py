@@ -1,6 +1,9 @@
 # python
 import re
 import json
+import os
+from src.utils.constants import *
+from src.utils.logging_config import logger
 
 def parse_llm_response(response):
     """
@@ -13,6 +16,7 @@ def parse_llm_response(response):
         return {"error": "Unexpected LLM response structure", "raw": response}
 
     # Regex to extract JSON blocks
+    logger.info(f"raw text: {raw_text}")
     json_blocks = re.findall(r'\{(?:[^{}]|(?:\{[^{}]*\}))*\}', raw_text)
     result_list = []
     total_time = 0.0
@@ -29,11 +33,16 @@ def parse_llm_response(response):
         except json.JSONDecodeError:
             continue
 
+        """
         if "result_set" in parsed:
             for row in parsed["result_set"]:
                 if isinstance(row, dict) and len(row) > 0:
                     value = list(row.values())[0]
                     result_list.append({"originaltitle": value})
+        """
+
+        if "result_set" in parsed and parsed["result_set"]:
+            result_list.extend(parsed["result_set"])
 
         # Sum block values (even if they are 0)
         total_time += parsed.get("time", 0.0)
@@ -60,3 +69,16 @@ def parse_llm_response(response):
         "time": total_time,
         "tokens": total_tokens
     }
+
+def save_llm_response_to_file(dataset_name, data, index):
+    # Save the response in a text file
+
+        response_filename = f"query{index}.json"
+        response_llm_folder = os.path.join(NL_OUTPUT, dataset_name)
+        os.makedirs(response_llm_folder, exist_ok=True)
+        json_path = os.path.join(response_llm_folder, response_filename)
+
+        with open(json_path, 'w', encoding='utf-8') as rf:
+            json.dump(data, rf, indent=2, ensure_ascii=False)
+
+        logger.info(f"LLM response saved in: {json_path}")

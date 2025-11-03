@@ -1,4 +1,5 @@
 import os, json, glob, sys, time
+import re
 from pathlib import Path
 from .db_connection import connect_to_duckdb
 from src.utils import DATA_DIR, SUBMISSIONS_PATH
@@ -28,6 +29,33 @@ def load_queries_from_folder(folder_path: str):
     logger.info(f"Found {len(queries)} queries in {folder_path} (pattern: queries_*.sql)")
     return queries
 
+
+def load_nl_queries_from_txt(dataset_path: str):
+    """
+    Carica le query in linguaggio naturale da un file .txt del dataset.
+    Esempio: queries_world.txt, queries_flight_4.txt, ecc.
+    Ritorna una lista di stringhe (una per query).
+    """
+    txt_files = sorted(glob.glob(os.path.join(dataset_path, "queries_*.txt")))
+    if not txt_files:
+        logger.warning(f"Nessun file .txt trovato in {dataset_path}")
+        return []
+
+    queries = []
+    for file_path in txt_files:
+        with open(file_path, "r", encoding="utf-8") as f:
+            content = f.read().strip()
+
+        # Divide in base ai marker tipo "--query1", "--query2", ecc.
+        parts = re.split(r"--query\d+", content)
+        for part in parts:
+            q = part.strip()
+            if q:
+                queries.append(q)
+
+        logger.info(f"Caricate {len(queries)} query NL da {os.path.basename(file_path)}")
+
+    return queries
 
 
 def execute_queries_and_save_json(con, queries, output_dir):

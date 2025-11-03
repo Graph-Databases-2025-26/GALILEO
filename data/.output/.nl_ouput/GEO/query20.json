@@ -1,0 +1,18 @@
+{
+  "result_set": [
+    {
+      "river_count": 3
+    },
+    {
+      "population": 3979576
+    },
+    {
+      "height": 8848
+    },
+    {
+      "president": "Joe Biden"
+    }
+  ],
+  "time": 0.0,
+  "tokens": 296
+}

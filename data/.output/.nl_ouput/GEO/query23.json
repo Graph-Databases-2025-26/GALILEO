@@ -1,0 +1,26 @@
+{
+  "result_set": [
+    {
+      "capital": "Vatican City",
+      "major_city": false
+    },
+    {
+      "capital": "Luxembourg",
+      "major_city": false
+    },
+    {
+      "capital": "Andorra la Vella",
+      "major_city": false
+    },
+    {
+      "capital": "Reykjavik",
+      "major_city": false
+    },
+    {
+      "capital": "Nur-Sultan",
+      "major_city": false
+    }
+  ],
+  "time": 0.0,
+  "tokens": 237
+}

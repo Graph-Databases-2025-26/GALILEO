@@ -1,26 +1,5 @@
 [
   {
-    "lake_name": "lake superior"
-  },
-  {
-    "lake_name": "lake ontario"
-  },
-  {
-    "lake_name": "lake winnebago"
-  },
-  {
-    "lake_name": "becharof lake"
-  },
-  {
-    "lake_name": "naknek lake"
-  },
-  {
-    "lake_name": "salton sea"
-  },
-  {
-    "lake_name": "lake of the woods"
-  },
-  {
     "lake_name": "lake okeechobee"
   },
   {
@@ -42,6 +21,33 @@
     "lake_name": "lake champlain"
   },
   {
+    "lake_name": "iliamna lake"
+  },
+  {
+    "lake_name": "lake saint clair"
+  },
+  {
+    "lake_name": "lake superior"
+  },
+  {
+    "lake_name": "lake ontario"
+  },
+  {
+    "lake_name": "lake winnebago"
+  },
+  {
+    "lake_name": "becharof lake"
+  },
+  {
+    "lake_name": "naknek lake"
+  },
+  {
+    "lake_name": "salton sea"
+  },
+  {
+    "lake_name": "lake of the woods"
+  },
+  {
     "lake_name": "teshekpuk lake"
   },
   {
@@ -52,12 +58,6 @@
   },
   {
     "lake_name": "lake huron"
-  },
-  {
-    "lake_name": "iliamna lake"
-  },
-  {
-    "lake_name": "lake saint clair"
   },
   {
     "lake_name": "red lake"

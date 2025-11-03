@@ -1,0 +1,12 @@
+{
+  "result_set": [
+    {
+      "number_of_capitals": 1
+    },
+    {
+      "call_sign": "UAL"
+    }
+  ],
+  "time": 0.0,
+  "tokens": 299
+}

@@ -33,36 +33,6 @@
     "capital": "montpelier"
   },
   {
-    "capital": "boise"
-  },
-  {
-    "capital": "jackson"
-  },
-  {
-    "capital": "providence"
-  },
-  {
-    "capital": "little rock"
-  },
-  {
-    "capital": "atlanta"
-  },
-  {
-    "capital": "indianapolis"
-  },
-  {
-    "capital": "topeka"
-  },
-  {
-    "capital": "st. paul"
-  },
-  {
-    "capital": "jefferson city"
-  },
-  {
-    "capital": "pierre"
-  },
-  {
     "capital": "denver"
   },
   {
@@ -76,27 +46,6 @@
   },
   {
     "capital": "charleston"
-  },
-  {
-    "capital": "dover"
-  },
-  {
-    "capital": "boston"
-  },
-  {
-    "capital": "santa fe"
-  },
-  {
-    "capital": "raleigh"
-  },
-  {
-    "capital": "richmond"
-  },
-  {
-    "capital": "madison"
-  },
-  {
-    "capital": "cheyenne"
   },
   {
     "capital": "phoenix"
@@ -129,6 +78,27 @@
     "capital": "salt lake city"
   },
   {
+    "capital": "little rock"
+  },
+  {
+    "capital": "atlanta"
+  },
+  {
+    "capital": "indianapolis"
+  },
+  {
+    "capital": "topeka"
+  },
+  {
+    "capital": "st. paul"
+  },
+  {
+    "capital": "jefferson city"
+  },
+  {
+    "capital": "pierre"
+  },
+  {
     "capital": "sacramento"
   },
   {
@@ -151,5 +121,35 @@
   },
   {
     "capital": "olympia"
+  },
+  {
+    "capital": "boise"
+  },
+  {
+    "capital": "jackson"
+  },
+  {
+    "capital": "providence"
+  },
+  {
+    "capital": "dover"
+  },
+  {
+    "capital": "boston"
+  },
+  {
+    "capital": "santa fe"
+  },
+  {
+    "capital": "raleigh"
+  },
+  {
+    "capital": "richmond"
+  },
+  {
+    "capital": "madison"
+  },
+  {
+    "capital": "cheyenne"
   }
 ]

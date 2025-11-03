@@ -1,0 +1,24 @@
+{
+  "result_set": [
+    {
+      "name": "Newark Liberty International Airport",
+      "city": "Newark",
+      "country": "USA",
+      "altitude": 100
+    },
+    {
+      "name": "John F. Kennedy International Airport",
+      "city": "New York",
+      "country": "USA",
+      "altitude": 0
+    },
+    {
+      "name": "LaGuardia Airport",
+      "city": "New York",
+      "country": "USA",
+      "altitude": 0
+    }
+  ],
+  "time": 0.0,
+  "tokens": 260
+}
