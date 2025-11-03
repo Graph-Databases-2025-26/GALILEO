@@ -48,6 +48,7 @@ def process_dataset(dataset_dir: Path) -> int:
         return 0
 
     out_dir = RESULTS_ROOT / dataset
+    
 
     sql_files = sorted(dataset_dir.glob("queries_*.sql"))
     if not sql_files:
@@ -79,7 +80,7 @@ def process_dataset(dataset_dir: Path) -> int:
 
 def main():
 
-    args = [a.strip().upper() for a in sys.argv[1:]]
+    args = [a.strip().lower() for a in sys.argv[1:]]
 
     if not args or "all" in args:
         datasets = find_datasets()

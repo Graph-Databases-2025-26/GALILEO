@@ -1,4 +1,95 @@
 {
-  "format": "text",
-  "plan_text": "analyzed_plan \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\u2502\n\u2502\u2502    Query Profiling Information    \u2502\u2502\n\u2502\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\nEXPLAIN ANALYZE --query8 SELECT count(*) FROM target.world_presidents p where p.country='Venezuela' AND p.start_year >= 1990  AND p.start_year < 2000;\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\u2502\n\u2502\u2502              Total Time: 0.0013s             \u2502\u2502\n\u2502\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502           QUERY           \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502      EXPLAIN_ANALYZE      \u2502\n\u2502    \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500   \u2502\n\u2502           0 rows          \u2502\n\u2502          (0.00s)          \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502    UNGROUPED_AGGREGATE    \u2502\n\u2502    \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500   \u2502\n\u2502        Aggregates:        \u2502\n\u2502        count_star()       \u2502\n\u2502                           \u2502\n\u2502           1 row           \u2502\n\u2502          (0.00s)          \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502         TABLE_SCAN        \u2502\n\u2502    \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500   \u2502\n\u2502           Table:          \u2502\n\u2502      world_presidents     \u2502\n\u2502                           \u2502\n\u2502   Type: Sequential Scan   \u2502\n\u2502                           \u2502\n\u2502          Filters:         \u2502\n\u2502    country='Venezuela'    \u2502\n\u2502    start_year>=1990 AND   \u2502\n\u2502       start_year<2000     \u2502\n\u2502                           \u2502\n\u2502           4 rows          \u2502\n\u2502          (0.00s)          \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n"
+    "query_name": "--query8\nSELECT count(*) FROM target.world_presidents p where p.country='Venezuela' AND p.start_year >= 1990  AND p.start_year < 2000;",
+    "blocked_thread_time": 0.0,
+    "system_peak_buffer_memory": 557056,
+    "system_peak_temp_dir_size": 0,
+    "cpu_time": 0.0000911,
+    "extra_info": {},
+    "cumulative_cardinality": 5,
+    "cumulative_rows_scanned": 111,
+    "result_set_size": 8,
+    "latency": 0.0006484,
+    "rows_returned": 1,
+    "total_bytes_read": 0,
+    "total_bytes_written": 0,
+    "optimizer_expression_rewriter": 0.0000495,
+    "optimizer_filter_pullup": 0.0000013,
+    "optimizer_filter_pushdown": 0.0000343,
+    "optimizer_empty_result_pullup": 4e-7,
+    "optimizer_cte_filter_pusher": 0.0000015,
+    "optimizer_regex_range": 2e-7,
+    "optimizer_in_clause": 7e-7,
+    "optimizer_join_order": 0.0000257,
+    "optimizer_deliminator": 1e-7,
+    "optimizer_unnest_rewriter": 5e-7,
+    "optimizer_unused_columns": 0.0000065,
+    "optimizer_statistics_propagation": 0.0000085,
+    "optimizer_common_subexpressions": 0.0000014,
+    "optimizer_common_aggregate": 8e-7,
+    "optimizer_column_lifetime": 0.0000023,
+    "optimizer_build_side_probe_side": 0.0000019,
+    "optimizer_limit_pushdown": 3e-7,
+    "optimizer_top_n": 4e-7,
+    "optimizer_compressed_materialization": 0.0,
+    "optimizer_duplicate_groups": 0.0000014,
+    "optimizer_reorder_filter": 4e-7,
+    "optimizer_sampling_pushdown": 2e-7,
+    "optimizer_join_filter_pushdown": 2e-7,
+    "optimizer_extension": 0.0,
+    "optimizer_materialized_cte": 0.0,
+    "optimizer_sum_rewriter": 0.0000059,
+    "optimizer_late_materialization": 0.0000071,
+    "optimizer_cte_inlining": 4e-7,
+    "all_optimizers": 0.00015220000000000004,
+    "cumulative_optimizer_timing": 0.00015190000000000006,
+    "planner": 0.0000957,
+    "planner_binding": 0.0000934,
+    "physical_planner": 0.000011599999999999999,
+    "physical_planner_column_binding": 0.0000012,
+    "physical_planner_resolve_types": 1e-7,
+    "physical_planner_create_plan": 0.0000083,
+    "children": [
+        {
+            "cpu_time": 0.0000911,
+            "extra_info": {
+                "Aggregates": "count_star()"
+            },
+            "cumulative_cardinality": 5,
+            "operator_name": "UNGROUPED_AGGREGATE",
+            "operator_type": "UNGROUPED_AGGREGATE",
+            "operator_cardinality": 1,
+            "cumulative_rows_scanned": 111,
+            "operator_rows_scanned": 0,
+            "operator_timing": 0.0000021000000000000002,
+            "result_set_size": 8,
+            "total_bytes_read": 0,
+            "total_bytes_written": 0,
+            "children": [
+                {
+                    "cpu_time": 0.00008900000000000001,
+                    "extra_info": {
+                        "Table": "world_presidents",
+                        "Type": "Sequential Scan",
+                        "Projections": "",
+                        "Filters": [
+                            "country='Venezuela'",
+                            "start_year>=1990 AND start_year<2000"
+                        ],
+                        "Estimated Cardinality": "56"
+                    },
+                    "cumulative_cardinality": 4,
+                    "operator_name": "SEQ_SCAN ",
+                    "operator_type": "TABLE_SCAN",
+                    "operator_cardinality": 4,
+                    "cumulative_rows_scanned": 111,
+                    "operator_rows_scanned": 111,
+                    "operator_timing": 0.00008900000000000001,
+                    "result_set_size": 80,
+                    "total_bytes_read": 0,
+                    "total_bytes_written": 0,
+                    "children": []
+                }
+            ]
+        }
+    ]
 }

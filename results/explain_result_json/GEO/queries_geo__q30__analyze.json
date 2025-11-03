@@ -1,4 +1,142 @@
 {
-  "format": "text",
-  "plan_text": "analyzed_plan \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\u2502\n\u2502\u2502    Query Profiling Information    \u2502\u2502\n\u2502\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\nEXPLAIN ANALYZE --query30 SELECT us.state_name, us.capital FROM target.usa_state us WHERE us.population > 3000000 AND us.area_squared_miles > 50000 order by us.capital;\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\u2502\n\u2502\u2502              Total Time: 0.0017s             \u2502\u2502\n\u2502\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502           QUERY           \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502      EXPLAIN_ANALYZE      \u2502\n\u2502    \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500   \u2502\n\u2502           0 rows          \u2502\n\u2502          (0.00s)          \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502         PROJECTION        \u2502\n\u2502    \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500   \u2502\n\u2502             #0            \u2502\n\u2502__internal_decompress_strin\u2502\n\u2502           g(#1)           \u2502\n\u2502                           \u2502\n\u2502          13 rows          \u2502\n\u2502          (0.00s)          \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502          ORDER_BY         \u2502\n\u2502    \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500   \u2502\n\u2502       us.capital ASC      \u2502\n\u2502                           \u2502\n\u2502          13 rows          \u2502\n\u2502          (0.00s)          \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502         PROJECTION        \u2502\n\u2502    \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500   \u2502\n\u2502             #0            \u2502\n\u2502__internal_compress_string_\u2502\n\u2502        uhugeint(#1)       \u2502\n\u2502                           \u2502\n\u2502          13 rows          \u2502\n\u2502          (0.00s)          \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502         TABLE_SCAN        \u2502\n\u2502    \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500   \u2502\n\u2502      Table: usa_state     \u2502\n\u2502   Type: Sequential Scan   \u2502\n\u2502                           \u2502\n\u2502        Projections:       \u2502\n\u2502         state_name        \u2502\n\u2502          capital          \u2502\n\u2502                           \u2502\n\u2502          Filters:         \u2502\n\u2502     population>3000000    \u2502\n\u2502 area_squared_miles>50000.0\u2502\n\u2502                           \u2502\n\u2502          13 rows          \u2502\n\u2502          (0.00s)          \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n"
+    "query_name": "--query30\nSELECT us.state_name, us.capital FROM target.usa_state us WHERE us.population > 3000000 AND us.area_squared_miles > 50000 order by us.capital;",
+    "blocked_thread_time": 0.0,
+    "system_peak_buffer_memory": 1441792,
+    "system_peak_temp_dir_size": 0,
+    "cpu_time": 0.00018740000000000003,
+    "extra_info": {},
+    "cumulative_cardinality": 52,
+    "cumulative_rows_scanned": 51,
+    "result_set_size": 416,
+    "latency": 0.0009611,
+    "rows_returned": 13,
+    "total_bytes_read": 0,
+    "total_bytes_written": 0,
+    "optimizer_expression_rewriter": 0.0000335,
+    "optimizer_filter_pullup": 0.0000012,
+    "optimizer_filter_pushdown": 0.0000237,
+    "optimizer_empty_result_pullup": 3e-7,
+    "optimizer_cte_filter_pusher": 0.0000016,
+    "optimizer_regex_range": 1e-7,
+    "optimizer_in_clause": 7e-7,
+    "optimizer_join_order": 0.0000237,
+    "optimizer_deliminator": 1e-7,
+    "optimizer_unnest_rewriter": 4e-7,
+    "optimizer_unused_columns": 0.0000058,
+    "optimizer_statistics_propagation": 0.0000248,
+    "optimizer_common_subexpressions": 0.0000013,
+    "optimizer_common_aggregate": 9e-7,
+    "optimizer_column_lifetime": 0.0000035,
+    "optimizer_build_side_probe_side": 0.0000017,
+    "optimizer_limit_pushdown": 3e-7,
+    "optimizer_top_n": 3e-7,
+    "optimizer_compressed_materialization": 0.0,
+    "optimizer_duplicate_groups": 9e-7,
+    "optimizer_reorder_filter": 5e-7,
+    "optimizer_sampling_pushdown": 2e-7,
+    "optimizer_join_filter_pushdown": 3e-7,
+    "optimizer_extension": 0.0,
+    "optimizer_materialized_cte": 0.0,
+    "optimizer_sum_rewriter": 0.0000038,
+    "optimizer_late_materialization": 0.0000057,
+    "optimizer_cte_inlining": 4e-7,
+    "all_optimizers": 0.000136,
+    "cumulative_optimizer_timing": 0.00013570000000000005,
+    "planner": 0.0000904,
+    "planner_binding": 0.0000886,
+    "physical_planner": 0.0000111,
+    "physical_planner_column_binding": 0.0000019,
+    "physical_planner_resolve_types": 3e-7,
+    "physical_planner_create_plan": 0.0000076,
+    "children": [
+        {
+            "cpu_time": 0.00018740000000000003,
+            "extra_info": {
+                "Projections": [
+                    "#0",
+                    "__internal_decompress_string(#1)"
+                ],
+                "Estimated Cardinality": "10"
+            },
+            "cumulative_cardinality": 52,
+            "operator_name": "PROJECTION",
+            "operator_type": "PROJECTION",
+            "operator_cardinality": 13,
+            "cumulative_rows_scanned": 51,
+            "operator_rows_scanned": 0,
+            "operator_timing": 0.0000016,
+            "result_set_size": 416,
+            "total_bytes_read": 0,
+            "total_bytes_written": 0,
+            "children": [
+                {
+                    "cpu_time": 0.00018580000000000002,
+                    "extra_info": {
+                        "Order By": "us.capital ASC"
+                    },
+                    "cumulative_cardinality": 39,
+                    "operator_name": "ORDER_BY",
+                    "operator_type": "ORDER_BY",
+                    "operator_cardinality": 13,
+                    "cumulative_rows_scanned": 51,
+                    "operator_rows_scanned": 0,
+                    "operator_timing": 0.00007170000000000001,
+                    "result_set_size": 416,
+                    "total_bytes_read": 0,
+                    "total_bytes_written": 0,
+                    "children": [
+                        {
+                            "cpu_time": 0.0001141,
+                            "extra_info": {
+                                "Projections": [
+                                    "#0",
+                                    "__internal_compress_string_uhugeint(#1)"
+                                ],
+                                "Estimated Cardinality": "10"
+                            },
+                            "cumulative_cardinality": 26,
+                            "operator_name": "PROJECTION",
+                            "operator_type": "PROJECTION",
+                            "operator_cardinality": 13,
+                            "cumulative_rows_scanned": 51,
+                            "operator_rows_scanned": 0,
+                            "operator_timing": 0.0000023,
+                            "result_set_size": 416,
+                            "total_bytes_read": 0,
+                            "total_bytes_written": 0,
+                            "children": [
+                                {
+                                    "cpu_time": 0.0001118,
+                                    "extra_info": {
+                                        "Table": "usa_state",
+                                        "Type": "Sequential Scan",
+                                        "Projections": [
+                                            "state_name",
+                                            "capital"
+                                        ],
+                                        "Filters": [
+                                            "population>3000000",
+                                            "area_squared_miles>50000.0"
+                                        ],
+                                        "Estimated Cardinality": "10"
+                                    },
+                                    "cumulative_cardinality": 13,
+                                    "operator_name": "SEQ_SCAN ",
+                                    "operator_type": "TABLE_SCAN",
+                                    "operator_cardinality": 13,
+                                    "cumulative_rows_scanned": 51,
+                                    "operator_rows_scanned": 51,
+                                    "operator_timing": 0.0001118,
+                                    "result_set_size": 416,
+                                    "total_bytes_read": 0,
+                                    "total_bytes_written": 0,
+                                    "children": []
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
 }

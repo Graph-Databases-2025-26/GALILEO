@@ -1,4 +1,198 @@
 {
-  "format": "text",
-  "plan_text": "analyzed_plan \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\u2502\n\u2502\u2502    Query Profiling Information    \u2502\u2502\n\u2502\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\nEXPLAIN ANALYZE --query1 select f.rank, f.company from target.fortune_2024 f order by f.rank asc limit 10;\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\u2502\n\u2502\u2502              Total Time: 0.0029s             \u2502\u2502\n\u2502\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502           QUERY           \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502      EXPLAIN_ANALYZE      \u2502\n\u2502    \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500   \u2502\n\u2502           0 rows          \u2502\n\u2502          (0.00s)          \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502         PROJECTION        \u2502\n\u2502    \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500   \u2502\n\u2502__internal_decompress_integ\u2502\n\u2502     ral_bigint(#0, 1)     \u2502\n\u2502             #1            \u2502\n\u2502                           \u2502\n\u2502          10 rows          \u2502\n\u2502          (0.00s)          \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502          ORDER_BY         \u2502\n\u2502    \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500   \u2502\n\u2502         f.rank ASC        \u2502\n\u2502                           \u2502\n\u2502          10 rows          \u2502\n\u2502          (0.00s)          \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502         PROJECTION        \u2502\n\u2502    \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500   \u2502\n\u2502__internal_compress_integra\u2502\n\u2502     l_usmallint(#0, 1)    \u2502\n\u2502             #1            \u2502\n\u2502                           \u2502\n\u2502          10 rows          \u2502\n\u2502          (0.00s)          \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502         HASH_JOIN         \u2502\n\u2502    \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500   \u2502\n\u2502      Join Type: SEMI      \u2502\n\u2502                           \u2502\n\u2502        Conditions:        \u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502       rowid = rowid       \u2502              \u2502\n\u2502                           \u2502              \u2502\n\u2502          10 rows          \u2502              \u2502\n\u2502          (0.00s)          \u2502              \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518              \u2502\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502         TABLE_SCAN        \u2502\u2502           TOP_N           \u2502\n\u2502    \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500   \u2502\u2502    \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500   \u2502\n\u2502    Table: fortune_2024    \u2502\u2502          Top: 10          \u2502\n\u2502   Type: Sequential Scan   \u2502\u2502    Order By: f.rank ASC   \u2502\n\u2502                           \u2502\u2502                           \u2502\n\u2502        Projections:       \u2502\u2502                           \u2502\n\u2502            Rank           \u2502\u2502                           \u2502\n\u2502          Company          \u2502\u2502                           \u2502\n\u2502                           \u2502\u2502                           \u2502\n\u2502          10 rows          \u2502\u2502          10 rows          \u2502\n\u2502          (0.00s)          \u2502\u2502          (0.00s)          \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                             \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n                             \u2502         TABLE_SCAN        \u2502\n                             \u2502    \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500   \u2502\n                             \u2502    Table: fortune_2024    \u2502\n                             \u2502   Type: Sequential Scan   \u2502\n                             \u2502     Projections: Rank     \u2502\n                             \u2502                           \u2502\n                             \u2502          Filters:         \u2502\n                             \u2502 optional: Dynamic Filter  \u2502\n                             \u2502           (Rank)          \u2502\n                             \u2502                           \u2502\n                             \u2502         1,000 rows        \u2502\n                             \u2502          (0.00s)          \u2502\n                             \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n"
+    "query_name": "--query1\nselect f.rank, f.company from target.fortune_2024 f order by f.rank asc limit 10;",
+    "blocked_thread_time": 0.0,
+    "system_peak_buffer_memory": 3997696,
+    "system_peak_temp_dir_size": 0,
+    "cpu_time": 0.0005472999999999999,
+    "extra_info": {},
+    "cumulative_cardinality": 1060,
+    "cumulative_rows_scanned": 2000,
+    "result_set_size": 240,
+    "latency": 0.0019041,
+    "rows_returned": 10,
+    "total_bytes_read": 0,
+    "total_bytes_written": 0,
+    "optimizer_expression_rewriter": 0.0000047,
+    "optimizer_filter_pullup": 9e-7,
+    "optimizer_filter_pushdown": 0.0000079,
+    "optimizer_empty_result_pullup": 3e-7,
+    "optimizer_cte_filter_pusher": 0.0000014,
+    "optimizer_regex_range": 2e-7,
+    "optimizer_in_clause": 0.000001,
+    "optimizer_join_order": 0.0000211,
+    "optimizer_deliminator": 1e-7,
+    "optimizer_unnest_rewriter": 4e-7,
+    "optimizer_unused_columns": 0.0000041,
+    "optimizer_statistics_propagation": 0.0000422,
+    "optimizer_common_subexpressions": 0.0000012,
+    "optimizer_common_aggregate": 0.0000011,
+    "optimizer_column_lifetime": 0.0000101,
+    "optimizer_build_side_probe_side": 0.0000022,
+    "optimizer_limit_pushdown": 3e-7,
+    "optimizer_top_n": 0.0000035,
+    "optimizer_compressed_materialization": 0.0,
+    "optimizer_duplicate_groups": 0.0000012,
+    "optimizer_reorder_filter": 0.0000015,
+    "optimizer_sampling_pushdown": 2e-7,
+    "optimizer_join_filter_pushdown": 0.0000113,
+    "optimizer_extension": 0.0,
+    "optimizer_materialized_cte": 0.0,
+    "optimizer_sum_rewriter": 0.0000038,
+    "optimizer_late_materialization": 0.0000208,
+    "optimizer_cte_inlining": 4e-7,
+    "all_optimizers": 0.00014220000000000001,
+    "cumulative_optimizer_timing": 0.00014190000000000003,
+    "planner": 0.0000961,
+    "planner_binding": 0.0000942,
+    "physical_planner": 0.0000253,
+    "physical_planner_column_binding": 0.0000032,
+    "physical_planner_resolve_types": 5e-7,
+    "physical_planner_create_plan": 0.0000172,
+    "children": [
+        {
+            "cpu_time": 0.0005472999999999999,
+            "extra_info": {
+                "Projections": [
+                    "__internal_decompress_integral_bigint(#0, 1)",
+                    "#1"
+                ],
+                "Estimated Cardinality": "1000"
+            },
+            "cumulative_cardinality": 1060,
+            "operator_name": "PROJECTION",
+            "operator_type": "PROJECTION",
+            "operator_cardinality": 10,
+            "cumulative_rows_scanned": 2000,
+            "operator_rows_scanned": 0,
+            "operator_timing": 0.0000015,
+            "result_set_size": 240,
+            "total_bytes_read": 0,
+            "total_bytes_written": 0,
+            "children": [
+                {
+                    "cpu_time": 0.0005457999999999999,
+                    "extra_info": {
+                        "Order By": "f.rank ASC"
+                    },
+                    "cumulative_cardinality": 1050,
+                    "operator_name": "ORDER_BY",
+                    "operator_type": "ORDER_BY",
+                    "operator_cardinality": 10,
+                    "cumulative_rows_scanned": 2000,
+                    "operator_rows_scanned": 0,
+                    "operator_timing": 0.0001167,
+                    "result_set_size": 180,
+                    "total_bytes_read": 0,
+                    "total_bytes_written": 0,
+                    "children": [
+                        {
+                            "cpu_time": 0.00042909999999999997,
+                            "extra_info": {
+                                "Projections": [
+                                    "__internal_compress_integral_usmallint(#0, 1)",
+                                    "#1"
+                                ],
+                                "Estimated Cardinality": "1000"
+                            },
+                            "cumulative_cardinality": 1040,
+                            "operator_name": "PROJECTION",
+                            "operator_type": "PROJECTION",
+                            "operator_cardinality": 10,
+                            "cumulative_rows_scanned": 2000,
+                            "operator_rows_scanned": 0,
+                            "operator_timing": 0.0000019,
+                            "result_set_size": 180,
+                            "total_bytes_read": 0,
+                            "total_bytes_written": 0,
+                            "children": [
+                                {
+                                    "cpu_time": 0.0004272,
+                                    "extra_info": {
+                                        "Join Type": "SEMI",
+                                        "Conditions": "rowid = rowid",
+                                        "Estimated Cardinality": "1000"
+                                    },
+                                    "cumulative_cardinality": 1030,
+                                    "operator_name": "HASH_JOIN",
+                                    "operator_type": "HASH_JOIN",
+                                    "operator_cardinality": 10,
+                                    "cumulative_rows_scanned": 2000,
+                                    "operator_rows_scanned": 0,
+                                    "operator_timing": 0.00020819999999999996,
+                                    "result_set_size": 240,
+                                    "total_bytes_read": 0,
+                                    "total_bytes_written": 0,
+                                    "children": [
+                                        {
+                                            "cpu_time": 0.0000305,
+                                            "extra_info": {
+                                                "Table": "fortune_2024",
+                                                "Type": "Sequential Scan",
+                                                "Projections": [
+                                                    "Rank",
+                                                    "Company"
+                                                ],
+                                                "Estimated Cardinality": "1000"
+                                            },
+                                            "cumulative_cardinality": 10,
+                                            "operator_name": "SEQ_SCAN ",
+                                            "operator_type": "TABLE_SCAN",
+                                            "operator_cardinality": 10,
+                                            "cumulative_rows_scanned": 1000,
+                                            "operator_rows_scanned": 1000,
+                                            "operator_timing": 0.0000305,
+                                            "result_set_size": 320,
+                                            "total_bytes_read": 0,
+                                            "total_bytes_written": 0,
+                                            "children": []
+                                        },
+                                        {
+                                            "cpu_time": 0.0001885,
+                                            "extra_info": {
+                                                "Top": "10",
+                                                "Order By": "f.rank ASC"
+                                            },
+                                            "cumulative_cardinality": 1010,
+                                            "operator_name": "TOP_N",
+                                            "operator_type": "TOP_N",
+                                            "operator_cardinality": 10,
+                                            "cumulative_rows_scanned": 1000,
+                                            "operator_rows_scanned": 0,
+                                            "operator_timing": 0.0000292,
+                                            "result_set_size": 160,
+                                            "total_bytes_read": 0,
+                                            "total_bytes_written": 0,
+                                            "children": [
+                                                {
+                                                    "cpu_time": 0.0001593,
+                                                    "extra_info": {
+                                                        "Table": "fortune_2024",
+                                                        "Type": "Sequential Scan",
+                                                        "Projections": "Rank",
+                                                        "Filters": "optional: Dynamic Filter (Rank)",
+                                                        "Estimated Cardinality": "1000"
+                                                    },
+                                                    "cumulative_cardinality": 1000,
+                                                    "operator_name": "SEQ_SCAN ",
+                                                    "operator_type": "TABLE_SCAN",
+                                                    "operator_cardinality": 1000,
+                                                    "cumulative_rows_scanned": 1000,
+                                                    "operator_rows_scanned": 1000,
+                                                    "operator_timing": 0.0001593,
+                                                    "result_set_size": 16000,
+                                                    "total_bytes_read": 0,
+                                                    "total_bytes_written": 0,
+                                                    "children": []
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
 }

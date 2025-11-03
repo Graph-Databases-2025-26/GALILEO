@@ -1,4 +1,112 @@
 {
-  "format": "text",
-  "plan_text": "analyzed_plan \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\u2502\n\u2502\u2502    Query Profiling Information    \u2502\u2502\n\u2502\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\nEXPLAIN ANALYZE --query10 SELECT DISTINCT lake_name FROM target.usa_lake WHERE area_squared_km > 450;\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\u2502\n\u2502\u2502              Total Time: 0.0032s             \u2502\u2502\n\u2502\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502           QUERY           \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502      EXPLAIN_ANALYZE      \u2502\n\u2502    \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500   \u2502\n\u2502           0 rows          \u2502\n\u2502          (0.00s)          \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502       HASH_GROUP_BY       \u2502\n\u2502    \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500   \u2502\n\u2502         Groups: #0        \u2502\n\u2502                           \u2502\n\u2502          22 rows          \u2502\n\u2502          (0.00s)          \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502         PROJECTION        \u2502\n\u2502    \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500   \u2502\n\u2502         lake_name         \u2502\n\u2502                           \u2502\n\u2502          32 rows          \u2502\n\u2502          (0.00s)          \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502         TABLE_SCAN        \u2502\n\u2502    \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500   \u2502\n\u2502      Table: usa_lake      \u2502\n\u2502   Type: Sequential Scan   \u2502\n\u2502                           \u2502\n\u2502        Projections:       \u2502\n\u2502         lake_name         \u2502\n\u2502                           \u2502\n\u2502          32 rows          \u2502\n\u2502          (0.00s)          \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n"
+    "query_name": "--query10\nSELECT DISTINCT lake_name FROM target.usa_lake WHERE area_squared_km > 450;",
+    "blocked_thread_time": 0.0,
+    "system_peak_buffer_memory": 7897088,
+    "system_peak_temp_dir_size": 0,
+    "cpu_time": 0.006066399999999999,
+    "extra_info": {},
+    "cumulative_cardinality": 86,
+    "cumulative_rows_scanned": 32,
+    "result_set_size": 352,
+    "latency": 0.0030376,
+    "rows_returned": 22,
+    "total_bytes_read": 0,
+    "total_bytes_written": 0,
+    "optimizer_expression_rewriter": 0.0001095,
+    "optimizer_filter_pullup": 0.0000014,
+    "optimizer_filter_pushdown": 0.00002,
+    "optimizer_empty_result_pullup": 3e-7,
+    "optimizer_cte_filter_pusher": 0.0000014,
+    "optimizer_regex_range": 2e-7,
+    "optimizer_in_clause": 6e-7,
+    "optimizer_join_order": 0.0000197,
+    "optimizer_deliminator": 1e-7,
+    "optimizer_unnest_rewriter": 5e-7,
+    "optimizer_unused_columns": 0.0000051,
+    "optimizer_statistics_propagation": 0.0000106,
+    "optimizer_common_subexpressions": 0.0000014,
+    "optimizer_common_aggregate": 5e-7,
+    "optimizer_column_lifetime": 0.0000021,
+    "optimizer_build_side_probe_side": 0.0000019,
+    "optimizer_limit_pushdown": 3e-7,
+    "optimizer_top_n": 4e-7,
+    "optimizer_compressed_materialization": 0.0,
+    "optimizer_duplicate_groups": 0.000001,
+    "optimizer_reorder_filter": 4e-7,
+    "optimizer_sampling_pushdown": 1e-7,
+    "optimizer_join_filter_pushdown": 2e-7,
+    "optimizer_extension": 0.0,
+    "optimizer_materialized_cte": 0.0,
+    "optimizer_sum_rewriter": 0.0000033,
+    "optimizer_late_materialization": 0.0000059,
+    "optimizer_cte_inlining": 6e-7,
+    "all_optimizers": 0.00018780000000000007,
+    "cumulative_optimizer_timing": 0.00018750000000000003,
+    "planner": 0.0000714,
+    "planner_binding": 0.0000686,
+    "physical_planner": 0.0000177,
+    "physical_planner_column_binding": 0.0000012,
+    "physical_planner_resolve_types": 1e-7,
+    "physical_planner_create_plan": 0.0000151,
+    "children": [
+        {
+            "cpu_time": 0.006066399999999999,
+            "extra_info": {
+                "Groups": "#0",
+                "Aggregates": "",
+                "Estimated Cardinality": "6"
+            },
+            "cumulative_cardinality": 86,
+            "operator_name": "HASH_GROUP_BY",
+            "operator_type": "HASH_GROUP_BY",
+            "operator_cardinality": 22,
+            "cumulative_rows_scanned": 32,
+            "operator_rows_scanned": 0,
+            "operator_timing": 0.005923399999999999,
+            "result_set_size": 352,
+            "total_bytes_read": 0,
+            "total_bytes_written": 0,
+            "children": [
+                {
+                    "cpu_time": 0.000143,
+                    "extra_info": {
+                        "Projections": "lake_name",
+                        "Estimated Cardinality": "6"
+                    },
+                    "cumulative_cardinality": 64,
+                    "operator_name": "PROJECTION",
+                    "operator_type": "PROJECTION",
+                    "operator_cardinality": 32,
+                    "cumulative_rows_scanned": 32,
+                    "operator_rows_scanned": 0,
+                    "operator_timing": 7e-7,
+                    "result_set_size": 512,
+                    "total_bytes_read": 0,
+                    "total_bytes_written": 0,
+                    "children": [
+                        {
+                            "cpu_time": 0.00014230000000000002,
+                            "extra_info": {
+                                "Table": "usa_lake",
+                                "Type": "Sequential Scan",
+                                "Projections": "lake_name",
+                                "Estimated Cardinality": "6"
+                            },
+                            "cumulative_cardinality": 32,
+                            "operator_name": "SEQ_SCAN ",
+                            "operator_type": "TABLE_SCAN",
+                            "operator_cardinality": 32,
+                            "cumulative_rows_scanned": 32,
+                            "operator_rows_scanned": 32,
+                            "operator_timing": 0.00014230000000000002,
+                            "result_set_size": 512,
+                            "total_bytes_read": 0,
+                            "total_bytes_written": 0,
+                            "children": []
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
 }

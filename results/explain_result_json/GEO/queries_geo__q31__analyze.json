@@ -1,4 +1,168 @@
 {
-  "format": "text",
-  "plan_text": "analyzed_plan \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\u2502\n\u2502\u2502    Query Profiling Information    \u2502\u2502\n\u2502\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\nEXPLAIN ANALYZE --query31 SELECT us.state_name, us.capital, us.population FROM target.usa_state us WHERE us.population > 3000000 AND us.population < 8000000 AND us.area_squared_miles > 50000 order by us.population;\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\u2502\n\u2502\u2502              Total Time: 0.0024s             \u2502\u2502\n\u2502\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502           QUERY           \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502      EXPLAIN_ANALYZE      \u2502\n\u2502    \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500   \u2502\n\u2502           0 rows          \u2502\n\u2502          (0.00s)          \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502         PROJECTION        \u2502\n\u2502    \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500   \u2502\n\u2502             #0            \u2502\n\u2502__internal_decompress_strin\u2502\n\u2502           g(#1)           \u2502\n\u2502__internal_decompress_integ\u2502\n\u2502  ral_bigint(#2, 3000000)  \u2502\n\u2502                           \u2502\n\u2502           8 rows          \u2502\n\u2502          (0.00s)          \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502          ORDER_BY         \u2502\n\u2502    \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500   \u2502\n\u2502     us.population ASC     \u2502\n\u2502                           \u2502\n\u2502           8 rows          \u2502\n\u2502          (0.00s)          \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502         PROJECTION        \u2502\n\u2502    \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500   \u2502\n\u2502             #0            \u2502\n\u2502__internal_compress_string_\u2502\n\u2502        uhugeint(#1)       \u2502\n\u2502__internal_compress_integra\u2502\n\u2502  l_uinteger(#2, 3000000)  \u2502\n\u2502                           \u2502\n\u2502           8 rows          \u2502\n\u2502          (0.00s)          \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502         PROJECTION        \u2502\n\u2502    \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500   \u2502\n\u2502         state_name        \u2502\n\u2502          capital          \u2502\n\u2502         population        \u2502\n\u2502                           \u2502\n\u2502           8 rows          \u2502\n\u2502          (0.00s)          \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502         TABLE_SCAN        \u2502\n\u2502    \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500   \u2502\n\u2502      Table: usa_state     \u2502\n\u2502   Type: Sequential Scan   \u2502\n\u2502                           \u2502\n\u2502        Projections:       \u2502\n\u2502         population        \u2502\n\u2502         state_name        \u2502\n\u2502          capital          \u2502\n\u2502                           \u2502\n\u2502          Filters:         \u2502\n\u2502   population>3000000 AND  \u2502\n\u2502     population<8000000    \u2502\n\u2502 area_squared_miles>50000.0\u2502\n\u2502                           \u2502\n\u2502           8 rows          \u2502\n\u2502          (0.00s)          \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n"
+    "query_name": "--query31\nSELECT us.state_name, us.capital, us.population FROM target.usa_state us WHERE us.population > 3000000 AND us.population < 8000000 AND us.area_squared_miles > 50000 order by us.population;",
+    "blocked_thread_time": 0.0,
+    "system_peak_buffer_memory": 1540096,
+    "system_peak_temp_dir_size": 0,
+    "cpu_time": 0.00022429999999999998,
+    "extra_info": {},
+    "cumulative_cardinality": 40,
+    "cumulative_rows_scanned": 51,
+    "result_set_size": 320,
+    "latency": 0.0011745,
+    "rows_returned": 8,
+    "total_bytes_read": 0,
+    "total_bytes_written": 0,
+    "optimizer_expression_rewriter": 0.0000508,
+    "optimizer_filter_pullup": 0.0000013,
+    "optimizer_filter_pushdown": 0.0000339,
+    "optimizer_empty_result_pullup": 3e-7,
+    "optimizer_cte_filter_pusher": 0.0000013,
+    "optimizer_regex_range": 2e-7,
+    "optimizer_in_clause": 7e-7,
+    "optimizer_join_order": 0.0000261,
+    "optimizer_deliminator": 1e-7,
+    "optimizer_unnest_rewriter": 6e-7,
+    "optimizer_unused_columns": 0.0000081,
+    "optimizer_statistics_propagation": 0.0000561,
+    "optimizer_common_subexpressions": 0.0000015,
+    "optimizer_common_aggregate": 9e-7,
+    "optimizer_column_lifetime": 0.0000046,
+    "optimizer_build_side_probe_side": 0.0000021,
+    "optimizer_limit_pushdown": 4e-7,
+    "optimizer_top_n": 3e-7,
+    "optimizer_compressed_materialization": 0.0,
+    "optimizer_duplicate_groups": 0.0000016,
+    "optimizer_reorder_filter": 7e-7,
+    "optimizer_sampling_pushdown": 2e-7,
+    "optimizer_join_filter_pushdown": 6e-7,
+    "optimizer_extension": 0.0,
+    "optimizer_materialized_cte": 0.0,
+    "optimizer_sum_rewriter": 0.000004,
+    "optimizer_late_materialization": 0.0000071,
+    "optimizer_cte_inlining": 5e-7,
+    "all_optimizers": 0.00020450000000000006,
+    "cumulative_optimizer_timing": 0.00020400000000000005,
+    "planner": 0.0001037,
+    "planner_binding": 0.000101,
+    "physical_planner": 0.0000222,
+    "physical_planner_column_binding": 0.0000027,
+    "physical_planner_resolve_types": 4e-7,
+    "physical_planner_create_plan": 0.0000176,
+    "children": [
+        {
+            "cpu_time": 0.00022429999999999998,
+            "extra_info": {
+                "Projections": [
+                    "#0",
+                    "__internal_decompress_string(#1)",
+                    "__internal_decompress_integral_bigint(#2, 3000000)"
+                ],
+                "Estimated Cardinality": "10"
+            },
+            "cumulative_cardinality": 40,
+            "operator_name": "PROJECTION",
+            "operator_type": "PROJECTION",
+            "operator_cardinality": 8,
+            "cumulative_rows_scanned": 51,
+            "operator_rows_scanned": 0,
+            "operator_timing": 0.0000026,
+            "result_set_size": 320,
+            "total_bytes_read": 0,
+            "total_bytes_written": 0,
+            "children": [
+                {
+                    "cpu_time": 0.00022169999999999997,
+                    "extra_info": {
+                        "Order By": "us.population ASC"
+                    },
+                    "cumulative_cardinality": 32,
+                    "operator_name": "ORDER_BY",
+                    "operator_type": "ORDER_BY",
+                    "operator_cardinality": 8,
+                    "cumulative_rows_scanned": 51,
+                    "operator_rows_scanned": 0,
+                    "operator_timing": 0.0000725,
+                    "result_set_size": 288,
+                    "total_bytes_read": 0,
+                    "total_bytes_written": 0,
+                    "children": [
+                        {
+                            "cpu_time": 0.00014919999999999997,
+                            "extra_info": {
+                                "Projections": [
+                                    "#0",
+                                    "__internal_compress_string_uhugeint(#1)",
+                                    "__internal_compress_integral_uinteger(#2, 3000000)"
+                                ],
+                                "Estimated Cardinality": "10"
+                            },
+                            "cumulative_cardinality": 24,
+                            "operator_name": "PROJECTION",
+                            "operator_type": "PROJECTION",
+                            "operator_cardinality": 8,
+                            "cumulative_rows_scanned": 51,
+                            "operator_rows_scanned": 0,
+                            "operator_timing": 0.0000028,
+                            "result_set_size": 288,
+                            "total_bytes_read": 0,
+                            "total_bytes_written": 0,
+                            "children": [
+                                {
+                                    "cpu_time": 0.00014639999999999998,
+                                    "extra_info": {
+                                        "Projections": [
+                                            "state_name",
+                                            "capital",
+                                            "population"
+                                        ],
+                                        "Estimated Cardinality": "10"
+                                    },
+                                    "cumulative_cardinality": 16,
+                                    "operator_name": "PROJECTION",
+                                    "operator_type": "PROJECTION",
+                                    "operator_cardinality": 8,
+                                    "cumulative_rows_scanned": 51,
+                                    "operator_rows_scanned": 0,
+                                    "operator_timing": 8e-7,
+                                    "result_set_size": 320,
+                                    "total_bytes_read": 0,
+                                    "total_bytes_written": 0,
+                                    "children": [
+                                        {
+                                            "cpu_time": 0.0001456,
+                                            "extra_info": {
+                                                "Table": "usa_state",
+                                                "Type": "Sequential Scan",
+                                                "Projections": [
+                                                    "population",
+                                                    "state_name",
+                                                    "capital"
+                                                ],
+                                                "Filters": [
+                                                    "population>3000000 AND population<8000000",
+                                                    "area_squared_miles>50000.0"
+                                                ],
+                                                "Estimated Cardinality": "10"
+                                            },
+                                            "cumulative_cardinality": 8,
+                                            "operator_name": "SEQ_SCAN ",
+                                            "operator_type": "TABLE_SCAN",
+                                            "operator_cardinality": 8,
+                                            "cumulative_rows_scanned": 51,
+                                            "operator_rows_scanned": 51,
+                                            "operator_timing": 0.0001456,
+                                            "result_set_size": 320,
+                                            "total_bytes_read": 0,
+                                            "total_bytes_written": 0,
+                                            "children": []
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
 }

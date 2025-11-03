@@ -1,4 +1,135 @@
 {
-  "format": "text",
-  "plan_text": "analyzed_plan \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\u2502\n\u2502\u2502    Query Profiling Information    \u2502\u2502\n\u2502\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\nEXPLAIN ANALYZE --query26 SELECT party, count(*) num FROM target.world_presidents p WHERE p.country ='United States' AND start_year > 1900 AND end_year < 2000 group by p.party order by num desc;\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\u2502\n\u2502\u2502              Total Time: 0.0025s             \u2502\u2502\n\u2502\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502           QUERY           \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502      EXPLAIN_ANALYZE      \u2502\n\u2502    \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500   \u2502\n\u2502           0 rows          \u2502\n\u2502          (0.00s)          \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502          ORDER_BY         \u2502\n\u2502    \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500   \u2502\n\u2502     count_star() DESC     \u2502\n\u2502                           \u2502\n\u2502           2 rows          \u2502\n\u2502          (0.00s)          \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502       HASH_GROUP_BY       \u2502\n\u2502    \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500   \u2502\n\u2502         Groups: #0        \u2502\n\u2502                           \u2502\n\u2502        Aggregates:        \u2502\n\u2502        count_star()       \u2502\n\u2502                           \u2502\n\u2502           2 rows          \u2502\n\u2502          (0.00s)          \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502         PROJECTION        \u2502\n\u2502    \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500   \u2502\n\u2502           party           \u2502\n\u2502                           \u2502\n\u2502          16 rows          \u2502\n\u2502          (0.00s)          \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502         TABLE_SCAN        \u2502\n\u2502    \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500   \u2502\n\u2502           Table:          \u2502\n\u2502      world_presidents     \u2502\n\u2502                           \u2502\n\u2502   Type: Sequential Scan   \u2502\n\u2502     Projections: party    \u2502\n\u2502                           \u2502\n\u2502          Filters:         \u2502\n\u2502  country='United States'  \u2502\n\u2502      start_year>1900      \u2502\n\u2502       end_year<2000       \u2502\n\u2502                           \u2502\n\u2502          16 rows          \u2502\n\u2502          (0.00s)          \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n"
+    "query_name": "--query26\nSELECT party, count(*) num FROM target.world_presidents p WHERE p.country ='United States' AND start_year > 1900 AND end_year < 2000 group by p.party order by num desc;",
+    "blocked_thread_time": 0.0,
+    "system_peak_buffer_memory": 2981888,
+    "system_peak_temp_dir_size": 0,
+    "cpu_time": 0.0021895,
+    "extra_info": {},
+    "cumulative_cardinality": 36,
+    "cumulative_rows_scanned": 111,
+    "result_set_size": 48,
+    "latency": 0.0016576,
+    "rows_returned": 2,
+    "total_bytes_read": 0,
+    "total_bytes_written": 0,
+    "optimizer_expression_rewriter": 0.0000561,
+    "optimizer_filter_pullup": 0.0000014,
+    "optimizer_filter_pushdown": 0.0000355,
+    "optimizer_empty_result_pullup": 2e-7,
+    "optimizer_cte_filter_pusher": 0.0000014,
+    "optimizer_regex_range": 3e-7,
+    "optimizer_in_clause": 8e-7,
+    "optimizer_join_order": 0.0000315,
+    "optimizer_deliminator": 2e-7,
+    "optimizer_unnest_rewriter": 4e-7,
+    "optimizer_unused_columns": 0.0000077,
+    "optimizer_statistics_propagation": 0.0000184,
+    "optimizer_common_subexpressions": 0.0000018,
+    "optimizer_common_aggregate": 0.000001,
+    "optimizer_column_lifetime": 0.0000031,
+    "optimizer_build_side_probe_side": 0.0000024,
+    "optimizer_limit_pushdown": 4e-7,
+    "optimizer_top_n": 3e-7,
+    "optimizer_compressed_materialization": 0.0,
+    "optimizer_duplicate_groups": 0.0000023,
+    "optimizer_reorder_filter": 4e-7,
+    "optimizer_sampling_pushdown": 2e-7,
+    "optimizer_join_filter_pushdown": 3e-7,
+    "optimizer_extension": 0.0,
+    "optimizer_materialized_cte": 0.0,
+    "optimizer_sum_rewriter": 0.000004,
+    "optimizer_late_materialization": 0.0000073,
+    "optimizer_cte_inlining": 5e-7,
+    "all_optimizers": 0.00017820000000000005,
+    "cumulative_optimizer_timing": 0.00017790000000000001,
+    "planner": 0.0001319,
+    "planner_binding": 0.0001292,
+    "physical_planner": 0.0000214,
+    "physical_planner_column_binding": 0.0000018,
+    "physical_planner_resolve_types": 2e-7,
+    "physical_planner_create_plan": 0.0000175,
+    "children": [
+        {
+            "cpu_time": 0.0021895,
+            "extra_info": {
+                "Order By": "count_star() DESC"
+            },
+            "cumulative_cardinality": 36,
+            "operator_name": "ORDER_BY",
+            "operator_type": "ORDER_BY",
+            "operator_cardinality": 2,
+            "cumulative_rows_scanned": 111,
+            "operator_rows_scanned": 0,
+            "operator_timing": 0.0001247,
+            "result_set_size": 48,
+            "total_bytes_read": 0,
+            "total_bytes_written": 0,
+            "children": [
+                {
+                    "cpu_time": 0.0020648,
+                    "extra_info": {
+                        "Groups": "#0",
+                        "Aggregates": "count_star()",
+                        "Estimated Cardinality": "18"
+                    },
+                    "cumulative_cardinality": 34,
+                    "operator_name": "HASH_GROUP_BY",
+                    "operator_type": "HASH_GROUP_BY",
+                    "operator_cardinality": 2,
+                    "cumulative_rows_scanned": 111,
+                    "operator_rows_scanned": 0,
+                    "operator_timing": 0.0019535999999999998,
+                    "result_set_size": 48,
+                    "total_bytes_read": 0,
+                    "total_bytes_written": 0,
+                    "children": [
+                        {
+                            "cpu_time": 0.00011119999999999999,
+                            "extra_info": {
+                                "Projections": "party",
+                                "Estimated Cardinality": "56"
+                            },
+                            "cumulative_cardinality": 32,
+                            "operator_name": "PROJECTION",
+                            "operator_type": "PROJECTION",
+                            "operator_cardinality": 16,
+                            "cumulative_rows_scanned": 111,
+                            "operator_rows_scanned": 0,
+                            "operator_timing": 7e-7,
+                            "result_set_size": 256,
+                            "total_bytes_read": 0,
+                            "total_bytes_written": 0,
+                            "children": [
+                                {
+                                    "cpu_time": 0.00011049999999999999,
+                                    "extra_info": {
+                                        "Table": "world_presidents",
+                                        "Type": "Sequential Scan",
+                                        "Projections": "party",
+                                        "Filters": [
+                                            "country='United States'",
+                                            "start_year>1900",
+                                            "end_year<2000"
+                                        ],
+                                        "Estimated Cardinality": "56"
+                                    },
+                                    "cumulative_cardinality": 16,
+                                    "operator_name": "SEQ_SCAN ",
+                                    "operator_type": "TABLE_SCAN",
+                                    "operator_cardinality": 16,
+                                    "cumulative_rows_scanned": 111,
+                                    "operator_rows_scanned": 111,
+                                    "operator_timing": 0.00011049999999999999,
+                                    "result_set_size": 256,
+                                    "total_bytes_read": 0,
+                                    "total_bytes_written": 0,
+                                    "children": []
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
 }

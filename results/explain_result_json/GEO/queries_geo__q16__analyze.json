@@ -1,4 +1,114 @@
 {
-  "format": "text",
-  "plan_text": "analyzed_plan \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\u2502\n\u2502\u2502    Query Profiling Information    \u2502\u2502\n\u2502\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\nEXPLAIN ANALYZE --query16 SELECT COUNT ( DISTINCT state_name ) FROM target.usa_city WHERE city_name = 'springfield' AND population > 72000;\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\u2502\n\u2502\u2502              Total Time: 0.0020s             \u2502\u2502\n\u2502\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502           QUERY           \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502      EXPLAIN_ANALYZE      \u2502\n\u2502    \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500   \u2502\n\u2502           0 rows          \u2502\n\u2502          (0.00s)          \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502    UNGROUPED_AGGREGATE    \u2502\n\u2502    \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500   \u2502\n\u2502        Aggregates:        \u2502\n\u2502     count(DISTINCT #0)    \u2502\n\u2502                           \u2502\n\u2502           1 row           \u2502\n\u2502          (0.00s)          \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502         PROJECTION        \u2502\n\u2502    \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500   \u2502\n\u2502         state_name        \u2502\n\u2502                           \u2502\n\u2502           4 rows          \u2502\n\u2502          (0.00s)          \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502         TABLE_SCAN        \u2502\n\u2502    \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500   \u2502\n\u2502      Table: usa_city      \u2502\n\u2502   Type: Sequential Scan   \u2502\n\u2502                           \u2502\n\u2502        Projections:       \u2502\n\u2502         state_name        \u2502\n\u2502                           \u2502\n\u2502          Filters:         \u2502\n\u2502  city_name='springfield'  \u2502\n\u2502      population>72000     \u2502\n\u2502                           \u2502\n\u2502           4 rows          \u2502\n\u2502          (0.00s)          \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n"
+    "query_name": "--query16\nSELECT COUNT ( DISTINCT state_name ) FROM target.usa_city WHERE city_name = 'springfield' AND population > 72000;",
+    "blocked_thread_time": 0.0,
+    "system_peak_buffer_memory": 1409024,
+    "system_peak_temp_dir_size": 0,
+    "cpu_time": 0.00032419999999999997,
+    "extra_info": {},
+    "cumulative_cardinality": 9,
+    "cumulative_rows_scanned": 386,
+    "result_set_size": 8,
+    "latency": 0.0015873,
+    "rows_returned": 1,
+    "total_bytes_read": 0,
+    "total_bytes_written": 0,
+    "optimizer_expression_rewriter": 0.0000482,
+    "optimizer_filter_pullup": 0.0000013,
+    "optimizer_filter_pushdown": 0.0000285,
+    "optimizer_empty_result_pullup": 3e-7,
+    "optimizer_cte_filter_pusher": 0.0000013,
+    "optimizer_regex_range": 1e-7,
+    "optimizer_in_clause": 9e-7,
+    "optimizer_join_order": 0.0000272,
+    "optimizer_deliminator": 1e-7,
+    "optimizer_unnest_rewriter": 4e-7,
+    "optimizer_unused_columns": 0.0000058,
+    "optimizer_statistics_propagation": 0.0000096,
+    "optimizer_common_subexpressions": 0.0000015,
+    "optimizer_common_aggregate": 9e-7,
+    "optimizer_column_lifetime": 0.0000027,
+    "optimizer_build_side_probe_side": 0.0000021,
+    "optimizer_limit_pushdown": 3e-7,
+    "optimizer_top_n": 3e-7,
+    "optimizer_compressed_materialization": 0.0,
+    "optimizer_duplicate_groups": 0.0000018,
+    "optimizer_reorder_filter": 3e-7,
+    "optimizer_sampling_pushdown": 2e-7,
+    "optimizer_join_filter_pushdown": 2e-7,
+    "optimizer_extension": 0.0,
+    "optimizer_materialized_cte": 0.0,
+    "optimizer_sum_rewriter": 0.0000051,
+    "optimizer_late_materialization": 0.0000058,
+    "optimizer_cte_inlining": 4e-7,
+    "all_optimizers": 0.00014560000000000002,
+    "cumulative_optimizer_timing": 0.00014530000000000004,
+    "planner": 0.00010559999999999999,
+    "planner_binding": 0.0001035,
+    "physical_planner": 0.000018500000000000002,
+    "physical_planner_column_binding": 0.0000012,
+    "physical_planner_resolve_types": 1e-7,
+    "physical_planner_create_plan": 0.0000156,
+    "children": [
+        {
+            "cpu_time": 0.00032419999999999997,
+            "extra_info": {
+                "Aggregates": "count(DISTINCT #0)"
+            },
+            "cumulative_cardinality": 9,
+            "operator_name": "UNGROUPED_AGGREGATE",
+            "operator_type": "UNGROUPED_AGGREGATE",
+            "operator_cardinality": 1,
+            "cumulative_rows_scanned": 386,
+            "operator_rows_scanned": 0,
+            "operator_timing": 0.0001672,
+            "result_set_size": 8,
+            "total_bytes_read": 0,
+            "total_bytes_written": 0,
+            "children": [
+                {
+                    "cpu_time": 0.000157,
+                    "extra_info": {
+                        "Projections": "state_name",
+                        "Estimated Cardinality": "1"
+                    },
+                    "cumulative_cardinality": 8,
+                    "operator_name": "PROJECTION",
+                    "operator_type": "PROJECTION",
+                    "operator_cardinality": 4,
+                    "cumulative_rows_scanned": 386,
+                    "operator_rows_scanned": 0,
+                    "operator_timing": 8e-7,
+                    "result_set_size": 64,
+                    "total_bytes_read": 0,
+                    "total_bytes_written": 0,
+                    "children": [
+                        {
+                            "cpu_time": 0.0001562,
+                            "extra_info": {
+                                "Table": "usa_city",
+                                "Type": "Sequential Scan",
+                                "Projections": "state_name",
+                                "Filters": [
+                                    "city_name='springfield'",
+                                    "population>72000"
+                                ],
+                                "Estimated Cardinality": "1"
+                            },
+                            "cumulative_cardinality": 4,
+                            "operator_name": "SEQ_SCAN ",
+                            "operator_type": "TABLE_SCAN",
+                            "operator_cardinality": 4,
+                            "cumulative_rows_scanned": 386,
+                            "operator_rows_scanned": 386,
+                            "operator_timing": 0.0001562,
+                            "result_set_size": 64,
+                            "total_bytes_read": 0,
+                            "total_bytes_written": 0,
+                            "children": []
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
 }
