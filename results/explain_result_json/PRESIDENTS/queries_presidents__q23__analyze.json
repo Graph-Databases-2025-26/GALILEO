@@ -1,4 +1,110 @@
 {
-  "format": "text",
-  "plan_text": "analyzed_plan \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\u2502\n\u2502\u2502    Query Profiling Information    \u2502\u2502\n\u2502\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\nEXPLAIN ANALYZE --query23 SELECT p.name, p.party, start_year, end_year, p.cardinal_number FROM target.world_presidents p WHERE p.country ='United States' AND start_year > 1850 AND end_year < 1900 AND party ='Democratic';\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\u2502\n\u2502\u2502              Total Time: 0.0012s             \u2502\u2502\n\u2502\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502           QUERY           \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502      EXPLAIN_ANALYZE      \u2502\n\u2502    \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500   \u2502\n\u2502           0 rows          \u2502\n\u2502          (0.00s)          \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502         PROJECTION        \u2502\n\u2502    \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500   \u2502\n\u2502            name           \u2502\n\u2502           party           \u2502\n\u2502         start_year        \u2502\n\u2502          end_year         \u2502\n\u2502      cardinal_number      \u2502\n\u2502                           \u2502\n\u2502           4 rows          \u2502\n\u2502          (0.00s)          \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502         TABLE_SCAN        \u2502\n\u2502    \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500   \u2502\n\u2502           Table:          \u2502\n\u2502      world_presidents     \u2502\n\u2502                           \u2502\n\u2502   Type: Sequential Scan   \u2502\n\u2502                           \u2502\n\u2502        Projections:       \u2502\n\u2502         start_year        \u2502\n\u2502          end_year         \u2502\n\u2502           party           \u2502\n\u2502            name           \u2502\n\u2502      cardinal_number      \u2502\n\u2502                           \u2502\n\u2502          Filters:         \u2502\n\u2502  country='United States'  \u2502\n\u2502      start_year>1850      \u2502\n\u2502       end_year<1900       \u2502\n\u2502     party='Democratic'    \u2502\n\u2502                           \u2502\n\u2502           4 rows          \u2502\n\u2502          (0.00s)          \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n"
+    "query_name": "--query23\nSELECT p.name, p.party, start_year, end_year, p.cardinal_number FROM target.world_presidents p WHERE p.country ='United States' AND start_year > 1850 AND end_year < 1900 AND party ='Democratic';",
+    "blocked_thread_time": 0.0,
+    "system_peak_buffer_memory": 753664,
+    "system_peak_temp_dir_size": 0,
+    "cpu_time": 0.00021,
+    "extra_info": {},
+    "cumulative_cardinality": 8,
+    "cumulative_rows_scanned": 111,
+    "result_set_size": 224,
+    "latency": 0.0010926,
+    "rows_returned": 4,
+    "total_bytes_read": 0,
+    "total_bytes_written": 0,
+    "optimizer_expression_rewriter": 0.0000617,
+    "optimizer_filter_pullup": 0.0000012,
+    "optimizer_filter_pushdown": 0.00004,
+    "optimizer_empty_result_pullup": 3e-7,
+    "optimizer_cte_filter_pusher": 0.0000015,
+    "optimizer_regex_range": 1e-7,
+    "optimizer_in_clause": 7e-7,
+    "optimizer_join_order": 0.0000268,
+    "optimizer_deliminator": 2e-7,
+    "optimizer_unnest_rewriter": 4e-7,
+    "optimizer_unused_columns": 0.0000073,
+    "optimizer_statistics_propagation": 0.000012,
+    "optimizer_common_subexpressions": 0.0000015,
+    "optimizer_common_aggregate": 8e-7,
+    "optimizer_column_lifetime": 0.0000029,
+    "optimizer_build_side_probe_side": 0.0000022,
+    "optimizer_limit_pushdown": 3e-7,
+    "optimizer_top_n": 3e-7,
+    "optimizer_compressed_materialization": 0.0,
+    "optimizer_duplicate_groups": 0.0000013,
+    "optimizer_reorder_filter": 5e-7,
+    "optimizer_sampling_pushdown": 1e-7,
+    "optimizer_join_filter_pushdown": 2e-7,
+    "optimizer_extension": 0.0,
+    "optimizer_materialized_cte": 0.0,
+    "optimizer_sum_rewriter": 0.0000036,
+    "optimizer_late_materialization": 0.0000856,
+    "optimizer_cte_inlining": 4e-7,
+    "all_optimizers": 0.0002525000000000001,
+    "cumulative_optimizer_timing": 0.00025190000000000005,
+    "planner": 0.0000925,
+    "planner_binding": 0.0000905,
+    "physical_planner": 0.0000122,
+    "physical_planner_column_binding": 0.000002,
+    "physical_planner_resolve_types": 2e-7,
+    "physical_planner_create_plan": 0.0000088,
+    "children": [
+        {
+            "cpu_time": 0.00021,
+            "extra_info": {
+                "Projections": [
+                    "name",
+                    "party",
+                    "start_year",
+                    "end_year",
+                    "cardinal_number"
+                ],
+                "Estimated Cardinality": "6"
+            },
+            "cumulative_cardinality": 8,
+            "operator_name": "PROJECTION",
+            "operator_type": "PROJECTION",
+            "operator_cardinality": 4,
+            "cumulative_rows_scanned": 111,
+            "operator_rows_scanned": 0,
+            "operator_timing": 9e-7,
+            "result_set_size": 224,
+            "total_bytes_read": 0,
+            "total_bytes_written": 0,
+            "children": [
+                {
+                    "cpu_time": 0.00020910000000000001,
+                    "extra_info": {
+                        "Table": "world_presidents",
+                        "Type": "Sequential Scan",
+                        "Projections": [
+                            "start_year",
+                            "end_year",
+                            "party",
+                            "name",
+                            "cardinal_number"
+                        ],
+                        "Filters": [
+                            "country='United States'",
+                            "start_year>1850",
+                            "end_year<1900",
+                            "party='Democratic'"
+                        ],
+                        "Estimated Cardinality": "6"
+                    },
+                    "cumulative_cardinality": 4,
+                    "operator_name": "SEQ_SCAN ",
+                    "operator_type": "TABLE_SCAN",
+                    "operator_cardinality": 4,
+                    "cumulative_rows_scanned": 111,
+                    "operator_rows_scanned": 111,
+                    "operator_timing": 0.00020910000000000001,
+                    "result_set_size": 224,
+                    "total_bytes_read": 0,
+                    "total_bytes_written": 0,
+                    "children": []
+                }
+            ]
+        }
+    ]
 }

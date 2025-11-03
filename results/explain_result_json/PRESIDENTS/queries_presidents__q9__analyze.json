@@ -1,4 +1,221 @@
 {
-  "format": "text",
-  "plan_text": "analyzed_plan \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\u2502\n\u2502\u2502    Query Profiling Information    \u2502\u2502\n\u2502\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\nEXPLAIN ANALYZE --query9 SELECT p.name FROM target.world_presidents p where p.country='Venezuela' AND p.party = 'Military' order by p.end_year desc limit 1;\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\u2502\n\u2502\u2502              Total Time: 0.0027s             \u2502\u2502\n\u2502\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502           QUERY           \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502      EXPLAIN_ANALYZE      \u2502\n\u2502    \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500   \u2502\n\u2502           0 rows          \u2502\n\u2502          (0.00s)          \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502         PROJECTION        \u2502\n\u2502    \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500   \u2502\n\u2502             #0            \u2502\n\u2502                           \u2502\n\u2502           1 row           \u2502\n\u2502          (0.00s)          \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502         PROJECTION        \u2502\n\u2502    \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500   \u2502\n\u2502             #0            \u2502\n\u2502__internal_decompress_integ\u2502\n\u2502   ral_integer(#1, 1797)   \u2502\n\u2502                           \u2502\n\u2502           1 row           \u2502\n\u2502          (0.00s)          \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502          ORDER_BY         \u2502\n\u2502    \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500   \u2502\n\u2502          #1 DESC          \u2502\n\u2502                           \u2502\n\u2502           1 row           \u2502\n\u2502          (0.00s)          \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502         PROJECTION        \u2502\n\u2502    \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500   \u2502\n\u2502             #0            \u2502\n\u2502__internal_compress_integra\u2502\n\u2502    l_utinyint(#1, 1797)   \u2502\n\u2502                           \u2502\n\u2502           1 row           \u2502\n\u2502          (0.00s)          \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502         HASH_JOIN         \u2502\n\u2502    \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500   \u2502\n\u2502      Join Type: SEMI      \u2502\n\u2502                           \u2502\n\u2502        Conditions:        \u251c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502       rowid = rowid       \u2502              \u2502\n\u2502                           \u2502              \u2502\n\u2502           1 row           \u2502              \u2502\n\u2502          (0.00s)          \u2502              \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518              \u2502\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502         TABLE_SCAN        \u2502\u2502           TOP_N           \u2502\n\u2502    \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500   \u2502\u2502    \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500   \u2502\n\u2502           Table:          \u2502\u2502           Top: 1          \u2502\n\u2502      world_presidents     \u2502\u2502     Order By: #0 DESC     \u2502\n\u2502                           \u2502\u2502                           \u2502\n\u2502   Type: Sequential Scan   \u2502\u2502                           \u2502\n\u2502                           \u2502\u2502                           \u2502\n\u2502        Projections:       \u2502\u2502                           \u2502\n\u2502            name           \u2502\u2502                           \u2502\n\u2502          end_year         \u2502\u2502                           \u2502\n\u2502                           \u2502\u2502                           \u2502\n\u2502           1 row           \u2502\u2502           1 row           \u2502\n\u2502          (0.00s)          \u2502\u2502          (0.00s)          \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                             \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n                             \u2502         TABLE_SCAN        \u2502\n                             \u2502    \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500   \u2502\n                             \u2502           Table:          \u2502\n                             \u2502      world_presidents     \u2502\n                             \u2502                           \u2502\n                             \u2502   Type: Sequential Scan   \u2502\n                             \u2502   Projections: end_year   \u2502\n                             \u2502                           \u2502\n                             \u2502          Filters:         \u2502\n                             \u2502    country='Venezuela'    \u2502\n                             \u2502      party='Military'     \u2502\n                             \u2502 optional: Dynamic Filter  \u2502\n                             \u2502         (end_year)        \u2502\n                             \u2502                           \u2502\n                             \u2502          11 rows          \u2502\n                             \u2502          (0.00s)          \u2502\n                             \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n"
+    "query_name": "--query9\nSELECT p.name FROM target.world_presidents p where p.country='Venezuela' AND p.party = 'Military' order by p.end_year desc limit 1;",
+    "blocked_thread_time": 0.0,
+    "system_peak_buffer_memory": 2056192,
+    "system_peak_temp_dir_size": 0,
+    "cpu_time": 0.0001861,
+    "extra_info": {},
+    "cumulative_cardinality": 18,
+    "cumulative_rows_scanned": 222,
+    "result_set_size": 16,
+    "latency": 0.0012481,
+    "rows_returned": 1,
+    "total_bytes_read": 0,
+    "total_bytes_written": 0,
+    "optimizer_expression_rewriter": 0.000043,
+    "optimizer_filter_pullup": 0.0000017,
+    "optimizer_filter_pushdown": 0.0000293,
+    "optimizer_empty_result_pullup": 3e-7,
+    "optimizer_cte_filter_pusher": 0.0000015,
+    "optimizer_regex_range": 2e-7,
+    "optimizer_in_clause": 9e-7,
+    "optimizer_join_order": 0.0000272,
+    "optimizer_deliminator": 2e-7,
+    "optimizer_unnest_rewriter": 5e-7,
+    "optimizer_unused_columns": 0.000007,
+    "optimizer_statistics_propagation": 0.000043,
+    "optimizer_common_subexpressions": 0.0000015,
+    "optimizer_common_aggregate": 0.0000012,
+    "optimizer_column_lifetime": 0.0000105,
+    "optimizer_build_side_probe_side": 0.0000024,
+    "optimizer_limit_pushdown": 4e-7,
+    "optimizer_top_n": 0.0000033,
+    "optimizer_compressed_materialization": 0.0,
+    "optimizer_duplicate_groups": 0.0000017,
+    "optimizer_reorder_filter": 0.0000015,
+    "optimizer_sampling_pushdown": 2e-7,
+    "optimizer_join_filter_pushdown": 0.0000095,
+    "optimizer_extension": 0.0,
+    "optimizer_materialized_cte": 0.0,
+    "optimizer_sum_rewriter": 0.0000054,
+    "optimizer_late_materialization": 0.0000225,
+    "optimizer_cte_inlining": 4e-7,
+    "all_optimizers": 0.00021580000000000004,
+    "cumulative_optimizer_timing": 0.00021530000000000006,
+    "planner": 0.0000931,
+    "planner_binding": 0.0000911,
+    "physical_planner": 0.0000245,
+    "physical_planner_column_binding": 0.0000037,
+    "physical_planner_resolve_types": 5e-7,
+    "physical_planner_create_plan": 0.0000171,
+    "children": [
+        {
+            "cpu_time": 0.0001861,
+            "extra_info": {
+                "Projections": "#0",
+                "Estimated Cardinality": "1"
+            },
+            "cumulative_cardinality": 18,
+            "operator_name": "PROJECTION",
+            "operator_type": "PROJECTION",
+            "operator_cardinality": 1,
+            "cumulative_rows_scanned": 222,
+            "operator_rows_scanned": 0,
+            "operator_timing": 1e-7,
+            "result_set_size": 16,
+            "total_bytes_read": 0,
+            "total_bytes_written": 0,
+            "children": [
+                {
+                    "cpu_time": 0.000186,
+                    "extra_info": {
+                        "Projections": [
+                            "#0",
+                            "__internal_decompress_integral_integer(#1, 1797)"
+                        ],
+                        "Estimated Cardinality": "0"
+                    },
+                    "cumulative_cardinality": 17,
+                    "operator_name": "PROJECTION",
+                    "operator_type": "PROJECTION",
+                    "operator_cardinality": 1,
+                    "cumulative_rows_scanned": 222,
+                    "operator_rows_scanned": 0,
+                    "operator_timing": 0.0000015,
+                    "result_set_size": 20,
+                    "total_bytes_read": 0,
+                    "total_bytes_written": 0,
+                    "children": [
+                        {
+                            "cpu_time": 0.00018449999999999999,
+                            "extra_info": {
+                                "Order By": "#1 DESC"
+                            },
+                            "cumulative_cardinality": 16,
+                            "operator_name": "ORDER_BY",
+                            "operator_type": "ORDER_BY",
+                            "operator_cardinality": 1,
+                            "cumulative_rows_scanned": 222,
+                            "operator_rows_scanned": 0,
+                            "operator_timing": 0.0000284,
+                            "result_set_size": 17,
+                            "total_bytes_read": 0,
+                            "total_bytes_written": 0,
+                            "children": [
+                                {
+                                    "cpu_time": 0.0001561,
+                                    "extra_info": {
+                                        "Projections": [
+                                            "#0",
+                                            "__internal_compress_integral_utinyint(#1, 1797)"
+                                        ],
+                                        "Estimated Cardinality": "0"
+                                    },
+                                    "cumulative_cardinality": 15,
+                                    "operator_name": "PROJECTION",
+                                    "operator_type": "PROJECTION",
+                                    "operator_cardinality": 1,
+                                    "cumulative_rows_scanned": 222,
+                                    "operator_rows_scanned": 0,
+                                    "operator_timing": 0.0000022,
+                                    "result_set_size": 17,
+                                    "total_bytes_read": 0,
+                                    "total_bytes_written": 0,
+                                    "children": [
+                                        {
+                                            "cpu_time": 0.0001539,
+                                            "extra_info": {
+                                                "Join Type": "SEMI",
+                                                "Conditions": "rowid = rowid",
+                                                "Estimated Cardinality": "0"
+                                            },
+                                            "cumulative_cardinality": 14,
+                                            "operator_name": "HASH_JOIN",
+                                            "operator_type": "HASH_JOIN",
+                                            "operator_cardinality": 1,
+                                            "cumulative_rows_scanned": 222,
+                                            "operator_rows_scanned": 0,
+                                            "operator_timing": 0.0000618,
+                                            "result_set_size": 20,
+                                            "total_bytes_read": 0,
+                                            "total_bytes_written": 0,
+                                            "children": [
+                                                {
+                                                    "cpu_time": 0.0000109,
+                                                    "extra_info": {
+                                                        "Table": "world_presidents",
+                                                        "Type": "Sequential Scan",
+                                                        "Projections": [
+                                                            "name",
+                                                            "end_year"
+                                                        ],
+                                                        "Estimated Cardinality": "111"
+                                                    },
+                                                    "cumulative_cardinality": 1,
+                                                    "operator_name": "SEQ_SCAN ",
+                                                    "operator_type": "TABLE_SCAN",
+                                                    "operator_cardinality": 1,
+                                                    "cumulative_rows_scanned": 111,
+                                                    "operator_rows_scanned": 111,
+                                                    "operator_timing": 0.0000109,
+                                                    "result_set_size": 28,
+                                                    "total_bytes_read": 0,
+                                                    "total_bytes_written": 0,
+                                                    "children": []
+                                                },
+                                                {
+                                                    "cpu_time": 0.00008120000000000001,
+                                                    "extra_info": {
+                                                        "Top": "1",
+                                                        "Order By": "#0 DESC"
+                                                    },
+                                                    "cumulative_cardinality": 12,
+                                                    "operator_name": "TOP_N",
+                                                    "operator_type": "TOP_N",
+                                                    "operator_cardinality": 1,
+                                                    "cumulative_rows_scanned": 111,
+                                                    "operator_rows_scanned": 0,
+                                                    "operator_timing": 0.0000097,
+                                                    "result_set_size": 12,
+                                                    "total_bytes_read": 0,
+                                                    "total_bytes_written": 0,
+                                                    "children": [
+                                                        {
+                                                            "cpu_time": 0.0000715,
+                                                            "extra_info": {
+                                                                "Table": "world_presidents",
+                                                                "Type": "Sequential Scan",
+                                                                "Projections": "end_year",
+                                                                "Filters": [
+                                                                    "country='Venezuela'",
+                                                                    "party='Military'",
+                                                                    "optional: Dynamic Filter (end_year)"
+                                                                ],
+                                                                "Estimated Cardinality": "6"
+                                                            },
+                                                            "cumulative_cardinality": 11,
+                                                            "operator_name": "SEQ_SCAN ",
+                                                            "operator_type": "TABLE_SCAN",
+                                                            "operator_cardinality": 11,
+                                                            "cumulative_rows_scanned": 111,
+                                                            "operator_rows_scanned": 111,
+                                                            "operator_timing": 0.0000715,
+                                                            "result_set_size": 132,
+                                                            "total_bytes_read": 0,
+                                                            "total_bytes_written": 0,
+                                                            "children": []
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
 }

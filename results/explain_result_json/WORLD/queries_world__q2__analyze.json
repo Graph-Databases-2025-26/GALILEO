@@ -1,4 +1,114 @@
 {
-  "format": "text",
-  "plan_text": "analyzed_plan \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\u2502\n\u2502\u2502    Query Profiling Information    \u2502\u2502\n\u2502\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\nEXPLAIN ANALYZE --query2 - added TRY_CAST to avoid errors with non-integer values SELECT name FROM target.country WHERE TRY_CAST(independence_year AS INTEGER) > 1950;\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\u2502\n\u2502\u2502              Total Time: 0.0025s             \u2502\u2502\n\u2502\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502           QUERY           \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502      EXPLAIN_ANALYZE      \u2502\n\u2502    \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500   \u2502\n\u2502           0 rows          \u2502\n\u2502          (0.00s)          \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502         PROJECTION        \u2502\n\u2502    \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500   \u2502\n\u2502             #1            \u2502\n\u2502                           \u2502\n\u2502          110 rows         \u2502\n\u2502          (0.00s)          \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502           FILTER          \u2502\n\u2502    \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500   \u2502\n\u2502         (TRY_CAST         \u2502\n\u2502   (independence_year AS   \u2502\n\u2502      INTEGER) > 1950)     \u2502\n\u2502                           \u2502\n\u2502          110 rows         \u2502\n\u2502          (0.00s)          \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n\u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2534\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n\u2502         TABLE_SCAN        \u2502\n\u2502    \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500   \u2502\n\u2502       Table: country      \u2502\n\u2502   Type: Sequential Scan   \u2502\n\u2502                           \u2502\n\u2502        Projections:       \u2502\n\u2502     independence_year     \u2502\n\u2502            name           \u2502\n\u2502                           \u2502\n\u2502          239 rows         \u2502\n\u2502          (0.00s)          \u2502\n\u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n"
+    "query_name": "--query2 - added TRY_CAST to avoid errors with non-integer values\nSELECT name FROM target.country WHERE TRY_CAST(independence_year AS INTEGER) > 1950;",
+    "blocked_thread_time": 0.0,
+    "system_peak_buffer_memory": 688128,
+    "system_peak_temp_dir_size": 0,
+    "cpu_time": 0.00010159999999999999,
+    "extra_info": {},
+    "cumulative_cardinality": 459,
+    "cumulative_rows_scanned": 239,
+    "result_set_size": 1760,
+    "latency": 0.0006204,
+    "rows_returned": 110,
+    "total_bytes_read": 0,
+    "total_bytes_written": 0,
+    "optimizer_expression_rewriter": 0.0000281,
+    "optimizer_filter_pullup": 0.0000011,
+    "optimizer_filter_pushdown": 0.0000256,
+    "optimizer_empty_result_pullup": 4e-7,
+    "optimizer_cte_filter_pusher": 0.0000016,
+    "optimizer_regex_range": 5e-7,
+    "optimizer_in_clause": 8e-7,
+    "optimizer_join_order": 0.0000203,
+    "optimizer_deliminator": 1e-7,
+    "optimizer_unnest_rewriter": 5e-7,
+    "optimizer_unused_columns": 0.0000037,
+    "optimizer_statistics_propagation": 0.0000078,
+    "optimizer_common_subexpressions": 0.0000014,
+    "optimizer_common_aggregate": 7e-7,
+    "optimizer_column_lifetime": 0.0000036,
+    "optimizer_build_side_probe_side": 0.0000026,
+    "optimizer_limit_pushdown": 5e-7,
+    "optimizer_top_n": 3e-7,
+    "optimizer_compressed_materialization": 0.0,
+    "optimizer_duplicate_groups": 9e-7,
+    "optimizer_reorder_filter": 5e-7,
+    "optimizer_sampling_pushdown": 1e-7,
+    "optimizer_join_filter_pushdown": 4e-7,
+    "optimizer_extension": 0.0,
+    "optimizer_materialized_cte": 0.0,
+    "optimizer_sum_rewriter": 0.0000048,
+    "optimizer_late_materialization": 0.0000067,
+    "optimizer_cte_inlining": 4e-7,
+    "all_optimizers": 0.00011369999999999997,
+    "cumulative_optimizer_timing": 0.00011339999999999996,
+    "planner": 0.00007130000000000001,
+    "planner_binding": 0.0000694,
+    "physical_planner": 0.000011099999999999999,
+    "physical_planner_column_binding": 0.0000018,
+    "physical_planner_resolve_types": 2e-7,
+    "physical_planner_create_plan": 0.0000078,
+    "children": [
+        {
+            "cpu_time": 0.00010159999999999999,
+            "extra_info": {
+                "Projections": "#1",
+                "Estimated Cardinality": "47"
+            },
+            "cumulative_cardinality": 459,
+            "operator_name": "PROJECTION",
+            "operator_type": "PROJECTION",
+            "operator_cardinality": 110,
+            "cumulative_rows_scanned": 239,
+            "operator_rows_scanned": 0,
+            "operator_timing": 3e-7,
+            "result_set_size": 1760,
+            "total_bytes_read": 0,
+            "total_bytes_written": 0,
+            "children": [
+                {
+                    "cpu_time": 0.0001013,
+                    "extra_info": {
+                        "Expression": "(TRY_CAST(independence_year AS INTEGER) > 1950)",
+                        "Estimated Cardinality": "47"
+                    },
+                    "cumulative_cardinality": 349,
+                    "operator_name": "FILTER",
+                    "operator_type": "FILTER",
+                    "operator_cardinality": 110,
+                    "cumulative_rows_scanned": 239,
+                    "operator_rows_scanned": 0,
+                    "operator_timing": 0.0000255,
+                    "result_set_size": 3520,
+                    "total_bytes_read": 0,
+                    "total_bytes_written": 0,
+                    "children": [
+                        {
+                            "cpu_time": 0.0000758,
+                            "extra_info": {
+                                "Table": "country",
+                                "Type": "Sequential Scan",
+                                "Projections": [
+                                    "independence_year",
+                                    "name"
+                                ],
+                                "Estimated Cardinality": "239"
+                            },
+                            "cumulative_cardinality": 239,
+                            "operator_name": "SEQ_SCAN ",
+                            "operator_type": "TABLE_SCAN",
+                            "operator_cardinality": 239,
+                            "cumulative_rows_scanned": 239,
+                            "operator_rows_scanned": 239,
+                            "operator_timing": 0.0000758,
+                            "result_set_size": 7648,
+                            "total_bytes_read": 0,
+                            "total_bytes_written": 0,
+                            "children": []
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
 }
