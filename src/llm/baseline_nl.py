@@ -55,6 +55,8 @@ def llm_interaction(chosen_datasets: list[str] | None = None):
 
                     #.duckdb path
                     duckdb_path = os.path.join(DATA_DIR, dataset_name, f"{dataset_name.lower()}.duckdb")
+                    if duckdb_path:
+                            print(f"Found duckdb path: {duckdb_path}")
 
                     #Embedd some context
                     context_prompt = build_prompt_context(dataset_name)
@@ -66,11 +68,12 @@ def llm_interaction(chosen_datasets: list[str] | None = None):
                     # Use ad hoc function for parsing the response and build a FULL JSON file
                     #parsed_response = parse_llm_response(response)
                     #logger.info(" LLM parsed RESPONSE:\n", parsed_response)
-                    #save_llm_response_to_file(dataset_name, parsed_response, i+1)
-                    #logger.info(f"LLM response saved ")
-                    data = json.dumps(response, indent=4)
-                    formatted_response = data['SQLResult']
-                    logger.info(f"Formatted response:f{formatted_response}")
+                    save_llm_response_to_file(dataset_name, response, i+1)
+                    logger.info(f"LLM response saved ")
+                    #data = json.dumps(response, indent=4)
+                    #print("response for the LLM:", data)
+                    #formatted_response = data['SQLResult']
+                    #logger.info(f"Formatted response:f{formatted_response}")
 
 
                 elif dataset_name.upper() in IK_DATASETS:

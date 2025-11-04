@@ -1,15 +1,7 @@
 {
-  "result_set": [
-    {
-      "originaltitle": "Texas"
-    },
-    {
-      "originaltitle": "true"
-    },
-    {
-      "originaltitle": 123456
-    }
-  ],
-  "time": 0.0,
-  "tokens": 591
+  "result_set": {
+    "error": "No valid JSON found"
+  },
+  "time": 1.884,
+  "tokens": 0
 }

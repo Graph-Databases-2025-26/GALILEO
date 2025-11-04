@@ -1,21 +1,7 @@
 {
-  "result_set": [
-    {
-      "originaltitle": "True"
-    },
-    {
-      "originaltitle": "Airlines"
-    },
-    {
-      "originaltitle": "value"
-    },
-    {
-      "originaltitle": "True"
-    },
-    {
-      "originaltitle": "Healthcare"
-    }
-  ],
-  "time": 0.0,
-  "tokens": 594
+  "result_set": {
+    "error": "No valid JSON found"
+  },
+  "time": 1.915,
+  "tokens": 0
 }

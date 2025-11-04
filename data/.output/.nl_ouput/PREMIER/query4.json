@@ -1,18 +1,9 @@
 {
-  "result_set": [
-    {
-      "originaltitle": "Marcus Rashford"
-    },
-    {
-      "originaltitle": "Manchester United"
-    },
-    {
-      "originaltitle": "Cristiano Ronaldo"
-    },
-    {
-      "originaltitle": "Manchester United"
-    }
-  ],
-  "time": 0.0,
-  "tokens": 554
+  "result_set": {
+    "query": "SELECT SUM(home_goals + away_goals) FROM target.premier_league_2024_2025_match_result WHERE home_team = 'Liverpool' OR away_team = 'Liverpool'",
+    "column": "SUM(home_goals + away_goals)",
+    "operation": "SELECT"
+  },
+  "time": 1.844,
+  "tokens": 0
 }

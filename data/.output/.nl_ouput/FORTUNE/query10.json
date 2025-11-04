@@ -1,5 +1,13 @@
 {
-  "result_set": [],
-  "time": 0.0,
-  "tokens": 628
+  "result_set": {
+    "Company": "value",
+    "HeadquartersState": "value",
+    "Ticker": "value",
+    "CEO": "value",
+    "Founder_is_CEO": "value",
+    "FemaleCEO": "value",
+    "Growth_in_Jobs": "value"
+  },
+  "time": 1.888,
+  "tokens": 0
 }

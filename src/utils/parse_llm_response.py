@@ -9,123 +9,24 @@ from dateutil import parser
 from src.utils.constants import *
 from src.utils.logging_config import logger
 
-def parse_llm_response(response):
-    """
-    Extracts JSON blocks from the LLM response and builds a unified final JSON.
-    Uses time and tokens values returned by the WatsonX model if available.
-    """
-    try:
-        raw_text = response["results"][0]["generated_text"]
-    except (KeyError, IndexError):
-        return {"error": "Unexpected LLM response structure", "raw": response}
-
-    # Regex to extract JSON blocks
-    logger.info(f"raw text: {raw_text}")
-    json_blocks = re.findall(r'\{(?:[^{}]|(?:\{[^{}]*\}))*\}', raw_text)
-    result_list = []
-    total_time = 0.0
-    total_tokens = 0
-    valid_blocks = 0
-
-    print("\n--- DEBUG: JSON blocks found ---\n")
-    for jb in json_blocks:
-        print("[Block found]")
-        print(jb)
-        print()
+def extract_all_json_objects(text: str):
+    json_objects = []
+    # regex che tenta di catturare oggetti JSON {...}
+    matches = re.findall(r'\{[^{}]*\}', text, re.DOTALL)
+    for match in matches:
         try:
-            parsed = json.loads(jb)
+            obj = json.loads(match)
+            json_objects.append(obj)
         except json.JSONDecodeError:
             continue
+    if not json_objects:
+        return {"error": "No valid JSON found"}
+    # qui puoi decidere come combinare, ad esempio in un unico dict o lista
+    combined = {}
+    for obj in json_objects:
+        combined.update(obj)
+    return combined
 
-        """
-        if "result_set" in parsed:
-            for row in parsed["result_set"]:
-                if isinstance(row, dict) and len(row) > 0:
-                    value = list(row.values())[0]
-                    result_list.append({"originaltitle": value})
-        """
-
-        if "result_set" in parsed and parsed["result_set"]:
-            result_list.extend(parsed["result_set"])
-
-        # Sum block values (even if they are 0)
-        total_time += parsed.get("time", 0.0)
-        total_tokens += parsed.get("tokens", 0)
-        valid_blocks += 1
-
-    print("--- END DEBUG ---")
-
-    # 🔹 Take tokens returned by the WatsonX model
-    generated_tokens = response["results"][0].get("generated_token_count", 0)
-    input_tokens = response["results"][0].get("input_token_count", 0)
-    print(f"\n--- DEBUG: TOKEN MODEL --- generated={generated_tokens}, input={input_tokens} ---\n")
-
-    # 🔹 If blocks have no tokens, use the model's tokens
-    if total_tokens == 0:
-        total_tokens = generated_tokens + input_tokens
-
-    # 🔹 If there's no time in blocks, set 0.0
-    if total_time == 0.0:
-        total_time = 0.0
-
-    return {
-        "result_set": result_list,
-        "time": total_time,
-        "tokens": total_tokens
-    }
-
-
-def format_chain_response(response: dict) -> dict:
-    """
-    Converte la risposta di chain.invoke() in un JSON strutturato nel formato:
-    {
-        "result_set": [
-            { "column_name": "value" },
-            { "column_name": "value" }
-        ],
-        "time": 0.0,
-        "tokens": 0
-    }
-    """
-    start_time = time.time()
-
-    # --- Estrarre il campo 'result' ---
-    raw_result = response.get("result", "")
-    if not raw_result:
-        return {"result_set": [], "time": 0.0, "tokens": 0}
-
-    # --- 1️⃣ Prova a leggere come JSON già formattato ---
-    result_set = []
-    try:
-        result_set = json.loads(raw_result)
-        if isinstance(result_set, dict):  # se è singolo oggetto
-            result_set = [result_set]
-    except json.JSONDecodeError:
-        # --- 2️⃣ Se non è JSON valido, prova a interpretare tuple tipo [(1, 'Apple'), ...] ---
-        tuple_pattern = re.findall(r"\((.*?)\)", raw_result)
-        if tuple_pattern:
-            # Otteniamo lista di tuple, cerchiamo di convertirle in dizionari
-            rows = []
-            for t in tuple_pattern:
-                values = [v.strip(" '") for v in t.split(",")]
-                rows.append(values)
-            # Creiamo dizionari con chiavi generiche se non conosciamo le colonne
-            result_set = [{"col" + str(i + 1): v for i, v in enumerate(row)} for row in rows]
-        else:
-            # --- 3️⃣ Se tutto fallisce, mettiamo il testo grezzo ---
-            result_set = [{"text": raw_result.strip()}]
-
-    # --- Metadati ---
-    elapsed = round(time.time() - start_time, 3)
-    tokens = len(raw_result.split())
-
-    formatted = {
-        "result_set": result_set,
-        "time": elapsed,
-        "tokens": tokens
-    }
-
-    return formatted
 
 
 def parse_response_to_json(response, start_time=None, default_key="result"):
