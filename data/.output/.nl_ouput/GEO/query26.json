@@ -1,17 +1,11 @@
 {
   "result_set": [
     {
-      "state_name": "Kentucky",
-      "population": 4467673,
-      "area": 40409124
-    },
-    {
-      "call_sign": "UAL"
-    },
-    {
-      "population": 331002651
+      ".\n\n<state_name>": "<Kentucky>",
+      "<population>": "<4",
+      "<area>": "<40"
     }
   ],
-  "time": 0.0,
-  "tokens": 305
+  "time": 0.151824,
+  "tokens": 193
 }

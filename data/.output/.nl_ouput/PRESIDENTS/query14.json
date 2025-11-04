@@ -1,18 +1,26 @@
 {
   "result_set": [
     {
-      "originaltitle": "Joe Biden"
-    },
-    {
-      "originaltitle": "Donald Trump"
-    },
-    {
-      "originaltitle": "Joe Biden"
-    },
-    {
-      "originaltitle": "Donald Trump"
+      "John Adams": "<Democratic-Republican>",
+      "Thomas Jefferson": "<Democratic-Republican>",
+      "James Madison": "<Democratic-Republican>",
+      "James Monroe": "<Democratic-Republican>",
+      "John Quincy Adams": "<Democratic-Republican>",
+      "Andrew Jackson": "<Democratic-Republican>",
+      "Martin Van Buren": "<Democratic>",
+      "William Henry Harrison": "<Whig>",
+      "John Tyler": "<Whig>",
+      "James K. Polk": "<Democratic>",
+      "Zachary Taylor": "<Whig>",
+      "Millard Fillmore": "<Whig>",
+      "Franklin Pierce": "<Democratic>",
+      "James Buchanan": "<Democratic>",
+      "Abraham Lincoln": "<Republican>",
+      "Andrew Johnson": "<Republican>",
+      "Ulysses S. Grant": "<Republican>",
+      "Rutherford B. Hayes": "<Republican>"
     }
   ],
-  "time": 0.0,
-  "tokens": 352
+  "time": 0.201281,
+  "tokens": 349
 }

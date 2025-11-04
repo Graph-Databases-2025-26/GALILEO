@@ -1,13 +1,9 @@
 {
   "result_set": [
-    "Lake Michigan",
-    "Lake Huron",
-    "Lake Erie",
-    "Lake St. Clair",
-    "Lake Superior",
-    "Hartsfield-Jackson Atlanta International Airport",
-    "Mount Everest"
+    {
+      "result": "Lake Michigan, Lake Huron, Lake Erie, Lake St. Clair, Lake Superior (shared with Wisconsin and Minnesota)"
+    }
   ],
-  "time": 0.0,
-  "tokens": 298
+  "time": 0.190225,
+  "tokens": 187
 }

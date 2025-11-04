@@ -1,12 +1,11 @@
 {
   "result_set": [
     {
-      "originaltitle": "Hugo Chávez"
-    },
-    {
-      "originaltitle": "Nicolás Maduro"
+      "from 1999 to 2019.\n\nHugo Chávez": "<value>1999-2013",
+      "Socialist Party\nNicolás Maduro": "<value>2013-2019",
+      "United Socialist Party of Venezuela\n\nExplanation": "Hugo Chávez was the president of Venezuela from 1999 to 2013"
     }
   ],
-  "time": 0.0,
-  "tokens": 419
+  "time": 0.16572,
+  "tokens": 311
 }

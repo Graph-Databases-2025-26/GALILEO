@@ -1,18 +1,11 @@
 {
   "result_set": [
     {
-      "capital": "Phoenix"
-    },
-    {
-      "call_sign": "UAL"
-    },
-    {
-      "call_sign": "DAL"
-    },
-    {
-      "call_sign": "WN"
+      "university is": "<state_capital>:<Phoenix>",
+      "<university_name>": "<Tempe University>",
+      "<state_name>": "<Arizona>"
     }
   ],
-  "time": 0.0,
-  "tokens": 298
+  "time": 0.156763,
+  "tokens": 184
 }

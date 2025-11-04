@@ -1,18 +1,10 @@
 {
   "result_set": [
     {
-      "originaltitle": "Movimiento Quinta República"
-    },
-    {
-      "originaltitle": "Partido Socialista Unido de Venezuela"
-    },
-    {
-      "originaltitle": "Partido Socialista Unido de Venezuela"
-    },
-    {
-      "originaltitle": "Movimiento Quinta República"
+      ".\n\nparty_name": "Partido Socialista Unido de Venezuela (PSUV)",
+      "number_of_presidents": "2\n\nExplanation: The Partido Socialista Unido de Venezuela (PSUV) is a socialist political party in Venezuela. It was founded in 2007 and has been the ruling party since then. The PSUV has had two presidents: Hugo Chávez"
     }
   ],
-  "time": 0.0,
-  "tokens": 345
+  "time": 0.094651,
+  "tokens": 305
 }

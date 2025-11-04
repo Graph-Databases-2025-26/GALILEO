@@ -1,12 +1,9 @@
 {
   "result_set": [
     {
-      "originaltitle": "Liberal Party of Venezuela"
-    },
-    {
-      "originaltitle": "Liberal Party of Venezuela"
+      "Democratic Party.\n\n1. Venezuela presidents where party is Liberal Democratic Party": "<value> 0\n\nExplanation: The Liberal Democratic Party does not exist in Venezuela. The main political parties in Venezuela are the United Socialist Party of Venezuela (PSUV)"
     }
   ],
-  "time": 0.0,
-  "tokens": 406
+  "time": 0.193805,
+  "tokens": 275
 }

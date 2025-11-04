@@ -1,15 +1,11 @@
 {
   "result_set": [
     {
-      "location": "Massachusetts is in the New England region of the northeastern United States"
-    },
-    {
-      "population": "Massachusetts had an estimated population of 6,892,503 in 2019"
-    },
-    {
-      "capital": "The capital of Massachusetts is Boston"
+      "located?\n\nstate": "<Massachusetts>",
+      "location": "<New England region of the northeastern United States>",
+      "bordering_states": "<Connecticut"
     }
   ],
-  "time": 0.0,
-  "tokens": 294
+  "time": 0.155358,
+  "tokens": 195
 }

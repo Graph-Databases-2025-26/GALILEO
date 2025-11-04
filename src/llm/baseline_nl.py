@@ -1,19 +1,14 @@
-import logging
-import re
 import json
-
 from dotenv import load_dotenv
-
-from src.utils.parse_llm_response import parse_llm_response
-from .sql_to_nl import sql_to_nl
-from pathlib import Path
+from src.utils.parse_llm_response import parse_response_to_json, save_llm_response_to_file
 from ..utils.constants import *
-from .watsonx_ai_connection import query_watsonx
-from ..db.run_queries_to_json import load_queries_from_folder
+from .watsonx_ai_connection import query_watsonx, process_nl_query_with_watsonx
+from ..db.run_queries_to_json import load_queries_from_folder, load_nl_queries_from_txt
 from ..utils.build_prompt_context import build_prompt_context
 from config import Config_Loader
 from ..utils.dataset_selection import get_dataset_selection
-from ..utils.clean_llm_response import extract_json_from_text
+from ..utils.logging_config import logger
+from datetime import datetime, timezone
 
 #CONFIGURE THE API KEY
 load_dotenv()
@@ -40,77 +35,61 @@ def llm_interaction(chosen_datasets: list[str] | None = None):
     print(f"Found folders: {os.listdir(DATA_DIR)}")
 
     for dataset_name in chosen_datasets:
-        print(f"Checking folder: {dataset_name}")
+        logger.info(f"Checking folder: {dataset_name}")
         if dataset_name.upper() in DATASETS:
             dataset_path = os.path.join(DATA_DIR, dataset_name)
             if not os.path.isdir(dataset_path):
                 continue
 
-            logging.info(f"Processing dataset: {dataset_name}")
-            queries = load_queries_from_folder(dataset_path)
+            logger.info(f"Processing dataset: {dataset_name}")
+            nl_queries = load_nl_queries_from_txt(dataset_path)
 
             nl_prompts = []
-            for i, (filename, sql_query) in enumerate(queries):
-                nl_output = sql_to_nl(sql_query)
+            for i, prompt in enumerate(nl_queries):
 
-                # extract only the NL text
-                try:
-                    generated_text = nl_output["results"][0]["generated_text"]
-                    # take only the rows with  "--natural language prompt..."
-                    nl_lines = [
-                        line.strip()
-                        for line in generated_text.splitlines()
-                        if line.strip().lower().startswith("which")
-                           or line.strip().lower().startswith("what")
-                           or line.strip().lower().startswith("who")
-                           or line.strip().lower().startswith("when")
-                           or line.strip().lower().startswith("where")
-                           or line.strip().lower().startswith("how")
-                    ]
-                    nl_prompt = " ".join(nl_lines)
-                except Exception as e:
-                    logging.error(f"Error in the NL prompt extraction: {e}")
-                    nl_prompt = "Could not extract prompt"
+                logger.info(f" NL prompt: {prompt}")
 
-                logging.info(f" NL prompt generated: {nl_prompt}")
+                # Differentiate the datasets between IK & MC, and next query the model with NL prompts
 
-                # Create a folder for the dataset within the prompt folder
-                dataset_nl_prompt_folder = os.path.join(PROMPTS, dataset_name)
-                os.makedirs(dataset_nl_prompt_folder, exist_ok=True)
+                if dataset_name.upper() in MC_DATASETS:
 
-                # Save the NL prompts in JSON
-                json_filename = f"nl_prompt_query{i+1}_{dataset_name}.json"
-                json_path = os.path.join(dataset_nl_prompt_folder, json_filename)
-                with open(json_path, 'w', encoding='utf-8') as jf:
-                    json.dump(nl_prompt, jf, indent=2, ensure_ascii=False)
+                    #.duckdb path
+                    duckdb_path = os.path.join(DATA_DIR, dataset_name, f"{dataset_name.lower()}.duckdb")
 
-                logging.info(f"Prompts NL saved in: {json_path}")
+                    #Embedd some context
+                    context_prompt = build_prompt_context(dataset_name)
+                    full_prompt = f"{context_prompt} {prompt}"
 
-                # Query the model with NL prompts generated before
+                    response = process_nl_query_with_watsonx(full_prompt, duckdb_path)
+                    logger.info(f"LLM raw response for the query {prompt} in dataset {dataset_name}:\n{response}\n{'-'*50}")
 
-                #Build the right context
-                context_prompt = build_prompt_context(dataset_name)
-                full_prompt = f"{context_prompt} {nl_prompt}"
+                    # Use ad hoc function for parsing the response and build a FULL JSON file
+                    #parsed_response = parse_llm_response(response)
+                    #logger.info(" LLM parsed RESPONSE:\n", parsed_response)
+                    #save_llm_response_to_file(dataset_name, parsed_response, i+1)
+                    #logger.info(f"LLM response saved ")
+                    data = json.dumps(response, indent=4)
+                    formatted_response = data['SQLResult']
+                    logger.info(f"Formatted response:f{formatted_response}")
 
-                response = query_watsonx(full_prompt)
-                print(" LLM RESPONSE:\n", response)
 
-                logging.info(f"Answer for the query {sql_query} in dataset {dataset_name}:\n{response}\n{'-'*50}")
+                elif dataset_name.upper() in IK_DATASETS:
 
-                # Use ad hoc function for parsing the responde and build a FULL JSON file
-                parsed_response = parse_llm_response(response)
-                print(" LLM parsed RESPONSE:\n", parsed_response)
+                    #Directly quering the LLM without any context or external knowledge
+                    full_prompt = f"{PROMPT_FOR_IK_DATASETS} {prompt}"
+                    response = query_watsonx(full_prompt)
+                    logger.info(f"LLM raw response for the query {full_prompt} in dataset {dataset_name}:\n{response}\n{'-'*50}")
 
-                # Save the response in a text file
-                response_filename = f"llm_response_query{i+1}_{dataset_name}.json"
-                response_llm_folder = os.path.join(NL_OUTPUT, dataset_name)
-                os.makedirs(response_llm_folder, exist_ok=True)
-                json_path = os.path.join(response_llm_folder, response_filename)
 
-                with open(json_path, 'w', encoding='utf-8') as rf:
-                    json.dump(parsed_response, rf, indent=2, ensure_ascii=False)
+                    # Stampa in formato JSON
+                    time = datetime.now(timezone.utc)
+                    formatted_response = parse_response_to_json(response,time)
+                    save_llm_response_to_file( dataset_name, formatted_response, i + 1)
 
-                logging.info(f"LLM response saved in: {json_path}")
+                    # Use ad hoc function for parsing the response and build a FULL JSON file
+                    #parsed_response = parse_llm_response(response)
+                    #logger.info(f" LLM parsed RESPONSE:{formatted_response}\n")
+                    #logger.info(f"LLM response saved ")
 
 if __name__ == "__main__":
     config = Config_Loader().get_config()

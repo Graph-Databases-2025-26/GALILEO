@@ -1,18 +1,9 @@
 {
   "result_set": [
     {
-      "originaltitle": "Europe"
-    },
-    {
-      "originaltitle": "North America"
-    },
-    {
-      "originaltitle": "Europe"
-    },
-    {
-      "originaltitle": "North America"
+      "English": "United Kingdom"
     }
   ],
-  "time": 0.0,
-  "tokens": 399
+  "time": 0.097368,
+  "tokens": 350
 }

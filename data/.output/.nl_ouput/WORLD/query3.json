@@ -1,18 +1,9 @@
 {
   "result_set": [
     {
-      "originaltitle": "gnp"
-    },
-    {
-      "originaltitle": "population"
-    },
-    {
-      "originaltitle": "gnp"
-    },
-    {
-      "originaltitle": "population"
+      "<GNP>": "The concept of GNP (Gross National Product) is not applicable to US territories as they are not sovereign nations.\n<Total Population>: The total population of US territories (Puerto Rico"
     }
   ],
-  "time": 0.0,
-  "tokens": 506
+  "time": 0.212463,
+  "tokens": 244
 }

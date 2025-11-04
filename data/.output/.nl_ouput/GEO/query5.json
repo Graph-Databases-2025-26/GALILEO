@@ -1,18 +1,9 @@
 {
   "result_set": [
     {
-      "number_of_states": 50
-    },
-    {
-      "capital_of_france": "paris"
-    },
-    {
-      "president_of_usa": "joe biden"
-    },
-    {
-      "population_of_japan": "126 million"
+      "?\n\n<number_of_states_in_the_usa>": "50"
     }
   ],
-  "time": 0.0,
-  "tokens": 295
+  "time": 0.203796,
+  "tokens": 165
 }

@@ -1,5 +1,9 @@
 {
-  "result_set": [],
-  "time": 0.0,
-  "tokens": 295
+  "result_set": [
+    {
+      "arizona?\n\npopulation": "176"
+    }
+  ],
+  "time": 0.148418,
+  "tokens": 173
 }

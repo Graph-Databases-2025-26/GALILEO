@@ -1,5 +1,13 @@
 {
-  "result_set": [],
-  "time": 0.0,
-  "tokens": 430
+  "result_set": [
+    {
+      ".\n\nDemocratic Action Venezuela president": "Rómulo Betancourt",
+      "Party": "Democratic Action",
+      "Start year": "1945",
+      "End year": "1958",
+      "Cardinal number": "1"
+    }
+  ],
+  "time": 0.220808,
+  "tokens": 238
 }

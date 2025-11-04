@@ -1,12 +1,9 @@
 {
   "result_set": [
     {
-      "capital": "paris"
-    },
-    {
-      "planet": "Jupiter"
+      "?\n\n<length>": "<1"
     }
   ],
-  "time": 0.0,
-  "tokens": 297
+  "time": 0.176378,
+  "tokens": 163
 }

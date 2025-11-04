@@ -1,0 +1,17 @@
+{
+  "result_set": [
+    {
+      "Netherlands": "-3",
+      "Colombia": "2610",
+      "USA": "16110",
+      "Mexico": "2250",
+      "Panama": "45",
+      "El Salvador": "-10",
+      "Ecuador": "-15",
+      "Peru": "29",
+      "Chile": "600"
+    }
+  ],
+  "time": 0.199079,
+  "tokens": 357
+}

@@ -1,21 +1,10 @@
 {
   "result_set": [
     {
-      "originaltitle": "Republican"
-    },
-    {
-      "originaltitle": 10
-    },
-    {
-      "originaltitle": "Republican"
-    },
-    {
-      "originaltitle": 10
-    },
-    {
-      "originaltitle": 10
+      "Democratic Party": "6",
+      "Republican Party": "6"
     }
   ],
-  "time": 0.0,
-  "tokens": 417
+  "time": 0.174033,
+  "tokens": 189
 }

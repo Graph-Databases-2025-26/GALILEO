@@ -1,0 +1,10 @@
+{
+  "result_set": [
+    {
+      "<number_of_flights_in_US>": "<value_not_provided_by_knowledge_base>\n\n[Explanation] The exact number of flights in the US is not provided in the knowledge base",
+      "there were approximately 38 million commercial flights in the US.\n\n<number_of_flights_in_US>": "38"
+    }
+  ],
+  "time": 0.0933,
+  "tokens": 275
+}

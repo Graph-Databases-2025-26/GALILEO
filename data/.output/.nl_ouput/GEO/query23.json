@@ -1,26 +1,10 @@
 {
   "result_set": [
     {
-      "capital": "Vatican City",
-      "major_city": false
-    },
-    {
-      "capital": "Luxembourg",
-      "major_city": false
-    },
-    {
-      "capital": "Andorra la Vella",
-      "major_city": false
-    },
-    {
-      "capital": "Reykjavik",
-      "major_city": false
-    },
-    {
-      "capital": "Nur-Sultan",
-      "major_city": false
+      "?\n\n<capital_not_major_city>": "<value>\n\nNote: This question is ambiguous as it depends on the definition of \"major city\". However",
+      "here are a few examples": "<capital_not_major_city_1>:<value>\n<capital_not_major_city_2>:<value>\n<capital_not_major_city_3>:<value>\n\n<capital_not_major_city_1>:<value>\n<capital_not_major_city_2>:<value>\n<capital_not_major_city_3>:<value>\n\n<capital_not_major_city_1>:<value>\n<capital_not_major_city_2>:<value>\n<capital_not_major_city_3>:<value>\n\n<capital_not_major_city_1>:<value>\n<capital_not_major_city_"
     }
   ],
-  "time": 0.0,
-  "tokens": 237
+  "time": 0.182934,
+  "tokens": 347
 }

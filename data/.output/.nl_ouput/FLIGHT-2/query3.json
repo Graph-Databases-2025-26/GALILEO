@@ -1,15 +1,9 @@
 {
   "result_set": [
     {
-      "call_sign": "UAL"
-    },
-    {
-      "call_sign": "UAL"
-    },
-    {
-      "call_sign": "AA"
+      "<airline_name>": "<United Airlines>"
     }
   ],
-  "time": 0.0,
-  "tokens": 298
+  "time": 0.162253,
+  "tokens": 162
 }

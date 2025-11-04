@@ -1,12 +1,9 @@
 {
   "result_set": [
     {
-      "capital": "paris"
-    },
-    {
-      "planet": "Jupiter"
+      "?\n\n<number_of_rivers_in_us>": "<approximately_60"
     }
   ],
-  "time": 0.0,
-  "tokens": 296
+  "time": 0.15027,
+  "tokens": 173
 }

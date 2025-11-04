@@ -1,24 +1,32 @@
 {
   "result_set": [
     {
-      "state_name": "Alaska",
-      "capital": "Juneau",
-      "density": 1.2,
-      "population": 731545
-    },
-    {
-      "state_name": "Nevada",
-      "capital": "Carson City",
-      "density": 24.4,
-      "population": 3080156
-    },
-    {
-      "state_name": "Wyoming",
-      "capital": "Cheyenne",
-      "density": 5.8,
-      "population": 578759
+      ".\n\nAlabama": "<state>",
+      "Montgomery": "<capital>",
+      "106.1": "<density>",
+      "4903185": "<population>",
+      "Arizona": "<state>",
+      "Phoenix": "<capital>",
+      "10.7": "<density>",
+      "7278717": "<population>",
+      "Arkansas": "<state>",
+      "Little Rock": "<capital>",
+      "65.8": "<density>",
+      "3011525": "<population>",
+      "California": "<state>",
+      "Sacramento": "<capital>",
+      "250.6": "<density>",
+      "39538223": "<population>",
+      "Colorado": "<state>",
+      "Denver": "<capital>",
+      "10.3": "<density>",
+      "5773714": "<population>",
+      "Connecticut": "<state>",
+      "Hartford": "<capital>",
+      "729.4": "<density>",
+      "3565287": "<population>"
     }
   ],
-  "time": 0.0,
-  "tokens": 302
+  "time": 0.149397,
+  "tokens": 389
 }

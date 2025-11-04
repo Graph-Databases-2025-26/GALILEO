@@ -1,5 +1,15 @@
 {
-  "result_set": [],
-  "time": 0.0,
-  "tokens": 299
+  "result_set": [
+    {
+      "that start with the letter \"A\".\n\nAlabama": "<state>",
+      "185": "<population>",
+      "420": "<area>\nArizona:<state>",
+      "502": "<population>",
+      "998": "<area>\nArkansas:<state>",
+      "804": "<population>",
+      "180": "<area>"
+    }
+  ],
+  "time": 0.193301,
+  "tokens": 253
 }

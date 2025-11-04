@@ -1,5 +1,27 @@
 {
-  "result_set": [],
-  "time": 0.0,
-  "tokens": 498
+  "result_set": [
+    {
+      "Bangladesh": "<1971>",
+      "Algeria": "<1962>",
+      "Ghana": "<1957>",
+      "India": "<1947>",
+      "Indonesia": "<1945>",
+      "Malaysia": "<1957>",
+      "Nigeria": "<1960>",
+      "Pakistan": "<1947>",
+      "Sri Lanka": "<1948>",
+      "Vietnam": "<1945>",
+      "Uganda": "<1962>",
+      "Kenya": "<1963>",
+      "Tanzania": "<1961>",
+      "Zambia": "<1964>",
+      "Mozambique": "<1975>",
+      "Angola": "<1975>",
+      "Namibia": "<1990>",
+      "South Africa": "<1994>",
+      "East Timor": "<2002>"
+    }
+  ],
+  "time": 0.120838,
+  "tokens": 329
 }

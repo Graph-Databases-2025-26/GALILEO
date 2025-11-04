@@ -1,15 +1,9 @@
 {
   "result_set": [
     {
-      "population": 39512223
-    },
-    {
-      "population": 29145505
-    },
-    {
-      "population": 19453561
+      "?\n\n<average_population_by_state>": "<The average population of the US by state is approximately 5"
     }
   ],
-  "time": 0.0,
-  "tokens": 298
+  "time": 0.191464,
+  "tokens": 201
 }

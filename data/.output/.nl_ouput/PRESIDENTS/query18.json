@@ -1,12 +1,10 @@
 {
   "result_set": [
     {
-      "originaltitle": "Ronald Reagan"
-    },
-    {
-      "originaltitle": "George H. W. Bush"
+      ".\n\nGeorge H.W. Bush": "<Republican>",
+      "George W. Bush": "<Republican>"
     }
   ],
-  "time": 0.0,
-  "tokens": 412
+  "time": 0.16752,
+  "tokens": 185
 }

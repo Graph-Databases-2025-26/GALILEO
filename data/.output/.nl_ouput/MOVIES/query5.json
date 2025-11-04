@@ -1,5 +1,13 @@
 {
-  "result_set": [],
-  "time": 0.0,
-  "tokens": 316
+  "result_set": [
+    {
+      "s.\n\ntitle": "Schindler's List (1993)",
+      "West Side Story (2021)\nyear": "1993",
+      "2021\ngenres": "Drama",
+      "Musical\nbirthyear": "1946\n\n<title>: Schindler's List (1993)",
+      "West Side Story (2021)\n<year>": "1993"
+    }
+  ],
+  "time": 0.150586,
+  "tokens": 367
 }

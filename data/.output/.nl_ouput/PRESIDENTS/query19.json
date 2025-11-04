@@ -1,5 +1,13 @@
 {
-  "result_set": [],
-  "time": 0.0,
-  "tokens": 417
+  "result_set": [
+    {
+      "who served during the Civil War.\n\npresident": "<George Washington>",
+      "start year": "<1817>",
+      "end year": "<1825>",
+      "party": "<Democratic-",
+      "number of presidents": "<1>\npresident:<James Monroe>"
+    }
+  ],
+  "time": 0.122111,
+  "tokens": 363
 }

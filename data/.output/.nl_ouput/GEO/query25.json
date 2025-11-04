@@ -1,5 +1,24 @@
 {
-  "result_set": [],
-  "time": 0.0,
-  "tokens": 299
+  "result_set": [
+    {
+      ".\n\nAlabama": "<state>",
+      "Montgomery": "<capital>",
+      "420": "<area> square miles\nAlaska:<state>",
+      "Juneau": "<capital>",
+      "268": "<area> square miles\nArizona:<state>",
+      "Phoenix": "<capital>",
+      "998": "<area> square miles\nArkansas:<state>",
+      "Little Rock": "<capital>",
+      "180": "<area> square miles\nCalifornia:<state>",
+      "Sacramento": "<capital>",
+      "696": "<area> square miles\nColorado:<state>",
+      "Denver": "<capital>",
+      "094": "<area> square miles\nConnecticut:<state>",
+      "Hartford": "<capital>",
+      "544": "<area> square miles\nDelaware:<state>",
+      "Dover": "<capital>"
+    }
+  ],
+  "time": 0.194308,
+  "tokens": 350
 }

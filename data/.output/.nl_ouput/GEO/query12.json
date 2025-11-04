@@ -1,18 +1,9 @@
 {
   "result_set": [
     {
-      "state": "Illinois"
-    },
-    {
-      "population": 443956
-    },
-    {
-      "population": 8804190
-    },
-    {
-      "population": 3979576
+      "?\n\n<state>": "Illinois"
     }
   ],
-  "time": 0.0,
-  "tokens": 294
+  "time": 0.209723,
+  "tokens": 154
 }

@@ -1,0 +1,12 @@
+{
+  "result_set": [
+    {
+      "6 square miles.\n\nIllinois": "<state>",
+      "Chicago": "<capital>",
+      "12632017": "<population>",
+      "561536": "<area>\n\n[Explanation] The state of Illinois has Chicago as its capital"
+    }
+  ],
+  "time": 0.195364,
+  "tokens": 297
+}

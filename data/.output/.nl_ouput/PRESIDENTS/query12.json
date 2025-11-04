@@ -1,18 +1,14 @@
 {
   "result_set": [
     {
-      "originaltitle": "Democratic Party"
-    },
-    {
-      "originaltitle": "Republican Party"
-    },
-    {
-      "originaltitle": "Democratic Party"
-    },
-    {
-      "originaltitle": "Republican Party"
+      "Democratic Party": "0",
+      "Republican Party": "0",
+      "Socialist Party": "0",
+      "Acción Democrática": "1",
+      "COPEI": "1",
+      "PSUV": "0\n\nExplanation: The Democratic and Republican Parties are from the United States and have not elected any Venezuelan presidents. The Socialist Party is a European party and has not elected any Venezuelan presidents. Acción Democrática and COPEI are Venezuelan parties that have elected one president each. The PSUV is a Venezuelan party that has not yet elected a president. The time period specified is between 1800 and 1900"
     }
   ],
-  "time": 0.0,
-  "tokens": 419
+  "time": 0.147373,
+  "tokens": 370
 }

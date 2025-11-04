@@ -1,27 +1,10 @@
 {
   "result_set": [
     {
-      "capital": "Washington, D.C."
-    },
-    {
-      "capital": "Albany"
-    },
-    {
-      "capital": "Juneau"
-    },
-    {
-      "capital": "Boston"
-    },
-    {
-      "capital": "Phoenix"
-    },
-    {
-      "population": "7.9 billion (2021 estimate)"
-    },
-    {
-      "president": "Joe Biden"
+      "country_name": "<United States>",
+      "capital_city": "<Washington"
     }
   ],
-  "time": 0.0,
-  "tokens": 296
+  "time": 0.110948,
+  "tokens": 169
 }

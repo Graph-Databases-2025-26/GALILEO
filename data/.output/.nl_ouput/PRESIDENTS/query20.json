@@ -1,21 +1,10 @@
 {
   "result_set": [
     {
-      "originaltitle": "Democratic"
-    },
-    {
-      "originaltitle": 15
-    },
-    {
-      "originaltitle": "Democratic"
-    },
-    {
-      "originaltitle": 15
-    },
-    {
-      "originaltitle": 6
+      ".\n\nparty_name": "Democratic Party",
+      "number_of_presidents": "17"
     }
   ],
-  "time": 0.0,
-  "tokens": 407
+  "time": 0.120558,
+  "tokens": 199
 }

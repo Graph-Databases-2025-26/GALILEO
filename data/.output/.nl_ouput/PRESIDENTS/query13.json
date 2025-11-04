@@ -1,18 +1,20 @@
 {
   "result_set": [
     {
-      "originaltitle": "Democratic Action"
-    },
-    {
-      "originaltitle": "COPEI"
-    },
-    {
-      "originaltitle": "Democratic Action"
-    },
-    {
-      "originaltitle": "COPEI"
+      "Democratic Action (AD)": "1",
+      "Acción Democrática (AD)": "1",
+      "Social Christian Party (PSC)": "0",
+      "COPEI": "0",
+      "Causa R": "0",
+      "Movement for Socialism (MAS)": "0",
+      "Patria Para Todos (PPT)": "0",
+      "Justice First (PJ)": "0",
+      "Homeland for All (Podemos)": "0",
+      "A New Era (UNO)": "0",
+      "Venezuela Project (PV)": "0",
+      "Party of the Venezuelan People (PPVP)": "0"
     }
   ],
-  "time": 0.0,
-  "tokens": 327
+  "time": 0.180541,
+  "tokens": 376
 }

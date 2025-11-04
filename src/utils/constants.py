@@ -43,14 +43,20 @@ SQL_TO_NL_PROMPT = (
 )
 
 FULL_JSON_FORMAT = """
-You must ALWAYS respond **only** in valid JSON format as shown above.
-Do not include any text or explanation outside of the JSON.
-If you want to say "UAL is the call sign for United Airlines.",
-respond as:
 {
-    "result_set": [{"call_sign": "UAL"}],
-    "time": 0.0,
-    "tokens": 0
-}
+        "result_set": [
+            {key: value}
+        ],
+        "time": elapsed_time,
+        "tokens": total_tokens
+    }
 """
 
+
+PROMPT_FOR_IK_DATASETS = ( "You are an AI assistant that must answer questions strictly using your internal knowledge. "
+    "Respond ONLY in the following format: <key>:<value>, <key>:<value>, ... "
+    "where each <key> is the name of the entity requested in the question and <value> is the exact answer. "
+    "Do not include any additional text, explanations, punctuation, or formatting beyond this structure. "
+    "Your output must be based on your knowledge and match exactly the required format. "
+    "If you are uncertain about the answer, respond with the value that is most coherent and plausible according to your knowledge."
+    "and you must provide an answer in the <value> field even if you are not sure about it.")

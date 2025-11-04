@@ -1,5 +1,16 @@
 {
-  "result_set": [],
-  "time": 0.0,
-  "tokens": 329
+  "result_set": [
+    {
+      ".\n\nJurassic Park (1993)": "Action",
+      "127\nSchindler's List (1993)": "Drama",
+      "192\nSaving Private Ryan (1998)": "Drama",
+      "169\nAmistad (1997)": "Drama",
+      "152\nThe Lost World": "Jurassic Park (1997): Action",
+      "129\nA.I. Artificial Intelligence (2001)": "Drama",
+      "145\n\nNote": "A.I. Artificial Intelligence was released in 2001",
+      "but it was directed by Steven Spielberg and falls within the specified time frame.\n\n<title>": "<year>:<genres>:<runtimeminutes>\nJurass"
+    }
+  ],
+  "time": 0.151642,
+  "tokens": 380
 }

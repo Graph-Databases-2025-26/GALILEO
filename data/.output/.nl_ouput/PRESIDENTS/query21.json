@@ -1,24 +1,9 @@
 {
   "result_set": [
     {
-      "originaltitle": "value"
-    },
-    {
-      "originaltitle": "value"
-    },
-    {
-      "originaltitle": "Bill Clinton"
-    },
-    {
-      "originaltitle": "1"
-    },
-    {
-      "originaltitle": "Franklin D. Roosevelt"
-    },
-    {
-      "originaltitle": "4"
+      "1": "<value>Bill Clinton</value>"
     }
   ],
-  "time": 0.0,
-  "tokens": 414
+  "time": 0.143829,
+  "tokens": 181
 }

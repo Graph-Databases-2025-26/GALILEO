@@ -1,18 +1,9 @@
 {
   "result_set": [
     {
-      "river_count": 3
-    },
-    {
-      "population": 3979576
-    },
-    {
-      "height": 8848
-    },
-    {
-      "president": "Joe Biden"
+      "?\n\n<number_of_rivers_in_idaho>": "3"
     }
   ],
-  "time": 0.0,
-  "tokens": 296
+  "time": 0.21245,
+  "tokens": 166
 }

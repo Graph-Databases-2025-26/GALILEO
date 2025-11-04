@@ -1,5 +1,9 @@
 {
-  "result_set": [],
-  "time": 0.0,
-  "tokens": 295
+  "result_set": [
+    {
+      "<key>": "<value>"
+    }
+  ],
+  "time": 0.165787,
+  "tokens": 346
 }

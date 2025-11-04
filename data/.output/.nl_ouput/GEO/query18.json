@@ -1,12 +1,10 @@
 {
   "result_set": [
     {
-      "call_sign": "UAL"
-    },
-    {
-      "population": 1439323776
+      "in the united states?\n\n<number_of_states>": "<value>",
+      "<major_river>": "<value>\n\n1"
     }
   ],
-  "time": 0.0,
-  "tokens": 297
+  "time": 0.187408,
+  "tokens": 348
 }

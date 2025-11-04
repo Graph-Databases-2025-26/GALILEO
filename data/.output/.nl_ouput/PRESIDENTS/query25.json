@@ -1,18 +1,15 @@
 {
   "result_set": [
     {
-      "originaltitle": "Democratic-Republican"
-    },
-    {
-      "originaltitle": "Democratic"
-    },
-    {
-      "originaltitle": "Democratic-Republican"
-    },
-    {
-      "originaltitle": "Democratic"
+      "Democratic-Republican Party": "2",
+      "Whig Party": "0",
+      "Free Soil Party": "0",
+      "American Party (Know Nothing)": "0",
+      "Constitutional Union Party": "0",
+      "Democratic Party": "2",
+      "Republican Party": "1"
     }
   ],
-  "time": 0.0,
-  "tokens": 331
+  "time": 0.154519,
+  "tokens": 242
 }

@@ -1,15 +1,9 @@
 {
   "result_set": [
     {
-      "population": "737,015"
-    },
-    {
-      "population": "737,015"
-    },
-    {
-      "population": "737,015"
+      "?\n\npopulation_of_Seattle_Washington": "<1.76 million>"
     }
   ],
-  "time": 0.0,
-  "tokens": 297
+  "time": 0.111542,
+  "tokens": 168
 }

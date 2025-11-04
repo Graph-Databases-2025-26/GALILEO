@@ -1,24 +1,9 @@
 {
   "result_set": [
     {
-      "state": "Illinois"
-    },
-    {
-      "state": "Missouri"
-    },
-    {
-      "state": "Oregon"
-    },
-    {
-      "state": "Vermont"
-    },
-    {
-      "name": "Mercury"
-    },
-    {
-      "capital": "Moscow"
+      "?\n\n<number_of_states>": "<value>\n\n<number_of_states>:<3>"
     }
   ],
-  "time": 0.0,
-  "tokens": 297
+  "time": 0.170978,
+  "tokens": 172
 }

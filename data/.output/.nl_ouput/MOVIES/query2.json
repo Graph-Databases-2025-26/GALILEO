@@ -1,25 +1,9 @@
 {
   "result_set": [
-    "Jaws",
-    "Close Encounters of the Third Kind",
-    "Raiders of the Lost Ark",
-    "E.T. the Extra-Terrestrial",
-    "Indiana Jones and the Temple of Doom",
-    "Indiana Jones and the Last Crusade",
-    "Jurassic Park",
-    "Schindler's List",
-    "Saving Private Ryan",
-    "Munich",
-    "Catch Me If You Can",
-    "War of the Worlds",
-    "The Terminal",
-    "Indiana Jones and the Kingdom of the Crystal Skull",
-    "Lincoln",
-    "Bridge of Spies",
-    "The Post",
-    "Ready Player One",
-    "West Side Story"
+    {
+      "that were released in 1993.\n\n1. Schindler's List": "<1993>\n2. Jurassic Park:<1993>\n3. Raiders of the Lost Ark:<1981>\n4. E.T. the Extra-Terrestrial:<1982>\n5. Indiana Jones and the Last Crusade:<1989>\n6. The Color Purple:<1985>\n7. Empire of the Sun:<1987>\n8. Always:<1989>\n9. Hook:<1991>\n10. Amistad:<1997>\n11. Catch Me If You Can:<2002>\n12. Munich:<2005>\n13. War of the Worlds:<2005>"
+    }
   ],
-  "time": 0.0,
-  "tokens": 301
+  "time": 0.198018,
+  "tokens": 352
 }

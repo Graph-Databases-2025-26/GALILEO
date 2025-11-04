@@ -1,14 +1,16 @@
 {
   "result_set": [
     {
-      "state": "California",
-      "capital": "Sacramento"
-    },
-    {
-      "state": "Texas",
-      "capital": "Austin"
+      ".\n\nCalifornia": "<value>",
+      "Texas": "Austin",
+      "Florida": "Tallahassee",
+      "New York": "Albany",
+      "Illinois": "Springfield\n\n[Explanation] The states with a population greater than 5",
+      "and Springfield.\n\nNote": "The population density of these states is lower than 1000",
+      "but the exact values are not provided in the question. The given answer is based on general knowledge and assumes that these states meet the criteria.\n\n<key>": "<value>",
+      "<key>": "<value>"
     }
   ],
-  "time": 0.0,
-  "tokens": 194
+  "time": 0.186976,
+  "tokens": 373
 }

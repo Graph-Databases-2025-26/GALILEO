@@ -1,18 +1,13 @@
 {
   "result_set": [
     {
-      "state": "California",
-      "capital": "Sacramento"
-    },
-    {
-      "state": "Texas",
-      "capital": "Austin"
-    },
-    {
-      "state": "New York",
-      "capital": "Albany"
+      "square kilometers.\n\nCalifornia": "<value>Los Angeles</value>",
+      "Texas": "<value>Austin</value>",
+      "Florida": "<value>Tallahassee</value>",
+      "New York": "<value>Albany</value>",
+      "Illinois": "<value>Springfield</value>\n\n[Explanation] The question asks for the state name and capital of US states with a population greater than 3 million and an area greater than 50"
     }
   ],
-  "time": 0.0,
-  "tokens": 221
+  "time": 0.106206,
+  "tokens": 376
 }

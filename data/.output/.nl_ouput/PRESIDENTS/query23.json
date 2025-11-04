@@ -1,15 +1,10 @@
 {
   "result_set": [
     {
-      "originaltitle": "Franklin Pierce"
-    },
-    {
-      "originaltitle": "Grover Cleveland"
-    },
-    {
-      "originaltitle": "Grover Cleveland"
+      ".\n\nFranklin Pierce": "Democratic",
+      "14th\n\nExplanation": "Franklin Pierce was a Democratic president who served between 1850 and 1900. He was the 14th president of the United States"
     }
   ],
-  "time": 0.0,
-  "tokens": 426
+  "time": 0.130494,
+  "tokens": 265
 }

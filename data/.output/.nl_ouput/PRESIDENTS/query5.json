@@ -1,12 +1,10 @@
 {
   "result_set": [
     {
-      "originaltitle": "Juan Vicente Gómez"
-    },
-    {
-      "originaltitle": "Rómulo Betancourt"
+      ".\n\nHugo Chávez": "<Liberal>",
+      "Nicolás Maduro": "<Liberal>"
     }
   ],
-  "time": 0.0,
-  "tokens": 416
+  "time": 0.137509,
+  "tokens": 186
 }

@@ -1,17 +1,9 @@
 {
   "result_set": [
     {
-      "director": "Tim Burton",
-      "year": 1992
-    },
-    {
-      "director": "Lana Wachowski",
-      "movie": "The Matrix"
-    },
-    {
-      "call_sign": "DAL"
+      "'s career.\n\nyear": "1990"
     }
   ],
-  "time": 0.0,
-  "tokens": 299
+  "time": 0.239006,
+  "tokens": 162
 }

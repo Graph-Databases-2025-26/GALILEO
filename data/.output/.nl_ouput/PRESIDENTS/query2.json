@@ -1,18 +1,10 @@
 {
   "result_set": [
     {
-      "originaltitle": "Nicolás Maduro"
-    },
-    {
-      "originaltitle": "Hugo Chávez"
-    },
-    {
-      "originaltitle": "Nicolás Maduro"
-    },
-    {
-      "originaltitle": "Hugo Chávez"
+      ".\n\n<Venezuela_president_name>": "<Rómulo Betancourt>",
+      "<Venezuela_president_party>": "<Liberal>"
     }
   ],
-  "time": 0.0,
-  "tokens": 385
+  "time": 0.117038,
+  "tokens": 199
 }
