@@ -1,17 +1,11 @@
+#Defining the form of LLM response from LLM using Pydantic
 from pydantic import BaseModel, Field
-from typing import List, Dict, Optional
+from typing import List, Dict
 
 class WatsonxResponse(BaseModel):
-    """Schema of the expected Watsonx structured JSON response."""
     result_set: List[Dict[str, str]] = Field(
-        default_factory=list,
-        description="List of result records, each as a {column_name: value} dict"
+        ..., 
+        description="Contiene la risposta dell'LLM. Deve contenere un solo elemento: un dizionario con chiave 'Risposta' e valore il testo della risposta in linguaggio naturale."
     )
-    time: Optional[float] = Field(
-        default=None,
-        description="Estimated execution time in seconds"
-    )
-    tokens: Optional[int] = Field(
-        default=None,
-        description="Estimated number of tokens used"
-    )
+    time: float = Field(0.0, description="Tempo di esecuzione (placeholder).")
+    tokens: int = Field(0, description="Numero di token usati (placeholder).")

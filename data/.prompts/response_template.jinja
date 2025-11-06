@@ -1,0 +1,9 @@
+{
+    "result_set": [
+        {% for row in result_set %}
+        {{ row|tojson }}{% if not loop.last %},{% endif %}
+        {% endfor %}
+    ],
+    "time": {{ time }},
+    "tokens": {{ tokens }}
+}

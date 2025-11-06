@@ -3,24 +3,20 @@ IBM watsonx.ai connection with structured logging.
 - Measures latency for generate()
 - Logs errors cleanly
 """
-import logging
 import os
 import time
-import re
 import traceback
 import json
 from dotenv import load_dotenv
 from ibm_watsonx_ai import Credentials
 from ibm_watsonx_ai.foundation_models import ModelInference
-from langchain.chains.llm import LLMChain
-from langchain.output_parsers import StructuredOutputParser, ResponseSchema
+from langchain_core.output_parsers import PydanticOutputParser
+from langchain_classic.chains import LLMChain
 from langchain_core.prompts import PromptTemplate
 from src.utils.WatsonxResponse import WatsonxResponse
 from langchain_ibm import WatsonxLLM
 from langchain_community.utilities import SQLDatabase
-from langchain.output_parsers import PydanticOutputParser
-from src.utils.constants import FULL_JSON_FORMAT
-from src.utils.logging_config import logger, log_query_event
+from src.utils.logging_config import logger
 from src.utils.parse_llm_response import extract_all_json_objects
 
 

@@ -1,10 +1,6 @@
-# python
-import datetime
 import re
 import json
-import time
 
-from dateutil import parser
 
 from src.utils.constants import *
 from src.utils.logging_config import logger
@@ -28,47 +24,36 @@ def extract_all_json_objects(text: str):
     return combined
 
 
-
-def parse_response_to_json(response, start_time=None, default_key="result"):
+def extract_json_from_response(response_text: str):
     """
-    Converte la response del modello in JSON strutturato con chiave/valore,
-    calcola token e tempo di generazione.
-    - response: dict generato da model.generate()
-    - start_time: datetime, opzionale, se fornito calcola il tempo in secondi
-    """
-    # Estrazione testo e token
-    result = response['results'][0]
-    generated_text = result['generated_text'].strip()
-    input_tokens = result.get('input_token_count', 0)
-    output_tokens = result.get('generated_token_count', 0)
-    total_tokens = input_tokens + output_tokens
+        Estrae il blocco JSON da una risposta LLM in formato Jinja o Markdown.
+        Supporta sia stringhe che dizionari.
+        """
+    # Se è un dict (come nel tuo caso), prendiamo il campo 'text'
+    if isinstance(response_text, dict):
+        if "text" in response_text:
+            response_text = response_text["text"]
+        else:
+            response_text = str(response_text)
 
-    # Estrazione chiave/valore dal testo
-    matches = re.findall(r"\s*([^:,]+)\s*:\s*([^,]+)", generated_text)
-    if matches:
-        result_dict = {k.strip(): v.strip() for k, v in matches}
-    else:
-        result_dict = {default_key: generated_text.strip()}
+    # Se non è ancora stringa, forziamo la conversione
+    if not isinstance(response_text, str):
+        response_text = str(response_text)
 
+    # Cerca il blocco tra ```json ... ```
+    match = re.search(r"```json\s*(\{.*?\})\s*```", response_text, re.DOTALL)
+    if not match:
+        print("⚠️ Nessun blocco JSON trovato nella risposta.")
+        return {}
 
-    # Calcolo tempo
-    created_at = parser.isoparse(response['created_at'])
-    if start_time is not None:
-        elapsed_time = (start_time-created_at).total_seconds()
-    else:
-        elapsed_time = 0.0  # fallback se start_time non è fornito
-
-    # Costruzione JSON finale
-    output_json = {
-        "result_set": [result_dict],
-        "time": elapsed_time,
-        "tokens": total_tokens
-    }
-
-    return output_json
-
-
-
+    json_str = match.group(1)
+    try:
+        data = json.loads(json_str)
+        return data
+    except json.JSONDecodeError as e:
+        print(f"❌ Errore nel parsing JSON: {e}")
+        print(f"Contenuto problematico:\n{json_str[:200]}...")
+        return {}
 
 def save_llm_response_to_file(dataset_name, data, index):
     # Save the response in a text file
