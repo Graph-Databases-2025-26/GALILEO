@@ -1,10 +1,36 @@
 {
   "result_set": [
     {
-      "?\n\nLake Michigan": "<value> Great Lakes\nLake Huron:<value> Great Lakes\nLake Erie:<value> Great Lakes\nLake Superior:<value> Great Lakes\nLake Ontario:<value> Great Lakes\nCrater Lake:<value> National Parks\nYellowstone Lake:<value> National Parks\nLake Tahoe:<value> National Recreation Area\nGreat Salt Lake:<value> Utah\nLake of the Woods:<value> Minnesota-Ontario border\n\n<key>: Major lakes in the United States",
-      "<value>": "Great Lakes"
+      "name": "Lake Superior"
+    },
+    {
+      "name": "Lake Huron"
+    },
+    {
+      "name": "Lake Michigan"
+    },
+    {
+      "name": "Lake Erie"
+    },
+    {
+      "name": "Lake Ontario"
+    },
+    {
+      "name": "Great Salt Lake"
+    },
+    {
+      "name": "Lake Mead"
+    },
+    {
+      "name": "Lake Powell"
+    },
+    {
+      "name": "Lake Oahe"
+    },
+    {
+      "name": "Lake Okeechobee"
     }
   ],
-  "time": 0.145984,
-  "tokens": 312
+  "time": "0.05",
+  "tokens": 100
 }

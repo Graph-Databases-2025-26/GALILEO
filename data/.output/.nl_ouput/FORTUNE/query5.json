@@ -1,7 +1,18 @@
 {
-  "result_set": {
-    "error": "No valid JSON found"
-  },
-  "time": 1.869,
+  "result_set": [
+    {
+      "Company": "Dell Technologies"
+    },
+    {
+      "Company": "Nvidia"
+    },
+    {
+      "Company": "Micron Technology"
+    },
+    {
+      "Company": "Super Micro Computer"
+    }
+  ],
+  "time": 0,
   "tokens": 0
 }

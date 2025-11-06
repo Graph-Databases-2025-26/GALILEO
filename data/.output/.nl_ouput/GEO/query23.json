@@ -1,10 +1,206 @@
 {
   "result_set": [
     {
-      "?\n\n<capital_not_major_city>": "<value>\n\nNote: This question is ambiguous as it depends on the definition of \"major city\". However",
-      "here are a few examples": "<capital_not_major_city_1>:<value>\n<capital_not_major_city_2>:<value>\n<capital_not_major_city_3>:<value>\n\n<capital_not_major_city_1>:<value>\n<capital_not_major_city_2>:<value>\n<capital_not_major_city_3>:<value>\n\n<capital_not_major_city_1>:<value>\n<capital_not_major_city_2>:<value>\n<capital_not_major_city_3>:<value>\n\n<capital_not_major_city_1>:<value>\n<capital_not_major_city_"
+      "capital": "Palikir",
+      "country": "Federated States of Micronesia"
+    },
+    {
+      "capital": "Ngerulmud",
+      "country": "Palau"
+    },
+    {
+      "capital": "Yaren",
+      "country": "Nauru"
+    },
+    {
+      "capital": "Funafuti",
+      "country": "Tuvalu"
+    },
+    {
+      "capital": "Vatican City",
+      "country": "Vatican City"
+    },
+    {
+      "capital": "Belmopan",
+      "country": "Belize"
+    },
+    {
+      "capital": "Naypyidaw",
+      "country": "Myanmar"
+    },
+    {
+      "capital": "Dodoma",
+      "country": "Tanzania"
+    },
+    {
+      "capital": "Gaborone",
+      "country": "Botswana"
+    },
+    {
+      "capital": "Banjul",
+      "country": "The Gambia"
+    },
+    {
+      "capital": "Castries",
+      "country": "Saint Lucia"
+    },
+    {
+      "capital": "Roseau",
+      "country": "Dominica"
+    },
+    {
+      "capital": "Basseterre",
+      "country": "Saint Kitts and Nevis"
+    },
+    {
+      "capital": "Kingstown",
+      "country": "Saint Vincent and the Grenadines"
+    },
+    {
+      "capital": "Nuku'alofa",
+      "country": "Tonga"
+    },
+    {
+      "capital": "Apia",
+      "country": "Samoa"
+    },
+    {
+      "capital": "Honiara",
+      "country": "Solomon Islands"
+    },
+    {
+      "capital": "Port Vila",
+      "country": "Vanuatu"
+    },
+    {
+      "capital": "Tarawa",
+      "country": "Kiribati"
+    },
+    {
+      "capital": "Majuro",
+      "country": "Marshall Islands"
+    },
+    {
+      "capital": "Thimphu",
+      "country": "Bhutan"
+    },
+    {
+      "capital": "Malé",
+      "country": "Maldives"
+    },
+    {
+      "capital": "Paramaribo",
+      "country": "Suriname"
+    },
+    {
+      "capital": "Georgetown",
+      "country": "Guyana"
+    },
+    {
+      "capital": "Bissau",
+      "country": "Guinea-Bissau"
+    },
+    {
+      "capital": "Praia",
+      "country": "Cape Verde"
+    },
+    {
+      "capital": "São Tomé",
+      "country": "São Tomé and Príncipe"
+    },
+    {
+      "capital": "Moroni",
+      "country": "Comoros"
+    },
+    {
+      "capital": "Djibouti City",
+      "country": "Djibouti"
+    },
+    {
+      "capital": "Asmara",
+      "country": "Eritrea"
+    },
+    {
+      "capital": "Nouakchott",
+      "country": "Mauritania"
+    },
+    {
+      "capital": "N'Djamena",
+      "country": "Chad"
+    },
+    {
+      "capital": "Bangui",
+      "country": "Central African Republic"
+    },
+    {
+      "capital": "Juba",
+      "country": "South Sudan"
+    },
+    {
+      "capital": "Port Moresby",
+      "country": "Papua New Guinea"
+    },
+    {
+      "capital": "Suva",
+      "country": "Fiji"
+    },
+    {
+      "capital": "Vientiane",
+      "country": "Laos"
+    },
+    {
+      "capital": "Maseru",
+      "country": "Lesotho"
+    },
+    {
+      "capital": "Mbabane",
+      "country": "Eswatini"
+    },
+    {
+      "capital": "San Marino",
+      "country": "San Marino"
+    },
+    {
+      "capital": "Monaco",
+      "country": "Monaco"
+    },
+    {
+      "capital": "Andorra la Vella",
+      "country": "Andorra"
+    },
+    {
+      "capital": "Vaduz",
+      "country": "Liechtenstein"
+    },
+    {
+      "capital": "Bridgetown",
+      "country": "Barbados"
+    },
+    {
+      "capital": "St. George's",
+      "country": "Grenada"
+    },
+    {
+      "capital": "Port Louis",
+      "country": "Mauritius"
+    },
+    {
+      "capital": "Lomé",
+      "country": "Togo"
+    },
+    {
+      "capital": "Porto-Novo",
+      "country": "Benin"
+    },
+    {
+      "capital": "Yamoussoukro",
+      "country": "Côte d'Ivoire"
+    },
+    {
+      "capital": "Sri Jayawardenepura Kotte",
+      "country": "Sri Lanka"
     }
   ],
-  "time": 0.182934,
-  "tokens": 347
+  "time": "0.50",
+  "tokens": 1500
 }

@@ -1,9 +1,9 @@
 {
   "result_set": [
     {
-      "?\n\n<number_of_states_in_the_usa>": "50"
+      "number_of_states": 50
     }
   ],
-  "time": 0.203796,
-  "tokens": 165
+  "time": "0.001s",
+  "tokens": 5
 }

@@ -1,17 +1,36 @@
 {
   "result_set": [
     {
-      "Netherlands": "-3",
-      "Colombia": "2610",
-      "USA": "16110",
-      "Mexico": "2250",
-      "Panama": "45",
-      "El Salvador": "-10",
-      "Ecuador": "-15",
-      "Peru": "29",
-      "Chile": "600"
+      "airport_name": "London City Airport"
+    },
+    {
+      "airport_name": "Amsterdam Airport Schiphol"
+    },
+    {
+      "airport_name": "Copenhagen Airport"
+    },
+    {
+      "airport_name": "Malmö Airport"
+    },
+    {
+      "airport_name": "Brussels Airport"
+    },
+    {
+      "airport_name": "Hamburg Airport"
+    },
+    {
+      "airport_name": "Bremen Airport"
+    },
+    {
+      "airport_name": "Dublin Airport"
+    },
+    {
+      "airport_name": "Edinburgh Airport"
+    },
+    {
+      "airport_name": "Glasgow Airport"
     }
   ],
-  "time": 0.199079,
-  "tokens": 357
+  "time": 0.085,
+  "tokens": 120
 }

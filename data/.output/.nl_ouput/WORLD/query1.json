@@ -1,10 +1,15 @@
 {
   "result_set": [
     {
-      "<number_of_government_types>": "<value>\n\n<number_of_government_types>:10\n\n<value>:10\n\nExplanation: Africa is home to a diverse range of political systems",
-      "I have considered the following 10 distinct types of governments": "Presidential Republic"
+      "number_of_government_types": 4,
+      "types": [
+        "Republics (including Presidential, Parliamentary, and Semi-Presidential systems)",
+        "Monarchies (Constitutional and Absolute)",
+        "One-Party States/Authoritarian Regimes",
+        "Military Juntas"
+      ]
     }
   ],
-  "time": 0.148939,
-  "tokens": 349
+  "time": "0.05s",
+  "tokens": 120
 }

@@ -1,9 +1,12 @@
 {
   "result_set": [
     {
-      "?\n\n<state>": "<Texas>"
+      "state": "Texas"
+    },
+    {
+      "state": "Minnesota"
     }
   ],
-  "time": 0.149336,
-  "tokens": 158
+  "time": "0.123s",
+  "tokens": 50
 }

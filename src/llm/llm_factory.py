@@ -7,8 +7,7 @@ from src.utils.logging_config import logger
 
 def create_llm(provider: str, temperature: float = 0.1):
     """
-    Restituisce un'istanza di LLM per il provider specificato.
-    Supporta 'gemini' e 'watsonx'.
+    Provide an LLM instance for the specified provider.
     """
     provider = provider.lower()
 
@@ -42,4 +41,4 @@ def create_llm(provider: str, temperature: float = 0.1):
         )
 
     else:
-        raise ValueError(f"Provider LLM non supportato: {provider}")
+        raise ValueError(f"LLM provider not supported: {provider}")

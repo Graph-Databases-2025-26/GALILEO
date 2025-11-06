@@ -1,12 +1,36 @@
 {
-  "result_set": {
-    "player_name": "Player B",
-    "player_of_the_match_team": "Team B",
-    "home_team": "Team A",
-    "home_goals": 50,
-    "away_team": "Team B",
-    "away_goals": 45
-  },
-  "time": 1.849,
+  "result_set": [
+    {
+      "player_of_the_match": "Bukayo Saka"
+    },
+    {
+      "player_of_the_match": "Erling Haaland"
+    },
+    {
+      "player_of_the_match": "Phil Foden"
+    },
+    {
+      "player_of_the_match": "Mohamed Salah"
+    },
+    {
+      "player_of_the_match": "Cole Palmer"
+    },
+    {
+      "player_of_the_match": "Declan Rice"
+    },
+    {
+      "player_of_the_match": "Bruno Fernandes"
+    },
+    {
+      "player_of_the_match": "Son Heung-min"
+    },
+    {
+      "player_of_the_match": "Ollie Watkins"
+    },
+    {
+      "player_of_the_match": "Jarrod Bowen"
+    }
+  ],
+  "time": 0,
   "tokens": 0
 }

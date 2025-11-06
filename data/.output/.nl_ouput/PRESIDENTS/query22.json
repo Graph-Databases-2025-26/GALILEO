@@ -1,11 +1,9 @@
 {
   "result_set": [
     {
-      "and the year he took office.\n\nWhig": "<value>\n\nThe last USA president from the Whig party was Zachary Taylor. He took office on March 4",
-      "1849.\n\nWhig": "<Zachary Taylor>",
-      "Year": "<1849>"
+      "name": "Millard Fillmore"
     }
   ],
-  "time": 0.112989,
-  "tokens": 219
+  "time": "0.001",
+  "tokens": 15
 }

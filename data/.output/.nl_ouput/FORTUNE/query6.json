@@ -1,10 +1,39 @@
 {
-  "result_set": {
-    "CEO": "name",
-    "Company": "name",
-    "Number_of_employees": "total_number",
-    "RevenuePercentChange": "average_growth_percentage"
-  },
-  "time": 1.876,
+  "result_set": [
+    {
+      "CEO": "Gail K. Boudreaux"
+    },
+    {
+      "CEO": "Christy W. Freeland"
+    },
+    {
+      "CEO": "Laura J. Schumacher"
+    },
+    {
+      "CEO": "Lisa M. Schwan"
+    },
+    {
+      "CEO": "Mary Beth Westmoreland"
+    },
+    {
+      "CEO": "Amy E. Miles"
+    },
+    {
+      "CEO": "Mary Dillon"
+    },
+    {
+      "CEO": "Lisa M. Schwan"
+    },
+    {
+      "CEO": "Mary Beth Westmoreland"
+    },
+    {
+      "CEO": "Amy E. Miles"
+    },
+    {
+      "CEO": "Mary Dillon"
+    }
+  ],
+  "time": 0,
   "tokens": 0
 }

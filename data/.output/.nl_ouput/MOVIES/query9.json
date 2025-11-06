@@ -1,9 +1,13 @@
 {
   "result_set": [
     {
-      "in the world.\n\ndirector": "<value>\n\nThe oldest film director in the world is Wes Craven. He was born on July 25"
+      "director_name": "Manoel de Oliveira",
+      "birth_year": 1908,
+      "death_year": 2015,
+      "age_at_death": 106,
+      "nationality": "Portuguese"
     }
   ],
-  "time": 0.176988,
-  "tokens": 221
+  "time": 0.0,
+  "tokens": 0
 }

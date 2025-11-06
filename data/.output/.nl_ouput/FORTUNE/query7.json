@@ -1,7 +1,10 @@
 {
-  "result_set": {
-    "error": "No valid JSON found"
-  },
-  "time": 1.915,
-  "tokens": 0
+  "result_set": [
+    {
+      "Company": "Southwest Airlines"
+    },
+    {
+      "Company": "Delta Air Lines"
+    }
+  ]
 }

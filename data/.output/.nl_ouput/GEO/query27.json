@@ -1,25 +1,126 @@
 {
   "result_set": [
     {
-      ".\n\nCalifornia": "<state>",
-      "39512223": "<population>",
-      "Sacramento": "<capital>\nTexas:<state>",
-      "29145505": "<population>",
-      "Austin": "<capital>\nFlorida:<state>",
-      "21477737": "<population>",
-      "Tallahassee": "<capital>\nNew York:<state>",
-      "19453561": "<population>",
-      "Albany": "<capital>\nIllinois:<state>",
-      "12671821": "<population>",
-      "Springfield": "<capital>\nPennsylvania:<state>",
-      "12801989": "<population>",
-      "Harrisburg": "<capital>\nOhio:<state>",
-      "11799448": "<population>",
-      "Columbus": "<capital>\nGeorgia:<state>",
-      "10617423": "<population>",
-      "Atlanta": "<capital>\nNorth Car"
+      "state_name": "California",
+      "population": 39000000,
+      "capital": "Sacramento"
+    },
+    {
+      "state_name": "Texas",
+      "population": 30000000,
+      "capital": "Austin"
+    },
+    {
+      "state_name": "Florida",
+      "population": 22000000,
+      "capital": "Tallahassee"
+    },
+    {
+      "state_name": "New York",
+      "population": 19500000,
+      "capital": "Albany"
+    },
+    {
+      "state_name": "Pennsylvania",
+      "population": 13000000,
+      "capital": "Harrisburg"
+    },
+    {
+      "state_name": "Illinois",
+      "population": 12500000,
+      "capital": "Springfield"
+    },
+    {
+      "state_name": "Ohio",
+      "population": 11800000,
+      "capital": "Columbus"
+    },
+    {
+      "state_name": "Georgia",
+      "population": 11000000,
+      "capital": "Atlanta"
+    },
+    {
+      "state_name": "North Carolina",
+      "population": 10800000,
+      "capital": "Raleigh"
+    },
+    {
+      "state_name": "Michigan",
+      "population": 10000000,
+      "capital": "Lansing"
+    },
+    {
+      "state_name": "New Jersey",
+      "population": 9300000,
+      "capital": "Trenton"
+    },
+    {
+      "state_name": "Virginia",
+      "population": 8700000,
+      "capital": "Richmond"
+    },
+    {
+      "state_name": "Washington",
+      "population": 7800000,
+      "capital": "Olympia"
+    },
+    {
+      "state_name": "Arizona",
+      "population": 7400000,
+      "capital": "Phoenix"
+    },
+    {
+      "state_name": "Massachusetts",
+      "population": 7000000,
+      "capital": "Boston"
+    },
+    {
+      "state_name": "Tennessee",
+      "population": 7000000,
+      "capital": "Nashville"
+    },
+    {
+      "state_name": "Indiana",
+      "population": 6800000,
+      "capital": "Indianapolis"
+    },
+    {
+      "state_name": "Maryland",
+      "population": 6200000,
+      "capital": "Annapolis"
+    },
+    {
+      "state_name": "Missouri",
+      "population": 6200000,
+      "capital": "Jefferson City"
+    },
+    {
+      "state_name": "Colorado",
+      "population": 5800000,
+      "capital": "Denver"
+    },
+    {
+      "state_name": "Wisconsin",
+      "population": 5900000,
+      "capital": "Madison"
+    },
+    {
+      "state_name": "Minnesota",
+      "population": 5700000,
+      "capital": "Saint Paul"
+    },
+    {
+      "state_name": "South Carolina",
+      "population": 5300000,
+      "capital": "Columbia"
+    },
+    {
+      "state_name": "Alabama",
+      "population": 5100000,
+      "capital": "Montgomery"
     }
   ],
-  "time": 0.200531,
-  "tokens": 364
+  "time": "0.05",
+  "tokens": 500
 }

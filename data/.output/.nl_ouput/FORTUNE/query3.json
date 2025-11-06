@@ -1,8 +1,8 @@
 {
-  "result_set": {
-    "Company": "Microsoft Corporation",
-    "HeadquartersState": "Washington"
-  },
-  "time": 1.901,
-  "tokens": 0
+  "result_set": [
+    {
+      "Company": "Walmart",
+      "HeadquartersState": "Arkansas"
+    }
+  ]
 }

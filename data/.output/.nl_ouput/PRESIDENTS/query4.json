@@ -1,9 +1,5 @@
 {
-  "result_set": [
-    {
-      "Democratic Party.\n\n<key>": "<value>\nVenezuela_presidents_Liberal_Democratic_Party:<value_not_available>\n\nExplanation: There is no information available about Venezuela presidents from the Liberal Democratic Party"
-    }
-  ],
-  "time": 0.120537,
-  "tokens": 283
+  "result_set": [],
+  "time": 0.0,
+  "tokens": 0
 }

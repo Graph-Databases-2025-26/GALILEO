@@ -1,10 +1,18 @@
 {
   "result_set": [
     {
-      ".\n\nGeorge H.W. Bush": "<Republican>",
-      "George W. Bush": "<Republican>"
+      "name": "Ronald Reagan"
+    },
+    {
+      "name": "George H.W. Bush"
+    },
+    {
+      "name": "George W. Bush"
+    },
+    {
+      "name": "Donald Trump"
     }
   ],
-  "time": 0.16752,
-  "tokens": 185
+  "time": "0.05",
+  "tokens": "50"
 }

@@ -1,9 +1,9 @@
 {
   "result_set": [
     {
-      "'s career.\n\nyear": "1990"
+      "most_prolific_year": 2012
     }
   ],
-  "time": 0.239006,
-  "tokens": 162
+  "time": 0.05,
+  "tokens": 30
 }

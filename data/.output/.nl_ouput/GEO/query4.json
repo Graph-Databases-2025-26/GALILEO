@@ -1,9 +1,10 @@
 {
   "result_set": [
     {
-      "arizona?\n\npopulation": "176"
+      "city": "Tempe",
+      "population": "180,587 (as of 2020 Census)"
     }
   ],
-  "time": 0.148418,
-  "tokens": 173
+  "time": 0.0,
+  "tokens": 0
 }

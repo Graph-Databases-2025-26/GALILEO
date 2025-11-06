@@ -1,11 +1,9 @@
 {
   "result_set": [
     {
-      "located?\n\nstate": "<Massachusetts>",
-      "location": "<New England region of the northeastern United States>",
-      "bordering_states": "<Connecticut"
+      "location": "Massachusetts is a state located in the New England region of the Northeastern United States."
     }
   ],
-  "time": 0.155358,
-  "tokens": 195
+  "time": 0,
+  "tokens": 0
 }

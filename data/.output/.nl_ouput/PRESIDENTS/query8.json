@@ -1,10 +1,9 @@
 {
   "result_set": [
     {
-      "<number_of_presidents>": "<2>",
-      "<presidents_names>": "<Rafael Caldera"
+      "count": 1
     }
   ],
-  "time": 0.27052,
-  "tokens": 200
+  "time": 0.123,
+  "tokens": 150
 }

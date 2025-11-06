@@ -1,9 +1,90 @@
 {
   "result_set": [
     {
-      "result": "and released in 1950.\n\n1. \"The Young Philadelphians\"\n2. \"The Lost Patrol\"\n3. \"The Magnificent Matador\"\n4. \"The Loves of Carmen\"\n5. \"The Great Caruso\"\n6. \"The Lone Ranger\"\n7. \"The Lone Star\"\n8. \"The Lone Wolf Strikes Back\"\n9. \"The Lone Wolf in London\"\n10. \"The Lone Wolf Returns\"\n11. \"The Lone Wolf Keeps a Date\"\n12. \"The Lone Wolf Meets a Lady\"\n13. \"The Lone Wolf in New York\"\n14. \"The Lone Wolf's Daughter\"\n15. \"The Lone Wolf Walks Alone\"\n16."
+      "title": "Ivanhoe"
+    },
+    {
+      "title": "The Prisoner of Zenda"
+    },
+    {
+      "title": "The Great Caruso"
+    },
+    {
+      "title": "Fun in Acapulco"
+    },
+    {
+      "title": "The Student Prince"
+    },
+    {
+      "title": "All the Brothers Were Valiant"
+    },
+    {
+      "title": "Knights of the Round Table"
+    },
+    {
+      "title": "The Thin Man Goes Home"
+    },
+    {
+      "title": "Tarzan Escapes"
+    },
+    {
+      "title": "Tarzan Finds a Son"
+    },
+    {
+      "title": "Tarzan's Secret Treasure"
+    },
+    {
+      "title": "Tarzan's New York Adventure"
+    },
+    {
+      "title": "The Crowd Roars"
+    },
+    {
+      "title": "Night Must Fall"
+    },
+    {
+      "title": "The Earl of Chicago"
+    },
+    {
+      "title": "Huckleberry Finn"
+    },
+    {
+      "title": "Vengeance Valley"
+    },
+    {
+      "title": "Three Little Words"
+    },
+    {
+      "title": "The Last Challenge"
+    },
+    {
+      "title": "The Golden Horde"
+    },
+    {
+      "title": "The Black Hand"
+    },
+    {
+      "title": "The Prodigal"
+    },
+    {
+      "title": "Tip on a Dead Jockey"
+    },
+    {
+      "title": "The House of the Seven Hawks"
+    },
+    {
+      "title": "Killers of Kilimanjaro"
+    },
+    {
+      "title": "The Tartars"
+    },
+    {
+      "title": "The Honeymoon Machine"
+    },
+    {
+      "title": "The Horizontal Lieutenant"
     }
   ],
-  "time": 0.171588,
-  "tokens": 351
+  "time": "0.05",
+  "tokens": 250
 }

@@ -1,9 +1,10 @@
 {
   "result_set": [
     {
-      "JetBlue Airways": "N601JB"
+      "airline_name": "JetBlue Airways",
+      "call_sign": "JETBLUE"
     }
   ],
-  "time": 0.135209,
-  "tokens": 167
+  "time": 0.0,
+  "tokens": 0
 }

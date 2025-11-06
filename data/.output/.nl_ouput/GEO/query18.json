@@ -1,10 +1,9 @@
 {
   "result_set": [
     {
-      "in the united states?\n\n<number_of_states>": "<value>",
-      "<major_river>": "<value>\n\n1"
+      "count": 49
     }
   ],
-  "time": 0.187408,
-  "tokens": 348
+  "time": "0.05s",
+  "tokens": 150
 }

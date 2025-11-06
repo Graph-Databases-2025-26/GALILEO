@@ -1,16 +1,98 @@
 {
   "result_set": [
     {
-      ".\n\nCalifornia": "<value>",
-      "Texas": "Austin",
-      "Florida": "Tallahassee",
-      "New York": "Albany",
-      "Illinois": "Springfield\n\n[Explanation] The states with a population greater than 5",
-      "and Springfield.\n\nNote": "The population density of these states is lower than 1000",
-      "but the exact values are not provided in the question. The given answer is based on general knowledge and assumes that these states meet the criteria.\n\n<key>": "<value>",
-      "<key>": "<value>"
+      "state_name": "California",
+      "capital": "Sacramento"
+    },
+    {
+      "state_name": "Texas",
+      "capital": "Austin"
+    },
+    {
+      "state_name": "Florida",
+      "capital": "Tallahassee"
+    },
+    {
+      "state_name": "New York",
+      "capital": "Albany"
+    },
+    {
+      "state_name": "Pennsylvania",
+      "capital": "Harrisburg"
+    },
+    {
+      "state_name": "Illinois",
+      "capital": "Springfield"
+    },
+    {
+      "state_name": "Ohio",
+      "capital": "Columbus"
+    },
+    {
+      "state_name": "Georgia",
+      "capital": "Atlanta"
+    },
+    {
+      "state_name": "North Carolina",
+      "capital": "Raleigh"
+    },
+    {
+      "state_name": "Michigan",
+      "capital": "Lansing"
+    },
+    {
+      "state_name": "Virginia",
+      "capital": "Richmond"
+    },
+    {
+      "state_name": "Washington",
+      "capital": "Olympia"
+    },
+    {
+      "state_name": "Arizona",
+      "capital": "Phoenix"
+    },
+    {
+      "state_name": "Massachusetts",
+      "capital": "Boston"
+    },
+    {
+      "state_name": "Tennessee",
+      "capital": "Nashville"
+    },
+    {
+      "state_name": "Indiana",
+      "capital": "Indianapolis"
+    },
+    {
+      "state_name": "Maryland",
+      "capital": "Annapolis"
+    },
+    {
+      "state_name": "Missouri",
+      "capital": "Jefferson City"
+    },
+    {
+      "state_name": "Colorado",
+      "capital": "Denver"
+    },
+    {
+      "state_name": "Wisconsin",
+      "capital": "Madison"
+    },
+    {
+      "state_name": "Minnesota",
+      "capital": "Saint Paul"
+    },
+    {
+      "state_name": "South Carolina",
+      "capital": "Columbia"
+    },
+    {
+      "state_name": "Alabama",
+      "capital": "Montgomery"
     }
   ],
-  "time": 0.186976,
-  "tokens": 373
+  "time": "0.00",
+  "tokens": 0
 }

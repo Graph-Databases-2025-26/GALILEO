@@ -7,7 +7,7 @@ from src.utils.logging_config import logger
 
 def extract_all_json_objects(text: str):
     json_objects = []
-    # regex che tenta di catturare oggetti JSON {...}
+    # regex for capture JSON structures {...}
     matches = re.findall(r'\{[^{}]*\}', text, re.DOTALL)
     for match in matches:
         try:
@@ -17,7 +17,6 @@ def extract_all_json_objects(text: str):
             continue
     if not json_objects:
         return {"error": "No valid JSON found"}
-    # qui puoi decidere come combinare, ad esempio in un unico dict o lista
     combined = {}
     for obj in json_objects:
         combined.update(obj)
@@ -26,8 +25,8 @@ def extract_all_json_objects(text: str):
 
 def extract_json_from_response(response_text: str):
     """
-        Estrae il blocco JSON da una risposta LLM in formato Jinja o Markdown.
-        Supporta sia stringhe che dizionari.
+        Extract the JSON block from a LLM response in Jinja format.
+        Strings and dictionaries addicted.
         """
     # Se è un dict (come nel tuo caso), prendiamo il campo 'text'
     if isinstance(response_text, dict):
@@ -36,14 +35,14 @@ def extract_json_from_response(response_text: str):
         else:
             response_text = str(response_text)
 
-    # Se non è ancora stringa, forziamo la conversione
+    # If not a string, force the conversion
     if not isinstance(response_text, str):
         response_text = str(response_text)
 
     # Cerca il blocco tra ```json ... ```
     match = re.search(r"```json\s*(\{.*?\})\s*```", response_text, re.DOTALL)
     if not match:
-        print("⚠️ Nessun blocco JSON trovato nella risposta.")
+        logger.info("Any JSON block found.")
         return {}
 
     json_str = match.group(1)
@@ -51,8 +50,8 @@ def extract_json_from_response(response_text: str):
         data = json.loads(json_str)
         return data
     except json.JSONDecodeError as e:
-        print(f"❌ Errore nel parsing JSON: {e}")
-        print(f"Contenuto problematico:\n{json_str[:200]}...")
+        logger.info(f"❌ Errore nel parsing JSON: {e}")
+        logger.info(f"Bad content:\n{json_str[:200]}...")
         return {}
 
 def save_llm_response_to_file(dataset_name, data, index):

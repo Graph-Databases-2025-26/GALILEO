@@ -1,10 +1,11 @@
 {
   "result_set": [
     {
-      "?\n\n<area>": "<value>\n\n<area>:New Mexico",
-      "<value>": "121"
+      "state": "New Mexico",
+      "area_square_miles": 121590,
+      "area_square_kilometers": 314917
     }
   ],
-  "time": 0.180872,
-  "tokens": 190
+  "time": "0.05",
+  "tokens": 50
 }

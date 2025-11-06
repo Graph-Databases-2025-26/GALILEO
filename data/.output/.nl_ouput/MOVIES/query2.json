@@ -1,9 +1,111 @@
 {
   "result_set": [
     {
-      "that were released in 1993.\n\n1. Schindler's List": "<1993>\n2. Jurassic Park:<1993>\n3. Raiders of the Lost Ark:<1981>\n4. E.T. the Extra-Terrestrial:<1982>\n5. Indiana Jones and the Last Crusade:<1989>\n6. The Color Purple:<1985>\n7. Empire of the Sun:<1987>\n8. Always:<1989>\n9. Hook:<1991>\n10. Amistad:<1997>\n11. Catch Me If You Can:<2002>\n12. Munich:<2005>\n13. War of the Worlds:<2005>"
+      "title": "Duel"
+    },
+    {
+      "title": "The Sugarland Express"
+    },
+    {
+      "title": "Jaws"
+    },
+    {
+      "title": "Close Encounters of the Third Kind"
+    },
+    {
+      "title": "1941"
+    },
+    {
+      "title": "Raiders of the Lost Ark"
+    },
+    {
+      "title": "E.T. the Extra-Terrestrial"
+    },
+    {
+      "title": "Twilight Zone: The Movie"
+    },
+    {
+      "title": "Indiana Jones and the Temple of Doom"
+    },
+    {
+      "title": "The Color Purple"
+    },
+    {
+      "title": "Empire of the Sun"
+    },
+    {
+      "title": "Indiana Jones and the Last Crusade"
+    },
+    {
+      "title": "Always"
+    },
+    {
+      "title": "Hook"
+    },
+    {
+      "title": "Jurassic Park"
+    },
+    {
+      "title": "Schindler's List"
+    },
+    {
+      "title": "The Lost World: Jurassic Park"
+    },
+    {
+      "title": "Amistad"
+    },
+    {
+      "title": "Saving Private Ryan"
+    },
+    {
+      "title": "A.I. Artificial Intelligence"
+    },
+    {
+      "title": "Minority Report"
+    },
+    {
+      "title": "Catch Me If You Can"
+    },
+    {
+      "title": "The Terminal"
+    },
+    {
+      "title": "War of the Worlds"
+    },
+    {
+      "title": "Munich"
+    },
+    {
+      "title": "Indiana Jones and the Kingdom of the Crystal Skull"
+    },
+    {
+      "title": "The Adventures of Tintin"
+    },
+    {
+      "title": "War Horse"
+    },
+    {
+      "title": "Lincoln"
+    },
+    {
+      "title": "Bridge of Spies"
+    },
+    {
+      "title": "The BFG"
+    },
+    {
+      "title": "The Post"
+    },
+    {
+      "title": "Ready Player One"
+    },
+    {
+      "title": "West Side Story"
+    },
+    {
+      "title": "The Fabelmans"
     }
   ],
-  "time": 0.198018,
-  "tokens": 352
+  "time": 0.123,
+  "tokens": 450
 }

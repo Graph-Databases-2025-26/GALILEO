@@ -1,10 +1,5 @@
 {
-  "result_set": [
-    {
-      ".\n\nJohn Quincy Adams": "Conservative",
-      "6th\n\nExplanation": "John Quincy Adams is often considered a conservative president due to his political views and policies. He was a member of the Democratic-Republican Party"
-    }
-  ],
-  "time": 0.197287,
-  "tokens": 331
+  "result_set": [],
+  "time": 0.0,
+  "tokens": 0
 }

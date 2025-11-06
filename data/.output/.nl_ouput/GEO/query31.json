@@ -1,10 +1,76 @@
 {
   "result_set": [
     {
-      "square kilometers.\n\nCalifornia": "<key>:state",
-      "<value>": "Tallahassee\nTexas:<key>:"
+      "state_name": "Arkansas",
+      "capital": "Little Rock",
+      "population": 3060000
+    },
+    {
+      "state_name": "Nevada",
+      "capital": "Carson City",
+      "population": 3100000
+    },
+    {
+      "state_name": "Iowa",
+      "capital": "Des Moines",
+      "population": 3200000
+    },
+    {
+      "state_name": "Utah",
+      "capital": "Salt Lake City",
+      "population": 3400000
+    },
+    {
+      "state_name": "Oklahoma",
+      "capital": "Oklahoma City",
+      "population": 4000000
+    },
+    {
+      "state_name": "Oregon",
+      "capital": "Salem",
+      "population": 4200000
+    },
+    {
+      "state_name": "Louisiana",
+      "capital": "Baton Rouge",
+      "population": 4600000
+    },
+    {
+      "state_name": "Alabama",
+      "capital": "Montgomery",
+      "population": 5100000
+    },
+    {
+      "state_name": "Minnesota",
+      "capital": "Saint Paul",
+      "population": 5700000
+    },
+    {
+      "state_name": "Colorado",
+      "capital": "Denver",
+      "population": 5800000
+    },
+    {
+      "state_name": "Wisconsin",
+      "capital": "Madison",
+      "population": 5900000
+    },
+    {
+      "state_name": "Missouri",
+      "capital": "Jefferson City",
+      "population": 6100000
+    },
+    {
+      "state_name": "Arizona",
+      "capital": "Phoenix",
+      "population": 7400000
+    },
+    {
+      "state_name": "Washington",
+      "capital": "Olympia",
+      "population": 7800000
     }
   ],
-  "time": 0.201177,
-  "tokens": 389
+  "time": 0.0,
+  "tokens": 0
 }

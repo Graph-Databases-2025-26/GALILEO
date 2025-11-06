@@ -1,9 +1,72 @@
 {
   "result_set": [
     {
-      "?\n\n<major_cities_usa>": "<New York City"
+      "city": "New York City, NY"
+    },
+    {
+      "city": "Los Angeles, CA"
+    },
+    {
+      "city": "Chicago, IL"
+    },
+    {
+      "city": "Houston, TX"
+    },
+    {
+      "city": "Phoenix, AZ"
+    },
+    {
+      "city": "Philadelphia, PA"
+    },
+    {
+      "city": "San Antonio, TX"
+    },
+    {
+      "city": "San Diego, CA"
+    },
+    {
+      "city": "Dallas, TX"
+    },
+    {
+      "city": "San Jose, CA"
+    },
+    {
+      "city": "Austin, TX"
+    },
+    {
+      "city": "Jacksonville, FL"
+    },
+    {
+      "city": "Fort Worth, TX"
+    },
+    {
+      "city": "Columbus, OH"
+    },
+    {
+      "city": "Charlotte, NC"
+    },
+    {
+      "city": "Indianapolis, IN"
+    },
+    {
+      "city": "San Francisco, CA"
+    },
+    {
+      "city": "Seattle, WA"
+    },
+    {
+      "city": "Denver, CO"
+    },
+    {
+      "city": "Washington, D.C."
+    },
+    {
+      "city": "Boston, MA"
+    },
+    {
+      "city": "Miami, FL"
     }
   ],
-  "time": 0.195829,
-  "tokens": 197
+  "time": 0.0,
+  "tokens": 0
 }

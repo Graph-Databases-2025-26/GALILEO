@@ -1,14 +1,9 @@
 {
-  "result_set": {
-    "day_of_the_week": "",
-    "opponent_team": "",
-    "match_date_month": "August",
-    "match_date_year": 2024,
-    "match_date_day": "",
-    "player_name": "",
-    "team": "Arsenal",
-    "goal_scored": true
-  },
-  "time": 1.858,
+  "result_set": [
+    {
+      "count": 0
+    }
+  ],
+  "time": 0.0,
   "tokens": 0
 }

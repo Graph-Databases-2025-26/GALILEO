@@ -1,9 +1,9 @@
 {
   "result_set": [
     {
-      "?\n\n<number_of_rivers_in_us>": "<approximately_60"
+      "number_of_rivers": "While an exact count is difficult due to varying definitions of what constitutes a 'river' versus a 'stream' or 'creek', it is estimated that there are over 250,000 rivers in the United States."
     }
   ],
-  "time": 0.15027,
-  "tokens": 173
+  "time": 0.1,
+  "tokens": 60
 }

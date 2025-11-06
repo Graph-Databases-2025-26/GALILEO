@@ -1,9 +1,11 @@
 {
   "result_set": [
     {
-      "<GNP>": "The concept of GNP (Gross National Product) is not applicable to US territories as they are not sovereign nations.\n<Total Population>: The total population of US territories (Puerto Rico"
+      "average_gnp": "Data not available",
+      "total_population": "Data not available",
+      "notes": "To provide an accurate answer, I would need access to a dataset containing economic and demographic information for nations/territories, specifically identifying those whose government is a US territory, along with their respective GNP and population figures. Without such a dataset, I cannot calculate the average GNP or total population."
     }
   ],
-  "time": 0.212463,
-  "tokens": 244
+  "time": "N/A",
+  "tokens": "N/A"
 }

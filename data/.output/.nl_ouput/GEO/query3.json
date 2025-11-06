@@ -1,9 +1,9 @@
 {
   "result_set": [
     {
-      "?\n\n<state_capital_count>": "<1>"
+      "Rhode Island Capitals": 1
     }
   ],
-  "time": 0.12434,
-  "tokens": 163
+  "time": 0,
+  "tokens": 0
 }

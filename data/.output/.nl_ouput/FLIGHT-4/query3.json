@@ -1,12 +1,18 @@
 {
   "result_set": [
     {
-      "airport_name": "<John F. Kennedy International Airport>",
-      "city": "<New York>",
-      "country": "<United States>",
-      "altitude": "<10 feet>"
+      "name": "John F. Kennedy International Airport",
+      "city": "New York",
+      "country": "United States",
+      "altitude": "13 feet (4 meters)"
+    },
+    {
+      "name": "LaGuardia Airport",
+      "city": "New York",
+      "country": "United States",
+      "altitude": "21 feet (6 meters)"
     }
   ],
-  "time": 0.153401,
-  "tokens": 257
+  "time": "0.05",
+  "tokens": 150
 }

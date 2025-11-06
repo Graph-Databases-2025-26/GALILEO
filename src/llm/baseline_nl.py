@@ -7,14 +7,12 @@ from langchain_core.prompts import PromptTemplate
 from src.llm.llm_factory import create_llm
 from src.utils.parse_llm_response import save_llm_response_to_file, extract_json_from_response
 from ..utils.constants import *
-#from .watsonx_ai_connection import query_watsonx, process_nl_query_with_watsonx
 from .google_genai_connection import query_internal_knowledge, query_nl_qa_contextual
 from ..db.run_queries_to_json import load_queries_from_folder, load_nl_queries_from_txt
 from ..utils.build_prompt_context import build_prompt_context
 from config import Config_Loader
 from ..utils.dataset_selection import get_dataset_selection
 from ..utils.logging_config import logger
-from datetime import datetime, timezone
 
 #CONFIGURE THE API KEY
 load_dotenv()
@@ -28,10 +26,10 @@ api_key = os.getenv("WATSONX_API_KEY", "").strip()
 """
 def llm_interaction(chosen_datasets: list[str] | None = None):
     """
-    Per ogni cartella in base_folder (dataset),
-    carica file queries_<dataset>.sql,
-    converte ogni query in NL e salva json con i prompt,
-    quindi interroga il modello e stampa risposte.
+    For each folder in the base_folder (dataset),
+    load the `queries_<dataset>.sql` file(s),
+    convert each query to natural language and save a JSON with the prompts,
+    then query the model and print the responses.
     """
     if not os.path.exists(PROMPTS):
         os.makedirs(PROMPTS)
@@ -62,11 +60,10 @@ def llm_interaction(chosen_datasets: list[str] | None = None):
                     #.duckdb path
                     duckdb_path = os.path.join(DATA_DIR, dataset_name, f"{dataset_name.lower()}.duckdb")
                     if duckdb_path:
-                            print(f"Found duckdb path: {duckdb_path}")
+                            logger.info(f"Found duckdb path: {duckdb_path}")
 
                     #Embedd some context
                     context_prompt = build_prompt_context(dataset_name)
-                    full_prompt = f"{context_prompt} {prompt}"
 
                     #WATSONX
                     #response = process_nl_query_with_watsonx(full_prompt, duckdb_path)
@@ -113,12 +110,9 @@ def llm_interaction(chosen_datasets: list[str] | None = None):
 
 
 def build_chain(prompt: str, template_path: str, llm, extra_context: str = ""):
-    """Crea la chain LangChain con un modello LLM generico."""
-    """Crea la chain LangChain con un modello LLM generico, usando Jinja2."""
+    """Create the LangChain chain using a generic LLM model via Jinja2."""
     env = Environment(loader=FileSystemLoader(searchpath=os.path.dirname(LLM_TEMPLATE)))
     template = env.get_template(os.path.basename(template_path))
-
-    #safe_json_format = FULL_JSON_FORMAT.replace("{", "{{").replace("}", "}}")
 
     rendered_text = template.render(
         template_text=open(template_path).read(),
@@ -160,7 +154,7 @@ def llm_interaction_second_version(dataset_name: str, duck_db_path: str, prompt:
 
 
     if dataset_name in IK_DATASETS:
-        logger.info(f"→ Dataset {dataset_name} identificato come gruppo IK.")
+        logger.info(f"→ Dataset {dataset_name} identified as IK.")
         chain = build_chain(
             prompt=prompt,
             template_path=LLM_TEMPLATE,
@@ -170,7 +164,7 @@ def llm_interaction_second_version(dataset_name: str, duck_db_path: str, prompt:
         response = chain.invoke({"prompt": prompt})
 
     elif dataset_name in MC_DATASETS:
-        logger.info(f"→ Dataset {dataset_name} identificato come gruppo MC.")
+        logger.info(f"→ Dataset {dataset_name} identified as MC.")
         knowledge = load_knowledge_from_db(duck_db_path)
 
         chain = build_chain(

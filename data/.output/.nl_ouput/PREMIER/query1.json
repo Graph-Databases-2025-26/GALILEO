@@ -1,11 +1,234 @@
 {
-  "result_set": {
-    "day_of_the_week": "Saturday",
-    "opponent_team": "Liverpool",
-    "match_date_month": "October",
-    "match_date_year": 2024,
-    "match_date_day": 7
-  },
-  "time": 2.054,
+  "result_set": [
+    {
+      "match_date_year": 2024,
+      "match_date_month": "August",
+      "match_date_day": 17,
+      "opponent_team": "Wolverhampton Wanderers"
+    },
+    {
+      "match_date_year": 2024,
+      "match_date_month": "August",
+      "match_date_day": 24,
+      "opponent_team": "Aston Villa"
+    },
+    {
+      "match_date_year": 2024,
+      "match_date_month": "August",
+      "match_date_day": 31,
+      "opponent_team": "Brighton & Hove Albion"
+    },
+    {
+      "match_date_year": 2024,
+      "match_date_month": "September",
+      "match_date_day": 14,
+      "opponent_team": "Tottenham Hotspur"
+    },
+    {
+      "match_date_year": 2024,
+      "match_date_month": "September",
+      "match_date_day": 21,
+      "opponent_team": "Manchester City"
+    },
+    {
+      "match_date_year": 2024,
+      "match_date_month": "September",
+      "match_date_day": 28,
+      "opponent_team": "Leicester City"
+    },
+    {
+      "match_date_year": 2024,
+      "match_date_month": "October",
+      "match_date_day": 5,
+      "opponent_team": "Crystal Palace"
+    },
+    {
+      "match_date_year": 2024,
+      "match_date_month": "October",
+      "match_date_day": 19,
+      "opponent_team": "Chelsea"
+    },
+    {
+      "match_date_year": 2024,
+      "match_date_month": "October",
+      "match_date_day": 26,
+      "opponent_team": "Liverpool"
+    },
+    {
+      "match_date_year": 2024,
+      "match_date_month": "November",
+      "match_date_day": 2,
+      "opponent_team": "Newcastle United"
+    },
+    {
+      "match_date_year": 2024,
+      "match_date_month": "November",
+      "match_date_day": 9,
+      "opponent_team": "West Ham United"
+    },
+    {
+      "match_date_year": 2024,
+      "match_date_month": "November",
+      "match_date_day": 23,
+      "opponent_team": "Fulham"
+    },
+    {
+      "match_date_year": 2024,
+      "match_date_month": "November",
+      "match_date_day": 30,
+      "opponent_team": "Manchester United"
+    },
+    {
+      "match_date_year": 2024,
+      "match_date_month": "December",
+      "match_date_day": 3,
+      "opponent_team": "Ipswich Town"
+    },
+    {
+      "match_date_year": 2024,
+      "match_date_month": "December",
+      "match_date_day": 7,
+      "opponent_team": "Everton"
+    },
+    {
+      "match_date_year": 2024,
+      "match_date_month": "December",
+      "match_date_day": 14,
+      "opponent_team": "Brentford"
+    },
+    {
+      "match_date_year": 2024,
+      "match_date_month": "December",
+      "match_date_day": 21,
+      "opponent_team": "Nottingham Forest"
+    },
+    {
+      "match_date_year": 2024,
+      "match_date_month": "December",
+      "match_date_day": 26,
+      "opponent_team": "Aston Villa"
+    },
+    {
+      "match_date_year": 2024,
+      "match_date_month": "December",
+      "match_date_day": 29,
+      "opponent_team": "Brighton & Hove Albion"
+    },
+    {
+      "match_date_year": 2025,
+      "match_date_month": "January",
+      "match_date_day": 4,
+      "opponent_team": "Fulham"
+    },
+    {
+      "match_date_year": 2025,
+      "match_date_month": "January",
+      "match_date_day": 14,
+      "opponent_team": "West Ham United"
+    },
+    {
+      "match_date_year": 2025,
+      "match_date_month": "January",
+      "match_date_day": 18,
+      "opponent_team": "Manchester United"
+    },
+    {
+      "match_date_year": 2025,
+      "match_date_month": "January",
+      "match_date_day": 25,
+      "opponent_team": "Wolverhampton Wanderers"
+    },
+    {
+      "match_date_year": 2025,
+      "match_date_month": "February",
+      "match_date_day": 1,
+      "opponent_team": "Manchester City"
+    },
+    {
+      "match_date_year": 2025,
+      "match_date_month": "February",
+      "match_date_day": 8,
+      "opponent_team": "Leicester City"
+    },
+    {
+      "match_date_year": 2025,
+      "match_date_month": "February",
+      "match_date_day": 15,
+      "opponent_team": "Tottenham Hotspur"
+    },
+    {
+      "match_date_year": 2025,
+      "match_date_month": "February",
+      "match_date_day": 22,
+      "opponent_team": "Chelsea"
+    },
+    {
+      "match_date_year": 2025,
+      "match_date_month": "February",
+      "match_date_day": 26,
+      "opponent_team": "Crystal Palace"
+    },
+    {
+      "match_date_year": 2025,
+      "match_date_month": "March",
+      "match_date_day": 8,
+      "opponent_team": "Liverpool"
+    },
+    {
+      "match_date_year": 2025,
+      "match_date_month": "March",
+      "match_date_day": 15,
+      "opponent_team": "Newcastle United"
+    },
+    {
+      "match_date_year": 2025,
+      "match_date_month": "April",
+      "match_date_day": 2,
+      "opponent_team": "Nottingham Forest"
+    },
+    {
+      "match_date_year": 2025,
+      "match_date_month": "April",
+      "match_date_day": 5,
+      "opponent_team": "Brentford"
+    },
+    {
+      "match_date_year": 2025,
+      "match_date_month": "April",
+      "match_date_day": 12,
+      "opponent_team": "Everton"
+    },
+    {
+      "match_date_year": 2025,
+      "match_date_month": "April",
+      "match_date_day": 19,
+      "opponent_team": "Ipswich Town"
+    },
+    {
+      "match_date_year": 2025,
+      "match_date_month": "April",
+      "match_date_day": 26,
+      "opponent_team": "Southampton"
+    },
+    {
+      "match_date_year": 2025,
+      "match_date_month": "May",
+      "match_date_day": 3,
+      "opponent_team": "Bournemouth"
+    },
+    {
+      "match_date_year": 2025,
+      "match_date_month": "May",
+      "match_date_day": 10,
+      "opponent_team": "Burnley"
+    },
+    {
+      "match_date_year": 2025,
+      "match_date_month": "May",
+      "match_date_day": 18,
+      "opponent_team": "Blackburn Rovers"
+    }
+  ],
+  "time": 0.0,
   "tokens": 0
 }

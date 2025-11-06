@@ -1,32 +1,46 @@
 {
-  "result_set": {
-    "Rank": [
-      "1",
-      "2",
-      "3",
-      "4",
-      "5",
-      "6",
-      "7",
-      "8",
-      "9",
-      "10"
-    ],
-    "Company": [
-      "Apple Inc.",
-      "Microsoft Corporation",
-      "Amazon.com Inc.",
-      "Alphabet Inc.",
-      "Facebook, Inc.",
-      "Berkshire Hathaway Inc.",
-      "Johnson & Johnson",
-      "JPMorgan Chase & Co.",
-      "Visa Inc.",
-      "Procter & Gamble Co."
-    ],
-    "Total_Employees": 30000000,
-    "Average_Revenue": 100000000
-  },
-  "time": 1.91,
+  "result_set": [
+    {
+      "Rank": 1,
+      "Company": "Walmart"
+    },
+    {
+      "Rank": 2,
+      "Company": "Amazon"
+    },
+    {
+      "Rank": 3,
+      "Company": "Apple"
+    },
+    {
+      "Rank": 4,
+      "Company": "UnitedHealth Group"
+    },
+    {
+      "Rank": 5,
+      "Company": "Berkshire Hathaway"
+    },
+    {
+      "Rank": 6,
+      "Company": "CVS Health"
+    },
+    {
+      "Rank": 7,
+      "Company": "Exxon Mobil"
+    },
+    {
+      "Rank": 8,
+      "Company": "Alphabet"
+    },
+    {
+      "Rank": 9,
+      "Company": "McKesson"
+    },
+    {
+      "Rank": 10,
+      "Company": "AmerisourceBergen"
+    }
+  ],
+  "time": 0,
   "tokens": 0
 }

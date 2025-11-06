@@ -1,11 +1,9 @@
 {
   "result_set": [
     {
-      "university is": "<state_capital>:<Phoenix>",
-      "<university_name>": "<Tempe University>",
-      "<state_name>": "<Arizona>"
+      "capital": "Phoenix"
     }
   ],
-  "time": 0.156763,
-  "tokens": 184
+  "time": 0.0,
+  "tokens": 0
 }

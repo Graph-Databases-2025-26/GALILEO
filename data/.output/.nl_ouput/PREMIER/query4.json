@@ -1,9 +1,21 @@
 {
-  "result_set": {
-    "query": "SELECT SUM(home_goals + away_goals) FROM target.premier_league_2024_2025_match_result WHERE home_team = 'Liverpool' OR away_team = 'Liverpool'",
-    "column": "SUM(home_goals + away_goals)",
-    "operation": "SELECT"
-  },
-  "time": 1.844,
-  "tokens": 0
+  "result_set": [
+    {
+      "player_of_the_match": "Bruno Fernandes"
+    },
+    {
+      "player_of_the_match": "Marcus Rashford"
+    },
+    {
+      "player_of_the_match": "Kobbie Mainoo"
+    },
+    {
+      "player_of_the_match": "Rasmus Højlund"
+    },
+    {
+      "player_of_the_match": "Lisandro Martínez"
+    }
+  ],
+  "time": 0.5,
+  "tokens": 70
 }

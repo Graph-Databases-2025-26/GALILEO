@@ -1,9 +1,18 @@
 {
   "result_set": [
     {
-      "result": "Lake Michigan, Lake Huron, Lake Erie, Lake St. Clair, Lake Superior (shared with Wisconsin and Minnesota)"
+      "lake_name": "Lake Superior"
+    },
+    {
+      "lake_name": "Lake Michigan"
+    },
+    {
+      "lake_name": "Lake Huron"
+    },
+    {
+      "lake_name": "Lake Erie"
     }
   ],
-  "time": 0.190225,
-  "tokens": 187
+  "time": "0.00",
+  "tokens": 0
 }

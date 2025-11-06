@@ -1,15 +1,261 @@
 {
   "result_set": [
     {
-      "that start with the letter \"A\".\n\nAlabama": "<state>",
-      "185": "<population>",
-      "420": "<area>\nArizona:<state>",
-      "502": "<population>",
-      "998": "<area>\nArkansas:<state>",
-      "804": "<population>",
-      "180": "<area>"
+      "state_name": "California",
+      "population": 39200000,
+      "area_sq_mi": 163695
+    },
+    {
+      "state_name": "Texas",
+      "population": 30500000,
+      "area_sq_mi": 268596
+    },
+    {
+      "state_name": "Florida",
+      "population": 22600000,
+      "area_sq_mi": 65758
+    },
+    {
+      "state_name": "New York",
+      "population": 19500000,
+      "area_sq_mi": 54555
+    },
+    {
+      "state_name": "Pennsylvania",
+      "population": 13000000,
+      "area_sq_mi": 46055
+    },
+    {
+      "state_name": "Illinois",
+      "population": 12500000,
+      "area_sq_mi": 57914
+    },
+    {
+      "state_name": "Ohio",
+      "population": 11800000,
+      "area_sq_mi": 44825
+    },
+    {
+      "state_name": "Georgia",
+      "population": 11000000,
+      "area_sq_mi": 59425
+    },
+    {
+      "state_name": "North Carolina",
+      "population": 10800000,
+      "area_sq_mi": 53819
+    },
+    {
+      "state_name": "Michigan",
+      "population": 10000000,
+      "area_sq_mi": 96716
+    },
+    {
+      "state_name": "New Jersey",
+      "population": 9300000,
+      "area_sq_mi": 8729
+    },
+    {
+      "state_name": "Virginia",
+      "population": 8700000,
+      "area_sq_mi": 42774
+    },
+    {
+      "state_name": "Washington",
+      "population": 7800000,
+      "area_sq_mi": 71362
+    },
+    {
+      "state_name": "Arizona",
+      "population": 7400000,
+      "area_sq_mi": 113990
+    },
+    {
+      "state_name": "Massachusetts",
+      "population": 7000000,
+      "area_sq_mi": 10555
+    },
+    {
+      "state_name": "Tennessee",
+      "population": 7100000,
+      "area_sq_mi": 42143
+    },
+    {
+      "state_name": "Indiana",
+      "population": 6800000,
+      "area_sq_mi": 36420
+    },
+    {
+      "state_name": "Maryland",
+      "population": 6200000,
+      "area_sq_mi": 12406
+    },
+    {
+      "state_name": "Missouri",
+      "population": 6200000,
+      "area_sq_mi": 69707
+    },
+    {
+      "state_name": "Colorado",
+      "population": 5900000,
+      "area_sq_mi": 104094
+    },
+    {
+      "state_name": "Wisconsin",
+      "population": 5900000,
+      "area_sq_mi": 65496
+    },
+    {
+      "state_name": "Minnesota",
+      "population": 5700000,
+      "area_sq_mi": 86936
+    },
+    {
+      "state_name": "South Carolina",
+      "population": 5400000,
+      "area_sq_mi": 32021
+    },
+    {
+      "state_name": "Alabama",
+      "population": 5100000,
+      "area_sq_mi": 52420
+    },
+    {
+      "state_name": "Louisiana",
+      "population": 4600000,
+      "area_sq_mi": 52378
+    },
+    {
+      "state_name": "Kentucky",
+      "population": 4500000,
+      "area_sq_mi": 40408
+    },
+    {
+      "state_name": "Oregon",
+      "population": 4300000,
+      "area_sq_mi": 98379
+    },
+    {
+      "state_name": "Oklahoma",
+      "population": 4000000,
+      "area_sq_mi": 69899
+    },
+    {
+      "state_name": "Connecticut",
+      "population": 3600000,
+      "area_sq_mi": 5543
+    },
+    {
+      "state_name": "Utah",
+      "population": 3400000,
+      "area_sq_mi": 84897
+    },
+    {
+      "state_name": "Iowa",
+      "population": 3200000,
+      "area_sq_mi": 56273
+    },
+    {
+      "state_name": "Nevada",
+      "population": 3200000,
+      "area_sq_mi": 110572
+    },
+    {
+      "state_name": "Arkansas",
+      "population": 3100000,
+      "area_sq_mi": 53179
+    },
+    {
+      "state_name": "Mississippi",
+      "population": 2900000,
+      "area_sq_mi": 48430
+    },
+    {
+      "state_name": "Kansas",
+      "population": 2900000,
+      "area_sq_mi": 82278
+    },
+    {
+      "state_name": "New Mexico",
+      "population": 2100000,
+      "area_sq_mi": 121590
+    },
+    {
+      "state_name": "Nebraska",
+      "population": 2000000,
+      "area_sq_mi": 77348
+    },
+    {
+      "state_name": "Idaho",
+      "population": 1900000,
+      "area_sq_mi": 83569
+    },
+    {
+      "state_name": "Hawaii",
+      "population": 1400000,
+      "area_sq_mi": 10932
+    },
+    {
+      "state_name": "West Virginia",
+      "population": 1800000,
+      "area_sq_mi": 24230
+    },
+    {
+      "state_name": "New Hampshire",
+      "population": 1400000,
+      "area_sq_mi": 9349
+    },
+    {
+      "state_name": "Maine",
+      "population": 1300000,
+      "area_sq_mi": 35380
+    },
+    {
+      "state_name": "Montana",
+      "population": 1100000,
+      "area_sq_mi": 147040
+    },
+    {
+      "state_name": "Rhode Island",
+      "population": 1100000,
+      "area_sq_mi": 1545
+    },
+    {
+      "state_name": "Delaware",
+      "population": 1000000,
+      "area_sq_mi": 2489
+    },
+    {
+      "state_name": "South Dakota",
+      "population": 900000,
+      "area_sq_mi": 77116
+    },
+    {
+      "state_name": "North Dakota",
+      "population": 780000,
+      "area_sq_mi": 70698
+    },
+    {
+      "state_name": "Alaska",
+      "population": 730000,
+      "area_sq_mi": 665384
+    },
+    {
+      "state_name": "District of Columbia",
+      "population": 670000,
+      "area_sq_mi": 68
+    },
+    {
+      "state_name": "Vermont",
+      "population": 640000,
+      "area_sq_mi": 9616
+    },
+    {
+      "state_name": "Wyoming",
+      "population": 580000,
+      "area_sq_mi": 97813
     }
   ],
-  "time": 0.193301,
-  "tokens": 253
+  "time": "0.123",
+  "tokens": 2500
 }

@@ -1,10 +1,9 @@
 {
   "result_set": [
     {
-      ".\n\nlast_president": "<Nicolás Maduro>",
-      "party": "<United Socialist Party of Venezuela>"
+      "president_name": "Marcos Pérez Jiménez"
     }
   ],
-  "time": 0.140543,
-  "tokens": 185
+  "time": "0.00",
+  "tokens": 0
 }

@@ -1,12 +1,22 @@
 {
-  "result_set": {
-    "Company": "Company name",
-    "CEO": "CEO name",
-    "total_employees": 123456,
-    "average_revenue": 123456789,
-    "max_profit": 123456789,
-    "min_employees": 123456
-  },
-  "time": 1.875,
+  "result_set": [
+    {
+      "Company": "ONEOK",
+      "CEO": "Pierce H. Norton II"
+    },
+    {
+      "Company": "Devon Energy",
+      "CEO": "Richard E. Muncrief"
+    },
+    {
+      "Company": "Enable Midstream Partners",
+      "CEO": "Willie W. Chiang"
+    },
+    {
+      "Company": "Love's Travel Stops & Country Stores",
+      "CEO": "Shane Wharton"
+    }
+  ],
+  "time": 0,
   "tokens": 0
 }

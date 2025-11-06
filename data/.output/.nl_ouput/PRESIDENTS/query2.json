@@ -1,10 +1,30 @@
 {
   "result_set": [
     {
-      ".\n\n<Venezuela_president_name>": "<Rómulo Betancourt>",
-      "<Venezuela_president_party>": "<Liberal>"
+      "name": "José Tadeo Monagas",
+      "party": "Partido Liberal"
+    },
+    {
+      "name": "Antonio Guzmán Blanco",
+      "party": "Gran Partido Liberal Amarillo"
+    },
+    {
+      "name": "Francisco Linares Alcántara",
+      "party": "Gran Partido Liberal Amarillo"
+    },
+    {
+      "name": "Joaquín Crespo",
+      "party": "Gran Partido Liberal Amarillo"
+    },
+    {
+      "name": "Cipriano Castro",
+      "party": "Partido Liberal Restaurador"
+    },
+    {
+      "name": "Juan Vicente Gómez",
+      "party": "Partido Liberal Restaurador"
     }
   ],
-  "time": 0.117038,
-  "tokens": 199
+  "time": "0.05",
+  "tokens": "150"
 }

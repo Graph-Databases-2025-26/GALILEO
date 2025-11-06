@@ -1,7 +1,9 @@
 {
-  "result_set": {
-    "query": "SELECT target.premier_league_2024_2025_match_result.home_team, target.premier_league_2024_2025_match_result.away_team, target.premier_league_2024_2025_match_result.home_goals, target.premier_league_2024_2025_match_result.away_goals FROM target.premier_league_2024_2025_match_result WHERE target.premier_league_2024_2025_match_result.date = '2025-01-01'"
-  },
-  "time": 1.853,
+  "result_set": [
+    {
+      "query": "SELECT home_team, away_team, home_goals, away_goals FROM target.premier_league_2024_2025_match_result"
+    }
+  ],
+  "time": 0,
   "tokens": 0
 }

@@ -1,10 +1,14 @@
 {
   "result_set": [
     {
-      "Democratic Party": "6",
-      "Republican Party": "6"
+      "party_name": "Republican",
+      "election_count": 13
+    },
+    {
+      "party_name": "Democrat",
+      "election_count": 12
     }
   ],
-  "time": 0.174033,
-  "tokens": 189
+  "time": "elapsed_time",
+  "tokens": "total_tokens"
 }

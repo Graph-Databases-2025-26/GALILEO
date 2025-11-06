@@ -1,9 +1,12 @@
 {
   "result_set": [
     {
-      "?\n\npopulation_of_Seattle_Washington": "<1.76 million>"
+      "city": "Seattle",
+      "state": "Washington",
+      "population": "737,015",
+      "source": "2020 United States Census"
     }
   ],
-  "time": 0.111542,
-  "tokens": 168
+  "time": 0.05,
+  "tokens": 45
 }

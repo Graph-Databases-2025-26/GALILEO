@@ -1,10 +1,9 @@
 {
   "result_set": [
     {
-      "and the number of US presidents where party is Democratic.\n\nRepublican": "<18>",
-      "Democratic": "<15>\n\n[Explanation] The Republican Party was founded in 1854"
+      "count": 19
     }
   ],
-  "time": 0.139107,
-  "tokens": 282
+  "time": 0,
+  "tokens": 0
 }

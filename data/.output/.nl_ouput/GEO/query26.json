@@ -1,11 +1,11 @@
 {
   "result_set": [
     {
-      ".\n\n<state_name>": "<Kentucky>",
-      "<population>": "<4",
-      "<area>": "<40"
+      "state_name": "Kentucky",
+      "population": 4536986,
+      "area_sq_miles": 40408
     }
   ],
-  "time": 0.151824,
-  "tokens": 193
+  "time": "0.05",
+  "tokens": 75
 }

@@ -1,10 +1,30 @@
 {
   "result_set": [
     {
-      ".\n\nHugo Chávez": "<Liberal>",
-      "Nicolás Maduro": "<Liberal>"
+      "name": "Juan Crisóstomo Falcón"
+    },
+    {
+      "name": "Antonio Guzmán Blanco"
+    },
+    {
+      "name": "Francisco Linares Alcántara"
+    },
+    {
+      "name": "Joaquín Crespo"
+    },
+    {
+      "name": "Juan Pablo Rojas Paúl"
+    },
+    {
+      "name": "Raimundo Andueza Palacio"
+    },
+    {
+      "name": "Ignacio Andrade"
+    },
+    {
+      "name": "Cipriano Castro"
     }
   ],
-  "time": 0.137509,
-  "tokens": 186
+  "time": "0.05s",
+  "tokens": 150
 }

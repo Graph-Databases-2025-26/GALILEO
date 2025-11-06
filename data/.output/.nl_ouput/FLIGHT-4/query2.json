@@ -1,9 +1,11 @@
 {
   "result_set": [
     {
-      "<key>": "maximum elevation of airports in Iceland\n<value>: 1"
+      "maximum_elevation_feet": 320,
+      "maximum_elevation_meters": 98,
+      "airport_name": "Vestmannaeyjar Airport"
     }
   ],
-  "time": 0.126815,
-  "tokens": 209
+  "time": 0.05,
+  "tokens": 75
 }

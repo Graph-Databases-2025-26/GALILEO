@@ -1,32 +1,54 @@
 {
   "result_set": [
     {
-      ".\n\nAlabama": "<state>",
-      "Montgomery": "<capital>",
-      "106.1": "<density>",
-      "4903185": "<population>",
-      "Arizona": "<state>",
-      "Phoenix": "<capital>",
-      "10.7": "<density>",
-      "7278717": "<population>",
-      "Arkansas": "<state>",
-      "Little Rock": "<capital>",
-      "65.8": "<density>",
-      "3011525": "<population>",
-      "California": "<state>",
-      "Sacramento": "<capital>",
-      "250.6": "<density>",
-      "39538223": "<population>",
-      "Colorado": "<state>",
-      "Denver": "<capital>",
-      "10.3": "<density>",
-      "5773714": "<population>",
-      "Connecticut": "<state>",
-      "Hartford": "<capital>",
-      "729.4": "<density>",
-      "3565287": "<population>"
+      "state_name": "Pennsylvania",
+      "capital": "Harrisburg",
+      "density": 280,
+      "population": 13000000
+    },
+    {
+      "state_name": "Ohio",
+      "capital": "Columbus",
+      "density": 280,
+      "population": 11800000
+    },
+    {
+      "state_name": "Virginia",
+      "capital": "Richmond",
+      "density": 210,
+      "population": 8700000
+    },
+    {
+      "state_name": "Massachusetts",
+      "capital": "Boston",
+      "density": 890,
+      "population": 7000000
+    },
+    {
+      "state_name": "Tennessee",
+      "capital": "Nashville",
+      "density": 170,
+      "population": 7000000
+    },
+    {
+      "state_name": "Indiana",
+      "capital": "Indianapolis",
+      "density": 190,
+      "population": 6800000
+    },
+    {
+      "state_name": "Maryland",
+      "capital": "Annapolis",
+      "density": 630,
+      "population": 6200000
+    },
+    {
+      "state_name": "South Carolina",
+      "capital": "Columbia",
+      "density": 170,
+      "population": 5300000
     }
   ],
-  "time": 0.149397,
-  "tokens": 389
+  "time": 0.075,
+  "tokens": 350
 }

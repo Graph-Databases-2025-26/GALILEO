@@ -1,13 +1,24 @@
 {
-  "result_set": {
-    "Company": "value",
-    "HeadquartersState": "value",
-    "Ticker": "value",
-    "CEO": "value",
-    "Founder_is_CEO": "value",
-    "FemaleCEO": "value",
-    "Growth_in_Jobs": "value"
-  },
-  "time": 1.888,
+  "result_set": [
+    {
+      "Company": "Nvidia",
+      "HeadquartersState": "CA",
+      "Ticker": "NVDA",
+      "CEO": "Jensen Huang",
+      "Founder_is_CEO": true,
+      "FemaleCEO": false,
+      "Number_of_employees": 29600
+    },
+    {
+      "Company": "Intel",
+      "HeadquartersState": "CA",
+      "Ticker": "INTC",
+      "CEO": "Patrick P. Gelsinger",
+      "Founder_is_CEO": false,
+      "FemaleCEO": false,
+      "Number_of_employees": 124800
+    }
+  ],
+  "time": 0,
   "tokens": 0
 }

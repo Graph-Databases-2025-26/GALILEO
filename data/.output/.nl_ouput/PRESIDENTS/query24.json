@@ -1,10 +1,41 @@
 {
   "result_set": [
     {
-      ".\n\nFranklin Pierce": "Democratic",
-      "14th\n\nExplanation": "Franklin Pierce was a Democratic president who served between 1850 and 1900. He was the 14th president of the United States"
+      "name": "Franklin Pierce",
+      "party": "Democratic",
+      "start_year": 1853,
+      "end_year": 1857,
+      "cardinal_number": "14th"
+    },
+    {
+      "name": "James Buchanan",
+      "party": "Democratic",
+      "start_year": 1857,
+      "end_year": 1861,
+      "cardinal_number": "15th"
+    },
+    {
+      "name": "Andrew Johnson",
+      "party": "Democratic",
+      "start_year": 1865,
+      "end_year": 1869,
+      "cardinal_number": "17th"
+    },
+    {
+      "name": "Grover Cleveland",
+      "party": "Democratic",
+      "start_year": 1885,
+      "end_year": 1889,
+      "cardinal_number": "22nd"
+    },
+    {
+      "name": "Grover Cleveland",
+      "party": "Democratic",
+      "start_year": 1893,
+      "end_year": 1897,
+      "cardinal_number": "24th"
     }
   ],
-  "time": 0.164571,
-  "tokens": 265
+  "time": 0.123,
+  "tokens": 456
 }

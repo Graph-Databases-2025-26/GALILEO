@@ -1,9 +1,9 @@
 {
   "result_set": [
     {
-      "1": "<value>Bill Clinton</value>"
+      "count": 1
     }
   ],
-  "time": 0.143829,
-  "tokens": 181
+  "time": "0.05s",
+  "tokens": 50
 }

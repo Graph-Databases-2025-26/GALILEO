@@ -1,10 +1,16 @@
 {
-  "result_set": {
-    "HeadquartersCity": "Chicago",
-    "Number_of_employees": 1234567,
-    "RevenuePercentChange": 12.34,
-    "MarketCap_March28_M": 1234567890123
-  },
-  "time": 1.934,
-  "tokens": 0
+  "result_set": [
+    {
+      "HeadquartersCity": "Atlanta"
+    },
+    {
+      "HeadquartersCity": "Fort Worth"
+    },
+    {
+      "HeadquartersCity": "Chicago"
+    },
+    {
+      "HeadquartersCity": "Seattle"
+    }
+  ]
 }
