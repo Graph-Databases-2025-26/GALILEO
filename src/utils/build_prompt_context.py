@@ -139,17 +139,13 @@ def build_prompt_context(dataset_name: str):
 
     elif dataset_name in IK_DATASETS:
         schema = """
-        You must analyze, interpret and answer about general questions.
-        Your goal is to provide coherent, verifiable, and well-organized responses based on the question asked, by the user.
+        You must analyze, interpret and answer the questions asked by means the knowledge that you have about the topic.
+        Your goal is to provide coherent, verifiable, and well-organized responses based on the question asked by the user.
 """
-
-
     context = f"""
-    You are an AI assistant that answers questions based on the following dataset schema:
-
     {schema.strip()}
-    
-    """
+    Now answer the following question:
+"""
 
     return context.strip()
 

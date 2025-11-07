@@ -8,39 +8,41 @@ from src.utils.constants import *
 from dotenv import load_dotenv
 from src.utils.logging_config import logger
 
-load_dotenv()
-
 
 def create_llm():
     """
     Provide an LLM instance for the specified provider.
     """
+
+    load_dotenv()
     config = Config_Loader().get_config()
     provider = config.llm.provider
     model = config.llm.model
     temperature = config.llm.temperature
 
+
+
     if provider == "gemini":
-        load_dotenv()  #load environment variables
-    google_api_key = os.getenv("GOOGLE_API_KEY")
+        #load environment variables
+        google_api_key = os.getenv("GOOGLE_API_KEY")
 
-    if not google_api_key:
-        logger.error("GOOGLE_API_KEY environment variable not set")
-        raise RuntimeError("GOOGLE_API_KEY environment variable not set")
+        if not google_api_key:
+            logger.error("GOOGLE_API_KEY environment variable not set")
 
-    model = config.gemini.model
-    temperature = config.gemini.temperature
-    max_tokens = config.gemini.max_output_tokens
+            model = config.gemini.model
+            temperature = config.gemini.temperature
+            max_tokens = config.gemini.max_output_tokens
 
-    logger.info(
-        f"Creating Gemini LLM: model={model}, temperature={temperature}, max_tokens={max_tokens}"
-    )
+            logger.info(
+                f"Creating Gemini LLM: model={model}, temperature={temperature}, max_tokens={max_tokens}"
+            )
 
-    return ChatGoogleGenerativeAI(
-            model=model,
-            temperature=temperature,
-            google_api_key=google_api_key,
-        )
+            os.environ["GOOGLE_API_KEY"] = google_api_key
+            return ChatGoogleGenerativeAI(
+                    model=model,
+                    temperature=temperature,
+                    google_api_key=google_api_key,
+                )
 
     if provider == "watsonx":
         # configure WatsonX LLM

@@ -3,6 +3,7 @@ import duckdb
 from dotenv import load_dotenv
 from jinja2 import Environment, FileSystemLoader
 from langchain_classic.chains.llm import LLMChain
+from langchain_community.utilities import SQLDatabase
 from langchain_core.prompts import PromptTemplate
 from src.llm.llm_factory import create_llm
 from src.utils.parse_llm_response import save_llm_response_to_file, extract_json_from_response
@@ -87,7 +88,7 @@ def llm_interaction(chosen_datasets: list[str] | None = None):
                 elif dataset_name.upper() in IK_DATASETS:
 
                     #Directly quering the LLM without any context or external knowledge
-                    full_prompt = f"{PROMPT_FOR_IK_DATASETS} {prompt}"
+                    full_prompt = f"{NL_IK_PROMPT} {prompt}"
 
                     #WATSONX
                     #response = query_watsonx(full_prompt)
@@ -134,44 +135,53 @@ def build_chain(prompt: str, template_path: str, llm, extra_context: str = ""):
 
 
 
-def load_knowledge_from_db(duck_db_path: str) -> str:
+def load_tables_knowledge_from_db(duck_db_path: str) -> str:
     """Extract the knowledge from .dckdb file to provide it as context to the LLM."""
     try:
-        conn = duckdb.connect(duck_db_path, read_only=True)
-        tables = conn.execute("SHOW TABLES").fetchall()
-        knowledge = f"Tables: {[t[0] for t in tables]}"
-        conn.close()
+        db = SQLDatabase.from_uri(f"duckdb:///{duck_db_path}")
+        knowledge = db.get_table_info()
         return knowledge
+    except Exception as e:
+        return f"Error in the DuckDB loading: {e}"
+
+def load_dataset_additional_info_(duck_db_path: str, query: str) -> str:
+    """Extract the knowledge from .dckdb file to provide it as context to the LLM."""
+    try:
+        db = SQLDatabase.from_uri(f"duckdb:///{duck_db_path}")
+        more_info = db.run(query)
+        return more_info
     except Exception as e:
         return f"Error in the DuckDB loading: {e}"
 
 
     # Load knowledge from DuckDB database for internal knowledge querying
 
-def llm_interaction_second_version(dataset_name: str, duck_db_path: str, prompt: str):
+def llm_interaction_second_version(dataset_name: str, duck_db_path: str, prompt: str, query: str):
     llm = create_llm()
     context = build_prompt_context(dataset_name)
+    knowledge = load_tables_knowledge_from_db(duck_db_path)
+    full_prompt = NL_MC_PROMPT + "\n\n" + context + "\n\n" + prompt
 
 
     if dataset_name in IK_DATASETS:
         logger.info(f"→ Dataset {dataset_name} identified as IK.")
         chain = build_chain(
-            prompt=prompt,
+            prompt=full_prompt,
             template_path=LLM_TEMPLATE,
             llm=llm,
-            extra_context=context,
+            extra_context=knowledge,
         )
         response = chain.invoke({"prompt": prompt})
 
     elif dataset_name in MC_DATASETS:
         logger.info(f"→ Dataset {dataset_name} identified as MC.")
-        knowledge = load_knowledge_from_db(duck_db_path)
+        additional_info = load_dataset_additional_info_(duck_db_path, query)
 
         chain = build_chain(
-            prompt=prompt,
+            prompt=full_prompt,
             template_path=LLM_TEMPLATE,
             llm=llm,
-            extra_context=knowledge + "\n" + context,
+            extra_context=knowledge + "\n" + str(additional_info),
         )
         response = chain.invoke({"prompt": prompt})
     else:
@@ -196,8 +206,7 @@ if __name__ == "__main__":
             duckdb_path = os.path.join(DATA_DIR, d, f"{d.lower()}.duckdb")
             if not os.path.isdir(dataset_path):
                 continue
-
             logger.info(f"Processing dataset: {d}")
             nl_queries = load_nl_queries_from_txt(dataset_path)
             for i, prompt in enumerate(nl_queries):
-                llm_interaction_second_version(d,duckdb_path,prompt)
+                llm_interaction_second_version(d,duckdb_path,prompt,prompt)
