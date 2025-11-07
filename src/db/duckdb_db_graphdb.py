@@ -1,4 +1,5 @@
 from src.utils import LOG, DATASETS, DATA_DIR
+from typing import Tuple, List, Dict, Any
 from pathlib import Path
 
 import duckdb, os, glob, time, sys
@@ -121,6 +122,23 @@ def db_creation(dataset_name: str) -> None:
 
     LOG.info("All dataset databases have been created successfully!")
 
+def db_execute_query(conn, query) -> List[Dict[str, Any]]:
+    
+    try:
+        result_df = conn.execute(query).df()
+        
+        results = result_df.to_dict(orient="records")
+        
+        return results
+
+    except duckdb.Error as e:
+        LOG.error(f"DuckDB Error during query execution: {e}")
+        
+        return []
+
+    finally:
+        if conn:
+            conn.close()
 
 
 # --- Main ---

@@ -1,0 +1,20 @@
+{
+    "result_set": [
+        {
+            "name": "Hugo Ch\u00e1vez",
+            "start_year": 1999,
+            "end_year": 2013,
+            "cardinal_number": 5,
+            "party": "Fifth Republic Movement"
+        },
+        {
+            "name": "Nicol\u00e1s Maduro",
+            "start_year": 2013,
+            "end_year": null,
+            "cardinal_number": 6,
+            "party": "United Socialist Party of Venezuela"
+        }
+    ],
+    "time": 1.203,
+    "tokens": 133
+}

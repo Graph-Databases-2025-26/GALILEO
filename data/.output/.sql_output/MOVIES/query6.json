@@ -1,0 +1,22 @@
+{
+    "result_set": [
+        {
+            "originaltitle": "Schindler's List",
+            "startyear": 1993,
+            "genres": "Biography, Drama, History",
+            "birthyear": null,
+            "deathyear": null,
+            "runtimeminutes": 195
+        },
+        {
+            "originaltitle": "Saving Private Ryan",
+            "startyear": 1998,
+            "genres": "Drama, War",
+            "birthyear": null,
+            "deathyear": null,
+            "runtimeminutes": 169
+        }
+    ],
+    "time": 1.221,
+    "tokens": 137
+}

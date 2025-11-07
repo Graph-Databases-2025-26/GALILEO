@@ -67,3 +67,11 @@ def build_prompt_context(dataset_name: str):
     - Do not include explanations, SQL code, or text outside the JSON.
     - If the answer is not found, return "result_set": [].
 """
+
+def build_sql_prompt(query: str) -> str:
+    
+    prompt = f"""
+    Now process this SQL query: {query}
+    """
+
+    return prompt.strip()

@@ -1,11 +1,10 @@
+from pydantic_settings import BaseSettings, SettingsConfigDict
 from pydantic import BaseModel, Field
-from pydantic_settings import BaseSettings
 from dotenv import load_dotenv
-from pathlib import Path
 from src import CONFIG_PATH
+from pathlib import Path
 import os, yaml
 
-# Carica variabili d'ambiente
 load_dotenv()
 
 class ExecutionConfig(BaseModel):
@@ -27,29 +26,35 @@ class LoggingConfig(BaseModel):
     level: str
     json_format: bool
 
-class GeminiConfig(BaseModel):
+class GeminiConfig(BaseSettings):
     model: str
     temperature: float
     max_output_tokens: int
-    api_key: str | None = Field(default=None, env="GOOGLE_API_KEY")
-    api_endpoint: str | None = Field(default=None, env="GOOGLE_API_ENDPOINT")
+    gemini_api_key: str | None = Field(default=None)
+    gemini_api_endpoint: str | None = Field(default=None)
 
-
-class GrokConfig(BaseModel):
+class WatsonxConfig(BaseSettings):
     model: str
     max_tokens: int
-    api_key: str | None = Field(default=None, env="XAI_API_KEY")
-    api_endpoint: str | None = Field(default=None, env="XAI_URL")
+    temperature: float 
+    watsonx_api_key: str | None = Field(default=None)
+    watsonx_endpoint: str | None = Field(default=None)
+    watsonx_project_id: str | None = Field(default=None)
 
 class DatasetConfig(BaseModel):
     run: str
     
 class AppConfig(BaseSettings):
+    model_config = SettingsConfigDict(extra='ignore', env_file='.env', env_file_encoding='utf-8')
+
     database: DatasetConfig
     llm : LLMConfig
     execution: ExecutionConfig
     io: IOConfig
     logging: LoggingConfig
+    gemini: GeminiConfig
+    watsonx: WatsonxConfig
+
 
 class Config_Loader:
 

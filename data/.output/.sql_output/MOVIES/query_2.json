@@ -1,0 +1,21 @@
+{
+    "result_set": [
+        {
+            "originaltitle": "E.T. the Extra-Terrestrial"
+        },
+        {
+            "originaltitle": "Jurassic Park"
+        },
+        {
+            "originaltitle": "Schindler's List"
+        },
+        {
+            "originaltitle": "Close Encounters of the Third Kind"
+        },
+        {
+            "originaltitle": "Saving Private Ryan"
+        }
+    ],
+    "time": 0.992,
+    "tokens": 99
+}

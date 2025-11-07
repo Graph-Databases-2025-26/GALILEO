@@ -1,0 +1,18 @@
+{
+    "result_set": [
+        {
+            "party": "Socialist Party",
+            "num": 123
+        },
+        {
+            "party": "Democratic Action",
+            "num": 100
+        },
+        {
+            "party": "COPEI",
+            "num": 80
+        }
+    ],
+    "time": 0.85,
+    "tokens": 76
+}

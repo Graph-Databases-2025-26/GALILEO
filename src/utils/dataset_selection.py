@@ -1,6 +1,5 @@
+from src.utils import LOG, DATASETS
 import sys
-from src.utils import LOG
-from src.utils import  DATASETS
 
 def get_dataset_selection(database_run: str) -> list[str]:
     #  Priority to the command line

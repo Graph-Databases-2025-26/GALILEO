@@ -1,0 +1,136 @@
+{
+    "result_set": [
+        {
+            "state_name": "Alabama",
+            "capital": "Montgomery",
+            "area_squared_miles": 52419
+        },
+        {
+            "state_name": "Alaska",
+            "capital": "Juneau",
+            "area_squared_miles": 663268
+        },
+        {
+            "state_name": "Arizona",
+            "capital": "Phoenix",
+            "area_squared_miles": 113998
+        },
+        {
+            "state_name": "Arkansas",
+            "capital": "Little Rock",
+            "area_squared_miles": 53179
+        },
+        {
+            "state_name": "California",
+            "capital": "Sacramento",
+            "area_squared_miles": 163696
+        },
+        {
+            "state_name": "Colorado",
+            "capital": "Denver",
+            "area_squared_miles": 104094
+        },
+        {
+            "state_name": "Connecticut",
+            "capital": "Hartford",
+            "area_squared_miles": 5543
+        },
+        {
+            "state_name": "Delaware",
+            "capital": "Dover",
+            "area_squared_miles": 2489
+        },
+        {
+            "state_name": "Florida",
+            "capital": "Tallahassee",
+            "area_squared_miles": 65758
+        },
+        {
+            "state_name": "Georgia",
+            "capital": "Atlanta",
+            "area_squared_miles": 59881
+        },
+        {
+            "state_name": "Hawaii",
+            "capital": "Honolulu",
+            "area_squared_miles": 10975
+        },
+        {
+            "state_name": "Idaho",
+            "capital": "Boise",
+            "area_squared_miles": 83569
+        },
+        {
+            "state_name": "Illinois",
+            "capital": "Springfield",
+            "area_squared_miles": 57914
+        },
+        {
+            "state_name": "Indiana",
+            "capital": "Indianapolis",
+            "area_squared_miles": 36429
+        },
+        {
+            "state_name": "Iowa",
+            "capital": "Des Moines",
+            "area_squared_miles": 56272
+        },
+        {
+            "state_name": "Kansas",
+            "capital": "Topeka",
+            "area_squared_miles": 82278
+        },
+        {
+            "state_name": "Kentucky",
+            "capital": "Frankfort",
+            "area_squared_miles": 40409
+        },
+        {
+            "state_name": "Louisiana",
+            "capital": "Baton Rouge",
+            "area_squared_miles": 51843
+        },
+        {
+            "state_name": "Maine",
+            "capital": "Augusta",
+            "area_squared_miles": 35394
+        },
+        {
+            "state_name": "Maryland",
+            "capital": "Annapolis",
+            "area_squared_miles": 12407
+        },
+        {
+            "state_name": "Massachusetts",
+            "capital": "Boston",
+            "area_squared_miles": 10555
+        },
+        {
+            "state_name": "Michigan",
+            "capital": "Lansing",
+            "area_squared_miles": 96716
+        },
+        {
+            "state_name": "Minnesota",
+            "capital": "Saint Paul",
+            "area_squared_miles": 86937
+        },
+        {
+            "state_name": "Mississippi",
+            "capital": "Jackson",
+            "area_squared_miles": 48465
+        },
+        {
+            "state_name": "Missouri",
+            "capital": "Jefferson City",
+            "area_squared_miles": 69703
+        },
+        {
+            "state_name": "Montana",
+            "capital": "Helena",
+            "area_squared_miles": 147045
+        }
+    ],
+    "time": 7.781,
+    "tokens": 1024
+}

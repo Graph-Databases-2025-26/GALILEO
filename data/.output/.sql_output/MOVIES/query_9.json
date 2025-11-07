@@ -1,0 +1,18 @@
+{
+    "result_set": [
+        {
+            "director": "Steven Spielberg",
+            "director_age": 75
+        },
+        {
+            "director": "Martin Scorsese",
+            "director_age": 79
+        },
+        {
+            "director": "Christopher Nolan",
+            "director_age": 52
+        }
+    ],
+    "time": 0.955,
+    "tokens": 104
+}

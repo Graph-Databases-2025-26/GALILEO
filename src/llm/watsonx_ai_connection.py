@@ -14,9 +14,9 @@ from langchain_core.output_parsers import PydanticOutputParser
 from langchain_classic.chains import LLMChain
 from langchain_core.prompts import PromptTemplate
 from src.utils.WatsonxResponse import WatsonxResponse
-from langchain_ibm import WatsonxLLM
+from langchain_ibm import WatsonxLLM, ChatWatsonx
 from langchain_community.utilities import SQLDatabase
-from src.utils.logging_config import logger
+from src.utils.logging_config import logger, LOG
 from src.utils.parse_llm_response import extract_all_json_objects
 
 
@@ -166,6 +166,46 @@ def query_watsonx(prompt: str,
     except Exception as e:
         logger.error(f"watsonx error: {e}\nTrace:\n{traceback.format_exc()}")
         return f"watsonx error: {e}"
+
+
+
+def run_prompt_on_watsonx(parser, config, prompt) -> dict:
+    
+    watsonx_model = ChatWatsonx(
+        model_id = config.watsonx.model,
+        api_key = config.watsonx.watsonx_api_key,
+        url = config.watsonx.watsonx_endpoint,
+        project_id = config.watsonx.watsonx_project_id,
+        params = {
+            "temperature": config.watsonx.temperature,
+            "max_new_tokens": config.watsonx.max_tokens,
+        }
+    )
+    
+    t_start = time.time()
+    
+    try:
+        raw_response = watsonx_model.invoke(prompt) 
+        t_end = time.time()
+        
+        watsonx_rsp = parser.parse(raw_response.content)
+        LOG.debug(f"LLM Content Output: {watsonx_rsp}")
+        
+        tokens = raw_response.usage_metadata.get("output_tokens")
+        LOG.debug(f"LLM Tokens Output: {tokens}")
+        
+        fullJ_structure ={
+            "result_set": watsonx_rsp.result_set,
+            "time": round(t_end - t_start, 3),
+            "tokens": tokens
+        }
+        
+        return fullJ_structure
+
+    except Exception as e:
+        LOG.error(f"LLM/Parsing Error: {e}. Failed to parse required JSON structure.")
+        
+        return {"result_set": [], "error": f"Parsing failed: {e}"} 
 
 
 if __name__ == "__main__":

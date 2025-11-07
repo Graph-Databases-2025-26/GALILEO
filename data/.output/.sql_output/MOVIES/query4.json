@@ -1,0 +1,18 @@
+{
+    "result_set": [
+        {
+            "originaltitle": "Catch Me If You Can",
+            "startyear": 2002
+        },
+        {
+            "originaltitle": "Minority Report",
+            "startyear": 2002
+        },
+        {
+            "originaltitle": "Artificial Intelligence: AI",
+            "startyear": 2001
+        }
+    ],
+    "time": 0.88,
+    "tokens": 89
+}

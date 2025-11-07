@@ -1,0 +1,31 @@
+{
+    "result_set": [
+        {
+            "state_name": "California",
+            "population": 39512223,
+            "area_squared_miles": 163696.0
+        },
+        {
+            "state_name": "Texas",
+            "population": 29145505,
+            "area_squared_miles": 268597.0
+        },
+        {
+            "state_name": "Florida",
+            "population": 21477737,
+            "area_squared_miles": 170312.0
+        },
+        {
+            "state_name": "New York",
+            "population": 19453561,
+            "area_squared_miles": 141297.0
+        },
+        {
+            "state_name": "Pennsylvania",
+            "population": 12801989,
+            "area_squared_miles": 46054.0
+        }
+    ],
+    "time": 2.114,
+    "tokens": 266
+}

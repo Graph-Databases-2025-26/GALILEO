@@ -1,0 +1,15 @@
+{
+    "result_set": [
+        {
+            "name": "John F. Kennedy International Airport"
+        },
+        {
+            "name": "LaGuardia Airport"
+        },
+        {
+            "name": "Newark Liberty International Airport"
+        }
+    ],
+    "time": 0.869,
+    "tokens": 58
+}

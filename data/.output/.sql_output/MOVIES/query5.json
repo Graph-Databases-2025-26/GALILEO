@@ -1,0 +1,25 @@
+{
+    "result_set": [
+        {
+            "originaltitle": "Catch Me If You Can",
+            "startyear": 2002,
+            "genres": [
+                "Biography",
+                "Comedy",
+                "Crime"
+            ],
+            "birthyear": 1946
+        },
+        {
+            "originaltitle": "A.I. Artificial Intelligence",
+            "startyear": 2001,
+            "genres": [
+                "Sci-Fi",
+                "Drama"
+            ],
+            "birthyear": 1946
+        }
+    ],
+    "time": 1.119,
+    "tokens": 120
+}

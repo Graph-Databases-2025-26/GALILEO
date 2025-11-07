@@ -1,0 +1,14 @@
+{
+    "result_set": [
+        {
+            "party": "Democratic Action",
+            "num": 12
+        },
+        {
+            "party": "Movement Toward Socialism",
+            "num": 10
+        }
+    ],
+    "time": 0.618,
+    "tokens": 57
+}

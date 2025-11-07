@@ -1,0 +1,18 @@
+{
+    "result_set": [
+        {
+            "name": "New York City International Airport",
+            "city": "New York",
+            "country": "USA",
+            "elevation_in_ft": 13
+        },
+        {
+            "name": "LaGuardia Airport",
+            "city": "New York",
+            "country": "USA",
+            "elevation_in_ft": 14
+        }
+    ],
+    "time": 1.042,
+    "tokens": 96
+}

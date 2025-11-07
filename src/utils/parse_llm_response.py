@@ -88,3 +88,12 @@ def save_llm_response_to_file(dataset_name, data, index):
             json.dump(data, rf, indent=2, ensure_ascii=False)
 
         logger.info(f"LLM response saved in: {json_path}")
+ 
+       
+def save_baseline_to_json(dataset: str, baseline: list[dict]):
+    bline_folder = SQL_BLINE_DIR / dataset
+    bline_folder.mkdir(parents=True, exist_ok=True)    
+
+    for i, result in enumerate(baseline):
+        with open(bline_folder / f"query{i + 1}.json", "w") as f:
+            json.dump(result, f, indent=4)

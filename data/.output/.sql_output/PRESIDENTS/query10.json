@@ -1,0 +1,27 @@
+{
+    "result_set": [
+        {
+            "name": "Rafael Caldera",
+            "party": "Democratic Action",
+            "start_year": 1969,
+            "end_year": 1974,
+            "cardinal_number": 35
+        },
+        {
+            "name": "Carlos Andr\u00e9s P\u00e9rez",
+            "party": "Democratic Action",
+            "start_year": 1974,
+            "end_year": 1979,
+            "cardinal_number": 51
+        },
+        {
+            "name": "Juan Bimbo",
+            "party": "Democratic Action",
+            "start_year": 1989,
+            "end_year": 1994,
+            "cardinal_number": 77
+        }
+    ],
+    "time": 1.606,
+    "tokens": 194
+}

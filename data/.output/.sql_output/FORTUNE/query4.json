@@ -1,0 +1,15 @@
+{
+    "result_set": [
+        {
+            "HeadquartersCity": "Atlanta"
+        },
+        {
+            "HeadquartersCity": "Chicago"
+        },
+        {
+            "HeadquartersCity": "Fort Worth"
+        }
+    ],
+    "time": 0.732,
+    "tokens": 57
+}

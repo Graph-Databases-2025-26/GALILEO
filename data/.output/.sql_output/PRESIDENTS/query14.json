@@ -1,0 +1,30 @@
+{
+    "result_set": [
+        {
+            "name": "Barack Obama",
+            "party": "Democratic"
+        },
+        {
+            "name": "George W. Bush",
+            "party": "Republican"
+        },
+        {
+            "name": "Bill Clinton",
+            "party": "Democratic"
+        },
+        {
+            "name": "George H. W. Bush",
+            "party": "Republican"
+        },
+        {
+            "name": "Ronald Reagan",
+            "party": "Republican"
+        },
+        {
+            "name": "Jimmy Carter",
+            "party": "Democratic"
+        }
+    ],
+    "time": 1.415,
+    "tokens": 159
+}
