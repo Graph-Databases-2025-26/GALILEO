@@ -1,0 +1,56 @@
+{
+  "result_set": [
+    {
+      "state_name": "California",
+      "capital": "Sacramento",
+      "area_squared_miles": 163695.0
+    },
+    {
+      "state_name": "Texas",
+      "capital": "Austin",
+      "area_squared_miles": 268596.0
+    },
+    {
+      "state_name": "Florida",
+      "capital": "Tallahassee",
+      "area_squared_miles": 65758.0
+    },
+    {
+      "state_name": "New York",
+      "capital": "Albany",
+      "area_squared_miles": 54555.0
+    },
+    {
+      "state_name": "Pennsylvania",
+      "capital": "Harrisburg",
+      "area_squared_miles": 46055.0
+    },
+    {
+      "state_name": "Illinois",
+      "capital": "Springfield",
+      "area_squared_miles": 57914.0
+    },
+    {
+      "state_name": "Ohio",
+      "capital": "Columbus",
+      "area_squared_miles": 44825.0
+    },
+    {
+      "state_name": "Georgia",
+      "capital": "Atlanta",
+      "area_squared_miles": 59425.0
+    },
+    {
+      "state_name": "North Carolina",
+      "capital": "Raleigh",
+      "area_squared_miles": 53819.0
+    },
+    {
+      "state_name": "Michigan",
+      "capital": "Lansing",
+      "area_squared_miles": 96716.0
+    }
+  ],
+  "time": 2.61,
+  "tokens": 493
+}

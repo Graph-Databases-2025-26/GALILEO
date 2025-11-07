@@ -1,0 +1,41 @@
+{
+  "result_set": [
+    {
+      "name": "Hugo Chávez",
+      "start_year": 1999,
+      "end_year": 2013,
+      "cardinal_number": "53rd",
+      "party": "United Socialist Party of Venezuela"
+    },
+    {
+      "name": "Nicolás Maduro",
+      "start_year": 2013,
+      "end_year": null,
+      "cardinal_number": "54th",
+      "party": "United Socialist Party of Venezuela"
+    },
+    {
+      "name": "Rómulo Betancourt",
+      "start_year": 1959,
+      "end_year": 1964,
+      "cardinal_number": "46th",
+      "party": "Democratic Action"
+    },
+    {
+      "name": "Rafael Caldera",
+      "start_year": 1969,
+      "end_year": 1974,
+      "cardinal_number": "48th",
+      "party": "COPEI"
+    },
+    {
+      "name": "Carlos Andrés Pérez",
+      "start_year": 1974,
+      "end_year": 1979,
+      "cardinal_number": "49th",
+      "party": "Democratic Action"
+    }
+  ],
+  "time": 4.561,
+  "tokens": 922
+}

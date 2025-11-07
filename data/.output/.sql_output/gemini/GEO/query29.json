@@ -1,0 +1,48 @@
+{
+  "result_set": [
+    {
+      "state_name": "Pennsylvania",
+      "capital": "Harrisburg",
+      "density": 280.0,
+      "population": 13000000
+    },
+    {
+      "state_name": "Ohio",
+      "capital": "Columbus",
+      "density": 280.0,
+      "population": 11800000
+    },
+    {
+      "state_name": "Virginia",
+      "capital": "Richmond",
+      "density": 200.0,
+      "population": 8700000
+    },
+    {
+      "state_name": "Massachusetts",
+      "capital": "Boston",
+      "density": 670.0,
+      "population": 7000000
+    },
+    {
+      "state_name": "Tennessee",
+      "capital": "Nashville",
+      "density": 170.0,
+      "population": 7100000
+    },
+    {
+      "state_name": "Maryland",
+      "capital": "Annapolis",
+      "density": 620.0,
+      "population": 6200000
+    },
+    {
+      "state_name": "Indiana",
+      "capital": "Indianapolis",
+      "density": 190.0,
+      "population": 6800000
+    }
+  ],
+  "time": 8.413,
+  "tokens": 1898
+}

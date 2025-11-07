@@ -1,0 +1,46 @@
+{
+  "result_set": [
+    {
+      "rank": 1,
+      "company": "Walmart"
+    },
+    {
+      "rank": 2,
+      "company": "Amazon"
+    },
+    {
+      "rank": 3,
+      "company": "Apple"
+    },
+    {
+      "rank": 4,
+      "company": "UnitedHealth Group"
+    },
+    {
+      "rank": 5,
+      "company": "Berkshire Hathaway"
+    },
+    {
+      "rank": 6,
+      "company": "CVS Health"
+    },
+    {
+      "rank": 7,
+      "company": "Exxon Mobil"
+    },
+    {
+      "rank": 8,
+      "company": "Alphabet"
+    },
+    {
+      "rank": 9,
+      "company": "McKesson"
+    },
+    {
+      "rank": 10,
+      "company": "Cencora"
+    }
+  ],
+  "time": 1.852,
+  "tokens": 326
+}

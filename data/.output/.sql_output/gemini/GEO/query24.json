@@ -1,0 +1,61 @@
+{
+  "result_set": [
+    {
+      "state_name": "California",
+      "population": 39237836,
+      "area_squared_miles": 163695.0
+    },
+    {
+      "state_name": "Texas",
+      "population": 30503371,
+      "area_squared_miles": 268596.0
+    },
+    {
+      "state_name": "Florida",
+      "population": 22610726,
+      "area_squared_miles": 65758.0
+    },
+    {
+      "state_name": "New York",
+      "population": 19571216,
+      "area_squared_miles": 54555.0
+    },
+    {
+      "state_name": "Pennsylvania",
+      "population": 12961683,
+      "area_squared_miles": 46055.0
+    },
+    {
+      "state_name": "Illinois",
+      "population": 12582032,
+      "area_squared_miles": 57914.0
+    },
+    {
+      "state_name": "Ohio",
+      "population": 11878330,
+      "area_squared_miles": 44825.0
+    },
+    {
+      "state_name": "Georgia",
+      "population": 11019186,
+      "area_squared_miles": 59425.0
+    },
+    {
+      "state_name": "North Carolina",
+      "population": 10835491,
+      "area_squared_miles": 53819.0
+    },
+    {
+      "state_name": "Michigan",
+      "population": 10037261,
+      "area_squared_miles": 96716.0
+    },
+    {
+      "state_name": "Alaska",
+      "population": 733583,
+      "area_squared_miles": 665384.0
+    }
+  ],
+  "time": 4.124,
+  "tokens": 840
+}

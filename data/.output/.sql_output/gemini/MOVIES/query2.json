@@ -1,0 +1,21 @@
+{
+  "result_set": [
+    {
+      "originaltitle": "Jaws"
+    },
+    {
+      "originaltitle": "E.T. the Extra-Terrestrial"
+    },
+    {
+      "originaltitle": "Jurassic Park"
+    },
+    {
+      "originaltitle": "Schindler's List"
+    },
+    {
+      "originaltitle": "Saving Private Ryan"
+    }
+  ],
+  "time": 1.732,
+  "tokens": 283
+}

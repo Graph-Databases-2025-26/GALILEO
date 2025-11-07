@@ -1,0 +1,94 @@
+{
+  "result_set": [
+    {
+      "state_name": "New York",
+      "capital": "Albany"
+    },
+    {
+      "state_name": "Georgia",
+      "capital": "Atlanta"
+    },
+    {
+      "state_name": "Texas",
+      "capital": "Austin"
+    },
+    {
+      "state_name": "Louisiana",
+      "capital": "Baton Rouge"
+    },
+    {
+      "state_name": "Nevada",
+      "capital": "Carson City"
+    },
+    {
+      "state_name": "Colorado",
+      "capital": "Denver"
+    },
+    {
+      "state_name": "Iowa",
+      "capital": "Des Moines"
+    },
+    {
+      "state_name": "Missouri",
+      "capital": "Jefferson City"
+    },
+    {
+      "state_name": "Michigan",
+      "capital": "Lansing"
+    },
+    {
+      "state_name": "Arkansas",
+      "capital": "Little Rock"
+    },
+    {
+      "state_name": "Wisconsin",
+      "capital": "Madison"
+    },
+    {
+      "state_name": "Alabama",
+      "capital": "Montgomery"
+    },
+    {
+      "state_name": "Oklahoma",
+      "capital": "Oklahoma City"
+    },
+    {
+      "state_name": "Washington",
+      "capital": "Olympia"
+    },
+    {
+      "state_name": "Arizona",
+      "capital": "Phoenix"
+    },
+    {
+      "state_name": "North Carolina",
+      "capital": "Raleigh"
+    },
+    {
+      "state_name": "California",
+      "capital": "Sacramento"
+    },
+    {
+      "state_name": "Minnesota",
+      "capital": "Saint Paul"
+    },
+    {
+      "state_name": "Oregon",
+      "capital": "Salem"
+    },
+    {
+      "state_name": "Utah",
+      "capital": "Salt Lake City"
+    },
+    {
+      "state_name": "Illinois",
+      "capital": "Springfield"
+    },
+    {
+      "state_name": "Florida",
+      "capital": "Tallahassee"
+    }
+  ],
+  "time": 10.73,
+  "tokens": 2442
+}

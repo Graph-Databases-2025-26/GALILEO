@@ -1,0 +1,678 @@
+{
+  "result_set": [
+    {
+      "city_name": "New York City"
+    },
+    {
+      "city_name": "Los Angeles"
+    },
+    {
+      "city_name": "Chicago"
+    },
+    {
+      "city_name": "Houston"
+    },
+    {
+      "city_name": "Phoenix"
+    },
+    {
+      "city_name": "Philadelphia"
+    },
+    {
+      "city_name": "San Antonio"
+    },
+    {
+      "city_name": "San Diego"
+    },
+    {
+      "city_name": "Dallas"
+    },
+    {
+      "city_name": "San Jose"
+    },
+    {
+      "city_name": "Austin"
+    },
+    {
+      "city_name": "Jacksonville"
+    },
+    {
+      "city_name": "Fort Worth"
+    },
+    {
+      "city_name": "Columbus"
+    },
+    {
+      "city_name": "Charlotte"
+    },
+    {
+      "city_name": "Indianapolis"
+    },
+    {
+      "city_name": "San Francisco"
+    },
+    {
+      "city_name": "Seattle"
+    },
+    {
+      "city_name": "Denver"
+    },
+    {
+      "city_name": "Washington"
+    },
+    {
+      "city_name": "Boston"
+    },
+    {
+      "city_name": "El Paso"
+    },
+    {
+      "city_name": "Nashville"
+    },
+    {
+      "city_name": "Detroit"
+    },
+    {
+      "city_name": "Oklahoma City"
+    },
+    {
+      "city_name": "Portland"
+    },
+    {
+      "city_name": "Las Vegas"
+    },
+    {
+      "city_name": "Memphis"
+    },
+    {
+      "city_name": "Louisville"
+    },
+    {
+      "city_name": "Baltimore"
+    },
+    {
+      "city_name": "Milwaukee"
+    },
+    {
+      "city_name": "Albuquerque"
+    },
+    {
+      "city_name": "Tucson"
+    },
+    {
+      "city_name": "Fresno"
+    },
+    {
+      "city_name": "Sacramento"
+    },
+    {
+      "city_name": "Mesa"
+    },
+    {
+      "city_name": "Kansas City"
+    },
+    {
+      "city_name": "Atlanta"
+    },
+    {
+      "city_name": "Colorado Springs"
+    },
+    {
+      "city_name": "Omaha"
+    },
+    {
+      "city_name": "Raleigh"
+    },
+    {
+      "city_name": "Miami"
+    },
+    {
+      "city_name": "Long Beach"
+    },
+    {
+      "city_name": "Virginia Beach"
+    },
+    {
+      "city_name": "Oakland"
+    },
+    {
+      "city_name": "Minneapolis"
+    },
+    {
+      "city_name": "Tulsa"
+    },
+    {
+      "city_name": "Arlington"
+    },
+    {
+      "city_name": "New Orleans"
+    },
+    {
+      "city_name": "Wichita"
+    },
+    {
+      "city_name": "Cleveland"
+    },
+    {
+      "city_name": "Tampa"
+    },
+    {
+      "city_name": "Bakersfield"
+    },
+    {
+      "city_name": "Aurora"
+    },
+    {
+      "city_name": "Honolulu"
+    },
+    {
+      "city_name": "Anaheim"
+    },
+    {
+      "city_name": "Santa Ana"
+    },
+    {
+      "city_name": "Riverside"
+    },
+    {
+      "city_name": "Corpus Christi"
+    },
+    {
+      "city_name": "Lexington"
+    },
+    {
+      "city_name": "Stockton"
+    },
+    {
+      "city_name": "St. Louis"
+    },
+    {
+      "city_name": "Pittsburgh"
+    },
+    {
+      "city_name": "Cincinnati"
+    },
+    {
+      "city_name": "Anchorage"
+    },
+    {
+      "city_name": "Plano"
+    },
+    {
+      "city_name": "Newark"
+    },
+    {
+      "city_name": "Orlando"
+    },
+    {
+      "city_name": "Irvine"
+    },
+    {
+      "city_name": "St. Petersburg"
+    },
+    {
+      "city_name": "Lincoln"
+    },
+    {
+      "city_name": "Jersey City"
+    },
+    {
+      "city_name": "Chula Vista"
+    },
+    {
+      "city_name": "Buffalo"
+    },
+    {
+      "city_name": "Chandler"
+    },
+    {
+      "city_name": "Scottsdale"
+    },
+    {
+      "city_name": "North Las Vegas"
+    },
+    {
+      "city_name": "Madison"
+    },
+    {
+      "city_name": "Laredo"
+    },
+    {
+      "city_name": "Durham"
+    },
+    {
+      "city_name": "Lubbock"
+    },
+    {
+      "city_name": "Chesapeake"
+    },
+    {
+      "city_name": "Garland"
+    },
+    {
+      "city_name": "Reno"
+    },
+    {
+      "city_name": "Hialeah"
+    },
+    {
+      "city_name": "Norfolk"
+    },
+    {
+      "city_name": "Frisco"
+    },
+    {
+      "city_name": "Winston-Salem"
+    },
+    {
+      "city_name": "Irving"
+    },
+    {
+      "city_name": "Paradise"
+    },
+    {
+      "city_name": "Boise"
+    },
+    {
+      "city_name": "Richmond"
+    },
+    {
+      "city_name": "Spokane"
+    },
+    {
+      "city_name": "Baton Rouge"
+    },
+    {
+      "city_name": "Fayetteville"
+    },
+    {
+      "city_name": "Des Moines"
+    },
+    {
+      "city_name": "San Bernardino"
+    },
+    {
+      "city_name": "Modesto"
+    },
+    {
+      "city_name": "Akron"
+    },
+    {
+      "city_name": "Tacoma"
+    },
+    {
+      "city_name": "Fontana"
+    },
+    {
+      "city_name": "Oxnard"
+    },
+    {
+      "city_name": "Montgomery"
+    },
+    {
+      "city_name": "Rochester"
+    },
+    {
+      "city_name": "Little Rock"
+    },
+    {
+      "city_name": "Moreno Valley"
+    },
+    {
+      "city_name": "Glendale"
+    },
+    {
+      "city_name": "Huntington Beach"
+    },
+    {
+      "city_name": "Salt Lake City"
+    },
+    {
+      "city_name": "Grand Rapids"
+    },
+    {
+      "city_name": "Amarillo"
+    },
+    {
+      "city_name": "Augusta"
+    },
+    {
+      "city_name": "Port St. Lucie"
+    },
+    {
+      "city_name": "Tallahassee"
+    },
+    {
+      "city_name": "Tempe"
+    },
+    {
+      "city_name": "Cape Coral"
+    },
+    {
+      "city_name": "Overland Park"
+    },
+    {
+      "city_name": "Killeen"
+    },
+    {
+      "city_name": "Fort Lauderdale"
+    },
+    {
+      "city_name": "Vancouver"
+    },
+    {
+      "city_name": "Springfield"
+    },
+    {
+      "city_name": "Santa Clarita"
+    },
+    {
+      "city_name": "Fremont"
+    },
+    {
+      "city_name": "Denton"
+    },
+    {
+      "city_name": "Brownsville"
+    },
+    {
+      "city_name": "Rancho Cucamonga"
+    },
+    {
+      "city_name": "Hollywood"
+    },
+    {
+      "city_name": "Providence"
+    },
+    {
+      "city_name": "Pembroke Pines"
+    },
+    {
+      "city_name": "Gainesville"
+    },
+    {
+      "city_name": "Santa Rosa"
+    },
+    {
+      "city_name": "Chattanooga"
+    },
+    {
+      "city_name": "Oceanside"
+    },
+    {
+      "city_name": "Elk Grove"
+    },
+    {
+      "city_name": "Salem"
+    },
+    {
+      "city_name": "Eugene"
+    },
+    {
+      "city_name": "Palmdale"
+    },
+    {
+      "city_name": "Pasadena"
+    },
+    {
+      "city_name": "Fort Collins"
+    },
+    {
+      "city_name": "Syracuse"
+    },
+    {
+      "city_name": "Clarksville"
+    },
+    {
+      "city_name": "Peoria"
+    },
+    {
+      "city_name": "Hayward"
+    },
+    {
+      "city_name": "Naperville"
+    },
+    {
+      "city_name": "Sunnyvale"
+    },
+    {
+      "city_name": "Pomona"
+    },
+    {
+      "city_name": "Escondido"
+    },
+    {
+      "city_name": "Joliet"
+    },
+    {
+      "city_name": "Alexandria"
+    },
+    {
+      "city_name": "Rockford"
+    },
+    {
+      "city_name": "Torrance"
+    },
+    {
+      "city_name": "Bridgeport"
+    },
+    {
+      "city_name": "Savannah"
+    },
+    {
+      "city_name": "Metairie"
+    },
+    {
+      "city_name": "Roseville"
+    },
+    {
+      "city_name": "Waco"
+    },
+    {
+      "city_name": "Carrollton"
+    },
+    {
+      "city_name": "Miramar"
+    },
+    {
+      "city_name": "Coral Springs"
+    },
+    {
+      "city_name": "Fullerton"
+    },
+    {
+      "city_name": "Hampton"
+    },
+    {
+      "city_name": "Pompano Beach"
+    },
+    {
+      "city_name": "Elizabeth"
+    },
+    {
+      "city_name": "Sterling Heights"
+    },
+    {
+      "city_name": "New Haven"
+    },
+    {
+      "city_name": "Columbia"
+    },
+    {
+      "city_name": "Olathe"
+    },
+    {
+      "city_name": "Warren"
+    },
+    {
+      "city_name": "Midland"
+    },
+    {
+      "city_name": "Garden Grove"
+    },
+    {
+      "city_name": "West Valley City"
+    },
+    {
+      "city_name": "Santa Clara"
+    },
+    {
+      "city_name": "Cedar Rapids"
+    },
+    {
+      "city_name": "Visalia"
+    },
+    {
+      "city_name": "Topeka"
+    },
+    {
+      "city_name": "Kent"
+    },
+    {
+      "city_name": "Santa Maria"
+    },
+    {
+      "city_name": "Simi Valley"
+    },
+    {
+      "city_name": "Lafayette"
+    },
+    {
+      "city_name": "Thousand Oaks"
+    },
+    {
+      "city_name": "Ann Arbor"
+    },
+    {
+      "city_name": "Murfreesboro"
+    },
+    {
+      "city_name": "Carlsbad"
+    },
+    {
+      "city_name": "High Point"
+    },
+    {
+      "city_name": "Downey"
+    },
+    {
+      "city_name": "Clearwater"
+    },
+    {
+      "city_name": "Costa Mesa"
+    },
+    {
+      "city_name": "West Palm Beach"
+    },
+    {
+      "city_name": "South Bend"
+    },
+    {
+      "city_name": "Compton"
+    },
+    {
+      "city_name": "Manchester"
+    },
+    {
+      "city_name": "Norwalk"
+    },
+    {
+      "city_name": "Lowell"
+    },
+    {
+      "city_name": "Round Rock"
+    },
+    {
+      "city_name": "Provo"
+    },
+    {
+      "city_name": "Waterbury"
+    },
+    {
+      "city_name": "West Jordan"
+    },
+    {
+      "city_name": "Indio"
+    },
+    {
+      "city_name": "Centennial"
+    },
+    {
+      "city_name": "Erie"
+    },
+    {
+      "city_name": "Daly City"
+    },
+    {
+      "city_name": "League City"
+    },
+    {
+      "city_name": "Broken Arrow"
+    },
+    {
+      "city_name": "Lewisville"
+    },
+    {
+      "city_name": "San Mateo"
+    },
+    {
+      "city_name": "Green Bay"
+    },
+    {
+      "city_name": "Wichita Falls"
+    },
+    {
+      "city_name": "Rialto"
+    },
+    {
+      "city_name": "Davenport"
+    },
+    {
+      "city_name": "Edinburg"
+    },
+    {
+      "city_name": "Jurupa Valley"
+    },
+    {
+      "city_name": "Las Cruces"
+    },
+    {
+      "city_name": "South Gate"
+    },
+    {
+      "city_name": "Federal Way"
+    },
+    {
+      "city_name": "Mission Viejo"
+    },
+    {
+      "city_name": "Carson"
+    },
+    {
+      "city_name": "Orem"
+    },
+    {
+      "city_name": "Sugar Land"
+    },
+    {
+      "city_name": "San Angelo"
+    },
+    {
+      "city_name": "Odessa"
+    },
+    {
+      "city_name": "Kenosha"
+    },
+    {
+      "city_name": "Boca Raton"
+    },
+    {
+      "city_name": "New Bedford"
+    },
+    {
+      "city_name": "Westminster"
+    }
+  ],
+  "time": 36.289,
+  "tokens": 8765
+}

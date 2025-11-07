@@ -1,0 +1,18 @@
+{
+  "result_set": [
+    {
+      "party": "Liberal",
+      "num": 9
+    },
+    {
+      "party": "Conservative",
+      "num": 4
+    },
+    {
+      "party": "Military",
+      "num": 1
+    }
+  ],
+  "time": 8.321,
+  "tokens": 1495
+}

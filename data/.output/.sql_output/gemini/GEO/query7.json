@@ -1,0 +1,9 @@
+{
+  "result_set": [
+    {
+      "avg(population)": 6500000
+    }
+  ],
+  "time": 0.613,
+  "tokens": 72
+}

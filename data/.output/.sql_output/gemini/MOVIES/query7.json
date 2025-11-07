@@ -1,0 +1,26 @@
+{
+  "result_set": [
+    {
+      "startyear": 1975,
+      "numMovies": 1
+    },
+    {
+      "startyear": 1982,
+      "numMovies": 2
+    },
+    {
+      "startyear": 1993,
+      "numMovies": 3
+    },
+    {
+      "startyear": 2005,
+      "numMovies": 2
+    },
+    {
+      "startyear": 2012,
+      "numMovies": 4
+    }
+  ],
+  "time": 3.05,
+  "tokens": 600
+}

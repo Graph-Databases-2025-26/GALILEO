@@ -1,0 +1,46 @@
+{
+  "result_set": [
+    {
+      "company": "Oneok",
+      "ceo": "Pierce H. Norton II"
+    },
+    {
+      "company": "Devon Energy",
+      "ceo": "Richard E. Muncrief"
+    },
+    {
+      "company": "Williams",
+      "ceo": "Alan S. Armstrong"
+    },
+    {
+      "company": "Continental Resources",
+      "ceo": "Robert D. Lawler"
+    },
+    {
+      "company": "Chesapeake Energy",
+      "ceo": "Domenic J. Dell'Osso Jr."
+    },
+    {
+      "company": "NGL Energy Partners",
+      "ceo": "H. Michael Krimbill"
+    },
+    {
+      "company": "BOK Financial",
+      "ceo": "Stacy C. Kymes"
+    },
+    {
+      "company": "Helmerich & Payne",
+      "ceo": "John W. Lindsay"
+    },
+    {
+      "company": "OGE Energy",
+      "ceo": "Sean Trauschke"
+    },
+    {
+      "company": "Alliance Resource Partners",
+      "ceo": "Joseph W. Craft III"
+    }
+  ],
+  "time": 2.498,
+  "tokens": 496
+}

@@ -1,0 +1,21 @@
+{
+  "result_set": [
+    {
+      "usa_state_traversed": "Minnesota, Wisconsin, Iowa, Illinois, Missouri, Kentucky, Tennessee, Arkansas, Mississippi, Louisiana"
+    },
+    {
+      "usa_state_traversed": "Montana, North Dakota, South Dakota, Nebraska, Iowa, Kansas, Missouri"
+    },
+    {
+      "usa_state_traversed": "Alaska"
+    },
+    {
+      "usa_state_traversed": "Colorado, New Mexico, Texas"
+    },
+    {
+      "usa_state_traversed": "Washington, Oregon"
+    }
+  ],
+  "time": 11.997,
+  "tokens": 1812
+}

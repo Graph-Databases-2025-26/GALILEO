@@ -1,0 +1,30 @@
+{
+  "result_set": [
+    {
+      "name": "Abraham Lincoln",
+      "party": "Republican"
+    },
+    {
+      "name": "Theodore Roosevelt",
+      "party": "Republican"
+    },
+    {
+      "name": "Dwight D. Eisenhower",
+      "party": "Republican"
+    },
+    {
+      "name": "Ronald Reagan",
+      "party": "Republican"
+    },
+    {
+      "name": "George W. Bush",
+      "party": "Republican"
+    },
+    {
+      "name": "Donald Trump",
+      "party": "Republican"
+    }
+  ],
+  "time": 2.093,
+  "tokens": 390
+}

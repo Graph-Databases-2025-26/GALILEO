@@ -1,0 +1,38 @@
+{
+  "result_set": [
+    {
+      "name": "Hugo Chávez",
+      "party": "PSUV"
+    },
+    {
+      "name": "Nicolás Maduro",
+      "party": "PSUV"
+    },
+    {
+      "name": "Rómulo Betancourt",
+      "party": "AD"
+    },
+    {
+      "name": "Raúl Leoni",
+      "party": "AD"
+    },
+    {
+      "name": "Rafael Caldera",
+      "party": "COPEI"
+    },
+    {
+      "name": "Carlos Andrés Pérez",
+      "party": "AD"
+    },
+    {
+      "name": "Jaime Lusinchi",
+      "party": "AD"
+    },
+    {
+      "name": "Ramón J. Velásquez",
+      "party": "Independent"
+    }
+  ],
+  "time": 2.928,
+  "tokens": 497
+}

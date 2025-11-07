@@ -1,0 +1,51 @@
+{
+  "result_set": [
+    {
+      "capital": "Albany"
+    },
+    {
+      "capital": "Augusta"
+    },
+    {
+      "capital": "Cheyenne"
+    },
+    {
+      "capital": "Concord"
+    },
+    {
+      "capital": "Dover"
+    },
+    {
+      "capital": "Frankfort"
+    },
+    {
+      "capital": "Helena"
+    },
+    {
+      "capital": "Juneau"
+    },
+    {
+      "capital": "Lansing"
+    },
+    {
+      "capital": "Montpelier"
+    },
+    {
+      "capital": "Olympia"
+    },
+    {
+      "capital": "Pierre"
+    },
+    {
+      "capital": "Springfield"
+    },
+    {
+      "capital": "Topeka"
+    },
+    {
+      "capital": "Trenton"
+    }
+  ],
+  "time": 6.226,
+  "tokens": 1273
+}

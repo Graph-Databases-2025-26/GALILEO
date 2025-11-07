@@ -1,0 +1,10 @@
+{
+  "result_set": [
+    {
+      "avg(gnp)": 25000000000.0,
+      "sum(population)": 3570000
+    }
+  ],
+  "time": 3.696,
+  "tokens": 527
+}

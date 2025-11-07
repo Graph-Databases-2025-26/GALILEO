@@ -1,0 +1,54 @@
+{
+  "result_set": [
+    {
+      "name": "George Washington",
+      "party": "No Party"
+    },
+    {
+      "name": "John Adams",
+      "party": "Federalist"
+    },
+    {
+      "name": "Thomas Jefferson",
+      "party": "Democratic-Republican"
+    },
+    {
+      "name": "Abraham Lincoln",
+      "party": "Republican"
+    },
+    {
+      "name": "Franklin D. Roosevelt",
+      "party": "Democratic"
+    },
+    {
+      "name": "John F. Kennedy",
+      "party": "Democratic"
+    },
+    {
+      "name": "Ronald Reagan",
+      "party": "Republican"
+    },
+    {
+      "name": "Bill Clinton",
+      "party": "Democratic"
+    },
+    {
+      "name": "George W. Bush",
+      "party": "Republican"
+    },
+    {
+      "name": "Barack Obama",
+      "party": "Democratic"
+    },
+    {
+      "name": "Donald Trump",
+      "party": "Republican"
+    },
+    {
+      "name": "Joe Biden",
+      "party": "Democratic"
+    }
+  ],
+  "time": 2.677,
+  "tokens": 541
+}

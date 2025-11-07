@@ -1,0 +1,22 @@
+{
+  "result_set": [
+    {
+      "party": "Military",
+      "num": 6
+    },
+    {
+      "party": "Acción Democrática",
+      "num": 6
+    },
+    {
+      "party": "COPEI",
+      "num": 2
+    },
+    {
+      "party": "Convergencia",
+      "num": 1
+    }
+  ],
+  "time": 7.409,
+  "tokens": 1510
+}

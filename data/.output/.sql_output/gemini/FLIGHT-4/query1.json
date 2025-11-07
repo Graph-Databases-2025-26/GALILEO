@@ -1,0 +1,21 @@
+{
+  "result_set": [
+    {
+      "name": "Amsterdam Airport Schiphol"
+    },
+    {
+      "name": "New Orleans Louis Armstrong International Airport"
+    },
+    {
+      "name": "Shanghai Pudong International Airport"
+    },
+    {
+      "name": "Copenhagen Airport"
+    },
+    {
+      "name": "Singapore Changi Airport"
+    }
+  ],
+  "time": 2.062,
+  "tokens": 324
+}
