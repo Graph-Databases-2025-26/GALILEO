@@ -148,8 +148,8 @@ def load_knowledge_from_db(duck_db_path: str) -> str:
 
     # Load knowledge from DuckDB database for internal knowledge querying
 
-def llm_interaction_second_version(dataset_name: str, duck_db_path: str, prompt: str, provider: str):
-    llm = create_llm(provider)
+def llm_interaction_second_version(dataset_name: str, duck_db_path: str, prompt: str):
+    llm = create_llm()
     context = build_prompt_context(dataset_name)
 
 
@@ -200,4 +200,4 @@ if __name__ == "__main__":
             logger.info(f"Processing dataset: {d}")
             nl_queries = load_nl_queries_from_txt(dataset_path)
             for i, prompt in enumerate(nl_queries):
-                llm_interaction_second_version(d,duckdb_path,prompt,"gemini")
+                llm_interaction_second_version(d,duckdb_path,prompt)

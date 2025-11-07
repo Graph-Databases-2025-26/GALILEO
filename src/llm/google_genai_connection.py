@@ -1,11 +1,7 @@
 import os
 import time
 import json
-from google import genai
-from google.genai import types
-import duckdb
 from langchain_core.prompts import ChatPromptTemplate, PromptTemplate
-from langchain_core.runnables import RunnablePassthrough
 from langchain_community.utilities import SQLDatabase
 from operator import itemgetter
 from dotenv import load_dotenv

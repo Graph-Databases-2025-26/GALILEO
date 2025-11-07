@@ -1,7 +1,5 @@
-import re
 import json
-
-
+import re
 from src.utils.constants import *
 from src.utils.logging_config import logger
 
@@ -23,36 +21,60 @@ def extract_all_json_objects(text: str):
     return combined
 
 
-def extract_json_from_response(response_text: str):
-    """
-        Extract the JSON block from a LLM response in Jinja format.
-        Strings and dictionaries addicted.
-        """
-    # Se è un dict (come nel tuo caso), prendiamo il campo 'text'
-    if isinstance(response_text, dict):
-        if "text" in response_text:
-            response_text = response_text["text"]
-        else:
-            response_text = str(response_text)
 
-    # If not a string, force the conversion
-    if not isinstance(response_text, str):
+
+def extract_json_from_response(response_text):
+    """
+    Extract and try to fix a faulty from the LLM reply to return a valid JSON object.
+    """
+    # If the response is already a dict, use it directly
+    if isinstance(response_text, dict):
+        response_text = response_text.get("text", str(response_text))
+    elif not isinstance(response_text, str):
         response_text = str(response_text)
 
-    # Cerca il blocco tra ```json ... ```
-    match = re.search(r"```json\s*(\{.*?\})\s*```", response_text, re.DOTALL)
+    # Search the main JSON block
+    match = re.search(r"(\{.*\}|\[.*\])", response_text, re.DOTALL)
     if not match:
-        logger.info("Any JSON block found.")
+        logger.warning("⚠️ Nessun blocco JSON trovato.")
         return {}
 
     json_str = match.group(1)
+
+    # Default cleaning: remove extra text
+    json_str = re.split(r"\.\.\.|Explanation:|\[Explanation\]", json_str)[0]
+
+    #  Some standard fixes
+    json_str = json_str.strip()
+    json_str = json_str.replace("}}]", "}]")
+    json_str = json_str.replace("}}", "}")
+    json_str = re.sub(r",\s*([\]}])", r"\1", json_str)
+    json_str = re.sub(r"(\])\}.*$", r"\1}", json_str)
+
+    # Close arrays or objects if missing
+    open_braces, close_braces = json_str.count("{"), json_str.count("}")
+    open_brackets, close_brackets = json_str.count("["), json_str.count("]")
+
+    if open_braces > close_braces:
+        json_str += "]" * (open_braces - close_braces)
+    if open_brackets > close_brackets:
+        json_str += "}" * (open_brackets - close_brackets)
+
     try:
-        data = json.loads(json_str)
-        return data
+        return json.loads(json_str)
     except json.JSONDecodeError as e:
-        logger.info(f"❌ Errore nel parsing JSON: {e}")
-        logger.info(f"Bad content:\n{json_str[:200]}...")
-        return {}
+        logger.info(f"Error in JSON parsing: {e}")
+        logger.debug(f"Not valid content:\n{json_str[:500]}...")
+        # Other aggressive fixes
+        json_str = re.sub(r"[^{}\[\]:,\"\w\s.-]", "", json_str)  # remove strange characters
+        print("Fixed string:", json_str)
+
+        try:
+            return json.loads(json_str)
+        except Exception:
+            logger.warning("Also the aggressive fix try failed.")
+            return {}
+
 
 def save_llm_response_to_file(dataset_name, data, index):
     # Save the response in a text file

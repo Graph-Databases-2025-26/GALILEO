@@ -62,10 +62,3 @@ PROMPT_FOR_IK_DATASETS = ( "You are an AI assistant that must answer questions s
     "Your output must be based on your knowledge and match exactly the required format. "
     "If you are uncertain about the answer, respond with the value that is most coherent and plausible according to your knowledge."
     "and you must provide an answer in the <value> field even if you are not sure about it.")
-
-
-# Dictionary of supported llm models
-SUPPORTED_MODELS = {
-    "gemini": "gemini-2.5-flash",               # Nome esatto del modello Gemini (Google)
-    "watsonx": "ibm-watsonx/granite-13b-chat" # Nome esatto del modello WatsonX (IBM)
-}

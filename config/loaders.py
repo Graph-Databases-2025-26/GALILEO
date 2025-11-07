@@ -13,6 +13,11 @@ class ExecutionConfig(BaseModel):
     backoff_sec: float
     scan: str
 
+class LLMConfig(BaseModel):
+    provider: str
+    model: str
+    temperature: float
+
 class IOConfig(BaseModel):
     queries_dir: Path
     prompts_dir: Path
@@ -41,11 +46,10 @@ class DatasetConfig(BaseModel):
     
 class AppConfig(BaseSettings):
     database: DatasetConfig
+    llm : LLMConfig
     execution: ExecutionConfig
     io: IOConfig
     logging: LoggingConfig
-    gemini: GeminiConfig
-    grok: GrokConfig
 
 class Config_Loader:
 

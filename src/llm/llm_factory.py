@@ -1,15 +1,21 @@
+import json
+
 from langchain_google_genai import ChatGoogleGenerativeAI
-from langchain_ibm import ChatWatsonx  # ipotetico, o wrapper simile
+from langchain_ibm import ChatWatsonx
+from config import Config_Loader
 from src.utils.constants import *
 from dotenv import load_dotenv
 from src.utils.logging_config import logger
 
 
-def create_llm(provider: str, temperature: float = 0.1):
+def create_llm():
     """
     Provide an LLM instance for the specified provider.
     """
-    provider = provider.lower()
+    config = Config_Loader().get_config()
+    provider = config.llm.provider
+    model = config.llm.model
+    temperature = config.llm.temperature
 
     if provider == "gemini":
         # Configure the API KEY
@@ -19,7 +25,7 @@ def create_llm(provider: str, temperature: float = 0.1):
             logger.error("GOOGLE_API_KEY environment variable not set")
         os.environ["GOOGLE_API_KEY"] = google_api_key
         return ChatGoogleGenerativeAI(
-            model=SUPPORTED_MODELS["gemini"],
+            model=model,
             temperature=temperature,
             google_api_key=google_api_key,
         )
@@ -29,14 +35,19 @@ def create_llm(provider: str, temperature: float = 0.1):
         load_dotenv()
         ibm_api_key = os.getenv("WATSONX_API_KEY")
         ibm_project_id = os.getenv("WATSONX_PROJECT_ID")
+        ibm_url = os.getenv("WATSONX_ENDPOINT")
+        ibm_user = os.getenv("WATSONX_USERNAME")
+
         if not ibm_api_key or not ibm_project_id:
             logger.error("WATSONX_API_KEY or WATSONX_PROJECT_ID environment variable not set")
         os.environ["IBM_API_KEY"] = ibm_api_key
         # Esempio di configurazione WatsonX (in base al tuo setup)
         return ChatWatsonx(
-            model_id=SUPPORTED_MODELS["watsonx"],
+            model_id=model,
             project_id=ibm_project_id,
-            credentials={"apikey": ibm_api_key},
+            credentials=json.dumps({"apikey": ibm_api_key}),
+            url=ibm_url,
+            username=ibm_user,
             temperature=temperature,
         )
 
