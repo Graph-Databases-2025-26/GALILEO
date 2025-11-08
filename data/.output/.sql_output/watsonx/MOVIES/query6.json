@@ -1,0 +1,22 @@
+{
+    "result_set": [
+        {
+            "originaltitle": "Saving Private Ryan",
+            "startyear": 1998,
+            "genres": "Drama, War",
+            "birthyear": 1946,
+            "deathyear": null,
+            "runtimeminutes": 169
+        },
+        {
+            "originaltitle": "Amistad",
+            "startyear": 1997,
+            "genres": "Biography, Drama, History",
+            "birthyear": 1946,
+            "deathyear": null,
+            "runtimeminutes": 152
+        }
+    ],
+    "time": 1.854,
+    "tokens": 143
+}

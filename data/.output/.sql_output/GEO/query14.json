@@ -4,21 +4,12 @@
             "lake_name": "Lake Superior"
         },
         {
-            "lake_name": "Lake Huron"
-        },
-        {
             "lake_name": "Lake Michigan"
         },
         {
-            "lake_name": "Lake Erie"
-        },
-        {
-            "lake_name": "Lake Ontario"
-        },
-        {
-            "lake_name": "Lake Baikal"
+            "lake_name": "Lake Huron"
         }
     ],
-    "time": 0.945,
-    "tokens": 95
+    "time": 1.39,
+    "tokens": 60
 }

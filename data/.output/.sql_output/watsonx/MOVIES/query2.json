@@ -1,0 +1,15 @@
+{
+    "result_set": [
+        {
+            "originaltitle": "Schindler's List"
+        },
+        {
+            "originaltitle": "Jurassic Park"
+        },
+        {
+            "originaltitle": "E.T. the Extra-Terrestrial"
+        }
+    ],
+    "time": 1.101,
+    "tokens": 67
+}

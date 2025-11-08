@@ -1,0 +1,18 @@
+{
+    "result_set": [
+        {
+            "startyear": 1971,
+            "numMovies": 1
+        },
+        {
+            "startyear": 1982,
+            "numMovies": 1
+        },
+        {
+            "startyear": 1993,
+            "numMovies": 1
+        }
+    ],
+    "time": 1.566,
+    "tokens": 79
+}

@@ -1,7 +1,7 @@
 from .sql_baseline import execute_IK_baseline_sql_query, execute_MC_baseline_sql_query
-from .watsonx_ai_connection import run_prompt_on_watsonx
+from .baseline_tools import save_baseline_to_json
 
 __all__ = [
     "execute_IK_baseline_sql_query", "execute_MC_baseline_sql_query",
-    "run_prompt_on_watsonx"
+    "save_baseline_to_json"
 ]

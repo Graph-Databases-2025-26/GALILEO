@@ -1,33 +1,15 @@
 {
     "result_set": [
         {
-            "usa_state_traversed": "Alaska"
+            "usa_state_traversed": "Colorado"
         },
         {
-            "usa_state_traversed": "California"
+            "usa_state_traversed": "Missouri"
         },
         {
-            "usa_state_traversed": "Hawaii"
-        },
-        {
-            "usa_state_traversed": "Montana"
-        },
-        {
-            "usa_state_traversed": "Nevada"
-        },
-        {
-            "usa_state_traversed": "Oregon"
-        },
-        {
-            "usa_state_traversed": "Texas"
-        },
-        {
-            "usa_state_traversed": "Utah"
-        },
-        {
-            "usa_state_traversed": "Washington"
+            "usa_state_traversed": "Tennessee"
         }
     ],
-    "time": 1.474,
-    "tokens": 170
+    "time": 1.471,
+    "tokens": 67
 }

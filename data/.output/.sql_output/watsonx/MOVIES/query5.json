@@ -1,0 +1,24 @@
+{
+    "result_set": [
+        {
+            "originaltitle": "Catch Me If You Can",
+            "startyear": 2002,
+            "genres": "Biography, Comedy, Crime",
+            "birthyear": 1946
+        },
+        {
+            "originaltitle": "A.I. Artificial Intelligence",
+            "startyear": 2001,
+            "genres": "Adventure, Drama, Sci-Fi",
+            "birthyear": 1946
+        },
+        {
+            "originaltitle": "Minority Report",
+            "startyear": 2002,
+            "genres": "Action, Sci-Fi, Thriller",
+            "birthyear": 1946
+        }
+    ],
+    "time": 2.109,
+    "tokens": 168
+}

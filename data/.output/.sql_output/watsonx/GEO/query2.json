@@ -1,0 +1,15 @@
+{
+    "result_set": [
+        {
+            "city_name": "Chicago"
+        },
+        {
+            "city_name": "Houston"
+        },
+        {
+            "city_name": "Phoenix"
+        }
+    ],
+    "time": 0.621,
+    "tokens": 57
+}

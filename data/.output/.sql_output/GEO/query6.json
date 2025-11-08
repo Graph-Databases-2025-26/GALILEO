@@ -2,8 +2,11 @@
     "result_set": [
         {
             "lake_name": "Clear Lake"
+        },
+        {
+            "lake_name": "Tulare Lake"
         }
     ],
-    "time": 0.464,
-    "tokens": 27
+    "time": 2.226,
+    "tokens": 39
 }

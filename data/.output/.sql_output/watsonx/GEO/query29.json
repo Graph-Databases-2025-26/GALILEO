@@ -1,0 +1,18 @@
+{
+    "result_set": [
+        {
+            "state_name": "California",
+            "capital": "Sacramento",
+            "density": 252,
+            "population": 39538223
+        },
+        {
+            "state_name": "Texas",
+            "capital": "Austin",
+            "density": 108,
+            "population": 29145505
+        }
+    ],
+    "time": 0.954,
+    "tokens": 102
+}

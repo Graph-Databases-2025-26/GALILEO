@@ -1,0 +1,18 @@
+{
+    "result_set": [
+        {
+            "originaltitle": "Munich",
+            "startyear": 2005
+        },
+        {
+            "originaltitle": "Catch Me If You Can",
+            "startyear": 2002
+        },
+        {
+            "originaltitle": "A.I. Artificial Intelligence",
+            "startyear": 2001
+        }
+    ],
+    "time": 1.319,
+    "tokens": 91
+}

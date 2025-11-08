@@ -3,8 +3,8 @@
         {
             "originaltitle": "Schindler's List",
             "startyear": 1993,
-            "genres": "Biography, Drama, History",
-            "birthyear": null,
+            "genres": "Drama, History",
+            "birthyear": 1946,
             "deathyear": null,
             "runtimeminutes": 195
         },
@@ -12,11 +12,11 @@
             "originaltitle": "Saving Private Ryan",
             "startyear": 1998,
             "genres": "Drama, War",
-            "birthyear": null,
+            "birthyear": 1946,
             "deathyear": null,
             "runtimeminutes": 169
         }
     ],
-    "time": 1.221,
-    "tokens": 137
+    "time": 2.016,
+    "tokens": 142
 }

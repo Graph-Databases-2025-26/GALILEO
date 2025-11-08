@@ -1,9 +1,9 @@
 {
     "result_set": [
         {
-            "avg(population)": 1500000
+            "avg(population)": 1234567
         }
     ],
-    "time": 0.59,
+    "time": 1.63,
     "tokens": 32
 }

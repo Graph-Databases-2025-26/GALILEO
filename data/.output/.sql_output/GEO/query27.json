@@ -2,7 +2,7 @@
     "result_set": [
         {
             "state_name": "California",
-            "population": 39512223,
+            "population": 39538223,
             "capital": "Sacramento"
         },
         {
@@ -14,18 +14,8 @@
             "state_name": "Florida",
             "population": 21477737,
             "capital": "Tallahassee"
-        },
-        {
-            "state_name": "New York",
-            "population": 19453561,
-            "capital": "Albany"
-        },
-        {
-            "state_name": "Pennsylvania",
-            "population": 12801989,
-            "capital": "Harrisburg"
         }
     ],
-    "time": 1.763,
-    "tokens": 201
+    "time": 1.548,
+    "tokens": 124
 }

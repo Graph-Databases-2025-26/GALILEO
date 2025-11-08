@@ -3,16 +3,16 @@
         {
             "state_name": "California",
             "capital": "Sacramento",
-            "density": 252,
-            "population": 39538223
+            "density": 25.1,
+            "population": 39512223
         },
         {
             "state_name": "Texas",
             "capital": "Austin",
-            "density": 108,
+            "density": 35.9,
             "population": 29145505
         }
     ],
-    "time": 0.954,
-    "tokens": 102
+    "time": 1.396,
+    "tokens": 104
 }

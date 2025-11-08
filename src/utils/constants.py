@@ -17,7 +17,9 @@ NL_OUTPUT = SUBMISSIONS_PATH / ".nl_output"
 
 SQL_BLINE_DIR = SUBMISSIONS_PATH / ".sql_output"
 
-SQL_OUTPUT = SQL_BLINE_DIR
+GEMINI_OUTPUT = SQL_BLINE_DIR / "gemini"
+
+WATSONX_OUTPUT = SQL_BLINE_DIR / "watsonx"
 
 GROUND_PATH = DATA_DIR / ".ground_truth"
 
@@ -71,7 +73,8 @@ SQL_MC_PROMPT= """
     ---
 
     """
-
+    
+SQL_HUMAN_PROMPT = "Now process this SQL query: {query}"
 
 NL_IK_PROMPT = """
     You are an AI assistant that answers questions. Your ONLY task is to generate a JSON response that simulates the result of the question in natural language based on your internal knowledge and the structure of the database schema provided to you.

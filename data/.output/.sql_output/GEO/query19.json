@@ -1,84 +1,15 @@
 {
     "result_set": [
         {
-            "capital": "Washington, D.C."
+            "capital": "Hartford"
         },
         {
-            "capital": "Albany"
-        },
-        {
-            "capital": "Atlanta"
-        },
-        {
-            "capital": "Baton Rouge"
-        },
-        {
-            "capital": "Boise"
-        },
-        {
-            "capital": "Carson City"
-        },
-        {
-            "capital": "Cheyenne"
-        },
-        {
-            "capital": "Columbus"
-        },
-        {
-            "capital": "Disputed"
-        },
-        {
-            "capital": "Dover"
-        },
-        {
-            "capital": "Helena"
-        },
-        {
-            "capital": "Harrisburg"
-        },
-        {
-            "capital": "Honolulu"
-        },
-        {
-            "capital": "Juneau"
+            "capital": "Augusta"
         },
         {
             "capital": "Montgomery"
-        },
-        {
-            "capital": "New York City"
-        },
-        {
-            "capital": "Phoenix"
-        },
-        {
-            "capital": "Pierre"
-        },
-        {
-            "capital": "Providence"
-        },
-        {
-            "capital": "Raleigh"
-        },
-        {
-            "capital": "Richmond"
-        },
-        {
-            "capital": "Santa Fe"
-        },
-        {
-            "capital": "Springfield"
-        },
-        {
-            "capital": "Tallahassee"
-        },
-        {
-            "capital": "Topeka"
-        },
-        {
-            "capital": "Waukesha"
         }
     ],
-    "time": 2.511,
-    "tokens": 298
+    "time": 1.322,
+    "tokens": 46
 }

@@ -3,23 +3,22 @@
         {
             "originaltitle": "Catch Me If You Can",
             "startyear": 2002,
-            "genres": [
-                "Biography",
-                "Comedy",
-                "Crime"
-            ],
+            "genres": "Biography|Comedy|Crime",
             "birthyear": 1946
         },
         {
             "originaltitle": "A.I. Artificial Intelligence",
             "startyear": 2001,
-            "genres": [
-                "Sci-Fi",
-                "Drama"
-            ],
+            "genres": "Drama|Sci-Fi",
+            "birthyear": 1946
+        },
+        {
+            "originaltitle": "Minority Report",
+            "startyear": 2002,
+            "genres": "Action|Crime|Sci-Fi",
             "birthyear": 1946
         }
     ],
-    "time": 1.119,
-    "tokens": 120
+    "time": 2.412,
+    "tokens": 167
 }
