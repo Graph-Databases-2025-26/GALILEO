@@ -1,5 +1,5 @@
-from src.utils import LOG, DATA_DIR, SQL_IK_PROMPT, SQL_MC_PROMPT, SQL_HUMAN_PROMPT, WATSONX_OUTPUT, GEMINI_OUTPUT
-from .llm_factory import get_model
+from src.utils import LOG, DATA_DIR, SYSTEM_PROMPT, HUMAN_PROMPT, BASELINE_OUTPUT
+from .llm_factory import LLMBaseWrapper
 
 from langchain_core.output_parsers import PydanticOutputParser
 from langchain_core.prompts import ChatPromptTemplate
@@ -17,15 +17,14 @@ class Response(BaseModel):
         description="List of result records, each as a {column_name: value} dict where values can be mixed types."
     )
 
-def parse_llm_response(raw_response, time) -> dict:
+def parse_llm_response(raw_response, time: float, llm_wrapper: LLMBaseWrapper) -> dict:
     
-    LOG.info("Parsing LLM Response ...")
     parser = PydanticOutputParser(pydantic_object=Response)
     
     watsonx_rsp = parser.parse(raw_response.content)
     LOG.debug(f"LLM Content Output: {watsonx_rsp}")
         
-    tokens = raw_response.usage_metadata.get("output_tokens")
+    tokens = llm_wrapper.get_output_tokens(raw_response)
     LOG.debug(f"LLM Tokens Output: {tokens}")
     
     fullJ_structure ={
@@ -36,13 +35,9 @@ def parse_llm_response(raw_response, time) -> dict:
     
     return fullJ_structure
 
-def save_baseline_to_json(dataset: str, baseline: list[dict], llm_provider):
+def save_baseline_to_json(dataset: str, baseline: list[dict], llm_wrapper: LLMBaseWrapper, b_type: str):
     
-    if llm_provider == "gemini":
-        bline_folder = GEMINI_OUTPUT / dataset 
-    
-    elif llm_provider == "watsonx":
-        bline_folder = WATSONX_OUTPUT / dataset   
+    bline_folder = BASELINE_OUTPUT[b_type][llm_wrapper.get_provider_name().upper()] 
     
     bline_folder.mkdir(parents=True, exist_ok=True)    
 
@@ -80,30 +75,23 @@ def get_db_context(input_d: dict) -> dict:
     return output
         
         
-def build_lcel_chain(config, database, query, baseline):
+def build_lcel_chain(llm_model: LLMBaseWrapper, b_type: str, d_type: str):
     
     parser = PydanticOutputParser(pydantic_object=Response)
     format_instructions = parser.get_format_instructions()
     
-    LOG.info(f"Obtaining the db Context ...")
     db = RunnableLambda(get_db_context)
     
-    if baseline == "MC":
-        Syt_Prompt = SQL_MC_PROMPT
-    else:
-        Syt_Prompt = SQL_IK_PROMPT
-        
-    Hm_Prompt = SQL_HUMAN_PROMPT
-    
-    LOG.info("Building the LLM Prompt ...")
+    Syst_Prompt = SYSTEM_PROMPT[b_type][d_type]
+    Hm_Prompt = HUMAN_PROMPT[b_type]
     
     FULL_PROMPT = ChatPromptTemplate.from_messages([
-        ("system", Syt_Prompt),
+        ("system", Syst_Prompt),
         ("human", Hm_Prompt)
     ]).partial(format_instructions=format_instructions)
     
-    llm_model = get_model(config)
+    LOG.debug(f"FULL Prompt: \n{FULL_PROMPT}")
     
-    return  db | FULL_PROMPT | llm_model
+    return  db | FULL_PROMPT | llm_model.get_llm_instance()
 
 

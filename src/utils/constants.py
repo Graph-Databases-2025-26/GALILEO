@@ -13,13 +13,21 @@ PROMPTS = DATA_DIR / ".prompts"
 
 SUBMISSIONS_PATH = DATA_DIR / ".output"
 
-NL_OUTPUT = SUBMISSIONS_PATH / ".nl_output"
+NL_BLINE_DIR = SUBMISSIONS_PATH / ".nl_output"
 
 SQL_BLINE_DIR = SUBMISSIONS_PATH / ".sql_output"
 
-GEMINI_OUTPUT = SQL_BLINE_DIR / "gemini"
-
-WATSONX_OUTPUT = SQL_BLINE_DIR / "watsonx"
+BASELINE_OUTPUT = {
+    "SQL" : {
+        "GEMINI" : SQL_BLINE_DIR / "gemini",
+        "WATSONX" : SQL_BLINE_DIR / "watsonx"
+    },
+    
+    "NL" : {
+        "GEMINI" : NL_BLINE_DIR / "gemini",
+        "WATSONX" : NL_BLINE_DIR / "watsonx"
+    }
+}
 
 GROUND_PATH = DATA_DIR / ".ground_truth"
 
@@ -48,13 +56,13 @@ SQL_IK_PROMPT = """
     STRICT INSTRUCTIONS:
     1. RESPONSE MUST be ONLY ONE, single, valid JSON object.
     2. DO NOT include any text, description, explanation, or markdown.
-    3. START your response IMMEDIATELY with the single '{' character and END with the single '}' character.
+    3. START your response IMMEDIATELY with the single '{{' character and END with the single '}}' character.
     4. Use this JSON structure exactly:
-    {
+    {{
     "result_set": [
-        { "<column_name_1>": "<value_1>", ... }
+        {{ "<column_name_1>": "<value_1>", ... }}
     ],
-    }
+    }}
     5. "result_set" must be an array of JSON objects where keys match the columns selected in the query.
 
     """ 
@@ -72,9 +80,21 @@ SQL_MC_PROMPT= """
     {raw_data}
     ---
 
-    """
+    STRICT INSTRUCTIONS:
+    1. RESPONSE MUST be ONLY ONE, single, valid JSON object.
+    2. DO NOT include any text, description, explanation, or markdown.
+    3. START your response IMMEDIATELY with the single '{{' character and END with the single '}}' character.
+    4. Use this JSON structure exactly:
+    {{
+    "result_set": [
+        {{ "<column_name_1>": "<value_1>", ... }}
+        ],
+        "time": <time required for the computation as float>,
+        "tokens": <total tokens used  as integer>
+    }}
+    5. "result_set" must be an array of JSON objects where keys match the columns selected in the query.
     
-SQL_HUMAN_PROMPT = "Now process this SQL query: {query}"
+    """
 
 NL_IK_PROMPT = """
     You are an AI assistant that answers questions. Your ONLY task is to generate a JSON response that simulates the result of the question in natural language based on your internal knowledge and the structure of the database schema provided to you.
@@ -115,6 +135,24 @@ NL_MC_PROMPT = """
 
     """
 
+SYSTEM_PROMPT = {
+    "NL": {
+        "IK": NL_IK_PROMPT,
+        "MC": NL_MC_PROMPT
+    },
+    
+    "SQL":{
+        "IK": SQL_IK_PROMPT,
+        "MC": SQL_MC_PROMPT
+    }
+}
+
+    
+HUMAN_PROMPT = {
+    "SQL": "Now process this SQL query: {query}",
+    "NL" : "Now process this question: {query}"
+}
+    
 
 FULL_JSON_FORMAT = """
 {{

@@ -1,0 +1,24 @@
+{
+    "result_set": [
+        {
+            "region": "North America"
+        },
+        {
+            "region": "Central America"
+        },
+        {
+            "region": "South America"
+        },
+        {
+            "region": "Caribbean"
+        },
+        {
+            "region": "Europe"
+        },
+        {
+            "region": "Africa"
+        }
+    ],
+    "time": 1.414,
+    "tokens": 73
+}

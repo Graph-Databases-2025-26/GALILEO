@@ -1,0 +1,22 @@
+{
+    "result_set": [
+        {
+            "party": "Liberal",
+            "num": 12
+        },
+        {
+            "party": "Democratic Revolutionary Party",
+            "num": 10
+        },
+        {
+            "party": "Justice First",
+            "num": 7
+        },
+        {
+            "party": "Movement Toward Socialism",
+            "num": 5
+        }
+    ],
+    "time": 1.253,
+    "tokens": 98
+}

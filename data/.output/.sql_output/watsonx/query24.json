@@ -1,0 +1,41 @@
+{
+    "result_set": [
+        {
+            "name": "Bill Clinton",
+            "party": "Democratic",
+            "start_year": 1993,
+            "end_year": 2001,
+            "cardinal_number": 42
+        },
+        {
+            "name": "Jimmy Carter",
+            "party": "Democratic",
+            "start_year": 1977,
+            "end_year": 1981,
+            "cardinal_number": 39
+        },
+        {
+            "name": "Lyndon B. Johnson",
+            "party": "Democratic",
+            "start_year": 1963,
+            "end_year": 1969,
+            "cardinal_number": 36
+        },
+        {
+            "name": "John F. Kennedy",
+            "party": "Democratic",
+            "start_year": 1961,
+            "end_year": 1963,
+            "cardinal_number": 35
+        },
+        {
+            "name": "Harry S. Truman",
+            "party": "Democratic",
+            "start_year": 1945,
+            "end_year": 1953,
+            "cardinal_number": 33
+        }
+    ],
+    "time": 2.933,
+    "tokens": 305
+}

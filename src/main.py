@@ -1,8 +1,8 @@
-from src.utils import PY, SUBMISSIONS_PATH, GROUND_PATH, DATA_DIR, WATSONX_OUTPUT, IK_DATASETS, MC_DATASETS
+from src.utils import PY, SUBMISSIONS_PATH, GROUND_PATH, DATA_DIR, IK_DATASETS, MC_DATASETS, BASELINE_OUTPUT
 from src.utils import get_dataset_selection
 from src.utils import LOG, log_init 
 
-from src.llm import execute_IK_baseline_sql_query, execute_MC_baseline_sql_query, save_baseline_to_json
+from src.llm import execute_baseline_sql_query
 
 from src.db import run_queries_to_json, db_creation
 
@@ -161,11 +161,10 @@ def main():
         LOG.info(f"Loaded {len(queries)} queries for dataset {dataset}")
         
         if dataset in IK_DATASETS:
-            sql_baseline = execute_IK_baseline_sql_query(config, dataset, queries)
-        elif dataset in MC_DATASETS:
-            sql_baseline = execute_MC_baseline_sql_query(config, dataset, queries)
+            execute_baseline_sql_query(config, dataset, queries, "SQL" ,"IK")
         
-        save_baseline_to_json(dataset, sql_baseline, config.llm_provider)
+        if dataset in MC_DATASETS:
+            execute_baseline_sql_query(config, dataset, queries, "SQL", "MC")
         
         ##db_creation(dataset)
         ##run_queries_to_json.run_queries_to_json(dataset)
@@ -176,7 +175,7 @@ def main():
         "-m",
         "src.utils.galois_eval",
         "--ground", GROUND_PATH,
-        "--submissions", WATSONX_OUTPUT,
+        "--submissions", BASELINE_OUTPUT["SQL"][config.llm_provider.upper()],
         "--datasets", *datasets,
         "--cell-metric similarity",
         "--tuple-metric constraint",
