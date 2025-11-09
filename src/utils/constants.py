@@ -149,8 +149,8 @@ SYSTEM_PROMPT = {
 
     
 HUMAN_PROMPT = {
-    "SQL": "Now process this SQL query: {query}",
-    "NL" : "Now process this question: {query}"
+    "SQL": "Now process this SQL query: {{query}}",
+    "NL" : "Now process this question: {{query}}"
 }
     
 

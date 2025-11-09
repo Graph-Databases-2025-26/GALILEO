@@ -1,3 +1,5 @@
+import duckdb
+
 from src.utils import LOG, DATA_DIR, SYSTEM_PROMPT, HUMAN_PROMPT, BASELINE_OUTPUT
 from .llm_factory import LLMBaseWrapper
 
@@ -37,7 +39,8 @@ def parse_llm_response(raw_response, time: float, llm_wrapper: LLMBaseWrapper) -
 
 def save_baseline_to_json(dataset: str, baseline: list[dict], llm_wrapper: LLMBaseWrapper, b_type: str):
     
-    bline_folder = BASELINE_OUTPUT[b_type][llm_wrapper.get_provider_name().upper()] 
+    bline_folder = BASELINE_OUTPUT[b_type][llm_wrapper.get_provider_name().upper()]/dataset
+    print(bline_folder)
     
     bline_folder.mkdir(parents=True, exist_ok=True)    
 
@@ -51,26 +54,45 @@ def get_db_context(input_d: dict) -> dict:
     
     database = input_d["database"]
     
-    dbs_path = DATA_DIR / database.upper() / f"{database}.duckdb"
-    db = SQLDatabase.from_uri(f"duckdb:///{dbs_path}")  
+    dbs_path = DATA_DIR / database.upper() / f"{database.lower()}.duckdb"
+    db = SQLDatabase.from_uri(f"duckdb:///{dbs_path}")
     
-    db_schema = db.get_table_info() 
-    
-    if input_d["BASELINE"] == "MC":
-        db_context = db.run(input_d["query"])
-        
+    db_schema = db.get_table_info()
+
+    if (input_d["b_type"] == "nl" or input_d["b_type"] == "NL") and  input_d["BASELINE"] == "MC":
+        db_context = input_d["prompt"]
+
         output = {
-            "schema_info" : db_schema,
-            "raw_data" : db_context,
-            "query" : input_d["query"]
+            "schema_info": db_schema,
+            "raw_data": db_context,
+            "query": db.run(input_d["query"])
         }
-    
-    elif input_d["BASELINE"] == "IK":
-        
+
+    if (input_d["b_type"] == "nl" or input_d["b_type"] == "NL") and  input_d["BASELINE"] == "IK":
+        db_context = input_d["prompt"]
+
         output = {
-            "schema_info" : db_schema,
-            "query" : input_d["query"]
+            "schema_info": db_schema,
+            "raw_data": db_context,
+            #"query": input_d["prompt"]
         }
+
+    if input_d["b_type"] == "sql" or input_d["b_type"] == "SQL":
+        if input_d["BASELINE"] == "MC":
+            db_context = db.run(input_d["query"])
+
+            output = {
+                "schema_info" : db_schema,
+                "raw_data" : db_context,
+                "query" : input_d["query"]
+            }
+
+        elif input_d["BASELINE"] == "IK":
+
+            output = {
+                "schema_info" : db_schema,
+                "query" : input_d["query"]
+            }
     
     return output
         
@@ -82,8 +104,9 @@ def build_lcel_chain(llm_model: LLMBaseWrapper, b_type: str, d_type: str):
     
     db = RunnableLambda(get_db_context)
     
-    Syst_Prompt = SYSTEM_PROMPT[b_type][d_type]
-    Hm_Prompt = HUMAN_PROMPT[b_type]
+    Syst_Prompt = SYSTEM_PROMPT[b_type.upper()][d_type.upper()]
+    Hm_Prompt = HUMAN_PROMPT[b_type.upper()]
+
     
     FULL_PROMPT = ChatPromptTemplate.from_messages([
         ("system", Syst_Prompt),
@@ -92,6 +115,6 @@ def build_lcel_chain(llm_model: LLMBaseWrapper, b_type: str, d_type: str):
     
     LOG.debug(f"FULL Prompt: \n{FULL_PROMPT}")
     
-    return  db | FULL_PROMPT | llm_model.get_llm_instance()
+    return  db | FULL_PROMPT  | llm_model.get_llm_instance()
 
 

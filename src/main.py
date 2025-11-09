@@ -16,36 +16,36 @@ import subprocess, re, argparse
 # from src.db.run_queries_to_json import load_nl_queries_from_txt
 
 # CLI parsing
-# def parse_args():
-#     """
-#     Command-line interface for the project.
+def parse_args():
+     """
+     Command-line interface for the project.
 
-#     Examples:
-#       python -m src.main WORLD --mode sql --provider gemini
-#       python -m src.main GEO MOVIES --mode both
-#       python -m src.main --mode nl   (datasets from config.database.run)
-#     """
-#     parser = argparse.ArgumentParser(
-#         description="Run NL/SQL baselines over one or more datasets."
-#     )
-#     parser.add_argument(
-#         "datasets",
-#         nargs="*",
-#         help="Dataset names, e.g. GEO MOVIES WORLD. If omitted, uses config.database.run.",
-#     )
-#     parser.add_argument(
-#         "--mode",
-#         choices=["nl", "sql", "both"],
-#         default="both",
-#         help="Which baseline(s) to run.",
-#     )
-#     parser.add_argument(
-#         "--provider",
-#         choices=["gemini", "watsonx"],
-#         default=None,
-#         help="Override LLM provider. If omitted, uses config.llm.provider.",
-#     )
-#     return parser.parse_args()
+     Examples:
+       python -m src.main WORLD --mode sql --provider gemini
+       python -m src.main GEO MOVIES --mode both
+       python -m src.main --mode nl   (datasets from config.database.run)
+     """
+     parser = argparse.ArgumentParser(
+         description="Run NL/SQL baselines over one or more datasets."
+     )
+     parser.add_argument(
+         "datasets",
+         nargs="*",
+         help="Dataset names, e.g. GEO MOVIES WORLD. If omitted, uses config.database.run.",
+     )
+     parser.add_argument(
+         "--mode",
+         choices=["nl", "sql", "both"],
+         default="both",
+         help="Which baseline(s) to run.",
+     )
+     parser.add_argument(
+         "--provider",
+         choices=["gemini", "watsonx"],
+         default=None,
+         help="Override LLM provider. If omitted, uses config.llm.provider.",
+     )
+     return parser.parse_args()
 
 # # Watsonx SQL baseline (your old logic moved into a helper)
 # def run_sql_baseline_watsonx(config, datasets):

@@ -1,11 +1,16 @@
 import sys
+from time import time
+
 import duckdb
 from dotenv import load_dotenv
 from jinja2 import Environment, FileSystemLoader
 from langchain_classic.chains.llm import LLMChain
 from langchain_community.utilities import SQLDatabase
 from langchain_core.prompts import PromptTemplate
-from src.llm.llm_factory import create_llm
+
+from src.llm.baseline_tools import parse_llm_response, save_baseline_to_json, build_lcel_chain
+from src.llm.llm_factory import get_llm_wrapper
+from src.main import parse_args
 from src.utils.parse_llm_response import save_llm_response_to_file, extract_json_from_response
 from ..utils.constants import *
 from .google_genai_connection import query_internal_knowledge, query_nl_qa_contextual
@@ -13,7 +18,7 @@ from ..db.run_queries_to_json import load_queries_from_folder, load_nl_queries_f
 from ..utils.build_prompt_context import build_prompt_context
 from config import Config_Loader
 from ..utils.dataset_selection import get_dataset_selection
-from ..utils.logging_config import logger
+from ..utils.logging_config import logger, LOG
 
 #CONFIGURE THE API KEY
 load_dotenv()
@@ -154,10 +159,42 @@ def load_dataset_additional_info_(duck_db_path: str, query: str) -> str:
         return f"Error in the DuckDB loading: {e}"
 
 
-    # Load knowledge from DuckDB database for internal knowledge querying
+def llm_interaction_second_version(config, database: str, prompts: list[str], b_type: str, d_type: str):
 
-def llm_interaction_second_version(dataset_name: str, duck_db_path: str, prompt: str, query: str):
-    llm = create_llm()
+    logger.info(f"baseline: {b_type}, dataset type: {d_type}")
+    llm = get_llm_wrapper(config)
+    chain = build_lcel_chain(llm,b_type, d_type)
+
+    folder = os.path.join(DATA_DIR, database)
+    print("STO LEGGENDO LE QUERY DEL DATASET: ", folder)
+    queries = load_queries_from_folder(folder)
+    assert len(prompts) == len(queries), (
+        f"Mismatch: {len(prompts)} prompts vs {len(queries)} queries in {database}"
+    )
+
+    results = []
+    for prompt, sql_query in zip(prompts, queries):
+
+        if isinstance(sql_query, tuple):
+            sql_query = sql_query[1]
+
+        LOG.info(f"Executing baseline NL prompts: {prompt} with corresponding SQL query: {sql_query}")
+
+        t_start = time()
+        try:
+
+            raw_response = chain.invoke({"database": database,"b_type": b_type, "query": sql_query, "prompt":prompt, "BASELINE": d_type })
+
+            t_end = time()
+
+            result = parse_llm_response(raw_response, t_end - t_start, llm)
+            results.append(result)
+
+        except Exception as e:
+            LOG.error(f"LLM/Parsing Error: {e}. Failed to parse required JSON structure.")
+
+    save_baseline_to_json(database, results, llm, b_type)
+    """
     context = build_prompt_context(dataset_name)
     knowledge = load_tables_knowledge_from_db(duck_db_path)
     full_prompt = NL_MC_PROMPT + "\n\n" + context + "\n\n" + prompt
@@ -195,18 +232,28 @@ def llm_interaction_second_version(dataset_name: str, duck_db_path: str, prompt:
 
     print("\n=== Model Answer ===")
     print(response)
+    """
 
 if __name__ == "__main__":
     config = Config_Loader().get_config()
-    datasets = get_dataset_selection(config.database.run)
+    args = parse_args()
+    d_type=""
+    datasets = args.datasets or get_dataset_selection(config.database.run)
     for d in datasets:
+
+        d = d.upper()
+        if d in IK_DATASETS:
+            d_type = "IK"
+        elif d in MC_DATASETS:
+            d_type = "MC"
         logger.info(f"Checking folder: {d}")
-        if d.upper() in DATASETS:
+        if d in DATASETS:
             dataset_path = os.path.join(DATA_DIR, d)
+            print(dataset_path)
             duckdb_path = os.path.join(DATA_DIR, d, f"{d.lower()}.duckdb")
             if not os.path.isdir(dataset_path):
                 continue
             logger.info(f"Processing dataset: {d}")
+
             nl_queries = load_nl_queries_from_txt(dataset_path)
-            for i, prompt in enumerate(nl_queries):
-                llm_interaction_second_version(d,duckdb_path,prompt,prompt)
+            llm_interaction_second_version(config,d , nl_queries, args.mode.upper(), d_type)
