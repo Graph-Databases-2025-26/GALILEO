@@ -1,0 +1,30 @@
+{
+    "result_set": [
+        {
+            "region": "North America",
+            "language": "English"
+        },
+        {
+            "region": "Europe",
+            "language": "English"
+        },
+        {
+            "region": "Europe",
+            "language": "Dutch"
+        },
+        {
+            "region": "South America",
+            "language": "Dutch"
+        },
+        {
+            "region": "Africa",
+            "language": "English"
+        },
+        {
+            "region": "Oceania",
+            "language": "English"
+        }
+    ],
+    "time": 3.08,
+    "tokens": 118
+}

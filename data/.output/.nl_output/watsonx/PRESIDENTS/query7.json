@@ -1,0 +1,22 @@
+{
+    "result_set": [
+        {
+            "party_name": "Acci\u00f3n Democr\u00e1tica",
+            "number_of_presidents": 4
+        },
+        {
+            "party_name": "COPEI",
+            "number_of_presidents": 2
+        },
+        {
+            "party_name": "Partido Socialista Unido de Venezuela",
+            "number_of_presidents": 1
+        },
+        {
+            "party_name": "Movimiento V [Rep\u00fablica]'",
+            "number_of_presidents": 1
+        }
+    ],
+    "time": 2.661,
+    "tokens": 112
+}

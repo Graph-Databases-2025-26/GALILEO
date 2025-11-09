@@ -1,16 +1,13 @@
-import duckdb
-
 from src.utils import LOG, DATA_DIR, SYSTEM_PROMPT, HUMAN_PROMPT, BASELINE_OUTPUT
 from .llm_factory import LLMBaseWrapper
-
 from langchain_core.output_parsers import PydanticOutputParser
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.runnables import RunnableLambda
-from langchain_community.utilities import SQLDatabase
-
 from typing import List, Dict, Union, Any
 from pydantic import BaseModel, Field
 import json
+from ..db.duckdb_db_graphdb import get_duckdb_path
+
 
 class Response(BaseModel):
    
@@ -53,28 +50,26 @@ def save_baseline_to_json(dataset: str, baseline: list[dict], llm_wrapper: LLMBa
 def get_db_context(input_d: dict) -> dict:
     
     database = input_d["database"]
-    
-    dbs_path = DATA_DIR / database.upper() / f"{database.lower()}.duckdb"
-    db = SQLDatabase.from_uri(f"duckdb:///{dbs_path}")
-    
+    db = get_duckdb_path(database)
+
     db_schema = db.get_table_info()
 
     if (input_d["b_type"] == "nl" or input_d["b_type"] == "NL") and  input_d["BASELINE"] == "MC":
-        db_context = input_d["prompt"]
-
+        db_context = db.run(input_d["query"])
+        print("DB CONTEXT: ",db_context)
         output = {
             "schema_info": db_schema,
             "raw_data": db_context,
-            "query": db.run(input_d["query"])
+            "query": input_d["prompt"] ,
         }
 
     if (input_d["b_type"] == "nl" or input_d["b_type"] == "NL") and  input_d["BASELINE"] == "IK":
-        db_context = input_d["prompt"]
+        #db_context = input_d["prompt"]
 
         output = {
             "schema_info": db_schema,
-            "raw_data": db_context,
-            #"query": input_d["prompt"]
+            #"raw_data": db_context,
+            "query": input_d["prompt"]
         }
 
     if input_d["b_type"] == "sql" or input_d["b_type"] == "SQL":

@@ -1,0 +1,42 @@
+{
+    "result_set": [
+        {
+            "lake_name": "Lake Tahoe",
+            "location": "Sierra Nevada"
+        },
+        {
+            "lake_name": "Clear Lake",
+            "location": "Mendocino County"
+        },
+        {
+            "lake_name": "Lake Berryessa",
+            "location": "Napa County"
+        },
+        {
+            "lake_name": "Lake Shasta",
+            "location": "Shasta County"
+        },
+        {
+            "lake_name": "Salton Sea",
+            "location": "Imperial County"
+        },
+        {
+            "lake_name": "Lake Oroville",
+            "location": "Butte County"
+        },
+        {
+            "lake_name": "Lake Don Pedro",
+            "location": "Tuolumne County"
+        },
+        {
+            "lake_name": "Lake McClure",
+            "location": "Mariposa County"
+        },
+        {
+            "lake_name": "Lake Isabella",
+            "location": "Kern County"
+        }
+    ],
+    "time": 4.403,
+    "tokens": 204
+}

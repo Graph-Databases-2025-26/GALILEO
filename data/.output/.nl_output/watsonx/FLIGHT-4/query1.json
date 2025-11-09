@@ -1,0 +1,12 @@
+{
+    "result_set": [
+        {
+            "name": "Amsterdam Airport Schiphol"
+        },
+        {
+            "name": "Rotterdam The Hague Airport"
+        }
+    ],
+    "time": 1.567,
+    "tokens": 50
+}

@@ -1,9 +1,0 @@
-{
-  "result_set": [
-    {
-      "query": "SELECT home_team, away_team, home_goals, away_goals FROM target.premier_league_2024_2025_match_result"
-    }
-  ],
-  "time": 0,
-  "tokens": 0
-}

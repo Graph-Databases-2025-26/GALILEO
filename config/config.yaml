@@ -23,6 +23,6 @@ gemini:
   max_output_tokens: 2000
 
 watsonx:
-  model: "ibm/granite-3-8b-instruct"
+  model: "meta-llama/llama-3-3-70b-instruct"
   temperature: 0.7
   max_tokens: 1000

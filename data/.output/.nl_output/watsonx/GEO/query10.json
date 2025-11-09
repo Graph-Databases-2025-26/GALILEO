@@ -1,0 +1,93 @@
+{
+    "result_set": [
+        {
+            "name": "Lake Superior"
+        },
+        {
+            "name": "Lake Michigan"
+        },
+        {
+            "name": "Lake Huron"
+        },
+        {
+            "name": "Lake Erie"
+        },
+        {
+            "name": "Lake Ontario"
+        },
+        {
+            "name": "Great Salt Lake"
+        },
+        {
+            "name": "Lake Mead"
+        },
+        {
+            "name": "Lake Powell"
+        },
+        {
+            "name": "Lake Tahoe"
+        },
+        {
+            "name": "Lake Chelan"
+        },
+        {
+            "name": "Lake George"
+        },
+        {
+            "name": "Lake Winnipesaukee"
+        },
+        {
+            "name": "Lake Champlain"
+        },
+        {
+            "name": "Lake Sakakawea"
+        },
+        {
+            "name": "Lake Oahe"
+        },
+        {
+            "name": "Lake Sharpe"
+        },
+        {
+            "name": "Lake Francis Case"
+        },
+        {
+            "name": "Lake Lewis and Clark"
+        },
+        {
+            "name": "Lake Crescent"
+        },
+        {
+            "name": "Lake Quinault"
+        },
+        {
+            "name": "Lake Pend Oreille"
+        },
+        {
+            "name": "Lake Coeur d'Alene"
+        },
+        {
+            "name": "Lake Flathead"
+        },
+        {
+            "name": "Lake Clark"
+        },
+        {
+            "name": "Lake Iliamna"
+        },
+        {
+            "name": "Lake Becharof"
+        },
+        {
+            "name": "Lake Aleknagik"
+        },
+        {
+            "name": "Lake Dickey"
+        },
+        {
+            "name": "Lake Louise"
+        }
+    ],
+    "time": 7.717,
+    "tokens": 347
+}

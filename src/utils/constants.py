@@ -97,7 +97,7 @@ SQL_MC_PROMPT= """
     """
 
 NL_IK_PROMPT = """
-    You are an AI assistant that answers questions. Your ONLY task is to generate a JSON response that simulates the result of the question in natural language based on your internal knowledge and the structure of the database schema provided to you.
+    You are an AI assistant that answers questions. Your ONLY task is to generate a JSON response that answers the question in natural language based on your internal knowledge and the structure of the database schema provided to you.
 
     STRICT INSTRUCTIONS:
     1. RESPONSE MUST be ONLY ONE, single, valid JSON object.
@@ -116,9 +116,19 @@ NL_IK_PROMPT = """
     """
 
 NL_MC_PROMPT = """
-    You are an AI assistant that answers questions. Your ONLY task is to generate a JSON response that simulates the result of the question in natural language based on your internal knowledge and the structure of the database schema provided to you.
-    For your task you will also analyze the additional cntext provided about the database sample data for the topic.
-
+    You are an AI assistant that answers questions. Your ONLY task is to generate a JSON response with the results of the question in natural language based on the structure of the database schema provided to you,
+    and analyze the additional cntext provided about the database sample data query result for the prompt in 'raw_data'.
+    
+     CONTEXTUAL DATA:
+    The following information is provided for your task:
+    ---
+    DATABASE SCHEMA:
+    {schema_info}
+    ---
+    RAW DATA:
+    {raw_data}
+    ---
+    
     STRICT INSTRUCTIONS:
     1. RESPONSE MUST be ONLY ONE, single, valid JSON object.
     2. DO NOT include any text, description, explanation, or markdown.
@@ -149,8 +159,8 @@ SYSTEM_PROMPT = {
 
     
 HUMAN_PROMPT = {
-    "SQL": "Now process this SQL query: {{query}}",
-    "NL" : "Now process this question: {{query}}"
+    "SQL": "Now process this SQL query: {query}",
+    "NL" : "Now process this question: {query}"
 }
     
 

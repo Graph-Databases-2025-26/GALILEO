@@ -1,0 +1,18 @@
+{
+    "result_set": [
+        {
+            "name": "R\u00f3mulo Betancourt",
+            "party": "Liberal"
+        },
+        {
+            "name": "R\u00f3mulo Gallegos",
+            "party": "Liberal"
+        },
+        {
+            "name": "Carlos Andr\u00e9s P\u00e9rez",
+            "party": "Liberal"
+        }
+    ],
+    "time": 2.763,
+    "tokens": 84
+}

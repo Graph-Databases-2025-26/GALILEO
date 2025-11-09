@@ -1,0 +1,10 @@
+{
+    "result_set": [
+        {
+            "avg_GNP": 2857.5,
+            "total_population": 1140576
+        }
+    ],
+    "time": 1.331,
+    "tokens": 44
+}

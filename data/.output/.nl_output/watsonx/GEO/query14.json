@@ -1,0 +1,46 @@
+{
+    "result_set": [
+        {
+            "lake_name": "Lake Superior",
+            "location": "Northern United States"
+        },
+        {
+            "lake_name": "Lake Michigan",
+            "location": "Northern United States"
+        },
+        {
+            "lake_name": "Lake Huron",
+            "location": "Northern United States"
+        },
+        {
+            "lake_name": "Lake Erie",
+            "location": "Northern United States"
+        },
+        {
+            "lake_name": "Lake Ontario",
+            "location": "Northern United States"
+        },
+        {
+            "lake_name": "Great Salt Lake",
+            "location": "Western United States"
+        },
+        {
+            "lake_name": "Lake Mead",
+            "location": "Southwestern United States"
+        },
+        {
+            "lake_name": "Lake Powell",
+            "location": "Southwestern United States"
+        },
+        {
+            "lake_name": "Lake Tahoe",
+            "location": "Western United States"
+        },
+        {
+            "lake_name": "Lake Oahe",
+            "location": "Northern United States"
+        }
+    ],
+    "time": 4.381,
+    "tokens": 219
+}

@@ -1,0 +1,46 @@
+{
+    "result_set": [
+        {
+            "city": "New York City",
+            "state": "New York"
+        },
+        {
+            "city": "Los Angeles",
+            "state": "California"
+        },
+        {
+            "city": "Chicago",
+            "state": "Illinois"
+        },
+        {
+            "city": "Houston",
+            "state": "Texas"
+        },
+        {
+            "city": "Phoenix",
+            "state": "Arizona"
+        },
+        {
+            "city": "Philadelphia",
+            "state": "Pennsylvania"
+        },
+        {
+            "city": "San Antonio",
+            "state": "Texas"
+        },
+        {
+            "city": "San Diego",
+            "state": "California"
+        },
+        {
+            "city": "Dallas",
+            "state": "Texas"
+        },
+        {
+            "city": "San Jose",
+            "state": "California"
+        }
+    ],
+    "time": 3.803,
+    "tokens": 181
+}

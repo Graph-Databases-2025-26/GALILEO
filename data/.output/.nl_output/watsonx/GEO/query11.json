@@ -1,0 +1,190 @@
+{
+    "result_set": [
+        {
+            "state": "Alabama",
+            "major_river": "Tennessee River"
+        },
+        {
+            "state": "Alaska",
+            "major_river": "Yukon River"
+        },
+        {
+            "state": "Arizona",
+            "major_river": "Colorado River"
+        },
+        {
+            "state": "Arkansas",
+            "major_river": "Arkansas River"
+        },
+        {
+            "state": "California",
+            "major_river": "Sacramento River"
+        },
+        {
+            "state": "Colorado",
+            "major_river": "Colorado River"
+        },
+        {
+            "state": "Florida",
+            "major_river": "Apalachicola River"
+        },
+        {
+            "state": "Georgia",
+            "major_river": "Chattahoochee River"
+        },
+        {
+            "state": "Idaho",
+            "major_river": "Snake River"
+        },
+        {
+            "state": "Illinois",
+            "major_river": "Illinois River"
+        },
+        {
+            "state": "Indiana",
+            "major_river": "Ohio River"
+        },
+        {
+            "state": "Iowa",
+            "major_river": "Mississippi River"
+        },
+        {
+            "state": "Kansas",
+            "major_river": "Kansas River"
+        },
+        {
+            "state": "Kentucky",
+            "major_river": "Ohio River"
+        },
+        {
+            "state": "Louisiana",
+            "major_river": "Mississippi River"
+        },
+        {
+            "state": "Maine",
+            "major_river": "Penobscot River"
+        },
+        {
+            "state": "Maryland",
+            "major_river": "Potomac River"
+        },
+        {
+            "state": "Massachusetts",
+            "major_river": "Connecticut River"
+        },
+        {
+            "state": "Michigan",
+            "major_river": "Detroit River"
+        },
+        {
+            "state": "Minnesota",
+            "major_river": "Mississippi River"
+        },
+        {
+            "state": "Mississippi",
+            "major_river": "Mississippi River"
+        },
+        {
+            "state": "Missouri",
+            "major_river": "Mississippi River"
+        },
+        {
+            "state": "Montana",
+            "major_river": "Missouri River"
+        },
+        {
+            "state": "Nebraska",
+            "major_river": "Platte River"
+        },
+        {
+            "state": "Nevada",
+            "major_river": "Truckee River"
+        },
+        {
+            "state": "New Hampshire",
+            "major_river": "Connecticut River"
+        },
+        {
+            "state": "New Jersey",
+            "major_river": "Delaware River"
+        },
+        {
+            "state": "New Mexico",
+            "major_river": "Rio Grande"
+        },
+        {
+            "state": "New York",
+            "major_river": "Hudson River"
+        },
+        {
+            "state": "North Carolina",
+            "major_river": "Cape Fear River"
+        },
+        {
+            "state": "North Dakota",
+            "major_river": "Missouri River"
+        },
+        {
+            "state": "Ohio",
+            "major_river": "Ohio River"
+        },
+        {
+            "state": "Oklahoma",
+            "major_river": "Arkansas River"
+        },
+        {
+            "state": "Oregon",
+            "major_river": "Columbia River"
+        },
+        {
+            "state": "Pennsylvania",
+            "major_river": "Delaware River"
+        },
+        {
+            "state": "South Carolina",
+            "major_river": "Santee River"
+        },
+        {
+            "state": "South Dakota",
+            "major_river": "Missouri River"
+        },
+        {
+            "state": "Tennessee",
+            "major_river": "Tennessee River"
+        },
+        {
+            "state": "Texas",
+            "major_river": "Rio Grande"
+        },
+        {
+            "state": "Utah",
+            "major_river": "Colorado River"
+        },
+        {
+            "state": "Vermont",
+            "major_river": "Connecticut River"
+        },
+        {
+            "state": "Virginia",
+            "major_river": "Potomac River"
+        },
+        {
+            "state": "Washington",
+            "major_river": "Columbia River"
+        },
+        {
+            "state": "West Virginia",
+            "major_river": "Ohio River"
+        },
+        {
+            "state": "Wisconsin",
+            "major_river": "Mississippi River"
+        },
+        {
+            "state": "Wyoming",
+            "major_river": "Snake River"
+        }
+    ],
+    "time": 14.951,
+    "tokens": 791
+}

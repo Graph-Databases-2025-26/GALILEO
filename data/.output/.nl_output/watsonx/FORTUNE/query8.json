@@ -1,0 +1,24 @@
+{
+    "result_set": [
+        {
+            "Company": "Occidental Petroleum",
+            "Profitable": true,
+            "FemaleCEO": true,
+            "HeadquartersState": "Texas"
+        },
+        {
+            "Company": "ATI",
+            "Profitable": true,
+            "FemaleCEO": true,
+            "HeadquartersState": "Texas"
+        },
+        {
+            "Company": "Kinder Morgan",
+            "Profitable": true,
+            "FemaleCEO": true,
+            "HeadquartersState": "Texas"
+        }
+    ],
+    "time": 3.003,
+    "tokens": 113
+}

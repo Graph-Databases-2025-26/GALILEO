@@ -1,9 +1,0 @@
-{
-  "result_set": [
-    {
-      "answer": "The number of flights in the US varies significantly daily and seasonally, but on average, there are approximately 45,000 to 50,000 flights per day. This includes commercial passenger flights, cargo flights, and general aviation flights. Major aviation authorities like the FAA track these numbers, which can fluctuate based on demand, weather, and operational factors."
-    }
-  ],
-  "time": 0.05,
-  "tokens": 90
-}

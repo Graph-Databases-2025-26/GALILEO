@@ -1,0 +1,55 @@
+{
+    "result_set": [
+        {
+            "name": "Carlos Andr\u00e9s P\u00e9rez",
+            "start_year": 1974,
+            "end_year": 1979,
+            "number_of_president": 58,
+            "party": "Acci\u00f3n Democr\u00e1tica"
+        },
+        {
+            "name": "Luis Herrera Campins",
+            "start_year": 1979,
+            "end_year": 1984,
+            "number_of_president": 59,
+            "party": "COPEI"
+        },
+        {
+            "name": "Jaime Lusinchi",
+            "start_year": 1984,
+            "end_year": 1989,
+            "number_of_president": 60,
+            "party": "Acci\u00f3n Democr\u00e1tica"
+        },
+        {
+            "name": "Carlos Andr\u00e9s P\u00e9rez",
+            "start_year": 1989,
+            "end_year": 1993,
+            "number_of_president": 61,
+            "party": "Acci\u00f3n Democr\u00e1tica"
+        },
+        {
+            "name": "Rafael Caldera",
+            "start_year": 1994,
+            "end_year": 1999,
+            "number_of_president": 62,
+            "party": "Convergencia"
+        },
+        {
+            "name": "Hugo Ch\u00e1vez",
+            "start_year": 1999,
+            "end_year": 2013,
+            "number_of_president": 63,
+            "party": "MVR"
+        },
+        {
+            "name": "Nicol\u00e1s Maduro",
+            "start_year": 2013,
+            "end_year": null,
+            "number_of_president": 64,
+            "party": "PSUV"
+        }
+    ],
+    "time": 7.065,
+    "tokens": 344
+}

@@ -1,0 +1,36 @@
+{
+    "result_set": [
+        {
+            "state_name": "Oklahoma",
+            "capital": "Oklahoma City",
+            "density": 53.4,
+            "population": 3956971
+        },
+        {
+            "state_name": "Iowa",
+            "capital": "Des Moines",
+            "density": 60.3,
+            "population": 5289336
+        },
+        {
+            "state_name": "Kansas",
+            "capital": "Topeka",
+            "density": 35.1,
+            "population": 5289336
+        },
+        {
+            "state_name": "Mississippi",
+            "capital": "Jackson",
+            "density": 63.5,
+            "population": 5289336
+        },
+        {
+            "state_name": "Arkansas",
+            "capital": "Little Rock",
+            "density": 56.9,
+            "population": 5289336
+        }
+    ],
+    "time": 4.003,
+    "tokens": 189
+}

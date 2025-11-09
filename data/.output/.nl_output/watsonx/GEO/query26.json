@@ -1,0 +1,11 @@
+{
+    "result_set": [
+        {
+            "state_name": "Kentucky",
+            "population": 4467449,
+            "area": 104659
+        }
+    ],
+    "time": 1.433,
+    "tokens": 47
+}

@@ -1,6 +1,7 @@
+from langchain_community.utilities import SQLDatabase
 from src.utils import LOG, DATASETS, DATA_DIR
-from typing import Tuple, List, Dict, Any
-from pathlib import Path
+from typing import  List, Dict, Any
+
 
 import duckdb, os, glob, time, sys
 
@@ -140,6 +141,15 @@ def db_execute_query(conn, query) -> List[Dict[str, Any]]:
         if conn:
             conn.close()
 
+
+def get_duckdb_path(dataset_name: str) -> SQLDatabase:
+    """
+    returns .duckdb file in SQLDatabase format
+    """
+    dbs_path = DATA_DIR / dataset_name.upper() / f"{dataset_name.lower()}.duckdb"
+    db = SQLDatabase.from_uri(f"duckdb:///{dbs_path}")
+
+    return db
 
 # --- Main ---
 if __name__ == "__main__":

@@ -1,0 +1,42 @@
+{
+    "result_set": [
+        {
+            "title": "The Thin Man",
+            "year": 1957
+        },
+        {
+            "title": "Tip on a Dead Jockey",
+            "year": 1957
+        },
+        {
+            "title": "Jailhouse Rock",
+            "year": 1957
+        },
+        {
+            "title": "The Adventures of Huckleberry Finn",
+            "year": 1960
+        },
+        {
+            "title": "The Honeymoon Machine",
+            "year": 1961
+        },
+        {
+            "title": "The Horizontal Lieutenant",
+            "year": 1962
+        },
+        {
+            "title": "Fun in Acapulco",
+            "year": 1963
+        },
+        {
+            "title": "The Golden Head",
+            "year": 1964
+        },
+        {
+            "title": "The Last Challenge",
+            "year": 1967
+        }
+    ],
+    "time": 3.993,
+    "tokens": 188
+}

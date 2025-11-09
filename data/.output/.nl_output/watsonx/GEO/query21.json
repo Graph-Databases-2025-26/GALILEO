@@ -1,0 +1,10 @@
+{
+    "result_set": [
+        {
+            "location": "Massachusetts is located in the northeastern United States",
+            "region": "New England"
+        }
+    ],
+    "time": 1.638,
+    "tokens": 49
+}

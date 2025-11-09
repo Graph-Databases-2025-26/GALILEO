@@ -1,0 +1,46 @@
+{
+    "result_set": [
+        {
+            "capital": "Ngerulmud",
+            "country": "Palau"
+        },
+        {
+            "capital": "Funafuti",
+            "country": "Tuvalu"
+        },
+        {
+            "capital": "Majuro",
+            "country": "Marshall Islands"
+        },
+        {
+            "capital": "Yaren",
+            "country": "Nauru"
+        },
+        {
+            "capital": "Saint Helier",
+            "country": "Jersey"
+        },
+        {
+            "capital": "Charlestown",
+            "country": "Nevis"
+        },
+        {
+            "capital": "Flying Fish Cove",
+            "country": "Christmas Island"
+        },
+        {
+            "capital": "The Valley",
+            "country": "Anguilla"
+        },
+        {
+            "capital": "Cockburn Town",
+            "country": "Turks and Caicos Islands"
+        },
+        {
+            "capital": "Grytviken",
+            "country": "South Georgia and the South Sandwich Islands"
+        }
+    ],
+    "time": 4.505,
+    "tokens": 216
+}

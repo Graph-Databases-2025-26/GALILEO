@@ -1,9 +1,7 @@
 from __future__ import annotations
-
 from pathlib import Path
 from typing import List
 import duckdb
-
 from src.utils.constants import DATA_DIR, DATASETS, IK_DATASETS, MC_DATASETS
 from src.utils.logging_config import logger
 
@@ -43,12 +41,7 @@ Tables:
 #  Helpers su DuckDB         #
 # --------------------------- #
 
-def _get_duckdb_path(dataset_name: str) -> Path:
-    """
-    path duckdb 
-    """
-    ds = dataset_name.upper()
-    return Path(DATA_DIR) / ds / f"{ds.lower()}.duckdb"
+
 
 def _load_schema_from_duckdb(db_path: Path) -> str:
     

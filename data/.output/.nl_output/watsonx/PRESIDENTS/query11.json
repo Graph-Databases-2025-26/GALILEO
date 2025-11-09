@@ -1,0 +1,34 @@
+{
+    "result_set": [
+        {
+            "name": "Rutherford B. Hayes",
+            "party": "Republican",
+            "start_year": 1877,
+            "end_year": 1881,
+            "cardinal_number": "19th"
+        },
+        {
+            "name": "James A. Garfield",
+            "party": "Republican",
+            "start_year": 1881,
+            "end_year": 1881,
+            "cardinal_number": "20th"
+        },
+        {
+            "name": "Chester A. Arthur",
+            "party": "Republican",
+            "start_year": 1881,
+            "end_year": 1885,
+            "cardinal_number": "21st"
+        },
+        {
+            "name": "Benjamin Harrison",
+            "party": "Republican",
+            "start_year": 1889,
+            "end_year": 1893,
+            "cardinal_number": "23rd"
+        }
+    ],
+    "time": 5.139,
+    "tokens": 244
+}

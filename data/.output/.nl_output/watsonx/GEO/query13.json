@@ -1,0 +1,30 @@
+{
+    "result_set": [
+        {
+            "lake": "Lake Michigan"
+        },
+        {
+            "lake": "Lake Huron"
+        },
+        {
+            "lake": "Lake Erie"
+        },
+        {
+            "lake": "Lake Superior"
+        },
+        {
+            "lake": "Houghton Lake"
+        },
+        {
+            "lake": "Mullett Lake"
+        },
+        {
+            "lake": "Charlevoix Lake"
+        },
+        {
+            "lake": "Torch Lake"
+        }
+    ],
+    "time": 2.663,
+    "tokens": 111
+}

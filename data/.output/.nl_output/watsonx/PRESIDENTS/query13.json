@@ -1,0 +1,22 @@
+{
+    "result_set": [
+        {
+            "party_name": "Acci\u00f3n Democr\u00e1tica",
+            "number_of_times": 5
+        },
+        {
+            "party_name": "COPEI",
+            "number_of_times": 3
+        },
+        {
+            "party_name": "Uni\u00f3n Republicana Democr\u00e1tica",
+            "number_of_times": 1
+        },
+        {
+            "party_name": "Independent",
+            "number_of_times": 2
+        }
+    ],
+    "time": 2.354,
+    "tokens": 100
+}

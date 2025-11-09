@@ -1,0 +1,212 @@
+{
+    "result_set": [
+        {
+            "state_name": "Alabama",
+            "population": 4903186,
+            "area": 52420
+        },
+        {
+            "state_name": "Alaska",
+            "population": 739795,
+            "area": 663268
+        },
+        {
+            "state_name": "Arizona",
+            "population": 7278717,
+            "area": 113990
+        },
+        {
+            "state_name": "Arkansas",
+            "population": 2916523,
+            "area": 53182
+        },
+        {
+            "state_name": "California",
+            "population": 39512223,
+            "area": 163696
+        },
+        {
+            "state_name": "Colorado",
+            "population": 5691287,
+            "area": 104094
+        },
+        {
+            "state_name": "Connecticut",
+            "population": 3571520,
+            "area": 5544
+        },
+        {
+            "state_name": "Delaware",
+            "population": 984307,
+            "area": 2489
+        },
+        {
+            "state_name": "Florida",
+            "population": 21244317,
+            "area": 170312
+        },
+        {
+            "state_name": "Georgia",
+            "population": 10511131,
+            "area": 59425
+        },
+        {
+            "state_name": "Hawaii",
+            "population": 1420593,
+            "area": 10932
+        },
+        {
+            "state_name": "Idaho",
+            "population": 1787545,
+            "area": 83574
+        },
+        {
+            "state_name": "Illinois",
+            "population": 12659743,
+            "area": 59918
+        },
+        {
+            "state_name": "Indiana",
+            "population": 6732219,
+            "area": 36420
+        },
+        {
+            "state_name": "Iowa",
+            "population": 3155070,
+            "area": 58557
+        },
+        {
+            "state_name": "Kansas",
+            "population": 2910745,
+            "area": 82277
+        },
+        {
+            "state_name": "Kentucky",
+            "population": 4463452,
+            "area": 40409
+        },
+        {
+            "state_name": "Louisiana",
+            "population": 4648794,
+            "area": 51843
+        },
+        {
+            "state_name": "Maine",
+            "population": 1364335,
+            "area": 35380
+        },
+        {
+            "state_name": "Maryland",
+            "population": 6049949,
+            "area": 12407
+        },
+        {
+            "state_name": "Massachusetts",
+            "population": 6892503,
+            "area": 10577
+        },
+        {
+            "state_name": "Michigan",
+            "population": 10077331,
+            "area": 96716
+        },
+        {
+            "state_name": "Minnesota",
+            "population": 5639759,
+            "area": 86936
+        },
+        {
+            "state_name": "Mississippi",
+            "population": 2949214,
+            "area": 48434
+        },
+        {
+            "state_name": "Missouri",
+            "population": 6116737,
+            "area": 69562
+        },
+        {
+            "state_name": "Montana",
+            "population": 1068778,
+            "area": 147040
+        },
+        {
+            "state_name": "Nebraska",
+            "population": 1925134,
+            "area": 77348
+        },
+        {
+            "state_name": "Nevada",
+            "population": 3139661,
+            "area": 110567
+        },
+        {
+            "state_name": "New Hampshire",
+            "population": 1376521,
+            "area": 9350
+        },
+        {
+            "state_name": "New Jersey",
+            "population": 8937371,
+            "area": 8722
+        },
+        {
+            "state_name": "New Mexico",
+            "population": 2144407,
+            "area": 121669
+        },
+        {
+            "state_name": "New York",
+            "population": 19453561,
+            "area": 54475
+        },
+        {
+            "state_name": "North Carolina",
+            "population": 10420000,
+            "area": 53819
+        },
+        {
+            "state_name": "North Dakota",
+            "population": 760077,
+            "area": 70704
+        },
+        {
+            "state_name": "Ohio",
+            "population": 11693200,
+            "area": 44828
+        },
+        {
+            "state_name": "Oklahoma",
+            "population": 3930784,
+            "area": 69662
+        },
+        {
+            "state_name": "Oregon",
+            "population": 4237251,
+            "area": 98386
+        },
+        {
+            "state_name": "Pennsylvania",
+            "population": 12802056,
+            "area": 46055
+        },
+        {
+            "state_name": "Rhode Island",
+            "population": 1097379,
+            "area": 1545
+        },
+        {
+            "state_name": "South Carolina",
+            "population": 5086476,
+            "area": 32020
+        },
+        {
+            "state_name": "South Dakota",
+            "population": 892508,
+            "area": 77116
+        },
+        {}
+    ],
+    "time": 19.766,
+    "tokens": 1024
+}

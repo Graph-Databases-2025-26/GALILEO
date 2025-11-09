@@ -1,0 +1,210 @@
+{
+    "result_set": [
+        {
+            "state_name": "Alabama",
+            "capital": "Montgomery",
+            "area": "52420"
+        },
+        {
+            "state_name": "Alaska",
+            "capital": "Juneau",
+            "area": "663268"
+        },
+        {
+            "state_name": "Arizona",
+            "capital": "Phoenix",
+            "area": "113990"
+        },
+        {
+            "state_name": "Arkansas",
+            "capital": "Little Rock",
+            "area": "53182"
+        },
+        {
+            "state_name": "California",
+            "capital": "Sacramento",
+            "area": "163696"
+        },
+        {
+            "state_name": "Colorado",
+            "capital": "Denver",
+            "area": "104094"
+        },
+        {
+            "state_name": "Connecticut",
+            "capital": "Hartford",
+            "area": "5544"
+        },
+        {
+            "state_name": "Delaware",
+            "capital": "Dover",
+            "area": "2489"
+        },
+        {
+            "state_name": "Florida",
+            "capital": "Tallahassee",
+            "area": "170312"
+        },
+        {
+            "state_name": "Georgia",
+            "capital": "Atlanta",
+            "area": "59425"
+        },
+        {
+            "state_name": "Hawaii",
+            "capital": "Honolulu",
+            "area": "10932"
+        },
+        {
+            "state_name": "Idaho",
+            "capital": "Boise",
+            "area": "83574"
+        },
+        {
+            "state_name": "Illinois",
+            "capital": "Springfield",
+            "area": "59918"
+        },
+        {
+            "state_name": "Indiana",
+            "capital": "Indianapolis",
+            "area": "36420"
+        },
+        {
+            "state_name": "Iowa",
+            "capital": "Des Moines",
+            "area": "58557"
+        },
+        {
+            "state_name": "Kansas",
+            "capital": "Topeka",
+            "area": "82277"
+        },
+        {
+            "state_name": "Kentucky",
+            "capital": "Frankfort",
+            "area": "40409"
+        },
+        {
+            "state_name": "Louisiana",
+            "capital": "Baton Rouge",
+            "area": "51843"
+        },
+        {
+            "state_name": "Maine",
+            "capital": "Augusta",
+            "area": "35380"
+        },
+        {
+            "state_name": "Maryland",
+            "capital": "Annapolis",
+            "area": "12407"
+        },
+        {
+            "state_name": "Massachusetts",
+            "capital": "Boston",
+            "area": "10577"
+        },
+        {
+            "state_name": "Michigan",
+            "capital": "Lansing",
+            "area": "96716"
+        },
+        {
+            "state_name": "Minnesota",
+            "capital": "St. Paul",
+            "area": "86936"
+        },
+        {
+            "state_name": "Mississippi",
+            "capital": "Jackson",
+            "area": "48434"
+        },
+        {
+            "state_name": "Missouri",
+            "capital": "Jefferson City",
+            "area": "69562"
+        },
+        {
+            "state_name": "Montana",
+            "capital": "Helena",
+            "area": "147040"
+        },
+        {
+            "state_name": "Nebraska",
+            "capital": "Lincoln",
+            "area": "77348"
+        },
+        {
+            "state_name": "Nevada",
+            "capital": "Carson City",
+            "area": "110567"
+        },
+        {
+            "state_name": "New Hampshire",
+            "capital": "Concord",
+            "area": "9350"
+        },
+        {
+            "state_name": "New Jersey",
+            "capital": "Trenton",
+            "area": "8722"
+        },
+        {
+            "state_name": "New Mexico",
+            "capital": "Santa Fe",
+            "area": "121669"
+        },
+        {
+            "state_name": "New York",
+            "capital": "Albany",
+            "area": "54475"
+        },
+        {
+            "state_name": "North Carolina",
+            "capital": "Raleigh",
+            "area": "53819"
+        },
+        {
+            "state_name": "North Dakota",
+            "capital": "Bismarck",
+            "area": "70704"
+        },
+        {
+            "state_name": "Ohio",
+            "capital": "Columbus",
+            "area": "44828"
+        },
+        {
+            "state_name": "Oklahoma",
+            "capital": "Oklahoma City",
+            "area": "69662"
+        },
+        {
+            "state_name": "Oregon",
+            "capital": "Salem",
+            "area": "98386"
+        },
+        {
+            "state_name": "Pennsylvania",
+            "capital": "Harrisburg",
+            "area": "46055"
+        },
+        {
+            "state_name": "Rhode Island",
+            "capital": "Providence",
+            "area": "1545"
+        },
+        {
+            "state_name": "South Carolina",
+            "capital": "Columbia",
+            "area": "32020"
+        },
+        {
+            "state_name": "South Dakota",
+            "capital": ""
+        }
+    ],
+    "time": 20.168,
+    "tokens": 1024
+}
