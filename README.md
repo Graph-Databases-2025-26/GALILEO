@@ -257,5 +257,81 @@ After generating the query results, the next step is to automatically extract bo
 
 ---
 
-## Avg. Expected Cells Metric 
+### 5.Avg. Expected Cells Metric**
+
 Like in the GALOIS paper, we replicate the Table 2 of the paper, the **Avg_Expected_Cells** metric is calculated by  **`avg_cells_metric.py`**, for run it you have to locate in the root directory **`GALILEO/`** directory and next run: **`python -m src.db.avg_cells_metric`**.
+
+---
+
+### 6. Baseline SQL -> Directly Prompting the LLM using a SQL query.
+
+---
+
+### 7. Baseline NL -> Directly Prompting the LLM with a NL question.
+
+This module implements the Natural Language (NL) baseline approach for evaluating LLMs on the task of evaluating the knowledge of the LLM using a natural language prompt.
+Furthermore together with the prompt also an extra-context will be provided to the LLM: the schema of the dataset produced by means DuckDB in the previous task.
+Finally the results will be stored in a FULL JSON format for the evaluation phase.
+
+**General Overview:**
+1. **Load natural language prompts** from the 'queries_<nome-dataset>.txt' available in each dataset resource folder. 
+2. **Query the LLM** using a LangChain chain that provides:
+   - General information about the goal of the LLM.
+   - Database schema information.
+   - Optional raw data.
+   - NL prompt itself.
+3. **Parse** te LLM's output into a predefined FULL JSON format.
+4. Save the structured results for each query as separate .json files forming a consistent baseline for evaluation.
+
+**Dataset Categories and Context Injection**
+
+All datasets are divided into two main categories:
+
+1. **Internal Knowledge (IK)**  
+   - The model relies exclusively on its own internal knowledge and understanding of the prompt.  
+   - No external information or query results are provided — only the natural language question and schema context are used.
+
+2. **Model Context (MC)**  
+   - In this case, the system performs a **Retrieval-Augmented Generation (RAG-like)** step:  
+     before sending the prompt to the model, the **results of the corresponding SQL query** are retrieved from the database and included as **extra contextual information**.  
+   - This allows the model to reason over both its internal knowledge and real, up-to-date data from the database, improving factual grounding and accuracy.
+
+**Architecture and main Components**
+1. **Configuration and Setup**
+   - The LLM provider API key are loaded form a `.env` file.
+   - The LLM provider is selected through a configuration object (`Config_Loader`) -> out system uses **Watsonx** & **Google Gemini**.
+   - Next, the correct wrapper is instantiated via `get_llm_wrapper()`, returning one of LLM provider Wrapper.
+   - Each wrapper extends `LLMBaseWrapper` and implements provider-specific logic for model creation, output token counting and provider identification.
+   
+2. **Chain Construction**
+   The `build_lcel_chain` builds a **LangChain Expression Language** pipeline composed of three main stages: **Database Context -> Prompt Template -> LLM Model**, in details:
+   - `get_db_context()` retrieves database schema information and (for MC baselines) executes the original SQL query collect sample data via DuckDB.
+   - `ChatPromptTemplate` combines two prompt layers:
+     - `SYSTEM_PROMPT` that defines model role, behavior and task instructions.
+     - `HUMAN_PROMPT` that injects the NL prompt and formatting guidelines.
+   - `PydanticOutputParser` ensures that the model's response conforms to the  required structures FULL JSON schema (`Response`)
+
+3. **Baseline Execution Flow**
+   - Load SQL queries and corresponding NL prompt for each dataset.
+   - For each `(prompt, query)` pair, invoke the LLM chain with the `chain.invoke()` method.
+   - Parse the response with `parse_llm_response()`, which:
+     - uses `PydanticOutputParser` to validate FULL JSON format.
+     - computes inference time and token usage.
+   - Save the parsed output to JSON file using `save_baseline_to_json()`.
+    
+Each generated file from these datasets follows the same FULL JSON structure:
+
+```json
+{
+  "result_set": [
+    { "originaltitle": "The Three Musketeers" },
+    { "originaltitle": "The Count of Monte Cristo" }
+  ],
+  "time": 1.84,
+  "tokens": 312
+}
+```
+
+- `result_set` → Structured LLM output with mixed-type values.  
+- `time` → Total execution time for that prompt.  
+- `tokens` → Number of output tokens produced by the model.

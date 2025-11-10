@@ -1,0 +1,151 @@
+\documentclass[12pt,a4paper]{article}
+
+% Useful packages
+\usepackage[utf8]{inputenc}
+\usepackage[italian]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{float}
+\usepackage{booktabs}
+\usepackage{setspace} 
+\usepackage{float} 
+
+% Margini
+\usepackage[margin=2.5cm]{geometry}
+
+% Document Informations
+\title{GALILEO Group 31 october 2025 Deadline Report}
+\author{Francesco Pivotto 2158296\\ Giorgia Amato 2159999\\ Alessio Demo 2142885 }
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+\newpage
+
+\section{Introduction }
+
+\section{Baseline NL}
+The Baseline NL module provides a reference framework for evaluating Large Language Models (LLMs) through direct interaction via natural language prompts.
+This approach assesses the model’s intrinsic reasoning and knowledge by prompting it with natural language (NL) questions, optionally enriched with structural and contextual information derived from a database schema or a specific query results.
+All outputs are standardized in a unified FULL JSON format to facilitate downstream evaluation.
+
+\subsection{General Procedure}
+\begin{enumerate}
+    \item  \textbf{Prompt Loading:} Natural language prompts are loaded from dataset-specific resources (\textbf{queries\_<dataset-name>.txt}). Each prompt corresponds to a query from the same dataset.
+    \item \textbf{LLM interaction:} Prompts are processed through a \textbf{LangChain-based pipeline}, which integrates:
+    \begin{itemize}
+        \item The general task definition and LLM role specification.
+        \item The corresponding database schema, extracted via DuckDB.
+        \item Optional contextual data (e.g. query results for Model Context datasets).
+        \item The natural language question itself
+    \end{itemize}
+    \item \textbf{Response Parsing and Storage:} The model's output is parsed using a \textbf{PyddanticOutputParser}, ensuring compliance with the required FULL JSON format. Each response is stored in an individual JSON file, forming a consistent source for evaluation.
+\end{enumerate}
+
+\subsection{Dataset Categorization and Contextualization}
+\begin{enumerate}
+    \item \textbf{Internal knowledge:} In these datasets, the model relies exclusively on its pretrained knowledge and linguistic reasoning capabilities.
+    The prompt includes only the natural language question and, optionally, the database schema, but no factual data retrieved from the database.
+    \item \textbf{Model Context:} These datasets implement a \textbf{Retrieval-Augmented Generation (RAG)-inspired} mechanism.
+    Prior to querying the LLM, the corresponding SQL query is executed against the database, and the retrieved tuples are supplied to the model as external contextual input.
+    This design allows the model to reason jointly over its internal representations and the retrieved data, thus improving factual consistency and grounding.
+    Each resulting file produced by the module fits the following FULL JSON format:
+\end{enumerate}
+    \begin{verbatim}
+    {
+        "result_set": [
+            { "originaltitle": "The Three Musketeers" },
+            { "originaltitle": "The Count of Monte Cristo" }
+        ],
+        "time": 1.84,
+        "tokens": 312
+    }
+
+\end{verbatim}
+where:
+\begin{itemize}
+    \item \textbf{result\_set:} Denotes the structured LLM output.
+    \item \textbf{time:} Represents the total time taken by the LLM to generate the response.
+    \item \textbf{tokens:} Indicates the number of tokens processed during the interaction
+\end{itemize}
+
+\subsection{Architecture:}
+The architecture is composed of three main components:
+\begin{enumerate}
+    \item \textbf{Configuration Layer:} 
+    \begin{itemize}
+        \item API keys for the supported providers (\textbf{IBMWatsonx} and \textbf{Google Gemini}) are loaded form a \textbf{.env} file.
+        \item The \textbf{Config\_Loader} selects the target LLM provider, and the appropriate wrapper is instantiated through \textbf{get\_llm\_wrapper()}.
+        \item Each wrapper extends the \textbf{LLMBaseWrapper} class, implementing provider-specific logic for model initialization, token counting, and response handling.
+    \end{itemize}
+    \item \textbf{Chain Construction:}
+    
+    The \textbf{build\_lcel\_chain()} method constructs a \textbf{LangChain Expression Language (LCEL)} pipeline comprising:
+    \begin{itemize}
+        \item \textbf{Database Context Retrieval:} \textbf{get\_db\_context()} extracts schema information and, for Model Context datasets, executes the original SQL query using DuckDB database instance of corresponding dataset.
+        \item \textbf{Prompt Composition:} \textbf{ChatPromptTemplate} merges two layers, a \textbf{SYSTEM\_PROMPT} defining the LLM's role and behavior, and a \textbf{HUMAN\_PROMPT} containing the NL question and formatting directives.
+        \item \textbf{Structured Output Parsing:} The \textbf{PydanticOutputParser} enforces adherence to the predefined FULL JSON schema.
+    \end{itemize}
+    \item \textbf{Execution Flow}
+    \begin{itemize}
+        \item For each dataset, SQL queries and corresponding NL prompts are loaded.
+        \item The \textbf{(prompt, query)} pairs  are processed through \textbf{chain.invoke()}.
+        \item Responses are parsed, validated, and augmented with the metadata such as execution time and token usage.
+        \item The resulting files are serialized via \textbf{save\_baseline\_to\_json()} for evaluation purposes.
+    \end{itemize}
+\end{enumerate}
+
+\subsection{Results and Evaluation}
+The results obtained from the Baseline NL module were evaluated using standard metrics to assess the performance of the LLMs in both Natural Language (NL) and SQL contexts.
+The model used for the \textbf{gemini} provider is: \textbf{gemini-2.5-flash}, instead for \textbf{IBMWatsonx} provider we used \textbf{meta-llama/llama-3-3-70b-instruct}.
+All systems are tested on the datasets described in Table 2 of the previous project task, excluding Premier and Fortune like the galois authors did.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{lcccc}
+\toprule
+\textbf{Metric} & \textbf{NL} & \textbf{SQL}  \\
+\midrule
+F1-CELL & 0.391 & 0.537  \\
+CARDINAITY & 0.644 & 0.733  \\
+TUPLE-CONSTR. & 0.182 & 0.331  \\
+AVG-SCORE & 0.406 & 0.534  \\
+\#TOKENS(M) & 39965 & 126946  \\
+AVG-TIME & 4.812 & 7.561  \\
+
+\bottomrule
+\end{tabular}
+\caption{GEMINI results}
+\label{gemini_results}
+\end{table}
+
+
+\begin{table}[h]
+\centering
+\begin{tabular}{lcccc}
+\toprule
+\textbf{Metric} & \textbf{NL} & \textbf{SQL}  \\
+\midrule
+F1-CELL & 0.443 & 0.338  \\
+CARDINAITY & 0.693 & 0.577  \\
+TUPLE-CONSTR. & 0.209 & 0.121  \\
+AVG-SCORE & 0.448 & 0.345  \\
+\#TOKENS(M) & 14808 & 9090  \\
+AVG-TIME & 4.691 & 1.192  \\
+
+\bottomrule
+\end{tabular}
+\caption{WATSONX results}
+\label{watsonx_results}
+\end{table}
+
+
+
+\end{document}
