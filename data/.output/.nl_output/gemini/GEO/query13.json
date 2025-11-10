@@ -1,0 +1,39 @@
+{
+    "result_set": [
+        {
+            "lake_name": "Lake Superior"
+        },
+        {
+            "lake_name": "Lake Huron"
+        },
+        {
+            "lake_name": "Lake Michigan"
+        },
+        {
+            "lake_name": "Lake Erie"
+        },
+        {
+            "lake_name": "Lake Ontario"
+        },
+        {
+            "lake_name": "Great Salt Lake"
+        },
+        {
+            "lake_name": "Lake Okeechobee"
+        },
+        {
+            "lake_name": "Lake Tahoe"
+        },
+        {
+            "lake_name": "Lake Champlain"
+        },
+        {
+            "lake_name": "Lake of the Woods"
+        },
+        {
+            "lake_name": "Crater Lake"
+        }
+    ],
+    "time": 3.614,
+    "tokens": 657
+}

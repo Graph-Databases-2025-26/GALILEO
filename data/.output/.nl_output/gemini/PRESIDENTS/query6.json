@@ -1,0 +1,181 @@
+{
+    "result_set": [
+        {
+            "name": "Crist\u00f3bal Mendoza",
+            "start_year": 1811,
+            "end_year": 1812,
+            "number_of_president": 1,
+            "party": "Conservative"
+        },
+        {
+            "name": "Jos\u00e9 Antonio P\u00e1ez",
+            "start_year": 1830,
+            "end_year": 1835,
+            "number_of_president": 2,
+            "party": "Conservative"
+        },
+        {
+            "name": "Carlos Soublette",
+            "start_year": 1835,
+            "end_year": 1839,
+            "number_of_president": 3,
+            "party": "Conservative"
+        },
+        {
+            "name": "Jos\u00e9 Tadeo Monagas",
+            "start_year": 1847,
+            "end_year": 1851,
+            "number_of_president": 4,
+            "party": "Liberal"
+        },
+        {
+            "name": "Jos\u00e9 Gregorio Monagas",
+            "start_year": 1851,
+            "end_year": 1855,
+            "number_of_president": 5,
+            "party": "Liberal"
+        },
+        {
+            "name": "Juan Cris\u00f3stomo Falc\u00f3n",
+            "start_year": 1863,
+            "end_year": 1868,
+            "number_of_president": 6,
+            "party": "Liberal"
+        },
+        {
+            "name": "Antonio Guzm\u00e1n Blanco",
+            "start_year": 1870,
+            "end_year": 1877,
+            "number_of_president": 7,
+            "party": "Liberal"
+        },
+        {
+            "name": "Joaqu\u00edn Crespo",
+            "start_year": 1884,
+            "end_year": 1886,
+            "number_of_president": 8,
+            "party": "Liberal"
+        },
+        {
+            "name": "Cipriano Castro",
+            "start_year": 1899,
+            "end_year": 1908,
+            "number_of_president": 9,
+            "party": "Liberal"
+        },
+        {
+            "name": "Juan Vicente G\u00f3mez",
+            "start_year": 1908,
+            "end_year": 1935,
+            "number_of_president": 10,
+            "party": "Independent"
+        },
+        {
+            "name": "Eleazar L\u00f3pez Contreras",
+            "start_year": 1935,
+            "end_year": 1941,
+            "number_of_president": 11,
+            "party": "Independent"
+        },
+        {
+            "name": "Isa\u00edas Medina Angarita",
+            "start_year": 1941,
+            "end_year": 1945,
+            "number_of_president": 12,
+            "party": "Venezuelan Democratic Party"
+        },
+        {
+            "name": "R\u00f3mulo Betancourt",
+            "start_year": 1945,
+            "end_year": 1948,
+            "number_of_president": 13,
+            "party": "Democratic Action"
+        },
+        {
+            "name": "R\u00f3mulo Gallegos",
+            "start_year": 1948,
+            "end_year": 1948,
+            "number_of_president": 14,
+            "party": "Democratic Action"
+        },
+        {
+            "name": "Marcos P\u00e9rez Jim\u00e9nez",
+            "start_year": 1952,
+            "end_year": 1958,
+            "number_of_president": 15,
+            "party": "Independent"
+        },
+        {
+            "name": "R\u00f3mulo Betancourt",
+            "start_year": 1959,
+            "end_year": 1964,
+            "number_of_president": 16,
+            "party": "Democratic Action"
+        },
+        {
+            "name": "Ra\u00fal Leoni",
+            "start_year": 1964,
+            "end_year": 1969,
+            "number_of_president": 17,
+            "party": "Democratic Action"
+        },
+        {
+            "name": "Rafael Caldera",
+            "start_year": 1969,
+            "end_year": 1974,
+            "number_of_president": 18,
+            "party": "COPEI"
+        },
+        {
+            "name": "Carlos Andr\u00e9s P\u00e9rez",
+            "start_year": 1974,
+            "end_year": 1979,
+            "number_of_president": 19,
+            "party": "Democratic Action"
+        },
+        {
+            "name": "Luis Herrera Campins",
+            "start_year": 1979,
+            "end_year": 1984,
+            "number_of_president": 20,
+            "party": "COPEI"
+        },
+        {
+            "name": "Jaime Lusinchi",
+            "start_year": 1984,
+            "end_year": 1989,
+            "number_of_president": 21,
+            "party": "Democratic Action"
+        },
+        {
+            "name": "Carlos Andr\u00e9s P\u00e9rez",
+            "start_year": 1989,
+            "end_year": 1993,
+            "number_of_president": 22,
+            "party": "Democratic Action"
+        },
+        {
+            "name": "Rafael Caldera",
+            "start_year": 1994,
+            "end_year": 1999,
+            "number_of_president": 23,
+            "party": "Convergence"
+        },
+        {
+            "name": "Hugo Ch\u00e1vez",
+            "start_year": 1999,
+            "end_year": 2013,
+            "number_of_president": 24,
+            "party": "Fifth Republic Movement"
+        },
+        {
+            "name": "Nicol\u00e1s Maduro",
+            "start_year": 2013,
+            "end_year": 2025,
+            "number_of_president": 25,
+            "party": "United Socialist Party of Venezuela"
+        }
+    ],
+    "time": 6.438,
+    "tokens": 1335
+}

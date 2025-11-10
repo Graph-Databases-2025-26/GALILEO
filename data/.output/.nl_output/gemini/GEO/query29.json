@@ -1,0 +1,36 @@
+{
+    "result_set": [
+        {
+            "state_name": "Georgia",
+            "capital": "Atlanta",
+            "density": 186.0,
+            "population": 10912876
+        },
+        {
+            "state_name": "North Carolina",
+            "capital": "Raleigh",
+            "density": 222.0,
+            "population": 10698973
+        },
+        {
+            "state_name": "Ohio",
+            "capital": "Columbus",
+            "density": 286.0,
+            "population": 11756058
+        },
+        {
+            "state_name": "Pennsylvania",
+            "capital": "Harrisburg",
+            "density": 288.0,
+            "population": 13002700
+        },
+        {
+            "state_name": "Virginia",
+            "capital": "Richmond",
+            "density": 218.0,
+            "population": 8642274
+        }
+    ],
+    "time": 2.839,
+    "tokens": 426
+}

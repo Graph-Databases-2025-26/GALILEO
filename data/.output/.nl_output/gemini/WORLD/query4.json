@@ -1,0 +1,21 @@
+{
+    "result_set": [
+        {
+            "region_name": "North America"
+        },
+        {
+            "region_name": "Europe"
+        },
+        {
+            "region_name": "Oceania"
+        },
+        {
+            "region_name": "Africa"
+        },
+        {
+            "region_name": "South America"
+        }
+    ],
+    "time": 1.494,
+    "tokens": 166
+}

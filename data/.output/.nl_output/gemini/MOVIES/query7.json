@@ -1,0 +1,122 @@
+{
+    "result_set": [
+        {
+            "year": 1971,
+            "number_of_movies": 1
+        },
+        {
+            "year": 1972,
+            "number_of_movies": 1
+        },
+        {
+            "year": 1974,
+            "number_of_movies": 1
+        },
+        {
+            "year": 1975,
+            "number_of_movies": 1
+        },
+        {
+            "year": 1977,
+            "number_of_movies": 1
+        },
+        {
+            "year": 1979,
+            "number_of_movies": 1
+        },
+        {
+            "year": 1981,
+            "number_of_movies": 1
+        },
+        {
+            "year": 1982,
+            "number_of_movies": 1
+        },
+        {
+            "year": 1984,
+            "number_of_movies": 1
+        },
+        {
+            "year": 1985,
+            "number_of_movies": 1
+        },
+        {
+            "year": 1987,
+            "number_of_movies": 1
+        },
+        {
+            "year": 1989,
+            "number_of_movies": 2
+        },
+        {
+            "year": 1991,
+            "number_of_movies": 1
+        },
+        {
+            "year": 1993,
+            "number_of_movies": 2
+        },
+        {
+            "year": 1997,
+            "number_of_movies": 2
+        },
+        {
+            "year": 1998,
+            "number_of_movies": 1
+        },
+        {
+            "year": 2001,
+            "number_of_movies": 1
+        },
+        {
+            "year": 2002,
+            "number_of_movies": 2
+        },
+        {
+            "year": 2004,
+            "number_of_movies": 1
+        },
+        {
+            "year": 2005,
+            "number_of_movies": 2
+        },
+        {
+            "year": 2008,
+            "number_of_movies": 1
+        },
+        {
+            "year": 2011,
+            "number_of_movies": 2
+        },
+        {
+            "year": 2012,
+            "number_of_movies": 1
+        },
+        {
+            "year": 2015,
+            "number_of_movies": 1
+        },
+        {
+            "year": 2016,
+            "number_of_movies": 1
+        },
+        {
+            "year": 2017,
+            "number_of_movies": 1
+        },
+        {
+            "year": 2018,
+            "number_of_movies": 1
+        },
+        {
+            "year": 2021,
+            "number_of_movies": 1
+        },
+        {
+            "year": 2022,
+            "number_of_movies": 1
+        }
+    ],
+    "time": 3.942,
+    "tokens": 676
+}

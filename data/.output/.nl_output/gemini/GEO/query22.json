@@ -1,0 +1,256 @@
+{
+    "result_set": [
+        {
+            "state_name": "Alabama",
+            "capital": "Montgomery",
+            "area": 52420
+        },
+        {
+            "state_name": "Alaska",
+            "capital": "Juneau",
+            "area": 665384
+        },
+        {
+            "state_name": "Arizona",
+            "capital": "Phoenix",
+            "area": 113990
+        },
+        {
+            "state_name": "Arkansas",
+            "capital": "Little Rock",
+            "area": 53179
+        },
+        {
+            "state_name": "California",
+            "capital": "Sacramento",
+            "area": 163695
+        },
+        {
+            "state_name": "Colorado",
+            "capital": "Denver",
+            "area": 104094
+        },
+        {
+            "state_name": "Connecticut",
+            "capital": "Hartford",
+            "area": 5543
+        },
+        {
+            "state_name": "Delaware",
+            "capital": "Dover",
+            "area": 2489
+        },
+        {
+            "state_name": "Florida",
+            "capital": "Tallahassee",
+            "area": 65758
+        },
+        {
+            "state_name": "Georgia",
+            "capital": "Atlanta",
+            "area": 59425
+        },
+        {
+            "state_name": "Hawaii",
+            "capital": "Honolulu",
+            "area": 10932
+        },
+        {
+            "state_name": "Idaho",
+            "capital": "Boise",
+            "area": 83569
+        },
+        {
+            "state_name": "Illinois",
+            "capital": "Springfield",
+            "area": 57914
+        },
+        {
+            "state_name": "Indiana",
+            "capital": "Indianapolis",
+            "area": 36420
+        },
+        {
+            "state_name": "Iowa",
+            "capital": "Des Moines",
+            "area": 56273
+        },
+        {
+            "state_name": "Kansas",
+            "capital": "Topeka",
+            "area": 82278
+        },
+        {
+            "state_name": "Kentucky",
+            "capital": "Frankfort",
+            "area": 40408
+        },
+        {
+            "state_name": "Louisiana",
+            "capital": "Baton Rouge",
+            "area": 52378
+        },
+        {
+            "state_name": "Maine",
+            "capital": "Augusta",
+            "area": 35380
+        },
+        {
+            "state_name": "Maryland",
+            "capital": "Annapolis",
+            "area": 12406
+        },
+        {
+            "state_name": "Massachusetts",
+            "capital": "Boston",
+            "area": 10555
+        },
+        {
+            "state_name": "Michigan",
+            "capital": "Lansing",
+            "area": 96716
+        },
+        {
+            "state_name": "Minnesota",
+            "capital": "Saint Paul",
+            "area": 86936
+        },
+        {
+            "state_name": "Mississippi",
+            "capital": "Jackson",
+            "area": 48441
+        },
+        {
+            "state_name": "Missouri",
+            "capital": "Jefferson City",
+            "area": 69707
+        },
+        {
+            "state_name": "Montana",
+            "capital": "Helena",
+            "area": 147040
+        },
+        {
+            "state_name": "Nebraska",
+            "capital": "Lincoln",
+            "area": 77348
+        },
+        {
+            "state_name": "Nevada",
+            "capital": "Carson City",
+            "area": 110572
+        },
+        {
+            "state_name": "New Hampshire",
+            "capital": "Concord",
+            "area": 9349
+        },
+        {
+            "state_name": "New Jersey",
+            "capital": "Trenton",
+            "area": 8729
+        },
+        {
+            "state_name": "New Mexico",
+            "capital": "Santa Fe",
+            "area": 121590
+        },
+        {
+            "state_name": "New York",
+            "capital": "Albany",
+            "area": 54555
+        },
+        {
+            "state_name": "North Carolina",
+            "capital": "Raleigh",
+            "area": 53819
+        },
+        {
+            "state_name": "North Dakota",
+            "capital": "Bismarck",
+            "area": 70693
+        },
+        {
+            "state_name": "Ohio",
+            "capital": "Columbus",
+            "area": 44825
+        },
+        {
+            "state_name": "Oklahoma",
+            "capital": "Oklahoma City",
+            "area": 69899
+        },
+        {
+            "state_name": "Oregon",
+            "capital": "Salem",
+            "area": 98379
+        },
+        {
+            "state_name": "Pennsylvania",
+            "capital": "Harrisburg",
+            "area": 46055
+        },
+        {
+            "state_name": "Rhode Island",
+            "capital": "Providence",
+            "area": 1545
+        },
+        {
+            "state_name": "South Carolina",
+            "capital": "Columbia",
+            "area": 32021
+        },
+        {
+            "state_name": "South Dakota",
+            "capital": "Pierre",
+            "area": 77116
+        },
+        {
+            "state_name": "Tennessee",
+            "capital": "Nashville",
+            "area": 42144
+        },
+        {
+            "state_name": "Texas",
+            "capital": "Austin",
+            "area": 268596
+        },
+        {
+            "state_name": "Utah",
+            "capital": "Salt Lake City",
+            "area": 84897
+        },
+        {
+            "state_name": "Vermont",
+            "capital": "Montpelier",
+            "area": 9616
+        },
+        {
+            "state_name": "Virginia",
+            "capital": "Richmond",
+            "area": 42775
+        },
+        {
+            "state_name": "Washington",
+            "capital": "Olympia",
+            "area": 71298
+        },
+        {
+            "state_name": "West Virginia",
+            "capital": "Charleston",
+            "area": 24230
+        },
+        {
+            "state_name": "Wisconsin",
+            "capital": "Madison",
+            "area": 65496
+        },
+        {
+            "state_name": "Wyoming",
+            "capital": "Cheyenne",
+            "area": 97813
+        }
+    ],
+    "time": 8.697,
+    "tokens": 1741
+}

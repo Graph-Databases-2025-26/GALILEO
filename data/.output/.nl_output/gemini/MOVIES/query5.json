@@ -1,0 +1,162 @@
+{
+    "result_set": [
+        {
+            "title": "A.I. Artificial Intelligence",
+            "year": 2001,
+            "genres": [
+                "Science Fiction",
+                "Drama"
+            ],
+            "birthyear": 1946
+        },
+        {
+            "title": "Minority Report",
+            "year": 2002,
+            "genres": [
+                "Science Fiction",
+                "Action",
+                "Thriller"
+            ],
+            "birthyear": 1946
+        },
+        {
+            "title": "Catch Me If You Can",
+            "year": 2002,
+            "genres": [
+                "Biography",
+                "Crime",
+                "Drama"
+            ],
+            "birthyear": 1946
+        },
+        {
+            "title": "The Terminal",
+            "year": 2004,
+            "genres": [
+                "Comedy",
+                "Drama",
+                "Romance"
+            ],
+            "birthyear": 1946
+        },
+        {
+            "title": "War of the Worlds",
+            "year": 2005,
+            "genres": [
+                "Science Fiction",
+                "Action",
+                "Adventure"
+            ],
+            "birthyear": 1946
+        },
+        {
+            "title": "Munich",
+            "year": 2005,
+            "genres": [
+                "Drama",
+                "History",
+                "Thriller"
+            ],
+            "birthyear": 1946
+        },
+        {
+            "title": "Indiana Jones and the Kingdom of the Crystal Skull",
+            "year": 2008,
+            "genres": [
+                "Action",
+                "Adventure",
+                "Science Fiction"
+            ],
+            "birthyear": 1946
+        },
+        {
+            "title": "The Adventures of Tintin",
+            "year": 2011,
+            "genres": [
+                "Animation",
+                "Action",
+                "Adventure"
+            ],
+            "birthyear": 1946
+        },
+        {
+            "title": "War Horse",
+            "year": 2011,
+            "genres": [
+                "Drama",
+                "War"
+            ],
+            "birthyear": 1946
+        },
+        {
+            "title": "Lincoln",
+            "year": 2012,
+            "genres": [
+                "Biography",
+                "Drama",
+                "History"
+            ],
+            "birthyear": 1946
+        },
+        {
+            "title": "Bridge of Spies",
+            "year": 2015,
+            "genres": [
+                "Drama",
+                "History",
+                "Thriller"
+            ],
+            "birthyear": 1946
+        },
+        {
+            "title": "The BFG",
+            "year": 2016,
+            "genres": [
+                "Family",
+                "Fantasy"
+            ],
+            "birthyear": 1946
+        },
+        {
+            "title": "The Post",
+            "year": 2017,
+            "genres": [
+                "Biography",
+                "Drama",
+                "History"
+            ],
+            "birthyear": 1946
+        },
+        {
+            "title": "Ready Player One",
+            "year": 2018,
+            "genres": [
+                "Action",
+                "Adventure",
+                "Science Fiction"
+            ],
+            "birthyear": 1946
+        },
+        {
+            "title": "West Side Story",
+            "year": 2021,
+            "genres": [
+                "Musical",
+                "Drama",
+                "Romance"
+            ],
+            "birthyear": 1946
+        },
+        {
+            "title": "The Fabelmans",
+            "year": 2022,
+            "genres": [
+                "Biography",
+                "Drama"
+            ],
+            "birthyear": 1946
+        }
+    ],
+    "time": 7.781,
+    "tokens": 1522
+}

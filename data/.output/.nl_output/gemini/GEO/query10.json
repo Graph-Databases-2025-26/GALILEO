@@ -1,0 +1,24 @@
+{
+    "result_set": [
+        {
+            "state_name": "California"
+        },
+        {
+            "state_name": "New York"
+        },
+        {
+            "state_name": "Texas"
+        },
+        {
+            "state_name": "Florida"
+        },
+        {
+            "state_name": "Illinois"
+        },
+        {
+            "state_name": "Washington"
+        }
+    ],
+    "time": 3.386,
+    "tokens": 541
+}

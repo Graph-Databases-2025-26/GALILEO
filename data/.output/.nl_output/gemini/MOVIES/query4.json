@@ -1,0 +1,66 @@
+{
+    "result_set": [
+        {
+            "title": "A.I. Artificial Intelligence",
+            "release_year": 2001
+        },
+        {
+            "title": "Catch Me If You Can",
+            "release_year": 2002
+        },
+        {
+            "title": "The Terminal",
+            "release_year": 2004
+        },
+        {
+            "title": "War of the Worlds",
+            "release_year": 2005
+        },
+        {
+            "title": "Munich",
+            "release_year": 2005
+        },
+        {
+            "title": "Indiana Jones and the Kingdom of the Crystal Skull",
+            "release_year": 2008
+        },
+        {
+            "title": "The Adventures of Tintin",
+            "release_year": 2011
+        },
+        {
+            "title": "War Horse",
+            "release_year": 2011
+        },
+        {
+            "title": "Lincoln",
+            "release_year": 2012
+        },
+        {
+            "title": "Bridge of Spies",
+            "release_year": 2015
+        },
+        {
+            "title": "The BFG",
+            "release_year": 2016
+        },
+        {
+            "title": "The Post",
+            "release_year": 2017
+        },
+        {
+            "title": "Ready Player One",
+            "release_year": 2018
+        },
+        {
+            "title": "West Side Story",
+            "release_year": 2021
+        },
+        {
+            "title": "The Fabelmans",
+            "release_year": 2022
+        }
+    ],
+    "time": 6.232,
+    "tokens": 1234
+}

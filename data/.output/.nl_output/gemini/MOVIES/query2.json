@@ -1,0 +1,24 @@
+{
+    "result_set": [
+        {
+            "title": "Saving Private Ryan"
+        },
+        {
+            "title": "Schindler's List"
+        },
+        {
+            "title": "Jurassic Park"
+        },
+        {
+            "title": "E.T. the Extra-Terrestrial"
+        },
+        {
+            "title": "Raiders of the Lost Ark"
+        },
+        {
+            "title": "Jaws"
+        }
+    ],
+    "time": 1.711,
+    "tokens": 197
+}

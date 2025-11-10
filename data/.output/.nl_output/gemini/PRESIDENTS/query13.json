@@ -1,0 +1,14 @@
+{
+    "result_set": [
+        {
+            "party_name": "Acci\u00f3n Democr\u00e1tica",
+            "number_of_presidents": 5
+        },
+        {
+            "party_name": "Comit\u00e9 de Organizaci\u00f3n Pol\u00edtica Electoral Independiente",
+            "number_of_presidents": 2
+        }
+    ],
+    "time": 2.288,
+    "tokens": 303
+}

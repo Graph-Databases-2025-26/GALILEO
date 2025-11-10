@@ -1,0 +1,42 @@
+{
+    "result_set": [
+        {
+            "lake_name": "Lake Tahoe",
+            "location": "California/Nevada border"
+        },
+        {
+            "lake_name": "Salton Sea",
+            "location": "Southern California"
+        },
+        {
+            "lake_name": "Mono Lake",
+            "location": "Eastern Sierra Nevada"
+        },
+        {
+            "lake_name": "Clear Lake",
+            "location": "Northern California"
+        },
+        {
+            "lake_name": "Shasta Lake",
+            "location": "Northern California"
+        },
+        {
+            "lake_name": "Folsom Lake",
+            "location": "Central California"
+        },
+        {
+            "lake_name": "Lake Oroville",
+            "location": "Northern California"
+        },
+        {
+            "lake_name": "Big Bear Lake",
+            "location": "Southern California"
+        },
+        {
+            "lake_name": "Lake Havasu",
+            "location": "California/Arizona border"
+        }
+    ],
+    "time": 2.449,
+    "tokens": 418
+}

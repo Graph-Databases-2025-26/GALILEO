@@ -1,0 +1,50 @@
+{
+    "result_set": [
+        {
+            "state_name": "Phoenix",
+            "capital": "Arizona"
+        },
+        {
+            "state_name": "Sacramento",
+            "capital": "California"
+        },
+        {
+            "state_name": "Tallahassee",
+            "capital": "Florida"
+        },
+        {
+            "state_name": "Springfield",
+            "capital": "Illinois"
+        },
+        {
+            "state_name": "Indianapolis",
+            "capital": "Indiana"
+        },
+        {
+            "state_name": "Lansing",
+            "capital": "Michigan"
+        },
+        {
+            "state_name": "Jefferson City",
+            "capital": "Missouri"
+        },
+        {
+            "state_name": "Albany",
+            "capital": "New York"
+        },
+        {
+            "state_name": "Columbus",
+            "capital": "Ohio"
+        },
+        {
+            "state_name": "Austin",
+            "capital": "Texas"
+        },
+        {
+            "state_name": "Olympia",
+            "capital": "Washington"
+        }
+    ],
+    "time": 2.126,
+    "tokens": 326
+}

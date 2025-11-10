@@ -1,0 +1,9 @@
+{
+    "result_set": [
+        {
+            "number_of_states_next_to_major_rivers": 27
+        }
+    ],
+    "time": 3.275,
+    "tokens": 501
+}

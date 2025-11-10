@@ -1,0 +1,186 @@
+{
+    "result_set": [
+        {
+            "name": "George Washington",
+            "party": "No Party"
+        },
+        {
+            "name": "John Adams",
+            "party": "Federalist"
+        },
+        {
+            "name": "Thomas Jefferson",
+            "party": "Democratic-Republican"
+        },
+        {
+            "name": "James Madison",
+            "party": "Democratic-Republican"
+        },
+        {
+            "name": "James Monroe",
+            "party": "Democratic-Republican"
+        },
+        {
+            "name": "John Quincy Adams",
+            "party": "Democratic-Republican"
+        },
+        {
+            "name": "Andrew Jackson",
+            "party": "Democrat"
+        },
+        {
+            "name": "Martin Van Buren",
+            "party": "Democrat"
+        },
+        {
+            "name": "William Henry Harrison",
+            "party": "Whig"
+        },
+        {
+            "name": "John Tyler",
+            "party": "Whig"
+        },
+        {
+            "name": "James K. Polk",
+            "party": "Democrat"
+        },
+        {
+            "name": "Zachary Taylor",
+            "party": "Whig"
+        },
+        {
+            "name": "Millard Fillmore",
+            "party": "Whig"
+        },
+        {
+            "name": "Franklin Pierce",
+            "party": "Democrat"
+        },
+        {
+            "name": "James Buchanan",
+            "party": "Democrat"
+        },
+        {
+            "name": "Abraham Lincoln",
+            "party": "Republican"
+        },
+        {
+            "name": "Andrew Johnson",
+            "party": "Democrat (National Union)"
+        },
+        {
+            "name": "Ulysses S. Grant",
+            "party": "Republican"
+        },
+        {
+            "name": "Rutherford B. Hayes",
+            "party": "Republican"
+        },
+        {
+            "name": "James A. Garfield",
+            "party": "Republican"
+        },
+        {
+            "name": "Chester A. Arthur",
+            "party": "Republican"
+        },
+        {
+            "name": "Grover Cleveland",
+            "party": "Democrat"
+        },
+        {
+            "name": "Benjamin Harrison",
+            "party": "Republican"
+        },
+        {
+            "name": "William McKinley",
+            "party": "Republican"
+        },
+        {
+            "name": "Theodore Roosevelt",
+            "party": "Republican"
+        },
+        {
+            "name": "William Howard Taft",
+            "party": "Republican"
+        },
+        {
+            "name": "Woodrow Wilson",
+            "party": "Democrat"
+        },
+        {
+            "name": "Warren G. Harding",
+            "party": "Republican"
+        },
+        {
+            "name": "Calvin Coolidge",
+            "party": "Republican"
+        },
+        {
+            "name": "Herbert Hoover",
+            "party": "Republican"
+        },
+        {
+            "name": "Franklin D. Roosevelt",
+            "party": "Democrat"
+        },
+        {
+            "name": "Harry S. Truman",
+            "party": "Democrat"
+        },
+        {
+            "name": "Dwight D. Eisenhower",
+            "party": "Republican"
+        },
+        {
+            "name": "John F. Kennedy",
+            "party": "Democrat"
+        },
+        {
+            "name": "Lyndon B. Johnson",
+            "party": "Democrat"
+        },
+        {
+            "name": "Richard Nixon",
+            "party": "Republican"
+        },
+        {
+            "name": "Gerald Ford",
+            "party": "Republican"
+        },
+        {
+            "name": "Jimmy Carter",
+            "party": "Democrat"
+        },
+        {
+            "name": "Ronald Reagan",
+            "party": "Republican"
+        },
+        {
+            "name": "George H.W. Bush",
+            "party": "Republican"
+        },
+        {
+            "name": "Bill Clinton",
+            "party": "Democrat"
+        },
+        {
+            "name": "George W. Bush",
+            "party": "Republican"
+        },
+        {
+            "name": "Barack Obama",
+            "party": "Democrat"
+        },
+        {
+            "name": "Donald Trump",
+            "party": "Republican"
+        },
+        {
+            "name": "Joe Biden",
+            "party": "Democrat"
+        }
+    ],
+    "time": 6.919,
+    "tokens": 1490
+}

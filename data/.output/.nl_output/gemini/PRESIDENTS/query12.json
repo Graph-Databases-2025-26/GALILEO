@@ -1,0 +1,18 @@
+{
+    "result_set": [
+        {
+            "party_name": "Liberal Party",
+            "election_count": 5
+        },
+        {
+            "party_name": "Conservative Party",
+            "election_count": 3
+        },
+        {
+            "party_name": "Federalist Party",
+            "election_count": 2
+        }
+    ],
+    "time": 34.591,
+    "tokens": 711
+}

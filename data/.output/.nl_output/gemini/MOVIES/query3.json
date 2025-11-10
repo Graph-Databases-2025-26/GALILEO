@@ -1,0 +1,70 @@
+{
+    "result_set": [
+        {
+            "title": "Vengeance Valley",
+            "year": 1951
+        },
+        {
+            "title": "The Great Caruso",
+            "year": 1951
+        },
+        {
+            "title": "Carbine Williams",
+            "year": 1952
+        },
+        {
+            "title": "Ivanhoe",
+            "year": 1952
+        },
+        {
+            "title": "The Prisoner of Zenda",
+            "year": 1952
+        },
+        {
+            "title": "Knights of the Round Table",
+            "year": 1953
+        },
+        {
+            "title": "All the Brothers Were Valiant",
+            "year": 1953
+        },
+        {
+            "title": "The Student Prince",
+            "year": 1954
+        },
+        {
+            "title": "Athena",
+            "year": 1954
+        },
+        {
+            "title": "Quentin Durward",
+            "year": 1955
+        },
+        {
+            "title": "The Adventures of Quentin Durward",
+            "year": 1955
+        },
+        {
+            "title": "Tip on a Dead Jockey",
+            "year": 1957
+        },
+        {
+            "title": "Jailhouse Rock",
+            "year": 1957
+        },
+        {
+            "title": "Killers of Kilimanjaro",
+            "year": 1959
+        },
+        {
+            "title": "The House of the Seven Hawks",
+            "year": 1959
+        },
+        {
+            "title": "The Last Challenge",
+            "year": 1967
+        }
+    ],
+    "time": 4.807,
+    "tokens": 784
+}

@@ -1,0 +1,38 @@
+{
+    "result_set": [
+        {
+            "title": "Schindler's List",
+            "year": 1993,
+            "genres": "Biography,Drama,History",
+            "birthyear": 1946,
+            "deathyear": null,
+            "runtimeminutes": 195
+        },
+        {
+            "title": "The Lost World: Jurassic Park",
+            "year": 1997,
+            "genres": "Action,Adventure,Sci-Fi",
+            "birthyear": 1946,
+            "deathyear": null,
+            "runtimeminutes": 129
+        },
+        {
+            "title": "Amistad",
+            "year": 1997,
+            "genres": "Drama,History",
+            "birthyear": 1946,
+            "deathyear": null,
+            "runtimeminutes": 155
+        },
+        {
+            "title": "Saving Private Ryan",
+            "year": 1998,
+            "genres": "Drama,War",
+            "birthyear": 1946,
+            "deathyear": null,
+            "runtimeminutes": 169
+        }
+    ],
+    "time": 2.826,
+    "tokens": 472
+}

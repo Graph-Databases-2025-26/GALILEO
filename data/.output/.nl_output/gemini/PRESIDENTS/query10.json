@@ -1,0 +1,62 @@
+{
+    "result_set": [
+        {
+            "name": "R\u00f3mulo Gallegos",
+            "party": "Democratic Action Venezuela",
+            "start_year": 1948,
+            "end_year": 1948,
+            "cardinal_number": 34
+        },
+        {
+            "name": "R\u00f3mulo Betancourt",
+            "party": "Democratic Action Venezuela",
+            "start_year": 1945,
+            "end_year": 1948,
+            "cardinal_number": 33
+        },
+        {
+            "name": "R\u00f3mulo Betancourt",
+            "party": "Democratic Action Venezuela",
+            "start_year": 1959,
+            "end_year": 1964,
+            "cardinal_number": 37
+        },
+        {
+            "name": "Ra\u00fal Leoni",
+            "party": "Democratic Action Venezuela",
+            "start_year": 1964,
+            "end_year": 1969,
+            "cardinal_number": 38
+        },
+        {
+            "name": "Carlos Andr\u00e9s P\u00e9rez",
+            "party": "Democratic Action Venezuela",
+            "start_year": 1974,
+            "end_year": 1979,
+            "cardinal_number": 40
+        },
+        {
+            "name": "Jaime Lusinchi",
+            "party": "Democratic Action Venezuela",
+            "start_year": 1984,
+            "end_year": 1989,
+            "card_number": 42
+        },
+        {
+            "name": "Carlos Andr\u00e9s P\u00e9rez",
+            "party": "Democratic Action Venezuela",
+            "start_year": 1989,
+            "end_year": 1993,
+            "cardinal_number": 43
+        },
+        {
+            "name": "Ram\u00f3n Jos\u00e9 Vel\u00e1squez",
+            "party": "Democratic Action Venezuela",
+            "start_year": 1993,
+            "end_year": 1994,
+            "cardinal_number": 44
+        }
+    ],
+    "time": 3.91,
+    "tokens": 729
+}

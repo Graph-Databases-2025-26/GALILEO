@@ -1,0 +1,14 @@
+{
+    "result_set": [
+        {
+            "Company": "Walmart",
+            "HeadquartersState": "Arkansas"
+        },
+        {
+            "Company": "Amazon",
+            "HeadquartersState": "Washington"
+        }
+    ],
+    "time": 1.523,
+    "tokens": 162
+}

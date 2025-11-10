@@ -1,0 +1,22 @@
+{
+    "result_set": [
+        {
+            "party_name": "Democratic-Republican",
+            "elected_presidents_count": 5
+        },
+        {
+            "party_name": "Democratic",
+            "elected_presidents_count": 10
+        },
+        {
+            "party_name": "Whig",
+            "elected_presidents_count": 4
+        },
+        {
+            "party_name": "Republican",
+            "elected_presidents_count": 4
+        }
+    ],
+    "time": 1.985,
+    "tokens": 218
+}

@@ -1,0 +1,56 @@
+{
+    "result_set": [
+        {
+            "state_name": "Arizona",
+            "capital": "Phoenix",
+            "population": 7378494
+        },
+        {
+            "state_name": "Massachusetts",
+            "capital": "Boston",
+            "population": 7033469
+        },
+        {
+            "state_name": "Tennessee",
+            "capital": "Nashville",
+            "population": 7051339
+        },
+        {
+            "state_name": "Maryland",
+            "capital": "Annapolis",
+            "population": 6180253
+        },
+        {
+            "state_name": "Colorado",
+            "capital": "Denver",
+            "population": 5877610
+        },
+        {
+            "state_name": "Wisconsin",
+            "capital": "Madison",
+            "population": 5910955
+        },
+        {
+            "state_name": "Missouri",
+            "capital": "Jefferson City",
+            "population": 6196156
+        },
+        {
+            "state_name": "Washington",
+            "capital": "Olympia",
+            "population": 7812880
+        },
+        {
+            "state_name": "Indiana",
+            "capital": "Indianapolis",
+            "population": 6862199
+        },
+        {
+            "state_name": "Georgia",
+            "capital": "Atlanta",
+            "population": 11019186
+        }
+    ],
+    "time": 3.886,
+    "tokens": 668
+}
