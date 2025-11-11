@@ -30,6 +30,15 @@
 \newpage
 
 \section{Introduction }
+In the previous project task we assessed the query execution on the database for each dataset and after that, we use galois\_eval.py for the evaluation process on the results we obtained from our implementation.
+Now in this task we will describe the development process implemented for replicate the following baselines using the Internal Knowledge datasets:
+\begin{itemize}
+    \item \textbf{SQL baseline}: The system prompt the LLM model directly with a SQL query.
+    \item \textbf{NL baseline}: The system prompt the LLM model directly with a NL prompt.
+    \item \textbf{Palimpzest baseline}: The system evaluates the pure reasoning and synthesis capabilities of the LLM when operating under a Retrieval-Augmented Generation (RAG) paradigm (\textbf{BONUS}).
+\end{itemize}
+For all these baselines we will show also the tables that reports the evaluation measures and metrics.
+After this brief introduction, let's take a look at all the details of the various baselines.
 
 \section{Baseline NL}
 The Baseline NL module provides a reference framework for evaluating Large Language Models (LLMs) through direct interaction via natural language prompts.
@@ -146,6 +155,67 @@ AVG-TIME & 4.691 & 1.192  \\
 \label{watsonx_results}
 \end{table}
 
+\section{Baseline Palimpzest}
+During the development of the NL baseline, we initially implemented a rudimentary form of RAG-style retrieval, where query results were passed to the LLM within a specific natural language prompt. However, after reviewing the GALOIS paper and the methodology outlined on the Palimpsest project website (\href{URL}{https://palimpzest.org/
+}), it became evident that our implementation did not fully align with the principles and objectives described in those sources. Consequently, we designed a more conceptually consistent framework tailored to the goals of the Palimpsest approach, as detailed above.
 
+\subsection{Methodological Foundations}
+The Palimpsest Baseline strictly evaluates the pure reasoning and synthesis capabilities of the Large Language Model (specifically the Watsonx service utilizing \textbf{meta-llama/llama-3-3-70b-instruct} in our case) when operating under a Retrieval-Augmented Generation (RAG) paradigm.
+The core objective is to ensure the model responds solely based on the explicitly provided context, thereby isolating its performance from its internal pre-trained knowledge (Zero-Shot Knowledge).
+
+The constrained input provided to the LLM consists of:
+\begin{itemize}
+    \item \textbf{Database Schema}: The explicit definition of tables and columns
+    \item \textbf{RAG Corpus} (\textbf{raw\_data}): A textual block representing a subset of records extracted from the database.
+    \item \textbf{NL query}: The question posed by the user.
+\end{itemize}
+The model is strictly instructed to produce the output in a validated FULL JSON format, utilizing only the information contained within the RAG Corpus.
+
+\subsection{Retrieval Strategy: Generic and Unfiltered Corpus}
+A crucial aspect of this baseline implementation is the deliberate choice of a generic and non-optimized retrieval strategy for generating the RAG Corpus.
+
+The query used to extract the contextual data is standardized as: \textbf{SELECT * FROM  <table\_name>  LIMIT 200;}
+
+The use of this query is essential for the methodology and serves a dual purpose in testing the LLM's capabilities:
+\begin{enumerate}
+    \item \textbf{Testing Internal Filtering (Pure Reasoning)}: By providing a large, unsorted, and unfiltered block of data (i.e., the first 200 records, which are often less relevant to the specific query), the experiment forces the LLM to perform internal logical filtering and data extraction within the provided text context.
+    This measures the model’s ability to execute complex operations on a noisy and voluminous corpus, moving beyond simple keyword matching.
+    \item \textbf{Validating Faithfulness (Hallucination Control)}:  If the data required to answer a specific query is not present within the 200 extracted rows, the LLM must respond with an empty set ("result\_set": $[\,]$). This constraint validates the model's faithfulness to the input context and its resistance to hallucinating information from its pre\-trained knowledge base.
+    The output on the PREMIER dataset (Queries 3, 4) confirming these empty results validated this methodological approach.
+    \item \textbf{Technical Constraints and Parameter Adjustment (LIMIT 200)}: The decision to cap the RAG Corpus at 200 rows was primarily driven by the strict \textbf{technical limitations} of the target LLM environment:
+    \begin{itemize}
+        \item \textbf{Token Context Limit}: The LLama 3 model has a maximum context window of 131,072 tokens. 
+        Initial testing with higher limits ($L=400$ or $L=500$) resulted in API Status 400 (Bad Request) errors, 
+        as the combined size of the schema, prompt, and RAG Corpus exceeded the model's capacity. 
+        $L=200$ was established as the maximum stable limit.
+        \item \textbf{Output Parsing Degradation}: Contexts exceeding $L=200$ often led to the LLM ignoring the strict formatting instructions. 
+        The model would generate conversational preamble text before the required JSON object, 
+        causing Pydantic parsing failures. 
+        The limit of $L=200$ proved to be the optimal threshold for maintaining high adherence 
+        to the required pure JSON output format.
+        \item \textbf{Acceptable Measurement}: Although LIMIT 200 does not cover the entire dataset of fortune for instance, it is sufficient to test the LLM’s reasoning ability on the most populated subset of the database, accepting that accuracy metrics will reflect the simulated RAG Corpus limitation.
+    \end{itemize}
+\end{enumerate}
+
+Finally, this implementation of the PZ baseline effectively provides metrics for both the faithfulness to context and the precision of reasoning of the LLM within a constrained and technically demanding environment.
+\\In addition as proof of the principles described above, in the dataset Premier some results are empty when the relevant data was not present in the retrieved rows of database. In other hand when tha data are present in the retrieved rows, the results are not empty.
+
+\subsection{Results and Evaluation}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{lcccc}
+\toprule
+\textbf{Metric} & \textbf{NL} & \textbf{SQL}  \\
+\midrule
+
+AVG-SCORE & 0.393 & X  \\
+\#TOKENS(M) & 2390 & X  \\
+
+\bottomrule
+\end{tabular}
+\caption{WATSONX results}
+\label{watsonx_results}
+\end{table}
 
 \end{document}

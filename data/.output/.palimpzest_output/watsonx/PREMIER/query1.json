@@ -1,0 +1,24 @@
+{
+    "result_set": [
+        {
+            "match_date_year": 2024,
+            "match_date_month": 8,
+            "match_date_day": 17,
+            "opponent_team": "Newcastle"
+        },
+        {
+            "match_date_year": 2024,
+            "match_date_month": 8,
+            "match_date_day": 24,
+            "opponent_team": "Crystal Palace"
+        },
+        {
+            "match_date_year": 2024,
+            "match_date_month": 8,
+            "match_date_day": 31,
+            "opponent_team": "Manchester United"
+        }
+    ],
+    "time": 4.423,
+    "tokens": 132
+}

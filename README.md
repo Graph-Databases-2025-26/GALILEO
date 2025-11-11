@@ -335,3 +335,42 @@ Each generated file from these datasets follows the same FULL JSON structure:
 - `result_set` → Structured LLM output with mixed-type values.  
 - `time` → Total execution time for that prompt.  
 - `tokens` → Number of output tokens produced by the model.
+
+---
+
+### 8. Baseline Palimpzest -> RAG & in-context querying.
+In the NL baseline development, we have already implemented a sort of RAG retrieval (passing the query result to the llm for a specific NL prompt), but reading the GALOIS paper and the web site of Palympzes approach (**https://palimpzest.org/**), was clear that the our approach didn't fully satisfy the approach described in that sources.
+For this reason we developed a more coherent concept for the Palympzest purpose, described above:
+
+**Methodological Foundations**:
+
+The Baseline was implemented to evaluate the pure reasoning and synthesis capabilities of the Large Language Model (only IBM Watsonx in out case) in a Retrieval-Augmented Generation (RAG) scenario.
+The primary objective is to test the fidelity and ability of the LLM to operate exclusively on the context provided, ignoring its pre-trained internal knowledge.
+
+The process is composed by:
+
+- `Corpus RAG`: Data rows extraction from the database
+- `Prompt`: Prompt the LLM with db schema + Corpus RAG + NL prompt
+- `Output`: Response in FULL JSON format based only on the Corpus.
+
+**The role of generic and unfiltered retrieval**
+
+For the implementation, the retrieval phase of the RAG Corpus was deliberately kept generic and not optimized for the specific query. 
+Going into details the specific query used to populate the RAG Corpus is: **`SELECT * FROM <table_name> LIMIT 200`**.
+The reason why we use this query is the following:
+- **Context Simulation**: The query collects the first 200 rows of the database.
+- **Context Reasoning Test**: This approach does not simulate a RAG with targeted retrieval (which would filter only the relevant rows), but simulates a test in which the LLM is forced to demonstrate its reasoning and logical filtering capabilities within a large, messy block of text provided as context.
+- **Fidelity Test**: If the answer to a gold query is not contained in any of the 200 rows provided, the LLM must respond with an empty set (result_set=[]) or more in general in the result_set[] there aren't the results that are not within the 200 rows provided. **This verifies the LLM's fidelity to the context and its ability not to hallucinate information from its knowledge**. 
+
+**Technical Constraints: Why LIMIT 200**
+
+The limit of 200 lines was adopted as the final engineering compromise, balancing the theoretical validity of the test with the constraints of the platform:
+
+| Criterion | Justification                                                                                                                                                                                                                                                                   |
+|------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Token Context Constraint** | Attempts with higher limits ( **400 / 500** ) exceeded the maximum context window of 131,072 tokens for the Llama 3 model, triggering API 400 errors. **LIMIT 200** is the most stable threshold that allows a large Corpus without system failures.                            |
+| **Parsing Robustness** | Excessively long context degraded the LLM’s ability to follow formatting instructions, causing it to include discursive text before the JSON. **LIMIT 200** is the optimal point where the model maintains strong adherence to **pure JSON format**, minimizing parsing errors. |
+| **Acceptable Measurement** | Although **LIMIT 200** does not cover the entire dataset of fortune for instance, it is sufficient to test the LLM’s **reasoning ability** on the most populated subset of the database, accepting that accuracy metrics will reflect the simulated RAG Corpus limitation.      |
+
+Finally, as proof of the principles described above, in the dataset Premier some results are empty when the relevant data was not present in the retrieved rows of database.
+In other hand when tha data are present in the retrieved rows, the results are not empty.

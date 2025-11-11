@@ -1,0 +1,24 @@
+{
+    "result_set": [
+        {
+            "home_team": "Arsenal",
+            "away_team": "Chelsea",
+            "home_goals": 2,
+            "away_goals": 1
+        },
+        {
+            "home_team": "Manchester City",
+            "away_team": "Arsenal",
+            "home_goals": 1,
+            "away_goals": 2
+        },
+        {
+            "home_team": "Arsenal",
+            "away_team": "Liverpool",
+            "home_goals": 3,
+            "away_goals": 2
+        }
+    ],
+    "time": 3.227,
+    "tokens": 115
+}

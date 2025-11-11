@@ -1,0 +1,25 @@
+{
+    "result_set": [
+        {
+            "Company": "Delta Air Lines",
+            "Rank": 70
+        },
+        {
+            "Company": "United Airlines Holdings",
+            "Rank": 83
+        },
+        {
+            "Company": "Southwest Airlines",
+            "Rank": 159
+        },
+        {
+            "Company": "Alaska Air Group is not included in the list, but other airlines are included in the 'Best Companies to Work For' ranking, however only the above are both in Fortune 2024 and 'Best Companies to Work For'"
+        },
+        {
+            "Company": "Bank of America",
+            "Rank": 18
+        }
+    ],
+    "time": 20.867,
+    "tokens": 129
+}

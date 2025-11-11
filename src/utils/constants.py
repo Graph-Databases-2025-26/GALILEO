@@ -17,6 +17,8 @@ NL_BLINE_DIR = SUBMISSIONS_PATH / ".nl_output"
 
 SQL_BLINE_DIR = SUBMISSIONS_PATH / ".sql_output"
 
+PZ_BLINE_DIR = SUBMISSIONS_PATH / ".palimpzest_output"
+
 BASELINE_OUTPUT = {
     "SQL" : {
         "GEMINI" : SQL_BLINE_DIR / "gemini",
@@ -26,6 +28,11 @@ BASELINE_OUTPUT = {
     "NL" : {
         "GEMINI" : NL_BLINE_DIR / "gemini",
         "WATSONX" : NL_BLINE_DIR / "watsonx"
+    },
+
+    "PZ" : {
+        "GEMINI" : PZ_BLINE_DIR / "gemini",
+        "WATSONX" : PZ_BLINE_DIR / "watsonx"
     }
 }
 
@@ -36,6 +43,8 @@ DATASETS = ["FLIGHT-2", "FLIGHT-4", "FORTUNE", "GEO", "MOVIES", "PREMIER", "PRES
 IK_DATASETS = ["FLIGHT-2", "FLIGHT-4", "GEO", "MOVIES", "PRESIDENTS", "WORLD"]
 
 MC_DATASETS = ["FORTUNE", "PREMIER"]
+
+PZ_DATASETS = ["FORTUNE", "PREMIER"]
 
 if(os.name == "nt"):
     PIP = VENV / "Scripts" / "pip"
@@ -145,6 +154,31 @@ NL_MC_PROMPT = """
 
     """
 
+PZ_PROMPT = """
+    You are an expert assistant in in-context data retrieval. 
+    Your task is to answer the user's 'query' based on the provided 'raw_data'. 
+    The 'raw_data' represents 50 pre-selected records (simulating the 50 most relevant segments) from the database. 
+    **Ignore your internal knowledge and use ONLY the information present in raw_data and schema_info to formulate the 'result_set' in JSON format.** 
+    PROVIDED DATA STRUCTURE: 
+    - schema_info: {schema_info} The table schema. 
+    - raw_data: {raw_data} A list of 50 records, formatted as text 'Column: Value'. 
+    - query: The natural language question. 
+    STRICT INSTRUCTIONS:
+    1. RESPONSE MUST be ONLY ONE, single, valid JSON object.
+    2. DO NOT include any text, description, explanation, or markdown.
+    3. START your response IMMEDIATELY with the single '{{' character and END with the single '}}' character.
+    4. Use this JSON structure exactly:
+    {{
+    "result_set": [
+        {{ "<column_name_1>": "<value_1>", ... }}
+        ],
+        "time": <time required for the computation as float>,
+        "tokens": <total tokens used  as integer> 
+    }}
+    5. "result_set" must be an array of JSON objects where keys match the columns selected in the query.
+
+"""
+
 SYSTEM_PROMPT = {
     "NL": {
         "IK": NL_IK_PROMPT,
@@ -154,13 +188,18 @@ SYSTEM_PROMPT = {
     "SQL":{
         "IK": SQL_IK_PROMPT,
         "MC": SQL_MC_PROMPT
-    }
+    },
+
+    "PZ":{
+        "MC": SQL_MC_PROMPT
+    },
 }
 
     
 HUMAN_PROMPT = {
     "SQL": "Now process this SQL query: {query}",
-    "NL" : "Now process this question: {query}"
+    "NL" : "Now process this question: {query}",
+    "PZ" : "Now process this question: {query}"
 }
     
 

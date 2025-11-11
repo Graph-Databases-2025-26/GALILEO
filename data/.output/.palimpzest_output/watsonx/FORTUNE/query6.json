@@ -1,0 +1,58 @@
+{
+    "result_set": [
+        {
+            "CEO": "Thasunda Brown Duckett",
+            "Company": "TIAA"
+        },
+        {
+            "CEO": "Gail K. Boudreaux",
+            "Company": "Elevance Health"
+        },
+        {
+            "CEO": "Mary T. Barra",
+            "Company": "General Motors"
+        },
+        {
+            "CEO": "Corie S. Barry",
+            "Company": "Best Buy"
+        },
+        {
+            "CEO": "Jane Fraser",
+            "Company": "Citigroup"
+        },
+        {
+            "CEO": "Sarah M. London",
+            "Company": "Centene"
+        },
+        {
+            "CEO": "Vicki A. Hollub",
+            "Company": "Occidental Petroleum"
+        },
+        {
+            "CEO": "Heidi G. Petz",
+            "Company": "Sherwin-Williams"
+        },
+        {
+            "CEO": "Jennifer Rumsey",
+            "Company": "Cummins"
+        },
+        {
+            "CEO": "Patricia K. Poppe",
+            "Company": "PG&E"
+        },
+        {
+            "CEO": "Kathy J. Warden",
+            "Company": "Northrop Grumman"
+        },
+        {
+            "CEO": "Christine A. Leahy",
+            "Company": "CDW"
+        },
+        {
+            "CEO": "Karen S. Lynch",
+            "Company": "CVS Health"
+        }
+    ],
+    "time": 21.266,
+    "tokens": 254
+}

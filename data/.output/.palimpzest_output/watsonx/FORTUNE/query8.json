@@ -1,0 +1,162 @@
+{
+    "result_set": [
+        {
+            "Company": "Exxon Mobil",
+            "FemaleCEO": false,
+            "Profitable": true,
+            "HeadquartersState": "Texas"
+        },
+        {
+            "Company": "ConocoPhillips",
+            "FemaleCEO": false,
+            "Profitable": true,
+            "HeadquartersState": "Texas"
+        },
+        {
+            "Company": "Occidental Petroleum",
+            "FemaleCEO": true,
+            "Profitable": true,
+            "HeadquartersState": "Texas"
+        },
+        {
+            "Company": "EOG Resources",
+            "FemaleCEO": false,
+            "Profitable": true,
+            "HeadquartersState": "Texas"
+        },
+        {
+            "Company": "Valero Energy",
+            "FemaleCEO": false,
+            "Profitable": true,
+            "HeadquartersState": "Texas"
+        },
+        {
+            "Company": "Phillips 66",
+            "FemaleCEO": false,
+            "Profitable": true,
+            "HeadquartersState": "Texas"
+        },
+        {
+            "Company": "Plains GP Holdings",
+            "FemaleCEO": false,
+            "Profitable": true,
+            "HeadquartersState": "Texas"
+        },
+        {
+            "Company": "World Kinect",
+            "FemaleCEO": false,
+            "Profitable": true,
+            "HeadquartersState": "Texas"
+        },
+        {
+            "Company": "HF Sinclair",
+            "FemaleCEO": false,
+            "Profitable": true,
+            "HeadquartersState": "Texas"
+        },
+        {
+            "Company": "NRG Energy",
+            "FemaleCEO": false,
+            "Profitable": false,
+            "HeadquartersState": "Texas"
+        },
+        {
+            "Company": "Baker Hughes",
+            "FemaleCEO": false,
+            "Profitable": true,
+            "HeadquartersState": "Texas"
+        },
+        {
+            "Company": "Halliburton",
+            "FemaleCEO": false,
+            "Profitable": true,
+            "HeadquartersState": "Texas"
+        },
+        {
+            "Company": "Quanta Services",
+            "FemaleCEO": false,
+            "Profitable": true,
+            "HeadquartersState": "Texas"
+        },
+        {
+            "Company": "Cheniere Energy",
+            "FemaleCEO": false,
+            "Profitable": true,
+            "HeadquartersState": "Texas"
+        },
+        {
+            "Company": "Freeport-McMoRan",
+            "FemaleCEO": true,
+            "Profitable": true,
+            "HeadquartersState": "Texas"
+        },
+        {
+            "Company": "CVR Energy",
+            "FemaleCEO": false,
+            "Profitable": true,
+            "HeadquartersState": "Texas"
+        },
+        {
+            "Company": "Dollar Tree",
+            "FemaleCEO": false,
+            "Profitable": false,
+            "HeadquartersState": "Texas"
+        },
+        {
+            "Company": "Group 1 Automotive",
+            "FemaleCEO": false,
+            "Profitable": true,
+            "HeadquartersState": "Texas"
+        },
+        {
+            "Company": "Asbury Automotive Group",
+            "FemaleCEO": false,
+            "Profitable": true,
+            "HeadquartersState": "Texas"
+        },
+        {
+            "Company": "Penske Automotive Group",
+            "FemaleCEO": false,
+            "Profitable": true,
+            "HeadquartersState": "Texas"
+        },
+        {
+            "Company": "Lithia Motors",
+            "FemaleCEO": false,
+            "Profitable": true,
+            "HeadquartersState": "Texas"
+        },
+        {
+            "Company": "CarMax",
+            "FemaleCEO": false,
+            "Profitable": true,
+            "HeadquartersState": "Texas"
+        },
+        {
+            "Company": "United Airlines Holdings",
+            "FemaleCEO": false,
+            "Profitable": true,
+            "HeadquartersState": "Texas"
+        },
+        {
+            "Company": "American Airlines Group",
+            "FemaleCEO": false,
+            "Profitable": true,
+            "HeadquartersState": "Texas"
+        },
+        {
+            "Company": "Southwest Airlines",
+            "FemaleCEO": false,
+            "Profitable": true,
+            "HeadquartersState": "Texas"
+        },
+        {
+            "Company": "Exelon",
+            "FemaleCEO": false,
+            "Profitable": true,
+            "HeadquartersState": "Texas"
+        }
+    ],
+    "time": 34.129,
+    "tokens": 758
+}

@@ -26,7 +26,7 @@ def parse_args():
        python -m src.main --mode nl   (datasets from config.database.run)
      """
      parser = argparse.ArgumentParser(
-         description="Run NL/SQL baselines over one or more datasets."
+         description="Run NL/SQL/PALIMPZEST baselines over one or more datasets."
      )
      parser.add_argument(
          "datasets",
@@ -35,7 +35,7 @@ def parse_args():
      )
      parser.add_argument(
          "--mode",
-         choices=["nl", "sql", "both"],
+         choices=["nl", "sql", "both","pz"],
          default="both",
          help="Which baseline(s) to run.",
      )

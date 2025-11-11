@@ -68,6 +68,9 @@ if __name__ == "__main__":
             d_type = "IK"
         elif d in MC_DATASETS:
             d_type = "MC"
+        elif d in PZ_DATASETS:
+            d_type = "PZ"
+
         logger.info(f"Checking folder: {d}")
         if d in DATASETS:
             dataset_path = os.path.join(DATA_DIR, d)
