@@ -8,6 +8,7 @@ from ..db.run_queries_to_json import load_queries_from_folder, load_nl_queries_f
 from config import Config_Loader
 from ..utils.dataset_selection import get_dataset_selection
 from ..utils.logging_config import logger, LOG
+from src.utils.constants import DATA_DIR, DATASETS
 
 #CONFIGURE THE API KEY
 load_dotenv()
