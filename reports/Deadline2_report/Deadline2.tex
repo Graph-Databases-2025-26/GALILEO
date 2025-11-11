@@ -218,4 +218,123 @@ AVG-SCORE & 0.393 & X  \\
 \label{watsonx_results}
 \end{table}
 
+\section{Baseline SQL}
+\label{sec:baseline-sql}
+
+The Baseline SQL module extends the evaluation framework to the case where the
+model is queried through SQL statements instead of natural language questions.
+The goal is to analyse how the different LLM providers are able to interpret
+SQL queries, reason over the underlying database schema and data, and produce
+a structured JSON answer that can be evaluated with the same metrics used for
+the NL baseline.
+
+\subsection{General Procedure}
+
+The Baseline SQL pipeline follows a procedure that is conceptually similar to
+the one adopted for the NL baseline:
+
+\begin{enumerate}
+  \item \textbf{Query loading.}
+  For each dataset all SQL statements are loaded from the corresponding
+  \texttt{queries\_\textless dataset\textgreater{}.sql} file by means of the
+  helper function \texttt{load\_queries\_from\_folder()}.
+
+  \item \textbf{Schema and context extraction.}
+  The DuckDB database associated with the dataset is opened and its schema is
+  extracted. As for the NL baseline, datasets are divided into two categories:
+  \begin{itemize}
+    \item \emph{Internal Knowledge (IK)}: only the database schema is provided
+    to the model as external context;
+    \item \emph{Model Context (MC)}: the SQL query is also executed on DuckDB
+    and the tuples returned by the query are supplied to the model as
+    additional context.
+  \end{itemize}
+
+  \item \textbf{Prompt construction.}
+  A structured prompt is built that combines a high level description of the
+  task (SQL interpretation and result formatting), the schema information and,
+  for MC datasets, a textual representation of the rows returned by the query,
+  together with the SQL statement itself. The helper
+  \texttt{build\_sql\_prompt()} wraps the query into a concise instruction.
+
+  \item \textbf{LLM invocation and parsing.}
+  The prompt is sent to the selected LLM provider (Google Gemini or IBM
+  watsonx). The answer is parsed through a \texttt{PydanticOutputParser} that
+  enforces a common FULL JSON schema including the fields
+  \texttt{result\_set}, \texttt{time} and \texttt{tokens}. In case of parsing
+  errors, the raw content is logged and an empty \texttt{result\_set} is
+  returned together with timing information.
+
+  \item \textbf{Result serialisation.}
+  For each query a JSON file is produced and saved in a provider--specific
+  directory inside the results folder. These files are then used by the
+  evaluation scripts to compute the same metrics already introduced for the NL
+  baseline.
+\end{enumerate}
+
+\subsection{Architecture and Implementation}
+
+The implementation of the Baseline SQL module is split into two main
+components, one for each provider.
+
+For \textbf{Google Gemini} the core logic is implemented in the
+\texttt{baseline\_sql\_gemini.py} module. The main responsibilities of this
+component are:
+\begin{itemize}
+  \item opening the DuckDB database of the selected dataset and extracting the
+  schema;
+  \item executing, in the MC case, the SQL query to obtain the raw tuples;
+  \item building the prompt by combining schema, optional raw data and the SQL
+  statement;
+  \item invoking the model and parsing the output with a Pydantic schema
+  (\texttt{Response}) that contains the \texttt{result\_set} and metadata such
+  as execution time and token usage;
+  \item writing one JSON file per query in a deterministic path that depends on
+  the provider and the dataset.
+\end{itemize}
+
+The function \texttt{run\_sql\_baseline\_gemini()} orchestrates these steps for
+one or more datasets. If no datasets are specified on the command line, the
+selection is read from the YAML configuration (field \texttt{database.run}).
+
+For \textbf{IBM watsonx} the Baseline SQL follows the same high level
+structure. The helper \texttt{run\_sql\_baseline\_watsonx()} loads the queries,
+distinguishes between IK and MC datasets, executes the appropriate baseline
+function and finally serialises the results using the same FULL JSON format.
+In this way the two providers can be compared directly on the same evaluation
+metrics.
+
+\subsection{Command-line Interface and Logical Flow}
+
+The unified command-line interface is implemented in \texttt{src/main.py} and
+controls the execution of both NL and SQL baselines. The script exposes:
+
+\begin{itemize}
+  \item a positional argument \texttt{datasets}, that can contain zero, one or
+  multiple dataset names (for example \texttt{WORLD}, \texttt{GEO},
+  \texttt{MOVIES});
+  \item the option \texttt{--mode}, with possible values \texttt{nl},
+  \texttt{sql} or \texttt{both}, which selects whether to run only the NL
+  baseline, only the SQL baseline or both;
+  \item the option \texttt{--provider}, with possible values \texttt{gemini}
+  and \texttt{watsonx}, that can override the provider defined in the YAML
+  configuration file.
+\end{itemize}
+
+At a high level, the logical flow is the following:
+\begin{enumerate}
+  \item parse the command-line arguments;
+  \item determine the list of datasets, either from the CLI or from the
+  configuration;
+  \item according to the selected mode, invoke the NL baseline, the SQL
+  baseline, or both;
+  \item for each baseline, dispatch to the provider--specific implementation
+  (Gemini or watsonx) and store the resulting JSON files.
+\end{enumerate}
+
+The quantitative results of the Baseline SQL module are reported together with
+those of the NL baseline in the tables that summarise, for each provider, the
+F1--CELL, CARDINALITY and TUPLE--CONSTRAINT metrics, their average score, the
+average inference time and the number of tokens produced.
+
 \end{document}
