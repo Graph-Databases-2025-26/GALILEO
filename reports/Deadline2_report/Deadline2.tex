@@ -36,10 +36,27 @@ Now in this task we will describe the development process implemented for replic
     \item \textbf{SQL baseline}: The system prompt the LLM model directly with a SQL query.
     \item \textbf{NL baseline}: The system prompt the LLM model directly with a NL prompt.
     \item \textbf{Palimpzest baseline}: The system evaluates the pure reasoning and synthesis capabilities of the LLM when operating under a Retrieval-Augmented Generation (RAG) paradigm (\textbf{BONUS}).
+    Notice that the current Palimpzest baseline is a simple RAG setup right now. It needs more work because it doesn't exactly match the advanced data handling and reasoning ideas from the original Galois paper."    
 \end{itemize}
+
 For all these baselines we will show also the tables that reports the evaluation measures and metrics.
 After this brief introduction, let's take a look at all the details of the various baselines.
 
+
+\section{Core Architectural Design and Execution Flow:}
+The central logic of the codebase is built following the logic of some software design patterns, ensuring modularity and maintainability:
+\begin{itemize}
+    \item \textbf{Adapter :} This is implemented in llm\_wrappers.py. It standardizes the interface for heterogeneous LLM providers (e.g., Gemini, Watsonx), enabling the core execution engine to interact with them through a uniform API.
+    \item \textbf{Factory :}  This pattern is located in llm\_factory.py. It decouples client components (e.g., sql\_baseline.py, nl\_baseline.py) from the specific instantiation logic of concrete LLM wrapper objects. Extensibility is achieved simply by updating the PROVIDER\_MAP.
+    \item \textbf{Template :} This is defined by LLMBaseWrapper in llm\_wrappers.py. It establishes the invariant sequence for retrieving the LLM instance, while deferring the implementation of the provider-specific connection details (create\_llm\_instance\(\)) to concrete subclasses.
+    \item \textbf{Pipeline  (LCEL):} This pattern is realized in build\_lcel\_chain.py within baseline\_tools.py. It establishes a structured, sequential execution flow: Context Generation → Prompt Construction → LLM Invocation.
+\end{itemize}
+
+\textbf{Standardized Execution Workflow:}
+
+The first step is the get\_db\_context function dynamically prepares the necessary input context such as the database schema or simulated RAG data for the Palimpzest baseline based on the requested baseline type, next the derived context is injected into a \textbf{ChatPromptTemplate}.
+\\This stage manages the sophisticated prompting logic, including the insertion of system instructions and the required JSON output formatting instructions via \textbf{PydanticOutputParser}.
+After that The fully prepared prompt is transmitted to the configured LLM instance and finally the parse\_llm\_response function standardizes the output, parsing the required JSON structure and extracting critical metadata, including execution time and estimated token usage.
 \section{Baseline NL}
 The Baseline NL module provides a reference framework for evaluating Large Language Models (LLMs) through direct interaction via natural language prompts.
 This approach assesses the model’s intrinsic reasoning and knowledge by prompting it with natural language (NL) questions, optionally enriched with structural and contextual information derived from a database schema or a specific query results.
@@ -61,11 +78,11 @@ All outputs are standardized in a unified FULL JSON format to facilitate downstr
 \subsection{Dataset Categorization and Contextualization}
 \begin{enumerate}
     \item \textbf{Internal knowledge:} In these datasets, the model relies exclusively on its pretrained knowledge and linguistic reasoning capabilities.
-    The prompt includes only the natural language question and, optionally, the database schema, but no factual data retrieved from the database.
-    \item \textbf{Model Context:} These datasets implement a \textbf{Retrieval-Augmented Generation (RAG)-inspired} mechanism.
-    Prior to querying the LLM, the corresponding SQL query is executed against the database, and the retrieved tuples are supplied to the model as external contextual input.
-    This design allows the model to reason jointly over its internal representations and the retrieved data, thus improving factual consistency and grounding.
-    Each resulting file produced by the module fits the following FULL JSON format:
+    The prompt includes only the natural language question and the database schema for both SQL and N baseline, but no factual data retrieved from the database.
+    \item \textbf{Model Context:} For what concerns this project task we did not use Model Context datasets in either NL or SQL baseline.
+    These kind of datasets are used in the palimpzest baseline described in the next section, but it still needs to be improved (in the next tasks)
+
+    One common behavior is that each response produced by any baseline is written in a JSON file that fits the following FULL JSON format:
 \end{enumerate}
     \begin{verbatim}
     {
@@ -142,12 +159,12 @@ AVG-TIME & 4.812 & 7.561  \\
 \toprule
 \textbf{Metric} & \textbf{NL} & \textbf{SQL}  \\
 \midrule
-F1-CELL & 0.443 & 0.338  \\
-CARDINAITY & 0.693 & 0.577  \\
-TUPLE-CONSTR. & 0.209 & 0.121  \\
-AVG-SCORE & 0.448 & 0.345  \\
-\#TOKENS(M) & 14808 & 9090  \\
-AVG-TIME & 4.691 & 1.192  \\
+F1-CELL & 0.436 & 0.523  \\
+CARDINAITY & 0.701 & 0.718  \\
+TUPLE-CONSTR. & 0.212 & 0.243  \\
+AVG-SCORE & 0.450 & 0.495  \\
+\#TOKENS(M) & 15165 & 11606  \\
+AVG-TIME & 5.353 & 4.485  \\
 
 \bottomrule
 \end{tabular}
@@ -336,5 +353,15 @@ The quantitative results of the Baseline SQL module are reported together with
 those of the NL baseline in the tables that summarise, for each provider, the
 F1--CELL, CARDINALITY and TUPLE--CONSTRAINT metrics, their average score, the
 average inference time and the number of tokens produced.
+
+\section{Contributions}
+\begin{itemize}
+    \item \textbf{Alessio Demo (Badge number: 2142885)} First Project Task:  Developed function database connection and instance creation of DuckDB database manager for each dataset using the ingest files (.duckdb files).
+    Developed function for retrieving the SQL queries from .sql files, processing the queries and executing them on DuckDB database instance and finally store it in a json file.
+    Second Task: Developed the Baseline NL function for interacting with the LLM.
+    \\"Early-stage" Palimpzest baseline implementation.
+    \item \textbf{Francesco Pivotto (Badge number: ...)}
+    \item \textbf{Giorgia Amato (Badge number: ...)}
+\end{itemize}
 
 \end{document}

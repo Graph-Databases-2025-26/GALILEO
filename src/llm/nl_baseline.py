@@ -45,7 +45,7 @@ def llm_interaction_nl_baseline(config, database: str, prompts: list[str], b_typ
         t_start = time()
         try:
 
-            raw_response = chain.invoke({"database": database.lower(),"b_type": b_type, "query": sql_query, "prompt":prompt, "BASELINE": d_type })
+            raw_response = chain.invoke({"database": database.lower(), "b_type": b_type, "query": sql_query, "prompt":prompt, "BASELINE": d_type })
 
             t_end = time()
 
@@ -69,8 +69,11 @@ if __name__ == "__main__":
             d_type = "IK"
         elif d in MC_DATASETS:
             d_type = "MC"
-        elif d in PZ_DATASETS:
-            d_type = "PZ"
+        else:
+            LOG.debug(f"You need to specify a valid dataset: for the NL &SQL baselines you need to specify one or more of these datasets: {IK_DATASETS}, and for testing the Palimpzest: {MC_DATASETS}")
+
+        #elif d in PZ_DATASETS:
+        #   d_type = "PZ"
 
         logger.info(f"Checking folder: {d}")
         if d in DATASETS:

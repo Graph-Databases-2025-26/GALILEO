@@ -70,7 +70,7 @@ SQL_IK_PROMPT = """
     {{
     "result_set": [
         {{ "<column_name_1>": "<value_1>", ... }}
-    ],
+    ]
     }}
     5. "result_set" must be an array of JSON objects where keys match the columns selected in the query.
 
@@ -178,6 +178,12 @@ PZ_PROMPT = """
     5. "result_set" must be an array of JSON objects where keys match the columns selected in the query.
 
 """
+
+PZ_QUERIES = {
+    "FORTUNE": "SELECT * FROM target.fortune_2024 LIMIT 200;",
+    "PREMIER": "SELECT * FROM target.premier_league_2024_2025_match_result LIMIT 200;"
+}
+
 
 SYSTEM_PROMPT = {
     "NL": {

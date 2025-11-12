@@ -17,7 +17,7 @@ def execute_baseline_sql_query(config, database: str, queries: list[str], b_type
         t_start = time()
         try:
 
-            raw_response= lcel_chain.invoke({"database": database, "query": qry, "BASELINE": d_type})
+            raw_response= lcel_chain.invoke({"database": database, "query": qry, "BASELINE": d_type, "b_type": b_type})
 
             t_end = time()
             

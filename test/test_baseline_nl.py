@@ -1,4 +1,4 @@
-import src.llm.baseline_nl as baseline_nl
+import src.llm.nl_baseline as baseline_nl
 
 
 class DummyRawResponse:

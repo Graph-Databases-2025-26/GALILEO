@@ -263,6 +263,29 @@ Like in the GALOIS paper, we replicate the Table 2 of the paper, the **Avg_Expec
 
 ---
 
+## BASELINES
+The system  replicates various baseline concepts and implementations (e.g. prompting the LLM with a raw SQL query, or with a NL prompt and finally also a RAG paradigm is implemented -> Palimpzest)
+Before taking a look at the details of each baseline, we want to provide a general structure overview of the scripts that manage the baselines execution:
+
+### Key Design Patterns Implemented
+
+The central logic of the code relies on the following design patterns:
+
+| Pattern | Key Location | Purpose |
+| :--- | :--- | :--- |
+| **1. Adapter Pattern** | `llm_wrappers.py` | Standardizes the interface for different LLM providers (e.g., Gemini, Watsonx), allowing the core code to treat them uniformly. |
+| **2. Factory Method** | `llm_factory.py` | Decouples the client code (e.g., `sql_baseline.py`, `nl_baseline.py`) from the specific instantiation logic of the LLM wrapper objects. Adding new providers only requires updating the `PROVIDER_MAP`. |
+| **3. Template Method** | `LLMBaseWrapper` in `llm_wrappers.py` | Defines the skeleton for retrieving the LLM instance, but delegates the specific connection implementation (`_create_llm_instance()`) to the concrete subclasses. |
+| **4. Pipeline Pattern (LCEL)** | `build_lcel_chain` in `baseline_tools.py` | Defines a sequential execution flow (pipeline) for request handling: `Context -> Prompting -> LLM Invocation`. |
+
+### Standard Workflow
+
+The baseline execution process follows a clear pipeline, leveraging the LangChain Expression Language (LCEL):
+
+* **Context Building** -> **Prompt Preparation:** -> **LLM Invocation:** -> **Result Parsing:**
+
+After this brief introduction, let's take a closer look at each implementation:  
+
 ### 6. Baseline SQL -> Directly Prompting the LLM using a SQL query.
 
 ---
@@ -278,7 +301,6 @@ Finally the results will be stored in a FULL JSON format for the evaluation phas
 2. **Query the LLM** using a LangChain chain that provides:
    - General information about the goal of the LLM.
    - Database schema information.
-   - Optional raw data.
    - NL prompt itself.
 3. **Parse** te LLM's output into a predefined FULL JSON format.
 4. Save the structured results for each query as separate .json files forming a consistent baseline for evaluation.
@@ -292,10 +314,7 @@ All datasets are divided into two main categories:
    - No external information or query results are provided — only the natural language question and schema context are used.
 
 2. **Model Context (MC)**  
-   - In this case, the system performs a **Retrieval-Augmented Generation (RAG-like)** step:  
-     before sending the prompt to the model, the **results of the corresponding SQL query** are retrieved from the database and included as **extra contextual information**.  
-   - This allows the model to reason over both its internal knowledge and real, up-to-date data from the database, improving factual grounding and accuracy.
-
+    For that task we have not take into account this datasets (FORTUNE and PREMIER) as indicated also in the Galois paper. 
 **Architecture and main Components**
 1. **Configuration and Setup**
    - The LLM provider API key are loaded form a `.env` file.
