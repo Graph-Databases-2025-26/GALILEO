@@ -4,15 +4,33 @@
             "lake_name": "Lake Superior"
         },
         {
-            "lake_name": "Lake Huron"
-        },
-        {
             "lake_name": "Lake Michigan"
         },
         {
+            "lake_name": "Lake Huron"
+        },
+        {
             "lake_name": "Lake Erie"
+        },
+        {
+            "lake_name": "Lake Ontario"
+        },
+        {
+            "lake_name": "Great Salt Lake"
+        },
+        {
+            "lake_name": "Lake Mead"
+        },
+        {
+            "lake_name": "Lake Powell"
+        },
+        {
+            "lake_name": "Lake Sakakawea"
+        },
+        {
+            "lake_name": "Lake Oahe"
         }
     ],
-    "time": 0.818,
-    "tokens": 67
+    "time": 2.768,
+    "tokens": 127
 }

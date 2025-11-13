@@ -1,5 +1,4 @@
 from .llm_wrappers import LLMBaseWrapper, GeminiWrapper, WatsonxWrapper
-from src.utils import LOG
 
 PROVIDER_MAP = {
     "gemini": GeminiWrapper,

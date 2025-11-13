@@ -1,18 +1,9 @@
 {
-  "result_set": [
-    {
-      "name": "Ronald Reagan"
-    },
-    {
-      "name": "George H.W. Bush"
-    },
-    {
-      "name": "George W. Bush"
-    },
-    {
-      "name": "Donald Trump"
-    }
-  ],
-  "time": 1.604,
-  "tokens": 260
+    "result_set": [
+        {
+            "name": "Millard Fillmore"
+        }
+    ],
+    "time": 2.048,
+    "tokens": 304
 }

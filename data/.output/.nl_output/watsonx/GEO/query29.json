@@ -3,34 +3,70 @@
         {
             "state_name": "Oklahoma",
             "capital": "Oklahoma City",
-            "density": 53.4,
+            "density": 55.2,
             "population": 3956971
         },
         {
             "state_name": "Iowa",
             "capital": "Des Moines",
-            "density": 60.3,
-            "population": 5289336
-        },
-        {
-            "state_name": "Kansas",
-            "capital": "Topeka",
-            "density": 35.1,
-            "population": 5289336
+            "density": 60.1,
+            "population": 3155070
         },
         {
             "state_name": "Mississippi",
             "capital": "Jackson",
             "density": 63.5,
-            "population": 5289336
+            "population": 2961279
+        },
+        {
+            "state_name": "West Virginia",
+            "capital": "Charleston",
+            "density": 77.1,
+            "population": 1793487
+        },
+        {
+            "state_name": "New Hampshire",
+            "capital": "Concord",
+            "density": 147.8,
+            "population": 1376521
+        },
+        {
+            "state_name": "Nevada",
+            "capital": "Carson City",
+            "density": 28.5,
+            "population": 3139651
+        },
+        {
+            "state_name": "Utah",
+            "capital": "Salt Lake City",
+            "density": 36.9,
+            "population": 3255952
         },
         {
             "state_name": "Arkansas",
             "capital": "Little Rock",
             "density": 56.9,
-            "population": 5289336
+            "population": 3009733
+        },
+        {
+            "state_name": "Kansas",
+            "capital": "Topeka",
+            "density": 35.4,
+            "population": 2910747
+        },
+        {
+            "state_name": "Oregon",
+            "capital": "Salem",
+            "density": 43.6,
+            "population": 4237251
+        },
+        {
+            "state_name": "Connecticut",
+            "capital": "Hartford",
+            "density": 739.1,
+            "population": 3571520
         }
     ],
-    "time": 4.003,
-    "tokens": 189
+    "time": 10.539,
+    "tokens": 390
 }

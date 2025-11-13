@@ -22,7 +22,7 @@
         },
         {
             "state_name": "California",
-            "population": 39512223,
+            "population": 39461588,
             "area": 163696
         },
         {
@@ -62,7 +62,7 @@
         },
         {
             "state_name": "Illinois",
-            "population": 12659743,
+            "population": 12886155,
             "area": 59918
         },
         {
@@ -77,12 +77,12 @@
         },
         {
             "state_name": "Kansas",
-            "population": 2910745,
+            "population": 2910743,
             "area": 82277
         },
         {
             "state_name": "Kentucky",
-            "population": 4463452,
+            "population": 4468402,
             "area": 40409
         },
         {
@@ -92,7 +92,7 @@
         },
         {
             "state_name": "Maine",
-            "population": 1364335,
+            "population": 1361421,
             "area": 35380
         },
         {
@@ -122,7 +122,7 @@
         },
         {
             "state_name": "Missouri",
-            "population": 6116737,
+            "population": 6137428,
             "area": 69562
         },
         {
@@ -132,12 +132,12 @@
         },
         {
             "state_name": "Nebraska",
-            "population": 1925134,
+            "population": 1929268,
             "area": 77348
         },
         {
             "state_name": "Nevada",
-            "population": 3139661,
+            "population": 3139651,
             "area": 110567
         },
         {
@@ -147,12 +147,12 @@
         },
         {
             "state_name": "New Jersey",
-            "population": 8937371,
+            "population": 8944461,
             "area": 8722
         },
         {
             "state_name": "New Mexico",
-            "population": 2144407,
+            "population": 2142351,
             "area": 121669
         },
         {
@@ -172,12 +172,12 @@
         },
         {
             "state_name": "Ohio",
-            "population": 11693200,
+            "population": 11689400,
             "area": 44828
         },
         {
             "state_name": "Oklahoma",
-            "population": 3930784,
+            "population": 3955091,
             "area": 69662
         },
         {
@@ -187,7 +187,7 @@
         },
         {
             "state_name": "Pennsylvania",
-            "population": 12802056,
+            "population": 12802000,
             "area": 46055
         },
         {
@@ -207,6 +207,6 @@
         },
         {}
     ],
-    "time": 19.766,
+    "time": 23.449,
     "tokens": 1024
 }

@@ -17,10 +17,6 @@
             "location": "Shasta County"
         },
         {
-            "lake_name": "Salton Sea",
-            "location": "Imperial County"
-        },
-        {
             "lake_name": "Lake Oroville",
             "location": "Butte County"
         },
@@ -30,13 +26,17 @@
         },
         {
             "lake_name": "Lake McClure",
-            "location": "Mariposa County"
+            "location": "Merced County"
         },
         {
             "lake_name": "Lake Isabella",
             "location": "Kern County"
+        },
+        {
+            "lake_name": "Salton Sea",
+            "location": "Imperial County"
         }
     ],
-    "time": 4.403,
-    "tokens": 204
+    "time": 4.293,
+    "tokens": 203
 }

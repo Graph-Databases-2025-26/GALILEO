@@ -1,9 +1,9 @@
 {
     "result_set": [
         {
-            "COUNT(river_name)": 5
+            "COUNT ( river_name )": 15
         }
     ],
-    "time": 0.47,
-    "tokens": 28
+    "time": 0.967,
+    "tokens": 21
 }

@@ -14,23 +14,23 @@
         },
         {
             "Rank": "4",
-            "Company": "UnitedHealth Group"
-        },
-        {
-            "Rank": "5",
-            "Company": "Berkshire Hathaway"
-        },
-        {
-            "Rank": "6",
             "Company": "CVS Health"
         },
         {
+            "Rank": "5",
+            "Company": "UnitedHealth Group"
+        },
+        {
+            "Rank": "6",
+            "Company": "Berkshire Hathaway"
+        },
+        {
             "Rank": "7",
-            "Company": "Exxon Mobil"
+            "Company": "Alphabet"
         },
         {
             "Rank": "8",
-            "Company": "Alphabet"
+            "Company": "Exxon Mobil"
         },
         {
             "Rank": "9",
@@ -38,9 +38,9 @@
         },
         {
             "Rank": "10",
-            "Company": "Cencora"
+            "Company": "Cardinal Health"
         }
     ],
-    "time": 17.549,
-    "tokens": 156
+    "time": 58.441,
+    "tokens": 167
 }

@@ -2,21 +2,25 @@
     "result_set": [
         {
             "party_name": "Acci\u00f3n Democr\u00e1tica",
-            "number_of_times": 5
+            "elected_count": 5
         },
         {
             "party_name": "COPEI",
-            "number_of_times": 3
+            "elected_count": 3
+        },
+        {
+            "party_name": "Partido Comunista de Venezuela",
+            "elected_count": 0
         },
         {
             "party_name": "Uni\u00f3n Republicana Democr\u00e1tica",
-            "number_of_times": 1
+            "elected_count": 1
         },
         {
             "party_name": "Independent",
-            "number_of_times": 2
+            "elected_count": 2
         }
     ],
-    "time": 2.354,
-    "tokens": 100
+    "time": 2.66,
+    "tokens": 123
 }

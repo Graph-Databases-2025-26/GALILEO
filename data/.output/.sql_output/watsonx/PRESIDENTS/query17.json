@@ -1,135 +1,48 @@
 {
     "result_set": [
         {
-            "name": "George Washington"
-        },
-        {
-            "name": "John Adams"
-        },
-        {
-            "name": "Thomas Jefferson"
-        },
-        {
-            "name": "James Madison"
-        },
-        {
-            "name": "James Monroe"
-        },
-        {
-            "name": "John Quincy Adams"
-        },
-        {
-            "name": "Andrew Jackson"
-        },
-        {
-            "name": "Martin Van Buren"
-        },
-        {
-            "name": "William Henry Harrison"
-        },
-        {
-            "name": "John Tyler"
-        },
-        {
-            "name": "James K. Polk"
-        },
-        {
-            "name": "Zachary Taylor"
-        },
-        {
-            "name": "Millard Fillmore"
-        },
-        {
-            "name": "Franklin Pierce"
-        },
-        {
-            "name": "James Buchanan"
-        },
-        {
-            "name": "Abraham Lincoln"
-        },
-        {
-            "name": "Andrew Johnson"
-        },
-        {
-            "name": "Ulysses S. Grant"
-        },
-        {
-            "name": "Rutherford B. Hayes"
-        },
-        {
-            "name": "James A. Garfield"
-        },
-        {
-            "name": "Chester A. Arthur"
-        },
-        {
-            "name": "Grover Cleveland"
-        },
-        {
-            "name": "Benjamin Harrison"
-        },
-        {
-            "name": "William McKinley"
-        },
-        {
-            "name": "Theodore Roosevelt"
-        },
-        {
-            "name": "William Howard Taft"
-        },
-        {
-            "name": "Woodrow Wilson"
-        },
-        {
-            "name": "Warren G. Harding"
-        },
-        {
-            "name": "Calvin Coolidge"
-        },
-        {
-            "name": "Herbert Hoover"
-        },
-        {
-            "name": "Franklin D. Roosevelt"
-        },
-        {
-            "name": "Harry S. Truman"
-        },
-        {
-            "name": "Dwight D. Eisenhower"
-        },
-        {
-            "name": "John F. Kennedy"
-        },
-        {
-            "name": "Lyndon B. Johnson"
-        },
-        {
-            "name": "Richard Nixon"
-        },
-        {
-            "name": "Gerald Ford"
-        },
-        {
-            "name": "Jimmy Carter"
-        },
-        {
-            "name": "Ronald Reagan"
-        },
-        {
-            "name": "George H. W. Bush"
-        },
-        {
-            "name": "Bill Clinton"
+            "name": "George H.W. Bush"
         },
         {
             "name": "George W. Bush"
         },
         {
-            "name": "Donald J. Trump"
+            "name": "Donald Trump"
+        },
+        {
+            "name": "Ronald Reagan"
+        },
+        {
+            "name": "Richard Nixon"
+        },
+        {
+            "name": "Dwight D. Eisenhower"
+        },
+        {
+            "name": "Herbert Hoover"
+        },
+        {
+            "name": "Calvin Coolidge"
+        },
+        {
+            "name": "Warren G. Harding"
+        },
+        {
+            "name": "William McKinley"
+        },
+        {
+            "name": "Benjamin Harrison"
+        },
+        {
+            "name": "Rutherford B. Hayes"
+        },
+        {
+            "name": "Ulysses S. Grant"
+        },
+        {
+            "name": "Abraham Lincoln"
         }
     ],
-    "time": 4.578,
-    "tokens": 594
+    "time": 4.403,
+    "tokens": 176
 }

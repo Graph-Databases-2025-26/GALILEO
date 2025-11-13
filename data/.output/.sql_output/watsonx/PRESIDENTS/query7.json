@@ -1,10 +1,10 @@
 {
     "result_set": [
         {
-            "party": "Socialist Party",
-            "num": 5
+            "party": "PSUV",
+            "num": 4
         }
     ],
-    "time": 0.43,
-    "tokens": 32
+    "time": 1.227,
+    "tokens": 24
 }

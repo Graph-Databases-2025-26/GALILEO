@@ -1,78 +1,13 @@
 {
     "result_set": [
         {
-            "Rank": 3,
-            "Company": "Apple",
-            "Ticker": "AAPL",
-            "Sector": "Technology",
-            "Industry": "Computers, Office Equipment",
-            "Profitable": true,
-            "Founder_is_CEO": false
-        },
-        {
-            "Rank": 30,
             "Company": "Meta Platforms",
-            "Ticker": "META",
+            "Ticker": null,
             "Sector": "Technology",
-            "Industry": "Internet Services and Retailing",
-            "Profitable": true,
-            "Founder_is_CEO": true
-        },
-        {
-            "Rank": 48,
-            "Company": "Dell Technologies",
-            "Ticker": "DELL",
-            "Sector": "Technology",
-            "Industry": "Computers, Office Equipment",
-            "Profitable": true,
-            "Founder_is_CEO": true
-        },
-        {
-            "Rank": 65,
-            "Company": "Nvidia",
-            "Ticker": "NVDA",
-            "Sector": "Technology",
-            "Industry": "Semiconductors and Other Electronic Components",
-            "Profitable": true,
-            "Founder_is_CEO": true
-        },
-        {
-            "Rank": 123,
-            "Company": "Salesforce",
-            "Ticker": "CRM",
-            "Sector": "Technology",
-            "Industry": "Computer Software",
-            "Profitable": true,
-            "Founder_is_CEO": true
-        },
-        {
-            "Rank": 162,
-            "Company": "Baker Hughes",
-            "Ticker": "BKR",
-            "Sector": "Energy",
-            "Industry": "Oil and Gas Equipment, Services",
-            "Profitable": true,
-            "Founder_is_CEO": false
-        },
-        {
-            "Rank": 181,
-            "Company": "Advanced Micro Devices",
-            "Ticker": "AMD",
-            "Sector": "Technology",
-            "Industry": "Semiconductors and Other Electronic Components",
-            "Profitable": true,
-            "Founder_is_CEO": false
-        },
-        {
-            "Rank": 186,
-            "Company": "Block",
-            "Ticker": "SQ",
-            "Sector": "Business Services",
-            "Industry": "Financial Data Services",
             "Profitable": true,
             "Founder_is_CEO": true
         }
     ],
-    "time": 31.665,
-    "tokens": 421
+    "time": 55.041,
+    "tokens": 53
 }

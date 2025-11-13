@@ -1,36 +1,18 @@
 {
     "result_set": [
         {
-            "title": "Tarzan Finds a Son!"
+            "title": "Ivanhoe"
         },
         {
-            "title": "Tarzan and the Leopard Woman"
+            "title": "The Adventures of Quentin Durward"
         },
         {
-            "title": "Above Suspicion"
+            "title": "Knights of the Round Table"
         },
         {
-            "title": "The Thin Man Goes Home"
-        },
-        {
-            "title": "Thrill of a Romance"
-        },
-        {
-            "title": "Her Highness and the Bellboy"
-        },
-        {
-            "title": "This Time for Keeps"
-        },
-        {
-            "title": "A Date with Judy"
-        },
-        {
-            "title": "The Sun Comes Up"
-        },
-        {
-            "title": "Big Jack"
+            "title": "The Prisoner of Zenda"
         }
     ],
-    "time": 3.643,
-    "tokens": 147
+    "time": 1.872,
+    "tokens": 75
 }

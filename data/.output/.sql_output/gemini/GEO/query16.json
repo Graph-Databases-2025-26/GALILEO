@@ -1,9 +1,9 @@
 {
-  "result_set": [
-    {
-      "COUNT ( DISTINCT state_name )": 3
-    }
-  ],
-  "time": 2.029,
-  "tokens": 342
+    "result_set": [
+        {
+            "population": 737015
+        }
+    ],
+    "time": 1.943,
+    "tokens": 240
 }

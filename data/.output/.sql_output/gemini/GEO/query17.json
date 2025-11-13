@@ -1,9 +1,9 @@
 {
-  "result_set": [
-    {
-      "population": 737015
-    }
-  ],
-  "time": 0.802,
-  "tokens": 81
+    "result_set": [
+        {
+            "COUNT(DISTINCT usa_state_traversed)": 32
+        }
+    ],
+    "time": 8.121,
+    "tokens": 1784
 }

@@ -1,13 +1,55 @@
 {
     "result_set": [
         {
-            "name": "Juan Vicente G\u00f3mez",
+            "name": "Antonio Guzm\u00e1n Blanco",
             "party": "Conservative",
-            "start_year": 1908,
-            "end_year": 1914,
-            "cardinal_number": 16
+            "start_year": "1870",
+            "end_year": "1877",
+            "cardinal_number": "1"
+        },
+        {
+            "name": "Francisco Linares Alc\u00e1ntara",
+            "party": "Conservative",
+            "start_year": "1877",
+            "end_year": "1878",
+            "cardinal_number": "2"
+        },
+        {
+            "name": "Jos\u00e9 Gregorio Varela",
+            "party": "Conservative",
+            "start_year": "1878",
+            "end_year": "1879",
+            "cardinal_number": "3"
+        },
+        {
+            "name": "Antonio Guzm\u00e1n Blanco",
+            "party": "Conservative",
+            "start_year": "1879",
+            "end_year": "1884",
+            "cardinal_number": "4"
+        },
+        {
+            "name": "Joaqu\u00edn Crespo",
+            "party": "Conservative",
+            "start_year": "1884",
+            "end_year": "1886",
+            "cardinal_number": "5"
+        },
+        {
+            "name": "Antonio Guzm\u00e1n Blanco",
+            "party": "Conservative",
+            "start_year": "1886",
+            "end_year": "1887",
+            "cardinal_number": "6"
+        },
+        {
+            "name": "Herm\u00f3genes L\u00f3pez",
+            "party": "Conservative",
+            "start_year": "1887",
+            "end_year": "1888",
+            "cardinal_number": "7"
         }
     ],
-    "time": 0.754,
-    "tokens": 74
+    "time": 7.365,
+    "tokens": 327
 }

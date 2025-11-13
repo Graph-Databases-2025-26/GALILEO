@@ -1,24 +1,15 @@
 {
     "result_set": [
         {
-            "Company": "Intel",
-            "HeadquartersState": "California",
-            "Ticker": "INTC",
-            "CEO": "Patrick P. Gelsinger",
-            "Founder_is_CEO": "False",
-            "FemaleCEO": "False",
-            "Number_of_employees": "124800"
-        },
-        {
             "Company": "Nvidia",
             "HeadquartersState": "California",
-            "Ticker": "NVDA",
+            "Ticker": null,
             "CEO": "Jensen Huang",
-            "Founder_is_CEO": "True",
-            "FemaleCEO": "False",
-            "Number_of_employees": "29600"
+            "Founder_is_CEO": false,
+            "FemaleCEO": false,
+            "Number_of_employees": 29600
         }
     ],
-    "time": 4.669,
-    "tokens": 134
+    "time": 56.546,
+    "tokens": 93
 }

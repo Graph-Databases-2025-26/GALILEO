@@ -1,10 +1,14 @@
 {
     "result_set": [
         {
-            "name": "Juan Vicente G\u00f3mez",
+            "name": "R\u00f3mulo Gallegos",
+            "party": "Liberal"
+        },
+        {
+            "name": "R\u00f3mulo Betancourt",
             "party": "Liberal"
         }
     ],
-    "time": 0.557,
-    "tokens": 45
+    "time": 2.536,
+    "tokens": 51
 }

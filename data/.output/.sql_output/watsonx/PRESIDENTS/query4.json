@@ -1,9 +1,12 @@
 {
     "result_set": [
         {
-            "name": "Jose Gregorio Monagas"
+            "name": "R\u00f3mulo Betancourt"
+        },
+        {
+            "name": "R\u00f3mulo Gallegos"
         }
     ],
-    "time": 0.606,
-    "tokens": 32
+    "time": 1.442,
+    "tokens": 37
 }

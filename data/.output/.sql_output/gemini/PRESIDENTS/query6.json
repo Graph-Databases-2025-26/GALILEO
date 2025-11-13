@@ -1,41 +1,55 @@
 {
-  "result_set": [
-    {
-      "name": "Hugo Chávez",
-      "start_year": 1999,
-      "end_year": 2013,
-      "cardinal_number": "53rd",
-      "party": "United Socialist Party of Venezuela"
-    },
-    {
-      "name": "Nicolás Maduro",
-      "start_year": 2013,
-      "end_year": null,
-      "cardinal_number": "54th",
-      "party": "United Socialist Party of Venezuela"
-    },
-    {
-      "name": "Rómulo Betancourt",
-      "start_year": 1959,
-      "end_year": 1964,
-      "cardinal_number": "46th",
-      "party": "Democratic Action"
-    },
-    {
-      "name": "Rafael Caldera",
-      "start_year": 1969,
-      "end_year": 1974,
-      "cardinal_number": "48th",
-      "party": "COPEI"
-    },
-    {
-      "name": "Carlos Andrés Pérez",
-      "start_year": 1974,
-      "end_year": 1979,
-      "cardinal_number": "49th",
-      "party": "Democratic Action"
-    }
-  ],
-  "time": 4.561,
-  "tokens": 922
+    "result_set": [
+        {
+            "name": "Jos\u00e9 Antonio P\u00e1ez",
+            "start_year": 1830,
+            "end_year": 1835,
+            "cardinal_number": "1st",
+            "party": "Conservative Party"
+        },
+        {
+            "name": "Antonio Guzm\u00e1n Blanco",
+            "start_year": 1870,
+            "end_year": 1877,
+            "cardinal_number": "13th",
+            "party": "Liberal Party"
+        },
+        {
+            "name": "Juan Vicente G\u00f3mez",
+            "start_year": 1908,
+            "end_year": 1935,
+            "cardinal_number": "26th",
+            "party": "Military/Independent"
+        },
+        {
+            "name": "R\u00f3mulo Betancourt",
+            "start_year": 1959,
+            "end_year": 1964,
+            "cardinal_number": "47th",
+            "party": "Acci\u00f3n Democr\u00e1tica"
+        },
+        {
+            "name": "Carlos Andr\u00e9s P\u00e9rez",
+            "start_year": 1974,
+            "end_year": 1979,
+            "cardinal_number": "58th",
+            "party": "Acci\u00f3n Democr\u00e1tica"
+        },
+        {
+            "name": "Hugo Ch\u00e1vez",
+            "start_year": 1999,
+            "end_year": 2013,
+            "cardinal_number": "66th",
+            "party": "PSUV"
+        },
+        {
+            "name": "Nicol\u00e1s Maduro",
+            "start_year": 2013,
+            "end_year": null,
+            "cardinal_number": "67th",
+            "party": "PSUV"
+        }
+    ],
+    "time": 9.214,
+    "tokens": 1995
 }

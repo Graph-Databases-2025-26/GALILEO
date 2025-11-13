@@ -11,7 +11,7 @@
         {
             "title": "Jurassic Park",
             "year": 1993,
-            "genres": "Action, Adventure, Sci-Fi",
+            "genres": "Adventure, Sci-Fi, Thriller",
             "birthyear": 1946,
             "deathyear": null,
             "runtimeminutes": 127
@@ -65,6 +65,6 @@
             "runtimeminutes": 145
         }
     ],
-    "time": 8.768,
-    "tokens": 439
+    "time": 15.665,
+    "tokens": 440
 }

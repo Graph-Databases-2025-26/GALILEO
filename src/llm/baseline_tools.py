@@ -1,7 +1,7 @@
 import ast
 import re
 import json
-from src.utils import LOG, DATA_DIR, SYSTEM_PROMPT, HUMAN_PROMPT, BASELINE_OUTPUT,  PZ_QUERIES
+from src.utils import LOG, SYSTEM_PROMPT, HUMAN_PROMPT, BASELINE_OUTPUT
 from .llm_factory import LLMBaseWrapper
 from langchain_core.output_parsers import PydanticOutputParser
 from langchain_core.prompts import ChatPromptTemplate
@@ -11,6 +11,7 @@ from pydantic import BaseModel, Field
 
 from .palimpzest_baseline import pz_context
 from ..db.duckdb_db_graphdb import get_duckdb_path
+from ..utils.constants import RAG_RESOURCES
 
 
 class Response(BaseModel):
@@ -39,7 +40,7 @@ def parse_llm_response(raw_response, time: float, llm_wrapper: LLMBaseWrapper) -
     return fullJ_structure
 
 def save_baseline_to_json(dataset: str, baseline: list[dict], llm_wrapper: LLMBaseWrapper, b_type: str):
-    
+
     bline_folder = BASELINE_OUTPUT[b_type][llm_wrapper.get_provider_name().upper()]/dataset
     print(bline_folder)
     
@@ -60,7 +61,8 @@ def get_db_context(input_d: dict) -> dict:
 #PALIMPZEST IMPLEMENTATION
 
     if (input_d["b_type"].lower() == "pz"):
-        output = pz_context(input_d ,database ,db ,db_schema )
+        rag_path = RAG_RESOURCES / database.upper()
+        output = pz_context(input_d ,db_schema ,rag_path, input_d["prompt"] )
 
 
 # NL IMPLEMENTATION

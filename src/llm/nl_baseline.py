@@ -2,7 +2,7 @@ from time import time
 from dotenv import load_dotenv
 from src.llm.baseline_tools import parse_llm_response, save_baseline_to_json, build_lcel_chain
 from src.llm.llm_factory import get_llm_wrapper
-from src.main import parse_args
+#from src.main import parse_args
 from ..utils.constants import *
 from ..db.run_queries_to_json import load_queries_from_folder, load_nl_queries_from_txt
 from config import Config_Loader
@@ -28,7 +28,7 @@ def llm_interaction_nl_baseline(config, database: str, prompts: list[str], b_typ
     chain = build_lcel_chain(llm,b_type, d_type)
 
     folder = os.path.join(DATA_DIR, database)
-    print("STO LEGGENDO LE QUERY DEL DATASET: ", folder)
+
     queries = load_queries_from_folder(folder)
     assert len(prompts) == len(queries), (
         f"Mismatch: {len(prompts)} prompts vs {len(queries)} queries in {database}"
@@ -59,9 +59,9 @@ def llm_interaction_nl_baseline(config, database: str, prompts: list[str], b_typ
 
 if __name__ == "__main__":
     config = Config_Loader().get_config()
-    args = parse_args()
+    #args = parse_args()
     d_type=""
-    datasets = args.datasets or get_dataset_selection(config.database.run)
+    datasets = get_dataset_selection(config.database.run)
     for d in datasets:
 
         d = d.upper()
@@ -71,9 +71,6 @@ if __name__ == "__main__":
             d_type = "MC"
         else:
             LOG.debug(f"You need to specify a valid dataset: for the NL &SQL baselines you need to specify one or more of these datasets: {IK_DATASETS}, and for testing the Palimpzest: {MC_DATASETS}")
-
-        #elif d in PZ_DATASETS:
-        #   d_type = "PZ"
 
         logger.info(f"Checking folder: {d}")
         if d in DATASETS:
@@ -85,4 +82,4 @@ if __name__ == "__main__":
             logger.info(f"Processing dataset: {d}")
 
             nl_queries = load_nl_queries_from_txt(dataset_path)
-            llm_interaction_nl_baseline(config, d, nl_queries, args.mode.upper(), d_type)
+            llm_interaction_nl_baseline(config, d, nl_queries, "NL", d_type)

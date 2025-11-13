@@ -1,9 +1,9 @@
 {
     "result_set": [
         {
-            "state": "Multiple states have a Springfield"
+            "state": "Multiple states"
         }
     ],
-    "time": 1.227,
-    "tokens": 37
+    "time": 1.224,
+    "tokens": 32
 }

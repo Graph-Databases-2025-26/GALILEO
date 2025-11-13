@@ -1,16 +1,16 @@
 {
     "result_set": [
         {
+            "name": "Hugo Ch\u00e1vez",
+            "party": "Fifth Republic Movement"
+        },
+        {
             "name": "Nicol\u00e1s Maduro",
             "party": "United Socialist Party of Venezuela"
         },
         {
-            "name": "Hugo Ch\u00e1vez",
-            "party": "United Socialist Party of Venezuela"
-        },
-        {
             "name": "Rafael Caldera",
-            "party": "Convergence"
+            "party": "National Convergence"
         },
         {
             "name": "Carlos Andr\u00e9s P\u00e9rez",
@@ -21,6 +21,6 @@
             "party": "National Convention"
         }
     ],
-    "time": 3.448,
+    "time": 2.838,
     "tokens": 128
 }

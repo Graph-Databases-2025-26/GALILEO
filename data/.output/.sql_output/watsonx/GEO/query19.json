@@ -1,84 +1,156 @@
 {
     "result_set": [
         {
-            "capital": "Washington, D.C."
-        },
-        {
-            "capital": "Albany"
-        },
-        {
-            "capital": "Atlanta"
-        },
-        {
-            "capital": "Baton Rouge"
-        },
-        {
-            "capital": "Boise"
-        },
-        {
-            "capital": "Carson City"
-        },
-        {
-            "capital": "Cheyenne"
-        },
-        {
-            "capital": "Columbus"
-        },
-        {
-            "capital": "Disputed"
-        },
-        {
-            "capital": "Dover"
-        },
-        {
-            "capital": "Helena"
-        },
-        {
-            "capital": "Harrisburg"
-        },
-        {
-            "capital": "Honolulu"
+            "capital": "Montgomery"
         },
         {
             "capital": "Juneau"
         },
         {
-            "capital": "Montgomery"
-        },
-        {
-            "capital": "New York City"
-        },
-        {
             "capital": "Phoenix"
         },
         {
-            "capital": "Pierre"
+            "capital": "Little Rock"
         },
         {
-            "capital": "Providence"
+            "capital": "Sacramento"
         },
         {
-            "capital": "Raleigh"
+            "capital": "Denver"
         },
         {
-            "capital": "Richmond"
+            "capital": "Hartford"
         },
         {
-            "capital": "Santa Fe"
-        },
-        {
-            "capital": "Springfield"
+            "capital": "Dover"
         },
         {
             "capital": "Tallahassee"
         },
         {
+            "capital": "Atlanta"
+        },
+        {
+            "capital": "Honolulu"
+        },
+        {
+            "capital": "Boise"
+        },
+        {
+            "capital": "Springfield"
+        },
+        {
+            "capital": "Indianapolis"
+        },
+        {
+            "capital": "Des Moines"
+        },
+        {
             "capital": "Topeka"
         },
         {
-            "capital": "Waukesha"
+            "capital": "Frankfort"
+        },
+        {
+            "capital": "Baton Rouge"
+        },
+        {
+            "capital": "Augusta"
+        },
+        {
+            "capital": "Annapolis"
+        },
+        {
+            "capital": "Boston"
+        },
+        {
+            "capital": "Lansing"
+        },
+        {
+            "capital": "St. Paul"
+        },
+        {
+            "capital": "Jackson"
+        },
+        {
+            "capital": "Jefferson City"
+        },
+        {
+            "capital": "Helena"
+        },
+        {
+            "capital": "Lincoln"
+        },
+        {
+            "capital": "Carson City"
+        },
+        {
+            "capital": "Concord"
+        },
+        {
+            "capital": "Trenton"
+        },
+        {
+            "capital": "Santa Fe"
+        },
+        {
+            "capital": "Albany"
+        },
+        {
+            "capital": "Raleigh"
+        },
+        {
+            "capital": "Bismarck"
+        },
+        {
+            "capital": "Columbus"
+        },
+        {
+            "capital": "Oklahoma City"
+        },
+        {
+            "capital": "Salem"
+        },
+        {
+            "capital": "Harrisburg"
+        },
+        {
+            "capital": "Providence"
+        },
+        {
+            "capital": "Columbia"
+        },
+        {
+            "capital": "Pierre"
+        },
+        {
+            "capital": "Nashville"
+        },
+        {
+            "capital": "Austin"
+        },
+        {
+            "capital": "Salt Lake City"
+        },
+        {
+            "capital": "Montpelier"
+        },
+        {
+            "capital": "Richmond"
+        },
+        {
+            "capital": "Olympia"
+        },
+        {
+            "capital": "Charleston"
+        },
+        {
+            "capital": "Madison"
+        },
+        {
+            "capital": "Cheyenne"
         }
     ],
-    "time": 2.511,
-    "tokens": 298
+    "time": 11.531,
+    "tokens": 526
 }

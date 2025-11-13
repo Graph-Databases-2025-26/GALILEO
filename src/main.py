@@ -1,11 +1,9 @@
+from src.db.run_queries_to_json import load_nl_queries_from_txt
+from src.llm.nl_baseline import llm_interaction_nl_baseline
 from src.utils import PY, SUBMISSIONS_PATH, GROUND_PATH, DATA_DIR, IK_DATASETS, MC_DATASETS, BASELINE_OUTPUT
 from src.utils import get_dataset_selection
-from src.utils import LOG, log_init 
-
+from src.utils import LOG, log_init
 from src.llm import execute_baseline_sql_query
-
-from src.db import run_queries_to_json, db_creation
-
 from config import Config_Loader
 from pathlib import Path
 import subprocess, re, argparse
@@ -143,31 +141,33 @@ def load_queries_from_folder(data_folder: Path) -> list[str]:
 def main():
     
     config = Config_Loader().get_config()
+    args = parse_args()
     log_init()
-    
-    LOG.info(f"Watsonx_Model = {config.watsonx.model}")
-    LOG.info(f"Watsonx_Api_Key = {config.watsonx.api_key}")
-    LOG.info(f"Watsonx_Project_Id = {config.watsonx.project_id}")
-    LOG.info(f"Watsonx_Endpoint = {config.watsonx.endpoint}")
 
-    datasets = get_dataset_selection(config.database.run)
+    if args.provider:
+        config.llm_provider = args.provider.lower()
+
+
+    datasets = [d.upper() for d in args.datasets] if args.datasets else \
+        [d.upper() for d in get_dataset_selection(config.database.run)]
 
     for dataset in datasets:
-        
         dataset_path = DATA_DIR / dataset
         LOG.info(f"=== Processing dataset: {dataset} ===")
-        
-        queries = load_queries_from_folder(dataset_path)
-        LOG.info(f"Loaded {len(queries)} queries for dataset {dataset}")
-        
-        if dataset in IK_DATASETS:
-            execute_baseline_sql_query(config, dataset, queries, "SQL" ,"IK")
-        
-        if dataset in MC_DATASETS:
-            execute_baseline_sql_query(config, dataset, queries, "SQL", "MC")
-        
-        ##db_creation(dataset)
-        ##run_queries_to_json.run_queries_to_json(dataset)
+
+        if args.mode =="sql":
+            queries = load_queries_from_folder(dataset_path)
+            LOG.info(f"Loaded {len(queries)} queries for dataset {dataset} in {args.mode} mode")
+            if dataset in IK_DATASETS:
+                execute_baseline_sql_query(config, dataset, queries, args.mode.upper() ,"IK")
+
+        elif args.mode == "nl":
+            nl_queries = load_nl_queries_from_txt(dataset_path)
+            LOG.info(f"Loaded {len(nl_queries)} queries for dataset {dataset} in {args.mode} mode")
+            if dataset in IK_DATASETS:
+                llm_interaction_nl_baseline(config, dataset, nl_queries, args.mode.upper(), "IK")
+
+
 
     
     subprocess.run([

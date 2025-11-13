@@ -1,9 +1,10 @@
 {
-  "result_set": [
-    {
-      "count(p.party)": 7
-    }
-  ],
-  "time": 2.9,
-  "tokens": 511
+    "result_set": [
+        {
+            "party": "Republican",
+            "num": 19
+        }
+    ],
+    "time": 8.363,
+    "tokens": 1862
 }

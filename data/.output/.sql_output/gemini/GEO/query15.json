@@ -1,9 +1,9 @@
 {
-  "result_set": [
-    {
-      "state_name": "Texas"
-    }
-  ],
-  "time": 1.279,
-  "tokens": 181
+    "result_set": [
+        {
+            "count(DISTINCT state_name)": 3
+        }
+    ],
+    "time": 3.073,
+    "tokens": 501
 }

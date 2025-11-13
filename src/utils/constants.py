@@ -19,6 +19,8 @@ SQL_BLINE_DIR = SUBMISSIONS_PATH / ".sql_output"
 
 PZ_BLINE_DIR = SUBMISSIONS_PATH / ".palimpzest_output"
 
+RAG_RESOURCES = DATA_DIR / "RAG"
+
 BASELINE_OUTPUT = {
     "SQL" : {
         "GEMINI" : SQL_BLINE_DIR / "gemini",
@@ -157,7 +159,7 @@ NL_MC_PROMPT = """
 PZ_PROMPT = """
     You are an expert assistant in in-context data retrieval. 
     Your task is to answer the user's 'query' based on the provided 'raw_data'. 
-    The 'raw_data' represents 50 pre-selected records (simulating the 50 most relevant segments) from the database. 
+    The 'raw_data' represents 50 pre-selected records (simulating the 50 most relevant segments) from the resource. 
     **Ignore your internal knowledge and use ONLY the information present in raw_data and schema_info to formulate the 'result_set' in JSON format.** 
     PROVIDED DATA STRUCTURE: 
     - schema_info: {schema_info} The table schema. 
@@ -179,10 +181,6 @@ PZ_PROMPT = """
 
 """
 
-PZ_QUERIES = {
-    "FORTUNE": "SELECT * FROM target.fortune_2024 LIMIT 200;",
-    "PREMIER": "SELECT * FROM target.premier_league_2024_2025_match_result LIMIT 200;"
-}
 
 
 SYSTEM_PROMPT = {
@@ -197,7 +195,8 @@ SYSTEM_PROMPT = {
     },
 
     "PZ":{
-        "MC": SQL_MC_PROMPT
+        "NL": PZ_PROMPT,
+        "SQL": PZ_PROMPT
     },
 }
 

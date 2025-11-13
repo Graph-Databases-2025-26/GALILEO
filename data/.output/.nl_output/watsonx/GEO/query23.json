@@ -1,46 +1,26 @@
 {
     "result_set": [
         {
-            "capital": "Ngerulmud",
-            "country": "Palau"
+            "capital": "Nur-Sultan",
+            "country": "Kazakhstan"
         },
         {
-            "capital": "Funafuti",
-            "country": "Tuvalu"
+            "capital": "Ashgabat",
+            "country": "Turkmenistan"
         },
         {
-            "capital": "Majuro",
-            "country": "Marshall Islands"
+            "capital": "Dushanbe",
+            "country": "Tajikistan"
         },
         {
-            "capital": "Yaren",
-            "country": "Nauru"
+            "capital": "Bishkek",
+            "country": "Kyrgyzstan"
         },
         {
-            "capital": "Saint Helier",
-            "country": "Jersey"
-        },
-        {
-            "capital": "Charlestown",
-            "country": "Nevis"
-        },
-        {
-            "capital": "Flying Fish Cove",
-            "country": "Christmas Island"
-        },
-        {
-            "capital": "The Valley",
-            "country": "Anguilla"
-        },
-        {
-            "capital": "Cockburn Town",
-            "country": "Turks and Caicos Islands"
-        },
-        {
-            "capital": "Grytviken",
-            "country": "South Georgia and the South Sandwich Islands"
+            "capital": "Yerevan",
+            "country": "Armenia"
         }
     ],
-    "time": 4.505,
-    "tokens": 216
+    "time": 2.764,
+    "tokens": 122
 }

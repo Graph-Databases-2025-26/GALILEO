@@ -1,9 +1,9 @@
 {
     "result_set": [
         {
-            "length_in_km": 3189.0
+            "length_in_km": "3051"
         }
     ],
-    "time": 0.507,
-    "tokens": 32
+    "time": 0.82,
+    "tokens": 15
 }

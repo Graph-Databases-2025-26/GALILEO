@@ -1,14 +1,14 @@
 {
     "result_set": [
         {
-            "party_name": "Conservative Party",
+            "party_name": "Liberal Party",
             "elected_count": 2
         },
         {
-            "party_name": "Liberal Party",
+            "party_name": "Conservative Party",
             "elected_count": 3
         }
     ],
-    "time": 1.722,
+    "time": 1.742,
     "tokens": 60
 }

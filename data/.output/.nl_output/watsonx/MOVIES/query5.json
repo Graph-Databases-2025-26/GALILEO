@@ -3,7 +3,7 @@
         {
             "title": "Minority Report",
             "year": 2002,
-            "genres": "Action, Sci-Fi, Thriller",
+            "genres": "Action, Thriller, Sci-Fi",
             "birthyear": 1946
         },
         {
@@ -79,6 +79,6 @@
             "birthyear": 1946
         }
     ],
-    "time": 10.384,
+    "time": 9.421,
     "tokens": 493
 }

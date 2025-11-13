@@ -1,9 +1,9 @@
 {
     "result_set": [
         {
-            "number_of_flights": "287964"
+            "number_of_flights": "38748"
         }
     ],
-    "time": 1.229,
+    "time": 1.943,
     "tokens": 35
 }

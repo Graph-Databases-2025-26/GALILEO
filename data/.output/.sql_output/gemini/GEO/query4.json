@@ -1,9 +1,9 @@
 {
-  "result_set": [
-    {
-      "population": 184829
-    }
-  ],
-  "time": 0.756,
-  "tokens": 82
+    "result_set": [
+        {
+            "count(state_name)": 50
+        }
+    ],
+    "time": 1.541,
+    "tokens": 160
 }

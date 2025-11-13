@@ -1,9 +1,156 @@
 {
-  "result_set": [
-    {
-      "COUNT ( DISTINCT usa_state_traversed )": 30
-    }
-  ],
-  "time": 5.621,
-  "tokens": 1058
+    "result_set": [
+        {
+            "capital": "Sacramento"
+        },
+        {
+            "capital": "Austin"
+        },
+        {
+            "capital": "Tallahassee"
+        },
+        {
+            "capital": "Albany"
+        },
+        {
+            "capital": "Harrisburg"
+        },
+        {
+            "capital": "Springfield"
+        },
+        {
+            "capital": "Columbus"
+        },
+        {
+            "capital": "Atlanta"
+        },
+        {
+            "capital": "Raleigh"
+        },
+        {
+            "capital": "Lansing"
+        },
+        {
+            "capital": "Trenton"
+        },
+        {
+            "capital": "Richmond"
+        },
+        {
+            "capital": "Olympia"
+        },
+        {
+            "capital": "Phoenix"
+        },
+        {
+            "capital": "Boston"
+        },
+        {
+            "capital": "Nashville"
+        },
+        {
+            "capital": "Indianapolis"
+        },
+        {
+            "capital": "Annapolis"
+        },
+        {
+            "capital": "Jefferson City"
+        },
+        {
+            "capital": "Denver"
+        },
+        {
+            "capital": "Madison"
+        },
+        {
+            "capital": "Saint Paul"
+        },
+        {
+            "capital": "Columbia"
+        },
+        {
+            "capital": "Montgomery"
+        },
+        {
+            "capital": "Baton Rouge"
+        },
+        {
+            "capital": "Frankfort"
+        },
+        {
+            "capital": "Salem"
+        },
+        {
+            "capital": "Oklahoma City"
+        },
+        {
+            "capital": "Hartford"
+        },
+        {
+            "capital": "Salt Lake City"
+        },
+        {
+            "capital": "Des Moines"
+        },
+        {
+            "capital": "Carson City"
+        },
+        {
+            "capital": "Little Rock"
+        },
+        {
+            "capital": "Jackson"
+        },
+        {
+            "capital": "Topeka"
+        },
+        {
+            "capital": "Santa Fe"
+        },
+        {
+            "capital": "Lincoln"
+        },
+        {
+            "capital": "Boise"
+        },
+        {
+            "capital": "Charleston"
+        },
+        {
+            "capital": "Honolulu"
+        },
+        {
+            "capital": "Concord"
+        },
+        {
+            "capital": "Augusta"
+        },
+        {
+            "capital": "Helena"
+        },
+        {
+            "capital": "Providence"
+        },
+        {
+            "capital": "Dover"
+        },
+        {
+            "capital": "Pierre"
+        },
+        {
+            "capital": "Bismarck"
+        },
+        {
+            "capital": "Juneau"
+        },
+        {
+            "capital": "Montpelier"
+        },
+        {
+            "capital": "Cheyenne"
+        }
+    ],
+    "time": 9.697,
+    "tokens": 1726
 }

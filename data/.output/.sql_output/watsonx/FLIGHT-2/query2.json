@@ -1,9 +1,9 @@
 {
     "result_set": [
         {
-            "count(*)": 12345
+            "count(*)": 331181
         }
     ],
-    "time": 0.406,
-    "tokens": 28
+    "time": 0.921,
+    "tokens": 14
 }

@@ -5,30 +5,30 @@
             "party": "Democratic Action",
             "start_year": 1945,
             "end_year": 1948,
-            "cardinal_number": "37th"
+            "cardinal_number": "First"
         },
         {
             "name": "R\u00f3mulo Betancourt",
             "party": "Democratic Action",
             "start_year": 1959,
             "end_year": 1964,
-            "cardinal_number": "47th"
+            "cardinal_number": "Second"
         },
         {
             "name": "Carlos Andr\u00e9s P\u00e9rez",
             "party": "Democratic Action",
             "start_year": 1974,
             "end_year": 1979,
-            "cardinal_number": "55th"
+            "cardinal_number": "First"
         },
         {
             "name": "Carlos Andr\u00e9s P\u00e9rez",
             "party": "Democratic Action",
             "start_year": 1989,
             "end_year": 1993,
-            "cardinal_number": "58th"
+            "cardinal_number": "Second"
         }
     ],
-    "time": 4.3,
-    "tokens": 205
+    "time": 5.454,
+    "tokens": 201
 }

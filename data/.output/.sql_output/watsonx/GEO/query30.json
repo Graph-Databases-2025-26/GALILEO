@@ -1,18 +1,18 @@
 {
     "result_set": [
         {
-            "state_name": "California",
-            "capital": "Sacramento"
+            "state_name": "Alaska",
+            "capital": "Juneau"
         },
         {
             "state_name": "Texas",
             "capital": "Austin"
         },
         {
-            "state_name": "New York",
-            "capital": "Albany"
+            "state_name": "California",
+            "capital": "Sacramento"
         }
     ],
-    "time": 0.856,
-    "tokens": 81
+    "time": 2.459,
+    "tokens": 60
 }

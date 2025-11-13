@@ -1,54 +1,54 @@
 {
     "result_set": [
         {
-            "country_name": "Bangladesh",
-            "independence_year": 1971
+            "Country": "Bangladesh",
+            "Year": 1971
         },
         {
-            "country_name": "Djibouti",
-            "independence_year": 1977
+            "Country": "Djibouti",
+            "Year": 1977
         },
         {
-            "country_name": "Namibia",
-            "independence_year": 1990
+            "Country": "Vietnam",
+            "Year": 1976
         },
         {
-            "country_name": "Eritrea",
-            "independence_year": 1993
+            "Country": "Zimbabwe",
+            "Year": 1980
         },
         {
-            "country_name": "South Sudan",
-            "independence_year": 2011
+            "Country": "Namibia",
+            "Year": 1990
         },
         {
-            "country_name": "Timor-Leste",
-            "independence_year": 2002
+            "Country": "Eritrea",
+            "Year": 1993
         },
         {
-            "country_name": "Montenegro",
-            "independence_year": 2006
+            "Country": "Czech Republic",
+            "Year": 1993
         },
         {
-            "country_name": "Kosovo",
-            "independence_year": 2008
+            "Country": "Slovakia",
+            "Year": 1993
         },
         {
-            "country_name": "Croatia",
-            "independence_year": 1991
+            "Country": "East Timor",
+            "Year": 2002
         },
         {
-            "country_name": "Bosnia and Herzegovina",
-            "independence_year": 1992
+            "Country": "Montenegro",
+            "Year": 2006
         },
         {
-            "country_name": "Macedonia",
-            "independence_year": 1991
+            "Country": "Kosovo",
+            "Year": 2008
         },
         {
-            "country_name": "Slovenia",
-            "independence_year": 1991
+            "Country": "South Sudan",
+            "Year": 2011
         }
     ],
-    "time": 6.349,
-    "tokens": 265
+    "time": 4.414,
+    "tokens": 198
 }

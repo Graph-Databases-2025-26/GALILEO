@@ -358,38 +358,21 @@ Each generated file from these datasets follows the same FULL JSON structure:
 ---
 
 ### 8. Baseline Palimpzest -> RAG & in-context querying.
-In the NL baseline development, we have already implemented a sort of RAG retrieval (passing the query result to the llm for a specific NL prompt), but reading the GALOIS paper and the web site of Palympzes approach (**https://palimpzest.org/**), was clear that the our approach didn't fully satisfy the approach described in that sources.
-For this reason we developed a more coherent concept for the Palympzest purpose, described above:
+The proposed baseline automatically retrieves relevant text segments from Markdown or plain text files to construct additional contextual information for a Retrieval-Augmented Generation (RAG) pipeline. The resources used were collected from the GALOIS repository (`core/src/test/resources/rag-fortune` and `core/src/test/resources/rag-premier`).
+The system builds a semantic knowledge base from textual documents, generating embeddings and indexing them using FAISS, an open-source library by Facebook AI Research designed for efficient similarity search and clustering of dense vectors.
 
-**Methodological Foundations**:
+To ensure portability and ease of testing, the baseline operates entirely on CPU, avoiding GPU dependencies due to limited hardware support and the higher setup time required for GPU libraries. For embedding generation, a lightweight transformer model **sentence-transformers/all-MiniLM-L6-v2** 
+was selected for its balance between computational efficiency and semantic accuracy.
 
-The Baseline was implemented to evaluate the pure reasoning and synthesis capabilities of the Large Language Model (only IBM Watsonx in out case) in a Retrieval-Augmented Generation (RAG) scenario.
-The primary objective is to test the fidelity and ability of the LLM to operate exclusively on the context provided, ignoring its pre-trained internal knowledge.
+The baseline workflow follows the following process:
+- **MarkdownRAGBackend**: handles file loading, chunking, embedding generation, and FAISS indexing.
+- **pz_context()**: the main method that retrieves relevant contextual chunks for the Palimpzest model.
+- **Backend**: core processing logic behind the baseline. 
 
-The process is composed by:
+So briefly:
+During initialization, a HuggingFace embedding model is instantiated.
+The loading and indexing phase identifies text or Markdown files, converts them into LangChain documents while preserving metadata,
+and splits them into overlapping chunks (128 tokens for “Premier” and 400 for “Fortune”, with 20-token overlap). The resulting embeddings are indexed using FAISS library for efficient semantic retrieval. The retrieval module returns the top-k most semantically relevant chunks retrieved by means **sentence-transformers/all-MiniLM-L6-v2** model using similarity between embeddings, for a given prompt and next the FAISS index is persistently stored to enable reuse without re-indexing.
 
-- `Corpus RAG`: Data rows extraction from the database
-- `Prompt`: Prompt the LLM with db schema + Corpus RAG + NL prompt
-- `Output`: Response in FULL JSON format based only on the Corpus.
+The GALOIS text files were intentionally used instead of standard dataset records (e.g., from Fortune or Premier) to align with the Palimpzest baseline’s original goal—evaluating large language models in a RAG setting using **external** textual resources distinct from the datasets themselves.
 
-**The role of generic and unfiltered retrieval**
-
-For the implementation, the retrieval phase of the RAG Corpus was deliberately kept generic and not optimized for the specific query. 
-Going into details the specific query used to populate the RAG Corpus is: **`SELECT * FROM <table_name> LIMIT 200`**.
-The reason why we use this query is the following:
-- **Context Simulation**: The query collects the first 200 rows of the database.
-- **Context Reasoning Test**: This approach does not simulate a RAG with targeted retrieval (which would filter only the relevant rows), but simulates a test in which the LLM is forced to demonstrate its reasoning and logical filtering capabilities within a large, messy block of text provided as context.
-- **Fidelity Test**: If the answer to a gold query is not contained in any of the 200 rows provided, the LLM must respond with an empty set (result_set=[]) or more in general in the result_set[] there aren't the results that are not within the 200 rows provided. **This verifies the LLM's fidelity to the context and its ability not to hallucinate information from its knowledge**. 
-
-**Technical Constraints: Why LIMIT 200**
-
-The limit of 200 lines was adopted as the final engineering compromise, balancing the theoretical validity of the test with the constraints of the platform:
-
-| Criterion | Justification                                                                                                                                                                                                                                                                   |
-|------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Token Context Constraint** | Attempts with higher limits ( **400 / 500** ) exceeded the maximum context window of 131,072 tokens for the Llama 3 model, triggering API 400 errors. **LIMIT 200** is the most stable threshold that allows a large Corpus without system failures.                            |
-| **Parsing Robustness** | Excessively long context degraded the LLM’s ability to follow formatting instructions, causing it to include discursive text before the JSON. **LIMIT 200** is the optimal point where the model maintains strong adherence to **pure JSON format**, minimizing parsing errors. |
-| **Acceptable Measurement** | Although **LIMIT 200** does not cover the entire dataset of fortune for instance, it is sufficient to test the LLM’s **reasoning ability** on the most populated subset of the database, accepting that accuracy metrics will reflect the simulated RAG Corpus limitation.      |
-
-Finally, as proof of the principles described above, in the dataset Premier some results are empty when the relevant data was not present in the retrieved rows of database.
-In other hand when tha data are present in the retrieved rows, the results are not empty.

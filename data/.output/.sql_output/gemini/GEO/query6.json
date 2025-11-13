@@ -1,12 +1,9 @@
 {
-  "result_set": [
-    {
-      "lake_name": "Lake Tahoe"
-    },
-    {
-      "lake_name": "Salton Sea"
-    }
-  ],
-  "time": 1.285,
-  "tokens": 206
+    "result_set": [
+        {
+            "avg(population)": 6500000.0
+        }
+    ],
+    "time": 1.227,
+    "tokens": 149
 }

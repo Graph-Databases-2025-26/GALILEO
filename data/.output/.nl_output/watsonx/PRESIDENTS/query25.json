@@ -2,21 +2,17 @@
     "result_set": [
         {
             "party_name": "Democratic Party",
-            "elected_presidents": 6
+            "number_of_presidents": 6
         },
         {
             "party_name": "Whig Party",
-            "elected_presidents": 4
+            "number_of_presidents": 4
         },
         {
             "party_name": "Republican Party",
-            "elected_presidents": 3
-        },
-        {
-            "party_name": "Federalist Party",
-            "elected_presidents": 1
+            "number_of_presidents": 3
         }
     ],
-    "time": 2.457,
-    "tokens": 100
+    "time": 2.06,
+    "tokens": 81
 }

@@ -1,6 +1,14 @@
 {
     "result_set": [
         {
+            "name": "George H.W. Bush",
+            "party": "Republican"
+        },
+        {
+            "name": "George W. Bush",
+            "party": "Republican"
+        },
+        {
             "name": "Donald Trump",
             "party": "Republican"
         },
@@ -9,10 +17,50 @@
             "party": "Republican"
         },
         {
-            "name": "George W. Bush",
+            "name": "Richard Nixon",
+            "party": "Republican"
+        },
+        {
+            "name": "Dwight D. Eisenhower",
+            "party": "Republican"
+        },
+        {
+            "name": "Calvin Coolidge",
+            "party": "Republican"
+        },
+        {
+            "name": "Warren G. Harding",
+            "party": "Republican"
+        },
+        {
+            "name": "William Howard Taft",
+            "party": "Republican"
+        },
+        {
+            "name": "Theodore Roosevelt",
+            "party": "Republican"
+        },
+        {
+            "name": "Abraham Lincoln",
+            "party": "Republican"
+        },
+        {
+            "name": "Rutherford B. Hayes",
+            "party": "Republican"
+        },
+        {
+            "name": "James A. Garfield",
+            "party": "Republican"
+        },
+        {
+            "name": "Ulysses S. Grant",
+            "party": "Republican"
+        },
+        {
+            "name": "Benjamin Harrison",
             "party": "Republican"
         }
     ],
-    "time": 0.837,
-    "tokens": 87
+    "time": 6.447,
+    "tokens": 280
 }

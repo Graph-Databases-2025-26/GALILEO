@@ -3,7 +3,7 @@
         {
             "state_name": "Washington",
             "capital": "Olympia",
-            "population": 7539000
+            "population": 7590000
         },
         {
             "state_name": "Virginia",
@@ -11,46 +11,36 @@
             "population": 7420000
         },
         {
-            "state_name": "Arizona",
-            "capital": "Phoenix",
-            "population": 7278717
+            "state_name": "New Jersey",
+            "capital": "Trenton",
+            "population": 6940000
         },
         {
-            "state_name": "Massachusetts",
-            "capital": "Boston",
-            "population": 6892500
+            "state_name": "Michigan",
+            "capital": "Lansing",
+            "population": 6780000
         },
         {
-            "state_name": "Indiana",
-            "capital": "Indianapolis",
-            "population": 6732000
-        },
-        {
-            "state_name": "Tennessee",
-            "capital": "Nashville",
+            "state_name": "North Carolina",
+            "capital": "Raleigh",
             "population": 6620000
         },
         {
-            "state_name": "Missouri",
-            "capital": "Jefferson City",
-            "population": 6130000
+            "state_name": "Georgia",
+            "capital": "Atlanta",
+            "population": 6470000
         },
         {
-            "state_name": "Maryland",
-            "capital": "Annapolis",
-            "population": 6040000
+            "state_name": "Ohio",
+            "capital": "Columbus",
+            "population": 6330000
         },
         {
-            "state_name": "Minnesota",
-            "capital": "Saint Paul",
-            "population": 5639000
-        },
-        {
-            "state_name": "Colorado",
-            "capital": "Denver",
-            "population": 5695000
+            "state_name": "Arizona",
+            "capital": "Phoenix",
+            "population": 6260000
         }
     ],
-    "time": 5.531,
-    "tokens": 267
+    "time": 5.221,
+    "tokens": 218
 }

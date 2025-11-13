@@ -13,18 +13,18 @@
             "lake": "Lake Superior"
         },
         {
+            "lake": "Lake Charlevoix"
+        },
+        {
             "lake": "Houghton Lake"
         },
         {
             "lake": "Mullett Lake"
         },
         {
-            "lake": "Charlevoix Lake"
-        },
-        {
-            "lake": "Torch Lake"
+            "lake": "Saginaw Bay"
         }
     ],
-    "time": 2.663,
-    "tokens": 111
+    "time": 3.382,
+    "tokens": 113
 }

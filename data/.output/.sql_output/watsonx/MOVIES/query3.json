@@ -1,18 +1,22 @@
 {
     "result_set": [
         {
-            "originaltitle": "The Young in Heart",
-            "startyear": 1954
+            "originaltitle": "Tip on a Dead Jockey",
+            "startyear": 1957
         },
         {
-            "originaltitle": "The Eddy Duchin Story",
-            "startyear": 1956
+            "originaltitle": "The Thin Man",
+            "startyear": 1957
         },
         {
-            "originaltitle": "The Swan",
-            "startyear": 1956
+            "originaltitle": "Jailhouse Rock",
+            "startyear": 1957
+        },
+        {
+            "originaltitle": "The Last Challenge",
+            "startyear": 1967
         }
     ],
-    "time": 1.507,
-    "tokens": 113
+    "time": 7.775,
+    "tokens": 89
 }

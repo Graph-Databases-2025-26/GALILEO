@@ -1,15 +1,15 @@
 {
     "result_set": [
         {
-            "name": "John F. Kennedy International Airport"
+            "name": "Amsterdam Airport Schiphol"
         },
         {
-            "name": "LaGuardia Airport"
+            "name": "Rotterdam The Hague Airport"
         },
         {
-            "name": "Newark Liberty International Airport"
+            "name": "Groningen Airport Eelde"
         }
     ],
-    "time": 0.869,
-    "tokens": 58
+    "time": 1.864,
+    "tokens": 51
 }

@@ -1,9 +1,9 @@
 {
     "result_set": [
         {
-            "max(elevation_in_ft)": 1102
+            "max(elevation_in_ft)": 678
         }
     ],
-    "time": 0.573,
-    "tokens": 33
+    "time": 1.026,
+    "tokens": 21
 }

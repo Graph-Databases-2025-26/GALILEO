@@ -1,5 +1,9 @@
 {
-  "result_set": [],
-  "time": 1.736,
-  "tokens": 176
+    "result_set": [
+        {
+            "name": "Antonio Guzm\u00e1n Blanco"
+        }
+    ],
+    "time": 3.171,
+    "tokens": 452
 }

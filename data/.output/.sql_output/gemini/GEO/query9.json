@@ -1,9 +1,60 @@
 {
-  "result_set": [
-    {
-      "length_in_km": 3057
-    }
-  ],
-  "time": 0.967,
-  "tokens": 119
+    "result_set": [
+        {
+            "lake_name": "Lake Superior"
+        },
+        {
+            "lake_name": "Lake Huron"
+        },
+        {
+            "lake_name": "Lake Michigan"
+        },
+        {
+            "lake_name": "Lake Erie"
+        },
+        {
+            "lake_name": "Lake Ontario"
+        },
+        {
+            "lake_name": "Great Salt Lake"
+        },
+        {
+            "lake_name": "Lake of the Woods"
+        },
+        {
+            "lake_name": "Lake Okeechobee"
+        },
+        {
+            "lake_name": "Lake Pontchartrain"
+        },
+        {
+            "lake_name": "Lake Champlain"
+        },
+        {
+            "lake_name": "Lake Sakakawea"
+        },
+        {
+            "lake_name": "Rainy Lake"
+        },
+        {
+            "lake_name": "Upper Red Lake"
+        },
+        {
+            "lake_name": "Lower Red Lake"
+        },
+        {
+            "lake_name": "Lake Winnebago"
+        },
+        {
+            "lake_name": "Lake Tahoe"
+        },
+        {
+            "lake_name": "Lake Mead"
+        },
+        {
+            "lake_name": "Lake Powell"
+        }
+    ],
+    "time": 5.2,
+    "tokens": 1070
 }

@@ -1,48 +1,34 @@
 {
-  "result_set": [
-    {
-      "name": "Rómulo Betancourt",
-      "party": "Democratic Action",
-      "start_year": 1945,
-      "end_year": 1948,
-      "cardinal_number": "37th"
-    },
-    {
-      "name": "Rómulo Betancourt",
-      "party": "Democratic Action",
-      "start_year": 1959,
-      "end_year": 1964,
-      "cardinal_number": "47th"
-    },
-    {
-      "name": "Raúl Leoni",
-      "party": "Democratic Action",
-      "start_year": 1964,
-      "end_year": 1969,
-      "cardinal_number": "48th"
-    },
-    {
-      "name": "Carlos Andrés Pérez",
-      "party": "Democratic Action",
-      "start_year": 1974,
-      "end_year": 1979,
-      "cardinal_number": "50th"
-    },
-    {
-      "name": "Jaime Lusinchi",
-      "party": "Democratic Action",
-      "start_year": 1984,
-      "end_year": 1989,
-      "cardinal_number": "52nd"
-    },
-    {
-      "name": "Carlos Andrés Pérez",
-      "party": "Democratic Action",
-      "start_year": 1989,
-      "end_year": 1993,
-      "cardinal_number": "53rd"
-    }
-  ],
-  "time": 8.108,
-  "tokens": 1518
+    "result_set": [
+        {
+            "name": "George Washington",
+            "party": "None"
+        },
+        {
+            "name": "Abraham Lincoln",
+            "party": "Republican"
+        },
+        {
+            "name": "Franklin D. Roosevelt",
+            "party": "Democratic"
+        },
+        {
+            "name": "Ronald Reagan",
+            "party": "Republican"
+        },
+        {
+            "name": "Barack Obama",
+            "party": "Democratic"
+        },
+        {
+            "name": "Donald Trump",
+            "party": "Republican"
+        },
+        {
+            "name": "Joe Biden",
+            "party": "Democratic"
+        }
+    ],
+    "time": 2.146,
+    "tokens": 340
 }

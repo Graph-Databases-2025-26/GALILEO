@@ -1,10 +1,22 @@
 {
     "result_set": [
         {
+            "Company": "Oneok",
+            "CEO": "Pierce H. Norton II"
+        },
+        {
+            "Company": "Chesapeake Energy",
+            "CEO": null
+        },
+        {
             "Company": "Devon Energy",
-            "CEO": "Richard E. Muncrief"
+            "CEO": null
+        },
+        {
+            "Company": "Continental Resources",
+            "CEO": null
         }
     ],
-    "time": 12.814,
-    "tokens": 39
+    "time": 69.313,
+    "tokens": 80
 }

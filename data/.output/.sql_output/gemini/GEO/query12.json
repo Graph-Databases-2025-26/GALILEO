@@ -1,18 +1,18 @@
 {
-  "result_set": [
-    {
-      "state_name": "Illinois"
-    },
-    {
-      "state_name": "Massachusetts"
-    },
-    {
-      "state_name": "Missouri"
-    },
-    {
-      "state_name": "Oregon"
-    }
-  ],
-  "time": 1.79,
-  "tokens": 279
+    "result_set": [
+        {
+            "lake_name": "Lake Superior"
+        },
+        {
+            "lake_name": "Lake Michigan"
+        },
+        {
+            "lake_name": "Lake Huron"
+        },
+        {
+            "lake_name": "Lake Erie"
+        }
+    ],
+    "time": 17.132,
+    "tokens": 483
 }

@@ -1,83 +1,30 @@
 {
-  "result_set": [
-    {
-      "name": "José Antonio Páez",
-      "party": "Conservative",
-      "start_year": 1830,
-      "end_year": 1835,
-      "cardinal_number": "1st"
-    },
-    {
-      "name": "José María Vargas",
-      "party": "Conservative",
-      "start_year": 1835,
-      "end_year": 1836,
-      "cardinal_number": "2nd"
-    },
-    {
-      "name": "Carlos Soublette",
-      "party": "Conservative",
-      "start_year": 1837,
-      "end_year": 1839,
-      "cardinal_number": "3rd"
-    },
-    {
-      "name": "José Antonio Páez",
-      "party": "Conservative",
-      "start_year": 1839,
-      "end_year": 1843,
-      "cardinal_number": "4th"
-    },
-    {
-      "name": "Carlos Soublette",
-      "party": "Conservative",
-      "start_year": 1843,
-      "end_year": 1847,
-      "cardinal_number": "5th"
-    },
-    {
-      "name": "Julián Castro",
-      "party": "Conservative",
-      "start_year": 1858,
-      "end_year": 1859,
-      "cardinal_number": "6th"
-    },
-    {
-      "name": "Pedro Gual",
-      "party": "Conservative",
-      "start_year": 1859,
-      "end_year": 1859,
-      "cardinal_number": "7th"
-    },
-    {
-      "name": "Manuel Felipe de Tovar",
-      "party": "Conservative",
-      "start_year": 1859,
-      "end_year": 1861,
-      "cardinal_number": "8th"
-    },
-    {
-      "name": "Pedro Gual",
-      "party": "Conservative",
-      "start_year": 1861,
-      "end_year": 1861,
-      "cardinal_number": "9th"
-    },
-    {
-      "name": "José Antonio Páez",
-      "party": "Conservative",
-      "start_year": 1861,
-      "end_year": 1863,
-      "cardinal_number": "10th"
-    },
-    {
-      "name": "Raimundo Andueza Palacio",
-      "party": "Conservative",
-      "start_year": 1890,
-      "end_year": 1892,
-      "cardinal_number": "19th"
-    }
-  ],
-  "time": 19.713,
-  "tokens": 4580
+    "result_set": [
+        {
+            "name": "Abraham Lincoln",
+            "party": "Republican"
+        },
+        {
+            "name": "Theodore Roosevelt",
+            "party": "Republican"
+        },
+        {
+            "name": "Dwight D. Eisenhower",
+            "party": "Republican"
+        },
+        {
+            "name": "Ronald Reagan",
+            "party": "Republican"
+        },
+        {
+            "name": "George W. Bush",
+            "party": "Republican"
+        },
+        {
+            "name": "Donald Trump",
+            "party": "Republican"
+        }
+    ],
+    "time": 2.145,
+    "tokens": 346
 }

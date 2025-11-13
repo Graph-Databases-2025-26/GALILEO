@@ -1,6 +1,12 @@
 {
     "result_set": [
         {
+            "city_name": "New York"
+        },
+        {
+            "city_name": "Los Angeles"
+        },
+        {
             "city_name": "Chicago"
         },
         {
@@ -8,8 +14,23 @@
         },
         {
             "city_name": "Phoenix"
+        },
+        {
+            "city_name": "Philadelphia"
+        },
+        {
+            "city_name": "San Antonio"
+        },
+        {
+            "city_name": "San Diego"
+        },
+        {
+            "city_name": "Dallas"
+        },
+        {
+            "city_name": "San Jose"
         }
     ],
-    "time": 0.621,
-    "tokens": 57
+    "time": 2.559,
+    "tokens": 114
 }

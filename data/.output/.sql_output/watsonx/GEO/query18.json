@@ -1,9 +1,9 @@
 {
     "result_set": [
         {
-            "COUNT ( DISTINCT usa_state_traversed)": 5
+            "COUNT(DISTINCT usa_state_traversed)": 27
         }
     ],
-    "time": 0.461,
-    "tokens": 32
+    "time": 1.126,
+    "tokens": 21
 }

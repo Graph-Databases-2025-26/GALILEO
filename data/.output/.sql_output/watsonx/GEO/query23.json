@@ -1,60 +1,36 @@
 {
     "result_set": [
         {
-            "capital": "Albuquerque"
-        },
-        {
-            "capital": "Austin"
-        },
-        {
-            "capital": "Baton Rouge"
-        },
-        {
-            "capital": "Cheyenne"
-        },
-        {
-            "capital": "Columbia"
-        },
-        {
-            "capital": "Denver"
-        },
-        {
-            "capital": "Harrisburg"
-        },
-        {
-            "capital": "Honolulu"
-        },
-        {
-            "capital": "Jackson"
-        },
-        {
-            "capital": "Juneau"
-        },
-        {
-            "capital": "Madison"
-        },
-        {
-            "capital": "Montgomery"
+            "capital": "Annapolis"
         },
         {
             "capital": "Pierre"
         },
         {
-            "capital": "Providence"
-        },
-        {
-            "capital": "Raleigh"
-        },
-        {
-            "capital": "Sacramento"
-        },
-        {
-            "capital": "Tallahassee"
+            "capital": "Helena"
         },
         {
             "capital": "Topeka"
+        },
+        {
+            "capital": "Frankfort"
+        },
+        {
+            "capital": "Augusta"
+        },
+        {
+            "capital": "Santa Fe"
+        },
+        {
+            "capital": "Bismarck"
+        },
+        {
+            "capital": "Olympia"
+        },
+        {
+            "capital": "Cheyenne"
         }
     ],
-    "time": 2.023,
-    "tokens": 246
+    "time": 2.869,
+    "tokens": 115
 }

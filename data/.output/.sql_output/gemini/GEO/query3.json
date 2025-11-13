@@ -1,9 +1,9 @@
 {
-  "result_set": [
-    {
-      "count(capital)": 1
-    }
-  ],
-  "time": 0.854,
-  "tokens": 107
+    "result_set": [
+        {
+            "population": 184826
+        }
+    ],
+    "time": 1.429,
+    "tokens": 103
 }

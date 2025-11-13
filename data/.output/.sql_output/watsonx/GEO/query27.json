@@ -2,17 +2,17 @@
     "result_set": [
         {
             "state_name": "California",
-            "population": 39512223,
+            "population": 39461588,
             "capital": "Sacramento"
         },
         {
             "state_name": "Texas",
-            "population": 29145505,
+            "population": 28995881,
             "capital": "Austin"
         },
         {
             "state_name": "Florida",
-            "population": 21477737,
+            "population": 21244317,
             "capital": "Tallahassee"
         },
         {
@@ -22,10 +22,35 @@
         },
         {
             "state_name": "Pennsylvania",
-            "population": 12801989,
+            "population": 12802023,
             "capital": "Harrisburg"
+        },
+        {
+            "state_name": "Illinois",
+            "population": 12803048,
+            "capital": "Springfield"
+        },
+        {
+            "state_name": "Ohio",
+            "population": 11687064,
+            "capital": "Columbus"
+        },
+        {
+            "state_name": "Georgia",
+            "population": 10511131,
+            "capital": "Atlanta"
+        },
+        {
+            "state_name": "North Carolina",
+            "population": 10420000,
+            "capital": "Raleigh"
+        },
+        {
+            "state_name": "Michigan",
+            "population": 10077331,
+            "capital": "Lansing"
         }
     ],
-    "time": 1.763,
-    "tokens": 201
+    "time": 5.84,
+    "tokens": 267
 }

@@ -49,6 +49,7 @@ class AppConfig(BaseSettings):
     logging: LoggingConfig
     gemini: GeminiConfig
     watsonx: WatsonxConfig
+    top_k: int
 
     def validate_provider_config_exists(self) -> 'AppConfig':         
         provider = self.llm_provider

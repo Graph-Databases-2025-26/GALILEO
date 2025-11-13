@@ -1,11 +1,47 @@
 {
     "result_set": [
         {
-            "title": "The Thin Man",
-            "year": 1957
+            "title": "The Last Outpost",
+            "year": 1951
+        },
+        {
+            "title": "Carbine Williams",
+            "year": 1952
+        },
+        {
+            "title": "Ivanhoe",
+            "year": 1952
+        },
+        {
+            "title": "The Prisoner of Zenda",
+            "year": 1952
+        },
+        {
+            "title": "Knights of the Round Table",
+            "year": 1953
+        },
+        {
+            "title": "All the Brothers Were Valiant",
+            "year": 1953
+        },
+        {
+            "title": "Athena",
+            "year": 1954
+        },
+        {
+            "title": "The Student Prince",
+            "year": 1954
+        },
+        {
+            "title": "The Adventures of Quentin Durward",
+            "year": 1955
         },
         {
             "title": "Tip on a Dead Jockey",
+            "year": 1957
+        },
+        {
+            "title": "Ten Thousand Bedrooms",
             "year": 1957
         },
         {
@@ -13,16 +49,28 @@
             "year": 1957
         },
         {
-            "title": "The Adventures of Huckleberry Finn",
-            "year": 1960
+            "title": "The House of the Seven Hawks",
+            "year": 1959
         },
         {
             "title": "The Honeymoon Machine",
             "year": 1961
         },
         {
+            "title": "The Tartars",
+            "year": 1961
+        },
+        {
+            "title": "The Girls of the Golden West",
+            "year": 1961
+        },
+        {
             "title": "The Horizontal Lieutenant",
             "year": 1962
+        },
+        {
+            "title": "Follow the Boys",
+            "year": 1963
         },
         {
             "title": "Fun in Acapulco",
@@ -33,10 +81,14 @@
             "year": 1964
         },
         {
-            "title": "The Last Challenge",
-            "year": 1967
+            "title": "The Truth About Spring",
+            "year": 1965
+        },
+        {
+            "title": "That Funny Feeling",
+            "year": 1965
         }
     ],
-    "time": 3.993,
-    "tokens": 188
+    "time": 15.976,
+    "tokens": 425
 }

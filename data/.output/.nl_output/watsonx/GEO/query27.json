@@ -27,12 +27,12 @@
         },
         {
             "state_name": "Illinois",
-            "population": 12802023,
+            "population": 12803048,
             "capital": "Springfield"
         },
         {
             "state_name": "Ohio",
-            "population": 11687625,
+            "population": 11687064,
             "capital": "Columbus"
         },
         {
@@ -51,6 +51,6 @@
             "capital": "Lansing"
         }
     ],
-    "time": 5.633,
+    "time": 7.784,
     "tokens": 280
 }

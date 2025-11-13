@@ -1,125 +1,102 @@
-import ast
-import re
-from typing import List, Union
+from langchain_community.document_loaders import TextLoader
+from langchain_huggingface import HuggingFaceEmbeddings
+from langchain_community.vectorstores import FAISS
+from langchain_text_splitters import RecursiveCharacterTextSplitter
 
+from config import Config_Loader
 from src import LOG
 from src.utils.constants import *
 
 
-# Helper function to dynamically extract column names from schema string
-def extract_column_names_from_schema(schema_str: str) -> List[str]:
+class MarkdownRAGBackend:
+    def __init__(self, dataset_path: str, model_name="sentence-transformers/all-MiniLM-L6-v2"):
+        """
+        Backend for indexing Markdown or text files and retrieving relevant segments.
+        :param dataset_path: dataset folder (e.g., “data/RAG/PREMIER” or “data/RAG/FORTUNE”)
+        :param model_name: HuggingFace model for embeddings
+        """
+        self.dataset_path = Path(dataset_path)
+        self.model_name = model_name
+        self.embeddings = HuggingFaceEmbeddings(model_name=model_name, model_kwargs={"device": "cpu"})
+        self.vectorstore = None
+
+    def load_and_index(self):
+        """Load file .md and files without extensions, create chunk and build FAISS index. """
+        LOG.info(f" Loading file from: {self.dataset_path}")
+
+        #find all the files .md or textual files without extensions
+        file_paths = [
+            f for f in self.dataset_path.iterdir()
+            if f.is_file() and (f.suffix == ".md" or f.suffix == "" or f.suffix == ".txt")
+        ]
+
+        if not file_paths:
+            raise FileNotFoundError("No .md or .txt or any text files found")
+
+        LOG.info(f" -> {len(file_paths)} files found")
+
+        #Load all the files as LangChain docs
+        documents = []
+        for file_path in file_paths:
+            loader = TextLoader(str(file_path), encoding="utf-8")
+            documents.extend(loader.load())
+
+        # Set the chunks dimension based on dataset
+        dataset_name = self.dataset_path.name.lower()
+        chunk_size = 128 if "premier" in dataset_name else 400
+        print(f"🔪Chunks splitting in {chunk_size} token...")
+
+        splitter = RecursiveCharacterTextSplitter(chunk_size=chunk_size, chunk_overlap=20)
+        docs = splitter.split_documents(documents)
+        print(f"   → {len(docs)} generated segments")
+
+        print(f"Embedding generation with {self.model_name}...")
+        self.vectorstore = FAISS.from_documents(docs, self.embeddings)
+        print(" Indixing completed!")
+
+    def retrieve(self, query: str):
+
+            config = Config_Loader().get_config()
+
+            """Returns the top_k most relevant chunks for a given query."""
+            if self.vectorstore is None:
+                raise ValueError("Index has not been built yet. Call load_and_index() first.")
+
+            top_k = config.top_k
+            results = self.vectorstore.similarity_search(query, k=top_k)
+            return results
+
+    def save_index(self, path="faiss_index"):
+            """Saves the FAISS index to disk."""
+            if self.vectorstore:
+                self.vectorstore.save_local(path)
+                print(f" FAISS index saved to: {path}")
+            else:
+                print(" No index available to save.")
+
+    def load_index(self, path="faiss_index"):
+            """Loads a FAISS index previously saved to disk."""
+            if not os.path.exists(path):
+                raise FileNotFoundError(f"No FAISS index found at: {path}")
+            self.vectorstore = FAISS.load_local(path, self.embeddings, allow_dangerous_deserialization=True)
+            print(f" FAISS index loaded from: {path}")
+
+def pz_context(input_d: dict, db_schema:str, rag_sources_path: str, prompt: str):
     """
-    Dynamically extracts column names from a schema string (e.g., 'CREATE TABLE...').
-    This is necessary because LangChain's SQLDatabase.run() returns tuples for DuckDB,
-    and we need column names for tuple-to-dict mapping.
+    Function that builds the extra-context parameter that will be passed to the next chain's component (FULL PROMPT)
     """
 
-    # Search for the column definition block (everything between the first '(' and the first ')')
-    match = re.search(r'\((.*?)\)', schema_str, re.DOTALL)
-    if not match:
-        LOG.error("Failed to find column definition block in schema string.")
-        return []
 
-    column_definitions_block = match.group(1)
+    backend = MarkdownRAGBackend(dataset_path=rag_sources_path)
+    backend.load_and_index()
 
-    columns = []
-    # Iterate over each column definition separated by a comma
-    for line in column_definitions_block.split(','):
-        line = line.strip()
-        if not line:
-            continue
+    final_rag_context = backend.retrieve(prompt)
+    #LOG.info(f"PROMPT PER BACKEND RETRIEVE: {prompt}")
 
-        # Get the first word (the column name) and clean up quotes/backticks
-        col_match = re.match(r'["`\']?(\w+)["`\']?', line)
-        if col_match:
-            col_name = col_match.group(1)
-            columns.append(col_name)
-        else:
-            LOG.warning(f"Skipping line in schema parsing: {line}")
-
-    return columns
-
-def pz_context(input_d: dict, database: str, duckdb_path:str, db_schema: str):
-    if database.upper() == "FORTUNE":
-        main_table_name = "target.fortune_2024"
-    elif database.upper() == "PREMIER":
-        main_table_name = "target.premier_league_2024_2025_match_result"
-    else:
-        # Fallback or error handling
-        LOG.error(f"Dataset {database} not recognized for the PZ baseline.")
-        raise ValueError(f"PZ configuration missing for dataset: {database}")
-
-    # Get the schema ONLY for the target table (cleaner context)
-    # Dynamic Column Name Extraction
-    columns = extract_column_names_from_schema(db_schema)
-    if not columns:
-        LOG.error(f"Failed to dynamically extract column names for {main_table_name}. Cannot proceed.")
-        raise ValueError("Schema parsing failed, cannot proceed with RAG context creation.")
-
-    # RAG Retrieval (Top-K Simulation)
-    # We use LIMIT 50 to simulate retrieving the top-k "chunks".
-    retrieval_query = PZ_QUERIES.get(database.upper())
-
-
-    try:
-        retrieved_records: List[Union[tuple, dict]] = duckdb_path.run(retrieval_query)
-        # LOG.info(f"I PRIMI 50 RISULTATI RESTITUITI: {retrieved_records}")
-    except Exception as e:
-        LOG.error(f"Error in RAG simulation (PZ) on {main_table_name}: {e}")
-        retrieved_records = []
-
-    if isinstance(retrieved_records, str):
-        LOG.warning("DUCKDB FIX: db.run() returned a STRING. Attempting ast.literal_eval...")
-        try:
-            # Use regex to find and replace datetime.date(...) with a string literal containing the date parts
-            # e.g., 'datetime.date(2024, 8, 5)' -> '"2024, 8, 5"'
-            records_str_clean = re.sub(r'datetime\.date\((.*?)\)', r'"\1"', retrieved_records)
-
-        except Exception as e:
-            LOG.error(f"FATAL: Regex replacement failed: {e}")
-            records_str_clean = retrieved_records
-        try:
-            # Use ast.literal_eval for safe parsing of the string representation of a list/tuple
-            retrieved_records = ast.literal_eval(records_str_clean)
-            # Re-check type after successful parsing
-            if not isinstance(retrieved_records, (list, tuple)):
-                raise ValueError("Parsed structure is not a list or tuple.")
-            LOG.info("DUCKDB FIX: Successfully parsed string into list of tuples.")
-        except (ValueError, SyntaxError) as e:
-            LOG.error(
-                f"FATAL: Failed to parse db.run() string output as a data structure: {e}. Output starts with: {retrieved_records[:50]}...")
-            retrieved_records = []  # Set to empty list to prevent iteration errors
-
-    # Tuple-to-Dict Conversion (Dynamic and Robust)
-    processed_records = []
-
-    for record_tuple in retrieved_records:
-        # Check type and length consistency (DuckDB returns tuples)
-        if isinstance(record_tuple, tuple) and len(record_tuple) == len(columns):
-            # Use dynamically extracted column names to create the dictionary
-            processed_records.append(dict(zip(columns, record_tuple)))
-        # else:
-        # LOG.warning(f"Skipping malformed or non-tuple record: {record_tuple}")
-
-    # Context Formatting (Transforming records into text/document format)
-    rag_context_list = []
-    for i, record in enumerate(processed_records):
-        if not isinstance(record, dict):
-            LOG.warning(
-                f"Skipping record {i + 1}: expected dictionary, got {type(record).__name__}. Raw data: {record}")
-            continue
-
-        try:
-            # Format each record as a "document chunk"
-            record_text = f"--- Record {i + 1} ---\n"
-            for col, val in record.items():
-                record_text += f"{col}: {val}\n"
-            rag_context_list.append(record_text)
-        except Exception as e:
-            LOG.error(f"Error formatting record {i + 1}: {e}")
-            continue
-
-    final_rag_context = "\n".join(rag_context_list)
+    LOG.info("\n Top relevant chunks:")
+    for i, doc in enumerate(final_rag_context[:5]):
+        LOG.info(f"\n[{i + 1}] {doc.metadata.get('source', 'unknown')}")
+        LOG.info(doc.page_content[:300], "...")
 
     output = {
         "schema_info": db_schema,

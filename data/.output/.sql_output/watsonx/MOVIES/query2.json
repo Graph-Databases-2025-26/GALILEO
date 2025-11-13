@@ -1,15 +1,36 @@
 {
     "result_set": [
         {
-            "originaltitle": "Schindler's List"
+            "originaltitle": "Jaws"
+        },
+        {
+            "originaltitle": "E.T. the Extra-Terrestrial"
         },
         {
             "originaltitle": "Jurassic Park"
         },
         {
-            "originaltitle": "E.T. the Extra-Terrestrial"
+            "originaltitle": "Indiana Jones and the Raiders of the Lost Ark"
+        },
+        {
+            "originaltitle": "Saving Private Ryan"
+        },
+        {
+            "originaltitle": "Catch Me If You Can"
+        },
+        {
+            "originaltitle": "War Horse"
+        },
+        {
+            "originaltitle": "Lincoln"
+        },
+        {
+            "originaltitle": "Minority Report"
+        },
+        {
+            "originaltitle": "War of the Worlds"
         }
     ],
-    "time": 1.101,
-    "tokens": 67
+    "time": 3.487,
+    "tokens": 140
 }

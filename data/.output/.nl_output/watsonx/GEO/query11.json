@@ -62,7 +62,7 @@
         },
         {
             "state": "Maine",
-            "major_river": "Penobscot River"
+            "major_river": "Androscoggin River"
         },
         {
             "state": "Maryland",
@@ -102,7 +102,7 @@
         },
         {
             "state": "New Hampshire",
-            "major_river": "Connecticut River"
+            "major_river": "Androscoggin River"
         },
         {
             "state": "New Jersey",
@@ -185,6 +185,6 @@
             "major_river": "Snake River"
         }
     ],
-    "time": 14.951,
-    "tokens": 791
+    "time": 20.999,
+    "tokens": 933
 }

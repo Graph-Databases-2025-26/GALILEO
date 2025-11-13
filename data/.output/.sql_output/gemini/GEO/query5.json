@@ -1,9 +1,12 @@
 {
-  "result_set": [
-    {
-      "count(state_name)": 50
-    }
-  ],
-  "time": 0.811,
-  "tokens": 98
+    "result_set": [
+        {
+            "lake_name": "Salton Sea"
+        },
+        {
+            "lake_name": "Lake Tahoe"
+        }
+    ],
+    "time": 1.536,
+    "tokens": 204
 }

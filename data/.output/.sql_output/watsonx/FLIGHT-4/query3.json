@@ -1,18 +1,24 @@
 {
     "result_set": [
         {
-            "name": "New York City International Airport",
+            "name": "John F. Kennedy International Airport",
             "city": "New York",
-            "country": "USA",
+            "country": "United States",
             "elevation_in_ft": 13
         },
         {
             "name": "LaGuardia Airport",
             "city": "New York",
-            "country": "USA",
-            "elevation_in_ft": 14
+            "country": "United States",
+            "elevation_in_ft": 21
+        },
+        {
+            "name": "Newark Liberty International Airport",
+            "city": "New York",
+            "country": "United States",
+            "elevation_in_ft": 18
         }
     ],
-    "time": 1.042,
-    "tokens": 96
+    "time": 2.656,
+    "tokens": 114
 }

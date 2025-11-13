@@ -1,6 +1,14 @@
 {
     "result_set": [
         {
+            "name": "Joe Biden",
+            "party": "Democratic"
+        },
+        {
+            "name": "Donald Trump",
+            "party": "Republican"
+        },
+        {
             "name": "Barack Obama",
             "party": "Democratic"
         },
@@ -13,7 +21,7 @@
             "party": "Democratic"
         },
         {
-            "name": "George H. W. Bush",
+            "name": "George H.W. Bush",
             "party": "Republican"
         },
         {
@@ -23,8 +31,60 @@
         {
             "name": "Jimmy Carter",
             "party": "Democratic"
+        },
+        {
+            "name": "Gerald Ford",
+            "party": "Republican"
+        },
+        {
+            "name": "Richard Nixon",
+            "party": "Republican"
+        },
+        {
+            "name": "Lyndon B. Johnson",
+            "party": "Democratic"
+        },
+        {
+            "name": "John F. Kennedy",
+            "party": "Democratic"
+        },
+        {
+            "name": "Dwight D. Eisenhower",
+            "party": "Republican"
+        },
+        {
+            "name": "Harry S. Truman",
+            "party": "Democratic"
+        },
+        {
+            "name": "Franklin D. Roosevelt",
+            "party": "Democratic"
+        },
+        {
+            "name": "Herbert Hoover",
+            "party": "Republican"
+        },
+        {
+            "name": "Calvin Coolidge",
+            "party": "Republican"
+        },
+        {
+            "name": "Warren G. Harding",
+            "party": "Republican"
+        },
+        {
+            "name": "Woodrow Wilson",
+            "party": "Democratic"
+        },
+        {
+            "name": "William Howard Taft",
+            "party": "Republican"
+        },
+        {
+            "name": "Theodore Roosevelt",
+            "party": "Republican"
         }
     ],
-    "time": 1.415,
-    "tokens": 159
+    "time": 10.033,
+    "tokens": 377
 }

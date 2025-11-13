@@ -128,113 +128,6 @@ The architecture is composed of three main components:
     \end{itemize}
 \end{enumerate}
 
-\subsection{Results and Evaluation}
-The results obtained from the Baseline NL module were evaluated using standard metrics to assess the performance of the LLMs in both Natural Language (NL) and SQL contexts.
-The model used for the \textbf{gemini} provider is: \textbf{gemini-2.5-flash}, instead for \textbf{IBMWatsonx} provider we used \textbf{meta-llama/llama-3-3-70b-instruct}.
-All systems are tested on the datasets described in Table 2 of the previous project task, excluding Premier and Fortune like the galois authors did.
-
-\begin{table}[h]
-\centering
-\begin{tabular}{lcccc}
-\toprule
-\textbf{Metric} & \textbf{NL} & \textbf{SQL}  \\
-\midrule
-F1-CELL & 0.391 & 0.537  \\
-CARDINAITY & 0.644 & 0.733  \\
-TUPLE-CONSTR. & 0.182 & 0.331  \\
-AVG-SCORE & 0.406 & 0.534  \\
-\#TOKENS(M) & 39965 & 126946  \\
-AVG-TIME & 4.812 & 7.561  \\
-
-\bottomrule
-\end{tabular}
-\caption{GEMINI results}
-\label{gemini_results}
-\end{table}
-
-
-\begin{table}[h]
-\centering
-\begin{tabular}{lcccc}
-\toprule
-\textbf{Metric} & \textbf{NL} & \textbf{SQL}  \\
-\midrule
-F1-CELL & 0.436 & 0.523  \\
-CARDINAITY & 0.701 & 0.718  \\
-TUPLE-CONSTR. & 0.212 & 0.243  \\
-AVG-SCORE & 0.450 & 0.495  \\
-\#TOKENS(M) & 15165 & 11606  \\
-AVG-TIME & 5.353 & 4.485  \\
-
-\bottomrule
-\end{tabular}
-\caption{WATSONX results}
-\label{watsonx_results}
-\end{table}
-
-\section{Baseline Palimpzest}
-During the development of the NL baseline, we initially implemented a rudimentary form of RAG-style retrieval, where query results were passed to the LLM within a specific natural language prompt. However, after reviewing the GALOIS paper and the methodology outlined on the Palimpsest project website (\href{URL}{https://palimpzest.org/
-}), it became evident that our implementation did not fully align with the principles and objectives described in those sources. Consequently, we designed a more conceptually consistent framework tailored to the goals of the Palimpsest approach, as detailed above.
-
-\subsection{Methodological Foundations}
-The Palimpsest Baseline strictly evaluates the pure reasoning and synthesis capabilities of the Large Language Model (specifically the Watsonx service utilizing \textbf{meta-llama/llama-3-3-70b-instruct} in our case) when operating under a Retrieval-Augmented Generation (RAG) paradigm.
-The core objective is to ensure the model responds solely based on the explicitly provided context, thereby isolating its performance from its internal pre-trained knowledge (Zero-Shot Knowledge).
-
-The constrained input provided to the LLM consists of:
-\begin{itemize}
-    \item \textbf{Database Schema}: The explicit definition of tables and columns
-    \item \textbf{RAG Corpus} (\textbf{raw\_data}): A textual block representing a subset of records extracted from the database.
-    \item \textbf{NL query}: The question posed by the user.
-\end{itemize}
-The model is strictly instructed to produce the output in a validated FULL JSON format, utilizing only the information contained within the RAG Corpus.
-
-\subsection{Retrieval Strategy: Generic and Unfiltered Corpus}
-A crucial aspect of this baseline implementation is the deliberate choice of a generic and non-optimized retrieval strategy for generating the RAG Corpus.
-
-The query used to extract the contextual data is standardized as: \textbf{SELECT * FROM  <table\_name>  LIMIT 200;}
-
-The use of this query is essential for the methodology and serves a dual purpose in testing the LLM's capabilities:
-\begin{enumerate}
-    \item \textbf{Testing Internal Filtering (Pure Reasoning)}: By providing a large, unsorted, and unfiltered block of data (i.e., the first 200 records, which are often less relevant to the specific query), the experiment forces the LLM to perform internal logical filtering and data extraction within the provided text context.
-    This measures the model’s ability to execute complex operations on a noisy and voluminous corpus, moving beyond simple keyword matching.
-    \item \textbf{Validating Faithfulness (Hallucination Control)}:  If the data required to answer a specific query is not present within the 200 extracted rows, the LLM must respond with an empty set ("result\_set": $[\,]$). This constraint validates the model's faithfulness to the input context and its resistance to hallucinating information from its pre\-trained knowledge base.
-    The output on the PREMIER dataset (Queries 3, 4) confirming these empty results validated this methodological approach.
-    \item \textbf{Technical Constraints and Parameter Adjustment (LIMIT 200)}: The decision to cap the RAG Corpus at 200 rows was primarily driven by the strict \textbf{technical limitations} of the target LLM environment:
-    \begin{itemize}
-        \item \textbf{Token Context Limit}: The LLama 3 model has a maximum context window of 131,072 tokens. 
-        Initial testing with higher limits ($L=400$ or $L=500$) resulted in API Status 400 (Bad Request) errors, 
-        as the combined size of the schema, prompt, and RAG Corpus exceeded the model's capacity. 
-        $L=200$ was established as the maximum stable limit.
-        \item \textbf{Output Parsing Degradation}: Contexts exceeding $L=200$ often led to the LLM ignoring the strict formatting instructions. 
-        The model would generate conversational preamble text before the required JSON object, 
-        causing Pydantic parsing failures. 
-        The limit of $L=200$ proved to be the optimal threshold for maintaining high adherence 
-        to the required pure JSON output format.
-        \item \textbf{Acceptable Measurement}: Although LIMIT 200 does not cover the entire dataset of fortune for instance, it is sufficient to test the LLM’s reasoning ability on the most populated subset of the database, accepting that accuracy metrics will reflect the simulated RAG Corpus limitation.
-    \end{itemize}
-\end{enumerate}
-
-Finally, this implementation of the PZ baseline effectively provides metrics for both the faithfulness to context and the precision of reasoning of the LLM within a constrained and technically demanding environment.
-\\In addition as proof of the principles described above, in the dataset Premier some results are empty when the relevant data was not present in the retrieved rows of database. In other hand when tha data are present in the retrieved rows, the results are not empty.
-
-\subsection{Results and Evaluation}
-
-\begin{table}[h]
-\centering
-\begin{tabular}{lcccc}
-\toprule
-\textbf{Metric} & \textbf{NL} & \textbf{SQL}  \\
-\midrule
-
-AVG-SCORE & 0.393 & X  \\
-\#TOKENS(M) & 2390 & X  \\
-
-\bottomrule
-\end{tabular}
-\caption{WATSONX results}
-\label{watsonx_results}
-\end{table}
-
 \section{Baseline SQL}
 \label{sec:baseline-sql}
 
@@ -349,10 +242,117 @@ At a high level, the logical flow is the following:
   (Gemini or watsonx) and store the resulting JSON files.
 \end{enumerate}
 
+
+\subsection{Results and Evaluation}
 The quantitative results of the Baseline SQL module are reported together with
 those of the NL baseline in the tables that summarise, for each provider, the
 F1--CELL, CARDINALITY and TUPLE--CONSTRAINT metrics, their average score, the
-average inference time and the number of tokens produced.
+ inference time and the number of tokens produced.
+The results obtained from the Baseline NL and SQL baseline module were evaluated using standard metrics to assess the performance of the LLMs in both Natural Language (NL) and SQL contexts.
+The model used for the \textbf{gemini} provider is: \textbf{gemini-2.5-flash}, instead for \textbf{IBMWatsonx} provider we used \textbf{meta-llama/llama-3-3-70b-instruct}.
+All systems are tested on the datasets described in Table 2 of the previous project task, excluding Premier and Fortune like the galois authors did.
+
+
+
+\begin{table}[h]
+\centering
+\begin{tabular}{lcccc}
+\toprule
+\textbf{Metric} & \textbf{NL} & \textbf{SQL}  \\
+\midrule
+F1-CELL & 0.391 & 0.537  \\
+CARDINAITY & 0.644 & 0.733  \\
+TUPLE-CONSTR. & 0.182 & 0.331  \\
+AVG-SCORE & 0.406 & 0.534  \\
+\#TOKENS(M) & 39965 & 126946  \\
+AVG-TIME & 4.812 & 7.561  \\
+
+\bottomrule
+\end{tabular}
+\caption{GEMINI results}
+\label{gemini_results}
+\end{table}
+
+
+\begin{table}[h]
+\centering
+\begin{tabular}{lcccc}
+\toprule
+\textbf{Metric} & \textbf{NL} & \textbf{SQL}  \\
+\midrule
+F1-CELL & 0.436 & 0.523  \\
+CARDINAITY & 0.701 & 0.718  \\
+TUPLE-CONSTR. & 0.212 & 0.243  \\
+AVG-SCORE & 0.450 & 0.495  \\
+\#TOKENS(M) & 15165 & 11606  \\
+AVG-TIME & 5.353 & 4.485  \\
+
+\bottomrule
+\end{tabular}
+\caption{WATSONX results}
+\label{watsonx_results}
+\end{table}
+
+
+\section{Baseline Palimpzest}
+The baseline aims to automatically retrieve relevant text segments (from Markdown or plain text files) to construct additional contextual information for a Retrieval-Augmented Generation (RAG) pipeline.
+The file resources that we used for this baseline was retrieved from the GALOIS repository within the core/src/test/resources/rag-fortune and core/src/test/resources/rag-premier folders.
+In short, it builds a semantic knowledge base from textual documents and indexes them using embeddings and FAISS.
+
+Talking about FAISS, it is an open-source library developed by Facebook AI Research that provides efficient similarity search and clustering of dense vectors.
+
+Th reason why we use this library is that we need something that allows us to perform fast vector indexing and similarity searches over large datasets of text embeddings, in a reasonable time and CPU usage.
+
+For what concerns the resources usage (CPU, GPU) we used only the CPU for ensuring portability and easy baseline testing without GPU support.
+Actually the most of the times, the baseline was tested on a machine with a very low GPU power (a Laptop with a integrated GPU, not a dedicated one); furthermore when we try to run the baseline using also the GPU the running time needed to download the dedicated Python Library for GPU support was much higher than the time needed to download the CPU ones, so finally we decided only to use the latter.
+For the same time saving reasons we used a light sentence transformer model (\textbf{sentence-transformers/all-MiniLM-L6-v2}) for the sentence embeddings generation, in fact it has a good trade-off between the running time speed and the semantic precision and also avoids the overhead of large transformer models while still maintaining strong semantics representations.
+\\Since our implementation needs to be easily deployable and testable on different machines, we decided to avoid heavy models that require high computational resources.
+\subsection{Overall Architecture}
+Generally the baseline consists of three main components:
+\begin{itemize}
+    \item \textbf{MarkdownRAGBackend class}: It handles file loading, chunking, embedding and FAISS indexing.
+    \item \textbf{pz\_context()}: main method that uses the backend to build contextual input (relevant chunks) for the Palimpzest model.
+    \item \textbf{Backend}: Represents all the "behind the scenes" logic.
+\end{itemize}
+
+\subsection{Initialization (\_\_init\_\_)}
+Here a HuggingFaceEmbeddings instance is created to generate text embeddings using a specified model, the chosen model is \textbf{sentence-transformers/all-MiniLM-L6-v2} as already seen.
+
+\subsection{Loading and Indexing (Load\_and\_index)}
+This method performs the full data preparation and indexing pipeline:
+\begin{itemize}
+    \item Searching for a .md, .txt or extensionless files 
+    \item Converts each file into LangChain documents, preserving metadata.
+    \item The text is divided in chunks (128 tokens per chunk for premier and 400 tokens per chunk for fortune) balancing semantic coherence and retrieval precision, and also preserves contextual continuity across chunks setting an overlap of 20 tokens.
+    \item Creation of FAISS index from the generated embeddings for efficient similarity search.
+\end{itemize}
+
+\subsection{Retrieval of Relevant Chunks (retrieve)}
+Essentially the method returns the \textbf{top\_k} most semantically similar text chunks for a given query, so it performs the semantic retrieval.
+
+\subsection{Saving and Loading Index}
+Finally the FAISS index is saved in a persistent way to avoid re-indexing on subsequent runs, and it can be loaded back when needed.
+
+We would like to emphasize that the reason we used the text files available in the GALOIS repository as resources, rather than, for instance, a subset of records from the Fortune or Premier datasets (or similar sources), is that the original idea behind the Palimpzest baseline (as stated in the GALOIS paper) is to evaluate the LLM’s capabilities in a RAG paradigm using external textual resources that are not part of the datasets themselves.
+
+\subsection{Results and Evaluation}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{lcccc}
+\toprule
+\textbf{Metric} & \textbf{NL} & \textbf{SQL}  \\
+\midrule
+
+AVG-SCORE & 0.393 & X  \\
+\#TOKENS(M) & 2390 & X  \\
+
+\bottomrule
+\end{tabular}
+\caption{PALIMPZEST results}
+\label{palimpzest_results}
+\end{table}
+
 
 \section{Contributions}
 \begin{itemize}

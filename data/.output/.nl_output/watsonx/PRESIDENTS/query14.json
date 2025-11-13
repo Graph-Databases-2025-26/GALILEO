@@ -38,7 +38,7 @@
         },
         {
             "name": "John Tyler",
-            "party": "Whig/Independent"
+            "party": "Whig"
         },
         {
             "name": "James K. Polk",
@@ -66,7 +66,7 @@
         },
         {
             "name": "Andrew Johnson",
-            "party": "National Union/Democratic"
+            "party": "National Union"
         },
         {
             "name": "Ulysses S. Grant",
@@ -185,6 +185,6 @@
             "party": "Democratic"
         }
     ],
-    "time": 16.691,
-    "tokens": 844
+    "time": 16.077,
+    "tokens": 839
 }

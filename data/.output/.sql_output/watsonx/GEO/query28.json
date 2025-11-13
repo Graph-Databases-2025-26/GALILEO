@@ -11,8 +11,16 @@
         {
             "state_name": "Florida",
             "capital": "Tallahassee"
+        },
+        {
+            "state_name": "New York",
+            "capital": "Albany"
+        },
+        {
+            "state_name": "Illinois",
+            "capital": "Springfield"
         }
     ],
-    "time": 0.868,
-    "tokens": 82
+    "time": 2.556,
+    "tokens": 98
 }
