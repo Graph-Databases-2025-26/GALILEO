@@ -1,0 +1,18 @@
+\section{Introduction}
+\label{sec:introduction}
+\vspace{2em}
+\subsection{Context and Objective}
+The preceding project phase involved the \textbf{assessment of query execution} on the database for each dataset, followed by the processing of the results obtained from our implementation using the \texttt{galois\_eval.py} script.
+\\\\
+The primary objective of the current task is to detail the \textbf{development process} implemented to replicate the following \textbf{baselines}, specifically utilizing the \textbf{Internal Knowledge datasets}:
+
+\begin{itemize}[leftmargin=*]
+    \item \textbf{SQL Baseline}: The system directly prompts the \emph{Large Language Model} (LLM) with an \textbf{SQL query} as the input. 
+    \item \textbf{NL (Natural Language) Baseline}: The system employs a \textbf{Natural Language prompt} as the direct input to the LLM,
+    \item \textbf{Palimpzest Baseline}: This baseline is designed to evaluate the pure \textbf{reasoning and synthesis capabilities} of the LLM when operating within a \textbf{Retrieval-Augmented Generation (RAG)} paradigm. 
+\end{itemize}    
+\textit{Note on Implementation}: The current setup represents a foundational RAG configuration and necessitates further methodological refinement to fully conform to the advanced data handling and inference strategies detailed in the original Galois paper.
+
+\vspace{8em}
+\subsection{Report Structure}
+For each implemented baseline, \textbf{synoptic tables} reporting the derived evaluation measures and metrics will be presented. This introductory section establishes the methodological context; the subsequent sections will proceed with a detailed analysis of each individual baseline.

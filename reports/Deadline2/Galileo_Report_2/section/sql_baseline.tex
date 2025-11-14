@@ -1,0 +1,122 @@
+\section{Baseline SQL: Execution and Architectural Analysis}
+\label{sec:baseline-sql}
+\vspace{2em}
+
+The \textbf{SQL Baseline} module is engineered to extend the core evaluation framework to scenarios where the Large Language Model (LLM) is interrogated via structured \textbf{SQL statements} rather than Natural Language (NL) queries.\\\\
+The primary objective is to quantitatively assess the capacity of different LLM providers to interpret complex SQL syntax, perform logical reasoning over the supplied database schema and data, and output a rigorously structured JSON response compatible with the established evaluation metrics used for the NL baseline.
+
+---
+
+\subsection{Standardized Execution Pipeline}
+
+The Baseline SQL leverages a five-stage execution pipeline, conceptually aligning with the NL baseline but specifically tailored for structured input processing:
+
+\begin{enumerate}[leftmargin=*, label=\arabic*.]
+    \item \textbf{SQL Statement Retrieval}: All target SQL statements for a given dataset are systematically loaded from the corresponding \texttt{queries\_\textless dataset\textgreater{}.sql} file via the dedicated \texttt{load\_queries\_from\_folder()} utility function.
+
+    \item \textbf{Schema and Context Augmentation}: The designated DuckDB database instance is initiated, and its schema definition is extracted. Datasets are segregated into two distinct contexts for model conditioning:
+    \begin{itemize}[leftmargin=1.5em] % Mini-itemize con indentazione ridotta
+        \item \emph{Internal Knowledge(IK)}: The database schema is provided to the LLM as external context.
+        \item \emph{Model Contexts(MC)}: This dataset isn't used in accordance with the Galois Paper.
+    \end{itemize}
+
+    \item \textbf{Prompt Composition and Contextualization}: The full prompt artifact is constructed by retrieving and combining pre-defined templates from \texttt{constants.py}. \\
+    Specifically, the process involves two steps:
+    \begin{itemize}[leftmargin=1.5em]
+        \item The appropriate \texttt{System Prompt} (either for IK or the currently unused MC datasets) is selected to define the high-level task directive (Context data and JSON formatting).
+        \item The \texttt{Human Prompt} template, specific to the SQL Baseline, is then populated with the core SQL statement itself.
+    \end{itemize}
+
+    \item \textbf{LLM Invocation and Output Validation}: The prepared prompt is dispatched to the selected LLM provider (Gemini or Watsonx). The resultant answer is subjected to validation via a \texttt{PydanticOutputParser}, enforcing a mandatory \texttt{FULL JSON} schema which includes the fields \texttt{result\_set}, \texttt{time}, and \texttt{tokens}. \\
+    Rigorous error handling ensures that parsing failures result in the logging of the raw content and the return of an empty \texttt{result\_set} with timing metadata.
+
+    \item \textbf{Result Serialization}: The output for each query is serialized into a JSON file and stored in a provider-specific subdirectory. This standardized output format facilitates direct consumption by the evaluation scripts, ensuring consistent computation of metrics across all baselines.
+\end{enumerate}
+
+\subsection{Architectural Implementation and Provider Decoupling}
+The implementation adheres strictly to the \textbf{Adapter} and \textbf{Factory} patterns, ensuring robust decoupling from specific LLM providers. Instead of segmenting core pipeline execution logic, the architecture centralizes control, allowing a single workflow to dynamically switch between providers.
+
+\paragraph{\textbf{Centralized Execution Flow} (\texttt{execute\_baseline\_sql}):} The primary execution control is managed by the single function \texttt{execute\_baseline\_sql}. This function orchestrates the entire process, encompassing data selection (via CLI or configuration), context retrieval, and result serialization. Crucially, \texttt{execute\_baseline\_sql} does \textbf{not} contain provider-specific code; it delegates responsibilities to specialized helper utilities:
+\begin{itemize}[leftmargin=1.5em]
+    \item \texttt{build\_lcel\_chain}: This function is responsible for instantiating the correct LLM adapter based on the provider specified in the YAML configuration file. This maintains the Factory pattern's principle of decoupling the creation logic.
+    \item \texttt{parse\_llm\_response}: Standardizes and enriches the output, as detailed in the pipeline, ensuring a uniform \texttt{FULL\_JSON} structure regardless of the underlying LLM.
+    \item \texttt{save\_response\_to\_JSON}: Handles the final result persistence and serialization for all providers uniformly.
+\end{itemize}
+
+\paragraph{\textbf{Provider Abstraction (Zero-Code Provider Components):}}
+Consequently, the implementation avoids the need for dedicated provider-specific execution modules. Instead, the abstraction is achieved entirely within the LLM Adapter layer. This central layer manages the necessary provider-specific API calls and setup details, which are configured dynamically based on the model selected in the YAML configuration. This approach facilitates a "zero-code execution logic" at the component level outside of the Adapter, ensuring that all providers utilize the same standardized workflow and that results are inherently comparable using the identical \texttt{FULL\_JSON} output schema and evaluation criteria.
+
+\subsection{Unified Command-Line Interface (CLI) Flow}
+
+The central execution control is consolidated within \texttt{src/main.py}, providing a unified interface for the orchestration of both NL and SQL baselines. The CLI exposes the following essential control arguments:
+
+\begin{table}[h]
+    \centering
+    \label{tab:cli-arguments}
+    \begin{tabular}{l c p{11cm}} 
+        \toprule
+        \textbf{Argument} & \textbf{Type} & \textbf{Function} \\
+        \midrule
+        \texttt{datasets} & Positional & Accepts zero to multiple dataset identifiers (e.g., \texttt{WORLD}, \texttt{GEO}). \\
+        \texttt{--mode} & Option & Selects the execution type: \textbf{\texttt{nl}}, \textbf{\texttt{sql}}, or \textbf{\texttt{both}}. \\
+        \texttt{--provider} & Option & Overrides the default LLM provider defined in the configuration (\texttt{gemini} or \texttt{watsonx}). \\
+        \bottomrule
+    \end{tabular}
+    \caption{Essential CLI Control Arguments for Baseline Execution}
+\end{table}
+\paragraph{\textbf{High-Level Logical Flow}}
+The overall execution sequence is dictated by the input received from the CLI:
+\begin{enumerate}[leftmargin=*, label=\arabic*.]
+    \item \textbf{Initialization}: Argument parsing is performed to determine the list of target datasets, prioritizing the CLI input over the default configuration settings.
+    \item \textbf{Conditional Invocation}: Based on the selected \texttt{--mode}, the system conditionally invokes the NL, SQL, or combined baseline functions.
+    \item \textbf{Task Dispatch and Persistence}: The task is dispatched to the provider-agnostic implementation, and the resulting \texttt{FULL\_JSON} output files are persistently stored for evaluation.
+\end{enumerate}
+
+\subsection{Results and Evaluation}
+The final quantitative outcomes for the SQL Baseline are integrated with the NL results, summarized in tables detailing the \textbf{F1-CELL}, \textbf{CARDINALITY}, and \textbf{TUPLE-CONSTRAINT} metrics, along with their average scores, average inference time (\textbf{latency}), and total token consumption.
+\\\\
+The results obtained from the Baseline NL and SQL baseline modules were evaluated using standard metrics to assess the performance of the LLMs in both Natural Language (NL) and SQL contexts.
+The model used for the \textbf{gemini} provider is: \textbf{gemini-2.5-flash}, instead for \textbf{IBMWatsonx} provider we used \textbf{meta-llama/llama-3-3-70b-instruct}.
+All systems are tested on the datasets described in Table 2 of the previous project task, excluding Premier and Fortune, as the Galois authors did.
+\vspace{2.5em}
+
+\begin{figure}[h!]
+    \centering
+    
+    \begin{minipage}[t]{0.49\textwidth}
+        \centering
+        \begin{tabular}{lcc}
+            \toprule
+                \textbf{Metric} & \textbf{NL} & \textbf{SQL} \\
+            \midrule
+                F1-CELL & 0.391 & 0.537 \\
+                CARDINALITY & 0.644 & 0.733 \\
+                TUPLE-CONSTR. & 0.182 & 0.331 \\
+                \#TOKENS(M) & 39.965 & 126.946 \\
+                AVG-TIME (s) & 4.812 & 7.561 \\
+                \textbf{AVG-SCORE} & \textbf{0.406} & \textbf{0.534} \\
+            \bottomrule
+        \end{tabular}
+        \captionof{table}{GEMINI results}
+        \label{gemini_results}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{0.49\textwidth} 
+        \centering
+        \begin{tabular}{lcc}
+            \toprule
+                \textbf{Metric} & \textbf{NL} & \textbf{SQL} \\
+            \midrule
+                F1-CELL & 0.436 & 0.523 \\
+                CARDINALITY & 0.701 & 0.718 \\
+                TUPLE-CONSTR. & 0.212 & 0.243 \\
+                \#TOKENS(M) & 15.165 & 11.606 \\
+                AVG-TIME (s) & 5.353 & 4.485 \\
+                \textbf{AVG-SCORE} & \textbf{0.450} & \textbf{0.495} \\
+            \bottomrule
+        \end{tabular}
+    \captionof{table}{WATSONX results} % Caption spostata sotto
+    \label{watsonx_results}
+    \end{minipage}
+\end{figure}
+

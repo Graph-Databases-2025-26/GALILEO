@@ -1,0 +1,22 @@
+\section{Contributions}
+
+\paragraph{\textbf{Alessio Demo (Badge number: 2142885)}}
+\begin{itemize}[leftmargin=*]
+    \item \textbf{First Deadline:}  Developed function database connection and instance creation of DuckDB database manager for each dataset using the ingest files (.duckdb files).
+    Developed function for retrieving the SQL queries from .sql files, processing the queries and executing them on DuckDB database instance and finally store it in a json file.
+    \item \textbf{Second Deadline:} Developed the Baseline NL function for interacting with the LLM. "Early-stage" Palimpzest baseline implementation.
+\end{itemize}
+
+\paragraph{\textbf{Francesco Pivotto (Badge number: 2158296)}}
+\begin{itemize}[leftmargin=*]
+    \item \textbf{First Deadline:} Implemented a modular project structure by relocating core logic to \texttt{src/} and consolidating configuration and database management logic within dedicated utility modules (\texttt{config/loaders.py}). 
+    Established the framework for multi-provider support by adding initial integration for the \texttt{Grok LLM}, including dedicated configuration points (\texttt{.env}, \texttt{config.yaml}, \texttt{loaders.py}).
+    
+    \item \textbf{Second Deadline:} Completed initial implementation of the SQL baseline, including the core logic for connecting to \texttt{DuckDB} and structuring query execution via the Watsonx provider.
+    Fixed critical issues in environment variable loading, ensuring robust and standardized retrieval of secrets and settings via the central configuration object (using \texttt{loaders.py}).
+    Modularized the \texttt{sql\_baseline} module, incorporating the LCEL Pattern to prepare for dynamic LLM selection.
+    Centralized general utility functions by moving helpers into \texttt{baseline\_tools}.
+    Introduced the dedicated \textbf{\texttt{llm\_wrapper}} class to handle all LLM connection logic, API parameter management, and calls.
+\end{itemize}
+
+\paragraph{\textbf{Giorgia Amato (Badge number: ...)}}

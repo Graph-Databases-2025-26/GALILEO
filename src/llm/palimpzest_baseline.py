@@ -3,7 +3,7 @@ from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_community.vectorstores import FAISS
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 
-from config import Config_Loader
+from src.config import Config_Loader
 from src import LOG
 from src.utils.constants import *
 

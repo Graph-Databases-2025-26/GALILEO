@@ -1,12 +1,13 @@
-from src.db.run_queries_to_json import load_nl_queries_from_txt
-from src.llm.nl_baseline import llm_interaction_nl_baseline
 from src.utils import PY, SUBMISSIONS_PATH, GROUND_PATH, DATA_DIR, IK_DATASETS, MC_DATASETS, BASELINE_OUTPUT
-from src.utils import get_dataset_selection
+from src.utils import get_dataset_selection, load_queries_from_folder
 from src.utils import LOG, log_init
-from src.llm import execute_baseline_sql_query
-from config import Config_Loader
+
+from src.llm import execute_baseline_sql, llm_interaction_nl_baseline
+from src.db import load_nl_queries_from_txt
+from src.config import Config_Loader
+
 from pathlib import Path
-import subprocess, re, argparse
+import subprocess, argparse
 
 
 # from src.llm.baseline_nl import llm_interaction_second_version
@@ -34,7 +35,7 @@ def parse_args():
      parser.add_argument(
          "--mode",
          choices=["nl", "sql", "both","pz"],
-         default="both",
+         default="sql",
          help="Which baseline(s) to run.",
      )
      parser.add_argument(
@@ -113,31 +114,6 @@ def parse_args():
 #     LOG.info("Running SQL baseline with Gemini")
 #     run_sql_baseline_gemini(datasets)
 
-
-# Helper: load SQL queries      
-def load_queries_from_folder(data_folder: Path) -> list[str]:
-    
-    sql_files = list(data_folder.glob("queries_*.sql"))    
-    file_path = sql_files[0] 
-    
-    f_content = ""
-    try:
-        with open(file_path, 'r', encoding='utf-8') as f:
-            f_content = f.read().strip()
-            
-    except Exception as e:
-        LOG.error(f"Error reading file {file_path}: {e}")
-        return {}
-    
-    qry_regx = re.compile(r'--query(?:\d+)\s*(.*?)(?=--query|\Z)', re.DOTALL | re.IGNORECASE)    
-    matches = qry_regx.findall(f_content)
-
-    queries = []
-    for qry in matches:
-        queries.append(qry.strip())
-        
-    return queries
-
 def main():
     
     config = Config_Loader().get_config()
@@ -159,13 +135,13 @@ def main():
             queries = load_queries_from_folder(dataset_path)
             LOG.info(f"Loaded {len(queries)} queries for dataset {dataset} in {args.mode} mode")
             if dataset in IK_DATASETS:
-                execute_baseline_sql_query(config, dataset, queries, args.mode.upper() ,"IK")
+                execute_baseline_sql(config, dataset, queries, args.mode.upper())
 
         elif args.mode == "nl":
             nl_queries = load_nl_queries_from_txt(dataset_path)
             LOG.info(f"Loaded {len(nl_queries)} queries for dataset {dataset} in {args.mode} mode")
             if dataset in IK_DATASETS:
-                llm_interaction_nl_baseline(config, dataset, nl_queries, args.mode.upper(), "IK")
+                llm_interaction_nl_baseline(config, dataset, nl_queries, args.mode.upper())
 
 
 
@@ -175,7 +151,7 @@ def main():
         "-m",
         "src.utils.galois_eval",
         "--ground", GROUND_PATH,
-        "--submissions", BASELINE_OUTPUT["SQL"][config.llm_provider.upper()],
+        "--submissions", BASELINE_OUTPUT[args.mode.upper()][config.llm_provider.upper()],
         "--datasets", *datasets,
         "--cell-metric similarity",
         "--tuple-metric constraint",

@@ -1,0 +1,58 @@
+\section{Baseline Palimpzest}
+The baseline aims to automatically retrieve relevant text segments (from Markdown or plain text files) to construct additional contextual information for a Retrieval-Augmented Generation (RAG) pipeline.
+The file resources that we used for this baseline was retrieved from the GALOIS repository within the core/src/test/resources/rag-fortune and core/src/test/resources/rag-premier folders.
+In short, it builds a semantic knowledge base from textual documents and indexes them using embeddings and FAISS.
+
+Talking about FAISS, it is an open-source library developed by Facebook AI Research that provides efficient similarity search and clustering of dense vectors.
+
+Th reason why we use this library is that we need something that allows us to perform fast vector indexing and similarity searches over large datasets of text embeddings, in a reasonable time and CPU usage.
+
+For what concerns the resources usage (CPU, GPU) we used only the CPU for ensuring portability and easy baseline testing without GPU support.
+Actually the most of the times, the baseline was tested on a machine with a very low GPU power (a Laptop with a integrated GPU, not a dedicated one); furthermore when we try to run the baseline using also the GPU the running time needed to download the dedicated Python Library for GPU support was much higher than the time needed to download the CPU ones, so finally we decided only to use the latter.
+For the same time saving reasons we used a light sentence transformer model (\textbf{sentence-transformers/all-MiniLM-L6-v2}) for the sentence embeddings generation, in fact it has a good trade-off between the running time speed and the semantic precision and also avoids the overhead of large transformer models while still maintaining strong semantics representations.
+\\Since our implementation needs to be easily deployable and testable on different machines, we decided to avoid heavy models that require high computational resources.
+\subsection{Overall Architecture}
+Generally the baseline consists of three main components:
+\begin{itemize}
+    \item \textbf{MarkdownRAGBackend class}: It handles file loading, chunking, embedding and FAISS indexing.
+    \item \textbf{pz\_context()}: main method that uses the backend to build contextual input (relevant chunks) for the Palimpzest model.
+    \item \textbf{Backend}: Represents all the "behind the scenes" logic.
+\end{itemize}
+
+\subsection{Initialization (\_\_init\_\_)}
+Here a HuggingFaceEmbeddings instance is created to generate text embeddings using a specified model, the chosen model is \textbf{sentence-transformers/all-MiniLM-L6-v2} as already seen.
+
+\subsection{Loading and Indexing (Load\_and\_index)}
+This method performs the full data preparation and indexing pipeline:
+\begin{itemize}
+    \item Searching for a .md, .txt or extensionless files 
+    \item Converts each file into LangChain documents, preserving metadata.
+    \item The text is divided in chunks (128 tokens per chunk for premier and 400 tokens per chunk for fortune) balancing semantic coherence and retrieval precision, and also preserves contextual continuity across chunks setting an overlap of 20 tokens.
+    \item Creation of FAISS index from the generated embeddings for efficient similarity search.
+\end{itemize}
+
+\subsection{Retrieval of Relevant Chunks (retrieve)}
+Essentially the method returns the \textbf{top\_k} most semantically similar text chunks for a given query, so it performs the semantic retrieval.
+
+\subsection{Saving and Loading Index}
+Finally the FAISS index is saved in a persistent way to avoid re-indexing on subsequent runs, and it can be loaded back when needed.
+
+We would like to emphasize that the reason we used the text files available in the GALOIS repository as resources, rather than, for instance, a subset of records from the Fortune or Premier datasets (or similar sources), is that the original idea behind the Palimpzest baseline (as stated in the GALOIS paper) is to evaluate the LLM’s capabilities in a RAG paradigm using external textual resources that are not part of the datasets themselves.
+
+\subsection{Results and Evaluation}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{lcccc}
+\toprule
+\textbf{Metric} & \textbf{NL} & \textbf{SQL}  \\
+\midrule
+
+AVG-SCORE & 0.393 & X  \\
+\#TOKENS(M) & 2390 & X  \\
+
+\bottomrule
+\end{tabular}
+\caption{PALIMPZEST results}
+\label{palimpzest_results}
+\end{table}

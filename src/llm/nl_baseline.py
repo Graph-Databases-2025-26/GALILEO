@@ -5,14 +5,12 @@ from src.llm.llm_factory import get_llm_wrapper
 #from src.main import parse_args
 from ..utils.constants import *
 from ..db.run_queries_to_json import load_queries_from_folder, load_nl_queries_from_txt
-from config import Config_Loader
-from ..utils.dataset_selection import get_dataset_selection
+from src.config import Config_Loader
+from ..utils.main_tools import get_dataset_selection
 from ..utils.logging_config import logger, LOG
 from src.utils.constants import DATA_DIR, DATASETS
 
-#CONFIGURE THE API KEY
-load_dotenv()
-api_key = os.getenv("WATSONX_API_KEY", "").strip()
+
 
 """
     The goal of this script is to query the LLM model with interrogations in Natural Language
@@ -21,11 +19,11 @@ api_key = os.getenv("WATSONX_API_KEY", "").strip()
 
 """
 
-def llm_interaction_nl_baseline(config, database: str, prompts: list[str], b_type: str, d_type: str):
+def llm_interaction_nl_baseline(config, database: str, prompts: list[str], b_type: str):
 
-    logger.info(f"baseline: {b_type}, dataset type: {d_type}")
+    logger.info(f"baseline: {b_type}")
     llm = get_llm_wrapper(config)
-    chain = build_lcel_chain(llm,b_type, d_type)
+    chain = build_lcel_chain(llm, b_type)
 
     folder = os.path.join(DATA_DIR, database)
 
@@ -45,7 +43,7 @@ def llm_interaction_nl_baseline(config, database: str, prompts: list[str], b_typ
         t_start = time()
         try:
 
-            raw_response = chain.invoke({"database": database.lower(), "b_type": b_type, "query": sql_query, "prompt":prompt, "BASELINE": d_type })
+            raw_response = chain.invoke({"database": database.lower(), "b_type": b_type, "query": sql_query, "prompt":prompt})
 
             t_end = time()
 
@@ -66,9 +64,9 @@ if __name__ == "__main__":
 
         d = d.upper()
         if d in IK_DATASETS:
-            d_type = "IK"
+            b_type = "NL"
         elif d in MC_DATASETS:
-            d_type = "MC"
+            b_type = "PZ"
         else:
             LOG.debug(f"You need to specify a valid dataset: for the NL &SQL baselines you need to specify one or more of these datasets: {IK_DATASETS}, and for testing the Palimpzest: {MC_DATASETS}")
 
@@ -82,4 +80,4 @@ if __name__ == "__main__":
             logger.info(f"Processing dataset: {d}")
 
             nl_queries = load_nl_queries_from_txt(dataset_path)
-            llm_interaction_nl_baseline(config, d, nl_queries, "NL", d_type)
+            llm_interaction_nl_baseline(config, d, nl_queries, b_type)

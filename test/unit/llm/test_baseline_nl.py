@@ -1,4 +1,4 @@
-import src.llm.nl_baseline as baseline_nl
+from src.llm import nl_baseline
 
 
 class DummyRawResponse:
@@ -45,7 +45,6 @@ def test_llm_interaction_nl_baseline_happy_path(monkeypatch):
     config = object()        # dummy config object
     database = "WORLD"
     b_type = "NL"
-    d_type = "IK"
 
     prompts = [
         "Who is the president of X?",
@@ -60,22 +59,21 @@ def test_llm_interaction_nl_baseline_happy_path(monkeypatch):
 
     # get_llm_wrapper(config) -> dummy_llm
     monkeypatch.setattr(
-        baseline_nl,
+        nl_baseline,
         "get_llm_wrapper",
         lambda cfg: dummy_llm,
         raising=False,
     )
 
     # build_lcel_chain(llm, b_type, d_type) -> dummy_chain
-    def fake_build_lcel_chain(llm_wrapper, baseline_type, dataset_type):
+    def fake_build_lcel_chain(llm_wrapper, baseline_type):
         # we can assert here the parameters if we want to be strict
         assert llm_wrapper is dummy_llm
         assert baseline_type == b_type
-        assert dataset_type == d_type
         return dummy_chain
 
     monkeypatch.setattr(
-        baseline_nl,
+        nl_baseline,
         "build_lcel_chain",
         fake_build_lcel_chain,
         raising=False,
@@ -93,7 +91,7 @@ def test_llm_interaction_nl_baseline_happy_path(monkeypatch):
         ]
 
     monkeypatch.setattr(
-        baseline_nl,
+        nl_baseline,
         "load_queries_from_folder",
         fake_load_queries_from_folder,
         raising=False,
@@ -113,7 +111,7 @@ def test_llm_interaction_nl_baseline_happy_path(monkeypatch):
         return parsed_results_queue.pop(0)
 
     monkeypatch.setattr(
-        baseline_nl,
+        nl_baseline,
         "parse_llm_response",
         fake_parse_llm_response,
         raising=False,
@@ -130,7 +128,7 @@ def test_llm_interaction_nl_baseline_happy_path(monkeypatch):
         saved["baseline_type"] = baseline_type
 
     monkeypatch.setattr(
-        baseline_nl,
+        nl_baseline,
         "save_baseline_to_json",
         fake_save_baseline_to_json,
         raising=False,
@@ -139,12 +137,11 @@ def test_llm_interaction_nl_baseline_happy_path(monkeypatch):
    
     # 6 Act: call the function under test
     
-    baseline_nl.llm_interaction_nl_baseline(
+    nl_baseline.llm_interaction_nl_baseline(
         config=config,
         database=database,
         prompts=prompts,
-        b_type=b_type,
-        d_type=d_type,
+        b_type=b_type
     )
 
    
@@ -160,7 +157,6 @@ def test_llm_interaction_nl_baseline_happy_path(monkeypatch):
     for call, expected_prompt in zip(dummy_chain.calls, prompts):
         assert call["database"] == database.lower()
         assert call["b_type"] == b_type
-        assert call["BASELINE"] == d_type
         assert "query" in call
         assert call["prompt"] in prompts
 

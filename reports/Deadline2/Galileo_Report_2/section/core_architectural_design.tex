@@ -1,0 +1,77 @@
+\section{Core Architectural Design and Execution Flow}
+\vspace{2em}
+\subsection{Architectural Design Patterns for Modularity}
+The codebase's central logic is structured around established software design patterns to ensure high modularity, extensibility, and maintainability across heterogeneous components.
+
+\paragraph{\textbf{Adapter Pattern} (\texttt{llm\_wrappers.py}):} This pattern standardizes the interface for interacting with heterogeneous LLM providers (e.g., Gemini, Watsonx). By abstracting the provider-specific connection details, it enables the core execution engine to interact with all models through a uniform API.
+
+\paragraph{\textbf{Factory Pattern} (\texttt{llm\_factory.py}):} Implemented as a simple factory method, this pattern decouples client components (e.g., \texttt{sql\_baseline.py}, \texttt{nl\_baseline.py}) from the specific instantiation logic of concrete LLM wrapper objects. Extensibility to new providers is achieved solely by updating the internal \texttt{PROVIDER\_MAP} registry.
+
+\paragraph{\textbf{Template Method Pattern} (\texttt{LLMBaseWrapper} in \texttt{llm\_wrappers.py}):} The abstract \texttt{LLMBaseWrapper} defines the invariant sequence (the *template*) for the life cycle of the LLM instance retrieval. It establishes the mandatory sequence while deferring the implementation of the provider-specific connection details (via \texttt{create\_llm\_instance()}) to concrete subclasses.
+
+\paragraph{\textbf{Chain/Pipeline Pattern (LCEL)} (\texttt{build\_lcel\_chain.py}):} This pattern, realized using LangChain Expression Language (LCEL), defines a structured, sequential execution flow:
+\begin{center}
+    \textbf{Context Generation} $\to$ \textbf{Prompt Construction} $\to$ \textbf{LLM Invocation}
+\end{center}
+This structured approach ensures predictable and auditable data transformation across the execution path.
+\newpage
+
+\subsection{Standardized Execution Workflow (The Pipeline)}
+
+The execution workflow is structured into a four-stage pipeline, ensuring robust and consistent processing across all baseline types:
+
+\begin{enumerate}[leftmargin=*,label=\arabic*.]
+    \item \textbf{Context Generation}: The \texttt{get\_db\_context} function dynamically prepares the necessary input context. This includes retrieving the database schema for SQL/NL baselines or simulating \emph{Retrieval-Augmented Generation} data for the Palimpzest baseline, based on the requested execution type.
+    \item \textbf{Prompt Engineering and Injection}: The derived context is programmatically injected into a sophisticated \texttt{ChatPromptTemplate}. This stage manages advanced prompting logic, including the insertion of mandatory system instructions and the enforcement of the required JSON output structure via a \texttt{PydanticOutputParser}.
+    \item \textbf{LLM Invocation}: The fully prepared and structured prompt is transmitted to the configured LLM instance, which was instantiated via the Factory/Adapter layers.
+    \item \textbf{Response Standardization and Metadata Enrichment}: The \texttt{parse\_llm\_response} function enforces cross-provider output standardization. This involves the mandatory validation and parsing of the requisite JSON structure returned by the LLM. It then enriches this output into the \texttt{FULL\_JSON} format by extracting the \texttt{token consumption} from the LLM's response metadata and internally calculating and appending the \texttt{LLM response latency}.
+\end{enumerate}
+This standardized and enriched data is essential for downstream performance evaluation.
+\subsection{Data Context and Output Standardization}
+
+This section defines the two primary contexts used to condition the Large Language Models (LLMs) and establishes the \textbf{standardized JSON output format} mandatory for all baseline evaluations (NL, SQL, and Palimpzest).
+
+\medskip
+
+\subsubsection{Data Context Categorization}
+
+The evaluation utilizes two distinct dataset contexts, governing the type of factual information provided to the LLM during prompting:
+
+\begin{itemize} [leftmargin=*]
+    \item \textbf{Internal Knowledge (IK):} In these datasets, the model relies exclusively on its pretrained knowledge and linguistic reasoning capabilities. The prompt includes only the natural language question and the database schema for both the \textbf{SQL} and \textbf{NL} baselines, but no factual data retrieved from the database.
+    \item \textbf{Model Context (MC):} These datasets are designed to enrich the prompt with external information retrieved from a knowledge base. For this project task, MC datasets were \textbf{not used} in either the NL or SQL baselines, but they form the basis of the \textbf{Palimpzest} baseline to evaluate its Retrieval-Augmented Generation (RAG) capabilities.
+\end{itemize}
+
+\medskip
+
+\subsubsection{Standardized Output Format}
+
+Every response produced by any baseline is written in a JSON file that fits the mandatory \textbf{FULL JSON} format. This rigorous structure ensures consistent computation of metrics across all providers and baselines.
+
+\begin{figure}[h!]
+    \centering
+    \begin{verbatim}
+    {
+        "result_set": [
+            { "originaltitle": "The Three Musketeers"},
+            { "originaltitle": "The Count of Monte Cristo"}
+        ],
+        "time": 1.84,
+        "tokens": 312
+    }
+    \end{verbatim}
+    \caption{FULL JSON Output Format Example}
+\end{figure}
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{l p{0.7\textwidth}} 
+        \toprule
+        \textbf{Field Name} & \textbf{Description} \\
+        \midrule
+        \textbf{result\_set} & Denotes the structured LLM output. This must be an array of JSON objects corresponding to the query's selected columns. \\
+        \textbf{time} & Represents the total time taken by the LLM to generate the response. \\
+        \textbf{tokens} & Indicates the number of tokens processed during the interaction. \\
+        \bottomrule
+    \end{tabular}
+\end{table}
