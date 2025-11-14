@@ -287,8 +287,110 @@ The baseline execution process follows a clear pipeline, leveraging the LangChai
 After this brief introduction, let's take a closer look at each implementation:  
 
 ### 6. Baseline SQL -> Directly Prompting the LLM using a SQL query.
+This module extends the baseline framework to evaluate the reasoning abilities of LLMs when prompted directly with **SQL statements** instead of natural language questions.  
+The main goal is to verify how different providers (Gemini and Watsonx) interpret SQL queries, reason over the **database schema**, and produce a structured JSON answer comparable to that obtained from NL baselines.
 
 ---
+
+#### **General Workflow**
+
+1. **Query Loading**  
+   SQL statements are automatically read from files named `queries_<dataset>.sql` using the helper `load_queries_from_folder()` located in `run_queries_to_json.py`.
+
+2. **Schema Extraction and Context Creation**  
+   For each dataset, the corresponding DuckDB database (`<dataset>.duckdb`) is opened and its schema extracted.  
+   Datasets are divided into two categories:
+   - **Internal Knowledge (IK)**: only the schema is provided as context to the LLM.
+   - **Model Context (MC)**: in addition to the schema, the raw tuples obtained by executing the SQL query are passed as contextual data.
+
+3. **Prompt Construction and Chain Execution**  
+   The module leverages the **LangChain Expression Language (LCEL)** pipeline implemented in `baseline_tools.py`, which performs:
+   - Context building (`get_db_context()`),
+   - Prompt template creation (system + human prompts),
+   - LLM invocation through the provider wrapper,
+   - JSON parsing and validation via `PydanticOutputParser`.
+
+4. **Result Parsing and Storage**  
+   Each model response is parsed into a unified FULL JSON format containing:
+   ```json
+   {
+     "result_set": [...],
+     "time": <seconds>,
+     "tokens": <int>
+   }
+   ``` 
+       Results are saved into a consistent directory hierarchy:  
+       `results/sql_output/<provider>/<dataset>/queryX.json`
+
+   ---
+
+   #### **Architecture and Implementation**
+
+   The SQL baseline implementation is divided into two cooperating components:
+
+   ##### **1. Generic SQL Baseline (`sql_baseline.py`)**
+
+   This is the **official, provider-agnostic** baseline used by the system when running:
+   **`python -m src.main --mode sql`**.
+
+   **Features:**
+   - Uses the `get_llm_wrapper()` factory to support both Gemini and Watsonx uniformly.
+   - Builds an LCEL chain using `build_lcel_chain()`.
+   - Invokes the LLM for each SQL query and measures latency and token usage.
+   - Parses the response using `parse_llm_response()`.
+   - Saves the results with `save_baseline_to_json()` under a structured folder hierarchy.
+   - Supports both Internal Knowledge (IK) and Model Context (MC) dataset behavior transparently.
+
+   This component ensures a unified, extensible architecture for all LLM providers.
+
+   ##### **2. Gemini-specific Baseline (`baseline_sql_gemini.py`)**
+
+   This is an alternative, Gemini-only implementation designed primarily for debugging, analysis, and prompt-engineering validation.
+
+   **Includes:**
+   - `execute_IK_baseline_sql_query_gemini()` — schema-only execution for IK datasets.
+   - `execute_MC_baseline_sql_query_gemini()` — schema + raw data execution for MC datasets.
+   - Explicit construction of system prompts, schema injection, and raw data formatting.
+   - Handling of batch executions with rate limiting to avoid 429 quota errors.
+   - JSON parsing using a dedicated Pydantic model `Response`.
+
+   ##### **Unified JSON Format**
+
+   Both implementations produce results following the same FULL JSON schema:
+
+   ```json
+   {
+      "result_set": [...],
+      "time": <seconds>,
+      "tokens": <int>
+   }
+   ```
+
+   This ensures perfect comparability across models and providers.
+
+   ---
+
+   ### Command-line Interface
+
+   The unified CLI (`src/main.py`) controls all baselines through the `--mode` parameter.
+
+   **Available modes:**
+   - `nl` → Run only the NL baseline.
+   - `sql` → Run only the SQL baseline.
+   - `both` → Run both NL and SQL baselines sequentially.
+   - `pz` → Run the Palimpzest (RAG-based) baseline.
+
+   **Examples:**
+   # Run both NL and SQL baselines on the WORLD dataset using Gemini
+   **`python -m src.main WORLD --provider gemini --mode both`**.
+
+   # Run only the SQL baseline on GEO and MOVIES using Watsonx
+   **`python -m src.main GEO MOVIES --provider watsonx --mode sql`**.
+
+   # Run the Palimpzest baseline
+   **`python -m src.main WORLD --mode pz`**.
+   
+
 
 ### 7. Baseline NL -> Directly Prompting the LLM with a NL question.
 

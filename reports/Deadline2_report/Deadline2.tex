@@ -184,35 +184,36 @@ the one adopted for the NL baseline:
 
 \subsection{Architecture and Implementation}
 
-The implementation of the Baseline SQL module is split into two main
-components, one for each provider.
+The implementation of the Baseline SQL module is organized around two complementary
+approaches:
 
-For \textbf{Google Gemini} the core logic is implemented in the
-\texttt{baseline\_sql\_gemini.py} module. The main responsibilities of this
-component are:
 \begin{itemize}
-  \item opening the DuckDB database of the selected dataset and extracting the
-  schema;
-  \item executing, in the MC case, the SQL query to obtain the raw tuples;
-  \item building the prompt by combining schema, optional raw data and the SQL
-  statement;
-  \item invoking the model and parsing the output with a Pydantic schema
-  (\texttt{Response}) that contains the \texttt{result\_set} and metadata such
-  as execution time and token usage;
-  \item writing one JSON file per query in a deterministic path that depends on
-  the provider and the dataset.
+  \item The \textbf{standard baseline} executed through \texttt{sql\_baseline.py}, which
+  integrates directly with the modular LCEL chain defined in
+  \texttt{baseline\_tools.py}. This version is the one invoked by the unified entry
+  point (\texttt{main.py}) and supports both providers (Gemini and Watsonx) through
+  the generic wrapper returned by \texttt{get\_llm\_wrapper()}.
+  It constructs a dynamic LangChain pipeline:
+  \[
+  \text{DB context} \rightarrow \text{Prompt construction} \rightarrow
+  \text{LLM invocation} \rightarrow \text{JSON parsing and saving.}
+  \]
+  Each query is executed, parsed into the common FULL JSON structure and saved by
+  \texttt{save\_baseline\_to\_json()}.
+
+  \item The \textbf{Gemini–specific baseline} implemented in
+  \texttt{baseline\_sql\_gemini.py}, used mainly for debugging and analysis of
+  prompt quality. It exposes two functions,
+  \texttt{execute\_IK\_baseline\_sql\_query\_gemini()} and
+  \texttt{execute\_MC\_baseline\_sql\_query\_gemini()}, which handle Internal
+  Knowledge (IK) and Model Context (MC) datasets respectively. These functions
+  explicitly build system and human prompts, invoke Gemini through LangChain,
+  and log latency, token usage, and parsing results.
 \end{itemize}
 
-The function \texttt{run\_sql\_baseline\_gemini()} orchestrates these steps for
-one or more datasets. If no datasets are specified on the command line, the
-selection is read from the YAML configuration (field \texttt{database.run}).
-
-For \textbf{IBM watsonx} the Baseline SQL follows the same high level
-structure. The helper \texttt{run\_sql\_baseline\_watsonx()} loads the queries,
-distinguishes between IK and MC datasets, executes the appropriate baseline
-function and finally serialises the results using the same FULL JSON format.
-In this way the two providers can be compared directly on the same evaluation
-metrics.
+For both versions, the produced output adheres to the same unified JSON schema with
+the fields \texttt{result\_set}, \texttt{time}, and \texttt{tokens}. The results are
+stored under provider–specific subfolders of the \texttt{results} directory.
 
 \subsection{Command-line Interface and Logical Flow}
 
@@ -224,8 +225,8 @@ controls the execution of both NL and SQL baselines. The script exposes:
   multiple dataset names (for example \texttt{WORLD}, \texttt{GEO},
   \texttt{MOVIES});
   \item the option \texttt{--mode}, with possible values \texttt{nl},
-  \texttt{sql} or \texttt{both}, which selects whether to run only the NL
-  baseline, only the SQL baseline or both;
+  \texttt{sql}, \texttt{both} or \texttt{pz} , which selects whether to run only the NL
+  baseline, only the SQL baseline, both or the Palimpzest baseline;
   \item the option \texttt{--provider}, with possible values \texttt{gemini}
   and \texttt{watsonx}, that can override the provider defined in the YAML
   configuration file.
