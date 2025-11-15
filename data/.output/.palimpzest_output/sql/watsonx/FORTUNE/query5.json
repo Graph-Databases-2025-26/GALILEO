@@ -1,0 +1,40 @@
+{
+    "result_set": [
+        {
+            "Rank": null,
+            "Company": "Microchip Technology",
+            "Ticker": null,
+            "Sector": "Technology",
+            "Industry": "Semiconductors and Other Electronic Components",
+            "Profitable": true,
+            "Founder_is_CEO": false,
+            "FemaleCEO": false,
+            "Growth_in_Jobs": false,
+            "Change_in_Rank": null,
+            "Gained_in_Rank": false,
+            "Dropped_in_Rank": false,
+            "Newcomer_to_the_Fortune500": false,
+            "Global500": false,
+            "Worlds_Most_Admired_Companies": false,
+            "Best_Companies_to_Work_For": false,
+            "Number_of_employees": 22600,
+            "MarketCap_March28_M": 48.4,
+            "Revenues_M": 8.4,
+            "RevenuePercentChange": null,
+            "Profits_M": 2.2,
+            "ProfitsPercentChange": null,
+            "Assets_M": 18.988,
+            "CEO": "Ganesh Moorthy",
+            "Country": null,
+            "HeadquartersCity": "Chandler",
+            "HeadquartersState": "Arizona",
+            "Website": "https://www.microchip.com",
+            "CompanyType": "Public",
+            "Footnote": null,
+            "MarketCap_Updated_M": null,
+            "Updated": null
+        }
+    ],
+    "time": 52.537,
+    "tokens": 367
+}

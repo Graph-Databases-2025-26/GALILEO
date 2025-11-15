@@ -23,7 +23,6 @@ def load_queries_from_folder(folder_path: str):
             for q in content.split(";"):
                 q = q.strip()
                 if q:  # Skip empty strings
-                    #print(f"Query: {q}")
                     queries.append((os.path.basename(file_path), q))
 
     logger.info(f"Found {len(queries)} queries in {folder_path} (pattern: queries_*.sql)")
@@ -67,7 +66,6 @@ def execute_queries_and_save_json(con, queries, output_dir):
     logger.info(f"Saving query results to → {output_dir}")
 
     for i, (filename, query) in enumerate(queries, start=1):
-        #print(f"\n  Executing query {i} from file {filename}")
         try:
             t0 = time.time()
             result = con.execute(query)

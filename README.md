@@ -133,17 +133,18 @@ python setup_project.py
 
 The `main.py` script accepts parameters to specify which datasets to process.
 
-| Environment | Command Format | Example |
-| :--- | :--- | :--- |
-| **LINUX / macOS** | `python setup_project.py && .venv/bin/python -m src.main <datasets>` | `... src.main world flight-2 presidents` |
-| **WINDOWS (Bash/IDE Terminal)** | `python setup_project.py; .venv\Scripts\python -m src.main <datasets>` | `... src.main GEO MOVIES` |
-| **WINDOWS (Native CMD)** | `python setup_project.py && .venv\Scripts\python -m src.main <datasets>` | `... src.main world flight-2 presidents` |
+| Environment | Command Format                                                                           | Example                                                                |
+| :--- |:-----------------------------------------------------------------------------------------|:-----------------------------------------------------------------------|
+| **LINUX / macOS** | `python setup_project.py && .venv/bin/python -m src.main <datasets> --mode --provider`   | `... src.main world flight-2 presidents --mode sql --provider watsonx` |
+| **WINDOWS (Bash/IDE Terminal)** | `python setup_project.py; .venv\Scripts\python -m src.main <datasets> --mode --provider` | `... src.main GEO MOVIES --mode sql --provider watsonx`                |
+| **WINDOWS (Native CMD)** | `python setup_project.py && .venv\Scripts\python -m src.main <datasets> --mode --provider`                | `... src.main world flight-2 presidents --mode sql --provider watsonx`                              |
 
 #### Dataset Parameters
 The command line **has priority** over the configuration file.
 
 * **Process all datasets**: `.venv\Scripts\python -m src.main ALL`
 * **Process specific datasets**: `.venv\Scripts\python -m src.main GEO MOVIES FLIGHT-4`
+* **Process baselines** you can choose the baseline and the provider by means the `--mode` and `--provider` parameter (see the Command-line Interface (CLI): section below).
 * **Configuration Fallback**: If no arguments are provided, the script uses the datasets defined in `config/config.yaml`.
 
 ---
@@ -178,7 +179,7 @@ Both baselines output a unified **FULL JSON format** for perfect comparability:
 
 ```json
 {
-  "result_set": [...],
+  "result_set": ["..."],
   "time": "<seconds>",
   "tokens": "<int>"
 }
@@ -206,25 +207,29 @@ This baseline implements a **Retrieval-Augmented Generation (RAG)** pipeline to 
 
 The unified CLI (`src/main.py`) controls all baseline execution modes through the `--mode` parameter.
 
-| Mode | Description | Baselines Run |
-| :--- | :--- | :--- |
-| `nl` | Run only the Natural Language baseline. | NL |
-| `sql` | Run only the SQL baseline. | SQL |
-| `both` | Run both NL and SQL baselines sequentially. | NL, SQL |
-| `pz` | Run the Palimpzest (RAG-based) baseline. | Palimpzest |
-
+| Mode    | Description                                                            | Baselines Run |
+|:--------|:-----------------------------------------------------------------------| :--- |
+| `nl`    | Run only the Natural Language baseline.                                | NL |
+| `sql`   | Run only the SQL baseline.                                             | SQL |
+| `both`  | Run both NL and SQL baselines sequentially.                            | NL, SQL |
+| `pznl`  | Run the Palimpzest (RAG-based) baseline with natural language prompts. | Palimpzest |
+| `pzsql` | Run the Palimpzest (RAG-based) baseline with sql queries.              | Palimpzest |
 **Examples:**
 
 ```sh
 # Run both NL and SQL baselines on the WORLD dataset using Gemini
-python -m src.main WORLD --provider gemini --mode both
+python -m src.main WORLD --mode both --provider gemini 
 
 # Run only the SQL baseline on GEO and MOVIES using Watsonx
-python -m src.main GEO MOVIES --provider watsonx --mode sql
+python -m src.main GEO MOVIES --mode sql --provider watsonx 
 
-# Run the Palimpzest baseline
-python -m src.main WORLD --mode pz
+# Run only the NL baseline on PRESIDENTS and WORLD using Watsonx
+python -m src.main PRESIDENTS WORLD --mode nl --provider watsonx 
+
+# Run the Palimpzest baseline with NL prompts on the WORLD dataset
+python -m src.main WORLD --mode pznl
 ```
+**IMPORTANT**: For what concerns the Palimpzest baseline (pzsql and pznl modes), you cannot run  it with gemini provider due to its "free-plan" limitations for the number of requests per minute. So you don't need to use the `--provider` parameter in this case.
 
 ---
 

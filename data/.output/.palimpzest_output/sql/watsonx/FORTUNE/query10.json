@@ -1,0 +1,24 @@
+{
+    "result_set": [
+        {
+            "Company": "Visa",
+            "HeadquartersState": "California",
+            "Ticker": "V",
+            "CEO": "Ryan McInerney",
+            "Founder_is_CEO": null,
+            "FemaleCEO": false,
+            "Number_of_employees": null
+        },
+        {
+            "Company": "Block",
+            "HeadquartersState": "California",
+            "Ticker": "SQ",
+            "CEO": "Jack Dorsey",
+            "Founder_is_CEO": null,
+            "FemaleCEO": false,
+            "Number_of_employees": 12985
+        }
+    ],
+    "time": 51.537,
+    "tokens": 159
+}

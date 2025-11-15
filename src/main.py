@@ -34,7 +34,7 @@ def parse_args():
      )
      parser.add_argument(
          "--mode",
-         choices=["nl", "sql", "both","pz"],
+         choices=["nl", "sql", "both","pzsql", "pznl"],
          default="sql",
          help="Which baseline(s) to run.",
      )
@@ -118,45 +118,90 @@ def main():
     
     config = Config_Loader().get_config()
     args = parse_args()
-    log_init()
+    #log_init()
 
     if args.provider:
+        if args.mode in ("pzsql", "pznl") and args.provider == "gemini":
+            LOG.error("You cannot run Palimpzest with Gemini; these modes require WatsonX.")
+            return
         config.llm_provider = args.provider.lower()
 
 
     datasets = [d.upper() for d in args.datasets] if args.datasets else \
         [d.upper() for d in get_dataset_selection(config.database.run)]
 
+    #track which types of baselines were run (handling "both" mode)
+    run_types = set()
+
     for dataset in datasets:
         dataset_path = DATA_DIR / dataset
         LOG.info(f"=== Processing dataset: {dataset} ===")
+        nl_queries = load_nl_queries_from_txt(dataset_path)
+        queries = load_queries_from_folder(dataset_path)
 
         if args.mode =="sql":
-            queries = load_queries_from_folder(dataset_path)
             LOG.info(f"Loaded {len(queries)} queries for dataset {dataset} in {args.mode} mode")
             if dataset in IK_DATASETS:
                 execute_baseline_sql(config, dataset, queries, args.mode.upper())
+                run_types.add("SQL")
 
         elif args.mode == "nl":
-            nl_queries = load_nl_queries_from_txt(dataset_path)
             LOG.info(f"Loaded {len(nl_queries)} queries for dataset {dataset} in {args.mode} mode")
             if dataset in IK_DATASETS:
                 llm_interaction_nl_baseline(config, dataset, nl_queries, args.mode.upper())
+                run_types.add("NL")
+
+        elif args.mode == "pznl":
+            LOG.info(f"Loaded {len(nl_queries)} queries for dataset {dataset} in {args.mode} mode")
+            if dataset in MC_DATASETS:
+                llm_interaction_nl_baseline(config, dataset, nl_queries, args.mode.upper())
+                run_types.add("PZNL")
+
+        elif args.mode == "pzsql":
+            LOG.info(f"Loaded {len(queries)} queries for dataset {dataset} in {args.mode} mode")
+            if dataset in MC_DATASETS:
+                llm_interaction_nl_baseline(config, dataset, nl_queries, args.mode.upper())
+                run_types.add("PZSQL")
+
+        elif args.mode == "both":
+            LOG.info(f"Mode both: deciding pipelines for dataset {dataset}")
+            # IK datasets -> run SQL + NL
+            if dataset in IK_DATASETS:
+                LOG.info(f"[BOTH] Running SQL and NL baselines for IK dataset {dataset}")
+                execute_baseline_sql(config, dataset, queries, "SQL")
+                run_types.add("SQL")
+                llm_interaction_nl_baseline(config, dataset, nl_queries, "NL")
+                run_types.add("NL")
+            # MC datasets -> run PZSQL + PZNL
+            elif dataset in MC_DATASETS:
+                LOG.info(f"[BOTH] Running PZSQL and PZNL baselines for MC dataset {dataset}")
+                llm_interaction_nl_baseline(config, dataset, queries, "PZSQL")
+                run_types.add("PZSQL")
+                llm_interaction_nl_baseline(config, dataset, nl_queries, "PZNL")
+                run_types.add("PZNL")
+            else:
+                LOG.warning(f"[BOTH] Dataset")
+
+    if not run_types:
+        LOG.warning("No baselines were executed; skipping evaluation.")
+        return
 
 
+    for run_type in sorted(run_types):
+        submissions_path = BASELINE_OUTPUT[run_type][config.llm_provider.upper()]
+        LOG.info(f"Evaluating submissions for baseline type {run_type}: {submissions_path}")
+        subprocess.run([
+            PY,
+            "-m",
+            "src.utils.tutor.galois_eval",
+            "--ground", GROUND_PATH,
+            "--submissions", submissions_path,
+            "--datasets", *datasets,
+            "--cell-metric similarity",
+            "--tuple-metric constraint",
+            "--format table"
+        ], check=True)
 
-    
-    subprocess.run([
-        PY,
-        "-m",
-        "src.utils.galois_eval",
-        "--ground", GROUND_PATH,
-        "--submissions", BASELINE_OUTPUT[args.mode.upper()][config.llm_provider.upper()],
-        "--datasets", *datasets,
-        "--cell-metric similarity",
-        "--tuple-metric constraint",
-        "--format table" 
-    ], check=True)
         
 if __name__ == "__main__":
     main()

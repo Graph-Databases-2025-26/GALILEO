@@ -71,6 +71,9 @@ class DatasetConfig(BaseModel):
     """Configuration specifying which datasets to run."""
     
     run: str
+
+class RAGConfig(BaseModel):
+    top_k: int
     
 class AppConfig(BaseSettings):
     """
@@ -97,6 +100,7 @@ class AppConfig(BaseSettings):
     logging: LoggingConfig
     gemini: GeminiConfig
     watsonx: WatsonxConfig
+    rag: RAGConfig
 
     def validate_provider_config_exists(self) -> 'AppConfig':
         """

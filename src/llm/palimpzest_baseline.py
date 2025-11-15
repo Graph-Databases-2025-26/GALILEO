@@ -62,7 +62,7 @@ class MarkdownRAGBackend:
             if self.vectorstore is None:
                 raise ValueError("Index has not been built yet. Call load_and_index() first.")
 
-            top_k = config.top_k
+            top_k = config.rag.top_k
             results = self.vectorstore.similarity_search(query, k=top_k)
             return results
 

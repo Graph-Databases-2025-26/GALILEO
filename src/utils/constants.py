@@ -1,11 +1,12 @@
 import os
+import re
 from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parent.parent.parent
 VENV = ROOT / ".venv"
 
-CONFIG_PATH = ROOT / "config" / "config.yaml"
+CONFIG_PATH = ROOT / "config.yaml"
 
 DATA_DIR = ROOT / "data"
 
@@ -21,6 +22,9 @@ PZ_BLINE_DIR = SUBMISSIONS_PATH / ".palimpzest_output"
 
 RAG_RESOURCES = DATA_DIR / "RAG"
 
+QUOTA_ERROR_REGEX = re.compile(r"quota|exceeded|ResourceExhausted|429", re.IGNORECASE)
+
+
 BASELINE_OUTPUT = {
     "SQL" : {
         "GEMINI" : SQL_BLINE_DIR / "gemini",
@@ -32,10 +36,14 @@ BASELINE_OUTPUT = {
         "WATSONX" : NL_BLINE_DIR / "watsonx"
     },
 
-    "PZ" : {
-        "GEMINI" : PZ_BLINE_DIR / "gemini",
-        "WATSONX" : PZ_BLINE_DIR / "watsonx"
-    }
+    "PZSQL" : {
+        "GEMINI" : PZ_BLINE_DIR / "sql" / "gemini",
+        "WATSONX" : PZ_BLINE_DIR / "sql" / "watsonx"
+    },
+    "PZNL" : {
+            "GEMINI" : PZ_BLINE_DIR / "nl" / "gemini",
+            "WATSONX" : PZ_BLINE_DIR / "nl" / "watsonx"
+        }
 }
 
 GROUND_PATH = DATA_DIR / ".ground_truth"
@@ -45,8 +53,6 @@ DATASETS = ["FLIGHT-2", "FLIGHT-4", "FORTUNE", "GEO", "MOVIES", "PREMIER", "PRES
 IK_DATASETS = ["FLIGHT-2", "FLIGHT-4", "GEO", "MOVIES", "PRESIDENTS", "WORLD"]
 
 MC_DATASETS = ["FORTUNE", "PREMIER"]
-
-PZ_DATASETS = ["FORTUNE", "PREMIER"]
 
 if(os.name == "nt"):
     PIP = VENV / "Scripts" / "pip"
@@ -82,8 +88,8 @@ SQL_IK_PROMPT = """
     }}
     5. "result_set" must be an array of JSON objects where keys match the columns selected in the query.
 
-    """ 
-    
+    """
+
 NL_IK_PROMPT = """
     You are an AI assistant that answers questions. Your ONLY task is to generate a JSON response that answers the question in natural language based on your internal knowledge and the structure of the database schema provided to you.
 
@@ -105,12 +111,12 @@ NL_IK_PROMPT = """
     }}
     5. "result_set" must be an array of JSON objects where keys match the columns selected in the query.
 
-    """    
+    """
 
 PZ_PROMPT = """
     You are an expert assistant in in-context data retrieval. 
     Your task is to answer the user's 'query' based on the provided 'raw_data'. 
-    The 'raw_data' represents 50 pre-selected records (simulating the 50 most relevant segments) from the database. 
+    The 'raw_data' represents 50 pre-selected records (simulating the 50 most relevant segments) from the resource. 
     **Ignore your internal knowledge and use ONLY the information present in raw_data and schema_info to formulate the 'result_set' in JSON format.** 
     
     CONTEXTUAL DATA:
@@ -143,15 +149,16 @@ PZ_PROMPT = """
 
 
 SYSTEM_PROMPT = {
-    "NL": NL_IK_PROMPT,    
+    "NL": NL_IK_PROMPT,
     "SQL": SQL_IK_PROMPT,
-    "PZ": PZ_PROMPT
+    "PZSQL": PZ_PROMPT,
+    "PZNL": PZ_PROMPT
 }
 
     
 HUMAN_PROMPT = {
     "SQL": "Now process this SQL query: {query}",
     "NL" : "Now process this question: {query}",
-    "PZ" : "Now process this question: {query}"
+    "PZNL" : "Now process this question: {query}",
+    "PZSQL" : "Now process this SQL query: {query}"
 }
-    

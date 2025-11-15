@@ -1,0 +1,18 @@
+{
+    "result_set": [
+        {
+            "HeadquartersCity": "Long Island City"
+        },
+        {
+            "HeadquartersCity": "Fort Worth"
+        },
+        {
+            "HeadquartersCity": "Englewood"
+        },
+        {
+            "HeadquartersCity": "Midland"
+        }
+    ],
+    "time": 50.02,
+    "tokens": 80
+}

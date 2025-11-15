@@ -120,3 +120,9 @@ All systems are tested on the datasets described in Table 2 of the previous proj
     \end{minipage}
 \end{figure}
 
+Some comments about the results in the tables above:
+
+The analysis of results across different runs reveals that quality and cost metrics are intrinsically linked to the precision of the underlying Large Language Model (LLM). An LLM's performance can fluctuate, impacting key metrics.
+A trivial factor is the LLM's tendency to generate values or parameter names that are semantically similar but syntactically different from the expected attribute names or those reported in the ground truth JSON files, this discrepancy, even if minor, can lead to false negatives if metrics rely on exact equality comparisons. 
+
+ Finally, variability is reflected in costs: the number of tokens consumed (\#TOKENS(M)) and the average execution time (AVG-TIME (s)) can vary significantly across providers, depending on different internal prompting strategies and context limitations.

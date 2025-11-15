@@ -401,15 +401,10 @@ def tuple_similarity_constraint(gt_rows, pr_rows) -> float:
 
 # -------------- Aggregation & CLI --------------
 def fmt(x: float) -> str: return f"{x:.3f}"
-
-def fmt_int(x: Optional[float]) -> str:
+    
+def fmt_millions(x: Optional[float]) -> str:
     if x is None: return ""
-    try:
-        if abs(x - round(x)) < 1e-9:
-            return str(int(round(x)))
-        return f"{x:.0f}"
-    except Exception:
-        return ""
+    return f"{(x/1_000_000):.3f}"
 
 def print_table(rows: List[List[str]], headers: List[str]) -> None:
     widths = [len(h) for h in headers]
@@ -552,7 +547,7 @@ def main():
     if not gt_dsets:
         print("No datasets found under --ground", file=sys.stderr); sys.exit(2)
 
-    headers = ["Dataset","F1-Cell","Cardinality","Tuple Constr.","AVG-Score","#Queries","#Tokens","Avg Time (s)"]
+    headers = ["Dataset","F1-Cell","Cardinality","Tuple Constr.","AVG-Score","#Queries","#Tokens (M)","Avg Time (s)"]
     rows: List[List[str]] = []
     jout: Dict[str, Dict[str, Any]] = {}
 
@@ -609,7 +604,7 @@ def main():
             }
             rows.append([
                 dname, fmt(m["F1"]), fmt(m["Card"]), fmt(m["TCon"]), fmt(m["AVG"]), str(m["n"]),
-                fmt_int(d_tokens), (fmt(d_avg_time) if d_avg_time is not None else "")
+                fmt_millions(d_tokens), (fmt(d_avg_time) if d_avg_time is not None else "")
             ])
 
     # ---- OUTPUT ----
@@ -639,14 +634,14 @@ def main():
             w.writerow([
                 "ALL", fmt(overall["F1"]), fmt(overall["Card"]), fmt(overall["TCon"]),
                 fmt(overall["AVG"]), str(overall["n"]),
-                fmt_int(overall_tokens), (fmt(overall_avg_time) if overall_avg_time is not None else "")
+                fmt_millions(overall_tokens), (fmt(overall_avg_time) if overall_avg_time is not None else "")
             ]); return
         elif args.format == "tex":
             print_latex_table(
                 [[
                     "ALL", fmt(overall["F1"]), fmt(overall["Card"]), fmt(overall["TCon"]),
                     fmt(overall["AVG"]), str(overall["n"]),
-                    fmt_int(overall_tokens), (fmt(overall_avg_time) if overall_avg_time is not None else "")
+                    fmt_millions(overall_tokens), (fmt(overall_avg_time) if overall_avg_time is not None else "")
                 ]],
                 headers, caption=args.latex_caption, label=args.latex_label, booktabs=args.latex_booktabs
             ); return
@@ -654,7 +649,7 @@ def main():
             print_table([[
                 "ALL", fmt(overall["F1"]), fmt(overall["Card"]), fmt(overall["TCon"]),
                 fmt(overall["AVG"]), str(overall["n"]),
-                fmt_int(overall_tokens), (fmt(overall_avg_time) if overall_avg_time is not None else "")
+                fmt_millions(overall_tokens), (fmt(overall_avg_time) if overall_avg_time is not None else "")
             ]], headers); return
     else:
         if args.format == "json":

@@ -2,6 +2,7 @@ from time import time
 from dotenv import load_dotenv
 from src.llm.baseline_tools import parse_llm_response, save_baseline_to_json, build_lcel_chain
 from src.llm.llm_factory import get_llm_wrapper
+from src.utils.invoke_with_backoff import invoke_with_backoff
 #from src.main import parse_args
 from ..utils.constants import *
 from ..db.run_queries_to_json import load_queries_from_folder, load_nl_queries_from_txt
@@ -43,7 +44,8 @@ def llm_interaction_nl_baseline(config, database: str, prompts: list[str], b_typ
         t_start = time()
         try:
 
-            raw_response = chain.invoke({"database": database.lower(), "b_type": b_type, "query": sql_query, "prompt":prompt})
+            payload = {"database": database.lower(), "b_type": b_type, "query": sql_query, "prompt":prompt}
+            raw_response = invoke_with_backoff(chain, payload)
 
             t_end = time()
 
@@ -70,14 +72,14 @@ if __name__ == "__main__":
         else:
             LOG.debug(f"You need to specify a valid dataset: for the NL &SQL baselines you need to specify one or more of these datasets: {IK_DATASETS}, and for testing the Palimpzest: {MC_DATASETS}")
 
-        logger.info(f"Checking folder: {d}")
+        LOG.info(f"Checking folder: {d}")
         if d in DATASETS:
             dataset_path = os.path.join(DATA_DIR, d)
             print(dataset_path)
             duckdb_path = os.path.join(DATA_DIR, d, f"{d.lower()}.duckdb")
             if not os.path.isdir(dataset_path):
                 continue
-            logger.info(f"Processing dataset: {d}")
+            LOG.info(f"Processing dataset: {d}")
 
             nl_queries = load_nl_queries_from_txt(dataset_path)
             llm_interaction_nl_baseline(config, d, nl_queries, b_type)

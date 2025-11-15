@@ -1,3 +1,5 @@
+import json
+
 from src.utils import LOG, SYSTEM_PROMPT, HUMAN_PROMPT, BASELINE_OUTPUT, RAG_RESOURCES
 from src.db import get_duckdb_path
 
@@ -7,11 +9,12 @@ from .palimpzest_baseline import pz_context
 from langchain_core.output_parsers import PydanticOutputParser
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.runnables import RunnableLambda
-
-from typing import List, Dict, Union, Any
+from typing import List, Dict, Union, Any, Optional
 from pydantic import BaseModel, Field
+from .palimpzest_baseline import pz_context
+from ..db.duckdb_db_graphdb import get_duckdb_path
+from ..utils.constants import RAG_RESOURCES
 
-import json
 
 class Response(BaseModel):
     """
@@ -19,7 +22,7 @@ class Response(BaseModel):
 
     The model expects a single key, 'result_set', which is a list of dictionaries representing database records.
     """
-    
+
     result_set: List[Dict[str, Union[str, int, float, Any]]] = Field( 
         default_factory=list,
         description="List of result records, each as a {column_name: value} dict where values can be mixed types."
@@ -40,7 +43,7 @@ def parse_llm_response(raw_response, time: float, llm_wrapper: LLMBaseWrapper) -
     Returns:
         dict: A complete structured dictionary containing the 'result_set', time' (rounded to 3 decimal places), and 'tokens' metadata.
     """
-    
+
     parser = PydanticOutputParser(pydantic_object=Response)
     
     watsonx_rsp = parser.parse(raw_response.content)
@@ -68,9 +71,9 @@ def save_baseline_to_json(dataset: str, baseline: list[dict], llm_wrapper: LLMBa
         dataset: The name of the dataset being processed (e.g., "FLIGHT-2").
         baseline: A list of dictionaries, where each dictionary is the structured result for a single query.
         llm_wrapper: The wrapper for the LLM, used to determine the provider name for the output path.
-        b_type: The type of baseline run ("SQL", "NL", or "PZ").
+        b_type: The type of baseline run ("SQL", "NL", "PZSQL" or "PZNL").
     """
-    
+
     bline_folder = BASELINE_OUTPUT[b_type][llm_wrapper.get_provider_name().upper()]/dataset
     print(bline_folder)
     
@@ -86,34 +89,35 @@ def get_db_context(input_d: dict) -> dict:
     Retrieves the necessary database context (schema info and, for PZ, raw data) required for the LLM prompt.
 
     Args:
-        input_d: A dictionary containing execution parameters, must include "database", "query", and "b_type". 
+        input_d: A dictionary containing execution parameters, must include "database", "query", and "b_type".
         Optionally includes "prompt".
 
     Returns:
         dict: A dictionary containing the "schema_info", the "query" (or "prompt" for NL), and optionally "raw_type" (for PZ baseline).
     """
-    
+
     database = input_d["database"]
-    b_query = {"PZ": input_d["query"] , "SQL": input_d["query"], "NL": input_d.get("prompt", "")}
-    
+    b_query = {"PZSQL": input_d["query"] , "PZNL":input_d.get("prompt",""), "SQL": input_d["query"], "NL": input_d.get("prompt","")}
+
     db = get_duckdb_path(database)
     db_schema = db.get_table_info()
-    
-    #NL/SQL IMPLEMENTATION
-    output = {
-        "schema_info": db_schema,
-        "query": b_query[input_d["b_type"]]
-    }
-    
-    #PALIMPZEST IMPLEMENTATION
-    if input_d["b_type"] == "PZ":
-        rag_path = RAG_RESOURCES / database.upper()
-        
-        output = pz_context(input_d ,db_schema ,rag_path, input_d["prompt"] )
-        
-    return output    
 
-        
+    #NL/SQL IMPLEMENTATION
+    if input_d["b_type"] == "NL" or input_d["b_type"] == "SQL" :
+        output = {
+            "schema_info": db_schema,
+            "query": b_query[input_d["b_type"]]
+        }
+
+    #PALIMPZEST IMPLEMENTATION
+    if input_d["b_type"] == "PZSQL" or input_d["b_type"] == "PZNL" :
+        rag_path = RAG_RESOURCES / database.upper()
+
+        output = pz_context(input_d ,db_schema ,rag_path, b_query[input_d["b_type"]] )
+
+    return output
+
+
 def build_lcel_chain(llm_model: LLMBaseWrapper, b_type: str):
     """
     Constructs a LangChain Expression Language (LCEL) chain for the LLM task.
@@ -139,13 +143,12 @@ def build_lcel_chain(llm_model: LLMBaseWrapper, b_type: str):
     Syst_Prompt = SYSTEM_PROMPT[b_type]
     Hm_Prompt = HUMAN_PROMPT[b_type]
 
-    
     FULL_PROMPT = ChatPromptTemplate.from_messages([
         ("system", Syst_Prompt),
         ("human", Hm_Prompt)
     ]).partial(format_instructions=format_instructions)
-    
     LOG.debug(f"FULL Prompt: \n{FULL_PROMPT}")
     
     return  db | FULL_PROMPT  | llm_model.get_llm_instance()
+
 

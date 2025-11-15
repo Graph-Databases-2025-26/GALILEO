@@ -1,0 +1,18 @@
+{
+    "result_set": [
+        {
+            "Company": "Target",
+            "HeadquartersState": "Minnesota"
+        },
+        {
+            "Company": "CDW",
+            "HeadquartersState": "Illinois"
+        },
+        {
+            "Company": "Comcast",
+            "HeadquartersState": "Pennsylvania"
+        }
+    ],
+    "time": 51.4,
+    "tokens": 88
+}
