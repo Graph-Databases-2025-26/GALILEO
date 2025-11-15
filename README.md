@@ -119,7 +119,7 @@ GEMINI_ENDPOINT=api.x.ai
 
 ## VI. Execution Commands
 
-The main entry points are **`setup_project.py`** and **`main.py`** located in the root directory.
+The main entry points are **`setup_project.py`** and **`main.py`** located in the **`root`** directory and **`/src`** respectively.
 
 ### 1. Project Setup (First Run Only)
 
@@ -226,8 +226,8 @@ python -m src.main GEO MOVIES --mode sql --provider watsonx
 # Run only the NL baseline on PRESIDENTS and WORLD using Watsonx
 python -m src.main PRESIDENTS WORLD --mode nl --provider watsonx 
 
-# Run the Palimpzest baseline with NL prompts on the WORLD dataset
-python -m src.main WORLD --mode pznl
+# Run the Palimpzest baseline with NL prompts on the PREMIER dataset
+python -m src.main PREMIER --mode pznl
 ```
 **IMPORTANT**: For what concerns the Palimpzest baseline (pzsql and pznl modes), you cannot run  it with gemini provider due to its "free-plan" limitations for the number of requests per minute. So you don't need to use the `--provider` parameter in this case.
 

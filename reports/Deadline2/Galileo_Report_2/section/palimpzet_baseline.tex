@@ -11,6 +11,13 @@ For what concerns the resources usage (CPU, GPU) we used only the CPU for ensuri
 Actually the most of the times, the baseline was tested on a machine with a very low GPU power (a Laptop with a integrated GPU, not a dedicated one); furthermore when we try to run the baseline using also the GPU the running time needed to download the dedicated Python Library for GPU support was much higher than the time needed to download the CPU ones, so finally we decided only to use the latter.
 For the same time saving reasons we used a light sentence transformer model (\textbf{sentence-transformers/all-MiniLM-L6-v2}) for the sentence embeddings generation, in fact it has a good trade-off between the running time speed and the semantic precision and also avoids the overhead of large transformer models while still maintaining strong semantics representations.
 \\Since our implementation needs to be easily deployable and testable on different machines, we decided to avoid heavy models that require high computational resources.
+\\However as you can infer, there are some differences between our architecture and the full Palimpzest system presented in the reference Galois paper:
+The core difference lies in the execution methodology: \textbf{Single-Step RAG} vs. \textbf{Multi-Step Procedural Optimization}.
+Summarizing our baseline utilizes a straightforward, single-step RAG pipeline built using a LangChain Expression Language (LCEL) chain. This design focuses on cost efficiency and establishing a floor on quality for context-augmented retrieval,
+in the other hand the Palimpzest system in the GALOIS paper is a sophisticated, highly-optimized AI workload framework based on an ETL-like (Extract, Transform, Load) procedural architecture.
+
+Our approach should therefore be interpreted as the most cost-efficient, baseline implementation of RAG augmentation, explicitly contrasting with the cost-intensive, quality-maximizing procedural methodology of the full Palimpzest framework.
+
 \subsection{Overall Architecture}
 Generally the baseline consists of three main components:
 \begin{itemize}
@@ -45,11 +52,11 @@ We would like to emphasize that the reason we used the text files available in t
 \centering
 \begin{tabular}{lcccc}
 \toprule
-\textbf{Metric} & \textbf{NL} & \textbf{SQL}  \\
+\textbf{Metric} & \textbf{NL} & \textbf{SQL} & \textbf{PZ}  \\
 \midrule
 
-AVG-SCORE & 0.328 & 0.347  \\
-\#TOKENS(M) & 0.003 & 0.003 \\
+AVG-SCORE & 0.328 & 0.347 & 0.354 \\
+\#TOKENS(M) & 0.003 & 0.003 & 0.003\\
 
 \bottomrule
 \end{tabular}

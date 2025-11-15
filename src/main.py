@@ -127,8 +127,9 @@ def main():
         config.llm_provider = args.provider.lower()
 
 
-    datasets = [d.upper() for d in args.datasets] if args.datasets else \
-        [d.upper() for d in get_dataset_selection(config.database.run)]
+    datasets = [d.upper() for d in get_dataset_selection(config.database.run)]
+    #datasets = [d.upper() for d in args.datasets] if args.datasets else \
+        #[d.upper() for d in get_dataset_selection(config.database.run)]
 
     #track which types of baselines were run (handling "both" mode)
     run_types = set()
