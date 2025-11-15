@@ -1,5 +1,5 @@
+from src.utils import ERR_UNSUPPORTED_PROVIDER
 from .llm_wrappers import LLMBaseWrapper, GeminiWrapper, WatsonxWrapper
-from src.utils import LOG, ERR_UNSUPPORTED_PROVIDER
 
 PROVIDER_MAP = {
     "gemini": GeminiWrapper,

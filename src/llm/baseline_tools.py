@@ -1,16 +1,12 @@
 import json
-
-from src.utils import LOG, SYSTEM_PROMPT, HUMAN_PROMPT, BASELINE_OUTPUT, RAG_RESOURCES
-from src.db import get_duckdb_path
-
-from .llm_factory import LLMBaseWrapper
-from .palimpzest_baseline import pz_context
-
+from typing import List, Dict, Union, Any
 from langchain_core.output_parsers import PydanticOutputParser
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.runnables import RunnableLambda
-from typing import List, Dict, Union, Any, Optional
 from pydantic import BaseModel, Field
+
+from src.utils import LOG, SYSTEM_PROMPT, HUMAN_PROMPT, BASELINE_OUTPUT
+from .llm_factory import LLMBaseWrapper
 from .palimpzest_baseline import pz_context
 from ..db.duckdb_db_graphdb import get_duckdb_path
 from ..utils.constants import RAG_RESOURCES

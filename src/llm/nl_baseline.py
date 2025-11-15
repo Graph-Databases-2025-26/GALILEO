@@ -1,17 +1,14 @@
 from time import time
-from dotenv import load_dotenv
+
+from src.config import Config_Loader
 from src.llm.baseline_tools import parse_llm_response, save_baseline_to_json, build_lcel_chain
 from src.llm.llm_factory import get_llm_wrapper
 from src.utils.invoke_with_backoff import invoke_with_backoff
-#from src.main import parse_args
-from ..utils.constants import *
 from ..db.run_queries_to_json import load_queries_from_folder, load_nl_queries_from_txt
-from src.config import Config_Loader
-from ..utils.main_tools import get_dataset_selection
+# from src.main import parse_args
+from ..utils.constants import *
 from ..utils.logging_config import logger, LOG
-from src.utils.constants import DATA_DIR, DATASETS
-
-
+from ..utils.main_tools import get_dataset_selection
 
 """
     The goal of this script is to query the LLM model with interrogations in Natural Language

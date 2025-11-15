@@ -4,7 +4,7 @@ from src.utils.constants import *
 
 def invoke_with_backoff(chain, payload, max_retries=5, base_delay=6):
     """
-    Esegue chain.invoke() con exponential backoff se la risposta contiene errori di quota.
+    Execute chain.invoke() with exponential backoff if the answers contains quota errors.
     """
     for attempt in range(1, max_retries + 1):
         try:
