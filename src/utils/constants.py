@@ -109,7 +109,7 @@ NL_IK_PROMPT = """
         {{ "<column_name_1>": "<value_1>", ... }}
         ]
     }}
-    5. "result_set" must be an array of JSON objects where keys match the columns selected in the query.
+    5. "result_set" must be an array of JSON objects where keys match the columns of the database schema involved in the prompt .
 
     """
 

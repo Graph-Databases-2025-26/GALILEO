@@ -1,7 +1,10 @@
+import sys
+import warnings
+
 from loguru import logger
+
 from .constants import LOGS_DIR
-from pathlib import Path
-import sys, warnings
+
 
 def log_init() -> None:
     """

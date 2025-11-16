@@ -52,11 +52,11 @@ We would like to emphasize that the reason we used the text files available in t
 \centering
 \begin{tabular}{lcccc}
 \toprule
-\textbf{Metric} & \textbf{NL} & \textbf{SQL} & \textbf{PZ}  \\
+\textbf{Metric} & \textbf{NL} & \textbf{SQL}  \\
 \midrule
 
-AVG-SCORE & 0.328 & 0.347 & 0.354 \\
-\#TOKENS(M) & 0.003 & 0.003 & 0.003\\
+AVG-SCORE & 0.328 & 0.347  \\
+\#TOKENS(M) & 0.003 & 0.003 \\
 
 \bottomrule
 \end{tabular}
@@ -65,6 +65,6 @@ AVG-SCORE & 0.328 & 0.347 & 0.354 \\
 \end{table}
 
 Some considerations:
-The baseline shows modest but consistent quality scores for both Natural Language (NL) and SQL inputs
+The baseline shows modest but consistent quality scores for both Natural Language (NL) and SQL inputs, showing a consistent performance for his RAG purpose.
 Trivially performs marginally better when the query is supplied as a formalized SQL statement versus a less structured NL question. This aligns with the general observation that declarative SQL inputs reduce ambiguity for the LLM, even in an in-context RAG setting.
 In summary, the RAG-based Palimpzest implementation delivers a minimal-cost solution, but its current quality performance suggests there is significant scope for improvement, particularly by enhancing the prompt construction, chunk selection, or the iterative refinement steps inherent to many RAG/Palimpzest systems.

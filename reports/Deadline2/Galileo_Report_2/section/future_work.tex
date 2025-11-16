@@ -1,0 +1,18 @@
+\section{Future Work}
+For next tasks, we will consider improving and extending the actual logical and structural retrieval information process:
+In particular will focus on the integration and deployment of the GALOIS framework  to significantly improve the accuracy and efficiency of structured data retrieval. 
+This integration is crucial for addressing the limitations inherent in directly prompting Large Language Models (LLMs) with complex Natural Language (NL) or SQL queries, which often result in low precision and recall.
+
+Our implementation effort will concentrate on two main areas: \textbf{Logical Plan Optimization
+ } and \textbf{Physical Operator Design}.
+ \begin{itemize}
+    \item \textbf{Logical Plan Optimization}: We will implement the \textbf{Filter-LLMScan} operator, which allows selection conditions to be pushed down directly to the LLM. This is a critical step because the choice of which conditions to push is complex; pushing down all conditions can reduce token cost but often degrades result quality due to the LLM's difficulty in processing complex requests.
+    \item \textbf{Physical Operator Design}: We will implement and evaluate both alternative physical scan operators supported by GALOIS:
+    \begin{itemize}
+        \item \textbf{Table-Scan}: A single prompt requests the LLM to return the entire result set in a structured JSON format. This approach is token-efficient but may produce lower quality results.
+        \item \textbf{Key-Scan}: This two-step operator first retrieves the key values for the relevant tuples and then iteratively queries the LLM to populate the remaining attribute values for each key.
+    \end{itemize}
+ \end{itemize}
+ Summarizing the meaning: to decide between these two strategies described above, we will incorporate GALOIS's confidence threshold $(\tau)$ mechanism16. By computing the confidence of the LLM in retrieving key values, we can select Key-Scan when confidence is high (improving quality) or revert to Table-Scan when confidence is low (for more reliable, albeit potentially less complete, data retrieval).
+
+Furthermore for what concerns the Palimpzest baseline, the system metrics reported in the Palimpzest section lacks a comparison with SQL  or NL metrics, since in the NL and SQL baselines we have take into account only the IK datasets and not the MC ones, and this will be a future task to be done. 
