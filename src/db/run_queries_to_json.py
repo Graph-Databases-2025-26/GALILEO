@@ -3,7 +3,7 @@ import re
 from pathlib import Path
 from .db_connection import connect_to_duckdb
 from src.utils import DATA_DIR, SUBMISSIONS_PATH
-from src.utils.logging_config import logger
+from src.utils.logging_config import LOG
 
 
 os.makedirs(SUBMISSIONS_PATH, exist_ok=True)
@@ -25,7 +25,7 @@ def load_queries_from_folder(folder_path: str):
                 if q:  # Skip empty strings
                     queries.append((os.path.basename(file_path), q))
 
-    logger.info(f"Found {len(queries)} queries in {folder_path} (pattern: queries_*.sql)")
+    LOG.info(f"Found {len(queries)} queries in {folder_path} (pattern: queries_*.sql)")
     return queries
 
 
@@ -37,7 +37,7 @@ def load_nl_queries_from_txt(dataset_path: str):
     """
     txt_files = sorted(glob.glob(os.path.join(dataset_path, "queries_*.txt")))
     if not txt_files:
-        logger.warning(f"Nessun file .txt trovato in {dataset_path}")
+        LOG.warning(f"Nessun file .txt trovato in {dataset_path}")
         return []
 
     queries = []
@@ -52,7 +52,7 @@ def load_nl_queries_from_txt(dataset_path: str):
             if q:
                 queries.append(q)
 
-        logger.info(f"Caricate {len(queries)} query NL da {os.path.basename(file_path)}")
+        LOG.info(f"Load {len(queries)}  NL query from {os.path.basename(file_path)}")
 
     return queries
 
@@ -63,7 +63,7 @@ def execute_queries_and_save_json(con, queries, output_dir):
     """
     output_dir = str(output_dir)
     os.makedirs(output_dir, exist_ok=True)
-    logger.info(f"Saving query results to → {output_dir}")
+    LOG.info(f"Saving query results to → {output_dir}")
 
     for i, (filename, query) in enumerate(queries, start=1):
         try:
@@ -91,12 +91,12 @@ def execute_queries_and_save_json(con, queries, output_dir):
                 json.dump(data, f, indent=2, ensure_ascii=False)
 
             elapsed = (time.time() - t0) * 1000.0
-            logger.info(
+            LOG.info(
                 f"[{filename}] query{i} → {json_name} | rows={len(data)} | latency_ms={elapsed:.1f}"
             )
 
         except Exception as e:
-            logger.error(f"Error executing query from {filename}: {e}")
+            LOG.error(f"Error executing query from {filename}: {e}")
         
     print("\n")
 
@@ -111,22 +111,22 @@ def run_queries_to_json(dataset_name: str) -> None:
         complete_path = SUBMISSIONS_PATH / f"{dataset_name}"
         execute_queries_and_save_json(con, qrs, complete_path)
     else:
-        logger.warning(f"No queries found for dataset '{dataset_name}' in {data_dir}")
+        LOG.warning(f"No queries found for dataset '{dataset_name}' in {data_dir}")
 
 
 
 def main():
     if len(sys.argv) < 2:
-        logger.error("Usage: python run_queries_to_json.py <dataset>")
-        logger.info("Example: python run_queries_to_json.py world")
+        LOG.error("Usage: python run_queries_to_json.py <dataset>")
+        LOG.info("Example: python run_queries_to_json.py world")
         return
 
     dataset_name = sys.argv[1]
-    logger.info(f" Starting query run for dataset: {dataset_name}")
+    LOG.info(f" Starting query run for dataset: {dataset_name}")
     t0 = time.time()
     run_queries_to_json(dataset_name)
     total_ms = (time.time() - t0) * 1000.0
-    logger.info(f"Completed for dataset: {dataset_name} | total_latency_ms={total_ms:.1f}")
+    LOG.info(f"Completed for dataset: {dataset_name} | total_latency_ms={total_ms:.1f}")
 
 if __name__ == "__main__":
     main()

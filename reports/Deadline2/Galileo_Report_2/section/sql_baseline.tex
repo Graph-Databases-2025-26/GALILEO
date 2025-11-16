@@ -1,4 +1,4 @@
-\section{Baseline SQL: Execution and Architectural Analysis}
+\section{Baseline SQL}
 \label{sec:baseline-sql}
 \vspace{2em}
 
@@ -15,7 +15,7 @@ The Baseline SQL leverages a five-stage execution pipeline, conceptually alignin
     \item \textbf{SQL Statement Retrieval}: All target SQL statements for a given dataset are systematically loaded from the corresponding \texttt{queries\_\textless dataset\textgreater{}.sql} file via the dedicated \texttt{load\_queries\_from\_folder()} utility function.
 
     \item \textbf{Schema and Context Augmentation}: The designated DuckDB database instance is initiated, and its schema definition is extracted. Datasets are segregated into two distinct contexts for model conditioning:
-    \begin{itemize}[leftmargin=1.5em] % Mini-itemize con indentazione ridotta
+    \begin{itemize}[leftmargin=1.5em] 
         \item \emph{Internal Knowledge(IK)}: The database schema is provided to the LLM as external context.
         \item \emph{Model Contexts(MC)}: This dataset isn't used in accordance with the Galois Paper.
     \end{itemize}
@@ -45,84 +45,3 @@ The implementation adheres strictly to the \textbf{Adapter} and \textbf{Factory}
 
 \paragraph{\textbf{Provider Abstraction (Zero-Code Provider Components):}}
 Consequently, the implementation avoids the need for dedicated provider-specific execution modules. Instead, the abstraction is achieved entirely within the LLM Adapter layer. This central layer manages the necessary provider-specific API calls and setup details, which are configured dynamically based on the model selected in the YAML configuration. This approach facilitates a "zero-code execution logic" at the component level outside of the Adapter, ensuring that all providers utilize the same standardized workflow and that results are inherently comparable using the identical \texttt{FULL\_JSON} output schema and evaluation criteria.
-
-\subsection{Unified Command-Line Interface (CLI) Flow}
-
-The central execution control is consolidated within \texttt{src/main.py}, providing a unified interface for the orchestration of both NL and SQL baselines. The CLI exposes the following essential control arguments:
-
-\begin{table}[h]
-    \centering
-    \label{tab:cli-arguments}
-    \begin{tabular}{l c p{11cm}} 
-        \toprule
-        \textbf{Argument} & \textbf{Type} & \textbf{Function} \\
-        \midrule
-        \texttt{datasets} & Positional & Accepts zero to multiple dataset identifiers (e.g., \texttt{WORLD}, \texttt{GEO}). \\
-        \texttt{--mode} & Option & Selects the execution type: \textbf{\texttt{nl}}, \textbf{\texttt{sql}}, or \textbf{\texttt{both}}. \\
-        \texttt{--provider} & Option & Overrides the default LLM provider defined in the configuration (\texttt{gemini} or \texttt{watsonx}). \\
-        \bottomrule
-    \end{tabular}
-    \caption{Essential CLI Control Arguments for Baseline Execution}
-\end{table}
-\paragraph{\textbf{High-Level Logical Flow}}
-The overall execution sequence is dictated by the input received from the CLI:
-\begin{enumerate}[leftmargin=*, label=\arabic*.]
-    \item \textbf{Initialization}: Argument parsing is performed to determine the list of target datasets, prioritizing the CLI input over the default configuration settings.
-    \item \textbf{Conditional Invocation}: Based on the selected \texttt{--mode}, the system conditionally invokes the NL, SQL, or combined baseline functions.
-    \item \textbf{Task Dispatch and Persistence}: The task is dispatched to the provider-agnostic implementation, and the resulting \texttt{FULL\_JSON} output files are persistently stored for evaluation.
-\end{enumerate}
-
-\subsection{Results and Evaluation}
-The final quantitative outcomes for the SQL Baseline are integrated with the NL results, summarized in tables detailing the \textbf{F1-CELL}, \textbf{CARDINALITY}, and \textbf{TUPLE-CONSTRAINT} metrics, along with their average scores, average inference time (\textbf{latency}), and total token consumption.
-\\\\
-The results obtained from the Baseline NL and SQL baseline modules were evaluated using standard metrics to assess the performance of the LLMs in both Natural Language (NL) and SQL contexts.
-The model used for the \textbf{gemini} provider is: \textbf{gemini-2.5-flash}, instead for \textbf{IBMWatsonx} provider we used \textbf{meta-llama/llama-3-3-70b-instruct}.
-All systems are tested on the datasets described in Table 2 of the previous project task, excluding Premier and Fortune, as the Galois authors did.
-\vspace{2.5em}
-
-\begin{figure}[h!]
-    \centering
-    
-    \begin{minipage}[t]{0.49\textwidth}
-        \centering
-        \begin{tabular}{lcc}
-            \toprule
-                \textbf{Metric} & \textbf{NL} & \textbf{SQL} \\
-            \midrule
-                F1-CELL & 0.391 & 0.537 \\
-                CARDINALITY & 0.644 & 0.733 \\
-                TUPLE-CONSTR. & 0.182 & 0.331 \\
-                \#TOKENS(M) & 39.965 & 126.946 \\
-                AVG-TIME (s) & 4.812 & 7.561 \\
-                \textbf{AVG-SCORE} & \textbf{0.406} & \textbf{0.534} \\
-            \bottomrule
-        \end{tabular}
-        \captionof{table}{GEMINI results}
-        \label{gemini_results}
-    \end{minipage}
-    \hfill
-    \begin{minipage}[t]{0.49\textwidth} 
-        \centering
-        \begin{tabular}{lcc}
-            \toprule
-                \textbf{Metric} & \textbf{NL} & \textbf{SQL} \\
-            \midrule
-                F1-CELL & 0.436 & 0.523 \\
-                CARDINALITY & 0.701 & 0.718 \\
-                TUPLE-CONSTR. & 0.212 & 0.243 \\
-                \#TOKENS(M) & 15.165 & 11.606 \\
-                AVG-TIME (s) & 5.353 & 4.485 \\
-                \textbf{AVG-SCORE} & \textbf{0.450} & \textbf{0.495} \\
-            \bottomrule
-        \end{tabular}
-    \captionof{table}{WATSONX results} % Caption spostata sotto
-    \label{watsonx_results}
-    \end{minipage}
-\end{figure}
-
-Some comments about the results in the tables above:
-
-The analysis of results across different runs reveals that quality and cost metrics are intrinsically linked to the precision of the underlying Large Language Model (LLM). An LLM's performance can fluctuate, impacting key metrics.
-A trivial factor is the LLM's tendency to generate values or parameter names that are semantically similar but syntactically different from the expected attribute names or those reported in the ground truth JSON files, this discrepancy, even if minor, can lead to false negatives if metrics rely on exact equality comparisons. 
-
- Finally, variability is reflected in costs: the number of tokens consumed (\#TOKENS(M)) and the average execution time (AVG-TIME (s)) can vary significantly across providers, depending on different internal prompting strategies and context limitations.
