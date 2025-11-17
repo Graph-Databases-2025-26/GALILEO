@@ -7,7 +7,7 @@ from pydantic import BaseModel, Field
 
 from src.utils import LOG, SYSTEM_PROMPT, HUMAN_PROMPT, BASELINE_OUTPUT
 from .llm_factory import LLMBaseWrapper
-from .palimpzest_baseline import pz_context
+from .rag import pz_context
 from ..db.duckdb_db_graphdb import get_duckdb_path
 from ..utils.constants import RAG_RESOURCES
 

@@ -16,4 +16,11 @@ Our implementation effort will concentrate on two main areas: \textbf{Logical Pl
  \end{itemize}
  Summarizing the meaning: to decide between these two strategies described above, we will incorporate GALOIS's confidence threshold $(\tau)$ mechanism16. By computing the confidence of the LLM in retrieving key values, we can select Key-Scan when confidence is high (improving quality) or revert to Table-Scan when confidence is low (for more reliable, albeit potentially less complete, data retrieval).
 
-Furthermore for what concerns the Palimpzest baseline, the system metrics reported in the Palimpzest section as of now show only the evaluation on SQL \& NL version of the Palimpzest but lacks a comparison with SQL  or NL metrics applied to MC datasets, since in the NL and SQL baselines we have take into account only the IK datasets and not the MC ones, and this will be a future task to be done. 
+Furthermore we have implemented also a RAG system  that follows the following steps:
+\begin{itemize}
+    \item Read a specific folder containing text files (like .md, .txt, or files with no extension).
+    \item Process these files by breaking them into small chunks and converting those chunks into numerical vectors (embeddings) using a Hugging Face model.
+    \item Create an in-memory vector database (using FAISS) to allow for fast searching.
+    \item When it receives a prompt, it searches that database and retrieves the chunks of text that are most relevant to the question.
+\end{itemize}
+We did this to have a solid base in case we need it for completing future tasks.

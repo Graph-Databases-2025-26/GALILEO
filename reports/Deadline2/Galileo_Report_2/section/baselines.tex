@@ -14,3 +14,30 @@ The objective of this baseline is to assess the LLM's capacity to interpret comp
     \item \textbf{Input}: SQL queries are systematically loaded from the (e.g., \textbf{queries\_<dataset-name>.sql}) files.
     \item Prompt Logic: The user input (HUMAN PROMPT) is populated with the \textbf{SQL statement} itself, with the database schema added as additional knowledge.
 \end{itemize}
+
+
+
+\subsection{Unified Command-Line Examples}
+
+Only for knowledge we want to show what commands and what params the system accepts form the CLIfor running the baselines:
+
+\begin{table}[h]
+    \centering
+    \label{tab:cli-arguments}
+    \begin{tabular}{l c p{11cm}} 
+        \toprule
+        \textbf{Argument} & \textbf{Type} & \textbf{Function} \\
+        \midrule
+        \texttt{datasets} & Positional & Accepts zero to multiple dataset identifiers (e.g., \texttt{WORLD}, \texttt{GEO}). \\
+        \texttt{--mode} & Option & Selects the execution type: \textbf{\texttt{nl}}, \textbf{\texttt{sql}} or \textbf{\texttt{both}}. \\
+        \texttt{--provider} & Option & Overrides the default LLM provider defined in the configuration (\texttt{gemini} or \texttt{watsonx}). \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+\paragraph{\textbf{High-Level Logical Flow}}
+The overall execution sequence is dictated by the input received from the CLI:
+\begin{enumerate}[leftmargin=*, label=\arabic*.]
+    \item \textbf{Initialization}: Argument parsing is performed to determine the list of target datasets, prioritizing the CLI input over the default configuration settings.
+    \item \textbf{Conditional Invocation}: Based on the selected \texttt{--mode}, the system conditionally invokes the NL, SQL or both.
+    \item \textbf{Task Dispatch and Persistence}: The task is dispatched to the provider-agnostic implementation, and the resulting \texttt{FULL\_JSON} output files are persistently stored for evaluation.
+\end{enumerate}

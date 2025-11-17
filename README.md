@@ -153,7 +153,7 @@ The command line **has priority** over the configuration file.
 
 ## VII. Project Baselines
 
-The system replicates three core baseline concepts: **SQL Prompting**, **Natural Language (NL) Prompting**, and the **Retrieval-Augmented Generation (RAG) paradigm (Palimpzest)**.
+The system replicates three core baseline concepts: **SQL Prompting**, **Natural Language (NL) Prompting**.
 
 ### Standard Workflow
 
@@ -186,25 +186,6 @@ Both baselines output a unified **FULL JSON format** for perfect comparability:
   "tokens": "<int>"
 }
 ```
-
-### Baseline Palimpzest: RAG and Semantic Retrieval
-
-This baseline implements a **Retrieval-Augmented Generation (RAG)** pipeline to evaluate the LLM's synthesis capabilities when provided with relevant **external textual resources** (Model Context - MC).
-
-#### Architecture and Components
-
-* **Knowledge Base:** Built from external documentation (Markdown/text files) using a specialized backend (`MarkdownRAGBackend`).
-* **Embedding/Indexing:** Uses the lightweight **`sentence-transformers/all-MiniLM-L6-v2`** model to generate embeddings, chosen for its efficiency and portability (CPU-only operation).
-* **Vector Store:** **FAISS** is utilized for fast similarity searches over the indexed embeddings.
-* **Chunking Logic:** Text is divided into overlapping chunks (e.g., 128/400 tokens with 20-token overlap) to balance retrieval precision and contextual continuity.
-
-#### Workflow
-
-1.  **Loading & Indexing:** The `MarkdownRAGBackend` converts files into LangChain documents and creates the FAISS index.
-2.  **Retrieval:** The `pz_context()` method executes a semantic search based on the user's prompt, returning the **top-k most semantically relevant chunks**.
-3.  **Prompting:** The retrieved textual context is injected into the LLM prompt alongside the database schema to facilitate an informed response.
-4.  **Persistence:** The FAISS index is persistently stored to avoid redundant re-indexing on subsequent runs.
-
 ### Command-line Interface (CLI)
 
 The unified CLI (`src/main.py`) controls all baseline execution modes through the `--mode` parameter.
@@ -214,8 +195,6 @@ The unified CLI (`src/main.py`) controls all baseline execution modes through th
 | `nl`    | Run only the Natural Language baseline.                                | NL |
 | `sql`   | Run only the SQL baseline.                                             | SQL |
 | `both`  | Run both NL and SQL baselines sequentially.                            | NL, SQL |
-| `pznl`  | Run the Palimpzest (RAG-based) baseline with natural language prompts. | Palimpzest |
-| `pzsql` | Run the Palimpzest (RAG-based) baseline with sql queries.              | Palimpzest |
 **Examples:**
 
 ```sh
@@ -227,12 +206,7 @@ python -m src.main GEO MOVIES --mode sql --provider watsonx
 
 # Run only the NL baseline on PRESIDENTS and WORLD using Watsonx
 python -m src.main PRESIDENTS WORLD --mode nl --provider watsonx 
-
-# Run the Palimpzest baseline with NL prompts on the PREMIER dataset
-python -m src.main PREMIER --mode pznl
 ```
-**IMPORTANT**: For what concerns the Palimpzest baseline (pzsql and pznl modes), you cannot run  it with gemini provider due to its "free-plan" limitations for the number of requests per minute. So you don't need to use the `--provider` parameter in this case.
-
 ---
 
 ## VIII. 📊 Dedicated Utility Scripts
