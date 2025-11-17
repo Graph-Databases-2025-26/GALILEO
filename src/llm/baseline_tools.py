@@ -82,7 +82,7 @@ def save_baseline_to_json(dataset: str, baseline: list[dict], llm_wrapper: LLMBa
 
 def get_db_context(input_d: dict) -> dict:
     """
-    Retrieves the necessary database context (schema info and, for PZ, raw data) required for the LLM prompt.
+    Retrieves the necessary database context (schema info ando, raw data) required for the LLM prompt.
 
     Args:
         input_d: A dictionary containing execution parameters, must include "database", "query", and "b_type".

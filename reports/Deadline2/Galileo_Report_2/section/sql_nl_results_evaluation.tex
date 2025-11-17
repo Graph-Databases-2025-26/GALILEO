@@ -6,6 +6,11 @@ The final quantitative outcomes for the SQL Baseline are integrated with the NL 
 \\\\
 The results obtained from the Baseline NL and SQL baseline modules were evaluated using standard metrics to assess the performance of the LLMs in both Natural Language (NL) and SQL contexts.
 The model used for the \textbf{gemini} provider is: \textbf{gemini-2.5-flash}, instead for \textbf{IBMWatsonx} provider we used \textbf{meta-llama/llama-3-3-70b-instruct}.
+
+
+\textbf{IMPORTANT:} We want to specify that we tested the baselines using either Gemini LLM and IBM watsonx:
+For the former in particular was necessary to handle the free-plan requests for minute limitation, for this reason the running time of the baselines with gemini could be more longer that watsonx.
+For this purpose we implemented a simple backoff retry mechanism that in case of 'out of quota' error response from the gemini API waits for some time  before retrying the request.
 All systems are tested on the datasets described in Table 2 of the previous project task, excluding Premier and Fortune, as the Galois authors did.
 \vspace{2.5em}
 

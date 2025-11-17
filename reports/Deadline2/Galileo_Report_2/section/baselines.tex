@@ -1,0 +1,16 @@
+\section{Specific Baseline Implementation}
+\label{sec:Baselines}
+Leveraging the unified architecture described in Section \ref{sec:core_arch}, the two baselines differ almost exclusively in the type of input provided to the LLM during the "Prompt Construction" phase.
+
+\subsection{Baseline NL (Natural Language)}
+The objective of this baseline is to evaluate the model's intrinsic reasoning capabilities starting from natural language.
+\begin{itemize}
+    \item \textbf{Input}: Natural language prompts are loaded from dataset-specific resource files (e.g., \textbf{queries\_<dataset-name>.txt}).
+    \item Prompt Logic: The user input (HUMAN PROMPT) is composed of the \textbf{natural language question} and the database schema information.
+\end{itemize}
+
+\subsection{Baseline SQL}
+The objective of this baseline is to assess the LLM's capacity to interpret complex SQL syntax, perform logical reasoning over the schema, and produce a structured output.\begin{itemize}
+    \item \textbf{Input}: SQL queries are systematically loaded from the (e.g., \textbf{queries\_<dataset-name>.sql}) files.
+    \item Prompt Logic: The user input (HUMAN PROMPT) is populated with the \textbf{SQL statement} itself, with the database schema added as additional knowledge.
+\end{itemize}

@@ -8,11 +8,15 @@ The primary objective of the current task is to detail the \textbf{development p
 
 \begin{itemize}[leftmargin=*]
     \item \textbf{SQL Baseline}: The system directly prompts the \emph{Large Language Model} (LLM) with an \textbf{SQL query} as the input. 
-    \item \textbf{NL (Natural Language) Baseline}: The system employs a \textbf{Natural Language prompt} as the direct input to the LLM,
-    \item \textbf{Palimpzest Baseline}: This baseline is designed to evaluate the pure \textbf{reasoning and synthesis capabilities} of the LLM when operating within a \textbf{Retrieval-Augmented Generation (RAG)} paradigm. 
+    \item \textbf{NL (Natural Language) Baseline}: The system employs a \textbf{Natural Language prompt} as the direct input to the LLM.
 \end{itemize}    
-\textit{Note on Implementation}: The current setup represents a foundational RAG configuration and necessitates further methodological refinement to fully conform to the advanced data handling and inference strategies detailed in the original Galois paper.
-
 \vspace{8em}
 \subsection{Report Structure}
-For each implemented baseline, \textbf{synoptic tables} reporting the derived evaluation measures and metrics will be presented. This introductory section establishes the methodological context; the subsequent sections will proceed with a detailed analysis of each individual baseline.
+This introductory section establishes the methodological context of the project:
+\begin{itemize}
+    \item Section \ref{sec:Architecture} details the project's core: the Unified Architecture and Execution Flow common to both baselines. This section describes the software design patterns adopted for modularity, the standardized execution pipeline and the definitions for the data context and output format (FULL JSON).
+    \item Section \ref{sec:Baselines} describes the specific implementations for the two evaluation modes, the NL Baseline and the SQL Baseline. Leveraging the common architecture, this section focuses on how each baseline handles its unique input (a natural language prompt or an SQL query) within the unified execution flow.
+    \item Section \ref{sec:sql_nl_results_evaluation}  show, for each implemented baseline, \textbf{synoptic tables} reporting the derived evaluation measures and metrics. It analyzes and compares key metrics (F1-CELL, CARDINALITY, TUPLE-CONSTRAINT) and costs (tokens and latency) for both baselines across the different LLM providers tested.
+    \item Section \ref{sec:future_work} outlines Future Work that will be made in the next tasks.
+    \item Section \ref{sec:contributions} details the individual contributions of each team member to the task's development.
+\end{itemize}

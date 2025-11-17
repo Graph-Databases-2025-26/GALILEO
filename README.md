@@ -93,13 +93,14 @@ The system relies on the **`.env`** file to load environment variables essential
 
 ### Essential Variables to Configure
 
-| Variable | Description | Example Value |
-| :--- | :--- | :--- |
-| **`WATSONX_API_KEY`** | API Key required for authentication with IBM Watsonx.ai. | `2qeY-kSnPE2vKLk9aF93orYmkxvihSvyAI2IPDvWT4BD` |
-| **`WATSONX_PROJECT_ID`** | The unique ID of the Watsonx project. | `f1e10140-3021-4a6f-97b2-befdae53d9a0` |
-| **`WATSONX_ENDPOINT`** | The base URL for the Watsonx API. | `https://us-south.ml.cloud.ibm.com` |
-| **`GEMINI_API_KEY`** | API Key for authentication with Google Gemini services. | `your_xai_api_key` |
-| **`GEMINI_ENDPOINT`** | The URL for the Gemini API. | `api.x.ai` |
+| Variable                 | Description                                              | Example Value                                  |
+|:-------------------------|:---------------------------------------------------------|:-----------------------------------------------|
+| **`WATSONX_API_KEY`**    | API Key required for authentication with IBM Watsonx.ai. | `2qeY-kSnPE2vKLk9aF93orYmkxvihSvyAI2IPDvWT4BD` |
+| **`WATSONX_PROJECT_ID`** | The unique ID of the Watsonx project.                    | `f1e10140-3021-4a6f-97b2-befdae53d9a0`         |
+| **`WATSONX_ENDPOINT`**   | The base URL for the Watsonx API.                        | `https://us-south.ml.cloud.ibm.com`            |
+| **`WATSONX_USERNAME`**   | The username for the Watsonx account.                    | `nome.cognome@unipd.it`                        |
+| **`GEMINI_API_KEY`**     | API Key for authentication with Google Gemini services.  | `your_xai_api_key`                             |
+| **`GEMINI_ENDPOINT`**    | The URL for the Gemini API.                              | `api.x.ai`                                     |
 
 ### Example `.env` Structure (To be modified):
 
@@ -110,6 +111,7 @@ The system relies on the **`.env`** file to load environment variables essential
 WATSONX_API_KEY=YOUR_PERSONAL_WATSONX_API_KEY
 WATSONX_PROJECT_ID=YOUR_PERSONAL_PROJECT_ID
 WATSONX_ENDPOINT=https://us-south.ml.cloud.ibm.com
+WATSONX_USERNAME=YOUR_WATSONX_ACCOUNT_USERNAME
 
 GEMINI_API_KEY=YOUR_PERSONAL_GEMINI_API_KEY
 GEMINI_ENDPOINT=api.x.ai
@@ -237,9 +239,9 @@ python -m src.main PREMIER --mode pznl
 
 Individual scripts are available for specific tasks, primarily located in `src/utils/` or `src/db/`.
 
-| Task | Location | Execution Example (from `/GALILEO/` root) |
-| :--- | :--- | :--- |
-| **EXPLAIN / ANALYZE Plans** | `src/db/run_explain_plans.py` | `python3 -m src.db.run_explain_plans world geo` |
-| **Ground Truth Generation** | `src/utils/build_ground_truth.py` | `python3 build_ground_truth.py --data-root ./data --ground-root ./data/.ground_truth` |
-| **Evaluation** | `src/utils/galois_eval.py` | `python3 galois_eval.py --ground <path> --submissions <path>` |
-| **Avg. Expected Cells** | `src/db/avg_cells_metric.py` | `python3 -m src.db.avg_cells_metric` |
+| Task | Location | Execution Example (from `/GALILEO/` root)                                            |
+| :--- | :--- |:-------------------------------------------------------------------------------------|
+| **EXPLAIN / ANALYZE Plans** | `src/db/run_explain_plans.py` | `python -m src.db.run_explain_plans world geo`                                       |
+| **Ground Truth Generation** | `src/utils/build_ground_truth.py` | `python build_ground_truth.py --data-root ./data --ground-root ./data/.ground_truth` |
+| **Evaluation** | `src/utils/galois_eval.py` | `python galois_eval.py --ground <path> --submissions <path>`                         |
+| **Avg. Expected Cells** | `src/db/avg_cells_metric.py` | `python -m src.db.avg_cells_metric`                                                  |
