@@ -38,7 +38,7 @@ This section defines the two primary contexts used to condition the Large Langua
 The evaluation utilizes two distinct dataset contexts, governing the type of factual information provided to the LLM during prompting:
 
 \begin{itemize} [leftmargin=*]
-    \item \textbf{Internal Knowledge (IK):} In these datasets, the model relies exclusively on its pretrained knowledge and linguistic reasoning capabilities. The prompt includes only the natural language question and the database schema for both the \textbf{SQL} and \textbf{NL} baselines, but no factual data retrieved from the database.
+    \item \textbf{Internal Knowledge (IK):} In these datasets, the model relies exclusively on its pre-trained knowledge and linguistic reasoning capabilities. The prompt includes only the natural language question and the database schema for both the \textbf{SQL} and \textbf{NL} baselines, but no factual data retrieved from the database.
     \item \textbf{Model Context (MC):} These datasets are designed to enrich the prompt with external information retrieved from a knowledge base. For this project task, MC datasets were \textbf{not used} in either the NL or SQL baselines, but they form the basis of the \textbf{Palimpzest} baseline to evaluate its Retrieval-Augmented Generation (RAG) capabilities.
 \end{itemize}
 
@@ -75,3 +75,7 @@ Every response produced by any baseline is written in a JSON file that fits the 
         \bottomrule
     \end{tabular}
 \end{table}
+
+\textbf{IMPORTANT:} We want to specify that we tested the baselines using either Gemini LLM and IBM watsonx:
+For the former in particular was necessary to handle the free-plan requests for minute limitation, for this reason the running time of the baselines with gemini could be more longer that watsonx.
+For this purpose we implemented a simple backoff retry mechanism that in case of 'out of quota' error response from the gemini API waits for some time  before retrying the request.

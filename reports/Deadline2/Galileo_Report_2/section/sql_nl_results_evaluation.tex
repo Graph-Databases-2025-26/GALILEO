@@ -1,0 +1,58 @@
+\section{Results and Evaluation}
+\label{sec:sql_nl_results_evaluation}
+\vspace{2em}
+
+The final quantitative outcomes for the SQL Baseline are integrated with the NL results, summarized in tables detailing the \textbf{F1-CELL}, \textbf{CARDINALITY}, and \textbf{TUPLE-CONSTRAINT} metrics, along with their average scores, average inference time (\textbf{latency}), and total token consumption.
+\\\\
+The results obtained from the Baseline NL and SQL baseline modules were evaluated using standard metrics to assess the performance of the LLMs in both Natural Language (NL) and SQL contexts.
+The model used for the \textbf{gemini} provider is: \textbf{gemini-2.5-flash}, instead for \textbf{IBMWatsonx} provider we used \textbf{meta-llama/llama-3-3-70b-instruct}.
+All systems are tested on the datasets described in Table 2 of the previous project task, excluding Premier and Fortune, as the Galois authors did.
+\vspace{2.5em}
+
+\begin{figure}[h!]
+    \centering
+    
+    \begin{minipage}[t]{0.49\textwidth}
+        \centering
+        \begin{tabular}{lcc}
+            \toprule
+                \textbf{Metric} & \textbf{NL} & \textbf{SQL} \\
+            \midrule
+                F1-CELL & 0.435 & 0.257 \\
+                CARDINALITY & 0.741 & 0.571 \\
+                TUPLE-CONSTR. & 0.282 & 0.119 \\
+                \#TOKENS(M) & 0.930 & 0.063 \\
+                AVG-TIME (s) & 9.050 & 4.858 \\
+                \textbf{AVG-SCORE} & \textbf{0.486} & \textbf{0.315} \\
+            \bottomrule
+        \end{tabular}
+        \captionof{table}{GEMINI results}
+        \label{gemini_results}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{0.49\textwidth} 
+        \centering
+        \begin{tabular}{lcc}
+            \toprule
+                \textbf{Metric} & \textbf{NL} & \textbf{SQL} \\
+            \midrule
+                F1-CELL & 0.436 & 0.523 \\
+                CARDINALITY & 0.701 & 0.718 \\
+                TUPLE-CONSTR. & 0.212 & 0.243 \\
+                \#TOKENS(M) & 0.015 & 0.012 \\
+                AVG-TIME (s) & 5.353 & 4.485 \\
+                \textbf{AVG-SCORE} & \textbf{0.450} & \textbf{0.495} \\
+            \bottomrule
+        \end{tabular}
+    \captionof{table}{WATSONX results} % Caption spostata sotto
+    \label{watsonx_results}
+    \end{minipage}
+\end{figure}
+
+Some comments about the results in the tables above:
+
+The analysis of results across different runs reveals that quality and cost metrics are intrinsically linked to the precision of the underlying Large Language Model (LLM) (various models have different reasoning ability and prompt sensibility as you can see in the result metrics reported above) this is one of the reasons for which LLM's performance can fluctuate, impacting key metrics.
+Another trivial factor is the LLM's tendency to generate values or parameter names that are semantically similar but syntactically different from the expected attribute names or those reported in the ground truth JSON files, this discrepancy, even if minor, can lead to false negatives.
+
+
+Finally, variability is reflected in costs: the number of tokens consumed (\#TOKENS(M)) and the average execution time (AVG-TIME (s)) can vary significantly across providers, depending on different internal prompting strategies and context limitations.
