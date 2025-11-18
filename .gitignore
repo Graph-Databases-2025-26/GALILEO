@@ -35,6 +35,3 @@ Thumbs.db
 logs/
 *.log
 *.zip
-
-#ignore palimpzest results for now
-data/.output/.sql_output

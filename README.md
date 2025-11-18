@@ -209,13 +209,32 @@ python -m src.main PRESIDENTS WORLD --mode nl --provider watsonx
 ```
 ---
 
+### RAG additional implementation
+Out system also implements by means `src/llm/rag.py` a small RAG backend for indexing and retrieving chunks from Markdown or text files.
+It uses a LangChain components:
+* **TextLoader** for reading files.
+* **RecursiveCharacterTextSplitter** for chunking.
+* **HuggingFaceEmbeddings** for computing embeddings, and FAISS as the vector store.
+* **MarkdownRABackend**:
+  * Finds files with the `.md`, `.txt` or no format, load them and splits into chunks, created embeddings and builds a FAISS index.
+  * Performs a similarity search against FAISS index and returns the top_k results.
+  * Save and load the FAISS index from disk.
+
+The main maethod of this subtask is `**pz_context()**` that instantiates the backend, builds the index, retrieves relevant chunks for the provided prompt and returns
+a dictionary.
+
+As source files we use the ones found in the former galois repository under `rag_premier` and `rag_fortune` folders.
+
+---
+
 ## VIII. 📊 Dedicated Utility Scripts
 
 Individual scripts are available for specific tasks, primarily located in `src/utils/` or `src/db/`.
 
-| Task | Location | Execution Example (from `/GALILEO/` root)                                            |
-| :--- | :--- |:-------------------------------------------------------------------------------------|
-| **EXPLAIN / ANALYZE Plans** | `src/db/run_explain_plans.py` | `python -m src.db.run_explain_plans world geo`                                       |
-| **Ground Truth Generation** | `src/utils/build_ground_truth.py` | `python build_ground_truth.py --data-root ./data --ground-root ./data/.ground_truth` |
-| **Evaluation** | `src/utils/galois_eval.py` | `python galois_eval.py --ground <path> --submissions <path>`                         |
-| **Avg. Expected Cells** | `src/db/avg_cells_metric.py` | `python -m src.db.avg_cells_metric`                                                  |
+| Task                        | Location                          | Execution Example (from `/GALILEO/` root)                                                            |
+|:----------------------------|:----------------------------------|:-----------------------------------------------------------------------------------------------------|
+| **EXPLAIN / ANALYZE Plans** | `src/db/run_explain_plans.py`     | `python -m src.db.run_explain_plans world geo`                                                       |
+| **Ground Truth Generation** | `src/utils/build_ground_truth.py` | `python build_ground_truth.py --data-root ./data --ground-root ./data/.ground_truth`                 |
+| **Evaluation**              | `src/utils/galois_eval.py`        | `python galois_eval.py --ground <path> --submissions <path>`                                         |
+| **Avg. Expected Cells**     | `src/db/avg_cells_metric.py`      | `python -m src.db.avg_cells_metric`                                                                  |
+| **RAG additional feature**  | `src/llm/rag.py`                  | `python -m src.main premier fortune --mode pznl` / `python -m src.main premier fortune --mode pzsql` |

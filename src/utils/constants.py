@@ -18,7 +18,7 @@ NL_BLINE_DIR = SUBMISSIONS_PATH / ".nl_output"
 
 SQL_BLINE_DIR = SUBMISSIONS_PATH / ".sql_output"
 
-PZ_BLINE_DIR = SUBMISSIONS_PATH / ".palimpzest_output"
+PZ_BLINE_DIR = SUBMISSIONS_PATH / ".rag_output"
 
 RAG_RESOURCES = DATA_DIR / "RAG"
 
