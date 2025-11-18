@@ -20,7 +20,7 @@ This structured approach ensures predictable and auditable data transformation a
 \subsection{Unified Architecture and Execution Workflow (The Pipeline)}
 \label{sec:core_arch}
 To ensure high modularity, extensibility, and maintainability, we adopted a unified base architecture that serves both baselines (NL and SQL). This architecture centralizes the execution logic, abstracting interactions with LLM providers and standardizing the data flow.
-
+\\\\
 The execution workflow is structured into a four-stage pipeline, ensuring robust and consistent processing across all baseline types:
 
 \begin{enumerate}[leftmargin=*,label=\arabic*.]
@@ -30,6 +30,8 @@ The execution workflow is structured into a four-stage pipeline, ensuring robust
     \item \textbf{Response Standardization}: The \texttt{parse\_llm\_response} function enforces cross-provider output standardization: This involves the mandatory validation and parsing of the requisite JSON structure returned by the LLM. It then enriches this output into the \texttt{FULL\_JSON} format by extracting the \texttt{token consumption} from the LLM's response metadata and internally calculating and appending the \texttt{LLM response latency}.
 \end{enumerate}
 This last standardized and enriched data process is essential for downstream performance evaluation, furthermore thanks to this centralized architecture, the execution logic is provider-independent, and the workflow is uniform.
+
+\vspace{2em}
 \subsection{Data Context and Output Standardization}
 
 This section defines the two primary contexts used to condition the Large Language Models (LLMs) and establishes the \textbf{standardized JSON output format} mandatory for all baseline evaluations (NL, SQL, and Palimpzest).
@@ -63,7 +65,7 @@ Every response produced by any baseline is written in a JSON file that fits the 
         "tokens": 312
     }
     \end{verbatim}
-    \caption{FULL JSON Output Format Example}
+    \caption{\texttt{FULL JSON} Output Format Example}
 \end{figure}
 
 \begin{table}[h]
@@ -77,4 +79,5 @@ Every response produced by any baseline is written in a JSON file that fits the 
         \textbf{tokens} & Indicates the number of tokens processed during the interaction. \\
         \bottomrule
     \end{tabular}
+    \captionof{table}{Definition of the \texttt{FULL JSON} Output Schema Fields}
 \end{table}

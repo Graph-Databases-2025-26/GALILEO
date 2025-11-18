@@ -1,0 +1,54 @@
+\section{Specific Baseline Implementation}
+\label{sec:Baselines}
+Leveraging the unified architecture described in Section \ref{sec:core_arch}, the two baselines differ almost exclusively in the type of input provided to the LLM during the "Prompt Construction" phase.
+\vspace{2em}
+\subsection{Baseline NL (Natural Language)}
+
+The objective of the \textbf{Natural Language (NL) Baseline} is to evaluate the LLM's intrinsic reasoning capabilities and its capacity to infer structured intent starting exclusively from \textbf{unstructured natural language input}.
+
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Core Input}: Natural language questions are loaded from dataset-specific resource files (e.g., \texttt{queries\_<dataset-name>.txt}).
+    \item \textbf{Prompt Composition}: The final user input (\texttt{HUMAN PROMPT}) is constructed by combining two components: the \textbf{natural language question} and the essential \texttt{database schema} information.
+    \item \textbf{Primary Goal}: Assess the model's ability to translate high-level, unstructured requests into a structured result based on its internal knowledge and the provided schema context.
+\end{itemize}
+\vspace{2em}
+\subsection{Baseline SQL}
+
+The objective of the \textbf{SQL Baseline} is to strictly assess the LLM's capacity to interpret \textbf{complex SQL syntax}, perform logical reasoning over the supplied schema, and ensure the resultant output adheres to the required structured format.
+
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Core Input}: Structured SQL queries are systematically loaded from dedicated files (e.g., \texttt{queries\_<dataset-name>.sql}).
+    \item \textbf{Prompt Composition}: The user input (\texttt{HUMAN PROMPT}) is populated directly with the \textbf{SQL statement} itself. The \texttt{database schema} is added as supplementary, explicit knowledge to guide and validate the model's output generation.
+    \item \textbf{Primary Goal}: Quantify the performance when the structured intent is explicitly provided, testing adherence to syntactical and logical constraints.
+\end{itemize}
+\newpage
+\subsection{Execution Control via Command-Line Interface (CLI)}
+
+The execution system is designed for flexible operation, allowing the user to precisely control which baselines run and which datasets and providers are targeted.
+
+\paragraph{\textbf{High-Level Execution Flow}}
+The overall sequence is strictly dictated by the CLI arguments:
+\begin{enumerate}[leftmargin=*, label=\arabic*.]
+    \item \textbf{Initialization and Parsing}: Command-line arguments are parsed to determine the target datasets, execution mode (\texttt{--mode}), and preferred LLM provider (\texttt{--provider}). CLI input takes precedence over default configuration settings.
+    \item \textbf{Conditional Invocation}: Based on the selected \texttt{--mode} (\texttt{nl}, \texttt{sql}, or \texttt{both}), the system conditionally dispatches the execution logic to the corresponding baseline implementation.
+    \item \textbf{Task Dispatch and Persistence}: The provider-agnostic execution task is initiated, and the resulting \texttt{FULL\_JSON} output files are persistently stored in the designated evaluation directory.
+\end{enumerate}
+
+\paragraph{\textbf{CLI Argument Reference}}
+The system accepts the following arguments for runtime control:
+
+\begin{table}[H]
+    \centering
+    \label{tab:cli-arguments}
+    \begin{tabular}{l c p{0.6\textwidth}}
+        \toprule
+        \textbf{Argument} & \textbf{Type} & \textbf{Function / Description} \\
+        \midrule
+        \texttt{datasets} & Positional (List) & Accepts zero to multiple dataset identifiers to be processed (e.g., \texttt{WORLD}, \texttt{GEO}, \texttt{WINE}). \\
+        \texttt{--mode} & Optional (Flag) & Selects the execution type: \textbf{\texttt{nl}}, \textbf{\texttt{sql}}, or \textbf{\texttt{both}}. \\
+        \texttt{--provider} & Optional (Flag) & Overrides the default LLM provider defined in the configuration file (\texttt{gemini} or \texttt{watsonx}). \\
+        \bottomrule
+    \end{tabular}
+    \caption{Command-Line Interface Arguments}
+\end{table}
+

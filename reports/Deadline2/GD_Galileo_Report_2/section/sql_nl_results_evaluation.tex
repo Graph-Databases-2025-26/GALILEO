@@ -1,0 +1,72 @@
+\section{Results and Quantitative Evaluation}
+\label{sec:sql_nl_results_evaluation}
+
+The final quantitative outcomes for the SQL and NL Baselines are integrated below, detailing the core performance metrics: \texttt{F1-CELL}, \texttt{CARDINALITY}, and \texttt{TUPLE-CONSTRAINT}. These are complemented by operational metrics: \texttt{Average Score}, \texttt{Average Inference Time}(Latency), and total \texttt{Token Consumption}.
+\vspace{2em}
+\subsection{Evaluation Scope and Model Configuration}
+
+The results were obtained using the following LLM providers and models:
+
+\begin{itemize}[leftmargin=*, label=$\diamond$]
+    \item \textbf{Gemini Provider}: \texttt{gemini-2.5-flash}
+    \item \textbf{IBM Watsonx Provider}: \texttt{meta-llama/llama-3-70b-instruct}
+\end{itemize}
+All systems were tested exclusively on the datasets described in Table 2 of the previous project task, specifically \textbf{excluding Premier and Fortune} datasets, consistent with the methodology established by the original Galois authors.
+
+\subsubsection{Operational Consideration: Rate Limiting}
+\textbf{Crucially}, the use of the Gemini free-plan necessitated handling API minute limitations. Consequently, the observed running time for the Gemini baseline may be inflated compared to Watsonx. To ensure robustness and completeness, a simple \textbf{backoff retry mechanism} was implemented to pause and retry the request upon encountering an 'out of quota' error from the Gemini API.
+
+\vspace{2em}
+\subsection{Quantitative Results Comparison}
+
+The performance of each LLM across the Natural Language (NL) and Structured Query Language (SQL) contexts is summarized in the tables below:
+
+\begin{figure}[H]
+    \centering
+    \begin{minipage}[t]{0.49\textwidth}
+        \centering
+        \label{tab:gemini_results}
+        \begin{tabular}{lcc}
+            \toprule
+            \textbf{Metric} & \textbf{NL} & \textbf{SQL} \\
+            \midrule
+            F1-CELL & 0.435 & 0.257 \\
+            CARDINALITY & 0.741 & 0.571 \\
+            TUPLE-CONSTR. & 0.282 & 0.119 \\
+            \#TOKENS (M) & 0.930 & 0.063 \\
+            AVG-TIME (s) & 9.050 & 4.858 \\
+            \textbf{AVG-SCORE} & \textbf{0.486} & \textbf{0.315} \\
+            \bottomrule
+        \end{tabular}
+        \captionof{table}{GEMINI Results}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{0.49\textwidth}
+        \centering
+        \label{tab:watsonx_results}
+        \begin{tabular}{lcc}
+            \toprule
+            \textbf{Metric} & \textbf{NL} & \textbf{SQL} \\
+            \midrule
+            F1-CELL & 0.436 & 0.523 \\
+            CARDINALITY & 0.701 & 0.718 \\
+            TUPLE-CONSTR. & 0.212 & 0.243 \\
+            \#TOKENS (M) & 0.015 & 0.012 \\
+            AVG-TIME (s) & 5.353 & 4.485 \\
+            \textbf{AVG-SCORE} & \textbf{0.450} & \textbf{0.495} \\
+            \bottomrule
+        \end{tabular}
+        \captionof{table}{WATSONX Results}
+    \end{minipage}
+\end{figure}
+
+\vspace{2em}
+\subsection{Discussion of Key Findings}
+
+The analysis of results across different providers and input modalities highlights several intrinsic factors influencing performance and cost metrics:
+
+\begin{itemize}[leftmargin=*, label=$\bullet$]
+    \item \textbf{Model Precision and Fluctuations}: Quality metrics are intrinsically linked to the precision and reasoning ability of the underlying LLM. The observed fluctuation in key metrics (e.g., TUPLE-CONSTRAINT) across providers and input types underscores the model's varied sensitivity to prompt structure and task complexity.
+    \item \textbf{Impact of False Negatives}: A critical factor influencing metric scores is the LLM's propensity to generate values or parameter names that are semantically similar but syntactically divergent from the expected attribute names found in the ground truth. This minor discrepancy leads to an increase in false negatives, suppressing the overall scores.
+    \item \textbf{Cost and Efficiency Variability}: Significant variability is noted in operational costs, specifically the number of tokens consumed (\#TOKENS(M)) and the average execution time (AVG-TIME (s)). These differences are primarily attributed to distinct internal prompting strategies, context handling limitations, and inherent API latency variations across providers.
+\end{itemize}

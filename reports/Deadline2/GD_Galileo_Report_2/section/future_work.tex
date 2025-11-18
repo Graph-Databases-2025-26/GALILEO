@@ -1,0 +1,42 @@
+\section{Future Work and Strategic Development}
+\label{sec:future_work}
+
+For the next project phase, we will focus on significantly improving and extending the current logical and structural data retrieval processes. The primary strategic effort involves the integration and deployment of the \textbf{GALOIS framework} to enhance the accuracy and efficiency of structured data retrieval.
+\\\\
+This integration is critical for addressing the inherent limitations of directly prompting LLMs with complex Natural Language (NL) or SQL queries, which often lead to sub-optimal precision and recall.
+
+\vspace{2em}
+\subsection{GALOIS Framework Integration: Core Optimization Areas}
+
+Our implementation effort will concentrate on two main areas essential to the GALOIS architecture:
+
+\subsubsection{Logical Plan Optimization (Filter Push-Down)}
+\label{sec:logical_plan}
+
+We will implement the specialized \textbf{Filter-LLMScan} operator, designed to push selection conditions directly down to the LLM. This step is methodologically complex: pushing down all conditions reduces token cost but often degrades result quality due to the LLM's inherent difficulty in processing overly complex simultaneous requests. The optimization will determine the ideal subset of conditions to push down.
+
+\subsubsection{Physical Operator Design and Evaluation}
+
+We will implement and quantitatively evaluate both alternative physical scan operators supported by GALOIS, which represent distinct trade-offs between cost and result quality:
+
+\begin{itemize}[leftmargin=*, label=$\diamond$]
+    \item \textbf{Table-Scan}: A token-efficient approach where a single prompt requests the LLM to return the entire result set in the structured JSON format. This method risks lower quality but conserves tokens.
+    \item \textbf{Key-Scan}: A two-step, quality-focused operator. It first retrieves the key values for relevant tuples and then iteratively queries the LLM to populate the remaining attributes for each retrieved key.
+\end{itemize}
+
+\paragraph{\textbf{Strategic Decision Mechanism:}} To effectively choose between the Table-Scan and Key-Scan strategies, we will incorporate GALOIS's confidence threshold ($\tau$) mechanism. By computing the LLM's confidence in retrieving key values, we can select \textbf{Key-Scan} when confidence is high (prioritizing quality) or revert to \textbf{Table-Scan} when confidence is low (for more reliable, albeit potentially less complete, data retrieval).
+
+
+\vspace{2em}
+\subsection{Retrieval-Augmented Generation (RAG) System Base}
+
+A foundational \texttt{Retrieval-Augmented Generation} system has already been implemented to serve as a solid base for future tasks requiring external knowledge integration (e.g., the Palimpzest baseline refinement).
+\\\\
+The implemented RAG system follows a standard, robust procedure:
+
+\begin{enumerate}[leftmargin=*, label=\arabic*.]
+    \item \textbf{Data Ingestion}: Read and collect documents from a specific text repository folder (e.g., \texttt{.md}, \texttt{.txt} files).
+    \item \textbf{Embedding Generation}: Process the raw files by chunking the text and converting these segments into numerical vectors (\textbf{embeddings}) using a Hugging Face model.
+    \item \textbf{Vector Storage}: Create an in-memory vector database (using FAISS) to enable fast similarity search.
+    \item \textbf{Retrieval and Augmentation}: Upon receiving a user prompt, the system queries the vector database to retrieve the text chunks most relevant to the question, which are then used to augment the LLM's final prompt.
+\end{enumerate}
