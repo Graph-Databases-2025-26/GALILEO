@@ -1,9 +1,6 @@
 {
     "result_set": [
         {
-            "capital": "Annapolis"
-        },
-        {
             "capital": "Pierre"
         },
         {
@@ -11,26 +8,8 @@
         },
         {
             "capital": "Topeka"
-        },
-        {
-            "capital": "Frankfort"
-        },
-        {
-            "capital": "Augusta"
-        },
-        {
-            "capital": "Santa Fe"
-        },
-        {
-            "capital": "Bismarck"
-        },
-        {
-            "capital": "Olympia"
-        },
-        {
-            "capital": "Cheyenne"
         }
     ],
-    "time": 2.869,
-    "tokens": 115
+    "time": 1.214,
+    "tokens": 42
 }

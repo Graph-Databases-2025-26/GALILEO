@@ -10,27 +10,12 @@
             "lake_name": "Lake Huron"
         },
         {
-            "lake_name": "Lake Erie"
-        },
-        {
-            "lake_name": "Lake Ontario"
-        },
-        {
             "lake_name": "Great Salt Lake"
         },
         {
-            "lake_name": "Lake Mead"
-        },
-        {
-            "lake_name": "Lake Powell"
-        },
-        {
-            "lake_name": "Lake Sakakawea"
-        },
-        {
-            "lake_name": "Lake Oahe"
+            "lake_name": "Lake Ontario"
         }
     ],
-    "time": 2.768,
-    "tokens": 127
+    "time": 10.678,
+    "tokens": 68
 }

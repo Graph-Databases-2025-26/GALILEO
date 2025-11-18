@@ -11,16 +11,8 @@
         {
             "state_name": "Florida",
             "capital": "Tallahassee"
-        },
-        {
-            "state_name": "New York",
-            "capital": "Albany"
-        },
-        {
-            "state_name": "Illinois",
-            "capital": "Springfield"
         }
     ],
-    "time": 2.556,
-    "tokens": 98
+    "time": 1.647,
+    "tokens": 63
 }

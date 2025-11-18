@@ -1,156 +1,21 @@
 {
     "result_set": [
         {
-            "capital": "Montgomery"
-        },
-        {
-            "capital": "Juneau"
-        },
-        {
-            "capital": "Phoenix"
-        },
-        {
-            "capital": "Little Rock"
-        },
-        {
             "capital": "Sacramento"
         },
         {
             "capital": "Denver"
         },
         {
-            "capital": "Hartford"
-        },
-        {
-            "capital": "Dover"
-        },
-        {
-            "capital": "Tallahassee"
-        },
-        {
-            "capital": "Atlanta"
-        },
-        {
-            "capital": "Honolulu"
-        },
-        {
-            "capital": "Boise"
-        },
-        {
-            "capital": "Springfield"
-        },
-        {
-            "capital": "Indianapolis"
-        },
-        {
-            "capital": "Des Moines"
-        },
-        {
-            "capital": "Topeka"
-        },
-        {
-            "capital": "Frankfort"
-        },
-        {
-            "capital": "Baton Rouge"
-        },
-        {
-            "capital": "Augusta"
-        },
-        {
-            "capital": "Annapolis"
-        },
-        {
-            "capital": "Boston"
-        },
-        {
-            "capital": "Lansing"
-        },
-        {
-            "capital": "St. Paul"
-        },
-        {
-            "capital": "Jackson"
-        },
-        {
-            "capital": "Jefferson City"
-        },
-        {
-            "capital": "Helena"
-        },
-        {
-            "capital": "Lincoln"
-        },
-        {
-            "capital": "Carson City"
-        },
-        {
-            "capital": "Concord"
-        },
-        {
-            "capital": "Trenton"
-        },
-        {
-            "capital": "Santa Fe"
-        },
-        {
-            "capital": "Albany"
-        },
-        {
-            "capital": "Raleigh"
-        },
-        {
-            "capital": "Bismarck"
-        },
-        {
-            "capital": "Columbus"
-        },
-        {
-            "capital": "Oklahoma City"
-        },
-        {
-            "capital": "Salem"
-        },
-        {
-            "capital": "Harrisburg"
-        },
-        {
-            "capital": "Providence"
-        },
-        {
-            "capital": "Columbia"
-        },
-        {
-            "capital": "Pierre"
-        },
-        {
-            "capital": "Nashville"
-        },
-        {
-            "capital": "Austin"
-        },
-        {
-            "capital": "Salt Lake City"
-        },
-        {
-            "capital": "Montpelier"
-        },
-        {
-            "capital": "Richmond"
-        },
-        {
             "capital": "Olympia"
         },
         {
-            "capital": "Charleston"
+            "capital": "Phoenix"
         },
         {
-            "capital": "Madison"
-        },
-        {
-            "capital": "Cheyenne"
+            "capital": "Nashville"
         }
     ],
-    "time": 11.531,
-    "tokens": 526
+    "time": 3.884,
+    "tokens": 61
 }

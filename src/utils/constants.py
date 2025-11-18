@@ -68,7 +68,9 @@ REQS_PATH = ROOT / "requirements.txt"
 LLM_TEMPLATE = ROOT / "data" / ".prompts" / "response_template.jinja"
 
 SQL_IK_PROMPT = """
-    You are an expert SQL interpreter. Your ONLY task is to generate a JSON response that simulates the result of the SQL query based on your internal knowledge and the structure of the database schema provided to you.
+    You are an expert SQL interpreter. Your ONLY task is to generate a JSON response
+    that simulates the result of the SQL query based on your internal knowledge
+    and the structure of the database schema provided to you.
 
     CONTEXTUAL DATA:
     The following information is provided for your task:
@@ -78,16 +80,22 @@ SQL_IK_PROMPT = """
 
     STRICT INSTRUCTIONS:
     1. RESPONSE MUST be ONLY ONE, single, valid JSON object.
-    2. DO NOT include any  description, explanation, or markdown.
-    3. START your response IMMEDIATELY with the single '{{' character and END with the single '}}' character.
+    2. DO NOT include any description, explanation, or markdown.
+    3. START your response IMMEDIATELY with the single '{{' character and
+       END with the single '}}' character.
     4. Use this JSON structure exactly:
     {{
-    "result_set": [
+      "result_set": [
         {{ "<column_name_1>": "<value_1>", ... }}
-        ]
+      ]
     }}
-    5. "result_set" must be an array of JSON objects where keys match the columns selected in the query.
-
+    5. "result_set" must be an array of JSON objects where keys match the
+       columns selected in the query.
+    6. "result_set" MUST NOT be empty. Never return [].
+       Even if the true result would contain zero rows, you MUST still simulate
+       at least one row that is consistent with the schema and the query.
+    7. Do NOT output empty objects {}. Every object in "result_set" must contain
+       values for all the selected columns of the query.
     """
 
 NL_IK_PROMPT = """
@@ -145,7 +153,6 @@ PZ_PROMPT = """
     5. "result_set" must be an array of JSON objects where keys match the columns selected in the query.
 
 """
-
 
 
 SYSTEM_PROMPT = {

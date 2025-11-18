@@ -27,30 +27,10 @@
         },
         {
             "state_name": "Illinois",
-            "population": 12803048,
+            "population": 12886018,
             "capital": "Springfield"
-        },
-        {
-            "state_name": "Ohio",
-            "population": 11687064,
-            "capital": "Columbus"
-        },
-        {
-            "state_name": "Georgia",
-            "population": 10511131,
-            "capital": "Atlanta"
-        },
-        {
-            "state_name": "North Carolina",
-            "population": 10420000,
-            "capital": "Raleigh"
-        },
-        {
-            "state_name": "Michigan",
-            "population": 10077331,
-            "capital": "Lansing"
         }
     ],
-    "time": 5.84,
-    "tokens": 267
+    "time": 5.226,
+    "tokens": 167
 }

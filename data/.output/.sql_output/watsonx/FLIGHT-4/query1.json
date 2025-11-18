@@ -1,15 +1,15 @@
 {
     "result_set": [
         {
-            "name": "Amsterdam Airport Schiphol"
+            "name": "New York Airport"
         },
         {
-            "name": "Rotterdam The Hague Airport"
+            "name": "Los Angeles Airport"
         },
         {
-            "name": "Groningen Airport Eelde"
+            "name": "Chicago Airport"
         }
     ],
-    "time": 1.864,
-    "tokens": 51
+    "time": 1.655,
+    "tokens": 43
 }

@@ -3,189 +3,29 @@
         {
             "state_name": "Washington",
             "capital": "Olympia",
-            "population": "3133000"
+            "population": 3134000
         },
         {
             "state_name": "Arizona",
             "capital": "Phoenix",
-            "population": "3270000"
-        },
-        {
-            "state_name": "Massachusetts",
-            "capital": "Boston",
-            "population": "3510000"
-        },
-        {
-            "state_name": "Tennessee",
-            "capital": "Nashville",
-            "population": "3560000"
-        },
-        {
-            "state_name": "Indiana",
-            "capital": "Indianapolis",
-            "population": "3730000"
-        },
-        {
-            "state_name": "Missouri",
-            "capital": "Jefferson City",
-            "population": "3840000"
-        },
-        {
-            "state_name": "Maryland",
-            "capital": "Annapolis",
-            "population": "3880000"
-        },
-        {
-            "state_name": "Minnesota",
-            "capital": "St. Paul",
-            "population": "3910000"
-        },
-        {
-            "state_name": "Colorado",
-            "capital": "Denver",
-            "population": "3940000"
-        },
-        {
-            "state_name": "Alabama",
-            "capital": "Montgomery",
-            "population": "3980000"
-        },
-        {
-            "state_name": "South Carolina",
-            "capital": "Columbia",
-            "population": "4050000"
-        },
-        {
-            "state_name": "Louisiana",
-            "capital": "Baton Rouge",
-            "population": "4120000"
-        },
-        {
-            "state_name": "Kentucky",
-            "capital": "Frankfort",
-            "population": "4160000"
-        },
-        {
-            "state_name": "Oklahoma",
-            "capital": "Oklahoma City",
-            "population": "4230000"
-        },
-        {
-            "state_name": "Connecticut",
-            "capital": "Hartford",
-            "population": "4270000"
-        },
-        {
-            "state_name": "Iowa",
-            "capital": "Des Moines",
-            "population": "4330000"
-        },
-        {
-            "state_name": "Mississippi",
-            "capital": "Jackson",
-            "population": "4370000"
-        },
-        {
-            "state_name": "West Virginia",
-            "capital": "Charleston",
-            "population": "4420000"
-        },
-        {
-            "state_name": "New Hampshire",
-            "capital": "Concord",
-            "population": "4470000"
-        },
-        {
-            "state_name": "Nevada",
-            "capital": "Carson City",
-            "population": "4520000"
-        },
-        {
-            "state_name": "Utah",
-            "capital": "Salt Lake City",
-            "population": "4630000"
-        },
-        {
-            "state_name": "New Mexico",
-            "capital": "Santa Fe",
-            "population": "4710000"
-        },
-        {
-            "state_name": "Nebraska",
-            "capital": "Lincoln",
-            "population": "4820000"
-        },
-        {
-            "state_name": "Kansas",
-            "capital": "Topeka",
-            "population": "4930000"
-        },
-        {
-            "state_name": "Idaho",
-            "capital": "Boise",
-            "population": "5140000"
+            "population": 3849000
         },
         {
             "state_name": "Oregon",
             "capital": "Salem",
-            "population": "5440000"
+            "population": 4434000
         },
         {
-            "state_name": "Wisconsin",
-            "capital": "Madison",
-            "population": "5640000"
+            "state_name": "Colorado",
+            "capital": "Denver",
+            "population": 4632000
         },
         {
-            "state_name": "Hawaii",
-            "capital": "Honolulu",
-            "population": "5740000"
-        },
-        {
-            "state_name": "New Jersey",
-            "capital": "Trenton",
-            "population": "5820000"
-        },
-        {
-            "state_name": "Virginia",
-            "capital": "Richmond",
-            "population": "5940000"
-        },
-        {
-            "state_name": "Michigan",
-            "capital": "Lansing",
-            "population": "6240000"
-        },
-        {
-            "state_name": "North Carolina",
-            "capital": "Raleigh",
-            "population": "6450000"
-        },
-        {
-            "state_name": "Georgia",
-            "capital": "Atlanta",
-            "population": "6780000"
-        },
-        {
-            "state_name": "Ohio",
-            "capital": "Columbus",
-            "population": "6930000"
-        },
-        {
-            "state_name": "Pennsylvania",
-            "capital": "Harrisburg",
-            "population": "7060000"
-        },
-        {
-            "state_name": "Illinois",
-            "capital": "Springfield",
-            "population": "7260000"
-        },
-        {
-            "state_name": "Florida",
-            "capital": "Tallahassee",
-            "population": "7480000"
+            "state_name": "Minnesota",
+            "capital": "Saint Paul",
+            "population": 4943000
         }
     ],
-    "time": 18.021,
-    "tokens": 973
+    "time": 5.604,
+    "tokens": 130
 }

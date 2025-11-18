@@ -7,36 +7,15 @@
             "lake_name": "Lake Michigan"
         },
         {
+            "lake_name": "Great Salt Lake"
+        },
+        {
             "lake_name": "Lake Huron"
         },
         {
             "lake_name": "Lake Ontario"
-        },
-        {
-            "lake_name": "Great Salt Lake"
-        },
-        {
-            "lake_name": "Lake Erie"
-        },
-        {
-            "lake_name": "Lake Winnipeg"
-        },
-        {
-            "lake_name": "Lake Sakakawea"
-        },
-        {
-            "lake_name": "Lake Mead"
-        },
-        {
-            "lake_name": "Lake Powell"
-        },
-        {
-            "lake_name": "Lake Oahe"
-        },
-        {
-            "lake_name": "Lake Pontchartrain"
         }
     ],
-    "time": 3.896,
-    "tokens": 151
+    "time": 12.264,
+    "tokens": 68
 }

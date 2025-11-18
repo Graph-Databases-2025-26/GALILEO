@@ -1,15 +1,15 @@
 {
     "result_set": [
         {
-            "lake_name": "Lake Superior"
-        },
-        {
             "lake_name": "Lake Michigan"
         },
         {
             "lake_name": "Lake Huron"
+        },
+        {
+            "lake_name": "Lake Superior"
         }
     ],
-    "time": 1.64,
-    "tokens": 43
+    "time": 1.351,
+    "tokens": 45
 }
