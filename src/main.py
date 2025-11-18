@@ -126,10 +126,19 @@ def main():
             return
         config.llm_provider = args.provider.lower()
 
-
-    datasets = [d.upper() for d in get_dataset_selection(config.database.run)]
-    #datasets = [d.upper() for d in args.datasets] if args.datasets else \
-        #[d.upper() for d in get_dataset_selection(config.database.run)]
+    datasets = []
+    if args.datasets:
+        # Se l'utente ha specificato dataset nel comando, usa quelli
+        requested = [d.upper() for d in args.datasets]
+        if "ALL" in requested:
+            LOG.info("'ALL' detected via CLI. Loading all IK datasets.")
+            datasets = IK_DATASETS
+        else:
+            datasets = requested
+    else:
+        # Altrimenti usa la logica di fallback del config/tools
+        yaml_selection = get_dataset_selection(config.database.run)
+        datasets = [d.upper() for d in yaml_selection]
 
     #track which types of baselines were run (handling "both" mode)
     run_types = set()

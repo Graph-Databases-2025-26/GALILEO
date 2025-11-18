@@ -18,28 +18,20 @@ def get_dataset_selection(database_run: str) -> list[str]:
         It defaults to all datasets if the input is invalid or 'ALL'.
     """
 
-    #  Priority to the command line
-    if len(sys.argv) > 1:
-        args = [arg.upper() for arg in sys.argv[1:]]
-        LOG.info(f"Command line args: {args}")
-    else:
-        #  Otherwise, use the parameter from the .yaml file
-        if database_run is None:
-            database_run = "ALL"
-        else:
-            args = [s.strip().upper() for s in database_run.split(",")]
 
-        LOG.info(f"Parameters from YAML file: {args}")
+    #  Otherwise, use the parameter from the .yaml file
+    if not database_run:
+        return ["ALL"]
+
+    args = [s.strip().upper() for s in database_run.split(",")]
+
+    LOG.info(f"Parameters from YAML file: {args}")
 
     # Parameters validation
-    if "ALL" or "all" in args:
-        print("ALL detected)")
+    if "ALL" in args:
+        print("ALL detected")
+        return IK_DATASETS
 
-        if any(mode in args for mode in {"NL", "SQL"}):
-            return IK_DATASETS
-        else:
-            return MC_DATASETS
-        #return DATASETS
     valid = [d for d in args if d in DATASETS]
     invalid = [d for d in args if d not in DATASETS]
     if invalid:
