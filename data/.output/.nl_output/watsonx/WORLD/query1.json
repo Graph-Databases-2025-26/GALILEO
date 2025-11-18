@@ -1,9 +1,9 @@
 {
     "result_set": [
         {
-            "number_of_governments": "5"
+            "government_form": "1"
         }
     ],
-    "time": 1.184,
-    "tokens": 35
+    "time": 1.006,
+    "tokens": 18
 }

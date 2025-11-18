@@ -1,22 +1,10 @@
 {
     "result_set": [
         {
-            "name": "Nicol\u00e1s Maduro",
-            "party": "PSUV"
-        },
-        {
-            "name": "Hugo Ch\u00e1vez",
-            "party": "PSUV"
-        },
-        {
-            "name": "Rafael Caldera",
-            "party": "Convergence"
-        },
-        {
-            "name": "Carlos Andr\u00e9s P\u00e9rez",
-            "party": "Acci\u00f3n Democr\u00e1tica"
+            "name": "Hugo Chavez",
+            "party": "United Socialist Party of Venezuela"
         }
     ],
-    "time": 4.283,
-    "tokens": 90
+    "time": 2.317,
+    "tokens": 34
 }

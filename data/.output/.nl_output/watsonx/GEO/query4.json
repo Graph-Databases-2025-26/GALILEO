@@ -1,10 +1,12 @@
 {
     "result_set": [
         {
-            "city": "Tempe",
-            "population": "192,364"
+            "city_name": "Tempe",
+            "population": "192364",
+            "country_name": "USA",
+            "state_name": "Arizona"
         }
     ],
-    "time": 1.64,
-    "tokens": 40
+    "time": 1.571,
+    "tokens": 42
 }

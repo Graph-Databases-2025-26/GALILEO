@@ -14,43 +14,8 @@
             "state_name": "Florida",
             "population": 21244317,
             "capital": "Tallahassee"
-        },
-        {
-            "state_name": "New York",
-            "population": 19453561,
-            "capital": "Albany"
-        },
-        {
-            "state_name": "Pennsylvania",
-            "population": 12802023,
-            "capital": "Harrisburg"
-        },
-        {
-            "state_name": "Illinois",
-            "population": 12803048,
-            "capital": "Springfield"
-        },
-        {
-            "state_name": "Ohio",
-            "population": 11687064,
-            "capital": "Columbus"
-        },
-        {
-            "state_name": "Georgia",
-            "population": 10511131,
-            "capital": "Atlanta"
-        },
-        {
-            "state_name": "North Carolina",
-            "population": 10420000,
-            "capital": "Raleigh"
-        },
-        {
-            "state_name": "Michigan",
-            "population": 10077331,
-            "capital": "Lansing"
         }
     ],
-    "time": 7.784,
-    "tokens": 280
+    "time": 2.154,
+    "tokens": 85
 }

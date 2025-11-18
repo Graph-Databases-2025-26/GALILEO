@@ -5,16 +5,9 @@
             "party": "Democratic",
             "start_year": 1885,
             "end_year": 1889,
-            "cardinal_number": "22"
-        },
-        {
-            "name": "Grover Cleveland",
-            "party": "Democratic",
-            "start_year": 1893,
-            "end_year": 1897,
-            "cardinal_number": "24"
+            "cardinal_number": "22nd"
         }
     ],
-    "time": 2.574,
-    "tokens": 91
+    "time": 1.838,
+    "tokens": 68
 }

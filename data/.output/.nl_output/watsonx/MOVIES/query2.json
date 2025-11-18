@@ -1,36 +1,15 @@
 {
     "result_set": [
         {
-            "title": "Jaws"
+            "primarytitle": "E.T. the Extra-Terrestrial"
         },
         {
-            "title": "E.T. the Extra-Terrestrial"
+            "primarytitle": "Jurassic Park"
         },
         {
-            "title": "Jurassic Park"
-        },
-        {
-            "title": "Indiana Jones and the Raiders of the Lost Ark"
-        },
-        {
-            "title": "Saving Private Ryan"
-        },
-        {
-            "title": "Catch Me If You Can"
-        },
-        {
-            "title": "War Horse"
-        },
-        {
-            "title": "Lincoln"
-        },
-        {
-            "title": "Bridge of Spies"
-        },
-        {
-            "title": "Ready Player One"
+            "primarytitle": "Indiana Jones and the Raiders of the Lost Ark"
         }
     ],
-    "time": 3.377,
-    "tokens": 143
+    "time": 1.609,
+    "tokens": 58
 }

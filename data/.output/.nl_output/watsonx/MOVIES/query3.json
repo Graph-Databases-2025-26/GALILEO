@@ -1,94 +1,18 @@
 {
     "result_set": [
         {
-            "title": "The Last Outpost",
-            "year": 1951
+            "primarytitle": "Primary Title 1",
+            "startyear": 1951
         },
         {
-            "title": "Carbine Williams",
-            "year": 1952
+            "primarytitle": "Primary Title 2",
+            "startyear": 1955
         },
         {
-            "title": "Ivanhoe",
-            "year": 1952
-        },
-        {
-            "title": "The Prisoner of Zenda",
-            "year": 1952
-        },
-        {
-            "title": "Knights of the Round Table",
-            "year": 1953
-        },
-        {
-            "title": "All the Brothers Were Valiant",
-            "year": 1953
-        },
-        {
-            "title": "Athena",
-            "year": 1954
-        },
-        {
-            "title": "The Student Prince",
-            "year": 1954
-        },
-        {
-            "title": "The Adventures of Quentin Durward",
-            "year": 1955
-        },
-        {
-            "title": "Tip on a Dead Jockey",
-            "year": 1957
-        },
-        {
-            "title": "Ten Thousand Bedrooms",
-            "year": 1957
-        },
-        {
-            "title": "Jailhouse Rock",
-            "year": 1957
-        },
-        {
-            "title": "The House of the Seven Hawks",
-            "year": 1959
-        },
-        {
-            "title": "The Honeymoon Machine",
-            "year": 1961
-        },
-        {
-            "title": "The Tartars",
-            "year": 1961
-        },
-        {
-            "title": "The Girls of the Golden West",
-            "year": 1961
-        },
-        {
-            "title": "The Horizontal Lieutenant",
-            "year": 1962
-        },
-        {
-            "title": "Follow the Boys",
-            "year": 1963
-        },
-        {
-            "title": "Fun in Acapulco",
-            "year": 1963
-        },
-        {
-            "title": "The Golden Head",
-            "year": 1964
-        },
-        {
-            "title": "The Truth About Spring",
-            "year": 1965
-        },
-        {
-            "title": "That Funny Feeling",
-            "year": 1965
+            "primarytitle": "Primary Title 3",
+            "startyear": 1960
         }
     ],
-    "time": 15.976,
-    "tokens": 425
+    "time": 1.876,
+    "tokens": 69
 }

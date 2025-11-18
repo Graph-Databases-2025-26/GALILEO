@@ -1,18 +1,18 @@
 {
     "result_set": [
         {
-            "title": "Ivanhoe"
+            "primarytitle": "Call of the Canyon",
+            "originaltitle": "Call of the Canyon"
         },
         {
-            "title": "The Adventures of Quentin Durward"
+            "primarytitle": "The Last Challenge",
+            "originaltitle": "The Last Challenge"
         },
         {
-            "title": "Knights of the Round Table"
-        },
-        {
-            "title": "The Prisoner of Zenda"
+            "primarytitle": "The Thin Man",
+            "originaltitle": "The Thin Man"
         }
     ],
-    "time": 1.872,
-    "tokens": 75
+    "time": 1.983,
+    "tokens": 74
 }

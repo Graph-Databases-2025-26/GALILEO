@@ -1,14 +1,5 @@
 {
-    "result_set": [
-        {
-            "party_name": "COPEI",
-            "number_of_presidents": 2
-        },
-        {
-            "party_name": "Acci\u00f3n Democr\u00e1tica",
-            "number_of_presidents": 4
-        }
-    ],
-    "time": 2.354,
-    "tokens": 64
+    "result_set": [],
+    "time": 0.713,
+    "tokens": 9
 }

@@ -1,21 +1,15 @@
 {
     "result_set": [
         {
+            "region": "British Islands"
+        },
+        {
             "region": "North America"
         },
         {
-            "region": "Europe"
-        },
-        {
-            "region": "Oceania"
-        },
-        {
-            "region": "Caribbean"
-        },
-        {
-            "region": "South America"
+            "region": "Western Europe"
         }
     ],
-    "time": 1.935,
-    "tokens": 44
+    "time": 1.433,
+    "tokens": 41
 }

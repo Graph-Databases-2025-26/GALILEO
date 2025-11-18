@@ -1,12 +1,5 @@
 {
-    "result_set": [
-        {
-            "name": "Amsterdam Airport Schiphol"
-        },
-        {
-            "name": "Rotterdam The Hague Airport"
-        }
-    ],
-    "time": 2.005,
-    "tokens": 50
+    "result_set": [],
+    "time": 0.711,
+    "tokens": 10
 }

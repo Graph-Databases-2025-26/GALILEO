@@ -1,9 +1,10 @@
 {
     "result_set": [
         {
-            "number_of_capitals": "1"
+            "state_name": "Rhode Island",
+            "capital": "1"
         }
     ],
-    "time": 1.225,
-    "tokens": 34
+    "time": 1.026,
+    "tokens": 23
 }

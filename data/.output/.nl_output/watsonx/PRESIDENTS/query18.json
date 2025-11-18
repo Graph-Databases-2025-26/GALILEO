@@ -1,18 +1,30 @@
 {
     "result_set": [
         {
-            "name": "Ronald Reagan"
+            "name": "George H. W. Bush",
+            "start_year": 1989,
+            "end_year": 1993,
+            "cardinal_number": "41st",
+            "party": "Republican",
+            "country": "USA"
         },
         {
-            "name": "George H.W. Bush"
+            "name": "George W. Bush",
+            "start_year": 2001,
+            "end_year": 2009,
+            "cardinal_number": "43rd",
+            "party": "Republican",
+            "country": "USA"
         },
         {
-            "name": "George W. Bush"
-        },
-        {
-            "name": "Donald Trump"
+            "name": "Donald Trump",
+            "start_year": 2017,
+            "end_year": 2021,
+            "cardinal_number": "45th",
+            "party": "Republican",
+            "country": "USA"
         }
     ],
-    "time": 1.741,
-    "tokens": 68
+    "time": 3.381,
+    "tokens": 156
 }

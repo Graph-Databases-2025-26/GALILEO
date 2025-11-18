@@ -1,9 +1,11 @@
 {
     "result_set": [
         {
-            "airline": "United Airlines"
+            "airline": "United Airlines",
+            "call_sign": "UAL",
+            "country": "USA"
         }
     ],
-    "time": 1.435,
+    "time": 1.33,
     "tokens": 33
 }

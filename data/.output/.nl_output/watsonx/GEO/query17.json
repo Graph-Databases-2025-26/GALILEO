@@ -1,11 +1,12 @@
 {
     "result_set": [
         {
-            "city": "Seattle",
-            "state": "Washington",
-            "population": "733919"
+            "city_name": "Seattle",
+            "population": "684451",
+            "country_name": "USA",
+            "state_name": "Washington"
         }
     ],
-    "time": 1.37,
-    "tokens": 44
+    "time": 1.251,
+    "tokens": 40
 }

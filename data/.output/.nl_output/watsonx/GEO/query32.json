@@ -1,12 +1,12 @@
 {
     "result_set": [
         {
-            "state_name": "Oklahoma",
-            "capital": "Oklahoma City",
+            "state_name": "California",
+            "capital": "Sacramento",
             "population": 4700000,
-            "area": 56153
+            "area_squared_miles": 56153
         }
     ],
-    "time": 1.637,
-    "tokens": 58
+    "time": 1.435,
+    "tokens": 43
 }

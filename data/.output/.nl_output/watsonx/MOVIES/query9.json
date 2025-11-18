@@ -1,10 +1,10 @@
 {
     "result_set": [
         {
-            "name": "John Ford",
-            "birth_year": 1894
+            "director": "Oldest Director",
+            "birthyear": "Min birthyear"
         }
     ],
-    "time": 1.535,
-    "tokens": 39
+    "time": 1.942,
+    "tokens": 29
 }

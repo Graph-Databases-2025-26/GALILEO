@@ -2,14 +2,8 @@
     "result_set": [
         {
             "name": "George H. W. Bush"
-        },
-        {
-            "name": "George W. Bush"
-        },
-        {
-            "name": "Donald Trump"
         }
     ],
-    "time": 1.637,
-    "tokens": 45
+    "time": 1.025,
+    "tokens": 25
 }

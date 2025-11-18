@@ -9,10 +9,10 @@
             "capital": "Austin"
         },
         {
-            "state_name": "Florida",
-            "capital": "Tallahassee"
+            "state_name": "Montana",
+            "capital": "Helena"
         }
     ],
-    "time": 2.459,
-    "tokens": 74
+    "time": 1.64,
+    "tokens": 60
 }

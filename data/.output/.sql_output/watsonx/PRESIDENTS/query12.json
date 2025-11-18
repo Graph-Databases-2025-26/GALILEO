@@ -1,14 +1,14 @@
 {
     "result_set": [
         {
-            "party": "Liberal Party",
+            "party": "Liberal",
             "num": 2
         },
         {
-            "party": "Conservative Party",
+            "party": "Conservative",
             "num": 1
         }
     ],
-    "time": 1.638,
-    "tokens": 41
+    "time": 1.538,
+    "tokens": 43
 }

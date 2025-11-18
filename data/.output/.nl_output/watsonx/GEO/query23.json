@@ -1,26 +1,5 @@
 {
-    "result_set": [
-        {
-            "capital": "Nur-Sultan",
-            "country": "Kazakhstan"
-        },
-        {
-            "capital": "Ashgabat",
-            "country": "Turkmenistan"
-        },
-        {
-            "capital": "Dushanbe",
-            "country": "Tajikistan"
-        },
-        {
-            "capital": "Bishkek",
-            "country": "Kyrgyzstan"
-        },
-        {
-            "capital": "Yerevan",
-            "country": "Armenia"
-        }
-    ],
-    "time": 2.764,
-    "tokens": 122
+    "result_set": [],
+    "time": 0.819,
+    "tokens": 10
 }

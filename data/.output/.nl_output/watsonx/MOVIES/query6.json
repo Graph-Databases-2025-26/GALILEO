@@ -1,70 +1,30 @@
 {
     "result_set": [
         {
-            "title": "Hook",
-            "year": 1991,
-            "genres": "Adventure, Comedy, Family",
-            "birthyear": 1946,
-            "deathyear": null,
-            "runtimeminutes": 142
-        },
-        {
-            "title": "Jurassic Park",
-            "year": 1993,
-            "genres": "Adventure, Sci-Fi, Thriller",
+            "primarytitle": "Jurassic Park",
+            "startyear": 1993,
+            "genres": "Action, Adventure, Sci-Fi",
             "birthyear": 1946,
             "deathyear": null,
             "runtimeminutes": 127
         },
         {
-            "title": "Schindler's List",
-            "year": 1993,
+            "primarytitle": "Schindler's List",
+            "startyear": 1993,
             "genres": "Biography, Drama, History",
             "birthyear": 1946,
             "deathyear": null,
             "runtimeminutes": 195
         },
         {
-            "title": "The Lost World: Jurassic Park",
-            "year": 1997,
-            "genres": "Action, Adventure, Sci-Fi",
-            "birthyear": 1946,
-            "deathyear": null,
-            "runtimeminutes": 129
-        },
-        {
-            "title": "Amistad",
-            "year": 1997,
-            "genres": "Drama, History",
-            "birthyear": 1946,
-            "deathyear": null,
-            "runtimeminutes": 154
-        },
-        {
-            "title": "Saving Private Ryan",
-            "year": 1998,
+            "primarytitle": "Saving Private Ryan",
+            "startyear": 1998,
             "genres": "Drama, War",
             "birthyear": 1946,
             "deathyear": null,
             "runtimeminutes": 169
-        },
-        {
-            "title": "A.I. Artificial Intelligence",
-            "year": 2001,
-            "genres": "Adventure, Drama, Sci-Fi",
-            "birthyear": 1946,
-            "deathyear": null,
-            "runtimeminutes": 146
-        },
-        {
-            "title": "Minority Report",
-            "year": 2002,
-            "genres": "Action, Sci-Fi, Thriller",
-            "birthyear": 1946,
-            "deathyear": null,
-            "runtimeminutes": 145
         }
     ],
-    "time": 15.665,
-    "tokens": 440
+    "time": 4.204,
+    "tokens": 171
 }

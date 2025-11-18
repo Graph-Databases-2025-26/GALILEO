@@ -1,9 +1,10 @@
 {
     "result_set": [
         {
-            "location": "Massachusetts is a state located in the northeastern United States, in the New England region."
+            "state_name": "Massachusetts",
+            "country_name": "USA"
         }
     ],
-    "time": 1.436,
-    "tokens": 47
+    "time": 1.026,
+    "tokens": 26
 }

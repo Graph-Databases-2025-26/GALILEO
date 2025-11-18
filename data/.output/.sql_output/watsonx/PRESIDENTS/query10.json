@@ -1,34 +1,13 @@
 {
     "result_set": [
         {
-            "name": "R\u00f3mulo Betancourt",
-            "party": "Democratic Action",
-            "start_year": 1959,
-            "end_year": 1964,
-            "cardinal_number": "47th"
-        },
-        {
-            "name": "R\u00f3mulo Betancourt",
-            "party": "Democratic Action",
-            "start_year": 1959,
-            "end_year": 1964,
-            "cardinal_number": "47th"
-        },
-        {
-            "name": "Ra\u00fal Leoni",
-            "party": "Democratic Action",
-            "start_year": 1964,
-            "end_year": 1969,
-            "cardinal_number": "48th"
-        },
-        {
             "name": "Carlos Andr\u00e9s P\u00e9rez",
             "party": "Democratic Action",
             "start_year": 1974,
             "end_year": 1979,
-            "cardinal_number": "50th"
+            "cardinal_number": "President"
         }
     ],
-    "time": 4.911,
-    "tokens": 191
+    "time": 1.948,
+    "tokens": 70
 }

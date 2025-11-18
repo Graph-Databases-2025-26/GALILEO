@@ -1,46 +1,24 @@
 {
     "result_set": [
         {
-            "city": "New York City",
-            "state": "New York"
+            "city_name": "New York City",
+            "population": "8537673",
+            "country_name": "USA",
+            "state_name": "New York"
         },
         {
-            "city": "Los Angeles",
-            "state": "California"
+            "city_name": "Los Angeles",
+            "population": "3990456",
+            "country_name": "USA",
+            "state_name": "California"
         },
         {
-            "city": "Chicago",
-            "state": "Illinois"
-        },
-        {
-            "city": "Houston",
-            "state": "Texas"
-        },
-        {
-            "city": "Phoenix",
-            "state": "Arizona"
-        },
-        {
-            "city": "Philadelphia",
-            "state": "Pennsylvania"
-        },
-        {
-            "city": "San Antonio",
-            "state": "Texas"
-        },
-        {
-            "city": "San Diego",
-            "state": "California"
-        },
-        {
-            "city": "Dallas",
-            "state": "Texas"
-        },
-        {
-            "city": "San Jose",
-            "state": "California"
+            "city_name": "Chicago",
+            "population": "2698459",
+            "country_name": "USA",
+            "state_name": "Illinois"
         }
     ],
-    "time": 10.346,
-    "tokens": 181
+    "time": 2.663,
+    "tokens": 110
 }

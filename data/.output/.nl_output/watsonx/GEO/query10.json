@@ -1,120 +1,24 @@
 {
     "result_set": [
         {
-            "lake_name": "Lake Superior"
+            "lake_name": "Lake Superior",
+            "area_squared_km": "31800.0",
+            "country_name": "United States",
+            "state_name": "Minnesota"
         },
         {
-            "lake_name": "Lake Michigan"
+            "lake_name": "Lake Michigan",
+            "area_squared_km": "58000.0",
+            "country_name": "United States",
+            "state_name": "Wisconsin"
         },
         {
-            "lake_name": "Lake Huron"
-        },
-        {
-            "lake_name": "Lake Erie"
-        },
-        {
-            "lake_name": "Lake Ontario"
-        },
-        {
-            "lake_name": "Great Salt Lake"
-        },
-        {
-            "lake_name": "Lake Mead"
-        },
-        {
-            "lake_name": "Lake Powell"
-        },
-        {
-            "lake_name": "Lake Tahoe"
-        },
-        {
-            "lake_name": "Lake Chelan"
-        },
-        {
-            "lake_name": "Lake George"
-        },
-        {
-            "lake_name": "Lake Winnipesaukee"
-        },
-        {
-            "lake_name": "Lake Oahe"
-        },
-        {
-            "lake_name": "Lake Sakakawea"
-        },
-        {
-            "lake_name": "Lake Sharpe"
-        },
-        {
-            "lake_name": "Lake Francis Case"
-        },
-        {
-            "lake_name": "Lake Lewis and Clark"
-        },
-        {
-            "lake_name": "Lake Cumberland"
-        },
-        {
-            "lake_name": "Lake Norman"
-        },
-        {
-            "lake_name": "Lake Lanier"
-        },
-        {
-            "lake_name": "Lake Hartwell"
-        },
-        {
-            "lake_name": "Lake Thurmond"
-        },
-        {
-            "lake_name": "Lake Seminole"
-        },
-        {
-            "lake_name": "Lake Eufaula"
-        },
-        {
-            "lake_name": "Lake Allatoona"
-        },
-        {
-            "lake_name": "Lake Sidney Lanier"
-        },
-        {
-            "lake_name": "Lake Texoma"
-        },
-        {
-            "lake_name": "Lake Livingston"
-        },
-        {
-            "lake_name": "Lake Conroe"
-        },
-        {
-            "lake_name": "Lake Houston"
-        },
-        {
-            "lake_name": "Lake Ray Roberts"
-        },
-        {
-            "lake_name": "Lake Lewisville"
-        },
-        {
-            "lake_name": "Lake Grapevine"
-        },
-        {
-            "lake_name": "Lake Palestine"
-        },
-        {
-            "lake_name": "Lake Fork"
-        },
-        {
-            "lake_name": "Lake Toledo Bend"
-        },
-        {
-            "lake_name": "Lake Sam Rayburn"
-        },
-        {
-            "lake_name": "Lake Okeechobee"
+            "lake_name": "Lake Erie",
+            "area_squared_km": "25700.0",
+            "country_name": "United States",
+            "state_name": "New York"
         }
     ],
-    "time": 10.44,
-    "tokens": 479
+    "time": 2.764,
+    "tokens": 122
 }

@@ -2,21 +2,13 @@
     "result_set": [
         {
             "party": "Acci\u00f3n Democr\u00e1tica",
-            "num": 5
-        },
-        {
-            "party": "COPEI",
             "num": 3
         },
         {
-            "party": "Independent",
+            "party": "COPEI",
             "num": 2
-        },
-        {
-            "party": "Uni\u00f3n Republicana Democr\u00e1tica",
-            "num": 1
         }
     ],
-    "time": 2.153,
-    "tokens": 75
+    "time": 1.431,
+    "tokens": 46
 }

@@ -1,172 +1,27 @@
 {
     "result_set": [
         {
-            "name": "George Washington",
-            "start_year": 1789,
-            "end_year": 1797,
-            "number_of_president": 1,
-            "party": "Independent"
-        },
-        {
-            "name": "John Adams",
-            "start_year": 1797,
-            "end_year": 1801,
-            "number_of_president": 2,
-            "party": "Federalist"
-        },
-        {
-            "name": "Thomas Jefferson",
-            "start_year": 1801,
-            "end_year": 1809,
-            "number_of_president": 3,
-            "party": "Democratic-Republican"
-        },
-        {
-            "name": "James Madison",
-            "start_year": 1809,
-            "end_year": 1817,
-            "number_of_president": 4,
-            "party": "Democratic-Republican"
-        },
-        {
-            "name": "James Monroe",
-            "start_year": 1817,
-            "end_year": 1825,
-            "number_of_president": 5,
-            "party": "Democratic-Republican"
-        },
-        {
-            "name": "John Quincy Adams",
-            "start_year": 1825,
-            "end_year": 1829,
-            "number_of_president": 6,
-            "party": "Democratic-Republican"
-        },
-        {
-            "name": "Andrew Jackson",
-            "start_year": 1829,
-            "end_year": 1837,
-            "number_of_president": 7,
+            "name": "Joe Biden",
+            "start_year": 2021,
+            "end_year": null,
+            "cardinal_number": "46th",
             "party": "Democratic"
         },
         {
-            "name": "Martin Van Buren",
-            "start_year": 1837,
-            "end_year": 1841,
-            "number_of_president": 8,
+            "name": "Donald Trump",
+            "start_year": 2017,
+            "end_year": 2021,
+            "cardinal_number": "45th",
+            "party": "Republican"
+        },
+        {
+            "name": "Barack Obama",
+            "start_year": 2009,
+            "end_year": 2017,
+            "cardinal_number": "44th",
             "party": "Democratic"
-        },
-        {
-            "name": "William Henry Harrison",
-            "start_year": 1841,
-            "end_year": 1841,
-            "number_of_president": 9,
-            "party": "Whig"
-        },
-        {
-            "name": "John Tyler",
-            "start_year": 1841,
-            "end_year": 1845,
-            "number_of_president": 10,
-            "party": "Whig"
-        },
-        {
-            "name": "James K. Polk",
-            "start_year": 1845,
-            "end_year": 1849,
-            "number_of_president": 11,
-            "party": "Democratic"
-        },
-        {
-            "name": "Zachary Taylor",
-            "start_year": 1849,
-            "end_year": 1850,
-            "number_of_president": 12,
-            "party": "Whig"
-        },
-        {
-            "name": "Millard Fillmore",
-            "start_year": 1850,
-            "end_year": 1853,
-            "number_of_president": 13,
-            "party": "Whig"
-        },
-        {
-            "name": "Franklin Pierce",
-            "start_year": 1853,
-            "end_year": 1857,
-            "number_of_president": 14,
-            "party": "Democratic"
-        },
-        {
-            "name": "James Buchanan",
-            "start_year": 1857,
-            "end_year": 1861,
-            "number_of_president": 15,
-            "party": "Democratic"
-        },
-        {
-            "name": "Abraham Lincoln",
-            "start_year": 1861,
-            "end_year": 1865,
-            "number_of_president": 16,
-            "party": "Republican"
-        },
-        {
-            "name": "Andrew Johnson",
-            "start_year": 1865,
-            "end_year": 1869,
-            "number_of_president": 17,
-            "party": "National Union"
-        },
-        {
-            "name": "Ulysses S. Grant",
-            "start_year": 1869,
-            "end_year": 1877,
-            "number_of_president": 18,
-            "party": "Republican"
-        },
-        {
-            "name": "Rutherford B. Hayes",
-            "start_year": 1877,
-            "end_year": 1881,
-            "number_of_president": 19,
-            "party": "Republican"
-        },
-        {
-            "name": "James A. Garfield",
-            "start_year": 1881,
-            "end_year": 1881,
-            "number_of_president": 20,
-            "party": "Republican"
-        },
-        {
-            "name": "Chester A. Arthur",
-            "start_year": 1881,
-            "end_year": 1885,
-            "number_of_president": 21,
-            "party": "Republican"
-        },
-        {
-            "name": "Grover Cleveland",
-            "start_year": 1885,
-            "end_year": 1889,
-            "number_of_president": 22,
-            "party": "Democratic"
-        },
-        {
-            "name": "Benjamin Harrison",
-            "start_year": 1889,
-            "end_year": 1893,
-            "number_of_president": 23,
-            "party": "Republican"
-        },
-        {
-            "name": "Grover Cleveland",
-            "start_year": 1893,
-            "end_year": 1897
         }
     ],
-    "time": 21.816,
-    "tokens": 1024
+    "time": 3.378,
+    "tokens": 131
 }

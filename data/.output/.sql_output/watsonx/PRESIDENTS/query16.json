@@ -1,9 +1,9 @@
 {
     "result_set": [
         {
-            "count(p.party)": 24
+            "count(p.party)": 1
         }
     ],
-    "time": 2.046,
-    "tokens": 15
+    "time": 1.022,
+    "tokens": 21
 }

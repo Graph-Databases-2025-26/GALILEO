@@ -2,9 +2,9 @@
     "result_set": [
         {
             "river_name": "Rio Grande",
-            "length": "1885 miles"
+            "length_in_km": "3051"
         }
     ],
-    "time": 2.048,
-    "tokens": 41
+    "time": 1.126,
+    "tokens": 30
 }

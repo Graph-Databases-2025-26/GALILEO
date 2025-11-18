@@ -1,10 +1,10 @@
 {
     "result_set": [
         {
-            "state": "New Mexico",
-            "size": "121,590 square miles"
+            "state_name": "New Mexico",
+            "area_squared_miles": "121669.0"
         }
     ],
-    "time": 1.333,
-    "tokens": 42
+    "time": 1.111,
+    "tokens": 32
 }

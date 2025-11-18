@@ -1,9 +1,9 @@
 {
     "result_set": [
         {
-            "number_of_rivers": "250,000"
+            "count": "3"
         }
     ],
-    "time": 1.228,
-    "tokens": 36
+    "time": 0.873,
+    "tokens": 17
 }

@@ -1,9 +1,9 @@
 {
     "result_set": [
         {
-            "state": "Texas"
+            "state_name": "Texas"
         }
     ],
-    "time": 1.231,
-    "tokens": 32
+    "time": 1.023,
+    "tokens": 19
 }

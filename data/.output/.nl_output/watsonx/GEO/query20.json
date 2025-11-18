@@ -1,9 +1,24 @@
 {
     "result_set": [
         {
-            "number_of_rivers": "134"
+            "river_name": "Snake River",
+            "length_in_km": "1735",
+            "country_name": "United States",
+            "usa_state_traversed": "Idaho"
+        },
+        {
+            "river_name": "Salmon River",
+            "length_in_km": "684",
+            "country_name": "United States",
+            "usa_state_traversed": "Idaho"
+        },
+        {
+            "river_name": "Clearwater River",
+            "length_in_km": "120",
+            "country_name": "United States",
+            "usa_state_traversed": "Idaho"
         }
     ],
-    "time": 1.125,
-    "tokens": 34
+    "time": 3.072,
+    "tokens": 126
 }

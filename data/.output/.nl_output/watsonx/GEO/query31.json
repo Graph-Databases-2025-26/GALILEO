@@ -1,46 +1,21 @@
 {
     "result_set": [
         {
-            "state_name": "Washington",
-            "capital": "Olympia",
-            "population": 7590000
+            "state_name": "Texas",
+            "capital": "Austin",
+            "population": 4937820
         },
         {
-            "state_name": "Virginia",
-            "capital": "Richmond",
-            "population": 7420000
+            "state_name": "Florida",
+            "capital": "Tallahassee",
+            "population": 7487723
         },
         {
-            "state_name": "New Jersey",
-            "capital": "Trenton",
-            "population": 6940000
-        },
-        {
-            "state_name": "Michigan",
-            "capital": "Lansing",
-            "population": 6780000
-        },
-        {
-            "state_name": "North Carolina",
-            "capital": "Raleigh",
-            "population": 6620000
-        },
-        {
-            "state_name": "Georgia",
-            "capital": "Atlanta",
-            "population": 6470000
-        },
-        {
-            "state_name": "Ohio",
-            "capital": "Columbus",
-            "population": 6330000
-        },
-        {
-            "state_name": "Arizona",
-            "capital": "Phoenix",
-            "population": 6260000
+            "state_name": "New York",
+            "capital": "Albany",
+            "population": 7769821
         }
     ],
-    "time": 5.221,
-    "tokens": 218
+    "time": 2.147,
+    "tokens": 84
 }

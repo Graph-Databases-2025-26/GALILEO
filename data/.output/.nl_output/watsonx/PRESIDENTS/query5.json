@@ -1,24 +1,5 @@
 {
-    "result_set": [
-        {
-            "name": "Antonio Guzm\u00e1n Blanco"
-        },
-        {
-            "name": "Francisco Linares Alc\u00e1ntara"
-        },
-        {
-            "name": "Raimundo Andueza Palacio"
-        },
-        {
-            "name": "Ignacio Andrade"
-        },
-        {
-            "name": "Joaqu\u00edn Crespo"
-        },
-        {
-            "name": "Juan Vicente G\u00f3mez"
-        }
-    ],
-    "time": 2.395,
-    "tokens": 109
+    "result_set": [],
+    "time": 1.434,
+    "tokens": 9
 }
