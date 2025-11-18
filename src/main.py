@@ -131,10 +131,21 @@ def main():
         # Se l'utente ha specificato dataset nel comando, usa quelli
         requested = [d.upper() for d in args.datasets]
         if "ALL" in requested:
-            LOG.info("'ALL' detected via CLI. Loading all IK datasets.")
-            datasets = IK_DATASETS
+            # 1. 'ALL' rilevato via CLI: decidi il set in base alla modalità
+            LOG.info(f"'ALL' detected via CLI. Loading datasets based on run mode: {args.mode}")
+
+            # Le modalità che caricano MC_DATASETS
+            if args.mode in ["PZSQL", "PZNL", "pzsql", "pznl"]:
+                datasets = MC_DATASETS
+                LOG.info("PZSQL/PZNL mode detected. Loading MC_DATASETS.")
+            # Le modalità che caricano IK_DATASETS (fallback, es. NL, SQL, o altre)
+            else:
+                datasets = IK_DATASETS
+                LOG.info("NL/SQL mode detected. Loading IK_DATASETS.")
         else:
+            # 2. Lista specifica di dataset via CLI
             datasets = requested
+            LOG.info(f"Using specific datasets requested via CLI: {datasets}")
     else:
         # Altrimenti usa la logica di fallback del config/tools
         yaml_selection = get_dataset_selection(config.database.run)
@@ -191,7 +202,7 @@ def main():
                 run_types.add("PZNL")
             else:
                 LOG.warning(f"[BOTH] Dataset")
-
+    print(f"MODE: {args.mode}")
     if not run_types:
         LOG.warning("No baselines were executed; skipping evaluation.")
         return

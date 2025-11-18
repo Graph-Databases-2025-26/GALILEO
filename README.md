@@ -149,6 +149,8 @@ The command line **has priority** over the configuration file.
 * **Process baselines** you can choose the baseline and the provider by means the `--mode` and `--provider` parameter (see the Command-line Interface (CLI): section below).
 * **Configuration Fallback**: If no arguments are provided, the script uses the datasets defined in `config/config.yaml`.
 
+Notice that in our system we used `gemini-2.5-flash` for gemini, and `meta-llama/llama-3-3-70b-instruct` for ibm watsonx
+
 ---
 
 ## VII. Project Baselines

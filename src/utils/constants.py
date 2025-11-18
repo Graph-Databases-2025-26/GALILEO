@@ -68,7 +68,7 @@ REQS_PATH = ROOT / "requirements.txt"
 LLM_TEMPLATE = ROOT / "data" / ".prompts" / "response_template.jinja"
 
 SQL_IK_PROMPT = """
-    You are an expert SQL interpreter. Your ONLY task is to generate a JSON response that simulates the result of the SQL query based on your internal knowledge.
+    You are an expert SQL interpreter. Your ONLY task is to generate a JSON response that simulates the result of the SQL query based on your internal knowledge and the structure of the database schema provided to you.
 
     CONTEXTUAL DATA:
     The following information is provided for your task:
@@ -78,7 +78,7 @@ SQL_IK_PROMPT = """
 
     STRICT INSTRUCTIONS:
     1. RESPONSE MUST be ONLY ONE, single, valid JSON object.
-    2. DO NOT include any text, description, explanation, or markdown.
+    2. DO NOT include any  description, explanation, or markdown.
     3. START your response IMMEDIATELY with the single '{{' character and END with the single '}}' character.
     4. Use this JSON structure exactly:
     {{
@@ -98,7 +98,7 @@ NL_IK_PROMPT = """
     ---
     DATABASE SCHEMA:
     {schema_info}
-
+    
     STRICT INSTRUCTIONS:
     1. RESPONSE MUST be ONLY ONE, single, valid JSON object.
     2. DO NOT include any text, description, explanation, or markdown.
