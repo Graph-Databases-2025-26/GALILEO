@@ -1,54 +1,9 @@
 {
     "result_set": [
         {
-            "city_name": "Antananarivo"
-        },
-        {
-            "city_name": "Port Louis"
-        },
-        {
-            "city_name": "N'Djamena"
-        },
-        {
-            "city_name": "Banjul"
-        },
-        {
-            "city_name": "Lome"
-        },
-        {
-            "city_name": "Gaborone"
-        },
-        {
-            "city_name": "Maseru"
-        },
-        {
-            "city_name": "Mbabane"
-        },
-        {
-            "city_name": "Praia"
-        },
-        {
-            "city_name": "Bissau"
-        },
-        {
-            "city_name": "Nouakchott"
-        },
-        {
-            "city_name": "Malabo"
-        },
-        {
-            "city_name": "Sao Tome"
-        },
-        {
-            "city_name": "Moroni"
-        },
-        {
-            "city_name": "Djibouti City"
-        },
-        {
-            "city_name": "Victoria"
+            "count_rivers": 0
         }
     ],
-    "time": 16.838,
-    "tokens": 381
+    "time": 2.764,
+    "tokens": 89
 }

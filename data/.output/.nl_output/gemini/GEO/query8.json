@@ -1,11 +1,9 @@
 {
     "result_set": [
         {
-            "river_name": "Rio Grande",
-            "length_km": 3057,
-            "length_miles": 1900
+            "count_rivers": 6
         }
     ],
-    "time": 1.615,
-    "tokens": 193
+    "time": 1.49,
+    "tokens": 78
 }

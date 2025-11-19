@@ -1,5 +1,10 @@
 {
-    "result_set": [],
-    "time": 5.861,
-    "tokens": 1005
+    "result_set": [
+        {
+            "state_name": "New York",
+            "capital": "Albany"
+        }
+    ],
+    "time": 3.174,
+    "tokens": 476
 }

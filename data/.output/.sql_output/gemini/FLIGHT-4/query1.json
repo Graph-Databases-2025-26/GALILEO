@@ -1,39 +1,9 @@
 {
     "result_set": [
         {
-            "name": "LaGuardia Airport"
-        },
-        {
-            "name": "Amsterdam Schiphol"
-        },
-        {
-            "name": "London City Airport"
-        },
-        {
-            "name": "Svolvaer Airport"
-        },
-        {
-            "name": "Rotterdam The Hague Airport"
-        },
-        {
-            "name": "Esbjerg Airport"
-        },
-        {
-            "name": "Copenhagen Airport"
-        },
-        {
-            "name": "Lelystad Airport"
-        },
-        {
-            "name": "Eelde Airport"
-        },
-        {
-            "name": "Maastricht Aachen Airport"
-        },
-        {
-            "name": "Bremen Airport"
+            "name": "Amsterdam Airport Schiphol"
         }
     ],
-    "time": 6.33,
-    "tokens": 1043
+    "time": 1.936,
+    "tokens": 172
 }

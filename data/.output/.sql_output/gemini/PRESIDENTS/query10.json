@@ -1,34 +1,13 @@
 {
     "result_set": [
         {
-            "name": "George Washington",
-            "party": "None"
-        },
-        {
-            "name": "Abraham Lincoln",
-            "party": "Republican"
-        },
-        {
-            "name": "Franklin D. Roosevelt",
-            "party": "Democratic"
-        },
-        {
-            "name": "Ronald Reagan",
-            "party": "Republican"
-        },
-        {
-            "name": "Barack Obama",
-            "party": "Democratic"
-        },
-        {
-            "name": "Donald Trump",
-            "party": "Republican"
-        },
-        {
-            "name": "Joe Biden",
-            "party": "Democratic"
+            "name": "R\u00f3mulo Betancourt",
+            "party": "Democratic Action",
+            "start_year": 1945,
+            "end_year": 1948,
+            "cardinal_number": "34th"
         }
     ],
-    "time": 2.146,
-    "tokens": 340
+    "time": 2.882,
+    "tokens": 428
 }

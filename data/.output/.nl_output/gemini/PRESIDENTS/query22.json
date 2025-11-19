@@ -1,9 +1,34 @@
 {
     "result_set": [
         {
-            "name": "Millard Fillmore"
+            "name": "Franklin Pierce",
+            "party": "Democratic",
+            "start_year": 1853,
+            "end_year": 1857,
+            "cardinal_number": "14th"
+        },
+        {
+            "name": "James Buchanan",
+            "party": "Democratic",
+            "start_year": 1857,
+            "end_year": 1861,
+            "cardinal_number": "15th"
+        },
+        {
+            "name": "Grover Cleveland",
+            "party": "Democratic",
+            "start_year": 1885,
+            "end_year": 1889,
+            "cardinal_number": "22nd"
+        },
+        {
+            "name": "Grover Cleveland",
+            "party": "Democratic",
+            "start_year": 1893,
+            "end_year": 1897,
+            "cardinal_number": "24th"
         }
     ],
-    "time": 3.053,
-    "tokens": 488
+    "time": 2.661,
+    "tokens": 337
 }

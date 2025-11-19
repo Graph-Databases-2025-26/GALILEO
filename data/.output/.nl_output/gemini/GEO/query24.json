@@ -1,131 +1,231 @@
 {
     "result_set": [
         {
-            "state_name": "California",
-            "population": 39200000,
-            "capital": "Sacramento"
+            "state_name": "Alabama",
+            "population": 4903185,
+            "area_squared_miles": 52420.07
         },
         {
-            "state_name": "Texas",
-            "population": 30500000,
-            "capital": "Austin"
-        },
-        {
-            "state_name": "Florida",
-            "population": 22600000,
-            "capital": "Tallahassee"
-        },
-        {
-            "state_name": "New York",
-            "population": 19600000,
-            "capital": "Albany"
-        },
-        {
-            "state_name": "Pennsylvania",
-            "population": 12900000,
-            "capital": "Harrisburg"
-        },
-        {
-            "state_name": "Illinois",
-            "population": 12500000,
-            "capital": "Springfield"
-        },
-        {
-            "state_name": "Ohio",
-            "population": 11800000,
-            "capital": "Columbus"
-        },
-        {
-            "state_name": "Georgia",
-            "population": 11000000,
-            "capital": "Atlanta"
-        },
-        {
-            "state_name": "North Carolina",
-            "population": 10800000,
-            "capital": "Raleigh"
-        },
-        {
-            "state_name": "Michigan",
-            "population": 10000000,
-            "capital": "Lansing"
-        },
-        {
-            "state_name": "New Jersey",
-            "population": 9300000,
-            "capital": "Trenton"
-        },
-        {
-            "state_name": "Virginia",
-            "population": 8700000,
-            "capital": "Richmond"
-        },
-        {
-            "state_name": "Washington",
-            "population": 7800000,
-            "capital": "Olympia"
+            "state_name": "Alaska",
+            "population": 731545,
+            "area_squared_miles": 665384.07
         },
         {
             "state_name": "Arizona",
-            "population": 7400000,
-            "capital": "Phoenix"
+            "population": 7278717,
+            "area_squared_miles": 113990.3
         },
         {
-            "state_name": "Massachusetts",
-            "population": 7000000,
-            "capital": "Boston"
+            "state_name": "Arkansas",
+            "population": 3017804,
+            "area_squared_miles": 53178.55
         },
         {
-            "state_name": "Tennessee",
-            "population": 7100000,
-            "capital": "Nashville"
-        },
-        {
-            "state_name": "Indiana",
-            "population": 6800000,
-            "capital": "Indianapolis"
-        },
-        {
-            "state_name": "Maryland",
-            "population": 6200000,
-            "capital": "Annapolis"
-        },
-        {
-            "state_name": "Missouri",
-            "population": 6200000,
-            "capital": "Jefferson City"
+            "state_name": "California",
+            "population": 39512223,
+            "area_squared_miles": 163694.95
         },
         {
             "state_name": "Colorado",
-            "population": 5900000,
-            "capital": "Denver"
+            "population": 5758736,
+            "area_squared_miles": 104093.67
         },
         {
-            "state_name": "Wisconsin",
-            "population": 5900000,
-            "capital": "Madison"
+            "state_name": "Connecticut",
+            "population": 3565287,
+            "area_squared_miles": 5543.41
         },
         {
-            "state_name": "Minnesota",
-            "population": 5700000,
-            "capital": "Saint Paul"
+            "state_name": "Delaware",
+            "population": 973764,
+            "area_squared_miles": 2488.72
         },
         {
-            "state_name": "South Carolina",
-            "population": 5400000,
-            "capital": "Columbia"
+            "state_name": "Florida",
+            "population": 21477737,
+            "area_squared_miles": 65757.7
         },
         {
-            "state_name": "Alabama",
-            "population": 5100000,
-            "capital": "Montgomery"
+            "state_name": "Georgia",
+            "population": 10617423,
+            "area_squared_miles": 59425.15
+        },
+        {
+            "state_name": "Hawaii",
+            "population": 1415872,
+            "area_squared_miles": 10931.73
+        },
+        {
+            "state_name": "Idaho",
+            "population": 1787065,
+            "area_squared_miles": 83568.95
+        },
+        {
+            "state_name": "Illinois",
+            "population": 12671821,
+            "area_squared_miles": 57913.55
+        },
+        {
+            "state_name": "Indiana",
+            "population": 6732219,
+            "area_squared_miles": 36419.55
+        },
+        {
+            "state_name": "Iowa",
+            "population": 3155070,
+            "area_squared_miles": 56272.45
+        },
+        {
+            "state_name": "Kansas",
+            "population": 2913314,
+            "area_squared_miles": 82278.36
+        },
+        {
+            "state_name": "Kentucky",
+            "population": 4467673,
+            "area_squared_miles": 40407.8
         },
         {
             "state_name": "Louisiana",
-            "population": 4600000,
-            "capital": "Baton Rouge"
+            "population": 4648794,
+            "area_squared_miles": 52378.13
+        },
+        {
+            "state_name": "Maine",
+            "population": 1344212,
+            "area_squared_miles": 35379.74
+        },
+        {
+            "state_name": "Maryland",
+            "population": 6045680,
+            "area_squared_miles": 12406.68
+        },
+        {
+            "state_name": "Massachusetts",
+            "population": 6892503,
+            "area_squared_miles": 10554.39
+        },
+        {
+            "state_name": "Michigan",
+            "population": 9986857,
+            "area_squared_miles": 96713.51
+        },
+        {
+            "state_name": "Minnesota",
+            "population": 5639632,
+            "area_squared_miles": 86935.83
+        },
+        {
+            "state_name": "Mississippi",
+            "population": 2976149,
+            "area_squared_miles": 48430.08
+        },
+        {
+            "state_name": "Missouri",
+            "population": 6137428,
+            "area_squared_miles": 69707.13
+        },
+        {
+            "state_name": "Montana",
+            "population": 1068778,
+            "area_squared_miles": 147039.7
+        },
+        {
+            "state_name": "Nebraska",
+            "population": 1934408,
+            "area_squared_miles": 77347.81
+        },
+        {
+            "state_name": "Nevada",
+            "population": 3080156,
+            "area_squared_miles": 110571.82
+        },
+        {
+            "state_name": "New Hampshire",
+            "population": 1359711,
+            "area_squared_miles": 9342.47
+        },
+        {
+            "state_name": "New Jersey",
+            "population": 8882190,
+            "area_squared_miles": 8722.58
+        },
+        {
+            "state_name": "New Mexico",
+            "population": 2096829,
+            "area_squared_miles": 121590.3
+        },
+        {
+            "state_name": "New York",
+            "population": 19453561,
+            "area_squared_miles": 54554.98
+        },
+        {
+            "state_name": "North Carolina",
+            "population": 10488084,
+            "area_squared_miles": 53819.16
+        },
+        {
+            "state_name": "North Dakota",
+            "population": 762062,
+            "area_squared_miles": 70699.96
+        },
+        {
+            "state_name": "Ohio",
+            "population": 11689100,
+            "area_squared_miles": 44825.58
+        },
+        {
+            "state_name": "Oklahoma",
+            "population": 3956971,
+            "area_squared_miles": 69898.87
+        },
+        {
+            "state_name": "Oregon",
+            "population": 4217735,
+            "area_squared_miles": 98378.54
+        },
+        {
+            "state_name": "Pennsylvania",
+            "population": 12801989,
+            "area_squared_miles": 46055.27
+        },
+        {
+            "state_name": "Rhode Island",
+            "population": 1059361,
+            "area_squared_miles": 1544.89
+        },
+        {
+            "state_name": "South Carolina",
+            "population": 5148714,
+            "area_squared_miles": 32020.49
+        },
+        {
+            "state_name": "South Dakota",
+            "population": 884659,
+            "area_squared_miles": 77115.68
+        },
+        {
+            "state_name": "Tennessee",
+            "population": 6829174,
+            "area_squared_miles": 42143.29
+        },
+        {
+            "state_name": "Texas",
+            "population": 28995881,
+            "area_squared_miles": 268596.46
+        },
+        {
+            "state_name": "Utah",
+            "population": 3205958,
+            "area_squared_miles": 84896.88
+        },
+        {
+            "state_name": "Vermont",
+            "population": 623989,
+            "area_squared_miles": 9616.36
         }
     ],
-    "time": 4.847,
-    "tokens": 992
+    "time": 24.348,
+    "tokens": 1998
 }

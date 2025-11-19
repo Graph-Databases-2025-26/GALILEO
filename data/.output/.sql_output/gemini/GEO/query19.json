@@ -1,9 +1,15 @@
 {
     "result_set": [
         {
-            "COUNT(river_name)": 5
+            "capital": "Sacramento"
+        },
+        {
+            "capital": "Austin"
+        },
+        {
+            "capital": "Albany"
         }
     ],
-    "time": 2.54,
-    "tokens": 411
+    "time": 1.438,
+    "tokens": 107
 }

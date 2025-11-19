@@ -94,7 +94,7 @@ SQL_IK_PROMPT = """
     6. "result_set" MUST NOT be empty. Never return [].
        Even if the true result would contain zero rows, you MUST still simulate
        at least one row that is consistent with the schema and the query.
-    7. Do NOT output empty objects {}. Every object in "result_set" must contain
+    7. Do NOT output empty objects {{}}. Every object in "result_set" must contain
        values for all the selected columns of the query.
     """
 

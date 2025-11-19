@@ -1,9 +1,9 @@
 {
     "result_set": [
         {
-            "airline_name": "United Air Lines"
+            "airline": "United Air Lines"
         }
     ],
-    "time": 1.204,
-    "tokens": 120
+    "time": 1.387,
+    "tokens": 55
 }

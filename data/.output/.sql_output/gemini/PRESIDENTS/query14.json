@@ -1,18 +1,10 @@
 {
     "result_set": [
         {
-            "name": "Ronald Reagan"
-        },
-        {
-            "name": "George H.W. Bush"
-        },
-        {
-            "name": "George W. Bush"
-        },
-        {
-            "name": "Donald Trump"
+            "name": "Joe Biden",
+            "party": "Democratic"
         }
     ],
-    "time": 1.941,
-    "tokens": 262
+    "time": 4.715,
+    "tokens": 186
 }

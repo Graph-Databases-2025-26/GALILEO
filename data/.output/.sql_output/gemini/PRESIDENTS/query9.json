@@ -1,48 +1,9 @@
 {
     "result_set": [
         {
-            "name": "R\u00f3mulo Betancourt",
-            "party": "Democratic Action",
-            "start_year": 1945,
-            "end_year": 1948,
-            "cardinal_number": "36th"
-        },
-        {
-            "name": "R\u00f3mulo Betancourt",
-            "party": "Democratic Action",
-            "start_year": 1959,
-            "end_year": 1964,
-            "cardinal_number": "40th"
-        },
-        {
-            "name": "Ra\u00fal Leoni",
-            "party": "Democratic Action",
-            "start_year": 1964,
-            "end_year": 1969,
-            "cardinal_number": "41st"
-        },
-        {
-            "name": "Carlos Andr\u00e9s P\u00e9rez",
-            "party": "Democratic Action",
-            "start_year": 1974,
-            "end_year": 1979,
-            "cardinal_number": "43rd"
-        },
-        {
-            "name": "Jaime Lusinchi",
-            "party": "Democratic Action",
-            "start_year": 1984,
-            "end_year": 1989,
-            "cardinal_number": "46th"
-        },
-        {
-            "name": "Carlos Andr\u00e9s P\u00e9rez",
-            "party": "Democratic Action",
-            "start_year": 1989,
-            "end_year": 1993,
-            "cardinal_number": "48th"
+            "name": "Hugo Ch\u00e1vez"
         }
     ],
-    "time": 4.3,
-    "tokens": 909
+    "time": 2.324,
+    "tokens": 272
 }

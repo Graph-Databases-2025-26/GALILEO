@@ -1,42 +1,9 @@
 {
     "result_set": [
         {
-            "lake_name": "Great Salt Lake"
-        },
-        {
-            "lake_name": "Lake Superior"
-        },
-        {
-            "lake_name": "Lake Huron"
-        },
-        {
             "lake_name": "Lake Michigan"
-        },
-        {
-            "lake_name": "Lake Erie"
-        },
-        {
-            "lake_name": "Lake Ontario"
-        },
-        {
-            "lake_name": "Lake Okeechobee"
-        },
-        {
-            "lake_name": "Lake Pontchartrain"
-        },
-        {
-            "lake_name": "Lake of the Woods"
-        },
-        {
-            "lake_name": "Iliamna Lake"
-        },
-        {
-            "lake_name": "Becharof Lake"
-        },
-        {
-            "lake_name": "Lake Clark"
         }
     ],
-    "time": 5.166,
-    "tokens": 552
+    "time": 1.411,
+    "tokens": 101
 }

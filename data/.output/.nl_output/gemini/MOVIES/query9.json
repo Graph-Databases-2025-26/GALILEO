@@ -1,9 +1,10 @@
 {
     "result_set": [
         {
-            "director_name": "Akira Kurosawa"
+            "director": "Georges M\u00e9li\u00e8s",
+            "birthyear": 1861
         }
     ],
-    "time": 1.554,
-    "tokens": 113
+    "time": 1.742,
+    "tokens": 105
 }

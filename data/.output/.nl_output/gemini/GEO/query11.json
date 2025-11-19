@@ -1,9 +1,132 @@
 {
     "result_set": [
         {
-            "answer": "There are multiple cities named Springfield in the United States. Some of the most well-known include Springfield, Illinois (the state capital); Springfield, Massachusetts; and Springfield, Missouri."
+            "usa_state_traversed": "Arkansas"
+        },
+        {
+            "usa_state_traversed": "Illinois"
+        },
+        {
+            "usa_state_traversed": "Iowa"
+        },
+        {
+            "usa_state_traversed": "Kentucky"
+        },
+        {
+            "usa_state_traversed": "Louisiana"
+        },
+        {
+            "usa_state_traversed": "Minnesota"
+        },
+        {
+            "usa_state_traversed": "Mississippi"
+        },
+        {
+            "usa_state_traversed": "Missouri"
+        },
+        {
+            "usa_state_traversed": "Tennessee"
+        },
+        {
+            "usa_state_traversed": "Wisconsin"
+        },
+        {
+            "usa_state_traversed": "Montana"
+        },
+        {
+            "usa_state_traversed": "North Dakota"
+        },
+        {
+            "usa_state_traversed": "South Dakota"
+        },
+        {
+            "usa_state_traversed": "Nebraska"
+        },
+        {
+            "usa_state_traversed": "Kansas"
+        },
+        {
+            "usa_state_traversed": "Oklahoma"
+        },
+        {
+            "usa_state_traversed": "Texas"
+        },
+        {
+            "usa_state_traversed": "New Mexico"
+        },
+        {
+            "usa_state_traversed": "Colorado"
+        },
+        {
+            "usa_state_traversed": "Utah"
+        },
+        {
+            "usa_state_traversed": "Arizona"
+        },
+        {
+            "usa_state_traversed": "Nevada"
+        },
+        {
+            "usa_state_traversed": "California"
+        },
+        {
+            "usa_state_traversed": "Wyoming"
+        },
+        {
+            "usa_state_traversed": "Idaho"
+        },
+        {
+            "usa_state_traversed": "Oregon"
+        },
+        {
+            "usa_state_traversed": "Washington"
+        },
+        {
+            "usa_state_traversed": "Pennsylvania"
+        },
+        {
+            "usa_state_traversed": "New York"
+        },
+        {
+            "usa_state_traversed": "New Jersey"
+        },
+        {
+            "usa_state_traversed": "Delaware"
+        },
+        {
+            "usa_state_traversed": "Maryland"
+        },
+        {
+            "usa_state_traversed": "Virginia"
+        },
+        {
+            "usa_state_traversed": "West Virginia"
+        },
+        {
+            "usa_state_traversed": "Ohio"
+        },
+        {
+            "usa_state_traversed": "Indiana"
+        },
+        {
+            "usa_state_traversed": "Michigan"
+        },
+        {
+            "usa_state_traversed": "North Carolina"
+        },
+        {
+            "usa_state_traversed": "South Carolina"
+        },
+        {
+            "usa_state_traversed": "Georgia"
+        },
+        {
+            "usa_state_traversed": "Florida"
+        },
+        {
+            "usa_state_traversed": "Alabama"
         }
     ],
-    "time": 37.871,
-    "tokens": 1357
+    "time": 4.194,
+    "tokens": 755
 }

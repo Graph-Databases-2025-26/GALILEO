@@ -1,9 +1,9 @@
 {
     "result_set": [
         {
-            "count(distinct river_name)": 35
+            "avg(population)": 6500000.0
         }
     ],
-    "time": 4.814,
-    "tokens": 925
+    "time": 1.83,
+    "tokens": 152
 }

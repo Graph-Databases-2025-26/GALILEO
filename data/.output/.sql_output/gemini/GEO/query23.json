@@ -1,56 +1,9 @@
 {
     "result_set": [
         {
-            "state_name": "California",
-            "population": 39237836,
-            "area_squared_miles": 163695
-        },
-        {
-            "state_name": "Texas",
-            "population": 30503371,
-            "area_squared_miles": 268596
-        },
-        {
-            "state_name": "Florida",
-            "population": 22610726,
-            "area_squared_miles": 65758
-        },
-        {
-            "state_name": "New York",
-            "population": 19571216,
-            "area_squared_miles": 54555
-        },
-        {
-            "state_name": "Pennsylvania",
-            "population": 12953530,
-            "area_squared_miles": 46055
-        },
-        {
-            "state_name": "Illinois",
-            "population": 12671821,
-            "area_squared_miles": 57914
-        },
-        {
-            "state_name": "Ohio",
-            "population": 11756058,
-            "area_squared_miles": 44825
-        },
-        {
-            "state_name": "Georgia",
-            "population": 11019186,
-            "area_squared_miles": 59425
-        },
-        {
-            "state_name": "North Carolina",
-            "population": 10835491,
-            "area_squared_miles": 53819
-        },
-        {
-            "state_name": "Michigan",
-            "population": 10037261,
-            "area_squared_miles": 96716
+            "capital": "Augusta"
         }
     ],
-    "time": 3.787,
-    "tokens": 618
+    "time": 3.489,
+    "tokens": 527
 }

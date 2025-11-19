@@ -1,9 +1,9 @@
 {
     "result_set": [
         {
-            "count(*)": 1
+            "name": "Donald Trump"
         }
     ],
-    "time": 1.434,
-    "tokens": 181
+    "time": 1.941,
+    "tokens": 118
 }

@@ -1,9 +1,14 @@
 {
     "result_set": [
         {
-            "count(p.party)": 19
+            "party": "Partido Liberal",
+            "num": 2
+        },
+        {
+            "party": "Partido Conservador",
+            "num": 1
         }
     ],
-    "time": 1.124,
-    "tokens": 71
+    "time": 3.136,
+    "tokens": 449
 }

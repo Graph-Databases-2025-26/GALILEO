@@ -1,209 +1,21 @@
 {
     "result_set": [
         {
-            "state_name": "Alabama",
-            "capital": "Montgomery",
-            "area_squared_miles": 52420
-        },
-        {
-            "state_name": "Alaska",
-            "capital": "Juneau",
-            "area_squared_miles": 665384
-        },
-        {
-            "state_name": "Arizona",
-            "capital": "Phoenix",
-            "area_squared_miles": 113990
-        },
-        {
-            "state_name": "Arkansas",
-            "capital": "Little Rock",
-            "area_squared_miles": 53179
-        },
-        {
             "state_name": "California",
-            "capital": "Sacramento",
-            "area_squared_miles": 163695
+            "population": 39237836,
+            "area_squared_miles": 163695.0
         },
         {
-            "state_name": "Colorado",
-            "capital": "Denver",
-            "area_squared_miles": 104094
-        },
-        {
-            "state_name": "Connecticut",
-            "capital": "Hartford",
-            "area_squared_miles": 5543
-        },
-        {
-            "state_name": "Delaware",
-            "capital": "Dover",
-            "area_squared_miles": 2489
+            "state_name": "Texas",
+            "population": 30029572,
+            "area_squared_miles": 268596.0
         },
         {
             "state_name": "Florida",
-            "capital": "Tallahassee",
-            "area_squared_miles": 65758
-        },
-        {
-            "state_name": "Georgia",
-            "capital": "Atlanta",
-            "area_squared_miles": 59425
-        },
-        {
-            "state_name": "Hawaii",
-            "capital": "Honolulu",
-            "area_squared_miles": 10932
-        },
-        {
-            "state_name": "Idaho",
-            "capital": "Boise",
-            "area_squared_miles": 83569
-        },
-        {
-            "state_name": "Illinois",
-            "capital": "Springfield",
-            "area_squared_miles": 57914
-        },
-        {
-            "state_name": "Indiana",
-            "capital": "Indianapolis",
-            "area_squared_miles": 36420
-        },
-        {
-            "state_name": "Iowa",
-            "capital": "Des Moines",
-            "area_squared_miles": 56272
-        },
-        {
-            "state_name": "Kansas",
-            "capital": "Topeka",
-            "area_squared_miles": 82278
-        },
-        {
-            "state_name": "Kentucky",
-            "capital": "Frankfort",
-            "area_squared_miles": 40408
-        },
-        {
-            "state_name": "Louisiana",
-            "capital": "Baton Rouge",
-            "area_squared_miles": 52378
-        },
-        {
-            "state_name": "Maine",
-            "capital": "Augusta",
-            "area_squared_miles": 35380
-        },
-        {
-            "state_name": "Maryland",
-            "capital": "Annapolis",
-            "area_squared_miles": 12406
-        },
-        {
-            "state_name": "Massachusetts",
-            "capital": "Boston",
-            "area_squared_miles": 10555
-        },
-        {
-            "state_name": "Michigan",
-            "capital": "Lansing",
-            "area_squared_miles": 96716
-        },
-        {
-            "state_name": "Minnesota",
-            "capital": "Saint Paul",
-            "area_squared_miles": 86936
-        },
-        {
-            "state_name": "Mississippi",
-            "capital": "Jackson",
-            "area_squared_miles": 48432
-        },
-        {
-            "state_name": "Missouri",
-            "capital": "Jefferson City",
-            "area_squared_miles": 69707
-        },
-        {
-            "state_name": "Montana",
-            "capital": "Helena",
-            "area_squared_miles": 147040
-        },
-        {
-            "state_name": "Nebraska",
-            "capital": "Lincoln",
-            "area_squared_miles": 77348
-        },
-        {
-            "state_name": "Nevada",
-            "capital": "Carson City",
-            "area_squared_miles": 110572
-        },
-        {
-            "state_name": "New Hampshire",
-            "capital": "Concord",
-            "area_squared_miles": 9349
-        },
-        {
-            "state_name": "New Jersey",
-            "capital": "Trenton",
-            "area_squared_miles": 8729
-        },
-        {
-            "state_name": "New Mexico",
-            "capital": "Santa Fe",
-            "area_squared_miles": 121590
-        },
-        {
-            "state_name": "New York",
-            "capital": "Albany",
-            "area_squared_miles": 54555
-        },
-        {
-            "state_name": "North Carolina",
-            "capital": "Raleigh",
-            "area_squared_miles": 53819
-        },
-        {
-            "state_name": "North Dakota",
-            "capital": "Bismarck",
-            "area_squared_miles": 70698
-        },
-        {
-            "state_name": "Ohio",
-            "capital": "Columbus",
-            "area_squared_miles": 44825
-        },
-        {
-            "state_name": "Oklahoma",
-            "capital": "Oklahoma City",
-            "area_squared_miles": 69899
-        },
-        {
-            "state_name": "Oregon",
-            "capital": "Salem",
-            "area_squared_miles": 98379
-        },
-        {
-            "state_name": "Pennsylvania",
-            "capital": "Harrisburg",
-            "area_squared_miles": 46055
-        },
-        {
-            "state_name": "Rhode Island",
-            "capital": "Providence",
-            "area_squared_miles": 1545
-        },
-        {
-            "state_name": "South Carolina",
-            "capital": "Columbia",
-            "area_squared_miles": 32021
-        },
-        {
-            "state_name": "South Dakota"
+            "population": 22244823,
+            "area_squared_miles": 65758.0
         }
     ],
-    "time": 8.391,
-    "tokens": 1998
+    "time": 2.048,
+    "tokens": 222
 }

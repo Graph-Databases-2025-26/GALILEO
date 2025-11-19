@@ -1,11 +1,9 @@
 {
     "result_set": [
         {
-            "state": "Rhode Island",
-            "number_of_capitals": 1,
-            "capital_city": "Providence"
+            "number_of_capitals": 1
         }
     ],
-    "time": 1.543,
-    "tokens": 145
+    "time": 4.6,
+    "tokens": 696
 }

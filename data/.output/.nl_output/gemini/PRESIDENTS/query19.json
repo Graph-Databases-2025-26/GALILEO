@@ -1,236 +1,292 @@
 {
     "result_set": [
         {
-            "President Name": "George Washington",
-            "Start Year": 1789,
-            "End Year": 1797,
-            "Number of President": 1,
-            "Party": "Independent"
+            "name": "George Washington",
+            "start_year": 1789,
+            "end_year": 1797,
+            "cardinal_number": "1st",
+            "party": "Nonpartisan"
         },
         {
-            "President Name": "John Adams",
-            "Start Year": 1797,
-            "End Year": 1801,
-            "Number of President": 2,
-            "Party": "Federalist"
+            "name": "John Adams",
+            "start_year": 1797,
+            "end_year": 1801,
+            "cardinal_number": "2nd",
+            "party": "Federalist"
         },
         {
-            "President Name": "Thomas Jefferson",
-            "Start Year": 1801,
-            "End Year": 1809,
-            "Number of President": 3,
-            "Party": "Democratic-Republican"
+            "name": "Thomas Jefferson",
+            "start_year": 1801,
+            "end_year": 1809,
+            "cardinal_number": "3rd",
+            "party": "Democratic-Republican"
         },
         {
-            "President Name": "James Madison",
-            "Start Year": 1809,
-            "End Year": 1817,
-            "Number of President": 4,
-            "Party": "Democratic-Republican"
+            "name": "James Madison",
+            "start_year": 1809,
+            "end_year": 1817,
+            "cardinal_number": "4th",
+            "party": "Democratic-Republican"
         },
         {
-            "President Name": "James Monroe",
-            "Start Year": 1817,
-            "End Year": 1825,
-            "Number of President": 5,
-            "Party": "Democratic-Republican"
+            "name": "James Monroe",
+            "start_year": 1817,
+            "end_year": 1825,
+            "cardinal_number": "5th",
+            "party": "Democratic-Republican"
         },
         {
-            "President Name": "John Quincy Adams",
-            "Start Year": 1825,
-            "End Year": 1829,
-            "Number of President": 6,
-            "Party": "Democratic-Republican"
+            "name": "John Quincy Adams",
+            "start_year": 1825,
+            "end_year": 1829,
+            "cardinal_number": "6th",
+            "party": "Democratic-Republican"
         },
         {
-            "President Name": "Andrew Jackson",
-            "Start Year": 1829,
-            "End Year": 1837,
-            "Number of President": 7,
-            "Party": "Democratic"
+            "name": "Andrew Jackson",
+            "start_year": 1829,
+            "end_year": 1837,
+            "cardinal_number": "7th",
+            "party": "Democratic"
         },
         {
-            "President Name": "Martin Van Buren",
-            "Start Year": 1837,
-            "End Year": 1841,
-            "Number of President": 8,
-            "Party": "Democratic"
+            "name": "Martin Van Buren",
+            "start_year": 1837,
+            "end_year": 1841,
+            "card_number": "8th",
+            "party": "Democratic"
         },
         {
-            "President Name": "William Henry Harrison",
-            "Start Year": 1841,
-            "End Year": 1841,
-            "Number of President": 9,
-            "Party": "Whig"
+            "name": "William Henry Harrison",
+            "start_year": 1841,
+            "end_year": 1841,
+            "cardinal_number": "9th",
+            "party": "Whig"
         },
         {
-            "President Name": "John Tyler",
-            "Start Year": 1841,
-            "End Year": 1845,
-            "Number of President": 10,
-            "Party": "Whig"
+            "name": "John Tyler",
+            "start_year": 1841,
+            "end_year": 1845,
+            "cardinal_number": "10th",
+            "party": "Whig"
         },
         {
-            "President Name": "James K. Polk",
-            "Start Year": 1845,
-            "End Year": 1849,
-            "Number of President": 11,
-            "Party": "Democratic"
+            "name": "James K. Polk",
+            "start_year": 1845,
+            "end_year": 1849,
+            "cardinal_number": "11th",
+            "party": "Democratic"
         },
         {
-            "President Name": "Zachary Taylor",
-            "Start Year": 1849,
-            "End Year": 1850,
-            "Number of President": 12,
-            "Party": "Whig"
+            "name": "Zachary Taylor",
+            "start_year": 1849,
+            "end_year": 1850,
+            "cardinal_number": "12th",
+            "party": "Whig"
         },
         {
-            "President Name": "Millard Fillmore",
-            "Start Year": 1850,
-            "End Year": 1853,
-            "Number of President": 13,
-            "Party": "Whig"
+            "name": "Millard Fillmore",
+            "start_year": 1850,
+            "end_year": 1853,
+            "cardinal_number": "13th",
+            "party": "Whig"
         },
         {
-            "President Name": "Franklin Pierce",
-            "Start Year": 1853,
-            "End Year": 1857,
-            "Number of President": 14,
-            "Party": "Democratic"
+            "name": "Franklin Pierce",
+            "start_year": 1853,
+            "end_year": 1857,
+            "cardinal_number": "14th",
+            "party": "Democratic"
         },
         {
-            "President Name": "James Buchanan",
-            "Start Year": 1857,
-            "End Year": 1861,
-            "Number of President": 15,
-            "Party": "Democratic"
+            "name": "James Buchanan",
+            "start_year": 1857,
+            "end_year": 1861,
+            "cardinal_number": "15th",
+            "party": "Democratic"
         },
         {
-            "President Name": "Abraham Lincoln",
-            "Start Year": 1861,
-            "End Year": 1865,
-            "Number of President": 16,
-            "Party": "Republican"
+            "name": "Abraham Lincoln",
+            "start_year": 1861,
+            "end_year": 1865,
+            "cardinal_number": "16th",
+            "party": "Republican"
         },
         {
-            "President Name": "Andrew Johnson",
-            "Start Year": 1865,
-            "End Year": 1869,
-            "Number of President": 17,
-            "Party": "Democratic"
+            "name": "Andrew Johnson",
+            "start_year": 1865,
+            "end_year": 1869,
+            "cardinal_number": "17th",
+            "party": "National Union"
         },
         {
-            "President Name": "Ulysses S. Grant",
-            "Start Year": 1869,
-            "End Year": 1877,
-            "Number of President": 18,
-            "Party": "Republican"
+            "name": "Ulysses S. Grant",
+            "start_year": 1869,
+            "end_year": 1877,
+            "cardinal_number": "18th",
+            "party": "Republican"
         },
         {
-            "President Name": "Rutherford B. Hayes",
-            "Start Year": 1877,
-            "End Year": 1881,
-            "Number of President": 19,
-            "Party": "Republican"
+            "name": "Rutherford B. Hayes",
+            "start_year": 1877,
+            "end_year": 1881,
+            "cardinal_number": "19th",
+            "party": "Republican"
         },
         {
-            "President Name": "James A. Garfield",
-            "Start Year": 1881,
-            "End Year": 1881,
-            "Number of President": 20,
-            "Party": "Republican"
+            "name": "James A. Garfield",
+            "start_year": 1881,
+            "end_year": 1881,
+            "cardinal_number": "20th",
+            "party": "Republican"
         },
         {
-            "President Name": "Chester A. Arthur",
-            "Start Year": 1881,
-            "End Year": 1885,
-            "Number of President": 21,
-            "Party": "Republican"
+            "name": "Chester A. Arthur",
+            "start_year": 1881,
+            "end_year": 1885,
+            "cardinal_number": "21st",
+            "party": "Republican"
         },
         {
-            "President Name": "Grover Cleveland",
-            "Start Year": 1885,
-            "End Year": 1889,
-            "Number of President": 22,
-            "Party": "Democratic"
+            "name": "Grover Cleveland",
+            "start_year": 1885,
+            "end_year": 1889,
+            "cardinal_number": "22nd",
+            "party": "Democratic"
         },
         {
-            "President Name": "Benjamin Harrison",
-            "Start Year": 1889,
-            "End Year": 1893,
-            "Number of President": 23,
-            "Party": "Republican"
+            "name": "Benjamin Harrison",
+            "start_year": 1889,
+            "end_year": 1893,
+            "cardinal_number": "23rd",
+            "party": "Republican"
         },
         {
-            "President Name": "Grover Cleveland",
-            "Start Year": 1893,
-            "End Year": 1897,
-            "Number of President": 24,
-            "Party": "Democratic"
+            "name": "Grover Cleveland",
+            "start_year": 1893,
+            "end_year": 1897,
+            "cardinal_number": "24th",
+            "party": "Democratic"
         },
         {
-            "President Name": "William McKinley",
-            "Start Year": 1897,
-            "End Year": 1901,
-            "Number of President": 25,
-            "Party": "Republican"
+            "name": "William McKinley",
+            "start_year": 1897,
+            "end_year": 1901,
+            "cardinal_number": "25th",
+            "party": "Republican"
         },
         {
-            "President Name": "Theodore Roosevelt",
-            "Start Year": 1901,
-            "End Year": 1909,
-            "Number of President": 26,
-            "Party": "Republican"
+            "name": "Theodore Roosevelt",
+            "start_year": 1901,
+            "end_year": 1909,
+            "cardinal_number": "26th",
+            "party": "Republican"
         },
         {
-            "President Name": "William Howard Taft",
-            "Start Year": 1909,
-            "End Year": 1913,
-            "Number of President": 27,
-            "Party": "Republican"
+            "name": "William Howard Taft",
+            "start_year": 1909,
+            "end_year": 1913,
+            "cardinal_number": "27th",
+            "party": "Republican"
         },
         {
-            "President Name": "Woodrow Wilson",
-            "Start Year": 1913,
-            "End Year": 1921,
-            "Number of President": 28,
-            "Party": "Democratic"
+            "name": "Woodrow Wilson",
+            "start_year": 1913,
+            "end_year": 1921,
+            "cardinal_number": "28th",
+            "party": "Democratic"
         },
         {
-            "President Name": "Warren G. Harding",
-            "Start Year": 1921,
-            "End Year": 1923,
-            "Number of President": 29,
-            "Party": "Republican"
+            "name": "Warren G. Harding",
+            "start_year": 1921,
+            "end_year": 1923,
+            "cardinal_number": "29th",
+            "party": "Republican"
         },
         {
-            "President Name": "Calvin Coolidge",
-            "Start Year": 1923,
-            "End Year": 1929,
-            "Number of President": 30,
-            "Party": "Republican"
+            "name": "Calvin Coolidge",
+            "start_year": 1923,
+            "end_year": 1929,
+            "cardinal_number": "30th",
+            "party": "Republican"
         },
         {
-            "President Name": "Herbert Hoover",
-            "Start Year": 1929,
-            "End Year": 1933,
-            "Number of President": 31,
-            "Party": "Republican"
+            "name": "Herbert Hoover",
+            "start_year": 1929,
+            "end_year": 1933,
+            "cardinal_number": "31st",
+            "party": "Republican"
         },
         {
-            "President Name": "Franklin D. Roosevelt",
-            "Start Year": 1933,
-            "End Year": 1945,
-            "Number of President": 32,
-            "Party": "Democratic"
+            "name": "Franklin D. Roosevelt",
+            "start_year": 1933,
+            "end_year": 1945,
+            "cardinal_number": "32nd",
+            "party": "Democratic"
         },
         {
-            "President Name": "Harry S. Truman",
-            "Start Year": 1945,
-            "End Year": 1953,
-            "Number of President": 33
+            "name": "Harry S. Truman",
+            "start_year": 1945,
+            "end_year": 1953,
+            "cardinal_number": "33rd",
+            "party": "Democratic"
+        },
+        {
+            "name": "Dwight D. Eisenhower",
+            "start_year": 1953,
+            "end_year": 1961,
+            "cardinal_number": "34th",
+            "party": "Republican"
+        },
+        {
+            "name": "John F. Kennedy",
+            "start_year": 1961,
+            "end_year": 1963,
+            "cardinal_number": "35th",
+            "party": "Democratic"
+        },
+        {
+            "name": "Lyndon B. Johnson",
+            "start_year": 1963,
+            "end_year": 1969,
+            "cardinal_number": "36th",
+            "party": "Democratic"
+        },
+        {
+            "name": "Richard Nixon",
+            "start_year": 1969,
+            "end_year": 1974,
+            "cardinal_number": "37th",
+            "party": "Republican"
+        },
+        {
+            "name": "Gerald Ford",
+            "start_year": 1974,
+            "end_year": 1977,
+            "cardinal_number": "38th",
+            "party": "Republican"
+        },
+        {
+            "name": "Jimmy Carter",
+            "start_year": 1977,
+            "end_year": 1981,
+            "cardinal_number": "39th",
+            "party": "Democratic"
+        },
+        {
+            "name": "Ronald Reagan",
+            "start_year": 1981,
+            "end_year": 1989,
+            "cardinal_number": "40th",
+            "party": "Republican"
+        },
+        {
+            "name": "George H.W. Bush",
+            "start_year": 1989,
+            "end_year": 1993,
+            "cardinal_number": "41st"
         }
     ],
-    "time": 9.179,
+    "time": 8.764,
     "tokens": 1998
 }

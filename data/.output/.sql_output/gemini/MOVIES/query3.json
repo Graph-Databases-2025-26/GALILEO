@@ -1,42 +1,10 @@
 {
-  "result_set": [
-    {
-      "originaltitle": "Ivanhoe",
-      "startyear": 1952
-    },
-    {
-      "originaltitle": "The Prisoner of Zenda",
-      "startyear": 1952
-    },
-    {
-      "originaltitle": "Knights of the Round Table",
-      "startyear": 1953
-    },
-    {
-      "originaltitle": "The Student Prince",
-      "startyear": 1954
-    },
-    {
-      "originaltitle": "Athena",
-      "startyear": 1954
-    },
-    {
-      "originaltitle": "Tip on a Dead Jockey",
-      "startyear": 1957
-    },
-    {
-      "originaltitle": "Killers of Kilimanjaro",
-      "startyear": 1959
-    },
-    {
-      "originaltitle": "The Tartars",
-      "startyear": 1961
-    },
-    {
-      "originaltitle": "The Last Challenge",
-      "startyear": 1967
-    }
-  ],
-  "time": 4.364,
-  "tokens": 805
+    "result_set": [
+        {
+            "originaltitle": "The Great Caruso",
+            "startyear": 1951
+        }
+    ],
+    "time": 1.681,
+    "tokens": 110
 }

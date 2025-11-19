@@ -1,9 +1,9 @@
 {
     "result_set": [
         {
-            "country_name": "USA"
+            "COUNT(river_name)": 2
         }
     ],
-    "time": 1.536,
-    "tokens": 139
+    "time": 1.337,
+    "tokens": 84
 }

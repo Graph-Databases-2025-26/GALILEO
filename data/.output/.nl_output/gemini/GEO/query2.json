@@ -1,106 +1,46 @@
 {
     "result_set": [
         {
-            "city": "New York",
-            "state": "New York"
+            "city_name": "New York City",
+            "population": 8804190
         },
         {
-            "city": "Los Angeles",
-            "state": "California"
+            "city_name": "Los Angeles",
+            "population": 3898747
         },
         {
-            "city": "Chicago",
-            "state": "Illinois"
+            "city_name": "Chicago",
+            "population": 2746388
         },
         {
-            "city": "Houston",
-            "state": "Texas"
+            "city_name": "Houston",
+            "population": 2304580
         },
         {
-            "city": "Phoenix",
-            "state": "Arizona"
+            "city_name": "Phoenix",
+            "population": 1608139
         },
         {
-            "city": "Philadelphia",
-            "state": "Pennsylvania"
+            "city_name": "Philadelphia",
+            "population": 1603797
         },
         {
-            "city": "San Antonio",
-            "state": "Texas"
+            "city_name": "San Antonio",
+            "population": 1434625
         },
         {
-            "city": "San Diego",
-            "state": "California"
+            "city_name": "San Diego",
+            "population": 1386932
         },
         {
-            "city": "Dallas",
-            "state": "Texas"
+            "city_name": "Dallas",
+            "population": 1304379
         },
         {
-            "city": "San Jose",
-            "state": "California"
-        },
-        {
-            "city": "Austin",
-            "state": "Texas"
-        },
-        {
-            "city": "Jacksonville",
-            "state": "Florida"
-        },
-        {
-            "city": "Fort Worth",
-            "state": "Texas"
-        },
-        {
-            "city": "Columbus",
-            "state": "Ohio"
-        },
-        {
-            "city": "Charlotte",
-            "state": "North Carolina"
-        },
-        {
-            "city": "San Francisco",
-            "state": "California"
-        },
-        {
-            "city": "Indianapolis",
-            "state": "Indiana"
-        },
-        {
-            "city": "Seattle",
-            "state": "Washington"
-        },
-        {
-            "city": "Denver",
-            "state": "Colorado"
-        },
-        {
-            "city": "Washington",
-            "state": "District of Columbia"
-        },
-        {
-            "city": "Boston",
-            "state": "Massachusetts"
-        },
-        {
-            "city": "Nashville",
-            "state": "Tennessee"
-        },
-        {
-            "city": "Detroit",
-            "state": "Michigan"
-        },
-        {
-            "city": "Portland",
-            "state": "Oregon"
-        },
-        {
-            "city": "Las Vegas",
-            "state": "Nevada"
+            "city_name": "San Jose",
+            "population": 1013240
         }
     ],
-    "time": 3.599,
-    "tokens": 626
+    "time": 3.889,
+    "tokens": 562
 }

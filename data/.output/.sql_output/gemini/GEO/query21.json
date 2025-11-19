@@ -1,9 +1,9 @@
 {
     "result_set": [
         {
-            "capital": "phoenix"
+            "country_name": "USA"
         }
     ],
-    "time": 2.529,
-    "tokens": 410
+    "time": 1.53,
+    "tokens": 99
 }

@@ -1,10 +1,10 @@
 {
-  "result_set": [
-    {
-      "director": "George Cukor",
-      "director_age": 83
-    }
-  ],
-  "time": 2.237,
-  "tokens": 386
+    "result_set": [
+        {
+            "director": "Clint Eastwood",
+            "director_age": 88
+        }
+    ],
+    "time": 2.179,
+    "tokens": 261
 }

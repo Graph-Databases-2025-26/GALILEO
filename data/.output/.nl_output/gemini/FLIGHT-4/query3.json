@@ -1,36 +1,24 @@
 {
     "result_set": [
         {
-            "name": "New York Skyports Inc Seaplane Base",
+            "name": "New York-JFK",
             "city": "New York",
             "country": "United States",
-            "altitude": 0
+            "elevation_in_ft": 13
         },
         {
-            "name": "East 34th Street Heliport",
+            "name": "LaGuardia",
             "city": "New York",
             "country": "United States",
-            "altitude": 0
+            "elevation_in_ft": 21
         },
         {
-            "name": "Downtown Manhattan/Wall St. Heliport",
+            "name": "Newark Liberty International Airport",
             "city": "New York",
             "country": "United States",
-            "altitude": 0
-        },
-        {
-            "name": "LaGuardia Airport",
-            "city": "New York",
-            "country": "United States",
-            "altitude": 21
-        },
-        {
-            "name": "John F Kennedy International Airport",
-            "city": "New York",
-            "country": "United States",
-            "altitude": 13
+            "elevation_in_ft": 18
         }
     ],
-    "time": 2.058,
-    "tokens": 266
+    "time": 2.249,
+    "tokens": 212
 }

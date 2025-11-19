@@ -1,10 +1,10 @@
 {
     "result_set": [
         {
-            "Average GNP": 0.0,
-            "Total Population": 0
+            "average_gnp": 1325.0,
+            "total_population": 300000
         }
     ],
-    "time": 1.593,
-    "tokens": 124
+    "time": 5.771,
+    "tokens": 113
 }

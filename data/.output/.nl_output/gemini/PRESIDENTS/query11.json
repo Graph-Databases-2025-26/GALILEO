@@ -5,37 +5,37 @@
             "party": "Conservative",
             "start_year": 1868,
             "end_year": 1868,
-            "cardinal_number": 40
+            "cardinal_number": "40th"
         },
         {
             "name": "Benjamin Disraeli",
             "party": "Conservative",
             "start_year": 1874,
             "end_year": 1880,
-            "cardinal_number": 42
+            "cardinal_number": "42nd"
         },
         {
             "name": "Robert Gascoyne-Cecil",
             "party": "Conservative",
             "start_year": 1885,
             "end_year": 1886,
-            "cardinal_number": 44
+            "cardinal_number": "45th"
         },
         {
             "name": "Robert Gascoyne-Cecil",
             "party": "Conservative",
             "start_year": 1886,
             "end_year": 1892,
-            "cardinal_number": 46
+            "cardinal_number": "47th"
         },
         {
             "name": "Robert Gascoyne-Cecil",
             "party": "Conservative",
             "start_year": 1895,
             "end_year": 1902,
-            "card_number": 48
+            "cardinal_number": "49th"
         }
     ],
-    "time": 2.808,
-    "tokens": 455
+    "time": 5.426,
+    "tokens": 396
 }

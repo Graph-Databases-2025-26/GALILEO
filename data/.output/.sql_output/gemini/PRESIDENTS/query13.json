@@ -1,27 +1,14 @@
 {
     "result_set": [
         {
-            "name": "Abraham Lincoln"
+            "party": "Democratic Action",
+            "num": 3
         },
         {
-            "name": "Theodore Roosevelt"
-        },
-        {
-            "name": "Dwight D. Eisenhower"
-        },
-        {
-            "name": "Richard Nixon"
-        },
-        {
-            "name": "Ronald Reagan"
-        },
-        {
-            "name": "George W. Bush"
-        },
-        {
-            "name": "Donald Trump"
+            "party": "COPEI",
+            "num": 2
         }
     ],
-    "time": 1.945,
-    "tokens": 272
+    "time": 67.105,
+    "tokens": 590
 }

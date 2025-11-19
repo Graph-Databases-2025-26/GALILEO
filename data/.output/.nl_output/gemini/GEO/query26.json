@@ -1,30 +1,11 @@
 {
     "result_set": [
         {
-            "state_name": "Pennsylvania",
-            "capital": "Harrisburg",
-            "density": 286,
-            "population": 13002700
-        },
-        {
-            "state_name": "Ohio",
-            "capital": "Columbus",
-            "density": 286,
-            "population": 11799448
-        },
-        {
-            "state_name": "Virginia",
-            "capital": "Richmond",
-            "density": 215,
-            "population": 8631393
-        },
-        {
-            "state_name": "Maryland",
-            "capital": "Annapolis",
-            "density": 627,
-            "population": 6177224
+            "state_name": "Kentucky",
+            "population": 4505836,
+            "area_squared_miles": 40408.0
         }
     ],
-    "time": 4.52,
-    "tokens": 774
+    "time": 1.672,
+    "tokens": 112
 }

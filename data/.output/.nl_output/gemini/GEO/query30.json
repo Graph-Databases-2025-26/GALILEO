@@ -1,10 +1,6 @@
 {
     "result_set": [
         {
-            "state_name": "Arizona",
-            "capital": "Phoenix"
-        },
-        {
             "state_name": "Colorado",
             "capital": "Denver"
         },
@@ -41,10 +37,14 @@
             "capital": "Austin"
         },
         {
+            "state_name": "Virginia",
+            "capital": "Richmond"
+        },
+        {
             "state_name": "Washington",
             "capital": "Olympia"
         }
     ],
-    "time": 2.465,
-    "tokens": 442
+    "time": 2.454,
+    "tokens": 322
 }

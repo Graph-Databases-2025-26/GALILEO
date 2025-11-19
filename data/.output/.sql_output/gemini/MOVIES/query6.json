@@ -1,46 +1,14 @@
 {
-  "result_set": [
-    {
-      "originaltitle": "Jurassic Park",
-      "startyear": 1993,
-      "genres": "Adventure,Sci-Fi,Thriller",
-      "birthyear": 1946,
-      "deathyear": null,
-      "runtimeminutes": 127
-    },
-    {
-      "originaltitle": "Schindler's List",
-      "startyear": 1993,
-      "genres": "Biography,Drama,History",
-      "birthyear": 1946,
-      "deathyear": null,
-      "runtimeminutes": 195
-    },
-    {
-      "originaltitle": "The Lost World: Jurassic Park",
-      "startyear": 1997,
-      "genres": "Action,Adventure,Sci-Fi",
-      "birthyear": 1946,
-      "deathyear": null,
-      "runtimeminutes": 129
-    },
-    {
-      "originaltitle": "Amistad",
-      "startyear": 1997,
-      "genres": "Drama,History",
-      "birthyear": 1946,
-      "deathyear": null,
-      "runtimeminutes": 155
-    },
-    {
-      "originaltitle": "Saving Private Ryan",
-      "startyear": 1998,
-      "genres": "Drama,War",
-      "birthyear": 1946,
-      "deathyear": null,
-      "runtimeminutes": 169
-    }
-  ],
-  "time": 6.636,
-  "tokens": 1197
+    "result_set": [
+        {
+            "originaltitle": "Jurassic Park",
+            "startyear": 1993,
+            "genres": "Adventure,Sci-Fi,Thriller",
+            "birthyear": 1946,
+            "deathyear": null,
+            "runtimeminutes": 127
+        }
+    ],
+    "time": 2.681,
+    "tokens": 358
 }

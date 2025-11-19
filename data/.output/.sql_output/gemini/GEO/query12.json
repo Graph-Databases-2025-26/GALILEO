@@ -1,18 +1,9 @@
 {
     "result_set": [
         {
-            "lake_name": "Lake Superior"
-        },
-        {
-            "lake_name": "Lake Michigan"
-        },
-        {
-            "lake_name": "Lake Huron"
-        },
-        {
-            "lake_name": "Lake Erie"
+            "state_name": "Illinois"
         }
     ],
-    "time": 17.132,
-    "tokens": 483
+    "time": 11.554,
+    "tokens": 253
 }

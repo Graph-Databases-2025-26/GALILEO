@@ -1,22 +1,26 @@
 {
     "result_set": [
         {
-            "party_name": "Democratic-Republican",
-            "elected_presidents_count": 5
+            "party": "Democratic-Republican",
+            "count": 6
         },
         {
-            "party_name": "Democratic",
-            "elected_presidents_count": 10
+            "party": "Democratic",
+            "count": 13
         },
         {
-            "party_name": "Whig",
-            "elected_presidents_count": 4
+            "party": "Whig",
+            "count": 4
         },
         {
-            "party_name": "Republican",
-            "elected_presidents_count": 4
+            "party": "Republican",
+            "count": 8
+        },
+        {
+            "party": "National Union",
+            "count": 1
         }
     ],
-    "time": 1.985,
-    "tokens": 218
+    "time": 2.253,
+    "tokens": 216
 }

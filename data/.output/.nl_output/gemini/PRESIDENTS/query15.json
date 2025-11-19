@@ -5,6 +5,10 @@
             "party": "Republican"
         },
         {
+            "name": "Andrew Johnson",
+            "party": "Republican"
+        },
+        {
             "name": "Ulysses S. Grant",
             "party": "Republican"
         },
@@ -77,6 +81,6 @@
             "party": "Republican"
         }
     ],
-    "time": 2.805,
-    "tokens": 485
+    "time": 2.822,
+    "tokens": 473
 }

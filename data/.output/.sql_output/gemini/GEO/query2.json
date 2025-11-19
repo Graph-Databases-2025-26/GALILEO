@@ -1,9 +1,9 @@
 {
     "result_set": [
         {
-            "count(capital)": 1
+            "city_name": "Los Angeles"
         }
     ],
-    "time": 1.69,
-    "tokens": 229
+    "time": 2.303,
+    "tokens": 152
 }

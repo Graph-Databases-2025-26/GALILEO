@@ -1,30 +1,5 @@
 {
-    "result_set": [
-        {
-            "name": "Jos\u00e9 Tadeo Monagas",
-            "party": "Liberal"
-        },
-        {
-            "name": "Jos\u00e9 Gregorio Monagas",
-            "party": "Liberal"
-        },
-        {
-            "name": "Juan Cris\u00f3stomo Falc\u00f3n",
-            "party": "Liberal"
-        },
-        {
-            "name": "Antonio Guzm\u00e1n Blanco",
-            "party": "Liberal"
-        },
-        {
-            "name": "Francisco Linares Alc\u00e1ntara",
-            "party": "Liberal"
-        },
-        {
-            "name": "Joaqu\u00edn Crespo",
-            "party": "Liberal"
-        }
-    ],
-    "time": 1.797,
-    "tokens": 185
+    "result_set": [],
+    "time": 1.283,
+    "tokens": 62
 }

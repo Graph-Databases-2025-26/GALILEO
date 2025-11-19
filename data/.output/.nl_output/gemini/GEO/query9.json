@@ -1,81 +1,10 @@
 {
     "result_set": [
         {
-            "name": "Lake Superior"
-        },
-        {
-            "name": "Lake Huron"
-        },
-        {
-            "name": "Lake Michigan"
-        },
-        {
-            "name": "Lake Erie"
-        },
-        {
-            "name": "Lake Ontario"
-        },
-        {
-            "name": "Great Salt Lake"
-        },
-        {
-            "name": "Lake Tahoe"
-        },
-        {
-            "name": "Crater Lake"
-        },
-        {
-            "name": "Lake Chelan"
-        },
-        {
-            "name": "Lake Champlain"
-        },
-        {
-            "name": "Lake Okeechobee"
-        },
-        {
-            "name": "Lake Pontchartrain"
-        },
-        {
-            "name": "Lake of the Ozarks"
-        },
-        {
-            "name": "Flathead Lake"
-        },
-        {
-            "name": "Lake Havasu"
-        },
-        {
-            "name": "Lake Powell"
-        },
-        {
-            "name": "Lake Mead"
-        },
-        {
-            "name": "Finger Lakes"
-        },
-        {
-            "name": "Lake Winnebago"
-        },
-        {
-            "name": "Red Lake"
-        },
-        {
-            "name": "Leech Lake"
-        },
-        {
-            "name": "Mille Lacs Lake"
-        },
-        {
-            "name": "Rainy Lake"
-        },
-        {
-            "name": "Upper Klamath Lake"
-        },
-        {
-            "name": "Lake of the Woods"
+            "river_name": "Rio Grande",
+            "length_in_km": 3057
         }
     ],
-    "time": 3.17,
-    "tokens": 490
+    "time": 1.417,
+    "tokens": 98
 }

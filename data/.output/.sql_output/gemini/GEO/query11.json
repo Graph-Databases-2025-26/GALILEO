@@ -1,15 +1,18 @@
 {
     "result_set": [
         {
-            "state_name": "Illinois"
+            "usa_state_traversed": "Missouri"
         },
         {
-            "state_name": "Massachusetts"
+            "usa_state_traversed": "Mississippi"
         },
         {
-            "state_name": "Missouri"
+            "usa_state_traversed": "Arkansas"
+        },
+        {
+            "usa_state_traversed": "Louisiana"
         }
     ],
-    "time": 2.564,
-    "tokens": 405
+    "time": 2.573,
+    "tokens": 216
 }

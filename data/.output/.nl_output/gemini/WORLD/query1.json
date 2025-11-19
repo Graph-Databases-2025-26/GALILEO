@@ -1,9 +1,9 @@
 {
     "result_set": [
         {
-            "count_of_government_types_in_africa": 13
+            "count_of_government_forms": 5
         }
     ],
-    "time": 1.859,
-    "tokens": 133
+    "time": 2.111,
+    "tokens": 88
 }

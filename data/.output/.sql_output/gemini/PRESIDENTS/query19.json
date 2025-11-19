@@ -1,41 +1,27 @@
 {
     "result_set": [
         {
-            "name": "Franklin Pierce",
-            "party": "Democratic",
-            "start_year": 1853,
-            "end_year": 1857,
-            "cardinal_number": 14
+            "name": "Joe Biden",
+            "start_year": 2021,
+            "end_year": null,
+            "cardinal_number": "46th",
+            "party": "Democratic"
         },
         {
-            "name": "James Buchanan",
-            "party": "Democratic",
-            "start_year": 1857,
-            "end_year": 1861,
-            "cardinal_number": 15
+            "name": "Donald Trump",
+            "start_year": 2017,
+            "end_year": 2021,
+            "cardinal_number": "45th",
+            "party": "Republican"
         },
         {
-            "name": "Andrew Johnson",
-            "party": "Democratic",
-            "start_year": 1865,
-            "end_year": 1869,
-            "cardinal_number": 17
-        },
-        {
-            "name": "Grover Cleveland",
-            "party": "Democratic",
-            "start_year": 1885,
-            "end_year": 1889,
-            "cardinal_number": 22
-        },
-        {
-            "name": "Grover Cleveland",
-            "party": "Democratic",
-            "start_year": 1893,
-            "end_year": 1897,
-            "cardinal_number": 24
+            "name": "Barack Obama",
+            "start_year": 2009,
+            "end_year": 2017,
+            "cardinal_number": "44th",
+            "party": "Democratic"
         }
     ],
-    "time": 4.606,
-    "tokens": 864
+    "time": 5.426,
+    "tokens": 241
 }

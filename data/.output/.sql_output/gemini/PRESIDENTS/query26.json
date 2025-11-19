@@ -1,14 +1,14 @@
 {
-  "result_set": [
-    {
-      "party": "Republican",
-      "num": 10
-    },
-    {
-      "party": "Democratic",
-      "num": 6
-    }
-  ],
-  "time": 6.819,
-  "tokens": 1582
+    "result_set": [
+        {
+            "party": "Republican",
+            "num": 10
+        },
+        {
+            "party": "Democratic",
+            "num": 6
+        }
+    ],
+    "time": 11.773,
+    "tokens": 1193
 }

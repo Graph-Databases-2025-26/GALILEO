@@ -1,31 +1,10 @@
 {
     "result_set": [
         {
-            "state_name": "California",
-            "population": 39237836,
-            "area": 423970
-        },
-        {
-            "state_name": "Texas",
-            "population": 30503371,
-            "area": 695662
-        },
-        {
-            "state_name": "Florida",
-            "population": 22610726,
-            "area": 170312
-        },
-        {
-            "state_name": "New York",
-            "population": 19677151,
-            "area": 141297
-        },
-        {
-            "state_name": "Pennsylvania",
-            "population": 12951900,
-            "area": 119280
+            "state_name": "Massachusetts",
+            "country_name": "USA"
         }
     ],
-    "time": 2.572,
-    "tokens": 418
+    "time": 1.737,
+    "tokens": 95
 }

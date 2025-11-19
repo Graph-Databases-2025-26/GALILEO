@@ -1,14 +1,14 @@
 {
     "result_set": [
         {
-            "party_name": "Republican Party",
-            "president_count": 10
+            "party": "Democratic",
+            "num_presidents": 9
         },
         {
-            "party_name": "Democratic Party",
-            "president_count": 8
+            "party": "Republican",
+            "num_presidents": 10
         }
     ],
-    "time": 1.804,
-    "tokens": 202
+    "time": 2.673,
+    "tokens": 417
 }

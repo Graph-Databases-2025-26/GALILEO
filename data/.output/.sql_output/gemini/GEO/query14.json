@@ -1,9 +1,9 @@
 {
     "result_set": [
         {
-            "state_name": "Texas"
+            "lake_name": "Lake Superior"
         }
     ],
-    "time": 7.601,
-    "tokens": 184
+    "time": 1.564,
+    "tokens": 91
 }

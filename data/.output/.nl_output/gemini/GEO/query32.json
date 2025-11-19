@@ -4,9 +4,9 @@
             "state_name": "Louisiana",
             "capital": "Baton Rouge",
             "population": 4700000,
-            "area": 56153
+            "area_squared_miles": 56153.0
         }
     ],
-    "time": 1.617,
-    "tokens": 172
+    "time": 2.088,
+    "tokens": 135
 }

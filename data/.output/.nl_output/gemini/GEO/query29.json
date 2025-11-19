@@ -1,36 +1,24 @@
 {
     "result_set": [
         {
-            "state_name": "Georgia",
-            "capital": "Atlanta",
-            "density": 186.0,
-            "population": 10912876
+            "state_name": "Maryland",
+            "capital": "Annapolis",
+            "density": 626.6,
+            "population": 6165129
         },
         {
-            "state_name": "North Carolina",
-            "capital": "Raleigh",
-            "density": 222.0,
-            "population": 10698973
+            "state_name": "Massachusetts",
+            "capital": "Boston",
+            "density": 877.7,
+            "population": 7033469
         },
         {
-            "state_name": "Ohio",
-            "capital": "Columbus",
-            "density": 286.0,
-            "population": 11756058
-        },
-        {
-            "state_name": "Pennsylvania",
-            "capital": "Harrisburg",
-            "density": 288.0,
-            "population": 13002700
-        },
-        {
-            "state_name": "Virginia",
-            "capital": "Richmond",
-            "density": 218.0,
-            "population": 8642274
+            "state_name": "New Jersey",
+            "capital": "Trenton",
+            "density": 1263.0,
+            "population": 9261699
         }
     ],
-    "time": 2.839,
-    "tokens": 426
+    "time": 2.38,
+    "tokens": 237
 }

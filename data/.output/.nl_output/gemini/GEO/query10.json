@@ -1,24 +1,36 @@
 {
     "result_set": [
         {
-            "state_name": "California"
+            "lake_name": "Lake Superior"
         },
         {
-            "state_name": "New York"
+            "lake_name": "Lake Huron"
         },
         {
-            "state_name": "Texas"
+            "lake_name": "Lake Michigan"
         },
         {
-            "state_name": "Florida"
+            "lake_name": "Lake Erie"
         },
         {
-            "state_name": "Illinois"
+            "lake_name": "Lake Ontario"
         },
         {
-            "state_name": "Washington"
+            "lake_name": "Great Salt Lake"
+        },
+        {
+            "lake_name": "Lake Okeechobee"
+        },
+        {
+            "lake_name": "Lake Pontchartrain"
+        },
+        {
+            "lake_name": "Lake Champlain"
+        },
+        {
+            "lake_name": "Lake Tahoe"
         }
     ],
-    "time": 3.386,
-    "tokens": 541
+    "time": 1.965,
+    "tokens": 216
 }

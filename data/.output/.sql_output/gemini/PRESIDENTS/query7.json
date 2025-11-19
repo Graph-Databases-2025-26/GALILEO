@@ -1,9 +1,10 @@
 {
     "result_set": [
         {
-            "count(*)": 3
+            "party": "Socialist Party",
+            "num": 3
         }
     ],
-    "time": 2.758,
-    "tokens": 409
+    "time": 3.482,
+    "tokens": 319
 }

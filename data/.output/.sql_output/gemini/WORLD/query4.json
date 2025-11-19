@@ -1,57 +1,18 @@
 {
-  "result_set": [
-    {
-      "region": "North America"
-    },
-    {
-      "region": "Western Europe"
-    },
-    {
-      "region": "Australia and New Zealand"
-    },
-    {
-      "region": "Southern Africa"
-    },
-    {
-      "region": "South America"
-    },
-    {
-      "region": "Southern and Central Asia"
-    },
-    {
-      "region": "Eastern Africa"
-    },
-    {
-      "region": "Caribbean"
-    },
-    {
-      "region": "Polynesia"
-    },
-    {
-      "region": "Micronesia"
-    },
-    {
-      "region": "East Asia"
-    },
-    {
-      "region": "South-Eastern Asia"
-    },
-    {
-      "region": "Eastern Europe"
-    },
-    {
-      "region": "Nordic Countries"
-    },
-    {
-      "region": "Middle East"
-    },
-    {
-      "region": "Western Africa"
-    },
-    {
-      "region": "Central Africa"
-    }
-  ],
-  "time": 4.785,
-  "tokens": 945
+    "result_set": [
+        {
+            "region": "Western Europe"
+        },
+        {
+            "region": "North America"
+        },
+        {
+            "region": "Southern Africa"
+        },
+        {
+            "region": "South America"
+        }
+    ],
+    "time": 5.019,
+    "tokens": 313
 }

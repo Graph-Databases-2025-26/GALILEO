@@ -2,97 +2,30 @@
     "result_set": [
         {
             "state_name": "California",
+            "population": 39200000,
             "capital": "Sacramento"
         },
         {
             "state_name": "Texas",
+            "population": 30500000,
             "capital": "Austin"
         },
         {
             "state_name": "Florida",
+            "population": 22600000,
             "capital": "Tallahassee"
         },
         {
             "state_name": "New York",
+            "population": 19600000,
             "capital": "Albany"
         },
         {
             "state_name": "Pennsylvania",
+            "population": 12900000,
             "capital": "Harrisburg"
-        },
-        {
-            "state_name": "Illinois",
-            "capital": "Springfield"
-        },
-        {
-            "state_name": "Ohio",
-            "capital": "Columbus"
-        },
-        {
-            "state_name": "Georgia",
-            "capital": "Atlanta"
-        },
-        {
-            "state_name": "North Carolina",
-            "capital": "Raleigh"
-        },
-        {
-            "state_name": "Michigan",
-            "capital": "Lansing"
-        },
-        {
-            "state_name": "Virginia",
-            "capital": "Richmond"
-        },
-        {
-            "state_name": "Washington",
-            "capital": "Olympia"
-        },
-        {
-            "state_name": "Arizona",
-            "capital": "Phoenix"
-        },
-        {
-            "state_name": "Massachusetts",
-            "capital": "Boston"
-        },
-        {
-            "state_name": "Tennessee",
-            "capital": "Nashville"
-        },
-        {
-            "state_name": "Indiana",
-            "capital": "Indianapolis"
-        },
-        {
-            "state_name": "Maryland",
-            "capital": "Annapolis"
-        },
-        {
-            "state_name": "Missouri",
-            "capital": "Jefferson City"
-        },
-        {
-            "state_name": "Colorado",
-            "capital": "Denver"
-        },
-        {
-            "state_name": "Wisconsin",
-            "capital": "Madison"
-        },
-        {
-            "state_name": "Minnesota",
-            "capital": "Saint Paul"
-        },
-        {
-            "state_name": "South Carolina",
-            "capital": "Columbia"
-        },
-        {
-            "state_name": "Alabama",
-            "capital": "Montgomery"
         }
     ],
-    "time": 6.569,
-    "tokens": 1383
+    "time": 2.862,
+    "tokens": 388
 }

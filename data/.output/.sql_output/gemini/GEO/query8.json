@@ -1,9 +1,9 @@
 {
     "result_set": [
         {
-            "length_in_km": 3057
+            "count(distinct river_name)": 15
         }
     ],
-    "time": 2.66,
-    "tokens": 371
+    "time": 1.422,
+    "tokens": 83
 }

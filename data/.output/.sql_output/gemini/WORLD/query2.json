@@ -1,27 +1,9 @@
 {
-  "result_set": [
-    {
-      "name": "Nigeria"
-    },
-    {
-      "name": "Kenya"
-    },
-    {
-      "name": "Algeria"
-    },
-    {
-      "name": "Germany"
-    },
-    {
-      "name": "Ukraine"
-    },
-    {
-      "name": "East Timor"
-    },
-    {
-      "name": "South Sudan"
-    }
-  ],
-  "time": 3.16,
-  "tokens": 609
+    "result_set": [
+        {
+            "name": "Vietnam"
+        }
+    ],
+    "time": 1.884,
+    "tokens": 188
 }

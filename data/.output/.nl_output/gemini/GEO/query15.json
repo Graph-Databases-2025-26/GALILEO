@@ -1,9 +1,9 @@
 {
     "result_set": [
         {
-            "count_of_states_with_springfield": 34
+            "state_name": "Texas"
         }
     ],
-    "time": 1.319,
-    "tokens": 112
+    "time": 1.368,
+    "tokens": 87
 }

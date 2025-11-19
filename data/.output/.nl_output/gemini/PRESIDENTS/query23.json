@@ -1,27 +1,5 @@
 {
-    "result_set": [
-        {
-            "Name": "James Buchanan",
-            "Party": "Democratic",
-            "StartYear": 1857,
-            "EndYear": 1861,
-            "CardinalNumber": 15
-        },
-        {
-            "Name": "Grover Cleveland",
-            "Party": "Democratic",
-            "StartYear": 1885,
-            "EndYear": 1889,
-            "CardinalNumber": 22
-        },
-        {
-            "Name": "Grover Cleveland",
-            "Party": "Democratic",
-            "StartYear": 1893,
-            "EndYear": 1897,
-            "CardinalNumber": 24
-        }
-    ],
-    "time": 21.294,
-    "tokens": 311
+    "result_set": [],
+    "time": 32.043,
+    "tokens": 109
 }

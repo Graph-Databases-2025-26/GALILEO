@@ -1,27 +1,9 @@
 {
     "result_set": [
         {
-            "capital": "Albany"
-        },
-        {
-            "capital": "Harrisburg"
-        },
-        {
-            "capital": "Juneau"
-        },
-        {
-            "capital": "Montpelier"
-        },
-        {
-            "capital": "Dover"
-        },
-        {
-            "capital": "Augusta"
-        },
-        {
-            "capital": "Annapolis"
+            "capital": "Phoenix"
         }
     ],
-    "time": 7.505,
-    "tokens": 1711
+    "time": 1.835,
+    "tokens": 156
 }

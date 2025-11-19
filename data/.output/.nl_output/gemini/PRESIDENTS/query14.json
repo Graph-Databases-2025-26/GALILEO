@@ -2,7 +2,7 @@
     "result_set": [
         {
             "name": "George Washington",
-            "party": "No Party"
+            "party": "Nonpartisan"
         },
         {
             "name": "John Adams",
@@ -26,11 +26,11 @@
         },
         {
             "name": "Andrew Jackson",
-            "party": "Democrat"
+            "party": "Democratic"
         },
         {
             "name": "Martin Van Buren",
-            "party": "Democrat"
+            "party": "Democratic"
         },
         {
             "name": "William Henry Harrison",
@@ -42,7 +42,7 @@
         },
         {
             "name": "James K. Polk",
-            "party": "Democrat"
+            "party": "Democratic"
         },
         {
             "name": "Zachary Taylor",
@@ -54,11 +54,11 @@
         },
         {
             "name": "Franklin Pierce",
-            "party": "Democrat"
+            "party": "Democratic"
         },
         {
             "name": "James Buchanan",
-            "party": "Democrat"
+            "party": "Democratic"
         },
         {
             "name": "Abraham Lincoln",
@@ -66,7 +66,7 @@
         },
         {
             "name": "Andrew Johnson",
-            "party": "Democrat (National Union)"
+            "party": "National Union"
         },
         {
             "name": "Ulysses S. Grant",
@@ -86,11 +86,15 @@
         },
         {
             "name": "Grover Cleveland",
-            "party": "Democrat"
+            "party": "Democratic"
         },
         {
             "name": "Benjamin Harrison",
             "party": "Republican"
+        },
+        {
+            "name": "Grover Cleveland",
+            "party": "Democratic"
         },
         {
             "name": "William McKinley",
@@ -106,7 +110,7 @@
         },
         {
             "name": "Woodrow Wilson",
-            "party": "Democrat"
+            "party": "Democratic"
         },
         {
             "name": "Warren G. Harding",
@@ -122,11 +126,11 @@
         },
         {
             "name": "Franklin D. Roosevelt",
-            "party": "Democrat"
+            "party": "Democratic"
         },
         {
             "name": "Harry S. Truman",
-            "party": "Democrat"
+            "party": "Democratic"
         },
         {
             "name": "Dwight D. Eisenhower",
@@ -134,11 +138,11 @@
         },
         {
             "name": "John F. Kennedy",
-            "party": "Democrat"
+            "party": "Democratic"
         },
         {
             "name": "Lyndon B. Johnson",
-            "party": "Democrat"
+            "party": "Democratic"
         },
         {
             "name": "Richard Nixon",
@@ -150,7 +154,7 @@
         },
         {
             "name": "Jimmy Carter",
-            "party": "Democrat"
+            "party": "Democratic"
         },
         {
             "name": "Ronald Reagan",
@@ -162,7 +166,7 @@
         },
         {
             "name": "Bill Clinton",
-            "party": "Democrat"
+            "party": "Democratic"
         },
         {
             "name": "George W. Bush",
@@ -170,7 +174,7 @@
         },
         {
             "name": "Barack Obama",
-            "party": "Democrat"
+            "party": "Democratic"
         },
         {
             "name": "Donald Trump",
@@ -178,9 +182,9 @@
         },
         {
             "name": "Joe Biden",
-            "party": "Democrat"
+            "party": "Democratic"
         }
     ],
-    "time": 6.919,
-    "tokens": 1490
+    "time": 5.427,
+    "tokens": 999
 }

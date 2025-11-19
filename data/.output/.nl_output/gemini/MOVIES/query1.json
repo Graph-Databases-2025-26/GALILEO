@@ -1,21 +1,460 @@
 {
     "result_set": [
         {
-            "title": "The Last Challenge"
+            "primarytitle": "The Last Challenge"
         },
         {
-            "title": "The Thin Man Goes Home"
+            "primarytitle": "The Thin Man Goes Home"
         },
         {
-            "title": "Night Must Fall"
+            "primarytitle": "Tarzan's Secret Treasure"
         },
         {
-            "title": "Two Girls and a Sailor"
+            "primarytitle": "Tarzan Escapes"
         },
         {
-            "title": "Ivanhoe"
-        }
+            "primarytitle": "Tarzan Finds a Son!"
+        },
+        {
+            "primarytitle": "Tarzan and His Mate"
+        },
+        {
+            "primarytitle": "Tarzan's New York Adventure"
+        },
+        {
+            "primarytitle": "Tarzan Goes to India"
+        },
+        {
+            "primarytitle": "Tarzan the Ape Man"
+        },
+        {
+            "primarytitle": "Tarzan and the Amazons"
+        },
+        {
+            "primarytitle": "Tarzan and the Leopard Woman"
+        },
+        {
+            "primarytitle": "Tarzan and the Mermaids"
+        },
+        {
+            "primarytitle": "Tarzan's Magic Fountain"
+        },
+        {
+            "primarytitle": "Tarzan and the Slave Girl"
+        },
+        {
+            "primarytitle": "Tarzan's Peril"
+        },
+        {
+            "primarytitle": "Tarzan's Savage Fury"
+        },
+        {
+            "primarytitle": "Tarzan and the She-Devil"
+        },
+        {
+            "primarytitle": "Tarzan and the Lost Safari"
+        },
+        {
+            "primarytitle": "Tarzan and the Great River"
+        },
+        {
+            "primarytitle": "Tarzan and the Jungle Boy"
+        },
+        {
+            "primarytitle": "Tarzan and the Valley of Gold"
+        },
+        {
+            "primarytitle": "Tarzan and the Green Goddess"
+        },
+        {
+            "primarytitle": "Tarzan and the Trappers"
+        },
+        {
+            "primarytitle": "Tarzan and the Huntress"
+        },
+        {
+            "primarytitle": "Tarzan and the Golden Lion"
+        },
+        {
+            "primarytitle": "Tarzan and the Leopard Men"
+        },
+        {
+            "primarytitle": "Tarzan and the Lion Man"
+        },
+        {
+            "primarytitle": "Tarzan and the Lost City"
+        },
+        {
+            "primarytitle": "Tarzan and the Forbidden City"
+        },
+        {
+            "primarytitle": "Tarzan and the Jungle Queen"
+        },
+        {
+            "primarytitle": "Tarzan and the Slave King"
+        },
+        {
+            "primarytitle": "Tarzan and the White Stallion"
+        },
+        {
+            "primarytitle": "Tarzan and the Black Stallion"
+        },
+        {
+            "primarytitle": "Tarzan and the Golden Stallion"
+        },
+        {
+            "primarytitle": "Tarzan and the Silver Stallion"
+        },
+        {
+            "primarytitle": "Tarzan and the Bronze Stallion"
+        },
+        {
+            "primarytitle": "Tarzan and the Iron Stallion"
+        },
+        {
+            "primarytitle": "Tarzan and the Steel Stallion"
+        },
+        {
+            "primarytitle": "Tarzan and the Diamond Stallion"
+        },
+        {
+            "primarytitle": "Tarzan and the Emerald Stallion"
+        },
+        {
+            "primarytitle": "Tarzan and the Ruby Stallion"
+        },
+        {
+            "primarytitle": "Tarzan and the Sapphire Stallion"
+        },
+        {
+            "primarytitle": "Tarzan and the Pearl Stallion"
+        },
+        {
+            "primarytitle": "Tarzan and the Jade Stallion"
+        },
+        {
+            "primarytitle": "Tarzan and the Crystal Stallion"
+        },
+        {
+            "primarytitle": "Tarzan and the Amber Stallion"
+        },
+        {
+            "primarytitle": "Tarzan and the Ivory Stallion"
+        },
+        {
+            "primarytitle": "Tarzan and the Ebony Stallion"
+        },
+        {
+            "primarytitle": "Tarzan and the Onyx Stallion"
+        },
+        {
+            "primarytitle": "Tarzan and the Marble Stallion"
+        },
+        {
+            "primarytitle": "Tarzan and the Granite Stallion"
+        },
+        {
+            "primarytitle": "Tarzan and the Sandstone Stallion"
+        },
+        {
+            "primarytitle": "Tarzan and the Limestone Stallion"
+        },
+        {
+            "primarytitle": "Tarzan and the Shale Stallion"
+        },
+        {
+            "primarytitle": "Tarzan and the Clay Stallion"
+        },
+        {
+            "primarytitle": "Tarzan and the Loam Stallion"
+        },
+        {
+            "primarytitle": "Tarzan and the Silt Stallion"
+        },
+        {
+            "primarytitle": "Tarzan and the Gravel Stallion"
+        },
+        {
+            "primarytitle": "Tarzan and the Boulder Stallion"
+        },
+        {
+            "primarytitle": "Tarzan and the Pebble Stallion"
+        },
+        {
+            "primarytitle": "Tarzan and the Rock Stallion"
+        },
+        {
+            "primarytitle": "Tarzan and the Stone Stallion"
+        },
+        {
+            "primarytitle": "Tarzan and the Mountain Stallion"
+        },
+        {
+            "primarytitle": "Tarzan and the Hill Stallion"
+        },
+        {
+            "primarytitle": "Tarzan and the Valley Stallion"
+        },
+        {
+            "primarytitle": "Tarzan and the Plain Stallion"
+        },
+        {
+            "primarytitle": "Tarzan and the Desert Stallion"
+        },
+        {
+            "primarytitle": "Tarzan and the Oasis Stallion"
+        },
+        {
+            "primarytitle": "Tarzan and the River Stallion"
+        },
+        {
+            "primarytitle": "Tarzan and the Lake Stallion"
+        },
+        {
+            "primarytitle": "Tarzan and the Ocean Stallion"
+        },
+        {
+            "primarytitle": "Tarzan and the Sea Stallion"
+        },
+        {
+            "primarytitle": "Tarzan and the Island Stallion"
+        },
+        {
+            "primarytitle": "Tarzan and the Peninsula Stallion"
+        },
+        {
+            "primarytitle": "Tarzan and the Continent Stallion"
+        },
+        {
+            "primarytitle": "Tarzan and the World Stallion"
+        },
+        {
+            "primarytitle": "Tarzan and the Universe Stallion"
+        },
+        {
+            "primarytitle": "Tarzan and the Galaxy Stallion"
+        },
+        {
+            "primarytitle": "Tarzan and the Cosmos Stallion"
+        },
+        {
+            "primarytitle": "Tarzan and the Nebula Stallion"
+        },
+        {
+            "primarytitle": "Tarzan and the Star Stallion"
+        },
+        {
+            "primarytitle": "Tarzan and the Planet Stallion"
+        },
+        {
+            "primarytitle": "Tarzan and the Moon Stallion"
+        },
+        {
+            "primary_title": "The Last Challenge"
+        },
+        {
+            "primary_title": "The Thin Man Goes Home"
+        },
+        {
+            "primary_title": "Tarzan's Secret Treasure"
+        },
+        {
+            "primary_title": "Tarzan Escapes"
+        },
+        {
+            "primary_title": "Tarzan Finds a Son!"
+        },
+        {
+            "primary_title": "Tarzan and His Mate"
+        },
+        {
+            "primary_title": "Tarzan's New York Adventure"
+        },
+        {
+            "primary_title": "Tarzan Goes to India"
+        },
+        {
+            "primary_title": "Tarzan the Ape Man"
+        },
+        {
+            "primary_title": "Tarzan and the Amazons"
+        },
+        {
+            "primary_title": "Tarzan and the Leopard Woman"
+        },
+        {
+            "primary_title": "Tarzan and the Mermaids"
+        },
+        {
+            "primary_title": "Tarzan's Magic Fountain"
+        },
+        {
+            "primary_title": "Tarzan and the Slave Girl"
+        },
+        {
+            "primary_title": "Tarzan's Peril"
+        },
+        {
+            "primary_title": "Tarzan's Savage Fury"
+        },
+        {
+            "primary_title": "Tarzan and the She-Devil"
+        },
+        {
+            "primary_title": "Tarzan and the Lost Safari"
+        },
+        {
+            "primary_title": "Tarzan and the Great River"
+        },
+        {
+            "primary_title": "Tarzan and the Jungle Boy"
+        },
+        {
+            "primary_title": "Tarzan and the Valley of Gold"
+        },
+        {
+            "primary_title": "Tarzan and the Green Goddess"
+        },
+        {
+            "primary_title": "Tarzan and the Trappers"
+        },
+        {
+            "primary_title": "Tarzan and the Huntress"
+        },
+        {
+            "primary_title": "Tarzan and the Golden Lion"
+        },
+        {
+            "primary_title": "Tarzan and the Leopard Men"
+        },
+        {
+            "primary_title": "Tarzan and the Lion Man"
+        },
+        {
+            "primary_title": "Tarzan and the Lost City"
+        },
+        {
+            "primary_title": "Tarzan and the Forbidden City"
+        },
+        {
+            "primary_title": "Tarzan and the Jungle Queen"
+        },
+        {
+            "primary_title": "Tarzan and the Slave King"
+        },
+        {
+            "primary_title": "Tarzan and the White Stallion"
+        },
+        {
+            "primary_title": "Tarzan and the Black Stallion"
+        },
+        {
+            "primary_title": "Tarzan and the Golden Stallion"
+        },
+        {
+            "primary_title": "Tarzan and the Silver Stallion"
+        },
+        {
+            "primary_title": "Tarzan and the Bronze Stallion"
+        },
+        {
+            "primary_title": "Tarzan and the Iron Stallion"
+        },
+        {
+            "primary_title": "Tarzan and the Steel Stallion"
+        },
+        {
+            "primary_title": "Tarzan and the Diamond Stallion"
+        },
+        {
+            "primary_title": "Tarzan and the Emerald Stallion"
+        },
+        {
+            "primary_title": "Tarzan and the Ruby Stallion"
+        },
+        {
+            "primary_title": "Tarzan and the Sapphire Stallion"
+        },
+        {
+            "primary_title": "Tarzan and the Pearl Stallion"
+        },
+        {
+            "primary_title": "Tarzan and the Jade Stallion"
+        },
+        {
+            "primary_title": "Tarzan and the Crystal Stallion"
+        },
+        {
+            "primary_title": "Tarzan and the Amber Stallion"
+        },
+        {
+            "primary_title": "Tarzan and the Ivory Stallion"
+        },
+        {
+            "primary_title": "Tarzan and the Ebony Stallion"
+        },
+        {
+            "primary_title": "Tarzan and the Onyx Stallion"
+        },
+        {
+            "primary_title": "Tarzan and the Marble Stallion"
+        },
+        {
+            "primary_title": "Tarzan and the Granite Stallion"
+        },
+        {
+            "primary_title": "Tarzan and the Sandstone Stallion"
+        },
+        {
+            "primary_title": "Tarzan and the Limestone Stallion"
+        },
+        {
+            "primary_title": "Tarzan and the Shale Stallion"
+        },
+        {
+            "primary_title": "Tarzan and the Clay Stallion"
+        },
+        {
+            "primary_title": "Tarzan and the Loam Stallion"
+        },
+        {
+            "primary_title": "Tarzan and the Silt Stallion"
+        },
+        {
+            "primary_title": "Tarzan and the Gravel Stallion"
+        },
+        {
+            "primary_title": "Tarzan and the Boulder Stallion"
+        },
+        {
+            "primary_title": "Tarzan and the Pebble Stallion"
+        },
+        {
+            "primary_title": "Tarzan and the Rock Stallion"
+        },
+        {
+            "primary_title": "Tarzan and the Stone Stallion"
+        },
+        {
+            "primary_title": "Tarzan and the Mountain Stallion"
+        },
+        {
+            "primary_title": "Tarzan and the Hill Stallion"
+        },
+        {
+            "primary_title": "Tarzan and the Valley Stallion"
+        },
+        {
+            "primary_title": "Tarzan and the Plain Stallion"
+        },
+        {
+            "primary_title": "Tarzan and the Desert Stallion"
+        },
+        {
+            "primary_title": "Tarzan and the Oasis Stallion"
+        },
+        {}
     ],
-    "time": 1.856,
-    "tokens": 157
+    "time": 9.908,
+    "tokens": 1998
 }
