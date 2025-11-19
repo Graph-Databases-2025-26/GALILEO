@@ -13,7 +13,7 @@ The primary objective of the current task is to detail the \textbf{development p
 \vspace{2em}
 \subsection{Report Structure}
 This introductory section establishes the methodological context of the project:
-\begin{itemize}
+\begin{itemize}[leftmargin=*]
     \item Section \ref{sec:Architecture} details the project's core: the Unified Architecture and Execution Flow common to both baselines. This section describes the software design patterns adopted for modularity, the standardized execution pipeline and the definitions for the data context and output format (FULL JSON).
     \item Section \ref{sec:Baselines} describes the specific implementations for the two evaluation modes, the NL Baseline and the SQL Baseline. Leveraging the common architecture, this section focuses on how each baseline handles its unique input (a natural language prompt or an SQL query) within the unified execution flow.
     \item Section \ref{sec:sql_nl_results_evaluation}  show, for each implemented baseline, \textbf{synoptic tables} reporting the derived evaluation measures and metrics. It analyzes and compares key metrics (F1-CELL, CARDINALITY, TUPLE-CONSTRAINT) and costs (tokens and latency) for both baselines across the different LLM providers tested.
