@@ -31,6 +31,15 @@ def main():
 
         # Always use 'python -m pip'
         run([str(PY), "-m", "pip", "install", "--upgrade", "pip"], check=False)
+
+        print(" Installing CPU-only version of PyTorch (Lightweight)...")
+        # Forziamo l'installazione di torch versione CPU prima di tutto il resto
+        run([
+            str(PY), "-m", "pip", "install",
+            "torch", "torchvision",
+            "--index-url", "https://download.pytorch.org/whl/cpu"
+        ], check=True)
+
         run([str(PY), "-m", "pip", "install", "-r", str(REQS_PATH)])
     else:
         print(f"  requirements.txt not found at {REQS_PATH}; skipping installs")
