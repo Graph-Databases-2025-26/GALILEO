@@ -44,7 +44,7 @@ The evaluation utilizes two distinct dataset contexts, governing the type of fac
 
 \begin{itemize} [leftmargin=*]
     \item \textbf{Internal Knowledge (IK):} In these datasets, the model relies exclusively on its pre-trained knowledge and linguistic reasoning capabilities. The prompt includes only the natural language question and the database schema for both the \textbf{SQL} and \textbf{NL} baselines, but no factual data retrieved from the database.
-    \item \textbf{Model Context (MC):} These datasets are designed to enrich the prompt with external information retrieved from a knowledge base. For this specific project task, MC datasets were \textbf{not used} in either the NL or SQL baselines, but could represents a good resource for RAG purposes.
+    \item \textbf{Model Context (MC):} These datasets are designed to enrich the prompt with external information retrieved from a knowledge base. For this specific project task, MC datasets were \textbf{not used} in either the NL or SQL baselines as indicated in GALOIS paper, but could represents a good resource for RAG purposes.
 \end{itemize}
 
 \medskip

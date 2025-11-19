@@ -8,7 +8,7 @@ The objective of the \textbf{Natural Language (NL) Baseline} is to evaluate the 
 
 \begin{itemize}[leftmargin=*]
     \item \textbf{Core Input}: Natural language questions are loaded from dataset-specific resource files (e.g., \texttt{queries\_<dataset-name>.txt}).
-    \item \textbf{Prompt Composition}: The final user input (\texttt{HUMAN PROMPT}) is constructed by combining two components: the \textbf{natural language question} and the essential \texttt{database schema} information.
+    \item \textbf{Prompt Composition}: The final user input is constructed by combining two components: the \textbf{natural language question} and the essential \texttt{database schema} information.
     \item \textbf{Primary Goal}: Assess the model's ability to translate high-level, unstructured requests into a structured result based on its internal knowledge and the provided schema context.
 \end{itemize}
 \vspace{2em}
@@ -18,7 +18,7 @@ The objective of the \textbf{SQL Baseline} is to strictly assess the LLM's capac
 
 \begin{itemize}[leftmargin=*]
     \item \textbf{Core Input}: Structured SQL queries are systematically loaded from dedicated files (e.g., \texttt{queries\_<dataset-name>.sql}).
-    \item \textbf{Prompt Composition}: The user input (\texttt{HUMAN PROMPT}) is populated directly with the \textbf{SQL statement} itself. The \texttt{database schema} is added as supplementary, explicit knowledge to guide and validate the model's output generation.
+    \item \textbf{Prompt Composition}: The user input is populated directly with the \textbf{SQL statement} itself. The \texttt{database schema} is added as supplementary, explicit knowledge to guide and validate the model's output generation.
     \item \textbf{Primary Goal}: Quantify the performance when the structured intent is explicitly provided, testing adherence to syntactical and logical constraints.
 \end{itemize}
 \newpage
@@ -51,4 +51,6 @@ The system accepts the following arguments for runtime control:
     \end{tabular}
     \caption{Command-Line Interface Arguments}
 \end{table}
+
+Note that if the datasets list is omitted, the system defaults to processing all available datasets as defined in the \textbf{config.yaml} fil, same for the provider.
 
