@@ -82,10 +82,17 @@ class Galois:
         #DEFAULT value of final_strategy
         final_strategy = "TABLE"
 
+        num_select_columns = len(plan['select_columns'])
+        if num_select_columns == 0:
+            LOG.error("No columns in SELECT clause. Defaulting to TABLE strategy.")
+            final_strategy = "TABLE"
+        else:
+            final_strategy = "TABLE"
+
         # Determine physical strategy
         if self.physical_strategy == "auto":
             LOG.info("STARTING CONFIDENCE PROCESS FOR TABLE OR KEY SCAN")
-            llm_confidence_result = galois_estimator.estimate_confidence_query(self.config, self.parsed_sql["from_table"], plan['original_query'])
+            llm_confidence_result = galois_estimator.estimate_confidence_query(self.config, self.parsed_sql["from_table"], plan['original_query'], num_select_columns)
             if llm_confidence_result in ["TABLE", "KEY"]:
                 final_strategy = llm_confidence_result
             else:
@@ -180,8 +187,6 @@ class Galois:
         Corresponds to plan (c1) in Fig. 2.
         """
 
-        #REMEMBER TO CREATE A METODO IN galois_prompts.py for getting the prompt for llm estimatioN
-
         #Initialize the Estimator
         estimator = ConfidenceEstimator(self.llm_wrapper, self.dataset, system_prompt_galois_confidence(), human_prompt_galois_confidence("CONDITION"))
 
@@ -198,11 +203,34 @@ class Galois:
                 all_conditions
             )
 
+        num_confident = len(confidence_conditions)
+        conditions_to_push = []
+        execution_variant = ""
+
+        if num_confident == 0:
+            # Case 0: No "HIGH" confidence -> No Pushdown
+            conditions_to_push = []
+            execution_variant = "GALOIS_F (Push-Confident): No-Push Heuristic"
+            LOG.info("Heuristic: 0 confident conditions -> Pushing NONE.")
+
+        elif num_confident == 1:
+            # Caso 1: Only one "HIGH" confidence-> Pushdown that condition
+            conditions_to_push = confidence_conditions
+            execution_variant = "GALOIS_F (Push-Confident): Single-Push Heuristic"
+            LOG.info(f"Heuristic: 1 confident condition -> Pushing ONLY: {conditions_to_push}")
+
+
+        elif num_confident > 1:
+            # Caso >1: MOre than one "HIGH" confidence-> Pushdown all original conditions
+            conditions_to_push = all_conditions
+            execution_variant = "GALOIS_F (Push-Confident): Push-All Heuristic"
+            LOG.info("Heuristic: >1 confident conditions -> Pushing ALL original conditions.")
+
         #Build and execute the plan
         #The conditions that are not involved here will be ignored by the Scan.
-        plan = self.build_execution_plan(conditions_to_push=confidence_conditions)
+        plan = self.build_execution_plan(conditions_to_push=conditions_to_push)
 
-        return self.execute_variant(plan, "GALOIS_F (Push-Confident)")
+        return self.execute_variant(plan, execution_variant)
 
 
 
@@ -237,7 +265,7 @@ def main():
                 config=config,
                 dataset=dataset_name,
                 sql_query=query,
-                physical_strategy="table"  # Forziamo Algoritmo 1 (Table-Scan) per il primo test
+                physical_strategy="auto"  # Forziamo Algoritmo 1 (Table-Scan) per il primo test
             )
 
             # C. Esecuzione (Variante: Push-All)

@@ -126,8 +126,8 @@ class GaloisExecutor:
             raw_response = invoke_with_backoff(
                 self.llm,
                 history,
-                max_retries=self.config.execution.max_retries,
-                base_delay=self.config.execution.backoff_sec,
+                max_retries=self.config.galois_execution.max_retries,
+                base_delay=self.config.galois_execution.backoff_sec,
             )
 
             # Parse the tuples from the current iteration

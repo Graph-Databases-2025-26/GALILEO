@@ -16,8 +16,8 @@ class GaloisWOSchemaManager:
     def __init__(self, dataset_name: str):
         self.dataset_name = dataset_name.upper()
 
-        folder = self.dataset_name.lower()          # "MOVIES" -> "movies"
-        db_path = DATA_DIR / folder / f"{folder}.duckdb"
+        folder = self.dataset_name.upper()          # "MOVIES" -> "movies"
+        db_path = DATA_DIR / folder / f"{folder.lower()}.duckdb"
 
         LOG.info(f"[GaloisWOSchemaManager] Connecting to DuckDB at '{db_path}'")
 

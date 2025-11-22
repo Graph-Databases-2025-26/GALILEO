@@ -66,13 +66,18 @@ class ConfidenceEstimator:
         return confident_conditions
 
 
-    def estimate_confidence_query(self, config,  table: str, sql_query: str):
+    def estimate_confidence_query(self, config,  table: str, sql_query: str, num_select_columns: int):
         """
         This method will be used by the execute_variant method for interacting with LLM asking for the confidence score about the query execution plan
         knowing the database schema of that specific dataset
         """
         if not sql_query or not table:
             LOG.error("Cannot estimate confidence for empty query or table")
+
+        if num_select_columns <= 0:
+            LOG.error(
+                "Number of SELECT columns must be positive for confidence calculation. Dafaulting to TABLE strategy.")
+            return "TABLE"
 
         confidence_threshold = config.galois_execution.confidence_threshold
 
@@ -92,15 +97,21 @@ class ConfidenceEstimator:
             LOG.info(f"CONFIDENCE RESPONSE: {confidence_response}")
             matches = re.findall(r"(\d+(?:\.\d+)?)", confidence_response)
             LOG.info(f"SCORE: {matches}")
+            llm_raw_confidence = None
             numerical_score = None
             if matches:
                 try:
-                    numerical_score = float(matches[0])
-                    LOG.info(f"NUMERICAL SCORE: {numerical_score}")
+                    llm_raw_confidence = float(matches[0])
+                    LOG.info(f"LLM RAW NUMERICAL SCORE: {llm_raw_confidence}")
+
+                    #calculate the score
+                    numerical_score = llm_raw_confidence / num_select_columns
+                    LOG.info(f"PROPAGATED CONFIDENCE SCORE (conf(q)): {numerical_score}")
                 except Exception as e:
                     LOG.error(f"Error converting score '{matches[0]}' to int: {e}")
             else:
                 LOG.error("No numeric score found in confidence response")
+                return "TABLE"
 
             LOG.info(f"Query: '{sql_query}' -> Confidence: {numerical_score}")
 
