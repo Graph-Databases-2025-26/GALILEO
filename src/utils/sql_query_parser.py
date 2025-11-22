@@ -39,7 +39,7 @@ def parse_sql(sql_query: str) -> Dict[str, Any]:
         A structured dictionary containing the query components.
     """
     if isinstance(sql_query, tuple):
-        print(f"Warning: parse_sql received a tuple. Assuming (filename, sql) format.")
+        LOG.warning(f"Warning: parse_sql received a tuple. Assuming (filename, sql) format.")
         # Find the first string in the tuple that looks like a query
         sql_query_string = ""
         for item in sql_query_string:
@@ -87,6 +87,12 @@ def parse_sql(sql_query: str) -> Dict[str, Any]:
         if group_by_node:
             group_by_cols = [col.sql(dialect="duckdb") for col in group_by_node.expressions]
 
+        # Extract HAVING clauses
+        having_conditions = []
+        having_node = parsed_ast.find(exp.Having)
+        if having_node:
+            having_conditions = _extract_conditions(having_node.this)
+
         # Extract ORDER BY clauses
         order_by_clauses = []
         order_by_node = parsed_ast.find(exp.Order)
@@ -107,14 +113,15 @@ def parse_sql(sql_query: str) -> Dict[str, Any]:
             "from_table": table_name,
             "where_conditions": where_conditions,
             "group_by_columns": group_by_cols,
-            "order_by_clauses": order_by_clauses,  # <-- NEW
+            "order_by_clauses": order_by_clauses,
+            "having_conditions": having_conditions,
             "limit_value": limit_val,
             "original_query": sql_query_string
             # NOTE: We are ignoring GROUP BY, ORDER BY, LIMIT for now,
             # as the core GALOIS optimizer logic focuses on SELECT, FROM, WHERE.
         }
 
-        LOG.info(f"SQL query parsed successfully (using sqlglot):\n{json.dumps(parsed_plan, indent=2)}")
+        #LOG.info(f"SQL query parsed successfully (using sqlglot):\n{json.dumps(parsed_plan, indent=2)}")
         return parsed_plan
 
     except Exception as e:

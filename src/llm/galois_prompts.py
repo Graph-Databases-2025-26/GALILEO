@@ -99,3 +99,35 @@ IMPORTANT:
 """
 
     return prompt
+
+
+#system prompt that is common to the 2 cases: Asking the LLM the confidence for WHERE CONDITIONS or for the QUERY
+def system_prompt_galois_confidence() -> str:
+    system_prompt = """
+        Please use the following informations to ask the question.
+
+        Table Name: {table}
+        Schema Summary: {schema_summary}
+
+        Query to Evaluate: 
+        {query}
+
+        Based on the table structure, the schema of the database and the query, please answer the following question without extra text or explanations:
+    """
+    return system_prompt
+
+#custom human prompt for each of the two cases: Asking the LLM the confidence for WHERE CONDITIONS or for the QUERY
+def human_prompt_galois_confidence(usage: str) -> str:
+    if usage == "CONDITION":
+        human_prompt = "How confident you are of evaluating correctly the condition reported in the query? Answer at the question only with 'HIGH' or 'LOW'."
+
+    elif usage == "QUERY":
+        human_prompt = "How confident you are of retrieving coherent data for the query from 0 to 1? Answer only in this way: TAU confidence: <value>"
+
+    else:
+        human_prompt = "How confident are you?"
+    return human_prompt
+
+
+
+

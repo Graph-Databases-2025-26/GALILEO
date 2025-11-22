@@ -15,6 +15,7 @@ class ExecutionConfig(BaseModel):
     max_retries: int
     backoff_sec: float
     scan: str
+    confidence_threshold: float
 
 class IOConfig(BaseModel):
     """Configuration settings for input and output directory paths."""
@@ -95,7 +96,7 @@ class AppConfig(BaseSettings):
 
     database: DatasetConfig
     llm_provider: str 
-    execution: ExecutionConfig
+    galois_execution: ExecutionConfig
     io: IOConfig
     logging: LoggingConfig
     gemini: GeminiConfig

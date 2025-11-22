@@ -19,10 +19,9 @@ class GaloisSchemaManager:
             uri_string = str(db_object._engine.url)
             db_object._engine.dispose()
             db_path = uri_string.removeprefix("duckdb:///")
-            print(db_path)
             self.con = duckdb.connect(database=db_path, read_only=True)
             self.con.execute("USE target;")
-            LOG.info(f"SchemaManager: Connected to {db_path}")
+            #LOG.info(f"SchemaManager: Connected to {db_path}")
         except Exception as e:
             LOG.info(f"Error connecting to DuckDB for {database_name}: {e}")
             raise

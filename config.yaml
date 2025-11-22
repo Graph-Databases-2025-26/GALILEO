@@ -3,10 +3,11 @@ llm_provider: "watsonx"
 database:
   run:  GEO, Movies
 
-execution:
+galois_execution:
   max_retries: 3
   backoff_sec: 1.5
   scan: "auto"
+  confidence_threshold: 0.6
 
 io:
   queries_dir: "../data"

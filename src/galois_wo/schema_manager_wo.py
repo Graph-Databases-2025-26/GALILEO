@@ -28,7 +28,7 @@ class GaloisWOSchemaManager:
         try:
             self.conn.execute("USE target;")
         except Exception:
-            LOG.info(
+            LOG.error(
                 "[GaloisWOSchemaManager] Schema 'target' not found, using default schema."
             )
 
