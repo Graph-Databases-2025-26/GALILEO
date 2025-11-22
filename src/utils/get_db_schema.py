@@ -16,7 +16,7 @@ class GaloisSchemaManager:
         self.database_name = database_name
         try:
             db_object = get_duckdb_path(database_name)
-            uri_string = str(db_object.engine.url)
+            uri_string = str(db_object._engine.url)
             db_object._engine.dispose()
             db_path = uri_string.removeprefix("duckdb:///")
             print(db_path)
