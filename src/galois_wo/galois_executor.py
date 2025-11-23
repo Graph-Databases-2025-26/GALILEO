@@ -113,16 +113,10 @@ class GaloisExecutor:
         # Decide which conditions to actually push down
         if conditions_to_push:
             where_conditions = conditions_to_push
-            LOG.info(
-                "[GaloisExecutor] Using pushed-down conditions from plan: %s",
-                where_conditions,
-            )
+            LOG.info(f"[GaloisExecutor] Using pushed-down conditions from plan: {where_conditions}")
         else:
             where_conditions = original_where
-            LOG.info(
-                "[GaloisExecutor] Using original WHERE conditions: %s",
-                where_conditions,
-            )
+            LOG.info(f"[GaloisExecutor] Using original WHERE conditions: {where_conditions}")
 
         where_clause = " AND ".join(where_conditions) if where_conditions else None
 
@@ -137,12 +131,7 @@ class GaloisExecutor:
         # Here we only need attributes, so it's fine.
         json_example = self.schema_mgr.get_json_schema_example(exact_table, attributes)
 
-        LOG.debug(
-            "[GaloisExecutor] Parsed query -> table=%s, where=%s, attrs=%s",
-            exact_table,
-            where_clause,
-            attributes,
-        )
+        LOG.debug(f"[GaloisExecutor] Parsed query -> table={exact_table}, where={where_clause}, attrs={attributes}")
 
         # 3) Build initial conversation: System + first human prompt
         system_msg = SystemMessage(
@@ -166,7 +155,7 @@ class GaloisExecutor:
         seen_rows: Set[Tuple[Tuple[str, Any], ...]] = set()
 
         for i in range(max_iter):
-            LOG.info("[GaloisExecutor] Table-Scan iteration %d/%d", i + 1, max_iter)
+            LOG.info(f"[GaloisExecutor] Table-Scan iteration {i+1}/{max_iter}")
 
             # Call the LLM with exponential backoff
             raw_response = invoke_with_backoff(
@@ -196,11 +185,7 @@ class GaloisExecutor:
             iter_prompt = build_table_scan_iter_prompt()
             history.append(HumanMessage(content=iter_prompt))
 
-        LOG.info(
-            "[GaloisExecutor] Table-Scan completed. "
-            "total_rows=%d unique tuples collected.",
-            len(all_rows),
-        )
+        LOG.info(f"[GaloisExecutor] Table-Scan completed. total_rows={len(all_rows)} unique tuples collected.")
 
         return all_rows
 
