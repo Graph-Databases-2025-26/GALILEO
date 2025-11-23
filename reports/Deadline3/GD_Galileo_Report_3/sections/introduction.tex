@@ -1,0 +1,21 @@
+\section{Introduction}
+
+Large Language Models (LLMs) increasingly support structured data extraction using declarative queries such as Natural Language (NL) and SQL. However, when queries become more complex and require structured tabular outputs with filtering, joins, and aggregations, direct prompting of LLMs leads to inaccurate or incomplete results. As shown in the Galois paper, both NL and SQL prompting struggle with factual correctness, tuple completeness, and recall accuracy.
+
+To address these limitations, the Galois system introduces a novel query execution framework that uses the LLM as a storage layer, while separating the execution pipeline into logical and physical operators, similar to traditional DBMSs. Instead of issuing a single LLM request, Galois decomposes SQL queries into a sequence of structured scan and filtering operations that improve recall, tuple completeness, and overall output consistency.
+
+\textbf{Scope of This Deliverable.}
+In this checkpoint, we implement \textbf{GaloisWO} (Galois Without Optimizations), which is the baseline version of the Galois framework introduced in Section 5 of the paper. GaloisWO does not apply optimization strategies such as confidence-based condition pushdown, operator selection, cost-quality balancing, or metadata-driven planning. Instead, it follows a straightforward execution strategy:
+
+\begin{itemize}
+    \item Retrieve all possible key values for a table using iterative prompting.
+    \item For each key, individually retrieve remaining attribute values (cell-by-cell tuple completion).
+    \item No condition pushdown or selection filtering during scan phase.
+\end{itemize}
+
+This deliverable covers:
+\begin{itemize}
+    \item Implementation of the GaloisWO execution strategy for queries 18--30.
+    \item Replication attempt of the \textbf{third column of Table 3} from the paper.
+    \item Informal demonstration of execution behavior and quality scores.
+\end{itemize}

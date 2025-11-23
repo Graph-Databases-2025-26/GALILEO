@@ -1,0 +1,63 @@
+\section{Implementation of GALOISWO Baseline}
+This section describes the implementation of \textbf{GALOISWO} (Galois Without Optimizations), the baseline version of the Galois framework implemented for this checkpoint. Unlike the full Galois system, GaloisWO does not apply any logical or physical optimizations such as confidence-based pushdown, selective operator choice, metadata reasoning, or cost–quality trade-off. Instead, it adopts a simple two-stage execution pipeline:
+
+\begin{enumerate}
+    \item \textbf{Key Extraction}: retrieve all possible primary keys of the target table using iterative prompting.
+    \item \textbf{Tuple Completion}: for each retrieved key, prompt the LLM to obtain remaining attribute values (one tuple at a time).
+\end{enumerate}
+
+
+\subsection{Key Retrieval Phase (First Stage)}
+% Based on Algorithm 2 – KeyScan, without optimizations
+
+\subsection{Table-Scan Execution Phase (Second Stage)}
+In the Galois paper, two physical scan operators are introduced: \textit{Table-Scan}
+and \textit{Key-Scan}. While the full Galois system dynamically selects between
+them according to confidence and metadata, GaloisWO uses only \textbf{Table-Scan}
+in a fully deterministic manner, with no optimization or pushdown logic.
+
+This behavior is clearly reflected in our implementation,
+specifically in the \texttt{table\_scan()} method of the
+\texttt{GaloisExecutor} class. The execution shows the following key characteristics:
+
+\begin{itemize}
+    \item \textbf{No condition pushdown:} The executor uses the original SQL query,
+    but does not apply any optimization selection. The WHERE clause is either used
+    as-is or fully omitted if not available. There is no selection of pushable
+    conditions based on metadata or confidence values. 
+
+    \item \textbf{Schema-aware attribute discovery:}
+    The executor retrieves full table attribute lists using the
+    \texttt{GaloisWOSchemaManager}, which is a thin wrapper around the
+    standard schema manager but isolates the GaloisWO namespace. 
+
+    \item \textbf{First Prompt and Iterative Prompt Generation:}
+    The system constructs the first and iterative human prompts using:
+    \texttt{build\_table\_scan\_first\_prompt()} and
+    \texttt{build\_table\_scan\_iter\_prompt()} from \texttt{galois\_prompts.py}. 
+    
+    These prompts enforce:
+    \begin{itemize}
+        \item valid JSON-only output,
+        \item table-aware attribute listing,
+        \item a maximum of 20 tuples per iteration,
+        \item and no natural language explanations.
+    \end{itemize}
+
+    \item \textbf{Iterative Expansion:}
+    The executor issues multiple LLM calls (up to \texttt{max\_iter}, default 4),
+    collects new tuples, and stops when no new data is returned. 
+
+    \item \textbf{Duplicate Removal and JSON Recovery:}
+    The system hashes tuple contents (via \texttt{normalise\_row()}) to track and
+    deduplicate results across iterations. It also attempts to recover valid JSON
+    even from partially truncated or malformed LLM output. 
+\end{itemize}
+
+Unlike Key-Scan, which explicitly extracts primary keys first and then populates
+attributes one by one, Table-Scan retrieves complete tuples directly using LLM in
+multiple iterations. 
+
+\subsection{Table vs Key-Scan in GaloisWO}
+
+
