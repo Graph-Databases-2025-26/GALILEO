@@ -6,7 +6,7 @@ class GaloisWOSchemaManager(GaloisSchemaManager):
     """
     Thin wrapper around the core GaloisSchemaManager.
 
-    This class exists only to keep the 'galois_wo' namespace clean and
+    This class exists only to keep the 'galois' namespace clean and
     to emphasise that this schema manager is used by the Galois-WO
     executor (Table-Scan / Key-Scan).
     The actual logic for connecting to DuckDB and retrieving schema

@@ -105,7 +105,7 @@ class ConfidenceEstimator:
                     LOG.info(f"LLM RAW NUMERICAL SCORE: {llm_raw_confidence}")
 
                     #calculate the score
-                    numerical_score = llm_raw_confidence / num_select_columns
+                    numerical_score = llm_raw_confidence ** num_select_columns
                     LOG.info(f"PROPAGATED CONFIDENCE SCORE (conf(q)): {numerical_score}")
                 except Exception as e:
                     LOG.error(f"Error converting score '{matches[0]}' to int: {e}")

@@ -14,6 +14,8 @@ PROMPTS = DATA_DIR / ".prompts"
 
 SUBMISSIONS_PATH = DATA_DIR / ".output"
 
+SUBMISSIONS_PATH_GALOIS = DATA_DIR / ".galois_output"
+
 NL_BLINE_DIR = SUBMISSIONS_PATH / ".nl_output"
 
 SQL_BLINE_DIR = SUBMISSIONS_PATH / ".sql_output"
@@ -43,8 +45,16 @@ BASELINE_OUTPUT = {
     "PZNL" : {
             "GEMINI" : PZ_BLINE_DIR / "nl" / "gemini",
             "WATSONX" : PZ_BLINE_DIR / "nl" / "watsonx"
-        }
+        },
+    "GALOIS" : {
+            "F" : SUBMISSIONS_PATH_GALOIS / "F",
+            "A" : SUBMISSIONS_PATH_GALOIS / "A",
+            "S" : SUBMISSIONS_PATH_GALOIS / "S",
+            "WO" : SUBMISSIONS_PATH_GALOIS / "WO"
+        },
 }
+
+
 
 GROUND_PATH = DATA_DIR / ".ground_truth"
 
@@ -180,3 +190,5 @@ GET_TABLES = """
         WHERE table_schema = current_schema()
         ORDER BY table_name;
         """
+
+POST_PROCESSING_BUILD_TABLE_SQL = f"SELECT * FROM row_buffer WHERE {where_clause}"

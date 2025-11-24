@@ -120,8 +120,8 @@ def system_prompt_galois_confidence() -> str:
 #custom human prompt for each of the two cases: Asking the LLM the confidence for WHERE CONDITIONS or for the QUERY
 def human_prompt_galois_confidence(usage: str) -> str:
     prompts_map = {
-        "CONDITION": "How confident you are of evaluating correctly the condition reported in the query? Answer at the question only with 'HIGH' or 'LOW'.",
-        "QUERY": "How confident you are of retrieving coherent data for the query from 0 to 1? Answer only in this way: TAU confidence: <value>"
+        "CONDITION": "How confident you are of evaluating correctly the condition reported in the query? Please don't overestimate. Answer at the question only with 'HIGH' or 'LOW'.",
+        "QUERY": "How confident you are of retrieving coherent data for the query from 0 to 1? Please don't overestimate. Answer only in this way: TAU confidence: <value>"
     }
 
     return prompts_map.get(usage, "How confident are you?")

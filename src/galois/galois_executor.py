@@ -9,11 +9,11 @@ from langchain_core.messages import BaseMessage, HumanMessage, SystemMessage
 from src.config import AppConfig
 from src.llm import get_llm_wrapper
 from src.llm.llm_wrappers import LLMBaseWrapper
-from src.llm.galois_prompts import (
+from src.galois.galois_prompts import (
     build_table_scan_first_prompt,
     build_table_scan_iter_prompt,
 )
-from src.galois_wo.schema_manager_wo import GaloisWOSchemaManager
+from src.galois.schema_manager_wo import GaloisWOSchemaManager
 from src.utils import sql_query_parser
 from src.utils.invoke_with_backoff import invoke_with_backoff
 from src.utils.logging_config import LOG
@@ -348,11 +348,7 @@ class GaloisExecutor:
                 if isinstance(item, dict):
                     rows.append(item)
 
-        LOG.debug(
-            "[GaloisExecutor] Parsed %d rows from LLM response for table=%s",
-            len(rows),
-            table_name,
-        )
+        LOG.debug(f"[GaloisExecutor] Parsed {len(rows)} rows from LLM response for table={table_name}")
         return rows
 
     def _merge_new_rows(

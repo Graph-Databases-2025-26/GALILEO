@@ -69,10 +69,28 @@ def parse_sql(sql_query: str) -> Dict[str, Any]:
         #.find(exp.From) locates the FROM node, .this is the table expression
         from_table_node = parsed_ast.find(exp.From).this
         table_name = from_table_node.name
+        table_alias = None
 
         # Handle aliases (e.g., "FROM world_presidents p")
         if from_table_node.alias:
-            table_name = from_table_node.name
+            table_alias = from_table_node.alias
+
+        # JOINs extracion
+        joins_list = []
+        for join in parsed_ast.find_all(exp.Join):
+            join_table = join.this.name
+            join_alias = join.this.alias or join_table
+
+            # Estrae la condizione ON (es. p.country = c.name)
+            on_expression = join.args.get("on")
+            on_condition = on_expression.sql(dialect="duckdb") if on_expression else None
+
+            joins_list.append({
+                "table": join_table,
+                "alias": join_alias,
+                "type": join.kind,  # LEFT, INNER, etc.
+                "on_condition": on_condition
+            })
 
         #  Extract WHERE conditions
         where_conditions = []
@@ -111,6 +129,8 @@ def parse_sql(sql_query: str) -> Dict[str, Any]:
         parsed_plan = {
             "select_columns": select_cols,
             "from_table": table_name,
+            "from_alias": table_alias,
+            "joins": joins_list,
             "where_conditions": where_conditions,
             "group_by_columns": group_by_cols,
             "order_by_clauses": order_by_clauses,
@@ -133,11 +153,12 @@ def parse_sql(sql_query: str) -> Dict[str, Any]:
 # --- Example Test (you can run this with 'python galois_parser.py') ---
 if __name__ == "__main__":
 
-    try_dataset = "PRESIDENTS"
+    try_dataset = "GEO"
     try_dataset_path = DATA_DIR / try_dataset
     queries= load_queries_from_folder(try_dataset_path)
 
     for i, query in enumerate(queries):
         LOG.info(f"\n--- Parsing Query {i+1} ---")
         parsed = parse_sql(query[1])
+        LOG.info(f"Parsed query:\n{json.dumps(parsed, indent=2)}")
 

@@ -1,3 +1,4 @@
+from src.galois.galois import Galois, save_galois_results
 from src.utils import PY, SUBMISSIONS_PATH, GROUND_PATH, DATA_DIR, IK_DATASETS, MC_DATASETS, BASELINE_OUTPUT
 from src.utils import get_dataset_selection, load_queries_from_folder
 from src.utils import LOG, log_init
@@ -37,6 +38,12 @@ def parse_args():
          choices=["nl", "sql", "both","pzsql", "pznl"],
          default="sql",
          help="Which baseline(s) to run.",
+     )
+     parser.add_argument(
+         "--galois",
+         choices=["wo", "s", "a", "f", "all"],
+         default=None,
+         help="Run a specific GALOIS variant (wo=Without Opt, s=Selective, a=All, f=Full) or 'all'.",
      )
      parser.add_argument(
          "--provider",
@@ -160,56 +167,115 @@ def main():
         nl_queries = load_nl_queries_from_txt(dataset_path)
         queries = load_queries_from_folder(dataset_path)
 
-        if args.mode =="sql":
-            LOG.info(f"Loaded {len(queries)} queries for dataset {dataset} in {args.mode} mode")
-            if dataset in IK_DATASETS:
-                execute_baseline_sql(config, dataset, queries, args.mode.upper())
-                run_types.add("SQL")
+        if args.mode:
+            if args.mode =="sql":
+                LOG.info(f"Loaded {len(queries)} queries for dataset {dataset} in {args.mode} mode")
+                if dataset in IK_DATASETS:
+                    execute_baseline_sql(config, dataset, queries, args.mode.upper())
+                    run_types.add("SQL")
 
-        elif args.mode == "nl":
-            LOG.info(f"Loaded {len(nl_queries)} queries for dataset {dataset} in {args.mode} mode")
-            if dataset in IK_DATASETS:
-                llm_interaction_nl_baseline(config, dataset, nl_queries, args.mode.upper())
-                run_types.add("NL")
+            elif args.mode == "nl":
+                LOG.info(f"Loaded {len(nl_queries)} queries for dataset {dataset} in {args.mode} mode")
+                if dataset in IK_DATASETS:
+                    llm_interaction_nl_baseline(config, dataset, nl_queries, args.mode.upper())
+                    run_types.add("NL")
 
-        elif args.mode == "pznl":
-            LOG.info(f"Loaded {len(nl_queries)} queries for dataset {dataset} in {args.mode} mode")
-            if dataset in MC_DATASETS:
-                llm_interaction_nl_baseline(config, dataset, nl_queries, args.mode.upper())
-                run_types.add("PZNL")
+            elif args.mode == "pznl":
+                LOG.info(f"Loaded {len(nl_queries)} queries for dataset {dataset} in {args.mode} mode")
+                if dataset in MC_DATASETS:
+                    llm_interaction_nl_baseline(config, dataset, nl_queries, args.mode.upper())
+                    run_types.add("PZNL")
 
-        elif args.mode == "pzsql":
-            LOG.info(f"Loaded {len(queries)} queries for dataset {dataset} in {args.mode} mode")
-            if dataset in MC_DATASETS:
-                llm_interaction_nl_baseline(config, dataset, nl_queries, args.mode.upper())
-                run_types.add("PZSQL")
+            elif args.mode == "pzsql":
+                LOG.info(f"Loaded {len(queries)} queries for dataset {dataset} in {args.mode} mode")
+                if dataset in MC_DATASETS:
+                    llm_interaction_nl_baseline(config, dataset, nl_queries, args.mode.upper())
+                    run_types.add("PZSQL")
 
-        elif args.mode == "both":
-            LOG.info(f"Mode both: deciding pipelines for dataset {dataset}")
-            # IK datasets -> run SQL + NL
-            if dataset in IK_DATASETS:
-                LOG.info(f"[BOTH] Running SQL and NL baselines for IK dataset {dataset}")
-                execute_baseline_sql(config, dataset, queries, "SQL")
-                run_types.add("SQL")
-                llm_interaction_nl_baseline(config, dataset, nl_queries, "NL")
-                run_types.add("NL")
-            # MC datasets -> run PZSQL + PZNL
-            elif dataset in MC_DATASETS:
-                LOG.info(f"[BOTH] Running PZSQL and PZNL baselines for MC dataset {dataset}")
-                llm_interaction_nl_baseline(config, dataset, queries, "PZSQL")
-                run_types.add("PZSQL")
-                llm_interaction_nl_baseline(config, dataset, nl_queries, "PZNL")
-                run_types.add("PZNL")
+            elif args.mode == "both":
+                LOG.info(f"Mode both: deciding pipelines for dataset {dataset}")
+                # IK datasets -> run SQL + NL
+                if dataset in IK_DATASETS:
+                    LOG.info(f"[BOTH] Running SQL and NL baselines for IK dataset {dataset}")
+                    execute_baseline_sql(config, dataset, queries, "SQL")
+                    run_types.add("SQL")
+                    llm_interaction_nl_baseline(config, dataset, nl_queries, "NL")
+                    run_types.add("NL")
+                # MC datasets -> run PZSQL + PZNL
+                elif dataset in MC_DATASETS:
+                    LOG.info(f"[BOTH] Running PZSQL and PZNL baselines for MC dataset {dataset}")
+                    llm_interaction_nl_baseline(config, dataset, queries, "PZSQL")
+                    run_types.add("PZSQL")
+                    llm_interaction_nl_baseline(config, dataset, nl_queries, "PZNL")
+                    run_types.add("PZNL")
+                else:
+                    LOG.warning(f"[BOTH] Dataset")
+
+        # ------------------------------------------
+        # GALOIS BLOCK
+        # ------------------------------------------
+        if args.galois:
+            # Determine which variants to run
+            variants_to_run = []
+            if args.galois.lower() == "all":
+                variants_to_run = ["WO", "S", "A", "F"]
             else:
-                LOG.warning(f"[BOTH] Dataset")
+                variants_to_run = [args.galois.upper()]
+
+            LOG.info(f"Initializing GaloisPlanner for {dataset}...")
+            # Instantiate the Planner once per dataset
+            planner = Galois(config, dataset)
+
+            for variant in variants_to_run:
+                LOG.info(f">>> Running GALOIS_{variant} on {dataset}")
+                results_for_eval = []
+
+                for i, (q_filename, q_sql) in enumerate(queries):
+                    try:
+                        # Execute the query via the Planner
+                        # Planner internally handles Estimator, Executor (Scan) and Post-Processing
+                        rows = planner.execute_variant(q_sql, variant)
+
+                        results_for_eval.append({
+                            "query_id": q_filename,
+                            "sql": q_sql,
+                            "result_set": rows
+                        })
+                        # Minimal visual feedback
+                        LOG.debug(f"Query {q_filename}: {len(rows)} rows returned.")
+
+                    except Exception as e:
+                        LOG.error(f"Failed query {q_filename} in mode {variant}: {e}")
+                        results_for_eval.append({
+                            "query_id": q_filename, "sql": q_sql, "result_set": [], "error": str(e)
+                        })
+
+                # Save the results
+                save_galois_results(
+                    results_for_eval,
+                    variant,
+                    config.llm_provider.upper(),
+                    dataset
+                )
+                run_types.add(f"GALOIS_{variant}")
+
     print(f"MODE: {args.mode}")
     if not run_types:
         LOG.warning("No baselines were executed; skipping evaluation.")
         return
 
+    LOG.info("\n" + "=" * 30)
+    LOG.info(" STARTING EVALUATION ")
+    LOG.info("=" * 30)
+
 
     for run_type in sorted(run_types):
-        submissions_path = BASELINE_OUTPUT[run_type][config.llm_provider.upper()]
+        submissions_path= ""
+        if args.galois:
+            submissions_path = BASELINE_OUTPUT["GALOIS"][run_type.upper()]
+        elif args.mode:
+            submissions_path = BASELINE_OUTPUT[run_type][config.llm_provider.upper()]
+
         LOG.info(f"Evaluating submissions for baseline type {run_type}: {submissions_path}")
         subprocess.run([
             PY,

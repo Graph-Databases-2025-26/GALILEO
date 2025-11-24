@@ -3,7 +3,7 @@ import json
 
 from src.config import Config_Loader
 from src.utils import LOG, log_init
-from src.galois_wo.galois_executor import GaloisExecutor
+from src.galois.galois_executor import GaloisExecutor
 
 
 def parse_args() -> argparse.Namespace:

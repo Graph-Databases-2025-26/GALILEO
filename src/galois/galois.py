@@ -1,15 +1,17 @@
 import json
+from pathlib import Path
 from typing import Literal, Any, List, Dict
 from src import Config_Loader
 from src.db.run_explain_plans import DATA_ROOT
+from src.galois.galois_post_processing import GaloisPostProcessor
 from src.llm import get_llm_wrapper
-from src.llm.galois_prompts import system_prompt_galois_confidence, human_prompt_galois_confidence
+from src.galois.galois_prompts import system_prompt_galois_confidence, human_prompt_galois_confidence
 from src.utils import sql_query_parser, load_queries_from_folder
-from src.utils.galois_estimator import ConfidenceEstimator
+from src.galois.galois_estimator import ConfidenceEstimator
+from src.utils.constants import GALOIS_OUTPUT
 from src.utils.get_db_schema_galois import GaloisSchemaManager
 from src.utils.logging_config import LOG
-from src.galois_wo.galois_executor import GaloisExecutor
-from src.utils.constants import *
+from src.galois.galois_executor import GaloisExecutor
 
 
 class Galois:
@@ -102,6 +104,13 @@ class Galois:
 
         LOG.info(f"Final Strategy Selected: {final_strategy}")
 
+        #Retrieve the conditions
+        all_conditions = self.parsed_sql['where_conditions']
+        pushed_conditions = plan['conditions_to_push']
+
+        #Find the residual conditions
+        residual_conditions = [c for c in all_conditions if c not in pushed_conditions]
+
         try:
 
             results= []
@@ -110,7 +119,7 @@ class Galois:
                 #DO TABLE SCAN
                 executor = GaloisExecutor(self.config, self.dataset)
                 LOG.info(f"Executing Table Scan using GaloisExecutor instance for query {plan['original_query']}...")
-                results = executor.table_scan(plan['original_query'])
+                results = executor.table_scan(sql_query=plan['original_query'],  conditions_to_push=pushed_conditions)
 
             elif final_strategy == "KEY":
                 #DO KEY SCAN
@@ -118,7 +127,12 @@ class Galois:
 
             else:
                 LOG.info("LLM  didn't reply with a 'TABLE' OR 'KEY'")
-            strategy = self.physical_strategy if self.physical_strategy != "auto" else "table"
+
+            #POST PROCESSING
+            if residual_conditions and results:
+                LOG.info(f"Post-processing required for conditions: {residual_conditions}")
+                post_processor = GaloisPostProcessor()
+                results = post_processor.filter_results(results, residual_conditions)
 
             return results
         except Exception as e:
@@ -139,6 +153,8 @@ class Galois:
         """
         # We pass an empty list of conditions
         plan = self.build_execution_plan(conditions_to_push=[])
+        #Force GaloisWO to use KeyScan as indicated in the former paper
+        self.physical_strategy = "key"
         return self.execute_variant(plan, "GALOIS_WO (No-Push)")
 
     def run_push_all(self) -> List[Dict[str, Any]]:
@@ -233,6 +249,28 @@ class Galois:
         return self.execute_variant(plan, execution_variant)
 
 
+def save_galois_results(results_list, variant, provider, dataset_name):
+    """
+    Salva i risultati di GALOIS in JSON per la valutazione.
+    """
+    variant_key = f"GALOIS_{variant}"
+
+    # Cerca il path corretto in BASELINE_OUTPUT, altrimenti crea un path di default
+    try:
+        base_dir = GALOIS_OUTPUT["GALOIS"][variant_key.upper()]
+    except KeyError:
+        base_dir = Path(f"./experiments/galois_{variant.lower()}/{provider.lower()}")
+        LOG.warning(f"Output path for {variant_key} not found in config. Using default: {base_dir}")
+
+    output_path = Path(base_dir) / f"{dataset_name}.json"
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+
+    with open(output_path, "w", encoding="utf-8") as f:
+        json.dump(results_list, f, indent=4, ensure_ascii=False)
+
+    LOG.info(f"Saved {len(results_list)} queries to {output_path}")
+    return str(base_dir)
+
 
 def main():
     config = Config_Loader().get_config()
@@ -243,7 +281,7 @@ def main():
 
     # A. Definizione del Test
     # Usiamo il dataset PRESIDENTS perché hai caricato 'presidents.duckdb'
-    dataset_name = "movies"
+    dataset_name = "geo"
     dataset_path = DATA_ROOT / dataset_name.upper()
 
     # Una query SQL presa dal tuo file 'queries_presidents.sql' (Query 2)
