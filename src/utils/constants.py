@@ -54,7 +54,7 @@ IK_DATASETS = ["FLIGHT-2", "FLIGHT-4", "GEO", "MOVIES", "PRESIDENTS", "WORLD"]
 
 MC_DATASETS = ["FORTUNE", "PREMIER"]
 
-if(os.name == "nt"):
+if os.name == "nt":
     PIP = VENV / "Scripts" / "pip"
     PY  = VENV / "Scripts" / "python"
 else:
@@ -167,5 +167,16 @@ HUMAN_PROMPT = {
     "SQL": "Now process this SQL query: {query}",
     "NL" : "Now process this question: {query}",
     "PZNL" : "Now process this question: {query}",
-    "PZSQL" : "Now process this SQL query: {query}"
-}
+    "PZSQL" : "Now process this SQL query: {query}"}
+
+
+#---------------------------------------------------------
+
+#SQL QUERIES
+
+GET_TABLES = """
+        SELECT table_name
+        FROM information_schema.tables
+        WHERE table_schema = current_schema()
+        ORDER BY table_name;
+        """

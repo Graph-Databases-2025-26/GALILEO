@@ -1,38 +1,7 @@
 from typing import List, Optional
-
 from src.utils.logging_config import LOG
 
-
-def _format_attribute_list(attributes: List[str]) -> str:
-    """
-    Join a list of attributes into a comma-separated string for SQL.
-    """
-    return ", ".join(attributes)
-
-
-def build_table_scan_first_prompt(
-    table_name: str,
-    attributes: List[str],
-    where_clause: Optional[str],
-    json_example: str,
-) -> str:
-    """
-    Build the FIRST Table-Scan prompt (Algorithm 1 – genFirstPrompt).
-
-    This prompt:
-      - describes the SQL query,
-      - explains the expected JSON structure,
-      - explicitly limits the number of tuples (to avoid truncation and invalid JSON).
-    """
-    select_list = _format_attribute_list(attributes)
-
-    base_sql = f"SELECT {select_list} FROM {table_name}"
-    if where_clause:
-        base_sql += f" WHERE {where_clause}"
-
-    LOG.debug(f"[Table-Scan] First prompt SQL: {base_sql}")
-
-    prompt = f"""You are an expert SQL data extractor.
+TABLE_SCAN_FIRST_PROMPT = """You are an expert SQL data extractor.
 
 You MUST return only JSON, with no natural language, markdown, or explanations.
 
@@ -70,7 +39,66 @@ LIMIT ON NUMBER OF TUPLES:
 Return ONLY the JSON now.
 """
 
-    return prompt
+TABLE_SCAN_ITER_PROMPT = """Continue the previous task.
+    You have already returned some tuples that satisfy the SQL query.
+    Now:
+
+      - Return more tuples that satisfy the same query, if any remain.
+      - All tuples MUST follow exactly the same JSON structure as before.
+      - Do NOT repeat tuples that were already returned.
+      - Return AT MOST 20 additional tuples in this answer.
+      - If there are no more tuples to return, answer with an empty JSON object ({}) or an empty list ([]).
+
+    IMPORTANT:
+      - Return ONLY valid JSON, no explanations, no markdown.
+      - It is BETTER to return fewer tuples than to produce invalid or truncated JSON.
+    """
+
+SYSTEM_PROMPT_GALOIS_CONFIDENCE = """
+        Please use the following informations to ask the question.
+
+        Table Name: {table}
+        Schema Summary: {schema_summary}
+
+        Query to Evaluate: 
+        {query}
+
+        Based on the table structure, the schema of the database and the query, please answer the following question without extra text or explanations:
+    """
+
+
+
+def _format_attribute_list(attributes: List[str]) -> str:
+    """
+    Join a list of attributes into a comma-separated string for SQL.
+    """
+    return ", ".join(attributes)
+
+
+def build_table_scan_first_prompt(
+    table_name: str,
+    attributes: List[str],
+    where_clause: Optional[str],
+    json_example: str,
+) -> str:
+    """
+    Build the FIRST Table-Scan prompt (Algorithm 1 – genFirstPrompt).
+
+    This prompt:
+      - describes the SQL query,
+      - explains the expected JSON structure,
+      - explicitly limits the number of tuples (to avoid truncation and invalid JSON).
+    """
+    select_list = _format_attribute_list(attributes)
+
+    base_sql = f"SELECT {select_list} FROM {table_name}"
+    if where_clause:
+        base_sql += f" WHERE {where_clause}"
+
+    LOG.debug(f"[Table-Scan] First prompt SQL: {base_sql}")
+
+    return TABLE_SCAN_FIRST_PROMPT.format(
+        base_sql=base_sql, table_name=table_name, attributes=attributes, json_example=json_example)
 
 
 def build_table_scan_iter_prompt() -> str:
@@ -82,52 +110,20 @@ def build_table_scan_iter_prompt() -> str:
       - produce new tuples not seen before, OR
       - return an empty JSON object / empty list if no more tuples are available.
     """
-    prompt = """Continue the previous task.
-
-You have already returned some tuples that satisfy the SQL query.
-Now:
-
-  - Return more tuples that satisfy the same query, if any remain.
-  - All tuples MUST follow exactly the same JSON structure as before.
-  - Do NOT repeat tuples that were already returned.
-  - Return AT MOST 20 additional tuples in this answer.
-  - If there are no more tuples to return, answer with an empty JSON object ({}) or an empty list ([]).
-
-IMPORTANT:
-  - Return ONLY valid JSON, no explanations, no markdown.
-  - It is BETTER to return fewer tuples than to produce invalid or truncated JSON.
-"""
-
-    return prompt
+    return TABLE_SCAN_ITER_PROMPT
 
 
 #system prompt that is common to the 2 cases: Asking the LLM the confidence for WHERE CONDITIONS or for the QUERY
 def system_prompt_galois_confidence() -> str:
-    system_prompt = """
-        Please use the following informations to ask the question.
-
-        Table Name: {table}
-        Schema Summary: {schema_summary}
-
-        Query to Evaluate: 
-        {query}
-
-        Based on the table structure, the schema of the database and the query, please answer the following question without extra text or explanations:
-    """
-    return system_prompt
+    return SYSTEM_PROMPT_GALOIS_CONFIDENCE
 
 #custom human prompt for each of the two cases: Asking the LLM the confidence for WHERE CONDITIONS or for the QUERY
 def human_prompt_galois_confidence(usage: str) -> str:
-    if usage == "CONDITION":
-        human_prompt = "How confident you are of evaluating correctly the condition reported in the query? Answer at the question only with 'HIGH' or 'LOW'."
+    prompts_map = {
+        "CONDITION": "How confident you are of evaluating correctly the condition reported in the query? Answer at the question only with 'HIGH' or 'LOW'.",
+        "QUERY": "How confident you are of retrieving coherent data for the query from 0 to 1? Answer only in this way: TAU confidence: <value>"
+    }
 
-    elif usage == "QUERY":
-        human_prompt = "How confident you are of retrieving coherent data for the query from 0 to 1? Answer only in this way: TAU confidence: <value>"
-
-    else:
-        human_prompt = "How confident are you?"
-    return human_prompt
-
-
+    return prompts_map.get(usage, "How confident are you?")
 
 
