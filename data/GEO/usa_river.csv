@@ -9,13 +9,11 @@ mississippi river,3778,united states,tennessee
 mississippi river,3778,united states,arkansas
 mississippi river,3778,united states,mississippi
 mississippi river,3778,united states,louisiana
-mississippi river,3778,united states,louisiana
 missouri river,3968,united states,montana
 missouri river,3968,united states,north dakota
 missouri river,3968,united states,south dakota
 missouri river,3968,united states,iowa
 missouri river,3968,united states,nebraska
-missouri river,3968,united states,missouri
 missouri river,3968,united states,missouri
 colorado river,2333,united states,colorado
 colorado river,2333,united states,utah
@@ -27,12 +25,10 @@ ohio river,1569,united states,west virginia
 ohio river,1569,united states,kentucky
 ohio river,1569,united states,indiana
 ohio river,1569,united states,illinois
-ohio river,1569,united states,illinois
 ohio river,1569,united states,ohio
 red river,1638,united states,new mexico
 red river,1638,united states,texas
 red river,1638,united states,oklahoma
-red river,1638,united states,arkansas
 red river,1638,united states,arkansas
 red river,1638,united states,louisiana
 arkansas river,2333,united states,colorado
@@ -59,8 +55,6 @@ snake river,1670,united states,wyoming
 snake river,1670,united states,idaho
 snake river,1670,united states,oregon
 snake river,1670,united states,washington
-snake river,1670,united states,washington
-chattahoochee river,702,united states,georgia
 chattahoochee river,702,united states,georgia
 chattahoochee river,702,united states,florida
 cimarron river,965,united states,new mexico
@@ -69,7 +63,6 @@ cimarron river,965,united states,oklahoma
 green river,1175,united states,wyoming
 green river,1175,united states,utah
 green river,1175,united states,colorado
-green river,1175,united states,utah
 north platte river,1094,united states,colorado
 north platte river,1094,united states,wyoming
 north platte river,1094,united states,nebraska
@@ -85,11 +78,9 @@ rio grande,3033,united states,new mexico
 rio grande,3033,united states,texas
 san juan river,579,united states,colorado
 san juan river,579,united states,new mexico
-san juan river,579,united states,colorado
 san juan river,579,united states,utah
 tennessee river,1049,united states,tennessee
 tennessee river,1049,united states,alabama
-tennessee river,1049,united states,tennessee
 tennessee river,1049,united states,kentucky
 wabash river,764,united states,ohio
 wabash river,764,united states,indiana
@@ -99,7 +90,6 @@ yellowstone river,1080,united states,montana
 yellowstone river,1080,united states,north dakota
 allegheny river,523,united states,pennsylvania
 allegheny river,523,united states,new york
-allegheny river,523,united states,pennsylvania
 bighorn river,541,united states,wyoming
 bighorn river,541,united states,montana
 cheyenne river,848,united states,wyoming
@@ -110,7 +100,6 @@ columbia river,1953,united states,washington
 columbia river,1953,united states,oregon
 cumberland river,1105,united states,kentucky
 cumberland river,1105,united states,tennessee
-cumberland river,1105,united states,kentucky
 dakota river,1142,united states,north dakota
 dakota river,1142,united states,south dakota
 gila river,805,united states,new mexico
