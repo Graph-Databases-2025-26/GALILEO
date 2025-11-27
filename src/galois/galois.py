@@ -1,6 +1,8 @@
 import json
 from pathlib import Path
-from typing import Literal, Any, List, Dict
+from typing import Literal, Any, List, Dict, cast
+import duckdb
+import pandas as pd
 from src import Config_Loader
 from src.db.run_explain_plans import DATA_ROOT
 from src.galois.galois_post_processing import GaloisPostProcessor
@@ -8,7 +10,7 @@ from src.llm import get_llm_wrapper
 from src.galois.galois_prompts import system_prompt_galois_confidence, human_prompt_galois_confidence
 from src.utils import sql_query_parser, load_queries_from_folder
 from src.galois.galois_estimator import ConfidenceEstimator
-from src.utils.constants import GALOIS_OUTPUT
+from src.utils.constants import SUBMISSIONS_PATH_GALOIS
 from src.utils.get_db_schema_galois import GaloisSchemaManager
 from src.utils.logging_config import LOG
 from src.galois.galois_executor import GaloisExecutor
@@ -113,6 +115,73 @@ class Galois:
 
         try:
 
+            ####### HANDLING JOIN ########
+            tables_to_scan = []
+
+            from_tbl = self.parsed_sql['from_table']
+            from_als = self.parsed_sql.get('from_alias') or from_tbl
+
+            #add the main table
+            tables_to_scan.append({
+                "name": from_tbl,
+                "alias": from_als
+            })
+
+            #add the tables involved in join
+            if 'joins' in self.parsed_sql:
+                for join in self.parsed_sql['joins']:
+                    tables_to_scan.append({
+                        "name": join['table'],
+                        "alias": join['alias']
+                    })
+
+            #dictionary for accumulate the data
+            data_lake = {}
+
+            #cycle in which the table scan is executed
+            executor = GaloisExecutor(self.config, self.dataset)
+
+            for t_info in tables_to_scan:
+                t_name = t_info['name']
+                t_alias = t_info['alias']
+                LOG.info(f"--- FETCHING DATA FOR TABLE: {t_name} (Alias: {t_alias}) ---")
+
+                #build a base  query for the extraction
+                simple_query = f"SELECT * FROM {t_name}"
+
+                #filter the WHERE conditions that are addicted to this particular alias
+                current_push_conditions = []
+                for cond in plan['conditions_to_push']:
+                    if f"{t_alias}." in cond or len(tables_to_scan) == 1:
+                        current_push_conditions.append(cond)
+
+                LOG.info(f"--- FETCHING DATA FOR TABLE: {t_name} (Alias: {t_alias}) ---")
+                if current_push_conditions:
+                    LOG.info(f"   -> Pushing filters: {current_push_conditions}")
+                else:
+                    LOG.info(f"   -> No specific filters identified (Scan Full or Join-only)")
+
+                if final_strategy == "KEY":
+                    LOG.info(f"Executing KEY SCAN on {t_name}")
+
+                    ################
+                    #DO KEY SCAN
+                    ################
+
+                else:
+                    #DO TABLE SCAN
+                    LOG.info(f"Executing TABLE SCAN on {t_name}")
+                    rows = executor.table_scan(sql_query=simple_query, conditions_to_push=current_push_conditions)
+
+                data_lake[t_name] = rows
+
+            #Local join and post processing
+            results = self.perform_local_join_and_query(plan['original_query'], data_lake)
+            return results
+
+            ##############################
+
+            """
             results= []
             # Decision on table or key scan
             if final_strategy == "TABLE":
@@ -135,6 +204,7 @@ class Galois:
                 results = post_processor.filter_results(results, residual_conditions)
 
             return results
+            """
         except Exception as e:
             LOG.error(f"Error during the plan selection execution of the query {plan['original_query']} : {e}")
             raise e
@@ -248,6 +318,62 @@ class Galois:
 
         return self.execute_variant(plan, execution_variant)
 
+    def perform_local_join_and_query(self, original_sql: str, data_map: Dict[str, List[Dict[str, Any]]]) -> List[Dict[str, Any]]:
+
+        # execute local join using duckdb in-memory on the data provided by LLM
+        LOG.info(f"--- ASSEMBLING DATA LOCALLY ({len(data_map)} tables) ---")
+        con = duckdb.connect(database=':memory:')
+
+        try:
+            # register every dataset as a virtual table
+            for table_real_name, rows in data_map.items():
+                if not rows:
+                    LOG.warning(f"No data found for table {table_real_name}. Join might result in a empty set.")
+                    df = pd.DataFrame()
+                else:
+                    df = pd.DataFrame(rows)
+
+                    # --- AUTO-CASTING ---
+                    # The LLM often returns values as strings ("1000", "N/A"), while DuckDB expects numeric types.
+                    # Try to convert columns to numeric where possible.
+                    for col in df.columns:
+                        # Try converting to numeric. If it fails (e.g. "Texas"), leave as-is.
+                        df[col] = pd.to_numeric(df[col], errors='ignore')
+                    # ---------------------------
+                    # --- STRING CLEANING (Trim whitespace) ---
+                    # Important for JOINs to work (e.g. "Arizona " -> "Arizona")
+                    # If a column is of type 'object' (string), apply strip()
+                    for col in df.select_dtypes(include=['object']).columns:
+                        df[col] = df[col].astype(str).str.strip()
+
+                clean_name = table_real_name.strip()
+                con.register(clean_name, df)
+                LOG.info(f"Registered view: '{clean_name}' ({len(df)} rows)")
+
+            #uncomment this part if you need to see the content of the tables before executing the query locally
+            # --- DEBUG: CONTENT OF THE TABLE ---
+            #print("\n--- DEBUG DATA DUMP ---")
+            #print(con.execute("SELECT * FROM usa_city").df().head())
+            #print(con.execute("SELECT * FROM usa_state LIMIT 5").df())
+            #print("-----------------------\n")
+
+            clean_sql_query = original_sql.replace("target.", "")
+            LOG.info(f"Executing Local SQL Query: {clean_sql_query}")
+            # execute original query
+            result_df = con.execute(clean_sql_query).df()
+
+            return cast(List[Dict[str, Any]], result_df.to_dict(orient='records'))
+        except Exception as e:
+            LOG.error(f"Error during the local join and query execution: {e}")
+            try:
+                tables = con.execute("SHOW TABLES").fetchall()
+                LOG.error(f"Registered tables in DuckDB: {tables}")
+            except:
+                pass
+            return []
+        finally:
+            con.close()
+
 
 def save_galois_results(results_list, variant, provider, dataset_name):
     """
@@ -257,7 +383,7 @@ def save_galois_results(results_list, variant, provider, dataset_name):
 
     # Cerca il path corretto in BASELINE_OUTPUT, altrimenti crea un path di default
     try:
-        base_dir = GALOIS_OUTPUT["GALOIS"][variant_key.upper()]
+        base_dir = SUBMISSIONS_PATH_GALOIS
     except KeyError:
         base_dir = Path(f"./experiments/galois_{variant.lower()}/{provider.lower()}")
         LOG.warning(f"Output path for {variant_key} not found in config. Using default: {base_dir}")
@@ -279,6 +405,33 @@ def main():
     print("   TEST MINIMALE GALOIS (Python Port)     ")
     print("==========================================")
 
+    sql_query_test = """
+                     SELECT COUNT ( DISTINCT usa_state_traversed ) 
+                     FROM target.usa_river 
+                     WHERE length_in_km > 750;
+
+                     """
+    dataset_name = "GEO"
+    try:
+        # Initialize GALOIS
+        galois_system = Galois(
+            config=config,
+            dataset=dataset_name,
+            sql_query=sql_query_test,
+            physical_strategy="table"  # Forziamo Table Scan per vedere i due scaricamenti
+        )
+
+        results = galois_system.run_push_all()
+
+        print("\n==========================================")
+        print(f"   RISULTATO JOIN ({len(results)} righe)")
+        print("==========================================")
+        print(json.dumps(results, indent=2))
+
+    except Exception as e:
+        LOG.error(f"Error in the  test: {e}", exc_info=True)
+
+"""
     # A. Definizione del Test
     # Usiamo il dataset PRESIDENTS perché hai caricato 'presidents.duckdb'
     dataset_name = "geo"
@@ -320,6 +473,10 @@ def main():
 
         except Exception as e:
             LOG.error(f"Error during the test {e}", exc_info=True)
+            """
+
+
+
 
 if __name__ == "__main__":
      main()

@@ -191,4 +191,4 @@ GET_TABLES = """
         ORDER BY table_name;
         """
 
-POST_PROCESSING_BUILD_TABLE_SQL = f"SELECT * FROM row_buffer WHERE {where_clause}"
+POST_PROCESSING_BUILD_TABLE_SQL = "SELECT * FROM row_buffer WHERE {where_clause}"

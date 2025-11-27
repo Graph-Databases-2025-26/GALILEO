@@ -23,6 +23,48 @@ from bisect import bisect_left, bisect_right
 from concurrent.futures import ProcessPoolExecutor, as_completed
 
 
+# ---- Original paper baselines (Table 2) ----
+PAPER_BASELINES = {
+    "nl": {
+        "label": "NL",
+        "F1": 0.237, "Card": 0.462, "TCon": 0.065, "AVG": 0.254,
+        "Tokens": 0.83 * 1_000_000,  # millions -> tokens
+        "AvgTime": 120.0,
+    },
+    "sql": {
+        "label": "SQL",
+        "F1": 0.431, "Card": 0.659, "TCon": 0.351, "AVG": 0.481,
+        "Tokens": 0.33 * 1_000_000,
+        "AvgTime": 61.4,
+    },
+    "galoiswo": {
+        "label": r"Galois wO",
+        "F1": 0.518, "Card": 0.691, "TCon": 0.389, "AVG": 0.531,
+        "Tokens": 19.71 * 1_000_000,
+        "AvgTime": 1460.0,
+    },
+    "galoiss": {
+        "label": r"Galois S",
+        "F1": 0.480, "Card": 0.655, "TCon": 0.365, "AVG": 0.500,
+        "Tokens": 0.96 * 1_000_000,
+        "AvgTime": 130.0,
+    },
+    "galoisa": {
+        "label": r"Galois A",
+        "F1": 0.543, "Card": 0.799, "TCon": 0.448, "AVG": 0.592,
+        "Tokens": 0.95 * 1_000_000,
+        "AvgTime": 120.5,
+    },
+    "galoisf": {
+        "label": r"Galois F",
+        "F1": 0.563, "Card": 0.835, "TCon": 0.464, "AVG": 0.622,
+        "Tokens": 1.72 * 1_000_000,
+        "AvgTime": 47.4,
+    },
+}
+
+
+
 def _eval_query_once(args):
     # args: (qid, gt_path_str, sub_dir_str_or_none, gt_suffix, cell_mode, tuple_mode)
     qid, gt_path_str, sub_dir_str, gt_sfx, cell_mode, tuple_mode = args
@@ -539,6 +581,20 @@ def main():
     ap.add_argument("--overall", action="store_true", help="Aggregate across all selected datasets and print a single ALL row")
     ap.add_argument("--jobs", type=int, default=6, help="Parallelize across datasets (processes)")
     ap.add_argument("--jobs-queries", type=int, default=6, help="Parallelize queries within each dataset")
+    
+    ap.add_argument(
+        "--run-name",
+        default=None,
+        help="Name of this run (used only for LaTeX comparison output)."
+    )
+    ap.add_argument(
+        "--mode",
+        choices=["nl", "sql", "galoiswo", "galoiss", "galoisa", "galoisf"],
+        default=None,
+        help="Which original-paper mode this run corresponds to "
+             "(nl, sql, galoiswo, galoiss, galoisa, galoisf)."
+    )
+
     args = ap.parse_args()
 
     allow = set(args.datasets) if args.datasets else None
@@ -637,14 +693,67 @@ def main():
                 fmt_millions(overall_tokens), (fmt(overall_avg_time) if overall_avg_time is not None else "")
             ]); return
         elif args.format == "tex":
+            # If run-name and mode are provided, emit 2-column comparison table:
+            #   column 1 = original paper (hard-coded)
+            #   column 2 = current evaluated run
+            if args.mode is not None and args.run_name is not None:
+                mode_key = args.mode.lower()
+                paper = PAPER_BASELINES.get(mode_key)
+
+                if paper is not None:
+                    headers = [
+                        "Metric",
+                        "PAPER_" + paper["label"],          # column from original table
+                        args.run_name            # evaluated run name
+                    ]
+
+                    rows = [
+                        ["F1-Cell",
+                         fmt(paper["F1"]),
+                         fmt(overall["F1"])],
+                        ["Cardinality",
+                         fmt(paper["Card"]),
+                         fmt(overall["Card"])],
+                        ["Tuple Constr.",
+                         fmt(paper["TCon"]),
+                         fmt(overall["TCon"])],
+                        ["AVG-Score",
+                         fmt(paper["AVG"]),
+                         fmt(overall["AVG"])],
+                        ["#Tokens (M)",
+                         fmt_millions(paper["Tokens"]),
+                         fmt_millions(overall_tokens)],
+                        ["Avg Time",
+                         fmt(paper["AvgTime"]),
+                         (fmt(overall_avg_time)
+                          if overall_avg_time is not None else "")]
+                    ]
+
+                    print_latex_table(
+                        rows,
+                        headers,
+                        caption=args.latex_caption,
+                        label=args.latex_label,
+                        booktabs=args.latex_booktabs,
+                    )
+                    return
+                # if mode not found, fall through to legacy ALL-row table
+
+            # Legacy behavior (single ALL row) if no mode/run-name provided
             print_latex_table(
                 [[
                     "ALL", fmt(overall["F1"]), fmt(overall["Card"]), fmt(overall["TCon"]),
                     fmt(overall["AVG"]), str(overall["n"]),
-                    fmt_millions(overall_tokens), (fmt(overall_avg_time) if overall_avg_time is not None else "")
+                    fmt_millions(overall_tokens),
+                    (fmt(overall_avg_time) if overall_avg_time is not None else "")
                 ]],
-                headers, caption=args.latex_caption, label=args.latex_label, booktabs=args.latex_booktabs
-            ); return
+                headers,
+                caption=args.latex_caption,
+                label=args.latex_label,
+                booktabs=args.latex_booktabs,
+            )
+            return
+
         else:
             print_table([[
                 "ALL", fmt(overall["F1"]), fmt(overall["Card"]), fmt(overall["TCon"]),
