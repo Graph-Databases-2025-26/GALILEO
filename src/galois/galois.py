@@ -216,7 +216,7 @@ class Galois:
 
         Logic:
         - Do NOT push any WHERE conditions to the LLM Scan.
-        - Retrieve ALL data (or keys) from the table.
+        - Retrieve ALL data (or keys) from the table using KEY-SCAN.
         - Filtering effectively happens in post-processing (or manually later).
 
         Corresponds to plan (n1) in Fig. 2.
@@ -237,6 +237,8 @@ class Galois:
 
         Corresponds to plan (p1) in Fig. 2.
         """
+        #setting table scan
+        self.physical_strategy = "table"
         # We pass all conditions found by the parser
         all_conditions = self.parsed_sql['where_conditions']
         plan = self.build_execution_plan(conditions_to_push=all_conditions)
@@ -253,13 +255,38 @@ class Galois:
 
         Corresponds to plan (s1) in Fig. 2.
         """
+
+        #set table scan
+        self.physical_strategy = "table"
+
+        #Instantiate an estimator object
+        estimator = ConfidenceEstimator(self.llm_wrapper, self.dataset, system_prompt_galois_confidence(), human_prompt_galois_confidence("CONDITION"))
+
         all_conditions = self.parsed_sql['where_conditions']
+        LOG.info(f"[GALOIS_S] Analyzing selectivity for: {all_conditions}")
 
-        # Heuristic: Take the first condition if available, else push nothing
-        selective_conditions = [all_conditions[0]] if all_conditions else []
+        #interacting with LLM for the confidence estimation
+        selective_conditions = estimator.estimate_confidence_conditions(self.parsed_sql['from_table'], all_conditions)
 
-        plan = self.build_execution_plan(conditions_to_push=selective_conditions)
-        return self.execute_variant(plan, "GALOIS_S (Push-Selective)")
+        #apply the logic of GALOIS S
+        num_high = len(selective_conditions)
+        conditions_to_push = []
+        variant_desc = ""
+
+        if num_high == 1:
+            conditions_to_push = selective_conditions
+            variant_desc = "GALOIS_S: Single Selective Push"
+        elif num_high > 1:
+            conditions_to_push = all_conditions
+            variant_desc = "GALOIS_S: Multi-Selective (Push All)"
+        else:
+            conditions_to_push = []
+            variant_desc = "GALOIS_S: Low Selectivity (No Push)"
+
+        LOG.info(f"Selectivity Analysis Result: {num_high} selective conditions found. Action: {variant_desc}")
+
+        plan = self.build_execution_plan(conditions_to_push=conditions_to_push)
+        return self.execute_variant(plan, variant_desc)
 
     def run_push_confident(self) -> List[Dict[str, Any]]:
         """
@@ -388,14 +415,31 @@ def save_galois_results(results_list, variant, provider, dataset_name):
         base_dir = Path(f"./experiments/galois_{variant.lower()}/{provider.lower()}")
         LOG.warning(f"Output path for {variant_key} not found in config. Using default: {base_dir}")
 
-    output_path = Path(base_dir) / f"{dataset_name}.json"
-    output_path.parent.mkdir(parents=True, exist_ok=True)
+    #output_path = Path(base_dir) / f"{dataset_name}.json"
+    variant_dir_name = f"GALOIS_{variant.upper()}"
+    dataset_dir_name = dataset_name.upper()
 
-    with open(output_path, "w", encoding="utf-8") as f:
-        json.dump(results_list, f, indent=4, ensure_ascii=False)
+    target_dir = base_dir / variant_dir_name / dataset_dir_name
+    target_dir.mkdir(parents=True, exist_ok=True)
 
-    LOG.info(f"Saved {len(results_list)} queries to {output_path}")
-    return str(base_dir)
+    count = 0
+    for result in results_list:
+        query_id = result.get("query_id", "unknown")
+
+        stem_name = Path(str(query_id)).stem
+
+        output_filename = f"query{stem_name}.json"
+        output_path = target_dir / output_filename
+
+        try:
+            with open(output_path, "w", encoding="utf-8") as f:
+                json.dump(result, f, indent=4, ensure_ascii=False)
+            count += 1
+        except Exception as e:
+            LOG.error(f"Failed to save result for {output_filename}: {e}")
+
+    LOG.info(f"Successfully saved {count} files in {target_dir}")
+    return str(target_dir)
 
 
 def main():

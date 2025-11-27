@@ -393,5 +393,14 @@ class GaloisExecutor:
 
         This is used to store rows in a set (seen_rows) and detect
         duplicates regardless of column ordering.
+        Excludes columns that look like IDs (e.g., 'id', 'uid') from the
+        uniqueness check. This prevents the LLM from creating duplicates
+        that only differ by a hallucinated numeric ID.
         """
-        return tuple(sorted(row.items()))
+
+        ignored_keys = {'id', 'ID', 'Id', '_id', 'uid', 'row_id', 'unique_id'}
+        filtered_items = [
+            (k, v) for k, v in row.items()
+            if k.lower() not in ignored_keys and not k.endswith("_id")
+        ]
+        return tuple(sorted(filtered_items))

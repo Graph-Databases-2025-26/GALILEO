@@ -10,6 +10,8 @@ from src.config import Config_Loader
 from pathlib import Path
 import subprocess, argparse
 
+from src.utils.constants import SUBMISSIONS_PATH_GALOIS
+
 
 # from src.llm.baseline_nl import llm_interaction_second_version
 # from src.llm.baseline_sql_gemini import run_sql_baseline_gemini
@@ -146,9 +148,9 @@ def main():
                 datasets = MC_DATASETS
                 LOG.info("PZSQL/PZNL mode detected. Loading MC_DATASETS.")
             # Le modalità che caricano IK_DATASETS (fallback, es. NL, SQL, o altre)
-            else:
+            elif args.mode in ["NL", "SQL", "sql", "nl"] or args.galois.lower() in ["wo", "s", "a", "f", "all"]:
                 datasets = IK_DATASETS
-                LOG.info("NL/SQL mode detected. Loading IK_DATASETS.")
+                LOG.info("NL/SQL mode or galois framework detected. Loading IK_DATASETS.")
         else:
             # 2. Lista specifica di dataset via CLI
             datasets = requested
@@ -164,9 +166,13 @@ def main():
     for dataset in datasets:
         dataset_path = DATA_DIR / dataset
         LOG.info(f"=== Processing dataset: {dataset} ===")
-        nl_queries = load_nl_queries_from_txt(dataset_path)
+        #nl_queries = load_nl_queries_from_txt(dataset_path)
         queries = load_queries_from_folder(dataset_path)
 
+        # ------------------------------------------
+        # NL SQL BASELINES BLOCK
+        # ------------------------------------------
+        """"
         if args.mode:
             if args.mode =="sql":
                 LOG.info(f"Loaded {len(queries)} queries for dataset {dataset} in {args.mode} mode")
@@ -210,44 +216,64 @@ def main():
                     run_types.add("PZNL")
                 else:
                     LOG.warning(f"[BOTH] Dataset")
+        """
 
         # ------------------------------------------
         # GALOIS BLOCK
         # ------------------------------------------
         if args.galois:
             # Determine which variants to run
+            variants_input = args.galois.lower()
             variants_to_run = []
-            if args.galois.lower() == "all":
+            if variants_input == "all":
                 variants_to_run = ["WO", "S", "A", "F"]
             else:
-                variants_to_run = [args.galois.upper()]
+                variants_to_run = [variants_input.upper()]
 
             LOG.info(f"Initializing GaloisPlanner for {dataset}...")
-            # Instantiate the Planner once per dataset
-            planner = Galois(config, dataset)
 
             for variant in variants_to_run:
                 LOG.info(f">>> Running GALOIS_{variant} on {dataset}")
                 results_for_eval = []
 
-                for i, (q_filename, q_sql) in enumerate(queries):
+                for i, q_sql in enumerate(queries):
+                    # Instantiate the Planner once per dataset
+                    planner = Galois(config, dataset, q_sql)
+                    rows = []
                     try:
-                        # Execute the query via the Planner
-                        # Planner internally handles Estimator, Executor (Scan) and Post-Processing
-                        rows = planner.execute_variant(q_sql, variant)
+                        # Execute the specific variant method based on CLI arg
+                        if variant == "WO":
+                            # Without Optimization: No pushdown, Key-Scan
+                            rows = planner.run_no_push()
+
+                        elif variant == "S":
+                            # Selective: Push selective conditions (LLM estimated), Table-Scan
+                            rows = planner.run_push_selective()
+
+                        elif variant == "A":
+                            # All: Push all conditions, Table-Scan
+                            rows = planner.run_push_all()
+
+                        elif variant == "F":
+                            # Full/Confident: Push confident conditions, Dynamic Scan (Table/Key)
+                            rows = planner.run_push_confident()
+
+                        else:
+                            LOG.error(f"Unknown variant {variant}")
+                            continue
 
                         results_for_eval.append({
-                            "query_id": q_filename,
+                            "query_id": i+1,
                             "sql": q_sql,
                             "result_set": rows
                         })
                         # Minimal visual feedback
-                        LOG.debug(f"Query {q_filename}: {len(rows)} rows returned.")
+                        LOG.debug(f"Query {i+1}: {len(rows)} rows returned.")
 
                     except Exception as e:
-                        LOG.error(f"Failed query {q_filename} in mode {variant}: {e}")
+                        LOG.error(f"Failed query {i+1} in mode {variant}: {e}")
                         results_for_eval.append({
-                            "query_id": q_filename, "sql": q_sql, "result_set": [], "error": str(e)
+                            "query_id": i+1, "sql": q_sql, "result_set": [], "error": str(e)
                         })
 
                 # Save the results
@@ -259,7 +285,10 @@ def main():
                 )
                 run_types.add(f"GALOIS_{variant}")
 
-    print(f"MODE: {args.mode}")
+
+    # ------------------------------------------
+    # EVALUATION BLOCK
+    # ------------------------------------------
     if not run_types:
         LOG.warning("No baselines were executed; skipping evaluation.")
         return
@@ -272,7 +301,7 @@ def main():
     for run_type in sorted(run_types):
         submissions_path= ""
         if args.galois:
-            submissions_path = BASELINE_OUTPUT["GALOIS"][run_type.upper()]
+            submissions_path = SUBMISSIONS_PATH_GALOIS / run_type.upper()
         elif args.mode:
             submissions_path = BASELINE_OUTPUT[run_type][config.llm_provider.upper()]
 
