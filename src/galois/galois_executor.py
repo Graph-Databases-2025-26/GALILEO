@@ -56,9 +56,6 @@ class GaloisExecutor:
         # Schema manager for Galois-WO, connecting directly to the DuckDB file
         self.schema_mgr = GaloisWOSchemaManager(self.dataset)
 
-    # ------------------------------------------------------------------
-    # Public API
-    # ------------------------------------------------------------------
     def table_scan(
         self,
         sql_query: str,
@@ -91,7 +88,7 @@ class GaloisExecutor:
 
         where_clause = " AND ".join(where_conditions) if where_conditions else None
 
-        #  Resolve the exact table name and retrieve table attributes
+        #  Resolve the exact table name
         exact_table = self.schema_mgr.get_exact_table_name(table_name) or table_name
 
         # Retrieve the valid columns
@@ -105,19 +102,18 @@ class GaloisExecutor:
             conditions=conditions_to_push or []
         )
 
-        # 3. UNIONE INTELLIGENTE:
-        # Se query_attributes è vuoto (es. SELECT *), usa base_attributes.
-        # Altrimenti, unisci le due liste per essere sicuro di avere tutto.
+        # Clever Merging
+        # if query_attributes is empy (es. SELECT *), use all_attributes.
+        # Otherwise, merge the two lists to be sure that all attributes involved in query are retrieved.
         if not query_attributes:
             attributes = all_attributes
         else:
-            # Unione set per evitare duplicati, poi lista
+            # Union avoiding duplicates
             attributes = list(set(all_attributes + query_attributes))
 
         LOG.info(f"[GaloisExecutor] Fetching ALL attributes to ensure schema consistency: {attributes}")
         if not attributes:
             raise ValueError(f"No attributes identified for table '{exact_table}'")
-        # --- FINE FIX ---
 
         # If no PK is defined, the schema manager may return an empty list.
         # Here we only need attributes, so it's fine.
@@ -125,7 +121,7 @@ class GaloisExecutor:
 
         LOG.debug(f"[GaloisExecutor] Parsed query -> table={exact_table}, where={where_clause}, attrs={attributes}")
 
-        # 3) Build initial conversation: System + first human prompt
+        #  Build initial conversation: System + first human prompt
         system_msg = SystemMessage(
             content=(
                 "You are a data extraction engine. "
@@ -142,7 +138,7 @@ class GaloisExecutor:
         )
         history: List[BaseMessage] = [system_msg, HumanMessage(content=first_prompt)]
 
-        # 4) Iteratively query the LLM and collect tuples
+        # Iteratively query the LLM and collect tuples
         all_rows: List[Dict[str, Any]] = []
         seen_rows: Set[Tuple[Tuple[str, Any], ...]] = set()
 
@@ -180,9 +176,6 @@ class GaloisExecutor:
 
         return all_rows
 
-    # ------------------------------------------------------------------
-    # Internal helpers
-    # ------------------------------------------------------------------
 
     #method that does an accurate analysis of the columns used in a query and returns it as a list of strings
 
@@ -193,13 +186,13 @@ class GaloisExecutor:
             conditions: List[str]
     ) -> List[str]:
         """
-        Estrae TUTTE le colonne citate nella query (SELECT, WHERE, JOIN, ORDER BY).
-        NOTA: Non filtra contro lo schema del DB perché in alcuni casi lo SchemaManager
-        potrebbe non vedere tutte le colonne, ma noi sappiamo che servono per la query.
+        Extract ALL columns referenced in the query (SELECT, WHERE, JOIN, ORDER BY).
+        NOTE: Does not filter against the DB schema because in some cases the SchemaManager
+        might not see all columns, but we know they are needed for the query.
         """
         found_columns = set()
 
-        # Uniamo query e condizioni per dare un contesto completo al parser
+        # Combine query and conditions to give the parser full context
         text_to_analyze = sql_query
         if conditions:
             text_to_analyze += " WHERE " + " AND ".join(conditions)
@@ -210,31 +203,31 @@ class GaloisExecutor:
             LOG.warning(f"Sqlglot parsing failed: {e}. Returning empty list.")
             return []
 
-        # Se c'è un asterisco (*), non possiamo indovinare le colonne
+        # If there is a (*), don't guess the columns
         if parsed.find(exp.Star):
             LOG.info("Wildcard (*) detected in query.")
             return []
 
-        # Identifica gli alias della tabella target (es. 'world_presidents' -> 'p')
+        # Identify aliases of the target table (e.g. 'world_presidents' -> 'p')
         target_aliases = {table_name.lower()}
         for table in parsed.find_all(exp.Table):
             if table.name.lower() == table_name.lower() and table.alias:
                 target_aliases.add(table.alias.lower())
 
-        # Estrae le colonne
+        # Extract the columns
         for col in parsed.find_all(exp.Column):
             col_name = col.name
             table_ref = col.table
 
-            # Se c'è un prefisso (es. p.country), controlla se 'p' è la nostra tabella
+            # If there is a prefix (e.g. p.country), check if 'p' refers to the target table
             if table_ref:
                 if table_ref.lower() in target_aliases:
                     found_columns.add(col_name)
-            # Se non c'è prefisso, assumiamo sia rilevante
+            # If there is no prefix, assume the column is relevant
             else:
                 found_columns.add(col_name)
 
-        # Convertiamo in lista
+        # Convert the set to a list
         return list(found_columns)
 
 
@@ -256,7 +249,7 @@ class GaloisExecutor:
           - Recovery of the *first* complete row object even if the full JSON
             is truncated or invalid (common with long outputs).
         """
-        # 1) Extract content from the LLM response
+        #  Extract content from the LLM response
         if isinstance(raw_response, BaseMessage):
             content = raw_response.content
         else:
@@ -276,7 +269,7 @@ class GaloisExecutor:
 
         text = text.strip()
 
-        # 2) Remove possible markdown fences ```...``` and labels like ```json
+        #  Remove possible markdown fences ```...``` and labels like ```json
         if text.startswith("```"):
             # Strip outer backticks and remove the first line if it is a 'json' label
             text = text.strip("`")
@@ -299,10 +292,10 @@ class GaloisExecutor:
             except Exception:
                 return None
 
-        # 3) First attempt: parse the whole content as JSON
+        #  First attempt: parse the whole content as JSON
         obj = try_load_json(text)
 
-        # 4) If that fails, search for any block that looks like JSON:
+        #  If that fails, search for any block that looks like JSON:
         #    a {...} object or a [...] array
         if obj is None:
             matches = re.findall(r"(\{[\s\S]*\}|\[[\s\S]*\])", text)
@@ -313,7 +306,7 @@ class GaloisExecutor:
                     obj = parsed
                     break
 
-        # 5) If still None, try to recover the FIRST row object from the array
+        #  If still None, try to recover the FIRST row object from the array
         #    associated with the given table, e.g.:
         #
         #       {"movie": [ { ... }, { ... (truncated) } ... ]}
@@ -368,7 +361,7 @@ class GaloisExecutor:
                                 # Return a single-row list here
                                 return [parsed]
 
-        # 6) If still None, log and return no rows
+        #  If still None, log and return no rows
         if obj is None:
             LOG.error(
                 ERR_LLM_PARSING_FAILURE.format(
@@ -379,11 +372,11 @@ class GaloisExecutor:
 
         rows: List[Dict[str, Any]] = []
 
-        # 7) Extract rows depending on the structure:
-        #   { "<table_name>": [ {row}, ... ] }
-        #   { "result_set": [ {row}, ... ] }
-        #   [ {row}, ... ]
-        #   { ... } (single row)
+        #  Extract rows depending on the structure:
+        #  { "<table_name>": [ {row}, ... ] }
+        #  { "result_set": [ {row}, ... ] }
+        #  [ {row}, ... ]
+        #  { ... } (single row)
         if isinstance(obj, dict):
             if table_name in obj and isinstance(obj[table_name], list):
                 for item in obj[table_name]:

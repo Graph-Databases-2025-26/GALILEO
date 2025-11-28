@@ -169,13 +169,7 @@ class Galois:
                     else:
                         simple_query = f"SELECT * FROM {t_name}"
                 else:
-                    # Per i JOIN o casi complessi, per sicurezza lasciamo * per ora
-                    # (o l'LLM potrebbe dimenticare le chiavi di join)
                     simple_query = f"SELECT * FROM {t_name}"
-
-
-                #build a base  query for the extraction
-                #simple_query = f"SELECT * FROM {t_name}"
 
                 #filter the WHERE conditions that are addicted to this particular alias
                 current_push_conditions = []
@@ -207,32 +201,6 @@ class Galois:
             results = self.perform_local_join_and_query(plan['original_query'], data_lake)
             return results
 
-            ##############################
-
-            """
-            results= []
-            # Decision on table or key scan
-            if final_strategy == "TABLE":
-                #DO TABLE SCAN
-                executor = GaloisExecutor(self.config, self.dataset)
-                LOG.info(f"Executing Table Scan using GaloisExecutor instance for query {plan['original_query']}...")
-                results = executor.table_scan(sql_query=plan['original_query'],  conditions_to_push=pushed_conditions)
-
-            elif final_strategy == "KEY":
-                #DO KEY SCAN
-                LOG.info("For that query the system will apply KEY SCAN")
-
-            else:
-                LOG.info("LLM  didn't reply with a 'TABLE' OR 'KEY'")
-
-            #POST PROCESSING
-            if residual_conditions and results:
-                LOG.info(f"Post-processing required for conditions: {residual_conditions}")
-                post_processor = GaloisPostProcessor()
-                results = post_processor.filter_results(results, residual_conditions)
-
-            return results
-            """
         except Exception as e:
             LOG.error(f"Error during the plan selection execution of the query {plan['original_query']} : {e}")
             raise e
@@ -406,7 +374,6 @@ class Galois:
                             # otherwise probably is numeric, using the cionverted one.
                             df[col] = numeric_series
 
-                    # --- STRING CLEANING (Trim whitespace) ---
                     # Important for JOINs to work (e.g. "Arizona " -> "Arizona")
                     # If a column is of type 'object' (string), apply strip()
                     for col in df.select_dtypes(include=['object']).columns:

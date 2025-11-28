@@ -191,4 +191,24 @@ GET_TABLES = """
         ORDER BY table_name;
         """
 
+GET_ATTRIBUTES = """
+PRAGMA table_info('{table_name}')
+"""
+
+GET_EXACT_TABLE_NAME = """
+SELECT table_name
+FROM information_schema.tables
+WHERE LOWER(table_name) = '{table_name}.lower()'
+"""
+
+GET_PRIMARY_KEYS = """
+SELECT cols
+FROM (
+    SELECT unnest(constraint_column_names) AS cols, constraint_type, table_name
+    FROM duckdb_constraints()
+)
+WHERE table_name = '{table_name}'
+  AND constraint_type = 'PRIMARY KEY';
+"""
+
 POST_PROCESSING_BUILD_TABLE_SQL = "SELECT * FROM row_buffer WHERE {where_clause}"
