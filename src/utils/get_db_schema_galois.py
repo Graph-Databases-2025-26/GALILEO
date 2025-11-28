@@ -115,9 +115,7 @@ class GaloisSchemaManager:
 
 if __name__ == "__main__":
 
-
         mgr = GaloisSchemaManager("MOVIES")
-
 
         try:
             attrs = mgr.get_attributes("movies")

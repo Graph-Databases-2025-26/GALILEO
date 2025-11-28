@@ -1,0 +1,90 @@
+{
+    "query_id": 2,
+    "sql": "- added TRY_CAST to avoid errors with non-integer values\nSELECT name FROM target.country WHERE TRY_CAST(independence_year AS INTEGER) > 1950;",
+    "result_set": [
+        {
+            "name": "Angola"
+        },
+        {
+            "name": "Bahamas"
+        },
+        {
+            "name": "Bahrain"
+        },
+        {
+            "name": "Bangladesh"
+        },
+        {
+            "name": "Belize"
+        },
+        {
+            "name": "Barbados"
+        },
+        {
+            "name": "Botswana"
+        },
+        {
+            "name": "Cape Verde"
+        },
+        {
+            "name": "Comoros"
+        },
+        {
+            "name": "Djibouti"
+        },
+        {
+            "name": "Dominica"
+        },
+        {
+            "name": "Grenada"
+        },
+        {
+            "name": "Guinea-Bissau"
+        },
+        {
+            "name": "Lesotho"
+        },
+        {
+            "name": "Maldives"
+        },
+        {
+            "name": "Mauritius"
+        },
+        {
+            "name": "Papua New Guinea"
+        },
+        {
+            "name": "Saint Lucia"
+        },
+        {
+            "name": "Saint Vincent and the Grenadines"
+        },
+        {
+            "name": "Seychelles"
+        },
+        {
+            "name": "Solomon Islands"
+        },
+        {
+            "name": "Suriname"
+        },
+        {
+            "name": "Swaziland"
+        },
+        {
+            "name": "Timor-Leste"
+        },
+        {
+            "name": "Tuvalu"
+        },
+        {
+            "name": "Vanuatu"
+        },
+        {
+            "name": "Zambia"
+        },
+        {
+            "name": "Zimbabwe"
+        }
+    ]
+}

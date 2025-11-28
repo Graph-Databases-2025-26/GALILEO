@@ -1,4 +1,5 @@
 import json
+import re
 from pathlib import Path
 from typing import Literal, Any, List, Dict, cast
 import duckdb
@@ -146,8 +147,35 @@ class Galois:
                 t_alias = t_info['alias']
                 LOG.info(f"--- FETCHING DATA FOR TABLE: {t_name} (Alias: {t_alias}) ---")
 
+                #retrieve the target columns for that table
+                target_cols = plan['select_columns']
+
+                if len(tables_to_scan) == 1 and target_cols:
+                    # Clean the columns (remove aggregations like avg(gnp) -> gnp)
+                    clean_cols = []
+                    for c in target_cols:
+                        # If count(*), ignore it
+                        if "*" in c: continue
+                        # Extract "gnp" from "avg(gnp)"
+                        match = re.search(r'\((.*?)\)', c)
+                        if match:
+                            clean_cols.append(match.group(1))
+                        else:
+                            clean_cols.append(c)
+
+                    if clean_cols:
+                        cols_str = ", ".join(clean_cols)
+                        simple_query = f"SELECT {cols_str} FROM {t_name}"
+                    else:
+                        simple_query = f"SELECT * FROM {t_name}"
+                else:
+                    # Per i JOIN o casi complessi, per sicurezza lasciamo * per ora
+                    # (o l'LLM potrebbe dimenticare le chiavi di join)
+                    simple_query = f"SELECT * FROM {t_name}"
+
+
                 #build a base  query for the extraction
-                simple_query = f"SELECT * FROM {t_name}"
+                #simple_query = f"SELECT * FROM {t_name}"
 
                 #filter the WHERE conditions that are addicted to this particular alias
                 current_push_conditions = []
@@ -360,13 +388,24 @@ class Galois:
                 else:
                     df = pd.DataFrame(rows)
 
-                    # --- AUTO-CASTING ---
+                    # --- SMART AUTO-CASTING ---
                     # The LLM often returns values as strings ("1000", "N/A"), while DuckDB expects numeric types.
                     # Try to convert columns to numeric where possible.
                     for col in df.columns:
                         # Try converting to numeric. If it fails (e.g. "Texas"), leave as-is.
-                        df[col] = pd.to_numeric(df[col], errors='ignore')
-                    # ---------------------------
+                        numeric_series = pd.to_numeric(df[col], errors='coerce')
+
+                        #counts the NaN values
+                        nan_count = numeric_series.isna().sum()
+                        total_count = len(df)
+
+                        #if more than 50% of the values are NaN the column is not a numeric one
+                        if total_count > 0 and (nan_count / total_count) > 0.5:
+                            df[col] = df[col].astype(str)
+                        else:
+                            # otherwise probably is numeric, using the cionverted one.
+                            df[col] = numeric_series
+
                     # --- STRING CLEANING (Trim whitespace) ---
                     # Important for JOINs to work (e.g. "Arizona " -> "Arizona")
                     # If a column is of type 'object' (string), apply strip()
@@ -384,7 +423,17 @@ class Galois:
             #print(con.execute("SELECT * FROM usa_state LIMIT 5").df())
             #print("-----------------------\n")
 
-            clean_sql_query = original_sql.replace("target.", "")
+            clean_sql_query = original_sql
+
+            # Remove any comments from the SQL query
+            clean_sql_query = "\n".join([line for line in clean_sql_query.split('\n') if not line.strip().startswith('--')])
+            #Remove garbage notes before SELECT
+            match = re.search(r'\bSELECT\b', clean_sql_query, re.IGNORECASE)
+            if match:
+                clean_sql_query = clean_sql_query[match.start():]
+
+            #remove the target. prefix from the original query
+            clean_sql_query = clean_sql_query.replace("target.", "")
             LOG.info(f"Executing Local SQL Query: {clean_sql_query}")
             # execute original query
             result_df = con.execute(clean_sql_query).df()

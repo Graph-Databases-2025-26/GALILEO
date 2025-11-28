@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import ast
 import json
 import re
 from typing import Any, Dict, List, Optional, Set, Tuple
@@ -32,7 +33,7 @@ class GaloisExecutor:
       - Deduplicate tuples across iterations.
     """
 
-    def __init__(self, config: AppConfig, dataset: str, max_iter: int = 4) -> None:
+    def __init__(self, config: AppConfig, dataset: str, max_iter: int = 15) -> None:
         """
         Parameters
         ----------
@@ -122,7 +123,53 @@ class GaloisExecutor:
 
         # 2) Resolve the exact table name and retrieve table attributes
         exact_table = self.schema_mgr.get_exact_table_name(table_name) or table_name
-        attributes = self.schema_mgr.get_attributes(exact_table)
+
+        #retriueve the columns to select from the parser
+        requested_cols = parsed.get("select_columns", [])
+
+        #clean possible aliases
+        clean_requested = []
+        for col in requested_cols:
+            #taking into account only the part beyond the dot
+            col_name = col.split('.')[-1].strip()
+            #ignore COUNT(*) or other aggregates
+            if col_name != "*" and "(" not in col_name:
+                clean_requested.append(col_name)
+
+        if where_conditions:
+            # Unify all WHERE conditions into a single string
+            cond_str = " ".join(where_conditions)
+
+            # Regex that finds words that look like SQL identifiers (avoids pure numbers)
+            # Matches alphanumeric sequences starting with a letter or underscore
+            potential_cols = re.findall(r'\b[a-zA-Z_][a-zA-Z0-9_]*\b', cond_str)
+
+            # SQL keywords to ignore (so they are not mistaken for column names)
+            # Included TRY_CAST, INT, etc. because they appear in some queries
+            sql_keywords = {
+                'AND', 'OR', 'NOT', 'IS', 'NULL', 'LIKE', 'IN', 'BETWEEN',
+                'TRY_CAST', 'CAST', 'AS', 'INT', 'INTEGER', 'FLOAT', 'VARCHAR', 'DATE',
+                'TRUE', 'FALSE'
+            }
+
+            for word in potential_cols:
+                # Ignore if it's a keyword or a number (regex already excludes pure numbers, safety first)
+                if word.upper() not in sql_keywords and not word.isdigit():
+                    # Handle aliases like "t1.continent" -> "continent"
+                    col_pure = word.split('.')[-1]
+
+                    # Add only if not already present (avoid duplicates)
+                    if col_pure not in clean_requested:
+                        clean_requested.append(col_pure)
+
+        #if specific columns were requested, use them... otherwise fallback to all table attributes
+        if clean_requested and "*" not in requested_cols:
+            attributes = clean_requested
+            LOG.info(f"[GaloisExecutor] Optimization: Fetching ONLY requested columns: {attributes}")
+        else:
+            attributes = self.schema_mgr.get_attributes(exact_table)
+            LOG.info(f"[GaloisExecutor] Fetching ALL table attributes (Schema default)")
+
 
         if not attributes:
             raise ValueError(f"No attributes found for table '{exact_table}'")
@@ -244,6 +291,11 @@ class GaloisExecutor:
         def try_load_json(candidate: str) -> Optional[Any]:
             try:
                 return json.loads(candidate)
+            except Exception:
+                pass
+            # FALLBACK: Try to parse as literal Python (handle single '': 'key': 'val')
+            try:
+                return ast.literal_eval(candidate)
             except Exception:
                 return None
 

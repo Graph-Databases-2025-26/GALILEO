@@ -1,0 +1,58 @@
+{
+    "query_id": 1,
+    "sql": "SELECT DISTINCT p.name, p.party FROM target.world_presidents p WHERE p.country='Venezuela';",
+    "result_set": [
+        {
+            "name": "José Gregorio Monagas",
+            "party": "Liberal"
+        },
+        {
+            "name": "Andrés Narvarte",
+            "party": "Conservative"
+        },
+        {
+            "name": "Simón Bolívar",
+            "party": "Liberal"
+        },
+        {
+            "name": "Hugo Chávez",
+            "party": "PSUV"
+        },
+        {
+            "name": "José María Vargas",
+            "party": "Liberal"
+        },
+        {
+            "name": "Manuel Felipe de Tovar",
+            "party": "Conservative"
+        },
+        {
+            "name": "Pedro Gual",
+            "party": "Liberal"
+        },
+        {
+            "name": "José Tadeo Monagas",
+            "party": "Liberal"
+        },
+        {
+            "name": "Marcos Pérez Jiménez",
+            "party": "Military"
+        },
+        {
+            "name": "José María Carreño",
+            "party": "Conservative"
+        },
+        {
+            "name": "Santiago Mariño",
+            "party": "Liberal"
+        },
+        {
+            "name": "José Antonio Páez",
+            "party": "Conservative"
+        },
+        {
+            "name": "Carlos Soublette",
+            "party": "Conservative"
+        }
+    ]
+}

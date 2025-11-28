@@ -1,3 +1,5 @@
+import re
+
 import sqlglot
 
 from src import DATA_DIR
@@ -55,6 +57,16 @@ def parse_sql(sql_query: str) -> Dict[str, Any]:
 
     # Clean up any file comments (like --query1)
     sql_query_string = "\n".join([line for line in sql_query_string.split('\n') if not line.strip().startswith('--')])
+
+    # Trim anything before the first SELECT for avoiding parsing issues
+    match = re.search(r'\bSELECT\b', sql_query_string, re.IGNORECASE)
+    if match:
+        sql_query_string = sql_query_string[match.start():]
+    else:
+        # If no SELECT is found, try to look for WITH (only if it's at the start of a line for safety)
+        match_with = re.search(r'^\s*WITH\b', sql_query_string, re.IGNORECASE | re.MULTILINE)
+        if match_with:
+            sql_query_string = sql_query_string[match_with.start():]
         
     try:
         # Parse the SQL into an Abstract Syntax Tree (AST)

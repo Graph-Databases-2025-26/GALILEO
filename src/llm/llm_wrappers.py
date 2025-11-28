@@ -110,16 +110,33 @@ class WatsonxWrapper(LLMBaseWrapper):
         if config.watsonx.api_key:
             
             LOG.info(f"Creating Watsonx LLM: model ...")
+
+            generation_params = {
+                # 1. QUANTITY: Reads 4096 from your YAML.
+                # If this value is too low, the JSON will be truncated.
+                "max_new_tokens": config.watsonx.max_tokens,
+
+                # 2. DETERMINISM: Force "greedy" to avoid JSON syntax errors.
+                # (Ignore temperatures > 0 if present, to protect data integrity)
+                "decoding_method": "greedy",
+                "temperature": config.watsonx.temperature,
+
+                # 3. CLEANUP: Stop the model as soon as it closes the JSON array
+                # or if it tries to open a markdown block.
+                "stop_sequences": ["]\n", "```"],
+
+                # 4. ANTI-LOOP: Light penalty to avoid infinite repetitions
+                "repetition_penalty": 1.05,
+
+                "min_new_tokens": 1
+            }
             
             return ChatWatsonx(
                 model_id  = config.watsonx.model,
                 api_key = config.watsonx.api_key,
                 url = config.watsonx.endpoint, 
                 project_id = config.watsonx.project_id,
-                params = {
-                    "temperature": config.watsonx.temperature,
-                    "max_new_tokens": config.watsonx.max_tokens,
-                }
+                params = generation_params
             )
             
         else:

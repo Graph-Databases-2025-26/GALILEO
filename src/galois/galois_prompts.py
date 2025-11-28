@@ -33,7 +33,7 @@ IMPORTANT CONSTRAINTS:
 
 LIMIT ON NUMBER OF TUPLES:
   - In this FIRST answer, return AT MOST 20 tuples.
-  - Do NOT exceed 20 tuples, even if many more satisfy the query.
+  - Do NOT exceed {limit_rows} tuples, even if many more satisfy the query.
   - The Table-Scan process will ask for more tuples in later iterations.
 
 Return ONLY the JSON now.
@@ -46,7 +46,7 @@ TABLE_SCAN_ITER_PROMPT = """Continue the previous task.
       - Return more tuples that satisfy the same query, if any remain.
       - All tuples MUST follow exactly the same JSON structure as before.
       - Do NOT repeat tuples that were already returned.
-      - Return AT MOST 20 additional tuples in this answer.
+      - Return AT MOST {limit_rows} additional tuples in this answer.
       - If there are no more tuples to return, answer with an empty JSON object ({}) or an empty list ([]).
 
     IMPORTANT:
@@ -98,7 +98,7 @@ def build_table_scan_first_prompt(
     LOG.debug(f"[Table-Scan] First prompt SQL: {base_sql}")
 
     return TABLE_SCAN_FIRST_PROMPT.format(
-        base_sql=base_sql, table_name=table_name, attributes=attributes, json_example=json_example)
+        base_sql=base_sql, table_name=table_name, attributes=attributes, json_example=json_example, limit_rows=5)
 
 
 def build_table_scan_iter_prompt() -> str:

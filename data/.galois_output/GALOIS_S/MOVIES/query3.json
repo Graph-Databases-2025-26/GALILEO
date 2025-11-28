@@ -1,0 +1,98 @@
+{
+    "query_id": 3,
+    "sql": "SELECT m.originaltitle, m.startyear FROM target.movies m WHERE m.director='Richard Thorpe' AND m.startyear > 1950;",
+    "result_set": [
+        {
+            "originaltitle": "The Last Outpost",
+            "startyear": 1951.0
+        },
+        {
+            "originaltitle": "Carbine Williams",
+            "startyear": 1952.0
+        },
+        {
+            "originaltitle": "Ivanhoe",
+            "startyear": 1952.0
+        },
+        {
+            "originaltitle": "The Prisoner of Zenda",
+            "startyear": 1952.0
+        },
+        {
+            "originaltitle": "All the Brothers Were Valiant",
+            "startyear": 1953.0
+        },
+        {
+            "originaltitle": "Knights of the Round Table",
+            "startyear": 1953.0
+        },
+        {
+            "originaltitle": "The Student Prince",
+            "startyear": 1954.0
+        },
+        {
+            "originaltitle": "Athena",
+            "startyear": 1954.0
+        },
+        {
+            "originaltitle": "The Adventures of Quentin Durward",
+            "startyear": 1955.0
+        },
+        {
+            "originaltitle": "Tip on a Dead Jockey",
+            "startyear": 1957.0
+        },
+        {
+            "originaltitle": "The Truth About Spring",
+            "startyear": 1964.0
+        },
+        {
+            "originaltitle": "The Last Challenge",
+            "startyear": 1967.0
+        },
+        {
+            "originaltitle": "The Last Frontier",
+            "startyear": 1955.0
+        },
+        {
+            "originaltitle": "Ten Thousand Bedrooms",
+            "startyear": 1957.0
+        },
+        {
+            "originaltitle": "Jailhouse Rock",
+            "startyear": 1957.0
+        },
+        {
+            "originaltitle": "The House of the Seven Hawks",
+            "startyear": 1959.0
+        },
+        {
+            "originaltitle": "The Honeymoon Machine",
+            "startyear": 1961.0
+        },
+        {
+            "originaltitle": "The Horizontal Lieutenant",
+            "startyear": 1962.0
+        },
+        {
+            "originaltitle": "Follow the Boys",
+            "startyear": 1963.0
+        },
+        {
+            "originaltitle": "Fun in Acapulco",
+            "startyear": 1963.0
+        },
+        {
+            "originaltitle": "The Golden Head",
+            "startyear": 1964.0
+        },
+        {
+            "originaltitle": "That Funny Feeling",
+            "startyear": 1965.0
+        },
+        {
+            "originaltitle": "The Bull of the West",
+            "startyear": 1972.0
+        }
+    ]
+}

@@ -1,0 +1,69 @@
+{
+    "query_id": 4,
+    "sql": "SELECT p.name FROM target.world_presidents p WHERE p.country='Venezuela' AND p.party='Liberal';",
+    "result_set": [
+        {
+            "name": "Antonio Guzmán Blanco"
+        },
+        {
+            "name": "Antonio Guzmán Blanco"
+        },
+        {
+            "name": "Antonio Guzmán Blanco"
+        },
+        {
+            "name": "Raimundo Andueza Palacio"
+        },
+        {
+            "name": "Joaquín Crespo"
+        },
+        {
+            "name": "Ignacio Andrade"
+        },
+        {
+            "name": "Cipriano Castro"
+        },
+        {
+            "name": "Juan Vicente Gómez"
+        },
+        {
+            "name": "Juan Vicente Gómez"
+        },
+        {
+            "name": "Eleazar López Contreras"
+        },
+        {
+            "name": "Isaías Medina Angarita"
+        },
+        {
+            "name": "Rómulo Betancourt"
+        },
+        {
+            "name": "Rómulo Betancourt"
+        },
+        {
+            "name": "Raúl Leoni"
+        },
+        {
+            "name": "Carlos Andrés Pérez"
+        },
+        {
+            "name": "Carlos Andrés Pérez"
+        },
+        {
+            "name": "Rafael Caldera"
+        },
+        {
+            "name": "Hugo Chávez"
+        },
+        {
+            "name": "Hugo Chávez"
+        },
+        {
+            "name": "Hugo Chávez"
+        },
+        {
+            "name": "Nicolás Maduro"
+        }
+    ]
+}
