@@ -1,0 +1,33 @@
+{
+    "query_id": 5,
+    "sql": "SELECT p.name FROM target.world_presidents p WHERE p.country='Venezuela' AND p.party='Liberal' AND p.start_year > 1858;",
+    "result_set": [
+        {
+            "name": "Antonio Guzmán Blanco"
+        },
+        {
+            "name": "Antonio Guzmán Blanco"
+        },
+        {
+            "name": "Antonio Guzmán Blanco"
+        },
+        {
+            "name": "Raimundo Andueza Palacio"
+        },
+        {
+            "name": "Joaquín Crespo"
+        },
+        {
+            "name": "Ignacio Andrade"
+        },
+        {
+            "name": "Cipriano Castro"
+        },
+        {
+            "name": "Juan Vicente Gómez"
+        },
+        {
+            "name": "Juan Vicente Gómez"
+        }
+    ]
+}

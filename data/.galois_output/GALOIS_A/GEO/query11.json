@@ -1,0 +1,81 @@
+{
+    "query_id": 11,
+    "sql": "SELECT DISTINCT usa_state_traversed FROM target.usa_river WHERE length_in_km > 750;",
+    "result_set": [
+        {
+            "usa_state_traversed": "California"
+        },
+        {
+            "usa_state_traversed": "Kentucky"
+        },
+        {
+            "usa_state_traversed": "Wisconsin"
+        },
+        {
+            "usa_state_traversed": "Iowa"
+        },
+        {
+            "usa_state_traversed": "Oklahoma"
+        },
+        {
+            "usa_state_traversed": "Ohio"
+        },
+        {
+            "usa_state_traversed": "Oregon"
+        },
+        {
+            "usa_state_traversed": "Texas"
+        },
+        {
+            "usa_state_traversed": "North Dakota"
+        },
+        {
+            "usa_state_traversed": "Nebraska"
+        },
+        {
+            "usa_state_traversed": "Tennessee"
+        },
+        {
+            "usa_state_traversed": "Colorado"
+        },
+        {
+            "usa_state_traversed": "Illinois"
+        },
+        {
+            "usa_state_traversed": "Michigan"
+        },
+        {
+            "usa_state_traversed": "New Mexico"
+        },
+        {
+            "usa_state_traversed": "Kansas"
+        },
+        {
+            "usa_state_traversed": "Washington"
+        },
+        {
+            "usa_state_traversed": "Louisiana"
+        },
+        {
+            "usa_state_traversed": "Montana"
+        },
+        {
+            "usa_state_traversed": "South Dakota"
+        },
+        {
+            "usa_state_traversed": "Minnesota"
+        },
+        {
+            "usa_state_traversed": "Missouri"
+        },
+        {
+            "usa_state_traversed": "Alaska"
+        },
+        {
+            "usa_state_traversed": "Arkansas"
+        },
+        {
+            "usa_state_traversed": "Indiana"
+        }
+    ]
+}

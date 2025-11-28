@@ -1,0 +1,66 @@
+{
+    "query_id": 1,
+    "sql": "SELECT m.originaltitle FROM target.movies m WHERE m.director='Richard Thorpe';",
+    "result_set": [
+        {
+            "originaltitle": "Ivanhoe"
+        },
+        {
+            "originaltitle": "Knights of the Round Table"
+        },
+        {
+            "originaltitle": "All the Brothers Were Valiant"
+        },
+        {
+            "originaltitle": "Athena"
+        },
+        {
+            "originaltitle": "The Student Prince"
+        },
+        {
+            "originaltitle": "The Prodigal"
+        },
+        {
+            "originaltitle": "Tip on a Dead Jockey"
+        },
+        {
+            "originaltitle": "The Last Outpost"
+        },
+        {
+            "originaltitle": "Carbine Williams"
+        },
+        {
+            "originaltitle": "Malaya"
+        },
+        {
+            "originaltitle": "Three Daring Daughters"
+        },
+        {
+            "originaltitle": "This Time for Keeps"
+        },
+        {
+            "originaltitle": "Above Suspicion"
+        },
+        {
+            "originaltitle": "White Cargo"
+        },
+        {
+            "originaltitle": "Tarzan's Secret Treasure"
+        },
+        {
+            "originaltitle": "Pride and Prejudice"
+        },
+        {
+            "originaltitle": "The Earl of Chicago"
+        },
+        {
+            "originaltitle": "20 Mule Team"
+        },
+        {
+            "originaltitle": "Wyoming"
+        },
+        {
+            "originaltitle": "The Thin Man Goes Home"
+        }
+    ]
+}

@@ -1,0 +1,9 @@
+{
+    "query_id": 7,
+    "sql": "SELECT avg(population) FROM target.usa_state;",
+    "result_set": [
+        {
+            "avg(population)": 84862673.25
+        }
+    ]
+}

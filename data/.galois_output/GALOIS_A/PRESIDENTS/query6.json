@@ -1,0 +1,111 @@
+{
+    "query_id": 6,
+    "sql": "SELECT p.name, p.start_year, p.end_year, p.cardinal_number, p.party FROM target.world_presidents p WHERE p.country='Venezuela';",
+    "result_set": [
+        {
+            "name": "Hugo Chávez",
+            "start_year": 1999.0,
+            "end_year": 2013.0,
+            "cardinal_number": "1st",
+            "party": "United Socialist Party of Venezuela"
+        },
+        {
+            "name": "Nicolás Maduro",
+            "start_year": 2013.0,
+            "end_year": 2019.0,
+            "cardinal_number": "2nd",
+            "party": "United Socialist Party of Venezuela"
+        },
+        {
+            "name": "Rómulo Betancourt",
+            "start_year": 1959.0,
+            "end_year": 1964.0,
+            "cardinal_number": "1st",
+            "party": "Democratic Action"
+        },
+        {
+            "name": "Rafael Caldera",
+            "start_year": 1969.0,
+            "end_year": 1974.0,
+            "cardinal_number": "1st",
+            "party": "COPEI"
+        },
+        {
+            "name": "Carlos Andrés Pérez",
+            "start_year": 1974.0,
+            "end_year": 1979.0,
+            "cardinal_number": "1st",
+            "party": "Democratic Action"
+        },
+        {
+            "name": "Jaime Lusinchi",
+            "start_year": 1984.0,
+            "end_year": 1989.0,
+            "cardinal_number": "2nd",
+            "party": "Democratic Action"
+        },
+        {
+            "name": "Rafael Caldera",
+            "start_year": 1994.0,
+            "end_year": 1999.0,
+            "cardinal_number": "2nd",
+            "party": "National Convergence"
+        },
+        {
+            "name": "Carlos Andrés Pérez",
+            "start_year": 1989.0,
+            "end_year": 1993.0,
+            "cardinal_number": "2nd",
+            "party": "Democratic Action"
+        },
+        {
+            "name": "Marcos Pérez Jiménez",
+            "start_year": 1952.0,
+            "end_year": 1958.0,
+            "cardinal_number": "1st",
+            "party": "Military dictatorship"
+        },
+        {
+            "name": "Luis Herrera Campins",
+            "start_year": 1979.0,
+            "end_year": 1984.0,
+            "cardinal_number": "1st",
+            "party": "COPEI"
+        },
+        {
+            "name": "Eleazar López Contreras",
+            "start_year": 1935.0,
+            "end_year": 1941.0,
+            "cardinal_number": "1st",
+            "party": "Military dictatorship"
+        },
+        {
+            "name": "Isaías Medina Angarita",
+            "start_year": 1941.0,
+            "end_year": 1945.0,
+            "cardinal_number": "1st",
+            "party": "Military dictatorship"
+        },
+        {
+            "name": "Rómulo Gallegos",
+            "start_year": 1945.0,
+            "end_year": 1948.0,
+            "cardinal_number": "1st",
+            "party": "Democratic Action"
+        },
+        {
+            "name": "Carlos Delgado Chalbaud",
+            "start_year": 1948.0,
+            "end_year": 1950.0,
+            "cardinal_number": "1st",
+            "party": "Military dictatorship"
+        },
+        {
+            "name": "Germán Suárez Flamerich",
+            "start_year": 1950.0,
+            "end_year": 1952.0,
+            "cardinal_number": "1st",
+            "party": "Military dictatorship"
+        }
+    ]
+}

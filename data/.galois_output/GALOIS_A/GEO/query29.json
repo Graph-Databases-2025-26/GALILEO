@@ -1,0 +1,18 @@
+{
+    "query_id": 29,
+    "sql": "SELECT us.state_name, us.capital, us.density, us.population FROM target.usa_state us WHERE us.population > 5000000 AND us.density < 1000 AND us.area_squared_miles < 50000;",
+    "result_set": [
+        {
+            "state_name": "Pennsylvania",
+            "capital": "Harrisburg",
+            "density": 284.9,
+            "population": 12802023.0
+        },
+        {
+            "state_name": "Ohio",
+            "capital": "Columbus",
+            "density": 284.1,
+            "population": 11689100.0
+        }
+    ]
+}

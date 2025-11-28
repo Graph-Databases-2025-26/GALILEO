@@ -1,0 +1,231 @@
+{
+    "query_id": 2,
+    "sql": "SELECT city_name FROM target.usa_city WHERE population > 150000;",
+    "result_set": [
+        {
+            "city_name": "New York City"
+        },
+        {
+            "city_name": "Los Angeles"
+        },
+        {
+            "city_name": "Chicago"
+        },
+        {
+            "city_name": "Houston"
+        },
+        {
+            "city_name": "Phoenix"
+        },
+        {
+            "city_name": "Philadelphia"
+        },
+        {
+            "city_name": "San Antonio"
+        },
+        {
+            "city_name": "San Diego"
+        },
+        {
+            "city_name": "Dallas"
+        },
+        {
+            "city_name": "San Jose"
+        },
+        {
+            "city_name": "Austin"
+        },
+        {
+            "city_name": "Jacksonville"
+        },
+        {
+            "city_name": "Fort Worth"
+        },
+        {
+            "city_name": "Columbus"
+        },
+        {
+            "city_name": "Charlotte"
+        },
+        {
+            "city_name": "Memphis"
+        },
+        {
+            "city_name": "Boston"
+        },
+        {
+            "city_name": "Baltimore"
+        },
+        {
+            "city_name": "Detroit"
+        },
+        {
+            "city_name": "El Paso"
+        },
+        {
+            "city_name": "Milwaukee"
+        },
+        {
+            "city_name": "Seattle"
+        },
+        {
+            "city_name": "Denver"
+        },
+        {
+            "city_name": "Washington"
+        },
+        {
+            "city_name": "Nashville"
+        },
+        {
+            "city_name": "Oklahoma City"
+        },
+        {
+            "city_name": "Portland"
+        },
+        {
+            "city_name": "Las Vegas"
+        },
+        {
+            "city_name": "Louisville"
+        },
+        {
+            "city_name": "Albuquerque"
+        },
+        {
+            "city_name": "Tucson"
+        },
+        {
+            "city_name": "Long Beach"
+        },
+        {
+            "city_name": "Colorado Springs"
+        },
+        {
+            "city_name": "Santa Ana"
+        },
+        {
+            "city_name": "Anaheim"
+        },
+        {
+            "city_name": "Raleigh"
+        },
+        {
+            "city_name": "Fresno"
+        },
+        {
+            "city_name": "Cleveland"
+        },
+        {
+            "city_name": "Kansas City"
+        },
+        {
+            "city_name": "Miami"
+        },
+        {
+            "city_name": "Oakland"
+        },
+        {
+            "city_name": "Minneapolis"
+        },
+        {
+            "city_name": "Tulsa"
+        },
+        {
+            "city_name": "Virginia Beach"
+        },
+        {
+            "city_name": "Atlanta"
+        },
+        {
+            "city_name": "Sacramento"
+        },
+        {
+            "city_name": "Pittsburgh"
+        },
+        {
+            "city_name": "Cincinnati"
+        },
+        {
+            "city_name": "St. Louis"
+        },
+        {
+            "city_name": "Greensboro"
+        },
+        {
+            "city_name": "New Orleans"
+        },
+        {
+            "city_name": "Orlando"
+        },
+        {
+            "city_name": "Norfolk"
+        },
+        {
+            "city_name": "Wichita"
+        },
+        {
+            "city_name": "Arlington"
+        },
+        {
+            "city_name": "St. Paul"
+        },
+        {
+            "city_name": "Birmingham"
+        },
+        {
+            "city_name": "Henderson"
+        },
+        {
+            "city_name": "Chandler"
+        },
+        {
+            "city_name": "Irvine"
+        },
+        {
+            "city_name": "Buffalo"
+        },
+        {
+            "city_name": "Jersey City"
+        },
+        {
+            "city_name": "Riverside"
+        },
+        {
+            "city_name": "Toledo"
+        },
+        {
+            "city_name": "Stockton"
+        },
+        {
+            "city_name": "Chula Vista"
+        },
+        {
+            "city_name": "Fort Wayne"
+        },
+        {
+            "city_name": "Honolulu"
+        },
+        {
+            "city_name": "Boise"
+        },
+        {
+            "city_name": "Richmond"
+        },
+        {
+            "city_name": "Baton Rouge"
+        },
+        {
+            "city_name": "Des Moines"
+        },
+        {
+            "city_name": "Albany"
+        },
+        {
+            "city_name": "Tampa"
+        },
+        {
+            "city_name": "Lincoln"
+        }
+    ]
+}

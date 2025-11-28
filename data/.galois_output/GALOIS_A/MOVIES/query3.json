@@ -1,0 +1,34 @@
+{
+    "query_id": 3,
+    "sql": "SELECT m.originaltitle, m.startyear FROM target.movies m WHERE m.director='Richard Thorpe' AND m.startyear > 1950;",
+    "result_set": [
+        {
+            "originaltitle": "The Thin Gray Line",
+            "startyear": 1956
+        },
+        {
+            "originaltitle": "Tip on a Dead Jockey",
+            "startyear": 1957
+        },
+        {
+            "originaltitle": "The Last Challenge",
+            "startyear": 1967
+        },
+        {
+            "originaltitle": "The Honeymoon Machine",
+            "startyear": 1961
+        },
+        {
+            "originaltitle": "Fun in Acapulco",
+            "startyear": 1963
+        },
+        {
+            "originaltitle": "That Funny Feeling",
+            "startyear": 1965
+        },
+        {
+            "originaltitle": "The Truth About Spring",
+            "startyear": 1965
+        }
+    ]
+}

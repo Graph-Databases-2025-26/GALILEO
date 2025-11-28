@@ -425,8 +425,15 @@ class Galois:
 
             clean_sql_query = original_sql
 
-            # Remove any comments from the SQL query
-            clean_sql_query = "\n".join([line for line in clean_sql_query.split('\n') if not line.strip().startswith('--')])
+            clean_lines = []
+            for line in clean_sql_query.split('\n'):
+                stripped = line.strip()
+                if not stripped: continue
+                if stripped.startswith('--'): continue
+                if stripped.startswith('- '): continue  # Handle the specific "- added TRY_CAST" error
+                clean_lines.append(line)
+
+            clean_sql_query = "\n".join(clean_lines)
             #Remove garbage notes before SELECT
             match = re.search(r'\bSELECT\b', clean_sql_query, re.IGNORECASE)
             if match:

@@ -1,0 +1,131 @@
+{
+    "query_id": 27,
+    "sql": "SELECT us.state_name, us.population, us.capital FROM target.usa_state us WHERE us.population > 5000000;",
+    "result_set": [
+        {
+            "state_name": "California",
+            "population": 39512223.0,
+            "capital": "Sacramento"
+        },
+        {
+            "state_name": "Texas",
+            "population": 28995881.0,
+            "capital": "Austin"
+        },
+        {
+            "state_name": "Florida",
+            "population": 21244317.0,
+            "capital": "Tallahassee"
+        },
+        {
+            "state_name": "New York",
+            "population": 19453561.0,
+            "capital": "Albany"
+        },
+        {
+            "state_name": "Pennsylvania",
+            "population": 12802022.0,
+            "capital": "Harrisburg"
+        },
+        {
+            "state_name": "Illinois",
+            "population": 12886155.0,
+            "capital": "Springfield"
+        },
+        {
+            "state_name": "Ohio",
+            "population": 11689100.0,
+            "capital": "Columbus"
+        },
+        {
+            "state_name": "Georgia",
+            "population": 10511131.0,
+            "capital": "Atlanta"
+        },
+        {
+            "state_name": "North Carolina",
+            "population": 10420000.0,
+            "capital": "Raleigh"
+        },
+        {
+            "state_name": "Michigan",
+            "population": 10077331.0,
+            "capital": "Lansing"
+        },
+        {
+            "state_name": "New Jersey",
+            "population": 8944469.0,
+            "capital": "Trenton"
+        },
+        {
+            "state_name": "Virginia",
+            "population": 8531794.0,
+            "capital": "Richmond"
+        },
+        {
+            "state_name": "Washington",
+            "population": 7536752.0,
+            "capital": "Olympia"
+        },
+        {
+            "state_name": "Arizona",
+            "population": 7278717.0,
+            "capital": "Phoenix"
+        },
+        {
+            "state_name": "Massachusetts",
+            "population": 6892503.0,
+            "capital": "Boston"
+        },
+        {
+            "state_name": "Indiana",
+            "population": 6732219.0,
+            "capital": "Indianapolis"
+        },
+        {
+            "state_name": "Tennessee",
+            "population": 6829174.0,
+            "capital": "Nashville"
+        },
+        {
+            "state_name": "Missouri",
+            "population": 6137428.0,
+            "capital": "Jefferson City"
+        },
+        {
+            "state_name": "Maryland",
+            "population": 6042718.0,
+            "capital": "Annapolis"
+        },
+        {
+            "state_name": "Minnesota",
+            "population": 5696306.0,
+            "capital": "Saint Paul"
+        },
+        {
+            "state_name": "Colorado",
+            "population": 5758741.0,
+            "capital": "Denver"
+        },
+        {
+            "state_name": "South Carolina",
+            "population": 5148714.0,
+            "capital": "Columbia"
+        },
+        {
+            "state_name": "Kentucky",
+            "population": 6465264.0,
+            "capital": "Frankfort"
+        },
+        {
+            "state_name": "Oklahoma",
+            "population": 5932100.0,
+            "capital": "Oklahoma City"
+        },
+        {
+            "state_name": "Connecticut",
+            "population": 5677571.0,
+            "capital": "Hartford"
+        }
+    ]
+}

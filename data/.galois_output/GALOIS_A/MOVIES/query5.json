@@ -1,0 +1,78 @@
+{
+    "query_id": 5,
+    "sql": "SELECT m.originaltitle, m.startyear, m.genres, m.birthyear FROM target.movies m WHERE m.director='Steven Spielberg' AND m.startyear > 2000;",
+    "result_set": [
+        {
+            "originaltitle": "Minority Report",
+            "startyear": 2002.0,
+            "genres": "Action,Sci-Fi,Thriller",
+            "birthyear": 1946.0
+        },
+        {
+            "originaltitle": "Catch Me If You Can",
+            "startyear": 2002.0,
+            "genres": "Biography,Crime,Drama",
+            "birthyear": 1946.0
+        },
+        {
+            "originaltitle": "The Terminal",
+            "startyear": 2004.0,
+            "genres": "Drama,Romance",
+            "birthyear": 1946.0
+        },
+        {
+            "originaltitle": "War of the Worlds",
+            "startyear": 2005.0,
+            "genres": "Adventure,Sci-Fi,Thriller",
+            "birthyear": 1946.0
+        },
+        {
+            "originaltitle": "Indiana Jones and the Kingdom of the Crystal Skull",
+            "startyear": 2008.0,
+            "genres": "Action,Adventure,Fantasy",
+            "birthyear": 1946.0
+        },
+        {
+            "originaltitle": "The Adventures of Tintin",
+            "startyear": 2011.0,
+            "genres": "Animation,Action,Adventure",
+            "birthyear": 1946.0
+        },
+        {
+            "originaltitle": "War Horse",
+            "startyear": 2011.0,
+            "genres": "Drama,War",
+            "birthyear": 1946.0
+        },
+        {
+            "originaltitle": "Lincoln",
+            "startyear": 2012.0,
+            "genres": "Biography,Drama,History",
+            "birthyear": 1946.0
+        },
+        {
+            "originaltitle": "Bridge of Spies",
+            "startyear": 2015.0,
+            "genres": "Drama,History,Thriller",
+            "birthyear": 1946.0
+        },
+        {
+            "originaltitle": "The BFG",
+            "startyear": 2016.0,
+            "genres": "Adventure,Fantasy",
+            "birthyear": 1946.0
+        },
+        {
+            "originaltitle": "Ready Player One",
+            "startyear": 2018.0,
+            "genres": "Action,Adventure,Sci-Fi",
+            "birthyear": 1946.0
+        },
+        {
+            "originaltitle": "West Side Story",
+            "startyear": 2021.0,
+            "genres": "Crime,Drama,Musical",
+            "birthyear": 1946.0
+        }
+    ]
+}
