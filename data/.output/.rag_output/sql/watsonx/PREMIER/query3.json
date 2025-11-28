@@ -1,24 +1,5 @@
 {
-    "result_set": [
-        {
-            "player_of_the_match": "Erik ten Hag"
-        },
-        {
-            "player_of_the_match": "Erik ten Hag"
-        },
-        {
-            "player_of_the_match": "Nicolas Jackson"
-        },
-        {
-            "player_of_the_match": "Nicolas Jackson"
-        },
-        {
-            "player_of_the_match": "Cole Palmer"
-        },
-        {
-            "player_of_the_match": "Nicolas Jackson"
-        }
-    ],
-    "time": 26.831,
-    "tokens": 138
+    "result_set": [],
+    "time": 19.396,
+    "tokens": 9
 }

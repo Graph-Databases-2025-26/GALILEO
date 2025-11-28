@@ -24,12 +24,12 @@
         },
         {
             "state_name": "Pennsylvania",
-            "population": 12802022.0,
+            "population": 12802015.0,
             "capital": "Harrisburg"
         },
         {
             "state_name": "Illinois",
-            "population": 12886155.0,
+            "population": 12880632.0,
             "capital": "Springfield"
         },
         {
@@ -64,7 +64,7 @@
         },
         {
             "state_name": "Washington",
-            "population": 7536752.0,
+            "population": 7534193.0,
             "capital": "Olympia"
         },
         {
@@ -84,7 +84,7 @@
         },
         {
             "state_name": "Tennessee",
-            "population": 6829174.0,
+            "population": 6687479.0,
             "capital": "Nashville"
         },
         {
@@ -99,23 +99,18 @@
         },
         {
             "state_name": "Minnesota",
-            "population": 5696306.0,
-            "capital": "Saint Paul"
+            "population": 5639632.0,
+            "capital": "St. Paul"
         },
         {
             "state_name": "Colorado",
-            "population": 5758741.0,
+            "population": 5691287.0,
             "capital": "Denver"
         },
         {
             "state_name": "South Carolina",
-            "population": 5148714.0,
+            "population": 5086476.0,
             "capital": "Columbia"
-        },
-        {
-            "state_name": "Kentucky",
-            "population": 6465264.0,
-            "capital": "Frankfort"
         },
         {
             "state_name": "Oklahoma",
@@ -124,7 +119,7 @@
         },
         {
             "state_name": "Connecticut",
-            "population": 5677571.0,
+            "population": 5676265.0,
             "capital": "Hartford"
         }
     ]

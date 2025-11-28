@@ -3,37 +3,19 @@
     "sql": "SELECT a.name FROM target.airports a WHERE a.elevation_in_ft >= -50 and a.elevation_in_ft <= 50;",
     "result_set": [
         {
-            "name": "Reid-Hillview Airport"
+            "name": "Amsterdam Airport Schiphol"
         },
         {
-            "name": "Palo Alto Airport"
+            "name": "Rotterdam The Hague Airport"
         },
         {
-            "name": "Hayward Executive Airport"
+            "name": "Groningen Airport Eelde"
         },
         {
-            "name": "Livermore Municipal Airport"
+            "name": "Maastricht Aachen Airport"
         },
         {
-            "name": "San Carlos Airport"
-        },
-        {
-            "name": "Gnoss Field"
-        },
-        {
-            "name": "Nut Tree Airport"
-        },
-        {
-            "name": "Rio Vista Municipal Airport"
-        },
-        {
-            "name": "Byron Airport"
-        },
-        {
-            "name": "Concord/Buchanan Field"
-        },
-        {
-            "name": "Napa County Airport"
+            "name": "Texel International Airport"
         }
     ]
 }

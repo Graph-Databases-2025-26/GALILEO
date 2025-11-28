@@ -3,8 +3,8 @@
     "sql": "SELECT avg(gnp), sum(population) FROM target.country WHERE government_form = 'US Territory';",
     "result_set": [
         {
-            "avg(gnp)": 0.0,
-            "sum(population)": 612.0
+            "avg(gnp)": 12214.6,
+            "sum(population)": 4327056.0
         }
     ]
 }

@@ -3,7 +3,7 @@
     "sql": "SELECT p.name, p.party FROM target.world_presidents p WHERE p.country='United States' AND p.party='Republican';",
     "result_set": [
         {
-            "name": "George H.W. Bush",
+            "name": "Donald Trump",
             "party": "Republican"
         },
         {
@@ -11,11 +11,7 @@
             "party": "Republican"
         },
         {
-            "name": "Dwight D. Eisenhower",
-            "party": "Republican"
-        },
-        {
-            "name": "Richard Nixon",
+            "name": "George H.W. Bush",
             "party": "Republican"
         },
         {
@@ -23,7 +19,15 @@
             "party": "Republican"
         },
         {
-            "name": "Gerald R. Ford",
+            "name": "Gerald Ford",
+            "party": "Republican"
+        },
+        {
+            "name": "Richard Nixon",
+            "party": "Republican"
+        },
+        {
+            "name": "Dwight D. Eisenhower",
             "party": "Republican"
         },
         {
@@ -31,11 +35,11 @@
             "party": "Republican"
         },
         {
-            "name": "Warren G. Harding",
+            "name": "Calvin Coolidge",
             "party": "Republican"
         },
         {
-            "name": "Calvin Coolidge",
+            "name": "Warren G. Harding",
             "party": "Republican"
         },
         {
@@ -47,19 +51,11 @@
             "party": "Republican"
         },
         {
-            "name": "Rutherford B. Hayes",
-            "party": "Republican"
-        },
-        {
             "name": "James A. Garfield",
             "party": "Republican"
         },
         {
-            "name": "Chester A. Arthur",
-            "party": "Republican"
-        },
-        {
-            "name": "Abraham Lincoln",
+            "name": "Rutherford B. Hayes",
             "party": "Republican"
         },
         {
@@ -67,15 +63,7 @@
             "party": "Republican"
         },
         {
-            "name": "Theodore Roosevelt",
-            "party": "Republican"
-        },
-        {
-            "name": "William Howard Taft",
-            "party": "Republican"
-        },
-        {
-            "name": "Donald Trump",
+            "name": "Abraham Lincoln",
             "party": "Republican"
         }
     ]

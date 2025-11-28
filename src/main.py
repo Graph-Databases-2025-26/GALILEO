@@ -130,9 +130,9 @@ def main():
     #log_init()
 
     if args.provider:
-        if args.mode in ("pzsql", "pznl") and args.provider == "gemini":
-            LOG.error("You cannot run Palimpzest with Gemini; these modes require WatsonX.")
-            return
+        #if args.mode in ("pzsql", "pznl") and args.provider == "gemini":
+            #LOG.error("You cannot run Palimpzest with Gemini; these modes require WatsonX.")
+            #return
         config.llm_provider = args.provider.lower()
 
     datasets = []

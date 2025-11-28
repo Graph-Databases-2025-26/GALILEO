@@ -3,31 +3,28 @@
     "sql": "SELECT DISTINCT lake_name FROM target.usa_lake WHERE area_squared_km > 750;",
     "result_set": [
         {
+            "lake_name": "Lake Iliamna"
+        },
+        {
+            "lake_name": "Toledo Bend Reservoir"
+        },
+        {
             "lake_name": "Great Salt Lake"
+        },
+        {
+            "lake_name": "Lake Clark"
         },
         {
             "lake_name": "Lake Erie"
         },
         {
-            "lake_name": "Lake Oahe"
-        },
-        {
-            "lake_name": "Lake Pontchartrain"
+            "lake_name": "Lake Ontario"
         },
         {
             "lake_name": "Lake Superior"
         },
         {
             "lake_name": "Lake Michigan"
-        },
-        {
-            "lake_name": "Lake Huron"
-        },
-        {
-            "lake_name": "Lake Sakakawea"
-        },
-        {
-            "lake_name": "Lake Ontario"
         }
     ]
 }

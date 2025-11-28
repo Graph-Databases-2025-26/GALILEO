@@ -4,15 +4,19 @@
     "result_set": [
         {
             "party": "Democratic Action",
-            "num": 7
-        },
-        {
-            "party": "Military",
-            "num": 3
+            "num": 4
         },
         {
             "party": "COPEI",
-            "num": 2
+            "num": 1
+        },
+        {
+            "party": "Independent",
+            "num": 1
+        },
+        {
+            "party": "National Convergence",
+            "num": 1
         }
     ]
 }

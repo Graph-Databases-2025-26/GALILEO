@@ -6,22 +6,64 @@
             "name": "Antonio Guzmán Blanco",
             "party": "Conservative",
             "start_year": 1870.0,
-            "end_year": 1884.0,
+            "end_year": 1877.0,
             "cardinal_number": "1st"
+        },
+        {
+            "name": "Francisco Linares Alcántara",
+            "party": "Conservative",
+            "start_year": 1877.0,
+            "end_year": 1878.0,
+            "cardinal_number": "2nd"
+        },
+        {
+            "name": "José Gregorio Varela",
+            "party": "Conservative",
+            "start_year": 1884.0,
+            "end_year": 1886.0,
+            "cardinal_number": "3rd"
+        },
+        {
+            "name": "Hermógenes López",
+            "party": "Conservative",
+            "start_year": 1887.0,
+            "end_year": 1888.0,
+            "cardinal_number": "4th"
+        },
+        {
+            "name": "Juan Pablo Rojas Paúl",
+            "party": "Conservative",
+            "start_year": 1888.0,
+            "end_year": 1890.0,
+            "cardinal_number": "5th"
+        },
+        {
+            "name": "Raimundo Andueza Palacio",
+            "party": "Conservative",
+            "start_year": 1890.0,
+            "end_year": 1892.0,
+            "cardinal_number": "6th"
+        },
+        {
+            "name": "Guillermo Tell Villegas",
+            "party": "Conservative",
+            "start_year": 1892.0,
+            "end_year": 1892.0,
+            "cardinal_number": "7th"
+        },
+        {
+            "name": "Guillermo Tell Villegas Pulido",
+            "party": "Conservative",
+            "start_year": 1892.0,
+            "end_year": 1893.0,
+            "cardinal_number": "8th"
         },
         {
             "name": "Joaquín Crespo",
             "party": "Conservative",
-            "start_year": 1884.0,
-            "end_year": 1886.0,
-            "cardinal_number": "2nd"
-        },
-        {
-            "name": "Antonio Guzmán Blanco",
-            "party": "Conservative",
-            "start_year": 1879.0,
-            "end_year": 1884.0,
-            "cardinal_number": "3rd"
+            "start_year": 1893.0,
+            "end_year": 1898.0,
+            "cardinal_number": "9th"
         }
     ]
 }

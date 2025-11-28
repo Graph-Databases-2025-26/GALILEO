@@ -1,51 +1,5 @@
 {
     "query_id": 31,
     "sql": "SELECT us.state_name, us.capital, us.population FROM target.usa_state us WHERE us.population > 3000000 AND us.population < 8000000 AND us.area_squared_miles > 50000 order by us.population;",
-    "result_set": [
-        {
-            "state_name": "Michigan",
-            "capital": "Lansing",
-            "population": 3266977.0
-        },
-        {
-            "state_name": "Illinois",
-            "capital": "Springfield",
-            "population": 5128065.0
-        },
-        {
-            "state_name": "Georgia",
-            "capital": "Atlanta",
-            "population": 5354228.0
-        },
-        {
-            "state_name": "North Carolina",
-            "capital": "Raleigh",
-            "population": 5354832.0
-        },
-        {
-            "state_name": "Arizona",
-            "capital": "Phoenix",
-            "population": 7278717.0
-        },
-        {
-            "state_name": "Texas",
-            "capital": "Austin",
-            "population": 7477439.0
-        },
-        {
-            "state_name": "Florida",
-            "capital": "Tallahassee",
-            "population": 7483934.0
-        },
-        {
-            "state_name": "Washington",
-            "capital": "Olympia",
-            "population": 7594934.0
-        },
-        {
-            "state_name": "New York",
-            "capital": "Albany",
-            "population": 7769831.0
-        }
-    ]
+    "result_set": []
 }

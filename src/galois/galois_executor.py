@@ -6,7 +6,7 @@ import re
 from typing import Any, Dict, List, Optional, Set, Tuple
 
 from langchain_core.messages import BaseMessage, HumanMessage, SystemMessage
-
+from sqlglot import parse_one, exp
 from src.config import AppConfig
 from src.llm import get_llm_wrapper
 from src.llm.llm_wrappers import LLMBaseWrapper
@@ -99,14 +99,24 @@ class GaloisExecutor:
         if not all_attributes:
             raise ValueError(f"No attributes found for table '{exact_table}'")
 
-        # --- FIX DEFINITIVO (SAFE MODE) ---
-        # Forziamo il download di TUTTE le colonne della tabella.
-        # Il sistema precedente falliva perché galois.py passava una query parziale (es. SELECT name)
-        # ma poi eseguiva filtri su colonne non presenti (es. WHERE country=...).
-        # Scaricando tutto (attributes = all_attributes) garantiamo che DuckDB abbia
-        # sempre i dati necessari per qualsiasi WHERE, ORDER BY o JOIN locale.
-        attributes = all_attributes
+        query_attributes = self._get_involved_columns(
+            table_name=exact_table,
+            sql_query=sql_query,
+            conditions=conditions_to_push or []
+        )
+
+        # 3. UNIONE INTELLIGENTE:
+        # Se query_attributes è vuoto (es. SELECT *), usa base_attributes.
+        # Altrimenti, unisci le due liste per essere sicuro di avere tutto.
+        if not query_attributes:
+            attributes = all_attributes
+        else:
+            # Unione set per evitare duplicati, poi lista
+            attributes = list(set(all_attributes + query_attributes))
+
         LOG.info(f"[GaloisExecutor] Fetching ALL attributes to ensure schema consistency: {attributes}")
+        if not attributes:
+            raise ValueError(f"No attributes identified for table '{exact_table}'")
         # --- FINE FIX ---
 
         # If no PK is defined, the schema manager may return an empty list.
@@ -173,6 +183,61 @@ class GaloisExecutor:
     # ------------------------------------------------------------------
     # Internal helpers
     # ------------------------------------------------------------------
+
+    #method that does an accurate analysis of the columns used in a query and returns it as a list of strings
+
+    def _get_involved_columns(
+            self,
+            table_name: str,
+            sql_query: str,
+            conditions: List[str]
+    ) -> List[str]:
+        """
+        Estrae TUTTE le colonne citate nella query (SELECT, WHERE, JOIN, ORDER BY).
+        NOTA: Non filtra contro lo schema del DB perché in alcuni casi lo SchemaManager
+        potrebbe non vedere tutte le colonne, ma noi sappiamo che servono per la query.
+        """
+        found_columns = set()
+
+        # Uniamo query e condizioni per dare un contesto completo al parser
+        text_to_analyze = sql_query
+        if conditions:
+            text_to_analyze += " WHERE " + " AND ".join(conditions)
+
+        try:
+            parsed = parse_one(text_to_analyze)
+        except Exception as e:
+            LOG.warning(f"Sqlglot parsing failed: {e}. Returning empty list.")
+            return []
+
+        # Se c'è un asterisco (*), non possiamo indovinare le colonne
+        if parsed.find(exp.Star):
+            LOG.info("Wildcard (*) detected in query.")
+            return []
+
+        # Identifica gli alias della tabella target (es. 'world_presidents' -> 'p')
+        target_aliases = {table_name.lower()}
+        for table in parsed.find_all(exp.Table):
+            if table.name.lower() == table_name.lower() and table.alias:
+                target_aliases.add(table.alias.lower())
+
+        # Estrae le colonne
+        for col in parsed.find_all(exp.Column):
+            col_name = col.name
+            table_ref = col.table
+
+            # Se c'è un prefisso (es. p.country), controlla se 'p' è la nostra tabella
+            if table_ref:
+                if table_ref.lower() in target_aliases:
+                    found_columns.add(col_name)
+            # Se non c'è prefisso, assumiamo sia rilevante
+            else:
+                found_columns.add(col_name)
+
+        # Convertiamo in lista
+        return list(found_columns)
+
+
     def _parse_table_scan_response(
         self,
         raw_response: Any,

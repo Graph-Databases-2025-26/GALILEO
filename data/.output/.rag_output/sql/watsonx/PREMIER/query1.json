@@ -1,90 +1,36 @@
 {
     "result_set": [
         {
-            "day_of_the_week": null,
-            "opponent_team": "Manchester City",
-            "match_date_month": 9,
-            "match_date_year": 2024,
-            "match_date_day": 18
+            "match_date_year": "2024",
+            "match_date_month": "8",
+            "match_date_day": "31",
+            "opponent_team": "Brighton & Hove Albion"
         },
         {
-            "day_of_the_week": "Sat",
-            "opponent_team": "Brighton & Hove Albion",
-            "match_date_month": 8,
-            "match_date_year": 2024,
-            "match_date_day": 24
+            "match_date_year": "2024",
+            "match_date_month": "9",
+            "match_date_day": "15",
+            "opponent_team": "Tottenham Hotspur"
         },
         {
-            "day_of_the_week": "Sat",
-            "opponent_team": "Brighton & Hove Albion",
-            "match_date_month": 9,
-            "match_date_year": 2024,
-            "match_date_day": 28
+            "match_date_year": "2024",
+            "match_date_month": "9",
+            "match_date_day": "22",
+            "opponent_team": "Manchester City"
         },
         {
-            "day_of_the_week": null,
-            "opponent_team": "Leicester City",
-            "match_date_month": 8,
-            "match_date_year": 2024,
-            "match_date_day": 17
+            "match_date_year": "2024",
+            "match_date_month": "9",
+            "match_date_day": "28",
+            "opponent_team": "Leicester City"
         },
         {
-            "day_of_the_week": "Sun",
-            "opponent_team": "Tottenham Hotspur",
-            "match_date_month": 9,
-            "match_date_year": 2024,
-            "match_date_day": 3
-        },
-        {
-            "day_of_the_week": "Sun",
-            "opponent_team": "Leicester City",
-            "match_date_month": 9,
-            "match_date_year": 2024,
-            "match_date_day": 22
-        },
-        {
-            "day_of_the_week": "Sun",
-            "opponent_team": "Everton",
-            "match_date_month": 8,
-            "match_date_year": 2024,
-            "match_date_day": 1
-        },
-        {
-            "day_of_the_week": "Sat",
-            "opponent_team": "Nottingham Forest",
-            "match_date_month": 8,
-            "match_date_year": 2024,
-            "match_date_day": 19
-        },
-        {
-            "day_of_the_week": "Sat",
-            "opponent_team": "Bournemouth",
-            "match_date_month": 9,
-            "match_date_year": 2024,
-            "match_date_day": 15
-        },
-        {
-            "day_of_the_week": "Mon",
-            "opponent_team": "Southampton",
-            "match_date_month": 9,
-            "match_date_year": 2024,
-            "match_date_day": 24
-        },
-        {
-            "day_of_the_week": "Sat",
-            "opponent_team": "Wolverhampton Wanderers",
-            "match_date_month": 9,
-            "match_date_year": 2024,
-            "match_date_day": 15
-        },
-        {
-            "day_of_the_week": "Sun",
-            "opponent_team": "Newcastle United",
-            "match_date_month": 9,
-            "match_date_year": 2024,
-            "match_date_day": 29
+            "match_date_year": "2024",
+            "match_date_month": "8",
+            "match_date_day": "24",
+            "opponent_team": "Aston Villa"
         }
     ],
-    "time": 32.345,
-    "tokens": 814
+    "time": 42.425,
+    "tokens": 204
 }

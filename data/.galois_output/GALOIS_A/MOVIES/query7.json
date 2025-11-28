@@ -3,23 +3,11 @@
     "sql": "SELECT m.startyear, count(*) as numMovies FROM target.movies m WHERE m.director = 'Steven Spielberg' AND m.startyear is not null group by m.startyear;",
     "result_set": [
         {
-            "startyear": 2021.0,
-            "numMovies": 1
-        },
-        {
-            "startyear": 1993.0,
-            "numMovies": 1
-        },
-        {
             "startyear": 2015.0,
             "numMovies": 1
         },
         {
-            "startyear": 1975.0,
-            "numMovies": 1
-        },
-        {
-            "startyear": 1998.0,
+            "startyear": 2012.0,
             "numMovies": 1
         },
         {
@@ -31,7 +19,15 @@
             "numMovies": 1
         },
         {
+            "startyear": 2021.0,
+            "numMovies": 1
+        },
+        {
             "startyear": 1982.0,
+            "numMovies": 1
+        },
+        {
+            "startyear": 1993.0,
             "numMovies": 1
         },
         {
@@ -47,7 +43,11 @@
             "numMovies": 1
         },
         {
-            "startyear": 2012.0,
+            "startyear": 1975.0,
+            "numMovies": 1
+        },
+        {
+            "startyear": 1998.0,
             "numMovies": 1
         }
     ]

@@ -1,9 +1,5 @@
 {
-    "result_set": [
-        {
-            "player_of_the_match": "No player of the match awarded for Manchester United matches in the provided data"
-        }
-    ],
-    "time": 26.632,
-    "tokens": 46
+    "result_set": [],
+    "time": 17.185,
+    "tokens": 9
 }

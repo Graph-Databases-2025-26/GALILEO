@@ -11,6 +11,46 @@
             "party": "Military dictatorship"
         },
         {
+            "name": "Cipriano Castro",
+            "party": "Liberal Party"
+        },
+        {
+            "name": "Eleazar López Contreras",
+            "party": "Military dictatorship"
+        },
+        {
+            "name": "Hugo Chávez",
+            "party": "United Socialist Party of Venezuela"
+        },
+        {
+            "name": "João Goulart",
+            "party": "None"
+        },
+        {
+            "name": "Rafael Caldera",
+            "party": "COPEI"
+        },
+        {
+            "name": "Juan Vicente Gómez",
+            "party": "Military dictatorship"
+        },
+        {
+            "name": "Nicolás Maduro",
+            "party": "United Socialist Party of Venezuela"
+        },
+        {
+            "name": "Rómulo Gallegos",
+            "party": "Democratic Action"
+        },
+        {
+            "name": "Carlos Andrés Pérez",
+            "party": "Democratic Action"
+        },
+        {
+            "name": "Luis Herrera Campins",
+            "party": "COPEI"
+        },
+        {
             "name": "Rafael Caldera",
             "party": "National Convergence"
         },
@@ -23,52 +63,12 @@
             "party": "Military dictatorship"
         },
         {
-            "name": "Eleazar López Contreras",
-            "party": "Military dictatorship"
-        },
-        {
-            "name": "Rómulo Gallegos",
-            "party": "Democratic Action"
-        },
-        {
-            "name": "Carlos Andrés Pérez",
-            "party": "Democratic Action"
-        },
-        {
-            "name": "Rafael Caldera",
-            "party": "COPEI"
-        },
-        {
-            "name": "Luis Herrera Campins",
-            "party": "COPEI"
-        },
-        {
-            "name": "Juan Vicente Gómez",
-            "party": "Military dictatorship"
-        },
-        {
-            "name": "Antonio Guzmán Blanco",
-            "party": "Liberal Party"
-        },
-        {
-            "name": "Hugo Chávez",
-            "party": "United Socialist Party of Venezuela"
-        },
-        {
-            "name": "João Goulart",
-            "party": "None"
-        },
-        {
             "name": "Jaime Lusinchi",
             "party": "Democratic Action"
         },
         {
-            "name": "Interim President Juan Guaidó",
-            "party": "Popular Will"
-        },
-        {
-            "name": "Nicolás Maduro",
-            "party": "United Socialist Party of Venezuela"
+            "name": "Antonio Guzmán Blanco",
+            "party": "Liberal Party"
         }
     ]
 }

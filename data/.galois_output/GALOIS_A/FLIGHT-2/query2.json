@@ -3,7 +3,7 @@
     "sql": "SELECT count(*) FROM target.usa_flights f;",
     "result_set": [
         {
-            "count_star()": 20
+            "count_star()": 31
         }
     ]
 }

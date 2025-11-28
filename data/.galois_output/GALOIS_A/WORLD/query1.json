@@ -3,7 +3,7 @@
     "sql": "SELECT count(distinct government_form) FROM target.country WHERE continent = 'Africa';",
     "result_set": [
         {
-            "count(DISTINCT government_form)": 15
+            "count(DISTINCT government_form)": 8
         }
     ]
 }
