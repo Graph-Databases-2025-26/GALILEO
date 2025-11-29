@@ -27,7 +27,7 @@
     {
       "name": "target_usa_airports",
       "keys": [
-        "city"
+        "airportcode"
       ],
       "columns": [
         {
@@ -55,7 +55,8 @@
     {
       "name": "target_usa_flights",
       "keys": [
-        "airline"
+        "airline",
+        "flightno"
       ],
       "columns": [
         {
@@ -103,7 +104,7 @@
     {
       "name": "usa_airports",
       "keys": [
-        "city "
+        "airportcode "
       ],
       "columns": [
         {
@@ -131,7 +132,8 @@
     {
       "name": "usa_flights",
       "keys": [
-        "airline"
+        "airline",
+        " flightno"
       ],
       "columns": [
         {

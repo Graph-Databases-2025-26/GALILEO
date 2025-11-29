@@ -3,7 +3,10 @@
     {
       "name": "premier_league_2024_2025_arsenal_matches",
       "keys": [
-        "day_of_the_week"
+        "opponent_team",
+        "match_date_day",
+        "match_date_month",
+        "match_date_year"
       ],
       "columns": [
         {
@@ -51,7 +54,8 @@
     {
       "name": "premier_league_2024_2025_match_result",
       "keys": [
-        "oid"
+        "home_team",
+        "away_team"
       ],
       "columns": [
         {

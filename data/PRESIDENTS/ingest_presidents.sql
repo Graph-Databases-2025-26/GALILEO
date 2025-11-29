@@ -6,9 +6,7 @@ CREATE TABLE target.world_presidents (
     end_year INT,
     cardinal_number STRING,
     party STRING,
-    country STRING,
-
-    PRIMARY KEY (cardinal_number, country)
+    country STRING
 );
 
 COPY target.world_presidents FROM 'world_presidents.csv';

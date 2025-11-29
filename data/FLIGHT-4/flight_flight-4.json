@@ -3,7 +3,7 @@
     {
       "name": "airlines",
       "keys": [
-        "iata"
+        "alid"
       ],
       "columns": [
         {
@@ -39,7 +39,7 @@
     {
       "name": "airports",
       "keys": [
-        "iata"
+        "apid"
       ],
       "columns": [
         {
@@ -123,7 +123,7 @@
     {
       "name": "target_airlines",
       "keys": [
-        "iata"
+        "alid"
       ],
       "columns": [
         {
@@ -159,7 +159,7 @@
     {
       "name": "target_airports",
       "keys": [
-        "iata"
+        "apid"
       ],
       "columns": [
         {

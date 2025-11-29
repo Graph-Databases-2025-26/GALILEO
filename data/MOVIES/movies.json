@@ -1,9 +1,9 @@
 {
   "tables": [
     {
-      "name": "movie",
+      "name": "movies",
       "keys": [
-        "primarytitle"
+        "originaltitle"
       ],
       "columns": [
         {

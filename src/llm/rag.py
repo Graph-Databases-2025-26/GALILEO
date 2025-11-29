@@ -4,7 +4,7 @@ from langchain_community.vectorstores import FAISS
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 
 from src.config import Config_Loader
-from src import LOG
+from src.utils import LOG
 from src.utils.constants import *
 
 

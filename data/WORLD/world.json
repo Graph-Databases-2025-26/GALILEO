@@ -99,7 +99,8 @@
     {
       "name": "country_language",
       "keys": [
-        "country_code_3_letters"
+        "country_code_3_letters",
+        "language"
       ],
       "columns": [
         {
@@ -219,7 +220,8 @@
     {
       "name": "target_country_language",
       "keys": [
-        "country_code_3_letters"
+        "country_code_3_letters",
+        "language"
       ],
       "columns": [
         {

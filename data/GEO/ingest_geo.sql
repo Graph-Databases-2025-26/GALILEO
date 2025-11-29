@@ -1,65 +1,11 @@
 CREATE SCHEMA IF NOT EXISTS target;
-
-CREATE TABLE target.usa_state(
-    state_name VARCHAR PRIMARY KEY,
-    population BIGINT,
-    area_squared_miles DOUBLE PRECISION,
-    country_name VARCHAR,
-    capital VARCHAR,
-    density DOUBLE PRECISION
-);
-
-CREATE TABLE target.usa_highlow(
-    state_name VARCHAR PRIMARY KEY,
-    highest_elevation_in_meters BIGINT,
-    lowest_point VARCHAR,
-    highest_point VARCHAR,
-    lowest_elevation_in_meters BIGINT,
-    
-);
-
-CREATE TABLE target.usa_city(
-    city_name VARCHAR,
-    population BIGINT,
-    country_name VARCHAR,
-    state_name VARCHAR NOT NULL,
-    
-    PRIMARY KEY(city_name, state_name),
-);
-
-CREATE TABLE target.usa_border_info(
-    state_name VARCHAR NOT NULL,
-    border VARCHAR NOT NULL,
-    
-    PRIMARY KEY(state_name, border),
-);
-
-CREATE TABLE target.usa_lake(
-    lake_name VARCHAR,
-    area_squared_km DOUBLE PRECISION,
-    country_name VARCHAR,
-    state_name VARCHAR NOT NULL,
-    
-    PRIMARY KEY(lake_name, state_name),
-);
-
-CREATE TABLE target.usa_mountain(
-    mountain_name VARCHAR,
-    mountain_altitude_in_meters BIGINT,
-    country_name VARCHAR,
-    state_name VARCHAR NOT NULL,
-    
-    PRIMARY KEY(mountain_name, state_name),
-);
-
-CREATE TABLE target.usa_river(
-    river_name VARCHAR,
-    length_in_km BIGINT,
-    country_name VARCHAR,
-    usa_state_traversed VARCHAR NOT NULL,
-    
-    PRIMARY KEY(river_name, usa_state_traversed),
-);
+CREATE TABLE target.usa_border_info(state_name VARCHAR, border VARCHAR);
+CREATE TABLE target.usa_city(city_name VARCHAR, population BIGINT, country_name VARCHAR, state_name VARCHAR);
+CREATE TABLE target.usa_highlow(state_name VARCHAR, highest_elevation_in_meters BIGINT, lowest_point VARCHAR, highest_point VARCHAR, lowest_elevation_in_meters BIGINT);
+CREATE TABLE target.usa_lake(lake_name VARCHAR, area_squared_km DOUBLE, country_name VARCHAR, state_name VARCHAR);
+CREATE TABLE target.usa_mountain(mountain_name VARCHAR, mountain_altitude_in_meters BIGINT, country_name VARCHAR, state_name VARCHAR);
+CREATE TABLE target.usa_river(river_name VARCHAR, length_in_km BIGINT, country_name VARCHAR, usa_state_traversed VARCHAR);
+CREATE TABLE target.usa_state(state_name VARCHAR, population BIGINT, area_squared_miles DOUBLE, country_name VARCHAR, capital VARCHAR, density DOUBLE);
 
 COPY target.usa_border_info FROM 'usa_border_info.csv';
 COPY target.usa_city FROM 'usa_city.csv';
