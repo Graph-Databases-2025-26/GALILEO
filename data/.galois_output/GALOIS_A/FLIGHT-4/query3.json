@@ -1,0 +1,36 @@
+{
+    "query_id": 3,
+    "sql": "SELECT name, city, country, elevation_in_ft FROM target.airports WHERE city = 'New York';",
+    "result_set": [
+        {
+            "name": "John F Kennedy International Airport",
+            "city": "New York",
+            "country": "United States",
+            "elevation_in_ft": 13
+        },
+        {
+            "name": "LaGuardia Airport",
+            "city": "New York",
+            "country": "United States",
+            "elevation_in_ft": 21
+        },
+        {
+            "name": "Newark Liberty International Airport",
+            "city": "New York",
+            "country": "United States",
+            "elevation_in_ft": 18
+        },
+        {
+            "name": "Westchester County Airport",
+            "city": "New York",
+            "country": "United States",
+            "elevation_in_ft": 439
+        },
+        {
+            "name": "Teterboro Airport",
+            "city": "New York",
+            "country": "United States",
+            "elevation_in_ft": 8
+        }
+    ]
+}

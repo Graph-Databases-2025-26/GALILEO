@@ -1,0 +1,46 @@
+{
+    "query_id": 6,
+    "sql": "SELECT m.originaltitle, m.startyear, m.genres, m.birthyear, m.deathyear, m.runtimeminutes FROM target.movies m WHERE m.director = 'Steven Spielberg' AND m.startyear > 1990 AND m.startyear < 2000;",
+    "result_set": [
+        {
+            "originaltitle": "Jurassic Park",
+            "startyear": 1993.0,
+            "genres": "Action,Adventure,Sci-Fi",
+            "birthyear": 1946.0,
+            "deathyear": "nan",
+            "runtimeminutes": 127.0
+        },
+        {
+            "originaltitle": "Schindler's List",
+            "startyear": 1993.0,
+            "genres": "Biography,Drama,History",
+            "birthyear": 1946.0,
+            "deathyear": "nan",
+            "runtimeminutes": 195.0
+        },
+        {
+            "originaltitle": "The Lost World: Jurassic Park",
+            "startyear": 1997.0,
+            "genres": "Action,Adventure,Sci-Fi",
+            "birthyear": 1946.0,
+            "deathyear": "nan",
+            "runtimeminutes": 129.0
+        },
+        {
+            "originaltitle": "Amistad",
+            "startyear": 1997.0,
+            "genres": "Drama,History",
+            "birthyear": 1946.0,
+            "deathyear": "nan",
+            "runtimeminutes": 154.0
+        },
+        {
+            "originaltitle": "Saving Private Ryan",
+            "startyear": 1998.0,
+            "genres": "Drama,War",
+            "birthyear": 1946.0,
+            "deathyear": "nan",
+            "runtimeminutes": 169.0
+        }
+    ]
+}

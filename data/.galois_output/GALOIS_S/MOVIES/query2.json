@@ -1,0 +1,51 @@
+{
+    "query_id": 2,
+    "sql": "SELECT m.originaltitle FROM target.movies m WHERE m.director='Steven Spielberg';",
+    "result_set": [
+        {
+            "originaltitle": "Jaws"
+        },
+        {
+            "originaltitle": "Amistad"
+        },
+        {
+            "originaltitle": "A.I. Artificial Intelligence"
+        },
+        {
+            "originaltitle": "Minority Report"
+        },
+        {
+            "originaltitle": "The Terminal"
+        },
+        {
+            "originaltitle": "War of the Worlds"
+        },
+        {
+            "originaltitle": "Munich"
+        },
+        {
+            "originaltitle": "Indiana Jones and the Kingdom of the Crystal Skull"
+        },
+        {
+            "originaltitle": "The Adventures of Tintin"
+        },
+        {
+            "originaltitle": "Empire of the Sun"
+        },
+        {
+            "originaltitle": "Hook"
+        },
+        {
+            "originaltitle": "Schindler's List"
+        },
+        {
+            "originaltitle": "The Color Purple"
+        },
+        {
+            "originaltitle": "Duel"
+        },
+        {
+            "originaltitle": "The Sugarland Express"
+        }
+    ]
+}

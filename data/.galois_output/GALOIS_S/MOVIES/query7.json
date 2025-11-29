@@ -1,0 +1,98 @@
+{
+    "query_id": 7,
+    "sql": "SELECT m.startyear, count(*) as numMovies FROM target.movies m WHERE m.director = 'Steven Spielberg' AND m.startyear is not null group by m.startyear;",
+    "result_set": [
+        {
+            "startyear": 1997,
+            "numMovies": 1
+        },
+        {
+            "startyear": 2001,
+            "numMovies": 1
+        },
+        {
+            "startyear": 2004,
+            "numMovies": 1
+        },
+        {
+            "startyear": 1993,
+            "numMovies": 1
+        },
+        {
+            "startyear": 1974,
+            "numMovies": 1
+        },
+        {
+            "startyear": 2011,
+            "numMovies": 1
+        },
+        {
+            "startyear": 1987,
+            "numMovies": 2
+        },
+        {
+            "startyear": 1991,
+            "numMovies": 1
+        },
+        {
+            "startyear": 1983,
+            "numMovies": 1
+        },
+        {
+            "startyear": 2008,
+            "numMovies": 1
+        },
+        {
+            "startyear": 1977,
+            "numMovies": 1
+        },
+        {
+            "startyear": 1975,
+            "numMovies": 1
+        },
+        {
+            "startyear": 1984,
+            "numMovies": 2
+        },
+        {
+            "startyear": 1989,
+            "numMovies": 2
+        },
+        {
+            "startyear": 2002,
+            "numMovies": 1
+        },
+        {
+            "startyear": 1971,
+            "numMovies": 1
+        },
+        {
+            "startyear": 1982,
+            "numMovies": 1
+        },
+        {
+            "startyear": 1985,
+            "numMovies": 2
+        },
+        {
+            "startyear": 1979,
+            "numMovies": 1
+        },
+        {
+            "startyear": 1981,
+            "numMovies": 1
+        },
+        {
+            "startyear": 2005,
+            "numMovies": 2
+        },
+        {
+            "startyear": 1988,
+            "numMovies": 1
+        },
+        {
+            "startyear": 1986,
+            "numMovies": 1
+        }
+    ]
+}

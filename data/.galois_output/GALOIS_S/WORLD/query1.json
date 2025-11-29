@@ -1,0 +1,9 @@
+{
+    "query_id": 1,
+    "sql": "SELECT count(distinct government_form) FROM target.country WHERE continent = 'Africa';",
+    "result_set": [
+        {
+            "count(DISTINCT government_form)": 7
+        }
+    ]
+}

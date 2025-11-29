@@ -1,0 +1,51 @@
+{
+    "query_id": 1,
+    "sql": "SELECT m.originaltitle FROM target.movies m WHERE m.director='Richard Thorpe';",
+    "result_set": [
+        {
+            "originaltitle": "Ivanhoe"
+        },
+        {
+            "originaltitle": "Knights of the Round Table"
+        },
+        {
+            "originaltitle": "All the Brothers Were Valiant"
+        },
+        {
+            "originaltitle": "Athena"
+        },
+        {
+            "originaltitle": "The Student Prince"
+        },
+        {
+            "originaltitle": "The Prodigal"
+        },
+        {
+            "originaltitle": "Tip on a Dead Jockey"
+        },
+        {
+            "originaltitle": "The Last Outpost"
+        },
+        {
+            "originaltitle": "Carbine Williams"
+        },
+        {
+            "originaltitle": "It's a Dog's Life"
+        },
+        {
+            "originaltitle": "Ten Thousand Bedrooms"
+        },
+        {
+            "originaltitle": "Jailhouse Rock"
+        },
+        {
+            "originaltitle": "The Truth About Spring"
+        },
+        {
+            "originaltitle": "That Funny Feeling"
+        },
+        {
+            "originaltitle": "The Last Challenge"
+        }
+    ]
+}

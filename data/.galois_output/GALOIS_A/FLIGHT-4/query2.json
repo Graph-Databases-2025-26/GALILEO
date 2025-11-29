@@ -1,0 +1,9 @@
+{
+    "query_id": 2,
+    "sql": "SELECT max(elevation_in_ft) FROM target.airports WHERE country = 'Iceland';",
+    "result_set": [
+        {
+            "max(elevation_in_ft)": 326.0
+        }
+    ]
+}

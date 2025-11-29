@@ -1,0 +1,74 @@
+{
+    "query_id": 1,
+    "sql": "SELECT DISTINCT p.name, p.party FROM target.world_presidents p WHERE p.country='Venezuela';",
+    "result_set": [
+        {
+            "name": "Rómulo Betancourt",
+            "party": "Democratic Action"
+        },
+        {
+            "name": "Marcos Pérez Jiménez",
+            "party": "Military dictatorship"
+        },
+        {
+            "name": "Cipriano Castro",
+            "party": "Liberal Party"
+        },
+        {
+            "name": "Eleazar López Contreras",
+            "party": "Military dictatorship"
+        },
+        {
+            "name": "Hugo Chávez",
+            "party": "United Socialist Party of Venezuela"
+        },
+        {
+            "name": "João Goulart",
+            "party": "None"
+        },
+        {
+            "name": "Rafael Caldera",
+            "party": "COPEI"
+        },
+        {
+            "name": "Juan Vicente Gómez",
+            "party": "Military dictatorship"
+        },
+        {
+            "name": "Nicolás Maduro",
+            "party": "United Socialist Party of Venezuela"
+        },
+        {
+            "name": "Rómulo Gallegos",
+            "party": "Democratic Action"
+        },
+        {
+            "name": "Carlos Andrés Pérez",
+            "party": "Democratic Action"
+        },
+        {
+            "name": "Luis Herrera Campins",
+            "party": "COPEI"
+        },
+        {
+            "name": "Rafael Caldera",
+            "party": "National Convergence"
+        },
+        {
+            "name": "Germán Suárez Flamerich",
+            "party": "Military dictatorship"
+        },
+        {
+            "name": "Isaías Medina Angarita",
+            "party": "Military dictatorship"
+        },
+        {
+            "name": "Jaime Lusinchi",
+            "party": "Democratic Action"
+        },
+        {
+            "name": "Antonio Guzmán Blanco",
+            "party": "Liberal Party"
+        }
+    ]
+}

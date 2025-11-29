@@ -1,0 +1,5 @@
+{
+    "query_id": 4,
+    "sql": "SELECT population FROM target.usa_city WHERE city_name = 'tempe';",
+    "result_set": []
+}

@@ -1,0 +1,54 @@
+{
+    "query_id": 29,
+    "sql": "SELECT us.state_name, us.capital, us.density, us.population FROM target.usa_state us WHERE us.population > 5000000 AND us.density < 1000 AND us.area_squared_miles < 50000;",
+    "result_set": [
+        {
+            "state_name": "Pennsylvania",
+            "capital": "Harrisburg",
+            "density": 278.2,
+            "population": 12802023.0
+        },
+        {
+            "state_name": "Ohio",
+            "capital": "Columbus",
+            "density": 260.8,
+            "population": 11689100.0
+        },
+        {
+            "state_name": "Virginia",
+            "capital": "Richmond",
+            "density": 199.2,
+            "population": 8517685.0
+        },
+        {
+            "state_name": "Massachusetts",
+            "capital": "Boston",
+            "density": 652.1,
+            "population": 6892503.0
+        },
+        {
+            "state_name": "Indiana",
+            "capital": "Indianapolis",
+            "density": 184.9,
+            "population": 6732219.0
+        },
+        {
+            "state_name": "Tennessee",
+            "capital": "Nashville",
+            "density": 162.3,
+            "population": 6838452.0
+        },
+        {
+            "state_name": "Maryland",
+            "capital": "Annapolis",
+            "density": 487.4,
+            "population": 6045837.0
+        },
+        {
+            "state_name": "South Carolina",
+            "capital": "Columbia",
+            "density": 160.7,
+            "population": 5148714.0
+        }
+    ]
+}

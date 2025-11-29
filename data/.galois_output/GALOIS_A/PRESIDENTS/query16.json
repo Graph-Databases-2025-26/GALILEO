@@ -1,0 +1,9 @@
+{
+    "query_id": 16,
+    "sql": "SELECT count(p.party) FROM target.world_presidents p WHERE p.country='United States' AND p.party='Republican';",
+    "result_set": [
+        {
+            "count(p.party)": 16
+        }
+    ]
+}

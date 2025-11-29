@@ -1,0 +1,21 @@
+{
+    "query_id": 1,
+    "sql": "SELECT a.name FROM target.airports a WHERE a.elevation_in_ft >= -50 and a.elevation_in_ft <= 50;",
+    "result_set": [
+        {
+            "name": "Amsterdam Airport Schiphol"
+        },
+        {
+            "name": "Rotterdam The Hague Airport"
+        },
+        {
+            "name": "Groningen Airport Eelde"
+        },
+        {
+            "name": "Maastricht Aachen Airport"
+        },
+        {
+            "name": "Texel International Airport"
+        }
+    ]
+}

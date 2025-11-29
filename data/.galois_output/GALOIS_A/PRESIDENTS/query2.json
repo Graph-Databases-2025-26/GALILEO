@@ -1,0 +1,34 @@
+{
+    "query_id": 2,
+    "sql": "SELECT p.name, p.party FROM target.world_presidents p WHERE p.country='Venezuela' AND p.party='Liberal';",
+    "result_set": [
+        {
+            "name": "Antonio Guzmán Blanco",
+            "party": "Liberal"
+        },
+        {
+            "name": "Antonio Guzmán Blanco",
+            "party": "Liberal"
+        },
+        {
+            "name": "Antonio Guzmán Blanco",
+            "party": "Liberal"
+        },
+        {
+            "name": "Rómulo Gallegos",
+            "party": "Liberal"
+        },
+        {
+            "name": "Rómulo Betancourt",
+            "party": "Liberal"
+        },
+        {
+            "name": "Carlos Andrés Pérez",
+            "party": "Liberal"
+        },
+        {
+            "name": "Carlos Andrés Pérez",
+            "party": "Liberal"
+        }
+    ]
+}

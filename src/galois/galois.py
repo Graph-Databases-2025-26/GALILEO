@@ -1,4 +1,5 @@
 import json
+import re
 from pathlib import Path
 from typing import Literal, Any, List, Dict, cast
 import duckdb
@@ -146,8 +147,29 @@ class Galois:
                 t_alias = t_info['alias']
                 LOG.info(f"--- FETCHING DATA FOR TABLE: {t_name} (Alias: {t_alias}) ---")
 
-                #build a base  query for the extraction
-                simple_query = f"SELECT * FROM {t_name}"
+                #retrieve the target columns for that table
+                target_cols = plan['select_columns']
+
+                if len(tables_to_scan) == 1 and target_cols:
+                    # Clean the columns (remove aggregations like avg(gnp) -> gnp)
+                    clean_cols = []
+                    for c in target_cols:
+                        # If count(*), ignore it
+                        if "*" in c: continue
+                        # Extract "gnp" from "avg(gnp)"
+                        match = re.search(r'\((.*?)\)', c)
+                        if match:
+                            clean_cols.append(match.group(1))
+                        else:
+                            clean_cols.append(c)
+
+                    if clean_cols:
+                        cols_str = ", ".join(clean_cols)
+                        simple_query = f"SELECT {cols_str} FROM {t_name}"
+                    else:
+                        simple_query = f"SELECT * FROM {t_name}"
+                else:
+                    simple_query = f"SELECT * FROM {t_name}"
 
                 #filter the WHERE conditions that are addicted to this particular alias
                 current_push_conditions = []
@@ -179,32 +201,6 @@ class Galois:
             results = self.perform_local_join_and_query(plan['original_query'], data_lake)
             return results
 
-            ##############################
-
-            """
-            results= []
-            # Decision on table or key scan
-            if final_strategy == "TABLE":
-                #DO TABLE SCAN
-                executor = GaloisExecutor(self.config, self.dataset)
-                LOG.info(f"Executing Table Scan using GaloisExecutor instance for query {plan['original_query']}...")
-                results = executor.table_scan(sql_query=plan['original_query'],  conditions_to_push=pushed_conditions)
-
-            elif final_strategy == "KEY":
-                #DO KEY SCAN
-                LOG.info("For that query the system will apply KEY SCAN")
-
-            else:
-                LOG.info("LLM  didn't reply with a 'TABLE' OR 'KEY'")
-
-            #POST PROCESSING
-            if residual_conditions and results:
-                LOG.info(f"Post-processing required for conditions: {residual_conditions}")
-                post_processor = GaloisPostProcessor()
-                results = post_processor.filter_results(results, residual_conditions)
-
-            return results
-            """
         except Exception as e:
             LOG.error(f"Error during the plan selection execution of the query {plan['original_query']} : {e}")
             raise e
@@ -360,14 +356,24 @@ class Galois:
                 else:
                     df = pd.DataFrame(rows)
 
-                    # --- AUTO-CASTING ---
+                    # --- SMART AUTO-CASTING ---
                     # The LLM often returns values as strings ("1000", "N/A"), while DuckDB expects numeric types.
                     # Try to convert columns to numeric where possible.
                     for col in df.columns:
                         # Try converting to numeric. If it fails (e.g. "Texas"), leave as-is.
-                        df[col] = pd.to_numeric(df[col], errors='ignore')
-                    # ---------------------------
-                    # --- STRING CLEANING (Trim whitespace) ---
+                        numeric_series = pd.to_numeric(df[col], errors='coerce')
+
+                        #counts the NaN values
+                        nan_count = numeric_series.isna().sum()
+                        total_count = len(df)
+
+                        #if more than 50% of the values are NaN the column is not a numeric one
+                        if total_count > 0 and (nan_count / total_count) > 0.5:
+                            df[col] = df[col].astype(str)
+                        else:
+                            # otherwise probably is numeric, using the cionverted one.
+                            df[col] = numeric_series
+
                     # Important for JOINs to work (e.g. "Arizona " -> "Arizona")
                     # If a column is of type 'object' (string), apply strip()
                     for col in df.select_dtypes(include=['object']).columns:
@@ -384,7 +390,24 @@ class Galois:
             #print(con.execute("SELECT * FROM usa_state LIMIT 5").df())
             #print("-----------------------\n")
 
-            clean_sql_query = original_sql.replace("target.", "")
+            clean_sql_query = original_sql
+
+            clean_lines = []
+            for line in clean_sql_query.split('\n'):
+                stripped = line.strip()
+                if not stripped: continue
+                if stripped.startswith('--'): continue
+                if stripped.startswith('- '): continue  # Handle the specific "- added TRY_CAST" error
+                clean_lines.append(line)
+
+            clean_sql_query = "\n".join(clean_lines)
+            #Remove garbage notes before SELECT
+            match = re.search(r'\bSELECT\b', clean_sql_query, re.IGNORECASE)
+            if match:
+                clean_sql_query = clean_sql_query[match.start():]
+
+            #remove the target. prefix from the original query
+            clean_sql_query = clean_sql_query.replace("target.", "")
             LOG.info(f"Executing Local SQL Query: {clean_sql_query}")
             # execute original query
             result_df = con.execute(clean_sql_query).df()

@@ -1,0 +1,138 @@
+{
+    "query_id": 10,
+    "sql": "SELECT DISTINCT lake_name FROM target.usa_lake WHERE area_squared_km > 450;",
+    "result_set": [
+        {
+            "lake_name": "Lake Santeetlah"
+        },
+        {
+            "lake_name": "Lake Cumberland"
+        },
+        {
+            "lake_name": "Great Salt Lake"
+        },
+        {
+            "lake_name": "Lake Shasta"
+        },
+        {
+            "lake_name": "Lake McSwain"
+        },
+        {
+            "lake_name": "Lake Powell"
+        },
+        {
+            "lake_name": "Lake Seminole"
+        },
+        {
+            "lake_name": "Lake Lewis and Clark"
+        },
+        {
+            "lake_name": "Lake New Melones"
+        },
+        {
+            "lake_name": "Lake Berryessa"
+        },
+        {
+            "lake_name": "Lake Livingston"
+        },
+        {
+            "lake_name": "Lake Fontana"
+        },
+        {
+            "lake_name": "Lake Center Hill"
+        },
+        {
+            "lake_name": "Lake Keowee"
+        },
+        {
+            "lake_name": "Lake Coeur d'Alene"
+        },
+        {
+            "lake_name": "Lake Flathead"
+        },
+        {
+            "lake_name": "Lake Mohave"
+        },
+        {
+            "lake_name": "Lake Hartwell"
+        },
+        {
+            "lake_name": "Lake Sidney Lanier"
+        },
+        {
+            "lake_name": "Lake Glenville"
+        },
+        {
+            "lake_name": "Lake Dale Hollow"
+        },
+        {
+            "lake_name": "Lake Jocassee"
+        },
+        {
+            "lake_name": "Lake Amador"
+        },
+        {
+            "lake_name": "Lake Oroville"
+        },
+        {
+            "lake_name": "Lake Mead"
+        },
+        {
+            "lake_name": "Lake Eufaula"
+        },
+        {
+            "lake_name": "Lake Havasu"
+        },
+        {
+            "lake_name": "Lake Francis Case"
+        },
+        {
+            "lake_name": "Lake Thurmond"
+        },
+        {
+            "lake_name": "Lake Allatoona"
+        },
+        {
+            "lake_name": "Lake Norman"
+        },
+        {
+            "lake_name": "Lake Superior"
+        },
+        {
+            "lake_name": "Lake Huron"
+        },
+        {
+            "lake_name": "Lake Michigan"
+        },
+        {
+            "lake_name": "Lake Sakakawea"
+        },
+        {
+            "lake_name": "Lake Russell"
+        },
+        {
+            "lake_name": "Lake Don Pedro"
+        },
+        {
+            "lake_name": "Lake Erie"
+        },
+        {
+            "lake_name": "Lake Oahe"
+        },
+        {
+            "lake_name": "Lake Sharpe"
+        },
+        {
+            "lake_name": "Lake Pardee"
+        },
+        {
+            "lake_name": "Lake Ontario"
+        },
+        {
+            "lake_name": "Lake McClure"
+        },
+        {
+            "lake_name": "Lake Camanche"
+        }
+    ]
+}

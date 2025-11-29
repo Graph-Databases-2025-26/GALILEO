@@ -1,0 +1,159 @@
+{
+    "query_id": 19,
+    "sql": "SELECT DISTINCT capital FROM target.usa_state;",
+    "result_set": [
+        {
+            "capital": "Richmond"
+        },
+        {
+            "capital": "Lansing"
+        },
+        {
+            "capital": "Austin"
+        },
+        {
+            "capital": "Boise"
+        },
+        {
+            "capital": "Annapolis"
+        },
+        {
+            "capital": "Carson City"
+        },
+        {
+            "capital": "Juneau"
+        },
+        {
+            "capital": "Phoenix"
+        },
+        {
+            "capital": "Frankfort"
+        },
+        {
+            "capital": "Augusta"
+        },
+        {
+            "capital": "Harrisburg"
+        },
+        {
+            "capital": "Indianapolis"
+        },
+        {
+            "capital": "Trenton"
+        },
+        {
+            "capital": "nan"
+        },
+        {
+            "capital": "Des Moines"
+        },
+        {
+            "capital": "Jefferson City"
+        },
+        {
+            "capital": "Albany"
+        },
+        {
+            "capital": "Charleston"
+        },
+        {
+            "capital": "Honolulu"
+        },
+        {
+            "capital": "St. Paul"
+        },
+        {
+            "capital": "Nashville"
+        },
+        {
+            "capital": "Concord"
+        },
+        {
+            "capital": "Providence"
+        },
+        {
+            "capital": "Topeka"
+        },
+        {
+            "capital": "Baton Rouge"
+        },
+        {
+            "capital": "Bismarck"
+        },
+        {
+            "capital": "Madison"
+        },
+        {
+            "capital": "Pierre"
+        },
+        {
+            "capital": "Cheyenne"
+        },
+        {
+            "capital": "Hartford"
+        },
+        {
+            "capital": "Salem"
+        },
+        {
+            "capital": "Montpelier"
+        },
+        {
+            "capital": "Olympia"
+        },
+        {
+            "capital": "Boston"
+        },
+        {
+            "capital": "Columbus"
+        },
+        {
+            "capital": "Montgomery"
+        },
+        {
+            "capital": "Sacramento"
+        },
+        {
+            "capital": "Springfield"
+        },
+        {
+            "capital": "Lincoln"
+        },
+        {
+            "capital": "Santa Fe"
+        },
+        {
+            "capital": "Oklahoma City"
+        },
+        {
+            "capital": "Salt Lake City"
+        },
+        {
+            "capital": "Little Rock"
+        },
+        {
+            "capital": "Dover"
+        },
+        {
+            "capital": "Atlanta"
+        },
+        {
+            "capital": "Raleigh"
+        },
+        {
+            "capital": "Denver"
+        },
+        {
+            "capital": "Tallahassee"
+        },
+        {
+            "capital": "Jackson"
+        },
+        {
+            "capital": "Helena"
+        },
+        {
+            "capital": "Columbia"
+        }
+    ]
+}

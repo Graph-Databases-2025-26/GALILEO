@@ -1,0 +1,76 @@
+{
+    "query_id": 6,
+    "sql": "SELECT p.name, p.start_year, p.end_year, p.cardinal_number, p.party FROM target.world_presidents p WHERE p.country='Venezuela';",
+    "result_set": [
+        {
+            "name": "Hugo Chávez",
+            "start_year": 1999.0,
+            "end_year": 2013.0,
+            "cardinal_number": "1st",
+            "party": "PSUV"
+        },
+        {
+            "name": "Nicolás Maduro",
+            "start_year": 2013.0,
+            "end_year": 2019.0,
+            "cardinal_number": "2nd",
+            "party": "PSUV"
+        },
+        {
+            "name": "Rómulo Betancourt",
+            "start_year": 1959.0,
+            "end_year": 1964.0,
+            "cardinal_number": "1st",
+            "party": "Acción Democrática"
+        },
+        {
+            "name": "Rómulo Gallegos",
+            "start_year": 1948.0,
+            "end_year": 1948.0,
+            "cardinal_number": "1st",
+            "party": "Acción Democrática"
+        },
+        {
+            "name": "Carlos Andrés Pérez",
+            "start_year": 1974.0,
+            "end_year": 1979.0,
+            "cardinal_number": "1st",
+            "party": "Acción Democrática"
+        },
+        {
+            "name": "Carlos Andrés Pérez",
+            "start_year": 1989.0,
+            "end_year": 1993.0,
+            "cardinal_number": "2nd",
+            "party": "Acción Democrática"
+        },
+        {
+            "name": "Rafael Caldera",
+            "start_year": 1994.0,
+            "end_year": 1999.0,
+            "cardinal_number": "2nd",
+            "party": "Convergencia"
+        },
+        {
+            "name": "Nicolás Maduro",
+            "start_year": 2019.0,
+            "end_year": 2025.0,
+            "cardinal_number": "2nd",
+            "party": "PSUV"
+        },
+        {
+            "name": "Jaime Lusinchi",
+            "start_year": 1984.0,
+            "end_year": 1989.0,
+            "cardinal_number": "1st",
+            "party": "Acción Democrática"
+        },
+        {
+            "name": "Luis Herrera Campins",
+            "start_year": 1979.0,
+            "end_year": 1984.0,
+            "cardinal_number": "1st",
+            "party": "COPEI"
+        }
+    ]
+}

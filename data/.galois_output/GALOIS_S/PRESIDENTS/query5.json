@@ -1,0 +1,27 @@
+{
+    "query_id": 5,
+    "sql": "SELECT p.name FROM target.world_presidents p WHERE p.country='Venezuela' AND p.party='Liberal' AND p.start_year > 1858;",
+    "result_set": [
+        {
+            "name": "Antonio Guzmán Blanco"
+        },
+        {
+            "name": "Carlos Andrés Pérez"
+        },
+        {
+            "name": "Rafael Caldera"
+        },
+        {
+            "name": "Hugo Chávez"
+        },
+        {
+            "name": "Hugo Chávez"
+        },
+        {
+            "name": "Nicolás Maduro"
+        },
+        {
+            "name": "Nicolás Maduro"
+        }
+    ]
+}

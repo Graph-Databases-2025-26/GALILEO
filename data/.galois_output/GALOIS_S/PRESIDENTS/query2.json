@@ -1,0 +1,126 @@
+{
+    "query_id": 2,
+    "sql": "SELECT p.name, p.party FROM target.world_presidents p WHERE p.country='Venezuela' AND p.party='Liberal';",
+    "result_set": [
+        {
+            "name": "Antonio Guzmán Blanco",
+            "party": "Liberal"
+        },
+        {
+            "name": "Antonio Guzmán Blanco",
+            "party": "Liberal"
+        },
+        {
+            "name": "Antonio Guzmán Blanco",
+            "party": "Liberal"
+        },
+        {
+            "name": "Raimundo Andueza Palacio",
+            "party": "Liberal"
+        },
+        {
+            "name": "Joaquín Crespo",
+            "party": "Liberal"
+        },
+        {
+            "name": "Ignacio Andrade",
+            "party": "Liberal"
+        },
+        {
+            "name": "Cipriano Castro",
+            "party": "Liberal"
+        },
+        {
+            "name": "Juan Vicente Gómez",
+            "party": "Liberal"
+        },
+        {
+            "name": "Juan Vicente Gómez",
+            "party": "Liberal"
+        },
+        {
+            "name": "Eleazar López Contreras",
+            "party": "Liberal"
+        },
+        {
+            "name": "Isaías Medina Angarita",
+            "party": "Liberal"
+        },
+        {
+            "name": "Rómulo Betancourt",
+            "party": "Liberal"
+        },
+        {
+            "name": "Rómulo Betancourt",
+            "party": "Liberal"
+        },
+        {
+            "name": "Raúl Leoni",
+            "party": "Liberal"
+        },
+        {
+            "name": "Carlos Andrés Pérez",
+            "party": "Liberal"
+        },
+        {
+            "name": "Carlos Andrés Pérez",
+            "party": "Liberal"
+        },
+        {
+            "name": "Rafael Caldera",
+            "party": "Liberal"
+        },
+        {
+            "name": "Hugo Chávez",
+            "party": "Liberal"
+        },
+        {
+            "name": "Hugo Chávez",
+            "party": "Liberal"
+        },
+        {
+            "name": "Hugo Chávez",
+            "party": "Liberal"
+        },
+        {
+            "name": "Nicolás Maduro",
+            "party": "Liberal"
+        },
+        {
+            "name": "Cipriano Castro",
+            "party": "Liberal"
+        },
+        {
+            "name": "José María Vargas",
+            "party": "Liberal"
+        },
+        {
+            "name": "Andrés Narvarte",
+            "party": "Liberal"
+        },
+        {
+            "name": "José María Vargas",
+            "party": "Liberal"
+        },
+        {
+            "name": "José Antonio Páez",
+            "party": "Liberal"
+        },
+        {
+            "name": "Juan Bautista Arismendi",
+            "party": "Liberal"
+        },
+        {
+            "name": "Francisco de Paula Santander",
+            "party": "Liberal"
+        },
+        {
+            "name": "Simón Bolívar",
+            "party": "Liberal"
+        },
+        {
+            "name": "Simón Bolívar",
+            "party": "Liberal"
+        }
+    ]
+}

@@ -1,0 +1,5 @@
+{
+    "query_id": 13,
+    "sql": "SELECT lake_name FROM target.usa_lake WHERE area_squared_km > 750 AND state_name = 'michigan';",
+    "result_set": []
+}

@@ -1,0 +1,9 @@
+{
+    "query_id": 18,
+    "sql": "SELECT COUNT ( DISTINCT usa_state_traversed ) FROM target.usa_river WHERE length_in_km > 750;",
+    "result_set": [
+        {
+            "count(DISTINCT usa_state_traversed)": 17
+        }
+    ]
+}

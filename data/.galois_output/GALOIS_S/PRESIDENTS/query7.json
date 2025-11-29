@@ -1,0 +1,10 @@
+{
+    "query_id": 7,
+    "sql": "SELECT p.party, count(p.party) num FROM target.world_presidents p WHERE p.country='Venezuela' group by p.party order by num desc limit 1;",
+    "result_set": [
+        {
+            "party": "Independiente",
+            "num": 14
+        }
+    ]
+}

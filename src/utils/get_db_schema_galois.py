@@ -1,6 +1,7 @@
 import duckdb
-from typing import List, Dict, Optional
+from typing import List, Optional
 
+from src.utils.constants import *
 from src.utils.logging_config import LOG
 from src.db.duckdb_db_graphdb import get_duckdb_path
 
@@ -21,7 +22,6 @@ class GaloisSchemaManager:
             db_path = uri_string.removeprefix("duckdb:///")
             self.con = duckdb.connect(database=db_path, read_only=True)
             self.con.execute("USE target;")
-            #LOG.info(f"SchemaManager: Connected to {db_path}")
         except Exception as e:
             LOG.info(f"Error connecting to DuckDB for {database_name}: {e}")
             raise
@@ -30,7 +30,7 @@ class GaloisSchemaManager:
     def get_attributes(self, table_name: str) -> List[str]:
         """ Retrieve all attributes (columns) for a table. """
         try:
-            result = self.con.execute(f"PRAGMA table_info('{table_name}')").fetchall()
+            result = self.con.execute(GET_ATTRIBUTES).fetchall()
             # The 'name' column is at index 1
             return [row[1] for row in result]
         except duckdb.CatalogException:
@@ -42,12 +42,7 @@ class GaloisSchemaManager:
         Retrieves the exact name of the table in the database, ignoring case sensitivity.
         """
         try:
-            query = f"""
-                SELECT table_name
-                FROM information_schema.tables
-                WHERE LOWER(table_name) = '{table_name.lower()}'
-            """
-            result = self.con.execute(query).fetchone()
+            result = self.con.execute(GET_EXACT_TABLE_NAME).fetchone()
             return result[0] if result else None
         except duckdb.Error as e:
             LOG.info(f"Error while searching for the exact table name '{table_name}': {e}")
@@ -59,16 +54,7 @@ class GaloisSchemaManager:
         Retrieve key attributes (Primary Key) for a table.
         """
         try:
-            query = f"""
-                SELECT cols
-                FROM (
-                    SELECT unnest(constraint_column_names) AS cols, constraint_type, table_name
-                    FROM duckdb_constraints()
-                )
-                WHERE table_name = '{table_name.lower()}'
-                  AND constraint_type = 'PRIMARY KEY';
-            """
-            result = self.con.execute(query).fetchall()
+            result = self.con.execute(GET_PRIMARY_KEYS).fetchall()
             keys = [row[0] for row in result]
 
             # Fallback: if no PK is defined, use the first column
@@ -115,9 +101,7 @@ class GaloisSchemaManager:
 
 if __name__ == "__main__":
 
-
         mgr = GaloisSchemaManager("MOVIES")
-
 
         try:
             attrs = mgr.get_attributes("movies")

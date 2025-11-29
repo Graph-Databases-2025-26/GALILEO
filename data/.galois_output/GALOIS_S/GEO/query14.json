@@ -1,0 +1,96 @@
+{
+    "query_id": 14,
+    "sql": "SELECT DISTINCT lake_name FROM target.usa_lake WHERE area_squared_km > 750;",
+    "result_set": [
+        {
+            "lake_name": "Lake Clark"
+        },
+        {
+            "lake_name": "Tustumena Lake"
+        },
+        {
+            "lake_name": "Lake Winnipegosis"
+        },
+        {
+            "lake_name": "Salton Sea"
+        },
+        {
+            "lake_name": "Lake Ontario"
+        },
+        {
+            "lake_name": "Lake Nipissing"
+        },
+        {
+            "lake_name": "Kenai Lake"
+        },
+        {
+            "lake_name": "Great Slave Lake"
+        },
+        {
+            "lake_name": "Lake Temiskaming"
+        },
+        {
+            "lake_name": "Dillingham Lake"
+        },
+        {
+            "lake_name": "Naknek Lake"
+        },
+        {
+            "lake_name": "Lake Abitibi"
+        },
+        {
+            "lake_name": "Becharof Lake"
+        },
+        {
+            "lake_name": "Lake Athabasca"
+        },
+        {
+            "lake_name": "Reindeer Lake"
+        },
+        {
+            "lake_name": "Eklutna Lake"
+        },
+        {
+            "lake_name": "Lake George"
+        },
+        {
+            "lake_name": "Great Salt Lake"
+        },
+        {
+            "lake_name": "Lake of the Prairies"
+        },
+        {
+            "lake_name": "Lake Erie"
+        },
+        {
+            "lake_name": "Lake Oahe"
+        },
+        {
+            "lake_name": "Lake Pontchartrain"
+        },
+        {
+            "lake_name": "Lake of the Woods"
+        },
+        {
+            "lake_name": "Lake Superior"
+        },
+        {
+            "lake_name": "Lake Michigan"
+        },
+        {
+            "lake_name": "Lake Huron"
+        },
+        {
+            "lake_name": "Lake Sakakawea"
+        },
+        {
+            "lake_name": "Skilak Lake"
+        },
+        {
+            "lake_name": "Lake Champlain"
+        },
+        {
+            "lake_name": "Lake Iliamna"
+        }
+    ]
+}
