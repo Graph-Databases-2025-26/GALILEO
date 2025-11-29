@@ -35,3 +35,14 @@ Thumbs.db
 logs/
 *.log
 *.zip
+
+# LaTex outputs or generated files
+*.aux
+*.log
+*.toc
+*.synctex.gz
+*.fdb_latexmk
+*.fls
+*.out
+
+.idea/
