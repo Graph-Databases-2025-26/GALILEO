@@ -69,7 +69,7 @@ from src.utils.logging_config import LOG
 
 TABLE_SCAN_FIRST_PROMPT ="""
     Given the following query, populate the table with actual values.
-    query: select {attributes} from {table} {condition}.
+    query: select {attributes} from {table} {conditions}.
     Respond with JSON only. Don't add any comment.
     Use the following JSON schema: {jsonSchema}.
 """ 
@@ -79,7 +79,7 @@ TABLE_SCAN_ITER_PROMPT = """
 """ 
 
 KEY_SCAN_FIRST_PROMPT = """
-    List the {key} of {table} {condition}.
+    List the {key} of {table} {conditions}.
     Respond with JSON only.
     Use the following JSON schema: 
     {jsonSchema}
@@ -95,6 +95,7 @@ KEY_SCAN_TUPLE_PROMPT="""
     Use the following JSON schema:
     {jsonSchema}
 """
+
 
 SYSTEM_PROMPT_GALOIS_CONFIDENCE = """
         Please use the following informations to ask the question.

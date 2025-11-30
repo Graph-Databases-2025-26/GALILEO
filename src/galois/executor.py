@@ -31,6 +31,12 @@ JS_TEMPLATE = """
     }
 """
 
+TEST_PROMPT="""
+List the  'river_name' of 'usa_river' (where the following condition holds: 'length_in_km > 750').
+Respond with JSON only.
+Use the following JSON schema: 
+{'table_name': 'usa_river', 'type': 'object', 'attributes': {'river_name': {'type': 'VARCHAR', 'key': True}}}
+"""
 
 class NoNewTuplesFound(Exception):
     """Exception raised when no new unique tuple is added to the memory."""
@@ -223,33 +229,29 @@ class GaloisExecutor:
             
             output["table"] = parsed_q["from_table"]
             
-            
+            conditions = input_d.get("conditions", "")
+                
+            if conditions:
+                conditions = build_condition(conditions)
+            else:
+                conditions = ""
+                
+            output["conditions"] =  conditions
+               
             #TABLE_SCAN FIRST PROMPT
             if input_d["prompt_t"] == "table_f":
-                #condition = parsed_q.get("where_conditions", "")
-                condition = input_d.get("conditions", "")
                 
-                if condition != "":
-                    condition = build_condition(condition)
-            
                 output.update({
                     "attributes": self.schema_mgr.get_attributes(parsed_q["from_table"], "all"),
-                    "condition": condition,
                     "jsonSchema": json.dumps(self.schema_mgr.get_json_schema(parsed_q["from_table"], "all"), indent= 4)
-                    #"jsonSchema":JS_TEMPLATE
                 })
             
             
             #KEY_SCAN FIRST PROMPT
             if input_d["prompt_t"] == "key_f":
-                condition = input_d.get("conditions", "")
-            
-                if condition != "":
-                    condition = build_condition(condition)
-            
+                
                 output.update({
                     "key": self.schema_mgr.get_attributes(parsed_q["from_table"], "key"),
-                    "condition": condition,
                     "jsonSchema": json.dumps(self.schema_mgr.get_json_schema(parsed_q["from_table"], "key"), indent= 4)
                 })
             
@@ -438,9 +440,9 @@ if __name__ == "__main__":
     executor = GaloisExecutor(config, "GEO")
     log_init()
 
-    query = "SELECT DISTINCT usa_state_traversed  FROM usa_river"
+    query = "SELECT DISTINCT usa_state_traversed FROM usa_river"
     
-    results = executor.key_scan(query, "length_in_km > 750")
+    results = executor.key_scan(query)
     LOG.info("Key-Scan Executed")
     
     #results = executor.table_scan(query)
