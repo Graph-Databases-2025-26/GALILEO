@@ -174,6 +174,8 @@ class GaloisExecutor:
             """
             
             return tuple(record.get(k) for k in keys)
+          
+          
             
             
     def __init__(self, config: AppConfig, dataset: str, max_iter: int = 4, baseline_type: str = "GaloisWO") -> None:
@@ -224,8 +226,9 @@ class GaloisExecutor:
             
             #TABLE_SCAN FIRST PROMPT
             if input_d["prompt_t"] == "table_f":
-                condition = parsed_q.get("where_conditions", "")
-            
+                #condition = parsed_q.get("where_conditions", "")
+                condition = input_d.get("conditions", "")
+                
                 if condition != "":
                     condition = build_condition(condition)
             
@@ -239,7 +242,7 @@ class GaloisExecutor:
             
             #KEY_SCAN FIRST PROMPT
             if input_d["prompt_t"] == "key_f":
-                condition = parsed_q.get("where_conditions", "")
+                condition = input_d.get("conditions", "")
             
                 if condition != "":
                     condition = build_condition(condition)
@@ -343,7 +346,7 @@ class GaloisExecutor:
         if max_iter is None:
             max_iter = self.max_iter
         
-        input_d = {"query": query, "prompt_t": "key_f", "history": ""}
+        input_d = {"query": query, "prompt_t": "key_f", "conditions": conditions_to_push, "history": ""}
         chain = self._build_galois_chain(self.llm_wrapper)
         
         i = 0
@@ -397,7 +400,7 @@ class GaloisExecutor:
         if max_iter is None:
             max_iter = self.max_iter
         
-        input_d = {"query": query, "prompt_t": "table_f", "history": ""}
+        input_d = {"query": query, "prompt_t": "table_f", "conditions": conditions_to_push, "history": ""}
         chain = self._build_galois_chain(self.llm_wrapper)
         
         i = 0
@@ -432,13 +435,13 @@ class GaloisExecutor:
 
 if __name__ == "__main__":
     config = Config_Loader().get_config()
-    executor = GaloisExecutor(config, "MOVIES")
+    executor = GaloisExecutor(config, "GEO")
     log_init()
 
-    query = "SELECT m.originaltitle FROM target.movies m WHERE m.director='Steven Spielberg';"
+    query = "SELECT DISTINCT usa_state_traversed  FROM usa_river"
     
-    results = executor.key_scan(query)
+    results = executor.key_scan(query, "length_in_km > 750")
     LOG.info("Key-Scan Executed")
     
-    results = executor.table_scan(query)
+    #results = executor.table_scan(query)
     LOG.info("Table-Scan Executed")

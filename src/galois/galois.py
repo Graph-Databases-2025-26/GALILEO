@@ -86,14 +86,14 @@ class Galois:
         galois_estimator = ConfidenceEstimator(self.llm_wrapper, self.dataset, system_prompt_galois_confidence(), human_prompt_galois_confidence("QUERY"))
 
         #DEFAULT value of final_strategy
-        final_strategy = "TABLE"
+        final_strategy = "KEY"
 
         num_select_columns = len(plan['select_columns'])
         if num_select_columns == 0:
             LOG.error("No columns in SELECT clause. Defaulting to TABLE strategy.")
-            final_strategy = "TABLE"
+            final_strategy = "KEY"
         else:
-            final_strategy = "TABLE"
+            final_strategy = "KEY"
 
         # Determine physical strategy
         if self.physical_strategy == "auto":
@@ -201,10 +201,9 @@ class Galois:
                 else:
                     #DO TABLE SCAN
                     LOG.info(f"Executing TABLE SCAN on {t_name}")
-                    table_executor = GaloisExecutor(self.config, self.dataset)
+                    table_executor = Francesco_Executor(self.config, self.dataset)
                     try:
-                        rows = table_executor.table_scan(sql_query=simple_query,
-                                                         conditions_to_push=current_push_conditions)
+                        rows = table_executor.table_scan(query=simple_query, conditions_to_push=current_push_conditions)
                     finally:
                         # Close connection
                         if hasattr(table_executor, 'schema_mgr') and hasattr(table_executor.schema_mgr, 'close'):
@@ -500,7 +499,7 @@ def main():
             config=config,
             dataset=dataset_name,
             sql_query=sql_query_test,
-            physical_strategy="table"  # Forziamo Table Scan per vedere i due scaricamenti
+            physical_strategy="key"  # Forziamo Table Scan per vedere i due scaricamenti
         )
 
         results = galois_system.run_push_all()

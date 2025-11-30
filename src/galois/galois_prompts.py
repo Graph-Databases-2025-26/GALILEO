@@ -54,18 +54,28 @@ from src.utils.logging_config import LOG
 #       - It is BETTER to return fewer tuples than to produce invalid or truncated JSON.
 #     """
   
-  
+# TABLE_SCAN_FIRST_PROMPT ="""
+#     Given the following query, populate the table {table_name} with actual values.
+#     query: {base_sql}.
+#     Respond with JSON only. Don't add any comment.
+#     Use the following JSON schema: {json_example}.
+#     Return at most {limit_rows} rows.
+# """ 
+
+# TABLE_SCAN_ITER_PROMPT = """
+#     List more values if there are more, otherwise return an empty JSON.  Respond with JSON only.
+#     Return at most {limit_rows} rows.
+# """ 
+
 TABLE_SCAN_FIRST_PROMPT ="""
-    Given the following query, populate the table {table_name} with actual values.
-    query: {base_sql}.
+    Given the following query, populate the table with actual values.
+    query: select {attributes} from {table} {condition}.
     Respond with JSON only. Don't add any comment.
-    Use the following JSON schema: {json_example}.
-    Return at most {limit_rows} rows.
+    Use the following JSON schema: {jsonSchema}.
 """ 
 
 TABLE_SCAN_ITER_PROMPT = """
     List more values if there are more, otherwise return an empty JSON.  Respond with JSON only.
-    Return at most {limit_rows} rows.
 """ 
 
 KEY_SCAN_FIRST_PROMPT = """
@@ -99,8 +109,9 @@ SYSTEM_PROMPT_GALOIS_CONFIDENCE = """
     """
 
 
-def build_condition(condition: str) -> str:
-    return f"(where the following condition holds: {condition})"
+def build_condition(conditions: List[str]) -> str:
+    
+    return f"(where the following condition holds: {' AND '.join(conditions)})"
   
 
 def _format_attribute_list(attributes: List[str]) -> str:
