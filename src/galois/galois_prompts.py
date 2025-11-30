@@ -56,14 +56,16 @@ from src.utils.logging_config import LOG
   
   
 TABLE_SCAN_FIRST_PROMPT ="""
-    Given the following query, populate the table with actual values.
-    query: select {attributes} from {table} {condition}.
+    Given the following query, populate the table {table_name} with actual values.
+    query: {base_sql}.
     Respond with JSON only. Don't add any comment.
-    Use the following JSON schema: {jsonSchema}.
+    Use the following JSON schema: {json_example}.
+    Return at most {limit_rows} rows.
 """ 
 
 TABLE_SCAN_ITER_PROMPT = """
     List more values if there are more, otherwise return an empty JSON.  Respond with JSON only.
+    Return at most {limit_rows} rows.
 """ 
 
 KEY_SCAN_FIRST_PROMPT = """
