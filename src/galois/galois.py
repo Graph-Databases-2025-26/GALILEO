@@ -4,7 +4,7 @@ from pathlib import Path
 from typing import Literal, Any, List, Dict, cast
 import duckdb
 import pandas as pd
-from src import Config_Loader
+from src.config import Config_Loader
 from src.db.run_explain_plans import DATA_ROOT
 from src.galois.galois_post_processing import GaloisPostProcessor
 from src.llm import get_llm_wrapper
@@ -15,6 +15,7 @@ from src.utils.constants import SUBMISSIONS_PATH_GALOIS
 from src.utils.get_db_schema_galois import GaloisSchemaManager
 from src.utils.logging_config import LOG
 from src.galois.galois_executor import GaloisExecutor
+from src.galois.executor import GaloisExecutor as Francesco_Executor
 
 
 class Galois:
@@ -140,7 +141,7 @@ class Galois:
             data_lake = {}
 
             #cycle in which the table scan is executed
-            executor = GaloisExecutor(self.config, self.dataset)
+            #executor = GaloisExecutor(self.config, self.dataset)
 
             for t_info in tables_to_scan:
                 t_name = t_info['name']
@@ -189,11 +190,25 @@ class Galois:
                     ################
                     #DO KEY SCAN
                     ################
+                    key_executor = Francesco_Executor(self.config, self.dataset)
+                    try:
+                        rows = key_executor.key_scan(query=simple_query, conditions_to_push=current_push_conditions)
+                    finally:
+                        # close connection
+                        if hasattr(key_executor, 'schema_mgr') and hasattr(key_executor.schema_mgr, 'dispose_manager'):
+                            key_executor.schema_mgr.dispose_manager()
 
                 else:
                     #DO TABLE SCAN
                     LOG.info(f"Executing TABLE SCAN on {t_name}")
-                    rows = executor.table_scan(sql_query=simple_query, conditions_to_push=current_push_conditions)
+                    table_executor = GaloisExecutor(self.config, self.dataset)
+                    try:
+                        rows = table_executor.table_scan(sql_query=simple_query,
+                                                         conditions_to_push=current_push_conditions)
+                    finally:
+                        # Close connection
+                        if hasattr(table_executor, 'schema_mgr') and hasattr(table_executor.schema_mgr, 'close'):
+                            table_executor.schema_mgr.close()
 
                 data_lake[t_name] = rows
 
