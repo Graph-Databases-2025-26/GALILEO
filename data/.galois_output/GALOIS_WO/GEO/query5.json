@@ -1,0 +1,9 @@
+{
+    "query_id": 5,
+    "sql": "SELECT count(state_name) FROM target.usa_state;",
+    "result_set": [
+        {
+            "count(state_name)": 17
+        }
+    ]
+}

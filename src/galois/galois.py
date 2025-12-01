@@ -54,11 +54,24 @@ class Galois:
         LOG.info(f"Galois System: Parsing query for dataset {dataset}")
         self.parsed_sql = sql_query_parser.parse_sql(sql_query)
 
+        self.schema_map = {}
         temp_manager = GaloisSchemaManager(dataset)
-        table_name = self.parsed_sql['from_table']
-        if not temp_manager.get_attributes(table_name):
-            raise ValueError(f"Table '{table_name}' not found in the database schema.")
-        temp_manager.close()
+        try:
+            table_name = self.parsed_sql['from_table']
+            if not temp_manager.get_attributes(table_name):
+                raise ValueError(f"Table '{table_name}' not found in the database schema.")
+            real_name = temp_manager.get_exact_table_name(table_name) or table_name
+            self.schema_map[real_name] = temp_manager.get_column_types(real_name)
+
+            if 'joins' in self.parsed_sql:
+                for join in self.parsed_sql['joins']:
+                    j_table = join['table']
+                    real_j_name = temp_manager.get_exact_table_name(j_table) or j_table
+                    self.schema_map[real_j_name] = temp_manager.get_column_types(real_j_name)
+
+        finally:
+            temp_manager.con.close()
+            LOG.debug(" Pending connection closed correctly.")
 
     def build_execution_plan(self, conditions_to_push: List[str]) -> Dict[str, Any]:
         """
@@ -206,8 +219,11 @@ class Galois:
                         rows = table_executor.table_scan(query=simple_query, conditions_to_push=current_push_conditions)
                     finally:
                         # Close connection
-                        if hasattr(table_executor, 'schema_mgr') and hasattr(table_executor.schema_mgr, 'close'):
-                            table_executor.schema_mgr.close()
+                        if hasattr(table_executor, 'schema_mgr'):
+                            if hasattr(table_executor.schema_mgr, 'dispose_manager'):
+                                table_executor.schema_mgr.dispose_manager()
+                            elif hasattr(table_executor.schema_mgr, 'close'):
+                                table_executor.schema_mgr.close()
 
                 data_lake[t_name] = rows
 
@@ -370,23 +386,33 @@ class Galois:
                 else:
                     df = pd.DataFrame(rows)
 
-                    # --- SMART AUTO-CASTING ---
+                    # Retrieve the actual DB types for this table
+                    table_types = self.schema_map.get(table_real_name, {})
+
+                    # --- CASTING ---
                     # The LLM often returns values as strings ("1000", "N/A"), while DuckDB expects numeric types.
-                    # Try to convert columns to numeric where possible.
                     for col in df.columns:
-                        # Try converting to numeric. If it fails (e.g. "Texas"), leave as-is.
-                        numeric_series = pd.to_numeric(df[col], errors='coerce')
 
-                        #counts the NaN values
-                        nan_count = numeric_series.isna().sum()
-                        total_count = len(df)
+                        # Expected DB type (e.g., VARCHAR, INTEGER)
+                        db_type = table_types.get(col, "").upper()
 
-                        #if more than 50% of the values are NaN the column is not a numeric one
-                        if total_count > 0 and (nan_count / total_count) > 0.95:
-                            df[col] = df[col].astype(str)
+                        if "VARCHAR" in db_type or "TEXT" in db_type or "STRING" in db_type:
+                            # Force object dtype to preserve None, but ensure it's not float
+                            df[col] = df[col].astype(object).where(df[col].notnull(), None)
+
+                            # 2. If the DB indicates it's numeric (INT, DOUBLE, FLOAT, DECIMAL)
+                        elif any(x in db_type for x in ["INT", "DOUBLE", "FLOAT", "DECIMAL", "REAL"]):
+                            df[col] = pd.to_numeric(df[col], errors='coerce')
+
                         else:
-                            # otherwise probably is numeric, using the cionverted one.
-                            df[col] = numeric_series
+                            # Original heuristic logic (just for safety)
+                            numeric_series = pd.to_numeric(df[col], errors='coerce')
+                            original_nans = df[col].isna().sum()
+                            new_nans = numeric_series.isna().sum()
+                            if (new_nans - original_nans) > 0:
+                                df[col] = df[col].astype(str)
+                            else:
+                                df[col] = numeric_series
 
                     # Important for JOINs to work (e.g. "Arizona " -> "Arizona")
                     # If a column is of type 'object' (string), apply strip()

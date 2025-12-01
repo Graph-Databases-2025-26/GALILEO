@@ -1,0 +1,36 @@
+{
+    "query_id": 11,
+    "sql": "SELECT DISTINCT usa_state_traversed FROM target.usa_river WHERE length_in_km > 750;",
+    "result_set": [
+        {
+            "usa_state_traversed": "Montana, Idaho"
+        },
+        {
+            "usa_state_traversed": "Washington, Oregon"
+        },
+        {
+            "usa_state_traversed": "Montana, North Dakota, South Dakota, Nebraska, Iowa, Kansas, Missouri"
+        },
+        {
+            "usa_state_traversed": "Minnesota, Wisconsin, Iowa, Illinois, Missouri, Kentucky, Tennessee, Arkansas, Mississippi"
+        },
+        {
+            "usa_state_traversed": "Colorado, New Mexico, Texas"
+        },
+        {
+            "usa_state_traversed": "None"
+        },
+        {
+            "usa_state_traversed": "Pennsylvania, Ohio, Indiana, Illinois, Kentucky"
+        },
+        {
+            "usa_state_traversed": "Tennessee, Alabama, Kentucky"
+        },
+        {
+            "usa_state_traversed": "Colorado, Kansas, Oklahoma, Arkansas"
+        },
+        {
+            "usa_state_traversed": "Colorado, Utah, Arizona, Nevada, California"
+        }
+    ]
+}

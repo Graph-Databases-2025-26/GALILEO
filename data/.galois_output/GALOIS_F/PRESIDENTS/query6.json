@@ -1,0 +1,209 @@
+{
+    "query_id": 6,
+    "sql": "SELECT p.name, p.start_year, p.end_year, p.cardinal_number, p.party FROM target.world_presidents p WHERE p.country='Venezuela';",
+    "result_set": [
+        {
+            "name": "Hugo Chávez",
+            "start_year": 1999,
+            "end_year": 2013.0,
+            "cardinal_number": "62nd",
+            "party": "United Socialist Party of Venezuela"
+        },
+        {
+            "name": "Nicolás Maduro",
+            "start_year": 2013,
+            "end_year": NaN,
+            "cardinal_number": "63rd",
+            "party": "United Socialist Party of Venezuela"
+        },
+        {
+            "name": "Rómulo Betancourt",
+            "start_year": 1959,
+            "end_year": 1964.0,
+            "cardinal_number": "47th",
+            "party": "Democratic Action"
+        },
+        {
+            "name": "Rómulo Gallegos",
+            "start_year": 1948,
+            "end_year": 1948.0,
+            "cardinal_number": "45th",
+            "party": "Democratic Action"
+        },
+        {
+            "name": "Carlos Andrés Pérez",
+            "start_year": 1974,
+            "end_year": 1979.0,
+            "cardinal_number": "55th",
+            "party": "Democratic Action"
+        },
+        {
+            "name": "Isaías Medina Angarita",
+            "start_year": 1941,
+            "end_year": 1945.0,
+            "cardinal_number": "34th",
+            "party": "Democratic Party"
+        },
+        {
+            "name": "Rafael Caldera",
+            "start_year": 1969,
+            "end_year": 1974.0,
+            "cardinal_number": "52nd",
+            "party": "COPEI"
+        },
+        {
+            "name": "Luis Herrera Campins",
+            "start_year": 1979,
+            "end_year": 1984.0,
+            "cardinal_number": "56th",
+            "party": "COPEI"
+        },
+        {
+            "name": "Jaime Lusinchi",
+            "start_year": 1984,
+            "end_year": 1989.0,
+            "cardinal_number": "57th",
+            "party": "Democratic Action"
+        },
+        {
+            "name": "Carlos Delgado Chalbaud",
+            "start_year": 1945,
+            "end_year": 1948.0,
+            "cardinal_number": "44th",
+            "party": "Independent"
+        },
+        {
+            "name": "Marcos Pérez Jiménez",
+            "start_year": 1952,
+            "end_year": 1958.0,
+            "cardinal_number": "48th",
+            "party": "Independent"
+        },
+        {
+            "name": "Wolfgang Larrazábal",
+            "start_year": 1958,
+            "end_year": 1959.0,
+            "cardinal_number": "46th",
+            "party": "Independent"
+        },
+        {
+            "name": "Edgar Sanabria",
+            "start_year": 1959,
+            "end_year": 1959.0,
+            "cardinal_number": "49th",
+            "party": "Independent"
+        },
+        {
+            "name": "Eleción indirecta de 1830-1831",
+            "start_year": 1830,
+            "end_year": 1831.0,
+            "cardinal_number": "4th",
+            "party": "None"
+        },
+        {
+            "name": "José Antonio Páez",
+            "start_year": 1830,
+            "end_year": 1835.0,
+            "cardinal_number": "4th",
+            "party": "None"
+        },
+        {
+            "name": "Andrés Narvarte",
+            "start_year": 1835,
+            "end_year": 1837.0,
+            "cardinal_number": "6th",
+            "party": "None"
+        },
+        {
+            "name": "José María Carreño",
+            "start_year": 1837,
+            "end_year": 1837.0,
+            "cardinal_number": "7th",
+            "party": "None"
+        },
+        {
+            "name": "Carlos Soublette",
+            "start_year": 1837,
+            "end_year": 1839.0,
+            "cardinal_number": "7th",
+            "party": "None"
+        },
+        {
+            "name": "José María Vargas",
+            "start_year": 1835,
+            "end_year": 1836.0,
+            "cardinal_number": "6th",
+            "party": "None"
+        },
+        {
+            "name": "José Tadeo Monagas",
+            "start_year": 1847,
+            "end_year": 1851.0,
+            "cardinal_number": "12th",
+            "party": "Liberal"
+        },
+        {
+            "name": "José Gregorio Monagas",
+            "start_year": 1851,
+            "end_year": 1855.0,
+            "cardinal_number": "13th",
+            "party": "Liberal"
+        },
+        {
+            "name": "Pedro Gual",
+            "start_year": 1859,
+            "end_year": 1861.0,
+            "cardinal_number": "16th",
+            "party": "Liberal"
+        },
+        {
+            "name": "Julián Castro",
+            "start_year": 1863,
+            "end_year": 1868.0,
+            "cardinal_number": "18th",
+            "party": "Liberal"
+        },
+        {
+            "name": "Manuel Ezequiel Bruzual",
+            "start_year": 1868,
+            "end_year": 1869.0,
+            "cardinal_number": "20th",
+            "party": "Liberal"
+        },
+        {
+            "name": "Guillermo Tell Villegas",
+            "start_year": 1868,
+            "end_year": 1869.0,
+            "cardinal_number": "19th",
+            "party": "Liberal"
+        },
+        {
+            "name": "Antonio Guzmán Blanco",
+            "start_year": 1870,
+            "end_year": 1877.0,
+            "cardinal_number": "22nd",
+            "party": "Liberal"
+        },
+        {
+            "name": "Francisco Linares Alcántara",
+            "start_year": 1877,
+            "end_year": 1878.0,
+            "cardinal_number": "24th",
+            "party": "Liberal"
+        },
+        {
+            "name": "José Gregorio Varela",
+            "start_year": 1878,
+            "end_year": 1880.0,
+            "cardinal_number": "25th",
+            "party": "Liberal"
+        },
+        {
+            "name": "Joaquín Crespo",
+            "start_year": 1884,
+            "end_year": 1886.0,
+            "cardinal_number": "27th",
+            "party": "Liberal"
+        }
+    ]
+}

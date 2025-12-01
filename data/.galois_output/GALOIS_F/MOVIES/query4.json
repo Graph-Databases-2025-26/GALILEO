@@ -1,0 +1,22 @@
+{
+    "query_id": 4,
+    "sql": "SELECT m.originaltitle, m.startyear FROM target.movies m WHERE m.director='Steven Spielberg' AND m.startyear > 2000;",
+    "result_set": [
+        {
+            "originaltitle": "The Terminal",
+            "startyear": 2004
+        },
+        {
+            "originaltitle": "Lincoln",
+            "startyear": 2012
+        },
+        {
+            "originaltitle": "Bridge of Spies",
+            "startyear": 2015
+        },
+        {
+            "originaltitle": "War of the Worlds",
+            "startyear": 2005
+        }
+    ]
+}

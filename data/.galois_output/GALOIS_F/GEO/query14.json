@@ -1,0 +1,54 @@
+{
+    "query_id": 14,
+    "sql": "SELECT DISTINCT lake_name FROM target.usa_lake WHERE area_squared_km > 750;",
+    "result_set": [
+        {
+            "lake_name": "Lake Nipigon"
+        },
+        {
+            "lake_name": "Lake Victoria"
+        },
+        {
+            "lake_name": "Lake Kivu"
+        },
+        {
+            "lake_name": "Lake Ontario"
+        },
+        {
+            "lake_name": "Lake Tanganyika"
+        },
+        {
+            "lake_name": "Lake Erie"
+        },
+        {
+            "lake_name": "Lake of the Woods"
+        },
+        {
+            "lake_name": "Lake Sakakawea"
+        },
+        {
+            "lake_name": "Lake Huron"
+        },
+        {
+            "lake_name": "Lake Michigan"
+        },
+        {
+            "lake_name": "Lake Superior"
+        },
+        {
+            "lake_name": "Lake Winnipeg"
+        },
+        {
+            "lake_name": "Lake Iliamna"
+        },
+        {
+            "lake_name": "Lake Urmia"
+        },
+        {
+            "lake_name": "Lake Vostok"
+        },
+        {
+            "lake_name": "Lake Edward"
+        }
+    ]
+}

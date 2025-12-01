@@ -1,0 +1,102 @@
+{
+    "query_id": 2,
+    "sql": "SELECT city_name FROM target.usa_city WHERE population > 150000;",
+    "result_set": [
+        {
+            "city_name": "Boston"
+        },
+        {
+            "city_name": "Tucson"
+        },
+        {
+            "city_name": "Chandler"
+        },
+        {
+            "city_name": "Houston"
+        },
+        {
+            "city_name": "Seattle"
+        },
+        {
+            "city_name": "Fort Wayne"
+        },
+        {
+            "city_name": "St. Louis"
+        },
+        {
+            "city_name": "Boise"
+        },
+        {
+            "city_name": "Nashville"
+        },
+        {
+            "city_name": "Albuquerque"
+        },
+        {
+            "city_name": "El Paso"
+        },
+        {
+            "city_name": "Sacramento"
+        },
+        {
+            "city_name": "Oklahoma City"
+        },
+        {
+            "city_name": "Glendale"
+        },
+        {
+            "city_name": "Reno"
+        },
+        {
+            "city_name": "Milwaukee"
+        },
+        {
+            "city_name": "Atlanta"
+        },
+        {
+            "city_name": "San Francisco"
+        },
+        {
+            "city_name": "Dallas"
+        },
+        {
+            "city_name": "San Antonio"
+        },
+        {
+            "city_name": "Irving"
+        },
+        {
+            "city_name": "Irvine"
+        },
+        {
+            "city_name": "Kansas City"
+        },
+        {
+            "city_name": "Anaheim"
+        },
+        {
+            "city_name": "Pittsburgh"
+        },
+        {
+            "city_name": "Birmingham"
+        },
+        {
+            "city_name": "Tulsa"
+        },
+        {
+            "city_name": "Madison"
+        },
+        {
+            "city_name": "Cincinnati"
+        },
+        {
+            "city_name": "St. Paul"
+        },
+        {
+            "city_name": "Memphis"
+        },
+        {
+            "city_name": "Lexington"
+        }
+    ]
+}

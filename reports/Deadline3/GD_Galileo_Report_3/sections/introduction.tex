@@ -1,21 +1,12 @@
-\section{Introduction}
+\section{Introduction \& Goals of GALOIS Implementation}
 
-Large Language Models (LLMs) increasingly support structured data extraction using declarative queries such as Natural Language (NL) and SQL. However, when queries become more complex and require structured tabular outputs with filtering, joins, and aggregations, direct prompting of LLMs leads to inaccurate or incomplete results. As shown in the Galois paper, both NL and SQL prompting struggle with factual correctness, tuple completeness, and recall accuracy.
+As we saw in the previous task Large Language Models (LLMs) increasingly support structured data extraction using declarative queries such as Natural Language (NL) and SQL. However, when queries become more complex and require structured tabular outputs with filtering, joins, and aggregations, direct prompting of LLMs leads to inaccurate or incomplete results. As shown in the Galois paper, both NL and SQL prompting struggle with factual correctness, tuple completeness, and recall accuracy.
 
 To address these limitations, the Galois system introduces a novel query execution framework that uses the LLM as a storage layer, while separating the execution pipeline into logical and physical operators, similar to traditional DBMSs. Instead of issuing a single LLM request, Galois decomposes SQL queries into a sequence of structured scan and filtering operations that improve recall, tuple completeness, and overall output consistency.
 
 \textbf{Scope of This Deliverable.}
-In this checkpoint, we implement \textbf{GaloisWO} (Galois Without Optimizations), which is the baseline version of the Galois framework introduced in Section 5 of the paper. GaloisWO does not apply optimization strategies such as confidence-based condition pushdown, operator selection, cost-quality balancing, or metadata-driven planning. Instead, it follows a straightforward execution strategy:
+In this checkpoint, we implement \textbf{Galois} framework to bridge declarative SQL querying with the latent knowledge bases of Large Language Models (LLMs), focusing on translating theoretical query execution paradigms, specifically physical scan strategies (Table Scan and Key Scan) and logical optimization techniques (push-ALL, push-SELECTIVE, push-WO) or merge all the optimizations (GALOIS F) into a modular Python-based pipeline integrated with DuckDB for robust schema management.
+The report details the system's orchestration mechanism, which manages the lifecycle from SQL parsing to dynamic prompt generation and iterative memory management for tuple deduplication. 
+Furthermore, it analyzes the implementation of distinct Query Planning variants (for instance Push-All or Confidence-based execution), exploring the trade-offs between delegating filter evaluation to the generative model and performing relational post-processing locally (especially for JOIN operations).
 
-\begin{itemize}
-    \item Retrieve all possible key values for a table using iterative prompting.
-    \item For each key, individually retrieve remaining attribute values (cell-by-cell tuple completion).
-    \item No condition pushdown or selection filtering during scan phase.
-\end{itemize}
 
-This deliverable covers:
-\begin{itemize}
-    \item Implementation of the GaloisWO execution strategy for queries 18--30.
-    \item Replication attempt of the \textbf{third column of Table 3} from the paper.
-    \item Informal demonstration of execution behavior and quality scores.
-\end{itemize}

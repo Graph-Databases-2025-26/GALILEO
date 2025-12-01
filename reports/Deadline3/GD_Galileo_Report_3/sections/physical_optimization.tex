@@ -1,0 +1,12 @@
+\section{Physical Optimization (Execution Strategies)}
+While Logical Optimization defines the scope of the query, Physical Optimization defines the algorithmic strategy for data retrieval. Our system implements iterative algorithms designed to overcome the context window limitations of LLMs and to ensure comprehensive data extraction.
+
+\subsection{Table-Scan Operator}
+!!!!TO DO!!!!
+
+\subsection{Key-Scan Operator}
+!!!!TO DO!!!!
+
+\subsection{Adaptive Strategy Selection}
+The framework includes an \textbf{auto} execution mode that dynamically selects between Table-Scan and Key-Scan. This decision is mediated by the \textbf{ConfidenceEstimator}, which evaluates the query complexity and the number of requested columns. The estimator propagates a confidence score ($\tau$) based on the model's self-assessment; if the confidence is below a specific threshold or if the schema is particularly wide, the system defaults to the Key-Scan strategy to ensure data integrity, otherwise, it proceeds with the more direct Table-Scan.
+This handling mode is useful for GALOIS-F logical plan.

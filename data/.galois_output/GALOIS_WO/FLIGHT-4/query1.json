@@ -1,0 +1,12 @@
+{
+    "query_id": 1,
+    "sql": "SELECT a.name FROM target.airports a WHERE a.elevation_in_ft >= -50 and a.elevation_in_ft <= 50;",
+    "result_set": [
+        {
+            "name": "Brisbane Airport"
+        },
+        {
+            "name": "Hong Kong International Airport"
+        }
+    ]
+}

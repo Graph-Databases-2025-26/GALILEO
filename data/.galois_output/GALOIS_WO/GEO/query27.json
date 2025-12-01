@@ -1,0 +1,36 @@
+{
+    "query_id": 27,
+    "sql": "SELECT us.state_name, us.population, us.capital FROM target.usa_state us WHERE us.population > 5000000;",
+    "result_set": [
+        {
+            "state_name": "California",
+            "population": 39461588,
+            "capital": "Sacramento"
+        },
+        {
+            "state_name": "Indiana",
+            "population": 6732219,
+            "capital": "Indianapolis"
+        },
+        {
+            "state_name": "Virginia",
+            "population": 8535759,
+            "capital": "Richmond"
+        },
+        {
+            "state_name": "Colorado",
+            "population": 5758741,
+            "capital": "Denver"
+        },
+        {
+            "state_name": "New Jersey",
+            "population": 8944461,
+            "capital": "Trenton"
+        },
+        {
+            "state_name": "Michigan",
+            "population": 10077331,
+            "capital": "Lansing"
+        }
+    ]
+}

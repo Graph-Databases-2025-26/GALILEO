@@ -1,0 +1,34 @@
+{
+    "query_id": 30,
+    "sql": "SELECT us.state_name, us.capital FROM target.usa_state us WHERE us.population > 3000000 AND us.area_squared_miles > 50000 order by us.capital;",
+    "result_set": [
+        {
+            "state_name": "Nevada",
+            "capital": "Carson City"
+        },
+        {
+            "state_name": "Colorado",
+            "capital": "Denver"
+        },
+        {
+            "state_name": "Iowa",
+            "capital": "Des Moines"
+        },
+        {
+            "state_name": "Michigan",
+            "capital": "Lansing"
+        },
+        {
+            "state_name": "California",
+            "capital": "Sacramento"
+        },
+        {
+            "state_name": "Oregon",
+            "capital": "Salem"
+        },
+        {
+            "state_name": "Utah",
+            "capital": "Salt Lake City"
+        }
+    ]
+}

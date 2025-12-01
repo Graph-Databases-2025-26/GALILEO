@@ -1,0 +1,70 @@
+{
+    "query_id": 1,
+    "sql": "SELECT DISTINCT p.name, p.party FROM target.world_presidents p WHERE p.country='Venezuela';",
+    "result_set": [
+        {
+            "name": "Jaime Lusinchi",
+            "party": "Acción Democrática"
+        },
+        {
+            "name": "Rómulo Betancourt",
+            "party": "Acción Democrática"
+        },
+        {
+            "name": "Juan Guaidó",
+            "party": "Voluntad Popular"
+        },
+        {
+            "name": "Marcos Pérez Jiménez",
+            "party": "Military rule"
+        },
+        {
+            "name": "Rómulo Gallegos",
+            "party": "Acción Democrática"
+        },
+        {
+            "name": "Luis Herrera Campins",
+            "party": "COPEI"
+        },
+        {
+            "name": "Carlos Andrés Pérez",
+            "party": "Acción Democrática"
+        },
+        {
+            "name": "Simón Bolívar",
+            "party": "Liberal"
+        },
+        {
+            "name": "Nicolás Maduro",
+            "party": "Partido Socialista Unido de Venezuela"
+        },
+        {
+            "name": "Hugo Chávez",
+            "party": "Partido Socialista Unido de Venezuela"
+        },
+        {
+            "name": "Henri Falcón",
+            "party": "Progressive Advance"
+        },
+        {
+            "name": "Carlos Delgado Chalbaud",
+            "party": "Military rule"
+        },
+        {
+            "name": "Rafael Caldera",
+            "party": "COPEI"
+        },
+        {
+            "name": "Eleazar López Contreras",
+            "party": "Military rule"
+        },
+        {
+            "name": "Isaías Medina Angarita",
+            "party": "Democratic Party"
+        },
+        {
+            "name": "Juan Vicente Gómez",
+            "party": "Military rule"
+        }
+    ]
+}

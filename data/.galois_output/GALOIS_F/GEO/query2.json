@@ -1,0 +1,105 @@
+{
+    "query_id": 2,
+    "sql": "SELECT city_name FROM target.usa_city WHERE population > 150000;",
+    "result_set": [
+        {
+            "city_name": "Colorado Springs"
+        },
+        {
+            "city_name": "Atlanta"
+        },
+        {
+            "city_name": "Little Rock"
+        },
+        {
+            "city_name": "Sioux Falls"
+        },
+        {
+            "city_name": "Montgomery"
+        },
+        {
+            "city_name": "Madison"
+        },
+        {
+            "city_name": "El Paso"
+        },
+        {
+            "city_name": "Richmond"
+        },
+        {
+            "city_name": "Indianapolis"
+        },
+        {
+            "city_name": "Santa Ana"
+        },
+        {
+            "city_name": "Minneapolis"
+        },
+        {
+            "city_name": "Chesapeake"
+        },
+        {
+            "city_name": "Orlando"
+        },
+        {
+            "city_name": "St. Paul"
+        },
+        {
+            "city_name": "Spokane"
+        },
+        {
+            "city_name": "Virginia Beach"
+        },
+        {
+            "city_name": "Wichita"
+        },
+        {
+            "city_name": "Tulsa"
+        },
+        {
+            "city_name": "Tacoma"
+        },
+        {
+            "city_name": "Glendale"
+        },
+        {
+            "city_name": "Fort Wayne"
+        },
+        {
+            "city_name": "Norfolk"
+        },
+        {
+            "city_name": "Winston-Salem"
+        },
+        {
+            "city_name": "Toledo"
+        },
+        {
+            "city_name": "Fremont"
+        },
+        {
+            "city_name": "Stockton"
+        },
+        {
+            "city_name": "Miami"
+        },
+        {
+            "city_name": "Scottsdale"
+        },
+        {
+            "city_name": "Ontario"
+        },
+        {
+            "city_name": "Cincinnati"
+        },
+        {
+            "city_name": "Tampa"
+        },
+        {
+            "city_name": "Louisville"
+        },
+        {
+            "city_name": "Memphis"
+        }
+    ]
+}

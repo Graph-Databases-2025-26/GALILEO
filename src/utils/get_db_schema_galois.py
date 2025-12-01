@@ -1,5 +1,5 @@
 import duckdb
-from typing import List, Optional
+from typing import List, Optional, Dict
 
 from src.utils.constants import *
 from src.utils.logging_config import LOG
@@ -16,10 +16,11 @@ class GaloisSchemaManager:
     def __init__(self, database_name: str):
         self.database_name = database_name
         try:
-            db_object = get_duckdb_path(database_name)
-            uri_string = str(db_object._engine.url)
-            db_object._engine.dispose()
-            db_path = uri_string.removeprefix("duckdb:///")
+            #db_object = get_duckdb_path(database_name)
+            #uri_string = str(db_object._engine.url)
+            #db_object._engine.dispose()
+            #db_path = uri_string.removeprefix("duckdb:///")
+            db_path = DATA_DIR / self.database_name.upper() / f"{self.database_name.lower()}.duckdb"
             self.con = duckdb.connect(database=db_path, read_only=True)
             self.con.execute("USE target;")
         except Exception as e:
@@ -36,6 +37,16 @@ class GaloisSchemaManager:
         except duckdb.CatalogException:
             LOG.info(f"Error: Table '{table_name}' not found in {self.database_name}")
             return []
+
+    def get_column_types(self, table_name: str) -> Dict[str, str]:
+        """ Retrieve a dictionary {column_name: type_name} for a table. """
+        try:
+            # row[1] è il nome, row[2] è il tipo (es. 'VARCHAR', 'INTEGER')
+            result = self.con.execute(f"PRAGMA table_info('{table_name}')").fetchall()
+            return {row[1]: row[2].upper() for row in result}
+        except Exception as e:
+            LOG.warning(f"Could not retrieve types for table {table_name}: {e}")
+            return {}
 
     def get_exact_table_name(self, table_name: str) -> Optional[str]:
         """

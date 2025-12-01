@@ -1,0 +1,5 @@
+{
+    "query_id": 2,
+    "sql": "SELECT p.name, p.party FROM target.world_presidents p WHERE p.country='Venezuela' AND p.party='Liberal';",
+    "result_set": []
+}

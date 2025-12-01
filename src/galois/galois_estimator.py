@@ -29,10 +29,17 @@ class ConfidenceEstimator:
         LOG.info(f"Estimating confidence for {conditions} conditions")
 
         #schema for the context
-        schema_manager = GaloisSchemaManager(self.dataset)
-        attrs = schema_manager.get_attributes(table)
-        schema_summary = f"Table {table} columns: {', '.join(attrs)}"
-        schema_manager.close()
+        schema_manager = None
+        try:
+            schema_manager = GaloisSchemaManager(self.dataset)
+            attrs = schema_manager.get_attributes(table)
+            schema_summary = f"Table {table} columns: {', '.join(attrs)}"
+        except Exception as e:
+            LOG.error(f"Error getting schema for confidence: {e}")
+            return []
+        finally:
+            if schema_manager:
+                schema_manager.close()
 
         confident_conditions = []
         for cond in conditions:
@@ -81,10 +88,17 @@ class ConfidenceEstimator:
 
         confidence_threshold = config.galois_execution.confidence_threshold
 
-        schema_manager = GaloisSchemaManager(self.dataset)
-        attrs = schema_manager.get_attributes(table)
-        schema_summary = f"Table {table} columns: {', '.join(attrs)}"
-        schema_manager.close()
+        schema_manager = None
+        try:
+            schema_manager = GaloisSchemaManager(self.dataset)
+            attrs = schema_manager.get_attributes(table)
+            schema_summary = f"Table {table} columns: {', '.join(attrs)}"
+        except Exception as e:
+            LOG.error(f"Error getting schema for query confidence: {e}")
+            return "TABLE"
+        finally:
+            if schema_manager:
+                schema_manager.close()
 
         chain_input = {
             "table": table,

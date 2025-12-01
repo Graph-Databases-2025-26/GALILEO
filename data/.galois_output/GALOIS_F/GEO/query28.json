@@ -1,0 +1,34 @@
+{
+    "query_id": 28,
+    "sql": "SELECT us.state_name, us.capital FROM target.usa_state us WHERE us.population > 5000000 AND us.density < 1000;",
+    "result_set": [
+        {
+            "state_name": "Illinois",
+            "capital": "Springfield"
+        },
+        {
+            "state_name": "Ohio",
+            "capital": "Columbus"
+        },
+        {
+            "state_name": "New York",
+            "capital": "Albany"
+        },
+        {
+            "state_name": "Minnesota",
+            "capital": "Saint Paul"
+        },
+        {
+            "state_name": "Indiana",
+            "capital": "Indianapolis"
+        },
+        {
+            "state_name": "Pennsylvania",
+            "capital": "Harrisburg"
+        },
+        {
+            "state_name": "Maryland",
+            "capital": "Annapolis"
+        }
+    ]
+}

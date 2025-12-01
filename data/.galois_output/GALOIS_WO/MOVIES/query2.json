@@ -1,0 +1,9 @@
+{
+    "query_id": 2,
+    "sql": "SELECT m.originaltitle FROM target.movies m WHERE m.director='Steven Spielberg';",
+    "result_set": [
+        {
+            "originaltitle": "E.T. the Extra-Terrestrial"
+        }
+    ]
+}

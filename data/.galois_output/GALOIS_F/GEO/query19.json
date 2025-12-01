@@ -1,0 +1,66 @@
+{
+    "query_id": 19,
+    "sql": "SELECT DISTINCT capital FROM target.usa_state;",
+    "result_set": [
+        {
+            "capital": "Hartford"
+        },
+        {
+            "capital": "Salem"
+        },
+        {
+            "capital": "Augusta"
+        },
+        {
+            "capital": "Frankfort"
+        },
+        {
+            "capital": "Harrisburg"
+        },
+        {
+            "capital": "Annapolis"
+        },
+        {
+            "capital": "Jackson"
+        },
+        {
+            "capital": "Helena"
+        },
+        {
+            "capital": "Saint Paul"
+        },
+        {
+            "capital": "Albany"
+        },
+        {
+            "capital": "Pierre"
+        },
+        {
+            "capital": "Honolulu"
+        },
+        {
+            "capital": "Indianapolis"
+        },
+        {
+            "capital": "nan"
+        },
+        {
+            "capital": "Dover"
+        },
+        {
+            "capital": "Little Rock"
+        },
+        {
+            "capital": "Columbus"
+        },
+        {
+            "capital": "Springfield"
+        },
+        {
+            "capital": "Oklahoma City"
+        },
+        {
+            "capital": "Santa Fe"
+        }
+    ]
+}

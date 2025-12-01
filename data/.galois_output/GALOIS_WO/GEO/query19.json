@@ -1,0 +1,57 @@
+{
+    "query_id": 19,
+    "sql": "SELECT DISTINCT capital FROM target.usa_state;",
+    "result_set": [
+        {
+            "capital": "Salem"
+        },
+        {
+            "capital": "Montpelier"
+        },
+        {
+            "capital": "Lansing"
+        },
+        {
+            "capital": "Richmond"
+        },
+        {
+            "capital": "Juneau"
+        },
+        {
+            "capital": "Augusta"
+        },
+        {
+            "capital": "Carson City"
+        },
+        {
+            "capital": "Honolulu"
+        },
+        {
+            "capital": "Des Moines"
+        },
+        {
+            "capital": "Helena"
+        },
+        {
+            "capital": "Denver"
+        },
+        {
+            "capital": "Sacramento"
+        },
+        {
+            "capital": "Salt Lake City"
+        },
+        {
+            "capital": "Pierre"
+        },
+        {
+            "capital": "Topeka"
+        },
+        {
+            "capital": "Indianapolis"
+        },
+        {
+            "capital": "Trenton"
+        }
+    ]
+}

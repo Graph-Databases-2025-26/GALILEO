@@ -1,0 +1,15 @@
+{
+    "query_id": 1,
+    "sql": "SELECT m.originaltitle FROM target.movies m WHERE m.director='Richard Thorpe';",
+    "result_set": [
+        {
+            "originaltitle": "The Great Caruso"
+        },
+        {
+            "originaltitle": "Ivanhoe"
+        },
+        {
+            "originaltitle": "The Prisoner of Zenda"
+        }
+    ]
+}

@@ -1,0 +1,5 @@
+{
+    "query_id": 8,
+    "sql": "SELECT m.startyear, count(*) as count FROM target.movies m WHERE m.director = 'Tim Burton' group by m.startyear order by count desc limit 1;",
+    "result_set": []
+}

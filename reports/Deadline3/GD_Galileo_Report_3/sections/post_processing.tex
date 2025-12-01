@@ -1,0 +1,19 @@
+\section{Post-Processing}
+The Post-Processing module serves as the deterministic convergence point of the architecture, addressing the inherent impedance mismatch between the probabilistic, unstructured output of the Large Language Model and the strict typing requirements of the SQL standard.
+ This phase transforms the raw tuple sets retrieved by the Executor into a consistent relational state, enabling the execution of complex logical operations that cannot be reliably offloaded to the generative model.
+
+ \subsection{Data Aggregation and Virtualization}
+ Upon the completion of the physical scan phase (whether Table-Scan or Key-Scan), the retrieved tuples are aggregated into a local staging structure, referred to as the \textbf{"Data Lake"} which maps table names to lists of dictionaries. To bridge the gap to a relational environment, the system instantiates an ephemeral, in-memory DuckDB connection. The aggregated data is converted into Pandas DataFrames and registered as virtual views within this database instance, effectively creating a transient relational schema populated by the LLM-generated data.
+
+ \subsection{Heuristic Type Inference and Sanitization}
+ A critical component of this phase is the "Smart Auto-Casting" mechanism implemented within the Galois orchestrator. Since LLMs typically generate JSON values as strings (e.g., "1000", "N/A"), direct SQL operations often fail due to type mismatches. The system iterates through the columns of the intermediate DataFrames, attempting to coerce values into numeric types using \textbf{pd.to\_numeric}.
+
+ To prevent erroneous casting (e.g., converting legitimate alphanumeric identifiers into NaN), the algorithm employs a statistical threshold: if the coercion results in a null rate exceeding 95\% (indicating that the column is likely textual), the transformation is reverted, and the column is treated as a string. Furthermore, string attributes undergo sanitization procedures, such as whitespace stripping, to ensure that join keys match correctly (e.g., resolving discrepancies between "Arizona " and "Arizona").
+
+ \subsection{Deterministic Query Execution}
+ Once the data is virtualized and typed, the system executes the logical query plan locally. This step involves running the original SQL query (sanitized of specific schema prefixes like \textbf{.target}) against the virtual tables. This local execution performs two vital functions:
+
+ \begin{itemize}
+    \item \textbf{Join Reconstruction}: It re-establishes the relational links between disparate datasets that were retrieved via independent scan operations, ensuring the correct implementation of INNER or LEFT joins defined in the original AST.
+    \item \textbf{Residual Filtering}: It applies the \textbf{residual\_conditions} predicates identified during the Logical Optimization phase as too complex or numerically precise for the LLM (e.g., strict inequalities like length\_in\_km\ > 750). This ensures that the final result set adheres strictly to the logical constraints of the user's query, filtering out any hallucinations or imprecise data artifacts introduced by the model.
+ \end{itemize}

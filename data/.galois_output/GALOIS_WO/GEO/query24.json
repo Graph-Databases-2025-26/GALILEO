@@ -1,0 +1,91 @@
+{
+    "query_id": 24,
+    "sql": "SELECT state_name, population, area_squared_miles FROM target.usa_state;",
+    "result_set": [
+        {
+            "state_name": "Oregon",
+            "population": 4217732,
+            "area_squared_miles": 98386.0
+        },
+        {
+            "state_name": "Alaska",
+            "population": 739795,
+            "area_squared_miles": 663268.0
+        },
+        {
+            "state_name": "California",
+            "population": 39461588,
+            "area_squared_miles": 163696.0
+        },
+        {
+            "state_name": "Nevada",
+            "population": 3139651,
+            "area_squared_miles": 110567.0
+        },
+        {
+            "state_name": "Indiana",
+            "population": 6732219,
+            "area_squared_miles": 36420.0
+        },
+        {
+            "state_name": "Virginia",
+            "population": 8517685,
+            "area_squared_miles": 42775.0
+        },
+        {
+            "state_name": "Iowa",
+            "population": 3155070,
+            "area_squared_miles": 58557.0
+        },
+        {
+            "state_name": "Maine",
+            "population": 1362357,
+            "area_squared_miles": 35380.0
+        },
+        {
+            "state_name": "Utah",
+            "population": 3255954,
+            "area_squared_miles": 84997.0
+        },
+        {
+            "state_name": "Montana",
+            "population": 1068778,
+            "area_squared_miles": 147040.0
+        },
+        {
+            "state_name": "Vermont",
+            "population": 643077,
+            "area_squared_miles": 9615.0
+        },
+        {
+            "state_name": "South Dakota",
+            "population": 892508,
+            "area_squared_miles": 77116.0
+        },
+        {
+            "state_name": "Hawaii",
+            "population": 1420593,
+            "area_squared_miles": 10932.0
+        },
+        {
+            "state_name": "Colorado",
+            "population": 5758741,
+            "area_squared_miles": 104094.0
+        },
+        {
+            "state_name": "New Jersey",
+            "population": 8944461,
+            "area_squared_miles": 8722.0
+        },
+        {
+            "state_name": "Kansas",
+            "population": 2910745,
+            "area_squared_miles": 82277.0
+        },
+        {
+            "state_name": "Michigan",
+            "population": 10077331,
+            "area_squared_miles": 96716.0
+        }
+    ]
+}

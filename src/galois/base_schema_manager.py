@@ -21,7 +21,7 @@ class BaseSchemaManager:
         
     def __init__(self, dataset: str):
         self.dataset = dataset
-        self.engine = create_engine(f"duckdb:///{self.__get_database_path()}")
+        self.engine = create_engine(f"duckdb:///{self.__get_database_path()}", connect_args={'read_only': True})
         self.db_schema = self.__get_schema_info()
         
     

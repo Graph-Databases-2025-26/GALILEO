@@ -1,0 +1,5 @@
+{
+    "query_id": 3,
+    "sql": "SELECT name, city, country, elevation_in_ft FROM target.airports WHERE city = 'New York';",
+    "result_set": []
+}

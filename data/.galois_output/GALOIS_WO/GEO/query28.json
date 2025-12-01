@@ -1,0 +1,22 @@
+{
+    "query_id": 28,
+    "sql": "SELECT us.state_name, us.capital FROM target.usa_state us WHERE us.population > 5000000 AND us.density < 1000;",
+    "result_set": [
+        {
+            "state_name": "California",
+            "capital": "Sacramento"
+        },
+        {
+            "state_name": "Indiana",
+            "capital": "Indianapolis"
+        },
+        {
+            "state_name": "Virginia",
+            "capital": "Richmond"
+        },
+        {
+            "state_name": "Colorado",
+            "capital": "Denver"
+        }
+    ]
+}

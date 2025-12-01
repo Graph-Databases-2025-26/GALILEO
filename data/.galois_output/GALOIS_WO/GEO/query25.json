@@ -1,0 +1,91 @@
+{
+    "query_id": 25,
+    "sql": "SELECT us.state_name, us.capital, us.area_squared_miles FROM target.usa_state us;",
+    "result_set": [
+        {
+            "state_name": "Oregon",
+            "capital": "Salem",
+            "area_squared_miles": 98386.0
+        },
+        {
+            "state_name": "Alaska",
+            "capital": "Juneau",
+            "area_squared_miles": 663268.0
+        },
+        {
+            "state_name": "California",
+            "capital": "Sacramento",
+            "area_squared_miles": 163696.0
+        },
+        {
+            "state_name": "Nevada",
+            "capital": "Carson City",
+            "area_squared_miles": 110567.0
+        },
+        {
+            "state_name": "Indiana",
+            "capital": "Indianapolis",
+            "area_squared_miles": 36420.0
+        },
+        {
+            "state_name": "Virginia",
+            "capital": "Richmond",
+            "area_squared_miles": 42775.0
+        },
+        {
+            "state_name": "Iowa",
+            "capital": "Des Moines",
+            "area_squared_miles": 58557.0
+        },
+        {
+            "state_name": "Maine",
+            "capital": "Augusta",
+            "area_squared_miles": 35380.0
+        },
+        {
+            "state_name": "Utah",
+            "capital": "Salt Lake City",
+            "area_squared_miles": 84997.0
+        },
+        {
+            "state_name": "Montana",
+            "capital": "Helena",
+            "area_squared_miles": 147040.0
+        },
+        {
+            "state_name": "Vermont",
+            "capital": "Montpelier",
+            "area_squared_miles": 9615.0
+        },
+        {
+            "state_name": "South Dakota",
+            "capital": "Pierre",
+            "area_squared_miles": 77116.0
+        },
+        {
+            "state_name": "Hawaii",
+            "capital": "Honolulu",
+            "area_squared_miles": 10932.0
+        },
+        {
+            "state_name": "Colorado",
+            "capital": "Denver",
+            "area_squared_miles": 104094.0
+        },
+        {
+            "state_name": "New Jersey",
+            "capital": "Trenton",
+            "area_squared_miles": 8722.0
+        },
+        {
+            "state_name": "Kansas",
+            "capital": "Topeka",
+            "area_squared_miles": 82277.0
+        },
+        {
+            "state_name": "Michigan",
+            "capital": "Lansing",
+            "area_squared_miles": 96716.0
+        }
+    ]
+}
