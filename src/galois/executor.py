@@ -261,8 +261,8 @@ class GaloisExecutor:
                 
                 output.update({
                     "keyValue" : input_d["keyValue"],
-                    "attributes": self.schema_mgr.get_attributes(parsed_q["from_table"], "non_key"),
-                    "jsonSchema": json.dumps(self.schema_mgr.get_json_schema(parsed_q["from_table"], "non_key"), indent= 4)
+                    "attributes": self.schema_mgr.get_attributes(parsed_q["from_table"], "all"),
+                    "jsonSchema": json.dumps(self.schema_mgr.get_json_schema(parsed_q["from_table"], "all"), indent= 4)
                 })
 
         return output
@@ -361,8 +361,9 @@ class GaloisExecutor:
                     input_d.update({"prompt_t": "key_i", **self.g_memory.load_memory_variables({})})
                     
                     raw_response = chain.invoke(input_d)
-                    
-                response = self.resp_parser.parse(raw_response.content)
+
+                content_fixed = raw_response.content.replace("\\'", "'")
+                response = self.resp_parser.parse(content_fixed)
                 LOG.info(f"LLM Response Parsed: {response.root}")
                 
                 self.g_memory.save_context({}, {"response": response.root, "key": self.schema_mgr.get_attributes(parse_sql(query)["from_table"], "key")})
@@ -376,7 +377,8 @@ class GaloisExecutor:
         input_d.update({"prompt_t": "key_t", "history": "", "keyValue": self.g_memory.get_key_values})
             
         raw_response = chain.invoke(input_d)
-        response = self.resp_parser.parse(raw_response.content)
+        content_fixed = raw_response.content.replace("\\'", "'")
+        response = self.resp_parser.parse(content_fixed)
         LOG.info(f"LLM Response Parsed: {response}")
         
         self.g_memory.clear()

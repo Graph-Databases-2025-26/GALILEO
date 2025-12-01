@@ -187,9 +187,16 @@ class BaseSchemaManager:
         """
         
         json_info = None
+        dataset_dir = DATA_DIR / self.dataset.upper()
         
         try:
-            with open(DATA_DIR / self.dataset.upper() / f"{self.dataset.lower()}.json", 'r') as f:
+            json_file = list(dataset_dir.glob("*.json"))
+            if not json_file:
+                raise FileNotFoundError(f"No JSON file found in {dataset_dir}")
+
+            target_json_file = json_file[0]
+
+            with open(target_json_file, 'r') as f:
                 json_info = json.load(f)
                 LOG.info(f"Loaded JSON schema for {self.dataset}")
         

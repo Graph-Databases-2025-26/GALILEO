@@ -382,7 +382,7 @@ class Galois:
                         total_count = len(df)
 
                         #if more than 50% of the values are NaN the column is not a numeric one
-                        if total_count > 0 and (nan_count / total_count) > 0.5:
+                        if total_count > 0 and (nan_count / total_count) > 0.95:
                             df[col] = df[col].astype(str)
                         else:
                             # otherwise probably is numeric, using the cionverted one.
@@ -502,7 +502,7 @@ def main():
             physical_strategy="key"  # Forziamo Table Scan per vedere i due scaricamenti
         )
 
-        results = galois_system.run_push_all()
+        results = galois_system.run_push_confident()
 
         print("\n==========================================")
         print(f"   RISULTATO JOIN ({len(results)} righe)")
