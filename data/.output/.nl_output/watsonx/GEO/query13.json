@@ -14,7 +14,7 @@
         },
         {
             "lake_name": "Lake Erie",
-            "area_squared_km": "25700.0",
+            "area_squared_km": "25744.0",
             "country_name": "USA",
             "state_name": "Michigan"
         },
@@ -25,6 +25,6 @@
             "state_name": "Michigan"
         }
     ],
-    "time": 3.584,
-    "tokens": 154
+    "time": 3.573,
+    "tokens": 155
 }

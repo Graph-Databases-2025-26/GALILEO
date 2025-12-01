@@ -8,8 +8,14 @@
         },
         {
             "capital": "Albany"
+        },
+        {
+            "capital": "Harrisburg"
+        },
+        {
+            "capital": "Springfield"
         }
     ],
-    "time": 1.438,
-    "tokens": 107
+    "time": 68.667,
+    "tokens": 1015
 }

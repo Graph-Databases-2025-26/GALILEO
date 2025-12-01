@@ -1,3 +1,5 @@
+import os
+import json
 from time import time
 
 from src.config import Config_Loader
@@ -18,10 +20,20 @@ from ..utils.main_tools import get_dataset_selection
 """
 
 def llm_interaction_nl_baseline(config, database: str, prompts: list[str], b_type: str):
+    """
+    Iterative NL baseline:
+    - For each NL prompt (paired with its SQL query) we call the LLM up to max_iter times.
+    - We aggregate result rows across iterations and remove duplicates.
+    - Each subsequent iteration receives the already-returned rows in the prompt, so the LLM
+      is asked to return only *new* tuples or an empty result_set if none are left.
+    """
 
     logger.info(f"baseline: {b_type}")
     llm = get_llm_wrapper(config)
     chain = build_lcel_chain(llm, b_type)
+
+# Max number of LLM iterations per prompt from config.yaml
+    max_iter = config.galois_execution.max_iter
 
     folder = os.path.join(DATA_DIR, database)
 
@@ -38,19 +50,98 @@ def llm_interaction_nl_baseline(config, database: str, prompts: list[str], b_typ
 
         LOG.info(f"Executing baseline NL prompts: {prompt} with corresponding SQL query: {sql_query}")
 
+        all_rows = []        # merged rows across iterations
+        seen_rows = set()    # hashable representation of rows to avoid duplicates
+        total_time = 0.0
+        total_tokens = 0
+
+        # Keep a copy of the original natural-language prompt
+        base_prompt = prompt
+
+        for iteration in range(1, max_iter + 1):
+            LOG.info(f"[NL baseline] Iteration {iteration}/{max_iter} for current prompt.")
+
+            # Build iteration-specific prompt
+            if iteration == 1:
+                iteration_prompt = base_prompt
+            else:
+                if not all_rows:
+                    LOG.info(
+                        "No rows were returned in previous iterations; "
+                        "stopping NL iterations for this prompt."
+                    )
+                    break
+
+                already_rows_json = json.dumps(all_rows, ensure_ascii=False, indent=2)
+                iteration_prompt = (
+                    f"{base_prompt}\n\n"
+                    "The rows below have ALREADY been returned in previous responses and "
+                    "MUST NOT be repeated.\n"
+                    "If there are additional correct rows, answer ONLY with those new rows "
+                    "using the same JSON structure.\n"
+                    "If there are no more rows, return an empty result_set.\n"
+                    f"ALREADY RETURNED ROWS (JSON):\n{already_rows_json}\n"
+                )
+
+            payload = {
+                "database": database.lower(),
+                "b_type": b_type,
+                "query": sql_query,
+                "prompt": iteration_prompt,
+            }
+
         t_start = time()
         try:
-
-            payload = {"database": database.lower(), "b_type": b_type, "query": sql_query, "prompt":prompt}
             raw_response = invoke_with_backoff(chain, payload)
-
-            t_end = time()
-
-            result = parse_llm_response(raw_response, t_end - t_start, llm)
-            results.append(result)
-
         except Exception as e:
-            LOG.error(f"LLM/Parsing Error: {e}. Failed to parse required JSON structure.")
+            LOG.error(f"LLM invocation error in NL baseline: {e}")
+            break
+        t_end = time()
+
+
+        result = parse_llm_response(raw_response, t_end - t_start, llm)
+        rows = result.get("result_set", [])
+
+# If LLM returns empty result_set, nothing more to add
+        if not rows:
+            LOG.info(
+                f"Empty result_set returned by LLM at iteration {iteration}; "
+                "stopping NL iterations for this prompt."
+            )
+            break
+        
+        # Deduplicate vs all previously seen rows
+        new_rows = []
+        for row in rows:
+            key = tuple(sorted(row.items()))
+            if key not in seen_rows:
+                seen_rows.add(key)
+                all_rows.append(row)
+                new_rows.append(row)
+
+        LOG.info(
+            f"NL iteration {iteration}: "
+            f"{len(rows)} rows returned, {len(new_rows)} new rows after deduplication."
+        )
+
+        if not new_rows:
+            LOG.info(
+                "All rows in this NL iteration were duplicates; "
+                "no new rows to add. Stopping iterations for this prompt."
+            )
+            break
+
+        total_time += result.get("time", 0.0)
+        total_tokens += result.get("tokens", 0)
+
+        # Aggregated FULL_JSON result for this NL prompt / SQL query pair
+        aggregated_result = {
+            "result_set": all_rows,
+            "time": round(total_time, 3),
+            "tokens": total_tokens,
+        }
+        results.append(aggregated_result)
+
 
     save_baseline_to_json(database, results, llm, b_type)
 

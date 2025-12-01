@@ -10,12 +10,12 @@
             "usa_state_traversed": "California"
         },
         {
-            "usa_state_traversed": "Montana"
+            "usa_state_traversed": "Florida"
         },
         {
-            "usa_state_traversed": "New Mexico"
+            "usa_state_traversed": "Louisiana"
         }
     ],
-    "time": 2.6,
-    "tokens": 79
+    "time": 3.427,
+    "tokens": 102
 }

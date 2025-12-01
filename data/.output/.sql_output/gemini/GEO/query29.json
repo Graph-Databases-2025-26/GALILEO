@@ -5,8 +5,20 @@
             "capital": "Harrisburg",
             "density": 280.0,
             "population": 13000000
+        },
+        {
+            "state_name": "Ohio",
+            "capital": "Columbus",
+            "density": 286.0,
+            "population": 11799448
+        },
+        {
+            "state_name": "Virginia",
+            "capital": "Richmond",
+            "density": 218.0,
+            "population": 8631393
         }
     ],
-    "time": 3.583,
-    "tokens": 509
+    "time": 12.174,
+    "tokens": 2448
 }

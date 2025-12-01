@@ -1,9 +1,9 @@
 {
     "result_set": [
         {
-            "count_rivers": 6
+            "count_rivers": 1
         }
     ],
-    "time": 1.49,
-    "tokens": 78
+    "time": 0.764,
+    "tokens": 79
 }

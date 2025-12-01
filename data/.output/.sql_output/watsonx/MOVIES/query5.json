@@ -3,34 +3,46 @@
         {
             "originaltitle": "War Horse",
             "startyear": 2011,
-            "genres": "Adventure,Drama,War",
+            "genres": "Adventure, Drama, War",
             "birthyear": 1946
         },
         {
             "originaltitle": "Lincoln",
             "startyear": 2012,
-            "genres": "Biography,Drama,History",
+            "genres": "Biography, Drama, History",
             "birthyear": 1946
         },
         {
             "originaltitle": "Bridge of Spies",
             "startyear": 2015,
-            "genres": "Drama,History,Thriller",
+            "genres": "Drama, History, Thriller",
             "birthyear": 1946
         },
         {
             "originaltitle": "The BFG",
             "startyear": 2016,
-            "genres": "Adventure,Fantasy",
+            "genres": "Adventure, Family, Fantasy",
             "birthyear": 1946
         },
         {
             "originaltitle": "Ready Player One",
             "startyear": 2018,
-            "genres": "Action,Adventure,Sci-Fi",
+            "genres": "Action, Adventure, Sci-Fi",
+            "birthyear": 1946
+        },
+        {
+            "originaltitle": "West Side Story",
+            "startyear": 2021,
+            "genres": "Crime, Drama, Musical",
+            "birthyear": 1946
+        },
+        {
+            "originaltitle": "The Fabelmans",
+            "startyear": 2022,
+            "genres": "Biography, Comedy, Drama",
             "birthyear": 1946
         }
     ],
-    "time": 5.56,
-    "tokens": 197
+    "time": 9.088,
+    "tokens": 346
 }

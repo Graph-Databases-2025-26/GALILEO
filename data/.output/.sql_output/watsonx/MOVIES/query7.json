@@ -1,20 +1,28 @@
 {
     "result_set": [
         {
-            "startyear": 1975,
-            "numMovies": 2
-        },
-        {
             "startyear": 1982,
-            "numMovies": 1
+            "numMovies": 2
         },
         {
             "startyear": 1993,
-            "numMovies": 3
+            "numMovies": 1
         },
         {
             "startyear": 2002,
-            "numMovies": 2
+            "numMovies": 1
+        },
+        {
+            "startyear": 1975,
+            "numMovies": 1
+        },
+        {
+            "startyear": 1984,
+            "numMovies": 1
+        },
+        {
+            "startyear": 1991,
+            "numMovies": 1
         },
         {
             "startyear": 2011,
@@ -23,12 +31,8 @@
         {
             "startyear": 2015,
             "numMovies": 1
-        },
-        {
-            "startyear": 2018,
-            "numMovies": 1
         }
     ],
-    "time": 3.692,
-    "tokens": 130
+    "time": 5.879,
+    "tokens": 191
 }

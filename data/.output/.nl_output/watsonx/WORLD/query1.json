@@ -1,9 +1,18 @@
 {
     "result_set": [
         {
-            "government_form": "1"
+            "government_form": "Federal Republic",
+            "count": "1"
+        },
+        {
+            "government_form": "Republic",
+            "count": "2"
+        },
+        {
+            "government_form": "Constitutional Monarchy",
+            "count": "1"
         }
     ],
-    "time": 1.006,
-    "tokens": 18
+    "time": 2.872,
+    "tokens": 59
 }

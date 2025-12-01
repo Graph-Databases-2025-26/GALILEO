@@ -1,31 +1,26 @@
 {
     "result_set": [
         {
-            "state_name": "Washington",
-            "capital": "Olympia",
-            "population": 3134000
+            "state_name": "California",
+            "capital": "Sacramento",
+            "population": "39512223"
         },
         {
-            "state_name": "Arizona",
-            "capital": "Phoenix",
-            "population": 3849000
+            "state_name": "Texas",
+            "capital": "Austin",
+            "population": "7477439"
         },
         {
-            "state_name": "Oregon",
-            "capital": "Salem",
-            "population": 4434000
+            "state_name": "Florida",
+            "capital": "Tallahassee",
+            "population": "7480538"
         },
         {
-            "state_name": "Colorado",
-            "capital": "Denver",
-            "population": 4632000
-        },
-        {
-            "state_name": "Minnesota",
-            "capital": "Saint Paul",
-            "population": 4943000
+            "state_name": "Alaska",
+            "capital": "Juneau",
+            "population": "739795"
         }
     ],
-    "time": 5.604,
-    "tokens": 130
+    "time": 4.323,
+    "tokens": 158
 }

@@ -14,8 +14,17 @@
         },
         {
             "city_name": "Phoenix"
+        },
+        {
+            "city_name": "Philadelphia"
+        },
+        {
+            "city_name": "San Antonio"
+        },
+        {
+            "city_name": "San Diego"
         }
     ],
-    "time": 1.728,
-    "tokens": 64
+    "time": 5.511,
+    "tokens": 118
 }

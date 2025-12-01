@@ -14,8 +14,53 @@
             "state_name": "Florida",
             "population": 22244823,
             "area_squared_miles": 65758.0
+        },
+        {
+            "state_name": "New York",
+            "population": 19677151,
+            "area_squared_miles": 54555.0
+        },
+        {
+            "state_name": "Pennsylvania",
+            "population": 12906379,
+            "area_squared_miles": 46055.0
+        },
+        {
+            "state_name": "Illinois",
+            "population": 12582032,
+            "area_squared_miles": 57914.0
+        },
+        {
+            "state_name": "Ohio",
+            "population": 11756058,
+            "area_squared_miles": 44825.0
+        },
+        {
+            "state_name": "Georgia",
+            "population": 10912876,
+            "area_squared_miles": 59425.0
+        },
+        {
+            "state_name": "North Carolina",
+            "population": 10835491,
+            "area_squared_miles": 53819.0
+        },
+        {
+            "state_name": "Michigan",
+            "population": 10037261,
+            "area_squared_miles": 96716.0
+        },
+        {
+            "state_name": "New Jersey",
+            "population": 9261699,
+            "area_squared_miles": 8729.0
+        },
+        {
+            "state_name": "Virginia",
+            "population": 8642274,
+            "area_squared_miles": 42774.0
         }
     ],
-    "time": 2.048,
-    "tokens": 222
+    "time": 6.895,
+    "tokens": 1069
 }

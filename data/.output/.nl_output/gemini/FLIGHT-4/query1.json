@@ -13,13 +13,73 @@
             "name": "Miyako Airport"
         },
         {
+            "name": "Nagasaki Airport"
+        },
+        {
+            "name": "Kagoshima Airport"
+        },
+        {
+            "name": "Kochi Airport"
+        },
+        {
+            "name": "Matsuyama Airport"
+        },
+        {
+            "name": "Oita Airport"
+        },
+        {
+            "name": "Okayama Airport"
+        },
+        {
+            "name": "Takamatsu Airport"
+        },
+        {
+            "name": "Yamaguchi Ube Airport"
+        },
+        {
+            "name": "Amami Airport"
+        },
+        {
+            "name": "Fukue Airport"
+        },
+        {
+            "name": "Kitakyushu Airport"
+        },
+        {
+            "name": "Kumamoto Airport"
+        },
+        {
+            "name": "Miyazaki Airport"
+        },
+        {
+            "name": "New Chitose Airport"
+        },
+        {
+            "name": "Okinawa Airport"
+        },
+        {
+            "name": "Saga Airport"
+        },
+        {
+            "name": "Shonai Airport"
+        },
+        {
+            "name": "Tokunoshima Airport"
+        },
+        {
+            "name": "Yakushima Airport"
+        },
+        {
+            "name": "Yonago Airport"
+        },
+        {
+            "name": "Yoron Airport"
+        },
+        {
             "name": "Memanbetsu Airport"
         },
         {
             "name": "Monbetsu Airport"
-        },
-        {
-            "name": "Okushiri Airport"
         },
         {
             "name": "Rishiri Airport"
@@ -28,163 +88,19 @@
             "name": "Wakkanai Airport"
         },
         {
-            "name": "New Chitose Airport"
+            "name": "Nakashibetsu Airport"
         },
         {
-            "name": "Hakodate Airport"
+            "name": "Okushiri Airport"
         },
         {
-            "name": "Asahikawa Airport"
+            "name": "Rebun Airport"
         },
         {
-            "name": "Obihiro Airport"
+            "name": "Sado Airport"
         },
         {
-            "name": "Aomori Airport"
-        },
-        {
-            "name": "Hanamaki Airport"
-        },
-        {
-            "name": "Sendai Airport"
-        },
-        {
-            "name": "Akita Airport"
-        },
-        {
-            "name": "Yamagata Airport"
-        },
-        {
-            "name": "Fukushima Airport"
-        },
-        {
-            "name": "Ibaraki Airport"
-        },
-        {
-            "name": "Narita International Airport"
-        },
-        {
-            "name": "Tokyo Haneda International Airport"
-        },
-        {
-            "name": "Oshima Airport"
-        },
-        {
-            "name": "Hachijojima Airport"
-        },
-        {
-            "name": "Niigata Airport"
-        },
-        {
-            "name": "Toyama Airport"
-        },
-        {
-            "name": "Komatsu Airport"
-        },
-        {
-            "name": "Shizuoka Airport"
-        },
-        {
-            "name": "Chubu Centrair International Airport"
-        },
-        {
-            "name": "Osaka Kansai International Airport"
-        },
-        {
-            "name": "Osaka International Airport"
-        },
-        {
-            "name": "Kobe Airport"
-        },
-        {
-            "name": "Tottori Airport"
-        },
-        {
-            "name": "Okayama Airport"
-        },
-        {
-            "name": "Hiroshima Airport"
-        },
-        {
-            "name": "Yamaguchi Ube Airport"
-        },
-        {
-            "name": "Takamatsu Airport"
-        },
-        {
-            "name": "Matsuyama Airport"
-        },
-        {
-            "name": "Kochi Airport"
-        },
-        {
-            "name": "Fukuoka Airport"
-        },
-        {
-            "name": "Kitakyushu Airport"
-        },
-        {
-            "name": "Saga Airport"
-        },
-        {
-            "name": "Nagasaki Airport"
-        },
-        {
-            "name": "Kumamoto Airport"
-        },
-        {
-            "name": "Oita Airport"
-        },
-        {
-            "name": "Miyazaki Airport"
-        },
-        {
-            "name": "Kagoshima Airport"
-        },
-        {
-            "name": "Amami Airport"
-        },
-        {
-            "name": "Naha Airport"
-        },
-        {
-            "name": "Miyako Airport"
-        },
-        {
-            "name": "Ishigaki Airport"
-        },
-        {
-            "name": "Minami-Daito Airport"
-        },
-        {
-            "name": "Kitadaito Airport"
-        },
-        {
-            "name": "Kumejima Airport"
-        },
-        {
-            "name": "Yonaguni Airport"
-        },
-        {
-            "name": "Shimojishima Airport"
-        },
-        {
-            "name": "Tarama Airport"
-        },
-        {
-            "name": "Hateruma Airport"
-        },
-        {
-            "name": "Aguni Airport"
-        },
-        {
-            "name": "Iejima Airport"
-        },
-        {
-            "name": "Kerama Airport"
-        },
-        {
-            "name": "New Ishigaki Airport"
+            "name": "Iki Airport"
         },
         {
             "name": "Kikai Airport"
@@ -193,435 +109,120 @@
             "name": "Okinoerabu Airport"
         },
         {
-            "name": "Yoron Airport"
-        },
-        {
             "name": "Tanegashima Airport"
-        },
-        {
-            "name": "Yakushima Airport"
-        },
-        {
-            "name": "Fukue Airport"
         },
         {
             "name": "Tsushima Airport"
         },
         {
-            "name": "Iki Airport"
+            "name": "Hateruma Airport"
         },
         {
-            "name": "Oki Airport"
+            "name": "Kitadaito Airport"
         },
         {
-            "name": "Izumo Airport"
+            "name": "Minamidaito Airport"
+        },
+        {
+            "name": "Tarama Airport"
+        },
+        {
+            "name": "Shimojishima Airport"
+        },
+        {
+            "name": "Aguni Airport"
+        },
+        {
+            "name": "Iejima Airport"
+        },
+        {
+            "name": "Kumejima Airport"
+        },
+        {
+            "name": "Minami-Torishima Airport"
+        },
+        {
+            "name": "New Ishigaki Airport"
+        },
+        {
+            "name": "Yonaguni Airport"
+        },
+        {
+            "name": "Kerama Airport"
+        },
+        {
+            "name": "Kozushima Airport"
+        },
+        {
+            "name": "Miyakejima Airport"
+        },
+        {
+            "name": "Oshima Airport"
+        },
+        {
+            "name": "Hachijojima Airport"
+        },
+        {
+            "name": "Iwo Jima Airport"
+        },
+        {
+            "name": "Chofu Airport"
+        },
+        {
+            "name": "Shizuhama Airport"
+        },
+        {
+            "name": "Hyakuri Airport"
+        },
+        {
+            "name": "Yokota Air Base"
+        },
+        {
+            "name": "Atsugi Naval Air Station"
+        },
+        {
+            "name": "Iwakuni Airport"
         },
         {
             "name": "Miho Yonago Airport"
         },
         {
-            "name": "Noto Airport"
+            "name": "Komatsu Airport"
         },
         {
-            "name": "Matsumoto Airport"
+            "name": "Naha Airport"
         },
         {
-            "name": "Shonai Airport"
+            "name": "Kadena Air Base"
         },
         {
-            "name": "Odate Airport"
+            "name": "Futenma Marine Corps Air Station"
         },
         {
-            "name": "Monastir Habib Bourguiba International Airport"
+            "name": "Shimofusa Airport"
         },
         {
-            "name": "Djerba Zarzis International Airport"
+            "name": "Tsuiki Air Base"
         },
         {
-            "name": "Sfax Thyna International Airport"
+            "name": "Nyutabaru Air Base"
         },
         {
-            "name": "Tozeur Nefta International Airport"
+            "name": "Ashiya Air Base"
         },
         {
-            "name": "Gafsa Ksar International Airport"
+            "name": "Chitose Airport"
         },
         {
-            "name": "Tabarka 7 Novembre Airport"
+            "name": "Hakodate Airport"
         },
         {
-            "name": "Enfidha - Hammamet International Airport"
+            "name": "Misawa Air Base"
         },
         {
-            "name": "Tunis Carthage International Airport"
-        },
-        {
-            "name": "Chinggis Khaan International Airport"
-        },
-        {
-            "name": "Donoi Airport"
-        },
-        {
-            "name": "Khovd Airport"
-        },
-        {
-            "name": "Muren Airport"
-        },
-        {
-            "name": "Ulaangom Airport"
-        },
-        {
-            "name": "Altai Airport"
-        },
-        {
-            "name": "Bayankhongor Airport"
-        },
-        {
-            "name": "Dalanzadgad Airport"
-        },
-        {
-            "name": "Choibalsan Airport"
-        },
-        {
-            "name": "Arvaikheer Airport"
-        },
-        {
-            "name": "Bulgan Airport"
-        },
-        {
-            "name": "Mandalgovi Airport"
-        },
-        {
-            "name": "Oyu Tolgoi Airport"
-        },
-        {
-            "name": "Tsetserleg Airport"
-        },
-        {
-            "name": "Zavkhan Airport"
-        },
-        {
-            "name": "Uliastai Airport"
-        },
-        {
-            "name": "Tashkent International Airport"
-        },
-        {
-            "name": "Samarkand Airport"
-        },
-        {
-            "name": "Bukhara Airport"
-        },
-        {
-            "name": "Urgench Airport"
-        },
-        {
-            "name": "Fergana International Airport"
-        },
-        {
-            "name": "Namangan Airport"
-        },
-        {
-            "name": "Andizhan Airport"
-        },
-        {
-            "name": "Nukus Airport"
-        },
-        {
-            "name": "Termez Airport"
-        },
-        {
-            "name": "Karshi Airport"
-        },
-        {
-            "name": "Zarafshan Airport"
-        },
-        {
-            "name": "Navoi Airport"
-        },
-        {
-            "name": "Sary-Arka Airport"
-        },
-        {
-            "name": "Shymkent Airport"
-        },
-        {
-            "name": "Taraz Airport"
-        },
-        {
-            "name": "Kyzylorda Airport"
-        },
-        {
-            "name": "Atyrau Airport"
-        },
-        {
-            "name": "Aktau Airport"
-        },
-        {
-            "name": "Aktobe Airport"
-        },
-        {
-            "name": "Oral Ak Zhol Airport"
-        },
-        {
-            "name": "Kostanay Airport"
-        },
-        {
-            "name": "Petropavlosk South Airport"
-        },
-        {
-            "name": "Pavlodar Airport"
-        },
-        {
-            "name": "Oskemen Airport"
-        },
-        {
-            "name": "Semey Airport"
-        },
-        {
-            "name": "Zhezkazgan Airport"
-        },
-        {
-            "name": "Balkhash Airport"
-        },
-        {
-            "name": "Taldykorgan Airport"
-        },
-        {
-            "name": "Astana International Airport"
-        },
-        {
-            "name": "Almaty International Airport"
-        },
-        {
-            "name": "Manas International Airport"
-        },
-        {
-            "name": "Osh Airport"
-        },
-        {
-            "name": "Issyk-Kul International Airport"
-        },
-        {
-            "name": "Jalal-Abad Airport"
-        },
-        {
-            "name": "Kazarman Airport"
-        },
-        {
-            "name": "Kerben Airport"
-        },
-        {
-            "name": "Batken Airport"
-        },
-        {
-            "name": "Naryn Airport"
-        },
-        {
-            "name": "Tokmok Airport"
-        },
-        {
-            "name": "Tamchy Airport"
-        },
-        {
-            "name": "Khorog Airport"
-        },
-        {
-            "name": "Dushanbe Airport"
-        },
-        {
-            "name": "Khujand Airport"
-        },
-        {
-            "name": "Kulob Airport"
-        },
-        {
-            "name": "Bokhtar International Airport"
-        },
-        {
-            "name": "Ashgabat Airport"
-        },
-        {
-            "name": "Turkmenabat Airport"
-        },
-        {
-            "name": "Dashoguz Airport"
-        },
-        {
-            "name": "Mary Airport"
-        },
-        {
-            "name": "Turkmenbashi Airport"
-        },
-        {
-            "name": "Ganja Airport"
-        },
-        {
-            "name": "Nakhchivan Airport"
-        },
-        {
-            "name": "Gabala Airport"
-        },
-        {
-            "name": "Lankaran International Airport"
-        },
-        {
-            "name": "Zaqatala International Airport"
-        },
-        {
-            "name": "Heydar Aliyev International Airport"
-        },
-        {
-            "name": "Minsk National Airport"
-        },
-        {
-            "name": "Gomel Airport"
-        },
-        {
-            "name": "Mogilev Airport"
-        },
-        {
-            "name": "Vitebsk Vostochny Airport"
-        },
-        {
-            "name": "Grodno Airport"
-        },
-        {
-            "name": "Brest Airport"
-        },
-        {
-            "name": "Zvartnots International Airport"
-        },
-        {
-            "name": "Shirak Airport"
-        },
-        {
-            "name": "Stepanakert Airport"
-        },
-        {
-            "name": "Batumi International Airport"
-        },
-        {
-            "name": "Kutaisi Airport"
-        },
-        {
-            "name": "Tbilisi International Airport"
-        },
-        {
-            "name": "Sukhumi Dranda Airport"
-        },
-        {
-            "name": "Lviv International Airport"
-        },
-        {
-            "name": "Chernivtsi International Airport"
-        },
-        {
-            "name": "Uzhhorod International Airport"
-        },
-        {
-            "name": "Ivano-Frankivsk International Airport"
-        },
-        {
-            "name": "Kyiv Zhuliany International Airport"
-        },
-        {
-            "name": "Boryspil International Airport"
-        },
-        {
-            "name": "Cherkasy International Airport"
-        },
-        {
-            "name": "Kryvyi Rih International Airport"
-        },
-        {
-            "name": "Dnipropetrovsk International Airport"
-        },
-        {
-            "name": "Zaporizhzhia International Airport"
-        },
-        {
-            "name": "Kharkiv International Airport"
-        },
-        {
-            "name": "Poltava Airport"
-        },
-        {
-            "name": "Sumy Airport"
-        },
-        {
-            "name": "Luhansk International Airport"
-        },
-        {
-            "name": "Donetsk International Airport"
-        },
-        {
-            "name": "Mariupol International Airport"
-        },
-        {
-            "name": "Kherson International Airport"
-        },
-        {
-            "name": "Mykolaiv International Airport"
-        },
-        {
-            "name": "Odesa International Airport"
-        },
-        {
-            "name": "Simferopol International Airport"
-        },
-        {
-            "name": "Sevastopol International Airport"
-        },
-        {
-            "name": "Rivne International Airport"
-        },
-        {
-            "name": "Vinnytsia Gavryshivka International Airport"
-        },
-        {
-            "name": "Khmelnytskyi Airport"
-        },
-        {
-            "name": "Kirovohrad Airport"
-        },
-        {
-            "name": "Lutsk Airport"
-        },
-        {
-            "name": "Kramatorsk Airport"
-        },
-        {
-            "name": "Kyiv Gostomel Airport"
-        },
-        {
-            "name": "Chisinau International Airport"
-        },
-        {
-            "name": "Tiraspol Airport"
-        },
-        {
-            "name": "Kishinev Airport"
-        },
-        {
-            "name": "B\u0103l\u021bi International Airport"
-        },
-        {
-            "name": "B\u0103l\u021bi City Airport"
-        },
-        {
-            "name": "Bucharest Henri Coand\u0103 International Airport"
-        },
-        {
-            "name": "Bucharest Aurel Vlaicu International Airport"
-        },
-        {
-            "name": "Cluj-Napoca International Airport"
-        },
-        {
-            "name": "T"
+            "name": "Kisarazu Airport"
         }
     ],
-    "time": 11.894,
-    "tokens": 1998
+    "time": 6.663,
+    "tokens": 1390
 }

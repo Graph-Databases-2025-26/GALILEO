@@ -1,9 +1,9 @@
 {
     "result_set": [
         {
-            "count(distinct river_name)": 7
+            "count(distinct river_name)": 2
         }
     ],
-    "time": 1.04,
-    "tokens": 23
+    "time": 0.916,
+    "tokens": 20
 }

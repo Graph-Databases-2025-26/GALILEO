@@ -1,6 +1,14 @@
 {
     "result_set": [
         {
+            "primarytitle": "Hook",
+            "startyear": 1991,
+            "genres": "Adventure, Comedy, Family",
+            "birthyear": 1946,
+            "deathyear": null,
+            "runtimeminutes": 144
+        },
+        {
             "primarytitle": "Jurassic Park",
             "startyear": 1993,
             "genres": "Action, Adventure, Sci-Fi",
@@ -17,6 +25,22 @@
             "runtimeminutes": 195
         },
         {
+            "primarytitle": "The Lost World: Jurassic Park",
+            "startyear": 1997,
+            "genres": "Action, Adventure, Sci-Fi",
+            "birthyear": 1946,
+            "deathyear": null,
+            "runtimeminutes": 129
+        },
+        {
+            "primarytitle": "Amistad",
+            "startyear": 1997,
+            "genres": "Drama, History",
+            "birthyear": 1946,
+            "deathyear": null,
+            "runtimeminutes": 154
+        },
+        {
             "primarytitle": "Saving Private Ryan",
             "startyear": 1998,
             "genres": "Drama, War",
@@ -25,6 +49,6 @@
             "runtimeminutes": 169
         }
     ],
-    "time": 4.204,
-    "tokens": 171
+    "time": 9.958,
+    "tokens": 331
 }

@@ -3,12 +3,28 @@
         {
             "originaltitle": "Jurassic Park",
             "startyear": 1993,
-            "genres": "Adventure,Sci-Fi,Thriller",
+            "genres": "Action,Adventure,Sci-Fi",
             "birthyear": 1946,
             "deathyear": null,
             "runtimeminutes": 127
+        },
+        {
+            "originaltitle": "Schindler's List",
+            "startyear": 1993,
+            "genres": "Biography,Drama,History",
+            "birthyear": 1946,
+            "deathyear": null,
+            "runtimeminutes": 195
+        },
+        {
+            "originaltitle": "Saving Private Ryan",
+            "startyear": 1998,
+            "genres": "Drama,War",
+            "birthyear": 1946,
+            "deathyear": null,
+            "runtimeminutes": 169
         }
     ],
-    "time": 2.681,
-    "tokens": 358
+    "time": 6.88,
+    "tokens": 1297
 }

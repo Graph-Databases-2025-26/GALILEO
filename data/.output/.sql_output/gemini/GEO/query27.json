@@ -7,25 +7,25 @@
         },
         {
             "state_name": "Texas",
-            "population": 30500000,
+            "population": 30000000,
             "capital": "Austin"
         },
         {
             "state_name": "Florida",
-            "population": 22600000,
+            "population": 22000000,
             "capital": "Tallahassee"
         },
         {
             "state_name": "New York",
-            "population": 19600000,
+            "population": 19500000,
             "capital": "Albany"
         },
         {
             "state_name": "Pennsylvania",
-            "population": 12900000,
+            "population": 13000000,
             "capital": "Harrisburg"
         }
     ],
-    "time": 2.862,
-    "tokens": 388
+    "time": 8.619,
+    "tokens": 1679
 }

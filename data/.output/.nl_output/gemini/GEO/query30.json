@@ -1,8 +1,20 @@
 {
     "result_set": [
         {
-            "state_name": "Colorado",
-            "capital": "Denver"
+            "state_name": "Arizona",
+            "capital": "Phoenix"
+        },
+        {
+            "state_name": "Illinois",
+            "capital": "Springfield"
+        },
+        {
+            "state_name": "California",
+            "capital": "Sacramento"
+        },
+        {
+            "state_name": "Texas",
+            "capital": "Austin"
         },
         {
             "state_name": "Florida",
@@ -13,10 +25,6 @@
             "capital": "Atlanta"
         },
         {
-            "state_name": "Illinois",
-            "capital": "Springfield"
-        },
-        {
             "state_name": "Michigan",
             "capital": "Lansing"
         },
@@ -25,26 +33,18 @@
             "capital": "Raleigh"
         },
         {
-            "state_name": "Ohio",
-            "capital": "Columbus"
-        },
-        {
             "state_name": "Pennsylvania",
             "capital": "Harrisburg"
         },
         {
-            "state_name": "Texas",
-            "capital": "Austin"
+            "state_name": "Ohio",
+            "capital": "Columbus"
         },
         {
-            "state_name": "Virginia",
-            "capital": "Richmond"
-        },
-        {
-            "state_name": "Washington",
-            "capital": "Olympia"
+            "state_name": "New York",
+            "capital": "Albany"
         }
     ],
-    "time": 2.454,
-    "tokens": 322
+    "time": 1.729,
+    "tokens": 324
 }

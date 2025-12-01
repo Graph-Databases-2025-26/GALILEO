@@ -4,21 +4,24 @@
             "region": "British Islands",
             "language": "English",
             "is_official": true,
-            "percentage": 0.0
+            "percentage": 0.0,
+            "country_code_3_letters": "GBR"
         },
         {
             "region": "North America",
             "language": "English",
             "is_official": true,
-            "percentage": 0.0
+            "percentage": 0.0,
+            "country_code_3_letters": "USA"
         },
         {
             "region": "Benelux",
             "language": "Dutch",
             "is_official": true,
-            "percentage": 0.0
+            "percentage": 0.0,
+            "country_code_3_letters": "NLD"
         }
     ],
-    "time": 2.46,
-    "tokens": 101
+    "time": 3.827,
+    "tokens": 154
 }

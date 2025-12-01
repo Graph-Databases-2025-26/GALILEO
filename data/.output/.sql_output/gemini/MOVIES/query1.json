@@ -2,8 +2,17 @@
     "result_set": [
         {
             "originaltitle": "Ivanhoe"
+        },
+        {
+            "originaltitle": "The Prisoner of Zenda"
+        },
+        {
+            "originaltitle": "Night Must Fall"
+        },
+        {
+            "originaltitle": "The Thin Man Goes Home"
         }
     ],
-    "time": 15.963,
-    "tokens": 120
+    "time": 4.61,
+    "tokens": 609
 }

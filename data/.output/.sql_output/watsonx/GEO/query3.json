@@ -2,8 +2,11 @@
     "result_set": [
         {
             "count(capital)": 1
+        },
+        {
+            "count(capital)": 0
         }
     ],
-    "time": 0.956,
-    "tokens": 21
+    "time": 2.068,
+    "tokens": 42
 }

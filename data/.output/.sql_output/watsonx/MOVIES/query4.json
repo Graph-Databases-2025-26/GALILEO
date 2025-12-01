@@ -1,10 +1,6 @@
 {
     "result_set": [
         {
-            "originaltitle": "War Horse",
-            "startyear": 2011
-        },
-        {
             "originaltitle": "Lincoln",
             "startyear": 2012
         },
@@ -19,8 +15,12 @@
         {
             "originaltitle": "Ready Player One",
             "startyear": 2018
+        },
+        {
+            "originaltitle": "West Side Story",
+            "startyear": 2021
         }
     ],
-    "time": 3.242,
-    "tokens": 105
+    "time": 4.493,
+    "tokens": 134
 }

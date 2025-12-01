@@ -1,12 +1,5 @@
 {
-    "result_set": [
-        {
-            "name": "John F Kennedy International Airport",
-            "city": "New York",
-            "country": "United States",
-            "elevation_in_ft": 13
-        }
-    ],
-    "time": 1.574,
-    "tokens": 133
+    "result_set": [],
+    "time": 0.0,
+    "tokens": 0
 }

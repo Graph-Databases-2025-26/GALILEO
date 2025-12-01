@@ -16,6 +16,7 @@ class ExecutionConfig(BaseModel):
     backoff_sec: float
     scan: str
     confidence_threshold: float
+    max_iter: int = 3
 
 class IOConfig(BaseModel):
     """Configuration settings for input and output directory paths."""

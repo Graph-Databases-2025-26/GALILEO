@@ -2,8 +2,14 @@
     "result_set": [
         {
             "airline": "United Airlines"
+        },
+        {
+            "airline": "United Airlines Inc."
+        },
+        {
+            "airline": "United Air Lines Inc."
         }
     ],
-    "time": 0.887,
-    "tokens": 22
+    "time": 3.207,
+    "tokens": 73
 }

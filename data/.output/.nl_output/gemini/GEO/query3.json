@@ -1,9 +1,9 @@
 {
     "result_set": [
         {
-            "number_of_capitals": 1
+            "count_capitals": 1
         }
     ],
-    "time": 4.6,
-    "tokens": 696
+    "time": 1.465,
+    "tokens": 163
 }

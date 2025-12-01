@@ -1,57 +1,108 @@
 {
     "result_set": [
         {
-            "primarytitle": "Jaws"
-        },
-        {
-            "primarytitle": "E.T. the Extra-Terrestrial"
-        },
-        {
-            "primarytitle": "Jurassic Park"
-        },
-        {
-            "primarytitle": "Schindler's List"
-        },
-        {
-            "primarytitle": "Saving Private Ryan"
-        },
-        {
-            "primarytitle": "Indiana Jones and the Raiders of the Lost Ark"
-        },
-        {
-            "primarytitle": "Close Encounters of the Third Kind"
-        },
-        {
-            "primarytitle": "Minority Report"
-        },
-        {
-            "primarytitle": "Catch Me If You Can"
-        },
-        {
-            "primarytitle": "War of the Worlds"
-        },
-        {
-            "primarytitle": "Munich"
-        },
-        {
-            "primarytitle": "Lincoln"
-        },
-        {
-            "primarytitle": "Bridge of Spies"
-        },
-        {
-            "primarytitle": "The Post"
-        },
-        {
-            "primarytitle": "Ready Player One"
+            "primarytitle": "The Fabelmans"
         },
         {
             "primarytitle": "West Side Story"
         },
         {
-            "primarytitle": "The Fabelmans"
+            "primarytitle": "Ready Player One"
+        },
+        {
+            "primarytitle": "The Post"
+        },
+        {
+            "primarytitle": "Bridge of Spies"
+        },
+        {
+            "primarytitle": "Lincoln"
+        },
+        {
+            "primarytitle": "War Horse"
+        },
+        {
+            "primarytitle": "The Adventures of Tintin"
+        },
+        {
+            "primarytitle": "Indiana Jones and the Kingdom of the Crystal Skull"
+        },
+        {
+            "primarytitle": "Munich"
+        },
+        {
+            "primarytitle": "War of the Worlds"
+        },
+        {
+            "primarytitle": "The Terminal"
+        },
+        {
+            "primarytitle": "Catch Me If You Can"
+        },
+        {
+            "primarytitle": "Minority Report"
+        },
+        {
+            "primarytitle": "A.I. Artificial Intelligence"
+        },
+        {
+            "primarytitle": "Saving Private Ryan"
+        },
+        {
+            "primarytitle": "Amistad"
+        },
+        {
+            "primarytitle": "The Lost World: Jurassic Park"
+        },
+        {
+            "primarytitle": "Schindler's List"
+        },
+        {
+            "primarytitle": "Jurassic Park"
+        },
+        {
+            "primarytitle": "Hook"
+        },
+        {
+            "primarytitle": "Always"
+        },
+        {
+            "primarytitle": "Indiana Jones and the Last Crusade"
+        },
+        {
+            "primarytitle": "Empire of the Sun"
+        },
+        {
+            "primarytitle": "The Color Purple"
+        },
+        {
+            "primarytitle": "Indiana Jones and the Temple of Doom"
+        },
+        {
+            "primarytitle": "Twilight Zone: The Movie"
+        },
+        {
+            "primarytitle": "E.T. the Extra-Terrestrial"
+        },
+        {
+            "primarytitle": "Raiders of the Lost Ark"
+        },
+        {
+            "primarytitle": "1941"
+        },
+        {
+            "primarytitle": "Close Encounters of the Third Kind"
+        },
+        {
+            "primarytitle": "Jaws"
+        },
+        {
+            "primarytitle": "The Sugarland Express"
+        },
+        {
+            "primarytitle": "Duel"
         }
     ],
-    "time": 17.932,
-    "tokens": 208
+    "time": 1.91,
+    "tokens": 371
 }

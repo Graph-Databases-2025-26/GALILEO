@@ -11,8 +11,29 @@
         },
         {
             "usa_state_traversed": "Louisiana"
+        },
+        {
+            "usa_state_traversed": "Minnesota"
+        },
+        {
+            "usa_state_traversed": "Texas"
+        },
+        {
+            "usa_state_traversed": "Wisconsin"
+        },
+        {
+            "usa_state_traversed": "Iowa"
+        },
+        {
+            "usa_state_traversed": "Illinois"
+        },
+        {
+            "usa_state_traversed": "Kentucky"
+        },
+        {
+            "usa_state_traversed": "Tennessee"
         }
     ],
-    "time": 2.573,
-    "tokens": 216
+    "time": 78.214,
+    "tokens": 3063
 }

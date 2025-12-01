@@ -1,10 +1,14 @@
 {
     "result_set": [
         {
-            "name": "Hugo Chavez",
-            "party": "United Socialist Party of Venezuela"
+            "party": "Democratic",
+            "num": 5
+        },
+        {
+            "party": "Republican",
+            "num": 4
         }
     ],
-    "time": 2.317,
-    "tokens": 34
+    "time": 2.537,
+    "tokens": 42
 }

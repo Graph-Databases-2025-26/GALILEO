@@ -9,14 +9,6 @@
             "runtimeminutes": 127
         },
         {
-            "originaltitle": "The Lost World: Jurassic Park",
-            "startyear": 1997,
-            "genres": "Action,Adventure,Sci-Fi",
-            "birthyear": 1946,
-            "deathyear": null,
-            "runtimeminutes": 129
-        },
-        {
             "originaltitle": "Amistad",
             "startyear": 1997,
             "genres": "Drama,History",
@@ -31,8 +23,16 @@
             "birthyear": 1946,
             "deathyear": null,
             "runtimeminutes": 169
+        },
+        {
+            "originaltitle": "A.I. Artificial Intelligence",
+            "startyear": 1999,
+            "genres": "Adventure,Drama,Sci-Fi",
+            "birthyear": 1946,
+            "deathyear": null,
+            "runtimeminutes": 146
         }
     ],
-    "time": 6.201,
-    "tokens": 226
+    "time": 6.376,
+    "tokens": 279
 }

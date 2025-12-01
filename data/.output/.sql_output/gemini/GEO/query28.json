@@ -19,8 +19,32 @@
         {
             "state_name": "Pennsylvania",
             "capital": "Harrisburg"
+        },
+        {
+            "state_name": "Illinois",
+            "capital": "Springfield"
+        },
+        {
+            "state_name": "Ohio",
+            "capital": "Columbus"
+        },
+        {
+            "state_name": "Georgia",
+            "capital": "Atlanta"
+        },
+        {
+            "state_name": "North Carolina",
+            "capital": "Raleigh"
+        },
+        {
+            "state_name": "Michigan",
+            "capital": "Lansing"
+        },
+        {
+            "state_name": "Virginia",
+            "capital": "Richmond"
         }
     ],
-    "time": 4.097,
-    "tokens": 218
+    "time": 74.09,
+    "tokens": 2358
 }

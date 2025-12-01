@@ -4,6 +4,6 @@
             "count(distinct government_form)": 1
         }
     ],
-    "time": 1.022,
-    "tokens": 23
+    "time": 1.163,
+    "tokens": 20
 }

@@ -17,20 +17,8 @@
             "capital": "Tallahassee",
             "density": "394.2",
             "population": "21244317"
-        },
-        {
-            "state_name": "New York",
-            "capital": "Albany",
-            "density": "634.9",
-            "population": "19453561"
-        },
-        {
-            "state_name": "Pennsylvania",
-            "capital": "Harrisburg",
-            "density": "284.9",
-            "population": "12802023"
         }
     ],
-    "time": 4.808,
-    "tokens": 181
+    "time": 5.204,
+    "tokens": 153
 }

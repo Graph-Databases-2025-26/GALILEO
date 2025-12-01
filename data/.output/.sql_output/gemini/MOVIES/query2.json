@@ -2,8 +2,14 @@
     "result_set": [
         {
             "originaltitle": "Jaws"
+        },
+        {
+            "originaltitle": "E.T. the Extra-Terrestrial"
+        },
+        {
+            "originaltitle": "Jurassic Park"
         }
     ],
-    "time": 1.574,
-    "tokens": 110
+    "time": 6.444,
+    "tokens": 982
 }

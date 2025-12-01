@@ -34,7 +34,7 @@
         },
         {
             "startyear": "1991",
-            "count": "1"
+            "count": "2"
         },
         {
             "startyear": "1993",
@@ -54,7 +54,7 @@
         },
         {
             "startyear": "2002",
-            "count": "1"
+            "count": "2"
         },
         {
             "startyear": "2004",
@@ -70,7 +70,7 @@
         },
         {
             "startyear": "2011",
-            "count": "1"
+            "count": "2"
         },
         {
             "startyear": "2012",
@@ -93,10 +93,6 @@
             "count": "1"
         },
         {
-            "startyear": "2020",
-            "count": "1"
-        },
-        {
             "startyear": "2021",
             "count": "1"
         },
@@ -109,6 +105,6 @@
             "count": "1"
         }
     ],
-    "time": 10.643,
-    "tokens": 470
+    "time": 15.063,
+    "tokens": 453
 }

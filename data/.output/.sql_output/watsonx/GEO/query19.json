@@ -1,6 +1,9 @@
 {
     "result_set": [
         {
+            "capital": "Washington"
+        },
+        {
             "capital": "Sacramento"
         },
         {
@@ -13,9 +16,9 @@
             "capital": "Phoenix"
         },
         {
-            "capital": "Nashville"
+            "capital": "Boston"
         }
     ],
-    "time": 3.884,
-    "tokens": 61
+    "time": 3.006,
+    "tokens": 90
 }

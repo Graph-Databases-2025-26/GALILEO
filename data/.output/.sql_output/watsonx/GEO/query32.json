@@ -5,8 +5,20 @@
             "capital": "Sacramento",
             "population": 4700000,
             "area_squared_miles": 56153
+        },
+        {
+            "state_name": "Texas",
+            "capital": "Austin",
+            "population": 4700000,
+            "area_squared_miles": 56153
+        },
+        {
+            "state_name": "Florida",
+            "capital": "Tallahassee",
+            "population": 4700000,
+            "area_squared_miles": 56153
         }
     ],
-    "time": 15.224,
-    "tokens": 51
+    "time": 5.62,
+    "tokens": 158
 }

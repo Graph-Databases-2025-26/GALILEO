@@ -1,9 +1,18 @@
 {
     "result_set": [
         {
+            "city_name": "New York City"
+        },
+        {
             "city_name": "Los Angeles"
+        },
+        {
+            "city_name": "Chicago"
+        },
+        {
+            "city_name": "Houston"
         }
     ],
-    "time": 2.303,
-    "tokens": 152
+    "time": 6.359,
+    "tokens": 1147
 }

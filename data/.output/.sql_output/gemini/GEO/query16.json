@@ -4,6 +4,6 @@
             "COUNT ( DISTINCT state_name )": 3
         }
     ],
-    "time": 2.039,
+    "time": 1.311,
     "tokens": 170
 }

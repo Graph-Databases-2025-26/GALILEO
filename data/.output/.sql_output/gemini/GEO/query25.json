@@ -4,8 +4,23 @@
             "state_name": "California",
             "capital": "Sacramento",
             "area_squared_miles": 163695.0
+        },
+        {
+            "state_name": "Texas",
+            "capital": "Austin",
+            "area_squared_miles": 268596.0
+        },
+        {
+            "state_name": "New York",
+            "capital": "Albany",
+            "area_squared_miles": 54555.0
+        },
+        {
+            "state_name": "Florida",
+            "capital": "Tallahassee",
+            "area_squared_miles": 65758.0
         }
     ],
-    "time": 64.292,
-    "tokens": 151
+    "time": 4.511,
+    "tokens": 588
 }

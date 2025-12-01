@@ -1,18 +1,18 @@
 {
     "result_set": [
         {
-            "primarytitle": "None",
-            "startyear": "None",
-            "genres": "None",
-            "birthyear": "1946"
+            "primarytitle": "Movie Title",
+            "startyear": 2001,
+            "genres": "Action, Adventure",
+            "birthyear": 1946
         },
         {
-            "primarytitle": "None",
-            "startyear": "None",
-            "genres": "None",
-            "birthyear": "1946"
+            "primarytitle": "Movie Title2",
+            "startyear": 2005,
+            "genres": "Drama, Thriller",
+            "birthyear": 1946
         }
     ],
-    "time": 2.045,
-    "tokens": 71
+    "time": 2.019,
+    "tokens": 82
 }

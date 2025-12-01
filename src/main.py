@@ -6,6 +6,7 @@ from src.utils import LOG, log_init
 from src.llm import execute_baseline_sql, llm_interaction_nl_baseline
 from src.db import load_nl_queries_from_txt
 from src.config import Config_Loader
+from src.utils.logging_config import LOG
 
 from pathlib import Path
 import subprocess, argparse
@@ -172,7 +173,6 @@ def main():
         # ------------------------------------------
         # NL SQL BASELINES BLOCK
         # ------------------------------------------
-        """"
         if args.mode:
             if args.mode =="sql":
                 LOG.info(f"Loaded {len(queries)} queries for dataset {dataset} in {args.mode} mode")
@@ -181,6 +181,7 @@ def main():
                     run_types.add("SQL")
 
             elif args.mode == "nl":
+                nl_queries = load_nl_queries_from_txt(dataset_path)
                 LOG.info(f"Loaded {len(nl_queries)} queries for dataset {dataset} in {args.mode} mode")
                 if dataset in IK_DATASETS:
                     llm_interaction_nl_baseline(config, dataset, nl_queries, args.mode.upper())
@@ -216,7 +217,7 @@ def main():
                     run_types.add("PZNL")
                 else:
                     LOG.warning(f"[BOTH] Dataset")
-        """
+        
 
         # ------------------------------------------
         # GALOIS BLOCK

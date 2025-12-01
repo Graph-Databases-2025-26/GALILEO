@@ -8,6 +8,7 @@ galois_execution:
   backoff_sec: 1.5
   scan: "auto"
   confidence_threshold: 0.6
+  max_iter: 3
 
 io:
   queries_dir: "../data"

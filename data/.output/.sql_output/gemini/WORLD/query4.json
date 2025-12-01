@@ -11,8 +11,29 @@
         },
         {
             "region": "South America"
+        },
+        {
+            "region": "Australia and New Zealand"
+        },
+        {
+            "region": "Southern and Central Asia"
+        },
+        {
+            "region": "Caribbean"
+        },
+        {
+            "region": "Western Africa"
+        },
+        {
+            "region": "Southeast Asia"
+        },
+        {
+            "region": "Eastern Africa"
+        },
+        {
+            "region": "Central America"
         }
     ],
-    "time": 5.019,
-    "tokens": 313
+    "time": 9.182,
+    "tokens": 1825
 }

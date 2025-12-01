@@ -1,5 +1,10 @@
 {
-    "result_set": [],
-    "time": 0.803,
-    "tokens": 10
+    "result_set": [
+        {
+            "name": "name",
+            "party": "party"
+        }
+    ],
+    "time": 1.13,
+    "tokens": 24
 }

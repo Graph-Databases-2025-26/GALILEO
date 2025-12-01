@@ -42,7 +42,7 @@
         },
         {
             "startyear": 1989,
-            "number_of_movies": 1
+            "number_of_movies": 2
         },
         {
             "startyear": 1991,
@@ -54,7 +54,7 @@
         },
         {
             "startyear": 1997,
-            "number_of_movies": 1
+            "number_of_movies": 2
         },
         {
             "startyear": 1998,
@@ -113,6 +113,6 @@
             "number_of_movies": 1
         }
     ],
-    "time": 3.777,
-    "tokens": 621
+    "time": 8.877,
+    "tokens": 644
 }

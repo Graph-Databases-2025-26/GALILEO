@@ -4,12 +4,18 @@
             "region": "British Islands"
         },
         {
+            "region": "Northern Europe"
+        },
+        {
+            "region": "Southeast Asia"
+        },
+        {
             "region": "North America"
         },
         {
             "region": "Western Europe"
         }
     ],
-    "time": 1.433,
-    "tokens": 41
+    "time": 3.211,
+    "tokens": 90
 }

@@ -1,6 +1,7 @@
 import json
 from typing import List, Dict, Union, Any
 from langchain_core.output_parsers import PydanticOutputParser
+from langchain_core.exceptions import OutputParserException
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.runnables import RunnableLambda
 from pydantic import BaseModel, Field
@@ -38,18 +39,36 @@ def parse_llm_response(raw_response, time: float, llm_wrapper: LLMBaseWrapper) -
 
     Returns:
         dict: A complete structured dictionary containing the 'result_set', time' (rounded to 3 decimal places), and 'tokens' metadata.
+
+    If the LLM output is not valid JSON, it logs the error and returns an empty `result_set`
+    so that callers can stop iterating gracefully instead of crashing.
     """
 
     parser = PydanticOutputParser(pydantic_object=Response)
+
+    # Get the text out of the response object (Gemini / Watsonx)
+    text = raw_response.content if hasattr(raw_response, "content") else str(raw_response)
+
+    try:
+        parsed = parser.parse(text)
+    except OutputParserException as e:
+        LOG.error(f"[parse_llm_response] Failed to parse LLM output as JSON: {e}")
+        LOG.debug(f"[parse_llm_response] Raw LLM output (truncated): {text[:500]!r}")
+
+        return {
+            "result_set": [],
+            "time": round(time, 3),
+            "tokens": 0,
+        }
     
-    watsonx_rsp = parser.parse(raw_response.content)
-    LOG.debug(f"LLM Content Output: {watsonx_rsp}")
+   
+    LOG.debug(f"LLM Content Output: {parsed}")
         
     tokens = llm_wrapper.get_output_tokens(raw_response)
     LOG.debug(f"LLM Tokens Output: {tokens}")
     
     fullJ_structure ={
-        "result_set": watsonx_rsp.result_set,
+        "result_set": parsed.result_set,
         "time": round(time, 3),
         "tokens": tokens
     }

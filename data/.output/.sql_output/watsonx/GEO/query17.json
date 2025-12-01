@@ -1,9 +1,15 @@
 {
     "result_set": [
         {
-            "population": 733919
+            "population": "730400"
+        },
+        {
+            "population": "731500"
+        },
+        {
+            "population": "732000"
         }
     ],
-    "time": 1.087,
-    "tokens": 20
+    "time": 2.981,
+    "tokens": 67
 }

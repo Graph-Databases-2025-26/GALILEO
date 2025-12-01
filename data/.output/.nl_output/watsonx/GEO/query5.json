@@ -1,9 +1,9 @@
 {
     "result_set": [
         {
-            "state_name": "50"
+            "count": "50"
         }
     ],
-    "time": 2.213,
-    "tokens": 19
+    "time": 0.97,
+    "tokens": 18
 }

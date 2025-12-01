@@ -11,8 +11,16 @@
         {
             "state_name": "California",
             "capital": "Sacramento"
+        },
+        {
+            "state_name": "Montana",
+            "capital": "Helena"
+        },
+        {
+            "state_name": "Wyoming",
+            "capital": "Cheyenne"
         }
     ],
-    "time": 3.31,
-    "tokens": 62
+    "time": 4.053,
+    "tokens": 127
 }

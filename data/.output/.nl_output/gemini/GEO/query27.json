@@ -72,7 +72,7 @@
         },
         {
             "state_name": "Massachusetts",
-            "population": 6900000,
+            "population": 7000000,
             "capital": "Boston"
         },
         {
@@ -97,15 +97,35 @@
         },
         {
             "state_name": "Colorado",
-            "population": 5800000,
+            "population": 5900000,
             "capital": "Denver"
         },
         {
             "state_name": "Wisconsin",
             "population": 5900000,
             "capital": "Madison"
+        },
+        {
+            "state_name": "Minnesota",
+            "population": 5700000,
+            "capital": "Saint Paul"
+        },
+        {
+            "state_name": "South Carolina",
+            "population": 5300000,
+            "capital": "Columbia"
+        },
+        {
+            "state_name": "Alabama",
+            "population": 5100000,
+            "capital": "Montgomery"
+        },
+        {
+            "state_name": "Louisiana",
+            "population": 4600000,
+            "capital": "Baton Rouge"
         }
     ],
-    "time": 4.493,
-    "tokens": 793
+    "time": 4.107,
+    "tokens": 922
 }

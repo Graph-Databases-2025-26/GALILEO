@@ -10,12 +10,15 @@
             "lake_name": "Lake Huron"
         },
         {
+            "lake_name": "Lake Ontario"
+        },
+        {
             "lake_name": "Great Salt Lake"
         },
         {
-            "lake_name": "Lake Ontario"
+            "lake_name": "Lake Erie"
         }
     ],
-    "time": 10.678,
-    "tokens": 68
+    "time": 3.929,
+    "tokens": 104
 }

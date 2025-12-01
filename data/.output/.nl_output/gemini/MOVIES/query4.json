@@ -1,11 +1,27 @@
 {
     "result_set": [
         {
-            "primarytitle": "Munich",
-            "startyear": 2005
+            "primarytitle": "A.I. Artificial Intelligence",
+            "startyear": 2001
+        },
+        {
+            "primarytitle": "Minority Report",
+            "startyear": 2002
+        },
+        {
+            "primarytitle": "Catch Me If You Can",
+            "startyear": 2002
+        },
+        {
+            "primarytitle": "The Terminal",
+            "startyear": 2004
         },
         {
             "primarytitle": "War of the Worlds",
+            "startyear": 2005
+        },
+        {
+            "primarytitle": "Munich",
             "startyear": 2005
         },
         {
@@ -49,6 +65,6 @@
             "startyear": 2022
         }
     ],
-    "time": 2.254,
-    "tokens": 299
+    "time": 1.958,
+    "tokens": 379
 }

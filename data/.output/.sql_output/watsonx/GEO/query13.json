@@ -4,12 +4,12 @@
             "lake_name": "Lake Michigan"
         },
         {
-            "lake_name": "Lake Huron"
+            "lake_name": "Lake Superior"
         },
         {
-            "lake_name": "Lake Superior"
+            "lake_name": "Lake Huron"
         }
     ],
-    "time": 1.351,
-    "tokens": 45
+    "time": 3.4,
+    "tokens": 70
 }

@@ -29,19 +29,15 @@
             "startyear": 1953
         },
         {
-            "primarytitle": "Athena",
-            "startyear": 1954
-        },
-        {
             "primarytitle": "The Student Prince",
             "startyear": 1954
         },
         {
-            "primarytitle": "Many Rivers to Cross",
-            "startyear": 1955
+            "primarytitle": "Athena",
+            "startyear": 1954
         },
         {
-            "primarytitle": "Quentin Durward",
+            "primarytitle": "The Prodigal",
             "startyear": 1955
         },
         {
@@ -49,7 +45,7 @@
             "startyear": 1957
         },
         {
-            "primarytitle": "Ten Thousand Bedrooms",
+            "primarytitle": "Jailhouse Rock",
             "startyear": 1957
         },
         {
@@ -65,18 +61,14 @@
             "startyear": 1961
         },
         {
-            "primarytitle": "The Golden Arrow",
-            "startyear": 1962
-        },
-        {
             "primarytitle": "Fun in Acapulco",
             "startyear": 1963
         },
         {
-            "primarytitle": "The Last Challenge",
-            "startyear": 1967
+            "primarytitle": "The Golden Head",
+            "startyear": 1964
         }
     ],
-    "time": 3.026,
-    "tokens": 445
+    "time": 2.355,
+    "tokens": 406
 }

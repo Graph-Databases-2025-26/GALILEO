@@ -1,12 +1,24 @@
 {
     "result_set": [
         {
-            "originaltitle": "Minority Report",
+            "originaltitle": "War of the Worlds",
+            "startyear": 2005,
+            "genres": "Sci-Fi,Action,Adventure",
+            "birthyear": 1946
+        },
+        {
+            "originaltitle": "Catch Me If You Can",
             "startyear": 2002,
-            "genres": "Action,Mystery,Sci-Fi",
+            "genres": "Biography,Crime,Drama",
+            "birthyear": 1946
+        },
+        {
+            "originaltitle": "Munich",
+            "startyear": 2005,
+            "genres": "Drama,History,Thriller",
             "birthyear": 1946
         }
     ],
-    "time": 2.656,
-    "tokens": 380
+    "time": 37.292,
+    "tokens": 1250
 }
