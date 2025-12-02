@@ -99,9 +99,52 @@ We evaluated the iterative SQL and NL baselines on the full benchmark suite
 (FLIGHT-2, FLIGHT-4, GEO, MOVIES, PRESIDENTS, WORLD).
 
 \subsection{Iterative Execution Results}
+First of all for what concerns the \texttt{llama-3.3-70b-instruct} model, the following table highlights the differences in terms of metrics between results presented in the original GALOIS paper and our implementation with iterative extension:
 
-The following tables report iterative results for both LLM providers.
+\begin{table}[!ht]
+\centering
 
+%=================== FIRST TABLE (ALTO) ===================%
+\small
+\begin{tabular}{lrrr}
+\hline
+Metric & PAPER & Ours & $\Delta$(\text{PAPER} - \text{Ours}) \\ 
+\hline
+F1-Cell        & 0.431 & 0.403 & 0.028 \\
+Cardinality    & 0.659 & 0.465 & 0.194 \\
+Tuple Constr.  & 0.351 & 0.197 & 0.154 \\
+\textbf{AVG-Score} & \textbf{0.481} & \textbf{0.355} & \textbf{0.126} \\
+\#Tokens (M)   & 0.330 & 0.008 & 0.322 \\
+Avg Time       & 61.400 & 5.263 & 56.137 \\
+\hline
+\end{tabular}
+\caption{sql\_baseline}
+\label{sql_baseline}
+
+% --- PUNTO CRUCIALE: ---
+\par\vspace{1cm} % \par chiude il paragrafo (manda a capo), \vspace crea lo spazio
+% -----------------------
+
+%=================== SECOND TABLE (BASSO) ===================%
+\small
+\begin{tabular}{lrrr}
+\hline
+Metric & PAPER & Ours & $\Delta$(\text{PAPER} - \text{Ours}) \\
+\hline
+F1-Cell        & 0.237 & 0.271 & -0.034 \\
+Cardinality    & 0.462 & 0.500 & -0.038 \\
+Tuple Constr.  & 0.065 & 0.091 & -0.026 \\
+\textbf{AVG-Score} & \textbf{0.254} & \textbf{0.287} & \textbf{-0.033} \\
+\#Tokens (M)   & 0.830 & 0.005 & 0.825 \\
+Avg Time       & 120.000 & 2.206 & 117.794 \\
+\hline
+\end{tabular}
+\caption{nl\_baseline}
+\label{nl_baseline}
+
+\end{table}
+
+Maintaining consistency with the previous report, the following table show the results obtained with the iterative extension for both baselines using \texttt{gemini-2.5-flash} models:
 \begin{table}[h!]
 \centering
 \begin{tabular}{lcc}
@@ -120,23 +163,6 @@ AVG-TIME (s)  & 5.035 & 9.681 \\
 \label{tab:iter_gemini}
 \end{table}
 
-\begin{table}[h!]
-\centering
-\begin{tabular}{lcc}
-\toprule
-Metric & NL & SQL \\
-\midrule
-F1-CELL       & 0.271 & 0.370 \\
-CARDINALITY   & 0.500 & 0.451 \\
-TUPLE-CONSTR. & 0.091 & 0.183 \\
-\#TOKENS (M)   & 0.005 & 0.006 \\
-AVG-TIME (s)  & 2.206 & 2.812 \\
-\textbf{AVG-SCORE} & \textbf{0.287} & \textbf{0.335} \\
-\bottomrule
-\end{tabular}
-\caption{Iterative Results for \texttt{meta-llama/llama-3-70b}.}
-\label{tab:iter_llama70b}
-\end{table}
 
 The iterative execution impacts the behaviour of both baselines in distinct
 ways. In the SQL setting, the model benefits from task repetition, often
