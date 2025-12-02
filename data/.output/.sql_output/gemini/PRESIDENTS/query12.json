@@ -1,14 +1,22 @@
 {
     "result_set": [
         {
-            "party": "Partido Liberal",
+            "party": "Liberal Party",
+            "num": 3
+        },
+        {
+            "party": "Conservative Party",
             "num": 2
         },
         {
-            "party": "Partido Conservador",
+            "party": "Federal Party",
+            "num": 1
+        },
+        {
+            "party": "Independent",
             "num": 1
         }
     ],
-    "time": 3.136,
-    "tokens": 449
+    "time": 14.356,
+    "tokens": 2675
 }

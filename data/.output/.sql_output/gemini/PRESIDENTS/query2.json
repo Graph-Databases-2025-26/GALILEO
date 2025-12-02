@@ -1,10 +1,18 @@
 {
     "result_set": [
         {
-            "name": "Juan Vicente G\u00f3mez",
+            "name": "Juan Perez",
+            "party": "Liberal"
+        },
+        {
+            "name": "Maria Rodriguez",
+            "party": "Liberal"
+        },
+        {
+            "name": "Carlos Garcia",
             "party": "Liberal"
         }
     ],
-    "time": 32.46,
-    "tokens": 210
+    "time": 7.895,
+    "tokens": 1326
 }

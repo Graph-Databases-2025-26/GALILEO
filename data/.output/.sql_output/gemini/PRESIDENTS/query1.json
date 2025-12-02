@@ -3,8 +3,16 @@
         {
             "name": "Nicol\u00e1s Maduro",
             "party": "United Socialist Party of Venezuela"
+        },
+        {
+            "name": "Hugo Ch\u00e1vez",
+            "party": "United Socialist Party of Venezuela"
+        },
+        {
+            "name": "R\u00f3mulo Betancourt",
+            "party": "Democratic Action"
         }
     ],
-    "time": 1.903,
-    "tokens": 144
+    "time": 5.959,
+    "tokens": 822
 }

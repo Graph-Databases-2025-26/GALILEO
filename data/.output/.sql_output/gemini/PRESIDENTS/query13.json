@@ -7,8 +7,16 @@
         {
             "party": "COPEI",
             "num": 2
+        },
+        {
+            "party": "Independent",
+            "num": 1
+        },
+        {
+            "party": "Convergencia",
+            "num": 1
         }
     ],
-    "time": 67.105,
-    "tokens": 590
+    "time": 24.368,
+    "tokens": 3496
 }

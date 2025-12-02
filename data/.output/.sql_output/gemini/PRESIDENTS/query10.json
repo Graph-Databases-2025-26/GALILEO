@@ -3,11 +3,39 @@
         {
             "name": "R\u00f3mulo Betancourt",
             "party": "Democratic Action",
-            "start_year": 1945,
+            "start_year": 1959,
+            "end_year": 1964,
+            "cardinal_number": "47th"
+        },
+        {
+            "name": "Carlos Andr\u00e9s P\u00e9rez",
+            "party": "Democratic Action",
+            "start_year": 1974,
+            "end_year": 1979,
+            "cardinal_number": "52nd"
+        },
+        {
+            "name": "R\u00f3mulo Gallegos",
+            "party": "Democratic Action",
+            "start_year": 1948,
             "end_year": 1948,
-            "cardinal_number": "34th"
+            "cardinal_number": "41st"
+        },
+        {
+            "name": "Ra\u00fal Leoni",
+            "party": "Democratic Action",
+            "start_year": 1964,
+            "end_year": 1969,
+            "cardinal_number": "48th"
+        },
+        {
+            "name": "Jaime Lusinchi",
+            "party": "Democratic Action",
+            "start_year": 1984,
+            "end_year": 1989,
+            "cardinal_number": "54th"
         }
     ],
-    "time": 2.882,
-    "tokens": 428
+    "time": 27.001,
+    "tokens": 2702
 }

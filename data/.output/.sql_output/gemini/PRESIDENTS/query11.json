@@ -6,8 +6,15 @@
             "start_year": 1884,
             "end_year": 1888,
             "cardinal_number": "10th"
+        },
+        {
+            "name": "Carlos Soublette",
+            "party": "Conservative",
+            "start_year": 1837,
+            "end_year": 1839,
+            "cardinal_number": "3rd"
         }
     ],
-    "time": 3.531,
-    "tokens": 549
+    "time": 9.946,
+    "tokens": 1908
 }

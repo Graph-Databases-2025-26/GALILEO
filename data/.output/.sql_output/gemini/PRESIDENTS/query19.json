@@ -20,8 +20,22 @@
             "end_year": 2017,
             "cardinal_number": "44th",
             "party": "Democratic"
+        },
+        {
+            "name": "George W. Bush",
+            "start_year": 2001,
+            "end_year": 2009,
+            "cardinal_number": "43rd",
+            "party": "Republican"
+        },
+        {
+            "name": "Bill Clinton",
+            "start_year": 1993,
+            "end_year": 2001,
+            "cardinal_number": "42nd",
+            "party": "Democratic"
         }
     ],
-    "time": 5.426,
-    "tokens": 241
+    "time": 6.595,
+    "tokens": 930
 }

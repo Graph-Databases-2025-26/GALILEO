@@ -1,10 +1,18 @@
 {
     "result_set": [
         {
+            "name": "George W. Bush",
+            "party": "Republican"
+        },
+        {
             "name": "Donald Trump",
+            "party": "Republican"
+        },
+        {
+            "name": "Ronald Reagan",
             "party": "Republican"
         }
     ],
-    "time": 1.909,
-    "tokens": 199
+    "time": 5.163,
+    "tokens": 644
 }

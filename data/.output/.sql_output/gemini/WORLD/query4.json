@@ -16,24 +16,9 @@
             "region": "Australia and New Zealand"
         },
         {
-            "region": "Southern and Central Asia"
-        },
-        {
             "region": "Caribbean"
-        },
-        {
-            "region": "Western Africa"
-        },
-        {
-            "region": "Southeast Asia"
-        },
-        {
-            "region": "Eastern Africa"
-        },
-        {
-            "region": "Central America"
         }
     ],
-    "time": 9.182,
-    "tokens": 1825
+    "time": 8.62,
+    "tokens": 1495
 }

@@ -6,8 +6,29 @@
             "start_year": 1885,
             "end_year": 1889,
             "cardinal_number": "22nd"
+        },
+        {
+            "name": "James Buchanan",
+            "party": "Democratic",
+            "start_year": 1857,
+            "end_year": 1861,
+            "cardinal_number": "15th"
+        },
+        {
+            "name": "Grover Cleveland",
+            "party": "Democratic",
+            "start_year": 1893,
+            "end_year": 1897,
+            "cardinal_number": "24th"
+        },
+        {
+            "name": "Samuel Tilden",
+            "party": "Democratic",
+            "start_year": 1877,
+            "end_year": 1881,
+            "cardinal_number": "19th"
         }
     ],
-    "time": 2.451,
-    "tokens": 375
+    "time": 15.963,
+    "tokens": 3040
 }

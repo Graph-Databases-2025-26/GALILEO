@@ -6,8 +6,22 @@
             "end_year": 2013,
             "cardinal_number": "53rd",
             "party": "PSUV"
+        },
+        {
+            "name": "Nicol\u00e1s Maduro",
+            "start_year": 2013,
+            "end_year": null,
+            "cardinal_number": "54th",
+            "party": "PSUV"
+        },
+        {
+            "name": "R\u00f3mulo Betancourt",
+            "start_year": 1959,
+            "end_year": 1964,
+            "cardinal_number": "47th",
+            "party": "Democratic Action"
         }
     ],
-    "time": 2.455,
-    "tokens": 261
+    "time": 6.808,
+    "tokens": 1070
 }
