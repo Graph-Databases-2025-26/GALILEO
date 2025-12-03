@@ -14,7 +14,7 @@ from src.llm import get_llm_wrapper
 from src.utils import parse_sql, log_init
 from src.utils import LOG, ERR_LLM_PARSING_FAILURE
 
-import json
+import json, time
 
 #JSON Template for testing prupose
 JS_TEMPLATE = """
@@ -84,7 +84,10 @@ class GaloisExecutor:
         
         memory: List[Dict[str, Any]] = Field(default_factory=list, description="Internal list of input/output records.")
         key_values: set = Field(default_factory=set, description="Set of unique key value tuples for deduplication.")
-
+        tokens: int = Field(default=0, description="Total number of tokens processed." )
+        time: float = Field(default=0.0, description="A timestamp or measure of processing time." )
+        
+        
         @property
         def memory_variables(self) -> list[str]:
             """
@@ -95,6 +98,7 @@ class GaloisExecutor:
             """
             
             return ["history"] 
+
 
         @property
         def get_key_values(self) -> list[tuple]:
@@ -107,6 +111,7 @@ class GaloisExecutor:
             
             return list(self.key_values)
         
+        
         @property
         def get_memory(self) -> List[Dict[str, Any]]:
             """
@@ -117,6 +122,28 @@ class GaloisExecutor:
             """
             
             return self.memory
+
+        @property
+        def get_time(self) -> List[Dict[str, Any]]:
+            """
+            Returns the response time of total interaction.
+            
+            Returns:
+                float: Total time.
+            """
+            
+            return self.time
+        
+        @property
+        def get_tokens(self) -> List[Dict[str, Any]]:
+            """
+            Returns the total token of the LLM response.
+            
+            Returns:
+                int: Total tokens
+            """
+            
+            return self.tokens
 
         def load_memory_variables(self, inputs: Dict[str, Any]) -> Dict[str, Any]:
             """
@@ -153,6 +180,9 @@ class GaloisExecutor:
                 if tmp_kv not in self.key_values:
                     self.memory.append(resp)
                     self.key_values.add(tmp_kv)
+        
+            self.time = self.time + outputs["time"]
+            self.tokens = self.tokens + outputs["tokens"]
         
             if len(tmp_set) == len(self.key_values): 
                 raise NoNewTuplesFound("Interrupted Iteration: no new unique tuples were found.")
@@ -261,8 +291,8 @@ class GaloisExecutor:
                 
                 output.update({
                     "keyValue" : input_d["keyValue"],
-                    "attributes": self.schema_mgr.get_attributes(parsed_q["from_table"], "all"),
-                    "jsonSchema": json.dumps(self.schema_mgr.get_json_schema(parsed_q["from_table"], "all"), indent= 4)
+                    "attributes": self.schema_mgr.get_attributes(parsed_q["from_table"], "non_key"),
+                    "jsonSchema": json.dumps(self.schema_mgr.get_json_schema(parsed_q["from_table"], "non_key"), indent= 4)
                 })
 
         return output
@@ -330,7 +360,23 @@ class GaloisExecutor:
         return g_context | s_prompt | FULL_PROMPT  | llm_wrapper.get_llm_instance()
 
 
-    def key_scan(self, query: str, conditions_to_push: Optional[List[str]] = None, max_iter: Optional[int] = None) -> List[Dict[str, Any]]:
+    def _build_full_response(self, keys: List[str], response: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+        
+        key_v: List[tuple] = self.g_memory.get_key_values
+        f_response: List[Dict[str, Any]] = []
+        
+        for kv, r_attributes in zip(key_v, response):
+    
+            key_pair: Dict[str, Any] = dict(zip(keys, kv))
+
+            f_tuples: Dict[str, Any] = {**key_pair, **r_attributes}
+
+            f_response.append(f_tuples)     
+        
+        return f_response
+    
+    
+    def key_scan(self, query: str, conditions_to_push: Optional[List[str]] = None, max_iter: Optional[int] = None) -> Dict[str, Any]:
         """
         Executes the Key-Scan algorithm iteratively using the LLM.
         
@@ -353,6 +399,9 @@ class GaloisExecutor:
         
         i = 0
         while i < max_iter:
+            
+            t_start = time.time()
+            
             try:
                 if i == 0:
                     raw_response = chain.invoke(input_d)
@@ -362,11 +411,21 @@ class GaloisExecutor:
                     
                     raw_response = chain.invoke(input_d)
 
+                t_end = time.time()
+                
                 content_fixed = raw_response.content.replace("\\'", "'")
                 response = self.resp_parser.parse(content_fixed)
                 LOG.info(f"LLM Response Parsed: {response.root}")
                 
-                self.g_memory.save_context({}, {"response": response.root, "key": self.schema_mgr.get_attributes(parse_sql(query)["from_table"], "key")})
+                self.g_memory.save_context(
+                    {}, 
+                    {
+                        "response": response.root, 
+                        "key": self.schema_mgr.get_attributes(parse_sql(query)["from_table"], "key"), 
+                        "tokens": raw_response.usage_metadata.get("output_tokens", 0),
+                        "time" : t_end - t_start   
+                    }
+                )
 
                 i += 1
                        
@@ -374,19 +433,33 @@ class GaloisExecutor:
                 LOG.info("No new unique tuples were added in this iteration.")
                 break
         
+        
         input_d.update({"prompt_t": "key_t", "history": "", "keyValue": self.g_memory.get_key_values})
+        
+        t_start = time.time()
             
         raw_response = chain.invoke(input_d)
+        
+        t_end = time.time()
+        
         content_fixed = raw_response.content.replace("\\'", "'")
         response = self.resp_parser.parse(content_fixed)
-        LOG.info(f"LLM Response Parsed: {response}")
+        
+        f_response = self._build_full_response(self.schema_mgr.get_attributes(parse_sql(query)["from_table"], "key"), response.root)   
+        
+        outputs = {
+            "response": f_response,
+            "time": self.g_memory.get_time + t_end - t_start,
+            "tokens": self.g_memory.get_tokens + raw_response.usage_metadata.get("output_tokens", 0)
+        }
+        LOG.info(f"LLM Response Parsed: {outputs}")
         
         self.g_memory.clear()
         
-        return response.root
+        return outputs
 
 
-    def table_scan(self, query: str, conditions_to_push: Optional[List[str]] = None, max_iter: Optional[int] = None) -> List[Dict[str, Any]]:
+    def table_scan(self, query: str, conditions_to_push: Optional[List[str]] = None, max_iter: Optional[int] = None) -> Dict[str, Any]:
         """
         Executes the Table-Scan algorithm iteratively using the LLM.
         
@@ -409,6 +482,9 @@ class GaloisExecutor:
         
         i = 0
         while i < max_iter:
+            
+            t_start =time.time()
+            
             try:
                 if i == 0:
                     raw_response = chain.invoke(input_d)
@@ -417,35 +493,50 @@ class GaloisExecutor:
                     input_d.update({"prompt_t": "table_i", **self.g_memory.load_memory_variables({})})
                     
                     raw_response = chain.invoke(input_d)
-                    
+                
+                t_end = time.time()
+                
                 response = self.resp_parser.parse(raw_response.content)
                 LOG.info(f"LLM Response Parsed: {response.root}")
                 
-                self.g_memory.save_context({}, {"response": response.root, "key": self.schema_mgr.get_attributes(parse_sql(query)["from_table"], "key")})
-
+                self.g_memory.save_context(
+                    {}, 
+                    {
+                        "response": response.root, 
+                        "key": self.schema_mgr.get_attributes(parse_sql(query)["from_table"], "key"), 
+                        "tokens": raw_response.usage_metadata.get("output_tokens", 0),
+                        "time" : t_end - t_start   
+                    }
+                )
                 i += 1
                        
             except NoNewTuplesFound:
                 LOG.info("No new unique tuples were added in this iteration.")
                 break
+
+        output ={
+            "response": self.g_memory.get_memory,
+            "time": self.g_memory.get_time,
+            "tokens": self.g_memory.get_tokens
+        }
+        LOG.info(f"LLM Response Parsed: {output}")
         
-        LOG.info(f"LLM Response Parsed: {response}")
+        self.g_memory.clear()
         
-        final_r = self.g_memory.get_memory
-        
-        return final_r
+        return output
 
         
 
 if __name__ == "__main__":
     config = Config_Loader().get_config()
-    executor = GaloisExecutor(config, "GEO")
     log_init()
+    
+    executor = GaloisExecutor(config, "GEO")
 
     query = "SELECT DISTINCT usa_state_traversed FROM usa_river"
     
     results = executor.key_scan(query)
     LOG.info("Key-Scan Executed")
     
-    #results = executor.table_scan(query)
+    results = executor.table_scan(query)
     LOG.info("Table-Scan Executed")

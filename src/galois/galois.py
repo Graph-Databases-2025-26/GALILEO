@@ -13,7 +13,7 @@ from src.utils import sql_query_parser, load_queries_from_folder
 from src.galois.galois_estimator import ConfidenceEstimator
 from src.utils.constants import SUBMISSIONS_PATH_GALOIS
 from src.utils.get_db_schema_galois import GaloisSchemaManager
-from src.utils.logging_config import LOG
+from src.utils.logging_config import LOG, log_init
 from src.galois.galois_executor import GaloisExecutor
 from src.galois.executor import GaloisExecutor as Francesco_Executor
 
@@ -205,7 +205,7 @@ class Galois:
                     ################
                     key_executor = Francesco_Executor(self.config, self.dataset)
                     try:
-                        rows = key_executor.key_scan(query=simple_query, conditions_to_push=current_push_conditions)
+                        f_response = key_executor.key_scan(query=simple_query, conditions_to_push=current_push_conditions)
                     finally:
                         # close connection
                         if hasattr(key_executor, 'schema_mgr') and hasattr(key_executor.schema_mgr, 'dispose_manager'):
@@ -216,7 +216,7 @@ class Galois:
                     LOG.info(f"Executing TABLE SCAN on {t_name}")
                     table_executor = Francesco_Executor(self.config, self.dataset)
                     try:
-                        rows = table_executor.table_scan(query=simple_query, conditions_to_push=current_push_conditions)
+                        f_response = table_executor.table_scan(query=simple_query, conditions_to_push=current_push_conditions)
                     finally:
                         # Close connection
                         if hasattr(table_executor, 'schema_mgr'):
@@ -225,11 +225,13 @@ class Galois:
                             elif hasattr(table_executor.schema_mgr, 'close'):
                                 table_executor.schema_mgr.close()
 
-                data_lake[t_name] = rows
+                data_lake[t_name] = f_response["response"]
 
             #Local join and post processing
             results = self.perform_local_join_and_query(plan['original_query'], data_lake)
             return results
+            
+            
 
         except Exception as e:
             LOG.error(f"Error during the plan selection execution of the query {plan['original_query']} : {e}")
@@ -507,7 +509,8 @@ def save_galois_results(results_list, variant, provider, dataset_name):
 
 def main():
     config = Config_Loader().get_config()
-
+    log_init()
+    
     print("==========================================")
     print("   TEST MINIMALE GALOIS (Python Port)     ")
     print("==========================================")
