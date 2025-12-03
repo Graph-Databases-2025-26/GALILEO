@@ -7,6 +7,7 @@ but in principle if the LLM didn't return any president from Venezuela the final
 This behavior is common to all datasets used in the \texttt{GALOIS F} and \texttt{GALOIS WO} versions, so we had to find a way to improve the Key Scan's  retrieval process effectiveness.
 
 Another issue we faced was managing DuckDB connections during execution, since several classes open connections to retrieve column data types or, more broadly, the database schema.
-For address this problem, the system simply closes the connection to the database when the actions for that specific connection are completed, thus avoiding having too many open connections at the same time.
+
+For address this aspect, the resource management for the DuckDB backend follows a strict acquisition-release pattern. Database connections are instantiated solely within the scope of the active schema retrieval or query execution task and are immediately released within finally blocks upon completion. This explicit lifecycle management prevents file locks on the underlying .duckdb instance, ensuring that the transition between the schema inspection phase and the subsequent in-memory virtualization phase proceeds without contention.
 
 !!!!NOMINARE IL FATTO DI POTER OTTIMIZZARE LA STRUTTURA E LA SEMANTICA DEI PROMPT, VISTO CHE QUELLI USATO DA GALOIS NON SONO EFFICACI !!!!
