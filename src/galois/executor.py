@@ -254,46 +254,62 @@ class GaloisExecutor:
         }
         
         if input_d["prompt_t"] not in  ["key_i", "table_i"]:
-            
+
             parsed_q = parse_sql(input_d["query"])
-            
             output["table"] = parsed_q["from_table"]
-            
+
+            target_cols = input_d.get("columns") if input_d.get("columns") else "all"
+
             conditions = input_d.get("conditions", "")
-                
+
             if conditions:
                 conditions = build_condition(conditions)
             else:
                 conditions = ""
-                
+
             output["conditions"] =  conditions
-               
+
             #TABLE_SCAN FIRST PROMPT
             if input_d["prompt_t"] == "table_f":
-                
-                output.update({
-                    "attributes": self.schema_mgr.get_attributes(parsed_q["from_table"], "all"),
-                    "jsonSchema": json.dumps(self.schema_mgr.get_json_schema(parsed_q["from_table"], "all"), indent= 4)
-                })
-            
-            
+                if isinstance(target_cols, list):
+                    output.update({
+                        "attributes": target_cols,
+                        "jsonSchema": json.dumps(self.schema_mgr.get_json_schema_from_set(parsed_q["from_table"], target_cols), indent= 4)
+                    })
+                else:
+                    output.update({
+                        "attributes": self.schema_mgr.get_attributes(parsed_q["from_table"], target_cols),
+                        "jsonSchema": json.dumps(self.schema_mgr.get_json_schema(parsed_q["from_table"], target_cols), indent= 4)
+                    })
+
+
             #KEY_SCAN FIRST PROMPT
             if input_d["prompt_t"] == "key_f":
-                
+
                 output.update({
                     "key": self.schema_mgr.get_attributes(parsed_q["from_table"], "key"),
                     "jsonSchema": json.dumps(self.schema_mgr.get_json_schema(parsed_q["from_table"], "key"), indent= 4)
                 })
-            
-            
+
+
             #KEY_SCAN TUPLE PROMPT 
             if input_d["prompt_t"] == "key_t":
-                
-                output.update({
-                    "keyValue" : input_d["keyValue"],
-                    "attributes": self.schema_mgr.get_attributes(parsed_q["from_table"], "non_key"),
-                    "jsonSchema": json.dumps(self.schema_mgr.get_json_schema(parsed_q["from_table"], "non_key"), indent= 4)
-                })
+
+                cols_for_tuple = target_cols if target_cols != "all" else "non_key"
+
+                if isinstance(cols_for_tuple, list):
+                    output.update({
+                        "keyValue" : input_d["keyValue"],
+                        "attributes": cols_for_tuple,
+                        "jsonSchema": json.dumps(self.schema_mgr.get_json_schema_from_set(parsed_q["from_table"], cols_for_tuple), indent= 4)
+                    })
+
+                else:
+                    output.update({
+                        "keyValue" : input_d["keyValue"],
+                        "attributes": self.schema_mgr.get_attributes(parsed_q["from_table"], cols_for_tuple),
+                        "jsonSchema": json.dumps(self.schema_mgr.get_json_schema(parsed_q["from_table"], cols_for_tuple), indent= 4)
+                    })
 
         return output
     
@@ -376,7 +392,7 @@ class GaloisExecutor:
         return f_response
     
     
-    def key_scan(self, query: str, conditions_to_push: Optional[List[str]] = None, max_iter: Optional[int] = None) -> Dict[str, Any]:
+    def key_scan(self, query: str, columns: Optional[List[str]] = None, conditions_to_push: Optional[List[str]] = None, max_iter: Optional[int] = None) -> Dict[str, Any]:
         """
         Executes the Key-Scan algorithm iteratively using the LLM.
         
@@ -394,7 +410,7 @@ class GaloisExecutor:
         if max_iter is None:
             max_iter = self.max_iter
         
-        input_d = {"query": query, "prompt_t": "key_f", "conditions": conditions_to_push, "history": ""}
+        input_d = {"query": query, "columns":columns, "prompt_t": "key_f", "conditions": conditions_to_push, "history": ""}
         chain = self._build_galois_chain(self.llm_wrapper)
         
         i = 0
@@ -459,7 +475,7 @@ class GaloisExecutor:
         return outputs
 
 
-    def table_scan(self, query: str, conditions_to_push: Optional[List[str]] = None, max_iter: Optional[int] = None) -> Dict[str, Any]:
+    def table_scan(self, query: str, columns: Optional[List[str]] = None, conditions_to_push: Optional[List[str]] = None, max_iter: Optional[int] = None) -> Dict[str, Any]:
         """
         Executes the Table-Scan algorithm iteratively using the LLM.
         
@@ -477,7 +493,7 @@ class GaloisExecutor:
         if max_iter is None:
             max_iter = self.max_iter
         
-        input_d = {"query": query, "prompt_t": "table_f", "conditions": conditions_to_push, "history": ""}
+        input_d = {"query": query, "columns":columns, "prompt_t": "table_f", "conditions": conditions_to_push, "history": ""}
         chain = self._build_galois_chain(self.llm_wrapper)
         
         i = 0

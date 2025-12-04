@@ -1,9 +1,11 @@
 import json
 import re
 from pathlib import Path
-from typing import Literal, Any, List, Dict, cast
+from typing import Literal, Any, List, Dict, cast, Optional
 import duckdb
 import pandas as pd
+from sqlglot import parse_one, exp
+
 from src.config import Config_Loader
 from src.db.run_explain_plans import DATA_ROOT
 from src.galois.galois_post_processing import GaloisPostProcessor
@@ -150,40 +152,28 @@ class Galois:
                         "alias": join['alias']
                     })
 
-            #dictionary for accumulate the data
+            total_execution_time = 0
+            total_tokens_used = 0
             data_lake = {}
-
-            #cycle in which the table scan is executed
-            #executor = GaloisExecutor(self.config, self.dataset)
-
             for t_info in tables_to_scan:
                 t_name = t_info['name']
                 t_alias = t_info['alias']
                 LOG.info(f"--- FETCHING DATA FOR TABLE: {t_name} (Alias: {t_alias}) ---")
 
                 #retrieve the target columns for that table
-                target_cols = plan['select_columns']
-
-                if len(tables_to_scan) == 1 and target_cols:
-                    # Clean the columns (remove aggregations like avg(gnp) -> gnp)
-                    clean_cols = []
-                    for c in target_cols:
-                        # If count(*), ignore it
-                        if "*" in c: continue
-                        # Extract "gnp" from "avg(gnp)"
-                        match = re.search(r'\((.*?)\)', c)
-                        if match:
-                            clean_cols.append(match.group(1))
-                        else:
-                            clean_cols.append(c)
-
-                    if clean_cols:
-                        cols_str = ", ".join(clean_cols)
-                        simple_query = f"SELECT {cols_str} FROM {t_name}"
-                    else:
-                        simple_query = f"SELECT * FROM {t_name}"
+                cols_to_pass = self._get_involved_columns(
+                    sql_query=plan['original_query'],
+                    table_name=t_name,
+                    alias=t_alias
+                )
+                if cols_to_pass:
+                    LOG.info(f"--- OPTIMIZED SCAN FOR {t_name}: Requesting columns {cols_to_pass} ---")
+                    simple_query = f"SELECT {', '.join(cols_to_pass)} FROM {t_name}"  # Solo visuale
                 else:
-                    simple_query = f"SELECT * FROM {t_name}"
+                    LOG.info(f"--- FULL SCAN FOR {t_name} (Wildcard or All) ---")
+                    simple_query = f"SELECT * FROM {t_name}"  # Solo visuale
+                #target_cols = plan['select_columns']
+
 
                 #filter the WHERE conditions that are addicted to this particular alias
                 current_push_conditions = []
@@ -205,7 +195,7 @@ class Galois:
                     ################
                     key_executor = Francesco_Executor(self.config, self.dataset)
                     try:
-                        f_response = key_executor.key_scan(query=simple_query, conditions_to_push=current_push_conditions)
+                        f_response = key_executor.key_scan(query=simple_query, columns=cols_to_pass, conditions_to_push=current_push_conditions)
                     finally:
                         # close connection
                         if hasattr(key_executor, 'schema_mgr') and hasattr(key_executor.schema_mgr, 'dispose_manager'):
@@ -216,7 +206,7 @@ class Galois:
                     LOG.info(f"Executing TABLE SCAN on {t_name}")
                     table_executor = Francesco_Executor(self.config, self.dataset)
                     try:
-                        f_response = table_executor.table_scan(query=simple_query, conditions_to_push=current_push_conditions)
+                        f_response = table_executor.table_scan(query=simple_query, columns=cols_to_pass, conditions_to_push=current_push_conditions)
                     finally:
                         # Close connection
                         if hasattr(table_executor, 'schema_mgr'):
@@ -225,20 +215,24 @@ class Galois:
                             elif hasattr(table_executor.schema_mgr, 'close'):
                                 table_executor.schema_mgr.close()
 
+                total_execution_time += f_response.get("time", 0)
+                total_tokens_used += f_response.get("tokens", 0)
                 data_lake[t_name] = f_response["response"]
 
             #Local join and post processing
             results = self.perform_local_join_and_query(plan['original_query'], data_lake)
-            return results
-            
-            
+            stats = {
+                "total_time": total_execution_time,
+                "total_tokens": total_tokens_used
+            }
+            return results, stats
 
         except Exception as e:
             LOG.error(f"Error during the plan selection execution of the query {plan['original_query']} : {e}")
             raise e
 
     # --- LOGICAL OPTIMIZATION VARIANTS (Fig.2 in the paper)
-    def run_no_push(self) -> List[Dict[str, Any]]:
+    def run_no_push(self) -> tuple[list[dict[str, Any]], dict[str, int]]:
         """
         Variant: GALOIS_WO (Without Optimizations / No-Push)
 
@@ -255,7 +249,7 @@ class Galois:
         self.physical_strategy = "key"
         return self.execute_variant(plan, "GALOIS_WO (No-Push)")
 
-    def run_push_all(self) -> List[Dict[str, Any]]:
+    def run_push_all(self) -> tuple[list[dict[str, Any]], dict[str, int]]:
         """
         Variant: GALOIS_A (Push-All)
 
@@ -272,7 +266,7 @@ class Galois:
         plan = self.build_execution_plan(conditions_to_push=all_conditions)
         return self.execute_variant(plan, "GALOIS_A (Push-All)")
 
-    def run_push_selective(self) -> List[Dict[str, Any]]:
+    def run_push_selective(self) -> tuple[list[dict[str, Any]], dict[str, int]]:
         """
         Variant: GALOIS_S (Push-Selective)
 
@@ -316,7 +310,7 @@ class Galois:
         plan = self.build_execution_plan(conditions_to_push=conditions_to_push)
         return self.execute_variant(plan, variant_desc)
 
-    def run_push_confident(self) -> List[Dict[str, Any]]:
+    def run_push_confident(self) -> tuple[list[dict[str, Any]], dict[str, int]]:
         """
         Variant: GALOIS_F (Full / Push-Confident)
 
@@ -465,6 +459,63 @@ class Galois:
             return []
         finally:
             con.close()
+
+
+    def _get_involved_columns(self, sql_query: str, table_name: str, alias: str) -> Optional[List[str]]:
+        """
+        Analizza la query SQL completa ed estrae TUTTE le colonne (SELECT, JOIN, WHERE, GROUP BY, ecc.)
+        che appartengono alla tabella specificata o al suo alias.
+
+        Args:
+            sql_query: La query SQL originale completa.
+            table_name: Il nome reale della tabella (es. 'world_presidents').
+            alias: L'alias usato nella query (es. 'p'). Può essere None o stringa vuota.
+
+        Returns:
+            List[str]: Lista di nomi colonna puliti (es. ['name', 'party']) da scaricare.
+            None: Se c'è un errore o un Wildcard (*), indica di scaricare TUTTO.
+        """
+        try:
+            # Parsa la query SQL completa.
+            # parse_one gestisce automaticamente la complessità sintattica.
+            parsed = parse_one(sql_query, read="duckdb")
+        except Exception as e:
+            LOG.warning(f"Sqlglot parsing failed for table {table_name}: {e}. Fallback to ALL columns.")
+            return None
+
+        # Se c'è un asterisco (*) globale nella query, non rischiamo filtri: scarichiamo tutto.
+        if parsed.find(exp.Star):
+            return None
+
+        found_columns = set()
+
+        # Costruiamo il set dei nomi validi (Table Name + Alias) normalizzati in minuscolo
+        target_names = {table_name.lower()}
+        if alias:
+            target_names.add(alias.lower())
+
+        # Cerchiamo tutte le colonne ovunque appaiano (SELECT, WHERE, JOIN, funzioni...)
+        for col in parsed.find_all(exp.Column):
+            col_name = col.name
+            table_ref = col.table  # Questo è il prefisso (es. 'p' in 'p.name')
+
+            if table_ref:
+                # CASO 1: C'è un prefisso (es. p.name)
+                # La colonna è nostra SOLO se il prefisso corrisponde alla tabella o all'alias
+                if table_ref.lower() in target_names:
+                    found_columns.add(col_name)
+            else:
+                # CASO 2: Nessun prefisso (es. 'name')
+                # Euristica di sicurezza: Se non c'è prefisso, assumiamo che la colonna
+                # possa appartenere a questa tabella. È meglio scaricare una colonna in più
+                # (che poi DuckDB ignorerà se non serve) piuttosto che una in meno.
+                found_columns.add(col_name)
+
+        # Se non abbiamo trovato nulla (caso raro), ritorniamo None per sicurezza (scarica tutto)
+        if not found_columns:
+            return None
+
+        return list(found_columns)
 
 
 def save_galois_results(results_list, variant, provider, dataset_name):

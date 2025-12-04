@@ -170,6 +170,7 @@ def main():
         #nl_queries = load_nl_queries_from_txt(dataset_path)
         queries = load_queries_from_folder(dataset_path)
 
+        """
         # ------------------------------------------
         # NL SQL BASELINES BLOCK
         # ------------------------------------------
@@ -217,6 +218,7 @@ def main():
                     run_types.add("PZNL")
                 else:
                     LOG.warning(f"[BOTH] Dataset")
+        """
         
 
         # ------------------------------------------
@@ -241,23 +243,24 @@ def main():
                     # Instantiate the Planner once per dataset
                     planner = Galois(config, dataset, q_sql)
                     rows = []
+                    stats={}
                     try:
                         # Execute the specific variant method based on CLI arg
                         if variant == "WO":
                             # Without Optimization: No pushdown, Key-Scan
-                            rows = planner.run_no_push()
+                            rows, stats = planner.run_no_push()
 
                         elif variant == "S":
                             # Selective: Push selective conditions (LLM estimated), Table-Scan
-                            rows = planner.run_push_selective()
+                            rows, stats = planner.run_push_selective()
 
                         elif variant == "A":
                             # All: Push all conditions, Table-Scan
-                            rows = planner.run_push_all()
+                            rows, stats = planner.run_push_all()
 
                         elif variant == "F":
                             # Full/Confident: Push confident conditions, Dynamic Scan (Table/Key)
-                            rows = planner.run_push_confident()
+                            rows, stats = planner.run_push_confident()
 
                         else:
                             LOG.error(f"Unknown variant {variant}")
@@ -266,11 +269,12 @@ def main():
                         results_for_eval.append({
                             "query_id": i+1,
                             "sql": q_sql,
-                            "result_set": rows
+                            "result_set": rows,
+                            "time": stats.get("total_time", 0),
+                            "tokens": stats.get("total_tokens", 0)
                         })
                         # Minimal visual feedback
-                        LOG.debug(f"Query {i+1}: {len(rows)} rows returned.")
-
+                        LOG.debug(f"Query {i + 1}: {len(rows)} rows. Time: {stats.get('total_time', 0):.2f}s, Tokens: {stats.get('total_tokens', 0)}")
                     except Exception as e:
                         LOG.error(f"Failed query {i+1} in mode {variant}: {e}")
                         results_for_eval.append({
