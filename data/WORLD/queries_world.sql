@@ -1,8 +1,8 @@
 --query1
 SELECT count(distinct government_form) FROM target.country WHERE continent = 'Africa';
 
---query2 - added TRY_CAST to avoid errors with non-integer values
-SELECT name FROM target.country WHERE TRY_CAST(independence_year AS INTEGER) > 1950;
+--query2
+SELECT name FROM target.country WHERE CAST(independence_year AS INTEGER) > 1950;
 
 --query3
 SELECT avg(gnp), sum(population) FROM target.country WHERE government_form = 'US Territory';

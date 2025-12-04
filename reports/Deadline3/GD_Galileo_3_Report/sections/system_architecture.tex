@@ -1,63 +1,25 @@
 \section{GALOIS system architecture}
-This section describes the implementation of \textbf{GALOISWO} (Galois Without Optimizations), the baseline version of the Galois framework implemented for this checkpoint. Unlike the full Galois system, GaloisWO does not apply any logical or physical optimizations such as confidence-based pushdown, selective operator choice, metadata reasoning, or cost–quality trade-off. Instead, it adopts a simple two-stage execution pipeline:
-
-\begin{enumerate}
-    \item \textbf{Key Extraction}: retrieve all possible primary keys of the target table using iterative prompting.
-    \item \textbf{Tuple Completion}: for each retrieved key, prompt the LLM to obtain remaining attribute values (one tuple at a time).
-\end{enumerate}
+Our implementation orchestrates the interaction between a declarative SQL interface and the probabilistic nature of LLMs through four distinct stages: parsing, logical planning, physical execution, and local post-processing. This section details the core components implemented in the \texttt{Galois} orchestration class.
 
 
-\subsection{Key Retrieval Phase (First Stage)}
-% Based on Algorithm 2 – KeyScan, without optimizations
+\subsection{Orchestration and Schema Management}
 
-\subsection{Table-Scan Execution Phase (Second Stage)}
-In the Galois paper, two physical scan operators are introduced: \textit{Table-Scan}
-and \textit{Key-Scan}. While the full Galois system dynamically selects between
-them according to confidence and metadata, GaloisWO uses only \textbf{Table-Scan}
-in a fully deterministic manner, with no optimization or pushdown logic.
+The entry point of the system is the \texttt{Galois} class, which initializes the workflow by parsing the input SQL query into an Abstract Syntax Tree (AST) using the \texttt{sql\_query\_parser} module. Unlike standard text-to-SQL approaches, GALOIS does not immediately prompt the LLM with the raw query, instead it inspects the database structure using the \texttt{GaloisSchemaManager}.
+This component connects to a read-only DuckDB instance to retrieve accurate metadata (column names, primary keys, and data types). This schema awareness allows the system to construct semantically valid JSON schemas for the prompts, ensuring that the LLM's output adheres to the strict typing required for the subsequent relational operations.
 
-This behavior is clearly reflected in our implementation,
-specifically in the \texttt{table\_scan()} method of the
-\texttt{GaloisExecutor} class. The execution shows the following key characteristics:
+\subsection{The Execution Engine}
+The retrieval logic is encapsulated within the \texttt{GaloisExecutor} class. This component abstracts the complexity of the LLM interaction (via LangChain) and implements the iterative retrieval loops.
 
+\textbf{State Management and Deduplication}: To handle the context window limitations of LLMs, the executor utilizes a custom \texttt{GaloisMemory} class. This memory component maintains a history of retrieved tuples and implements a strict deduplication mechanism based on primary key hashing \texttt{(\_get\_key\_values)}. This ensures that subsequent iterations (up to a configurable max\_iter) prompt the model to generate only novel data.
+
+\textbf{Iterative Scan Operators}: The executor supports two physical operators:
 \begin{itemize}
-    \item \textbf{No condition pushdown:} The executor uses the original SQL query,
-    but does not apply any optimization selection. The WHERE clause is either used
-    as-is or fully omitted if not available. There is no selection of pushable
-    conditions based on metadata or confidence values. 
-
-    \item \textbf{Schema-aware attribute discovery:}
-    The executor retrieves full table attribute lists using the
-    \texttt{GaloisWOSchemaManager}, which is a thin wrapper around the
-    standard schema manager but isolates the GaloisWO namespace. 
-
-    \item \textbf{First Prompt and Iterative Prompt Generation:}
-    The system constructs the first and iterative human prompts using:
-    \texttt{build\_table\_scan\_first\_prompt()} and
-    \texttt{build\_table\_scan\_iter\_prompt()} from \texttt{galois\_prompts.py}. 
-    
-    These prompts enforce:
-    \begin{itemize}
-        \item valid JSON-only output,
-        \item table-aware attribute listing,
-        \item a maximum of 20 tuples per iteration,
-        \item and no natural language explanations.
-    \end{itemize}
-
-    \item \textbf{Iterative Expansion:}
-    The executor issues multiple LLM calls (up to \texttt{max\_iter}, default 4),
-    collects new tuples, and stops when no new data is returned. 
-
-    \item \textbf{Duplicate Removal and JSON Recovery:}
-    The system hashes tuple contents (via \texttt{normalise\_row()}) to track and
-    deduplicate results across iterations. It also attempts to recover valid JSON
-    even from partially truncated or malformed LLM output. 
+    \item \textbf{Table-Scan}: Iteratively requests complete tuples (keys and attributes) until convergence or iteration limits are reached.
+    \item \textbf{Key-Scan}: Decomposes retrieval into two phases. First, it iterates to collect all unique primary keys. Once the keys are consolidated, it issues a final "Tuple Request"  to retrieve non-key attributes for the collected identifiers.
 \end{itemize}
 
-Unlike Key-Scan, which explicitly extracts primary keys first and then populates
-attributes one by one, Table-Scan retrieves complete tuples directly using LLM in
-multiple iterations. 
+\subsection{}
 
-\subsection{Table vs Key-Scan in GaloisWO}
+
 
 
