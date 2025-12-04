@@ -16,7 +16,8 @@
 \usepackage{float} 
 \usepackage{caption}
 \usepackage{tabularx}
-
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
 
 % Margini
 \usepackage[margin=2.5cm]{geometry}
@@ -40,18 +41,18 @@
 
 \tableofcontents
 
-\input{sections/introduction}
-\input{sections/iterative_baseline_extension}
-\input{sections/system_architecture}
-\input{sections/logical_optimization}
-\input{sections/physical_optimization}
-\input{sections/execution_cycle_memory_management.tex}
-\input{sections/post_processing.tex}
-\input{sections/numerical_results.tex}
-\input{sections/implementative_challenges.tex}
-%\input{sections/demo_plan}
-%\input{sections/limitations_futurework}
-\input{sections/contributions}
+\include{sections/introduction}
+\include{sections/iterative_baseline_extension}
+\include{sections/system_architecture}
+\include{sections/logical_optimization}
+\include{sections/physical_optimization}
+\include{sections/execution_cycle_memory_management.tex}
+\include{sections/post_processing.tex}
+\include{sections/numerical_results.tex}
+\include{sections/implementative_challenges.tex}
+%\include{sections/demo_plan}
+%\include{sections/limitations_futurework}
+\include{sections/contributions}
 
 
 \end{document}

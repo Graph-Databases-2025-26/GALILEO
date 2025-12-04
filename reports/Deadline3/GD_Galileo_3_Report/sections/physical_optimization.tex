@@ -1,0 +1,147 @@
+\section{Physical Optimization: Execution Strategies}
+
+While Logical Optimization defines the declarative scope of the data retrieval task, Physical Optimization is responsible for specifying the concrete, algorithmic execution strategy. The proposed system implements a set of iterative data extraction algorithms designed to mitigate the inherent context window limitations of Large Language Models (LLMs) and ensure comprehensive, de-duplicated data acquisition.
+
+\subsection{Table-Scan Algorithm Technical Specification}
+
+\subsubsection{Description}
+The \texttt{Table-Scan} algorithm is a single-phase, iterative extraction technique that leverages an LLM to retrieve a complete collection of unique, full-schema records (tuples) satisfying the input $Q$. This operator is designed to maximize coverage by focusing on the generation and accumulation of entire records in each iteration step, contrasting with multi-phase strategies.
+
+\begin{enumerate}
+    \item Iterative Tuple Collection (Algorithm \ref{alg:table_scan}, Lines 4--19): The algorithm executes a loop, repeatedly invoking the LLM chain to discover and accumulate novel, complete unique tuples that conform to the constraints of $Q$.
+    \begin{itemize}
+        \item The initial invocation utilizes a base input prompt derived from $Q$.
+        \item Subsequent iterations, $i > 0$, dynamically modify the input request by injecting the historical context ($\mathcal{H}$) of previously accumulated tuples. This mechanism guides the LLM to seek novel, uncollected records, thereby enforcing deduplication and maximizing the result set.
+        \item The process is bounded by $I_{max}$ and features a termination condition: if the post-response parsing step confirms the absence of new unique tuples ($\mathcal{R}_{new} = \emptyset$), the loop is prematurely exited (handling the $\text{Convergence}$ criterion).
+    \end{itemize}
+    \item Finalization and Cleanup (Lines 22--24): Upon termination, the consolidated set of unique tuples residing in the internal $\mathcal{M}$ (Memory) structure is designated as the $\mathcal{R}_{final}$. The state of the internal memory/history is subsequently reset.
+\end{enumerate}
+
+\subsubsection{Inputs}
+\begin{itemize}
+    \item $Q$: The declarative data retrieval statement (e.g., an SQL-like query).
+    \item $\mathcal{P}_{pushdown}$: An optional set of \texttt{WHERE} clause predicates pushed down to refine the extraction scope.
+    \item $I_{max}$: An optional integer parameter specifying the maximum number of LLM invocations.
+\end{itemize}
+
+\begin{algorithm}
+\caption{Table-Scan Algorithm}
+\label{alg:table_scan}
+\begin{algorithmic}[1]
+\Function{Table\_Scan}{$Q$, $\mathcal{P}_{pushdown}$, $I_{max}$}
+    \State $\mathcal{I} \gets \Call{BuildInitialRequest}{Q}$ 
+    \State $\mathcal{C} \gets \Call{InitializeLLMInteractionChain}{}$
+    \State $i \gets 0$
+    \State $\mathcal{H} \gets \emptyset$ 
+    \\
+    \While{$i < I_{max}$}
+        \If{$i = 0$}
+            \State $\mathcal{R}_{raw} \gets \mathcal{C}.\Call{Invoke}{\mathcal{I}}$
+        \Else
+            \State $\mathcal{I} \gets \Call{UpdateRequestWithHistory}{\mathcal{H}}$
+            \State $\mathcal{R}_{raw} \gets \mathcal{C}.\Call{Invoke}{\mathcal{I}}$
+        \EndIf
+        \\  
+        \State $\mathcal{R}_{parsed} \gets \Call{ParseLLMResponse}{\mathcal{R}_{raw}}$
+        \State $\mathcal{R}_{new} \gets \Call{IdentifyNewUniqueTuples}{\mathcal{R}_{parsed}, \mathcal{H}}$
+        \If{$\mathcal{R}_{new} = \emptyset$} 
+            \State \textbf{break}
+        \EndIf
+        \\
+        \State $\Call{AddToMemoryAndHistory}{\mathcal{R}_{new}, \mathcal{M}, \mathcal{H}}$
+        \State $i \gets i + 1$
+    \EndWhile
+    \\
+    \State $\mathcal{R}_{final} \gets \Call{RetrieveAllTuples}{\mathcal{M}}$
+    \State $\Call{ClearState}{\mathcal{M}, \mathcal{H}}$
+    \\
+    \State \textbf{return} $\mathcal{R}_{final}$
+\EndFunction
+\end{algorithmic}
+\end{algorithm}
+
+\newpage
+\subsection{Key-Scan Algorithm Technical Specification}
+
+\subsubsection{Description}
+The \texttt{Key-Scan} algorithm constitutes a specialized, two-phase iterative data extraction strategy . It employs an LLM to retrieve the required record set by prioritizing the discovery and consolidation of unique primary/candidate key values before performing a final request for associated, non-key attributes. This two-phase approach inherently ensures record uniqueness and may improve token efficiency by minimizing the size of the history context injected into the prompt.
+
+\begin{enumerate}
+    \item Iterative Key Collection (Algorithm \ref{alg:key_scan}, Lines 4--19): This phase iteratively invokes the LLM chain to discover and accumulate a complete, unique set of $\mathcal{K}$ (key values) relevant to $Q$.
+    \begin{itemize}
+        \item The first iteration uses a prompt formulated to extract only the key attributes.
+        \item Subsequent iterations modify the input request by embedding a history ($\mathcal{H}$) of previously collected key values, steering the LLM's generation toward novel, uncollected records.
+        \item The loop is governed by $I_{max}$ and terminates if the parsing step confirms that no new unique key values ($\mathcal{K}_{new} = \emptyset$) were returned by the LLM (Convergence).
+    \end{itemize}
+    \item Final Attribute Retrieval (Tail Request) (Lines 22--26): Upon key collection convergence, the consolidated set of $\mathcal{K}_{all}$ is compiled. A single, dedicated final request (the \textit{Tail Request}) is issued to the LLM to efficiently fetch all missing non-key attributes ($\mathcal{A}$) corresponding to the collected keys.
+\end{enumerate}
+The function concludes by performing a relational join operation between the collected keys and the attributes from the final response to construct the $\mathcal{R}_{final}$ of complete, de-duplicated records.
+
+\subsubsection{Inputs}
+\begin{itemize}
+    \item $Q$: The SQL-like data retrieval statement.
+    \item $\mathcal{P}_{pushdown}$: A list of \texttt{WHERE} clause predicates for extraction refinement.
+    \item $I_{max}$: An optional integer parameter bounding the iterative key collection phase.
+\end{itemize}
+
+\begin{algorithm}
+\caption{Key-Scan Algorithm}
+\label{alg:key_scan}
+\begin{algorithmic}[1]
+\Function{Key\_Scan}{$Q$, $\mathcal{P}_{pushdown}$, $I_{max}$}
+    \State $\mathcal{I} \gets \Call{BuildInitialRequest}{Q}$ 
+    \State $\mathcal{C} \gets \Call{InitializeLLMInteractionChain}{}$
+    \State $i \gets 0$
+    \State $\mathcal{H} \gets \emptyset$ 
+    \\
+    \While{$i < I_{max}$}
+        \If{$i = 0$}
+            \State $\mathcal{R}_{raw} \gets \mathcal{C}.\Call{Invoke}{\mathcal{I}}$
+        \Else
+            \State $\mathcal{I} \gets \Call{UpdateRequestWithHistory}{\mathcal{H}}$
+            \State $\mathcal{R}_{raw} \gets \mathcal{C}.\Call{Invoke}{\mathcal{I}}$
+        \EndIf
+        \\
+        \State $\mathcal{K}_{parsed} \gets \Call{ParseLLMResponse}{\mathcal{R}_{raw}}$ 
+        \State $\mathcal{K}_{new} \gets \Call{IdentifyNewUniqueKeys}{\mathcal{K}_{parsed}, \mathcal{H}}$
+        \If{$\mathcal{K}_{new} = \emptyset$}
+            \State \textbf{break}
+        \EndIf
+        \\
+        \State $\Call{SaveKeyValuesAndUpdateHistory}{\mathcal{K}_{new}, \mathcal{H}}$
+        \State $i \gets i + 1$
+    \EndWhile
+    \\
+    \State $\mathcal{K}_{all} \gets \Call{RetrieveAllCollectedUniqueKeys}{\mathcal{H}}$
+    \State $\mathcal{I}_{final} \gets \Call{BuildFinalAttributeRequest}{\mathcal{K}_{all}}$ 
+    \State $\mathcal{R}_{final\_raw} \gets \mathcal{C}.\Call{Invoke}{\mathcal{I}_{final}}$
+    
+    \State $\mathcal{A}_{parsed} \gets \Call{ParseFinalResponse}{\mathcal{R}_{final\_raw}}$ 
+    
+    \State $\mathcal{R}_{final} \gets \Call{RelationalJoin}{\mathcal{K}_{all}, \mathcal{A}_{parsed}}$ 
+    
+    \State $\Call{ClearState}{\mathcal{H}}$
+    \\
+    \State \textbf{return} $\mathcal{R}_{final}$
+\EndFunction
+\end{algorithmic}
+\end{algorithm}
+
+\newpage
+\subsection{Adaptive Strategy Selection and Confidence Estimation}
+The framework incorporates an adaptive execution layer that dynamically mediates the selection between the $\text{Table-Scan}$ and $\text{Key-Scan}$ operators. This decision is parameterized by a Confidence Estimator, which quantitatively assesses the expected factual data retrieval reliability based on the $Q$'s schema complexity and the LLM's raw confidence score.
+
+The confidence estimation model incorporates a decay factor sensitive to the number of projected columns. The final confidence score $\text{C}_{final}$ is calculated from the LLM's intrinsic raw confidence ($\text{C}_{raw}$) by applying an exponential decay based on $\text{N}_{cols}$, the cardinality of attributes in the $\text{SELECT}$ clause:
+
+$$
+\text{C}_{final} = (\text{C}_{raw})^{\text{N}_{cols}}
+$$
+
+This formulation rigorously models the non-linear increase in difficulty for the LLM to generate a coherent, fully populated tuple set as the schema width grows.
+
+Execution Strategy Selection Heuristic:
+\begin{itemize}
+    \item If $\text{C}_{final}$ exceeds a predefined operational threshold ($\tau$), the system prioritizes the Key-Scan approach. This two-phase method aligns with a Chain-of-Thought reasoning process, which is generally associated with higher accuracy and factuality when the model exhibits sufficient confidence.
+    \item Conversely, if $\text{C}_{final}$ falls below $\tau$, or if the schema is judged to be excessively wide ($\text{N}_{cols} \gg 1$), the framework defaults to the Table-Scan operator. $\text{Table-Scan}$ is considered the more robust strategy when the factual confidence is low, as it reduces the complexity of the initial extraction target (the full tuple vs. just the key).
+\end{itemize}
+This adaptive mechanism is fundamental for optimizing the execution of the full GALOIS-F logical plan by selecting the most appropriate physical operator based on a data-driven confidence metric.

@@ -13,3 +13,5 @@ The framework supports four distinct logical variants:\begin{itemize}
 
 \subsection{Join Handling}
 For multi-table queries, the logical planner decomposes the join operation into independent scan tasks. The system identifies all tables involved in the query (FROM clause and JOIN clauses) and generates a sub-plan for each. The planner ensures that alias references in the SQL query are correctly mapped to their respective table scans, allowing the Executor to fetch data for each relation independently before they are rejoined in the Post-Processing phase.
+
+\newpage
