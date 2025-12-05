@@ -41,4 +41,9 @@ Writing the reports sections reporting the complete pipeline followed for develo
     Added EXPLAIN and EXPLAIN ANALYZE support with JSON serialization, implemented JSON generation for query outputs, and improved logging and test utilities.
      \item \textbf{Second Deadline:} Developed the Gemini-based SQL baseline, including IK/MC query handling, schema and raw-data injection into prompts, JSON parsing through Pydantic, and error/timeout management. 
      Refactored and extended unit tests for baseline tools and added new tests validating LLM interaction and Gemini SQL execution.
+     \item \textbf{Third Deadline:} Implemented the iterative extension for both SQL and NL baselines, introducing configurable execution through a \texttt{max\_iter} parameter, deduplication across iterations, and early-stopping conditions when no new tuples are returned. 
+     Standardized the aggregation of token usage and latency metrics for iterative runs and ensured full compatibility with the existing JSON output schema.
+     Implemented the GALOIS-WO Table-Scan pipeline, including the GaloisExecutor, the iterative loop (first + iterative prompts), the stopping criteria, and the JSON parsing/deduplication logic ensuring unique tuple collection. 
+     Developed the GaloisWOSchemaManager for DuckDB schema inspection, table/attribute discovery, table-name resolution, key extraction, and JSON schema example generation. 
+     Contributed to the writing and refinement of the report sections describing the iterative baselines, the GALOIS-WO Table-Scan algorithm, and the corresponding numerical results.
 \end{itemize}
