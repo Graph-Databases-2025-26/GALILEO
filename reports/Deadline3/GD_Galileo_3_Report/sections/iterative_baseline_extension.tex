@@ -17,7 +17,7 @@ across rounds.
 
 The iterative enhancement was introduced without modifying the core architecture.
 A configurable parameter \texttt{max\_iter} (defined in \texttt{config.yaml}) controls the
-behaviour and ensures consistent execution across providers.
+behavior and ensures consistent execution across providers.
 
 The integration adheres to the following principles:
 
@@ -164,7 +164,7 @@ AVG-TIME (s)  & 5.035 & 9.681 \\
 \end{table}
 
 
-The iterative execution impacts the behaviour of both baselines in distinct
+The iterative execution impacts the behavior of both baselines in distinct
 ways. In the SQL setting, the model benefits from task repetition, often
 recovering additional valid tuples that were missed in the first pass. This
 results in higher tuple–level completeness and, in many cases, improvements in
@@ -174,7 +174,7 @@ still enhances tuple coverage, though with a less uniform effect across
 datasets.
 
 \subsection{Comparison with Non-Iterative Baselines}
-To contextualise the effect of iteration, we compare the results above with the
+To contextualize the effect of iteration, we compare the results above with the
 single-pass baselines. Overall, the iterative variant provides measurable gains 
 in tuple completeness and global \textsc{Avg-Score}, especially in datasets where 
 the model tended to omit large fractions of the answer in a single call.  
@@ -183,7 +183,7 @@ generated tokens and the average execution time. However, these costs remain
 moderate and proportional to the configured value of \texttt{max\_iter}.
 
 In conclusion, iterative execution improves robustness and recall, providing a
-more stable foundation for evaluating LLM behaviour under both SQL and NL
+more stable foundation for evaluating LLM behavior under both SQL and NL
 interfaces.
 
 
