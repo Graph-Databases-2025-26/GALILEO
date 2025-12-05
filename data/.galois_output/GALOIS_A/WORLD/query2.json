@@ -1,42 +1,11 @@
 {
     "query_id": 2,
-    "sql": "- added TRY_CAST to avoid errors with non-integer values\nSELECT name FROM target.country WHERE TRY_CAST(independence_year AS INTEGER) > 1950;",
+    "sql": "SELECT name FROM target.country WHERE CAST(independence_year AS INTEGER) > 1950;",
     "result_set": [
         {
             "name": "Bahamas"
-        },
-        {
-            "name": "Bahrain"
-        },
-        {
-            "name": "Bangladesh"
-        },
-        {
-            "name": "Barbados"
-        },
-        {
-            "name": "Belarus"
-        },
-        {
-            "name": "Belize"
-        },
-        {
-            "name": "Benin"
-        },
-        {
-            "name": "Bosnia and Herzegovina"
-        },
-        {
-            "name": "Botswana"
-        },
-        {
-            "name": "Brunei"
-        },
-        {
-            "name": "Burkina Faso"
-        },
-        {
-            "name": "Burundi"
         }
-    ]
+    ],
+    "time": 18.737860441207886,
+    "tokens": 601
 }

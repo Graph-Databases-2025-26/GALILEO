@@ -1,14 +1,18 @@
 {
     "result_set": [
         {
-            "party": "Democratic",
-            "num": 5
+            "name": "Hugo Chavez",
+            "party": "United Socialist Party of Venezuela"
         },
         {
-            "party": "Republican",
-            "num": 4
+            "name": "Nicol\u00e1s Maduro",
+            "party": "United Socialist Party of Venezuela"
+        },
+        {
+            "name": "Juan Guaid\u00f3",
+            "party": "Popular Will"
         }
     ],
-    "time": 2.537,
-    "tokens": 42
+    "time": 5.524,
+    "tokens": 103
 }

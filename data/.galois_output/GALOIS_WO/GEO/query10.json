@@ -3,31 +3,63 @@
     "sql": "SELECT DISTINCT lake_name FROM target.usa_lake WHERE area_squared_km > 450;",
     "result_set": [
         {
-            "lake_name": "Lake Mead"
-        },
-        {
-            "lake_name": "Lake of the Woods"
-        },
-        {
-            "lake_name": "Lake Erie"
-        },
-        {
-            "lake_name": "Lake Powell"
-        },
-        {
-            "lake_name": "Lake Tahoe"
+            "lake_name": "Lake Cumberland"
         },
         {
             "lake_name": "Lake Ontario"
         },
         {
-            "lake_name": "Lake Michigan"
+            "lake_name": "Lake Victoria"
+        },
+        {
+            "lake_name": "Lake Baikal"
+        },
+        {
+            "lake_name": "Lake Mille Lacs"
+        },
+        {
+            "lake_name": "Lake Tahoe"
+        },
+        {
+            "lake_name": "Lake Geneva"
+        },
+        {
+            "lake_name": "Lake Winnebago"
+        },
+        {
+            "lake_name": "Lake Powell"
+        },
+        {
+            "lake_name": "Lake Constance"
+        },
+        {
+            "lake_name": "Lake Tanganyika"
+        },
+        {
+            "lake_name": "Lake Mead"
+        },
+        {
+            "lake_name": "Lake Pontchartrain"
+        },
+        {
+            "lake_name": "Lake Oahe"
+        },
+        {
+            "lake_name": "Lake Erie"
+        },
+        {
+            "lake_name": "Lake Huron"
+        },
+        {
+            "lake_name": "Lake Sakakawea"
         },
         {
             "lake_name": "Lake Superior"
         },
         {
-            "lake_name": "Lake Huron"
+            "lake_name": "Lake Michigan"
         }
-    ]
+    ],
+    "time": 60.45488524436951,
+    "tokens": 1211
 }

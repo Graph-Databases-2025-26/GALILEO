@@ -4,59 +4,57 @@
     "result_set": [
         {
             "originaltitle": "Minority Report",
-            "startyear": 2002.0
+            "startyear": 2002
         },
         {
             "originaltitle": "Catch Me If You Can",
-            "startyear": 2002.0
+            "startyear": 2002
         },
         {
             "originaltitle": "The Terminal",
-            "startyear": 2004.0
+            "startyear": 2004
         },
         {
             "originaltitle": "War of the Worlds",
-            "startyear": 2005.0
-        },
-        {
-            "originaltitle": "Munich",
-            "startyear": 2005.0
+            "startyear": 2005
         },
         {
             "originaltitle": "Indiana Jones and the Kingdom of the Crystal Skull",
-            "startyear": 2008.0
+            "startyear": 2008
         },
         {
             "originaltitle": "The Adventures of Tintin",
-            "startyear": 2011.0
+            "startyear": 2011
         },
         {
             "originaltitle": "War Horse",
-            "startyear": 2011.0
+            "startyear": 2011
         },
         {
             "originaltitle": "Lincoln",
-            "startyear": 2012.0
+            "startyear": 2012
         },
         {
             "originaltitle": "Bridge of Spies",
-            "startyear": 2015.0
+            "startyear": 2015
         },
         {
             "originaltitle": "The BFG",
-            "startyear": 2016.0
+            "startyear": 2016
         },
         {
             "originaltitle": "Ready Player One",
-            "startyear": 2018.0
+            "startyear": 2018
         },
         {
             "originaltitle": "West Side Story",
-            "startyear": 2021.0
+            "startyear": 2021
         },
         {
             "originaltitle": "The Fabelmans",
-            "startyear": 2022.0
+            "startyear": 2022
         }
-    ]
+    ],
+    "time": 7.396282434463501,
+    "tokens": 409
 }

@@ -4,51 +4,45 @@
     "result_set": [
         {
             "originaltitle": "Jurassic Park",
-            "startyear": 1993.0,
-            "genres": "Action,Adventure,Sci-Fi",
-            "birthyear": 1946.0,
+            "startyear": 1993,
+            "genres": "Adventure, Drama, Thriller",
+            "birthyear": 1946,
             "deathyear": NaN,
-            "runtimeminutes": 127.0
+            "runtimeminutes": 134
         },
         {
             "originaltitle": "Schindler's List",
-            "startyear": 1993.0,
-            "genres": "Biography,Drama,History",
-            "birthyear": 1946.0,
+            "startyear": 1993,
+            "genres": "Drama, History",
+            "birthyear": 1946,
             "deathyear": NaN,
-            "runtimeminutes": 195.0
+            "runtimeminutes": 145
         },
         {
             "originaltitle": "The Lost World: Jurassic Park",
-            "startyear": 1997.0,
-            "genres": "Action,Adventure,Sci-Fi",
-            "birthyear": 1946.0,
+            "startyear": 1997,
+            "genres": "Science Fiction, Thriller",
+            "birthyear": 1946,
             "deathyear": NaN,
-            "runtimeminutes": 129.0
+            "runtimeminutes": 120
         },
         {
             "originaltitle": "Amistad",
-            "startyear": 1997.0,
-            "genres": "Drama,History",
-            "birthyear": 1946.0,
+            "startyear": 1997,
+            "genres": "Science Fiction, War",
+            "birthyear": 1946,
             "deathyear": NaN,
-            "runtimeminutes": 154.0
+            "runtimeminutes": 145
         },
         {
             "originaltitle": "Saving Private Ryan",
-            "startyear": 1998.0,
-            "genres": "Drama,War",
-            "birthyear": 1946.0,
+            "startyear": 1998,
+            "genres": "Science Fiction, Adventure",
+            "birthyear": 1946,
             "deathyear": NaN,
-            "runtimeminutes": 169.0
-        },
-        {
-            "originaltitle": "A.I. Artificial Intelligence",
-            "startyear": 1999.0,
-            "genres": "Adventure,Drama,Sci-Fi",
-            "birthyear": 1946.0,
-            "deathyear": NaN,
-            "runtimeminutes": 146.0
+            "runtimeminutes": 146
         }
-    ]
+    ],
+    "time": 16.512404203414917,
+    "tokens": 1048
 }

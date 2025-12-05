@@ -7,28 +7,30 @@
             "party": "Democratic Action",
             "start_year": 1959,
             "end_year": 1964,
-            "cardinal_number": "1st"
+            "cardinal_number": "1"
         },
         {
             "name": "Raúl Leoni",
             "party": "Democratic Action",
             "start_year": 1964,
             "end_year": 1969,
-            "cardinal_number": "2nd"
+            "cardinal_number": "2"
         },
         {
             "name": "Carlos Andrés Pérez",
             "party": "Democratic Action",
             "start_year": 1974,
             "end_year": 1979,
-            "cardinal_number": "3rd"
+            "cardinal_number": "3"
         },
         {
-            "name": "Carlos Andrés Pérez",
+            "name": "Jaime Lusinchi",
             "party": "Democratic Action",
-            "start_year": 1989,
-            "end_year": 1993,
-            "cardinal_number": "4th"
+            "start_year": 1984,
+            "end_year": 1989,
+            "cardinal_number": "5"
         }
-    ]
+    ],
+    "time": 19.955754280090332,
+    "tokens": 716
 }

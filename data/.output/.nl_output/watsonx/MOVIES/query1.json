@@ -1,18 +1,15 @@
 {
     "result_set": [
         {
-            "primarytitle": "Call of the Canyon",
-            "originaltitle": "Call of the Canyon"
+            "primarytitle": "Call of the Flesh"
         },
         {
-            "primarytitle": "The Last Challenge",
-            "originaltitle": "The Last Challenge"
+            "primarytitle": "The Thin Man Goes Home"
         },
         {
-            "primarytitle": "The Thin Man Goes Home",
-            "originaltitle": "The Thin Man Goes Home"
+            "primarytitle": "Above Suspicion"
         }
     ],
-    "time": 8.847,
-    "tokens": 78
+    "time": 2.519,
+    "tokens": 48
 }

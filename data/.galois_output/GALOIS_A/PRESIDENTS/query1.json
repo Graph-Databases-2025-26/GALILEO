@@ -3,72 +3,110 @@
     "sql": "SELECT DISTINCT p.name, p.party FROM target.world_presidents p WHERE p.country='Venezuela';",
     "result_set": [
         {
-            "name": "Rómulo Betancourt",
-            "party": "Democratic Action"
+            "name": "Teodoro Petkoff",
+            "party": "Movimiento al Socialismo"
         },
         {
-            "name": "Marcos Pérez Jiménez",
-            "party": "Military dictatorship"
+            "name": "Henrique Salas Romer",
+            "party": "Proyecto Venezuela"
         },
         {
-            "name": "Cipriano Castro",
-            "party": "Liberal Party"
+            "name": "Gregorio Mirabal",
+            "party": "Alianza Bravo Pueblo"
         },
         {
-            "name": "Eleazar López Contreras",
-            "party": "Military dictatorship"
+            "name": "José Tomás Sánchez",
+            "party": "Patria Para Todos"
+        },
+        {
+            "name": "Juan José Caldera",
+            "party": "Convergencia"
+        },
+        {
+            "name": "Andrés Velásquez",
+            "party": "La Causa R"
+        },
+        {
+            "name": "Carlos Tablante",
+            "party": "Nueva Fuerza"
+        },
+        {
+            "name": "Rafael Caldera",
+            "party": "COPEI"
+        },
+        {
+            "name": "Ismael García",
+            "party": "Un Solo Pueblo"
+        },
+        {
+            "name": "María Corina Machado",
+            "party": "Vente Venezuela"
+        },
+        {
+            "name": "Gabriel Puerta Aponte",
+            "party": "Bandera Roja"
+        },
+        {
+            "name": "Pompeyo Márquez",
+            "party": "Partido Comunista de Venezuela"
+        },
+        {
+            "name": "Jorge Rodríguez",
+            "party": "Unidad"
+        },
+        {
+            "name": "José Albornoz",
+            "party": "Patria Para Todos"
+        },
+        {
+            "name": "Alfonso Marquina",
+            "party": "Fuerza Liberal"
         },
         {
             "name": "Hugo Chávez",
-            "party": "United Socialist Party of Venezuela"
+            "party": "PSUV"
         },
         {
-            "name": "João Goulart",
-            "party": "None"
-        },
-        {
-            "name": "Rafael Caldera",
-            "party": "COPEI"
-        },
-        {
-            "name": "Juan Vicente Gómez",
-            "party": "Military dictatorship"
-        },
-        {
-            "name": "Nicolás Maduro",
-            "party": "United Socialist Party of Venezuela"
-        },
-        {
-            "name": "Rómulo Gallegos",
-            "party": "Democratic Action"
+            "name": "Diosdado Cabello",
+            "party": "Partido Socialista Unido de Venezuela"
         },
         {
             "name": "Carlos Andrés Pérez",
-            "party": "Democratic Action"
+            "party": "Acción Democrática"
         },
         {
-            "name": "Luis Herrera Campins",
-            "party": "COPEI"
+            "name": "Manuel Rosales",
+            "party": "Un Nuevo Tiempo"
         },
         {
-            "name": "Rafael Caldera",
-            "party": "National Convergence"
+            "name": "Felipe Mujica",
+            "party": "Movimiento Al Socialismo"
         },
         {
-            "name": "Germán Suárez Flamerich",
-            "party": "Military dictatorship"
+            "name": "Nicolás Maduro",
+            "party": "PSUV"
         },
         {
-            "name": "Isaías Medina Angarita",
-            "party": "Military dictatorship"
+            "name": "Henrique Capriles Radonski",
+            "party": "Primero Justicia"
         },
         {
-            "name": "Jaime Lusinchi",
-            "party": "Democratic Action"
+            "name": "Leopoldo López",
+            "party": "Voluntad Popular"
         },
         {
-            "name": "Antonio Guzmán Blanco",
-            "party": "Liberal Party"
+            "name": "Alfredo Romero",
+            "party": "Foro Penal"
+        },
+        {
+            "name": "Yon Goicochea",
+            "party": "Movimiento Estudiantil"
+        },
+        {
+            "name": "Oscar Figuera",
+            "party": "Partido Comunista de Venezuela"
         }
-    ]
+    ],
+    "time": 16.66918921470642,
+    "tokens": 776
 }

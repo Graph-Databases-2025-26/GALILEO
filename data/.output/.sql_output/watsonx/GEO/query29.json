@@ -9,7 +9,7 @@
         {
             "state_name": "Texas",
             "capital": "Austin",
-            "density": "108.4",
+            "density": "108.0",
             "population": "28995881"
         },
         {
@@ -17,8 +17,14 @@
             "capital": "Tallahassee",
             "density": "394.2",
             "population": "21244317"
+        },
+        {
+            "state_name": "New York",
+            "capital": "Albany",
+            "density": "634.9",
+            "population": "19453561"
         }
     ],
-    "time": 5.204,
-    "tokens": 153
+    "time": 11.773,
+    "tokens": 193
 }

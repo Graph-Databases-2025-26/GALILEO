@@ -5,5 +5,7 @@
         {
             "count(DISTINCT state_name)": 0
         }
-    ]
+    ],
+    "time": 14.912774562835693,
+    "tokens": 889
 }

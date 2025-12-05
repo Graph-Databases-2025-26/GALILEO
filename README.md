@@ -240,3 +240,10 @@ Individual scripts are available for specific tasks, primarily located in `src/u
 | **Evaluation**              | `src/utils/galois_eval.py`        | `python galois_eval.py --ground <path> --submissions <path>`                                         |
 | **Avg. Expected Cells**     | `src/db/avg_cells_metric.py`      | `python -m src.db.avg_cells_metric`                                                                  |
 | **RAG additional feature**  | `src/llm/rag.py`                  | `python -m src.main premier fortune --mode pznl` / `python -m src.main premier fortune --mode pzsql` |
+
+---
+
+---
+
+## IX. GALOIS Implementation
+We explain our GALOIS implementation in `reports/Deadline3/GD_Galileo_3_Report/GD_Galileo_Report_3.pdf` pdf

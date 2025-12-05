@@ -3,8 +3,10 @@
     "sql": "SELECT p.party, count(p.party) num FROM target.world_presidents p WHERE p.country ='Venezuela' AND start_year > 1800 AND end_year < 1900 group by p.party order by num desc;",
     "result_set": [
         {
-            "party": "Liberal Party",
-            "num": 4
+            "party": "Liberal",
+            "num": 2
         }
-    ]
+    ],
+    "time": 12.721232891082764,
+    "tokens": 844
 }

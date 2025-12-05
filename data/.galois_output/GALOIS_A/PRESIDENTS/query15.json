@@ -3,59 +3,7 @@
     "sql": "SELECT p.name, p.party FROM target.world_presidents p WHERE p.country='United States' AND p.party='Republican';",
     "result_set": [
         {
-            "name": "Donald Trump",
-            "party": "Republican"
-        },
-        {
-            "name": "George W. Bush",
-            "party": "Republican"
-        },
-        {
-            "name": "George H.W. Bush",
-            "party": "Republican"
-        },
-        {
-            "name": "Ronald Reagan",
-            "party": "Republican"
-        },
-        {
-            "name": "Gerald Ford",
-            "party": "Republican"
-        },
-        {
-            "name": "Richard Nixon",
-            "party": "Republican"
-        },
-        {
-            "name": "Dwight D. Eisenhower",
-            "party": "Republican"
-        },
-        {
-            "name": "Herbert Hoover",
-            "party": "Republican"
-        },
-        {
-            "name": "Calvin Coolidge",
-            "party": "Republican"
-        },
-        {
-            "name": "Warren G. Harding",
-            "party": "Republican"
-        },
-        {
-            "name": "William McKinley",
-            "party": "Republican"
-        },
-        {
-            "name": "Benjamin Harrison",
-            "party": "Republican"
-        },
-        {
-            "name": "James A. Garfield",
-            "party": "Republican"
-        },
-        {
-            "name": "Rutherford B. Hayes",
+            "name": "Abraham Lincoln",
             "party": "Republican"
         },
         {
@@ -63,8 +11,70 @@
             "party": "Republican"
         },
         {
-            "name": "Abraham Lincoln",
+            "name": "Rutherford B. Hayes",
+            "party": "Republican"
+        },
+        {
+            "name": "James A. Garfield",
+            "party": "Republican"
+        },
+        {
+            "name": "Benjamin Harrison",
+            "party": "Republican"
+        },
+        {
+            "name": "William McKinley",
+            "party": "Republican"
+        },
+        {
+            "name": "Theodore Roosevelt",
+            "party": "Republican"
+        },
+        {
+            "name": "William Howard Taft",
+            "party": "Republican"
+        },
+        {
+            "name": "Warren G. Harding",
+            "party": "Republican"
+        },
+        {
+            "name": "Calvin Coolidge",
+            "party": "Republican"
+        },
+        {
+            "name": "Herbert Hoover",
+            "party": "Republican"
+        },
+        {
+            "name": "Dwight D. Eisenhower",
+            "party": "Republican"
+        },
+        {
+            "name": "Richard Nixon",
+            "party": "Republican"
+        },
+        {
+            "name": "Gerald R. Ford",
+            "party": "Republican"
+        },
+        {
+            "name": "Ronald Reagan",
+            "party": "Republican"
+        },
+        {
+            "name": "George H.W. Bush",
+            "party": "Republican"
+        },
+        {
+            "name": "George W. Bush",
+            "party": "Republican"
+        },
+        {
+            "name": "Donald Trump",
             "party": "Republican"
         }
-    ]
+    ],
+    "time": 16.66256546974182,
+    "tokens": 869
 }

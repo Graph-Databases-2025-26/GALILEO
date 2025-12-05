@@ -5,14 +5,58 @@
             "river_name": "Yukon River"
         },
         {
+            "state_name": "Washington",
+            "river_name": "Columbia River"
+        },
+        {
             "state_name": "California",
             "river_name": "Sacramento River"
         },
         {
+            "state_name": "Texas",
+            "river_name": "Rio Grande"
+        },
+        {
             "state_name": "Louisiana",
+            "river_name": "Mississippi River"
+        },
+        {
+            "state_name": "Minnesota",
+            "river_name": "Mississippi River"
+        },
+        {
+            "state_name": "Wisconsin",
+            "river_name": "Mississippi River"
+        },
+        {
+            "state_name": "Iowa",
+            "river_name": "Mississippi River"
+        },
+        {
+            "state_name": "Illinois",
+            "river_name": "Mississippi River"
+        },
+        {
+            "state_name": "Missouri",
+            "river_name": "Mississippi River"
+        },
+        {
+            "state_name": "Kentucky",
+            "river_name": "Mississippi River"
+        },
+        {
+            "state_name": "Tennessee",
+            "river_name": "Mississippi River"
+        },
+        {
+            "state_name": "Arkansas",
+            "river_name": "Mississippi River"
+        },
+        {
+            "state_name": "Mississippi",
             "river_name": "Mississippi River"
         }
     ],
-    "time": 2.169,
-    "tokens": 69
+    "time": 11.059,
+    "tokens": 285
 }

@@ -105,7 +105,13 @@
             "city_name": "New Orleans"
         },
         {
-            "city_name": "Cleveland"
+            "city_name": "Long Beach"
+        },
+        {
+            "city_name": "Colorado Springs"
+        },
+        {
+            "city_name": "Fresno"
         },
         {
             "city_name": "Sacramento"
@@ -126,121 +132,27 @@
             "city_name": "Tulsa"
         },
         {
-            "city_name": "Colorado Springs"
+            "city_name": "Cleveland"
         },
         {
             "city_name": "Virginia Beach"
         },
         {
-            "city_name": "Raleigh"
-        },
-        {
             "city_name": "Omaha"
         },
         {
-            "city_name": "Miami Beach"
-        },
-        {
-            "city_name": "Long Beach"
-        },
-        {
-            "city_name": "Santa Ana"
-        },
-        {
-            "city_name": "Anaheim"
-        },
-        {
-            "city_name": "Tampa"
-        },
-        {
-            "city_name": "Pittsburgh"
-        },
-        {
-            "city_name": "Cincinnati"
-        },
-        {
-            "city_name": "St. Louis"
-        },
-        {
-            "city_name": "Greenville"
-        },
-        {
-            "city_name": "Toledo"
-        },
-        {
-            "city_name": "Arlington"
+            "city_name": "Raleigh"
         },
         {
             "city_name": "Wichita"
         },
         {
-            "city_name": "St. Paul"
+            "city_name": "St. Louis"
         },
         {
-            "city_name": "Bakersfield"
-        },
-        {
-            "city_name": "Norfolk"
-        },
-        {
-            "city_name": "Fresno"
-        },
-        {
-            "city_name": "Fort Wayne"
-        },
-        {
-            "city_name": "Hollywood"
-        },
-        {
-            "city_name": "Scottsdale"
-        },
-        {
-            "city_name": "Irvine"
-        },
-        {
-            "city_name": "Chandler"
-        },
-        {
-            "city_name": "Henderson"
-        },
-        {
-            "city_name": "Reno"
-        },
-        {
-            "city_name": "Plano"
-        },
-        {
-            "city_name": "Buffalo"
-        },
-        {
-            "city_name": "Madison"
-        },
-        {
-            "city_name": "Boise"
-        },
-        {
-            "city_name": "Richmond"
-        },
-        {
-            "city_name": "Spokane"
-        },
-        {
-            "city_name": "Baton Rouge"
-        },
-        {
-            "city_name": "Des Moines"
-        },
-        {
-            "city_name": "Albany"
-        },
-        {
-            "city_name": "Tallahassee"
-        },
-        {
-            "city_name": "Worcester"
-        },
-        {
-            "city_name": "Providence"
+            "city_name": "Santa Ana"
         }
-    ]
+    ],
+    "time": 161.53733277320862,
+    "tokens": 4660
 }

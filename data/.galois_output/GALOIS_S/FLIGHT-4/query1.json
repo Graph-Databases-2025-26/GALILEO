@@ -3,55 +3,9 @@
     "sql": "SELECT a.name FROM target.airports a WHERE a.elevation_in_ft >= -50 and a.elevation_in_ft <= 50;",
     "result_set": [
         {
-            "name": "Amsterdam Airport Schiphol"
-        },
-        {
-            "name": "Juist Airport"
-        },
-        {
-            "name": "Norderney Airport"
-        },
-        {
-            "name": "Baltrum Airport"
-        },
-        {
-            "name": "Langeoog Airport"
-        },
-        {
-            "name": "Spiekeroog Airport"
-        },
-        {
-            "name": "Wangerooge Airport"
-        },
-        {
-            "name": "Harle Airport"
-        },
-        {
-            "name": "Heligoland Airport"
-        },
-        {
-            "name": "Cuxhaven/Nordholz Airport"
-        },
-        {
-            "name": "Wilhelmshaven-Mariensiel Airport"
-        },
-        {
-            "name": "Emden Airport"
-        },
-        {
-            "name": "Bremen Airport"
-        },
-        {
-            "name": "Bremerhaven Airport"
-        },
-        {
-            "name": "Oldenburg-Hatten Airport"
-        },
-        {
-            "name": "Leer-Papenburg Airport"
-        },
-        {
-            "name": "Meppen Airport"
+            "name": "Kelsey Airport"
         }
-    ]
+    ],
+    "time": 3.436081886291504,
+    "tokens": 181
 }

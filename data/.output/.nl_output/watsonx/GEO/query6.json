@@ -2,23 +2,23 @@
     "result_set": [
         {
             "lake_name": "Lake Tahoe",
-            "area_squared_km": "495.0",
-            "country_name": "United States",
+            "area_squared_km": 495.0,
+            "country_name": "USA",
             "state_name": "California"
         },
         {
             "lake_name": "Salton Sea",
-            "area_squared_km": "970.0",
-            "country_name": "United States",
+            "area_squared_km": 970.0,
+            "country_name": "USA",
             "state_name": "California"
         },
         {
             "lake_name": "Clear Lake",
-            "area_squared_km": "177.0",
-            "country_name": "United States",
+            "area_squared_km": 177.0,
+            "country_name": "USA",
             "state_name": "California"
         }
     ],
-    "time": 4.986,
-    "tokens": 118
+    "time": 4.077,
+    "tokens": 115
 }

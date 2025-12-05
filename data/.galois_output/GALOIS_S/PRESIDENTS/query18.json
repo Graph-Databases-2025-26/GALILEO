@@ -10,6 +10,11 @@
         },
         {
             "name": "Donald Trump"
+        },
+        {
+            "name": "Ronald Reagan"
         }
-    ]
+    ],
+    "time": 21.98293662071228,
+    "tokens": 1369
 }

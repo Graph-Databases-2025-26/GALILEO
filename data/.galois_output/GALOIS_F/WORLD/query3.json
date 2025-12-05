@@ -6,5 +6,7 @@
             "avg(gnp)": NaN,
             "sum(population)": NaN
         }
-    ]
+    ],
+    "time": 16.29048728942871,
+    "tokens": 1099
 }

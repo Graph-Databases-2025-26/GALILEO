@@ -4,325 +4,320 @@
     "result_set": [
         {
             "name": "George Washington",
-            "start_year": 1789.0,
-            "end_year": "1797",
-            "cardinal_number": "1st",
+            "start_year": 1789,
+            "end_year": 1797.0,
+            "cardinal_number": "1",
             "party": "Independent"
         },
         {
             "name": "John Adams",
-            "start_year": 1797.0,
-            "end_year": "1801",
-            "cardinal_number": "2nd",
+            "start_year": 1797,
+            "end_year": 1801.0,
+            "cardinal_number": "2",
             "party": "Federalist"
         },
         {
             "name": "Thomas Jefferson",
-            "start_year": 1801.0,
-            "end_year": "1809",
-            "cardinal_number": "3rd",
+            "start_year": 1801,
+            "end_year": 1809.0,
+            "cardinal_number": "3",
             "party": "Democratic-Republican"
         },
         {
             "name": "James Madison",
-            "start_year": 1809.0,
-            "end_year": "1817",
-            "cardinal_number": "4th",
+            "start_year": 1809,
+            "end_year": 1817.0,
+            "cardinal_number": "4",
             "party": "Democratic-Republican"
         },
         {
             "name": "James Monroe",
-            "start_year": 1817.0,
-            "end_year": "1825",
-            "cardinal_number": "5th",
+            "start_year": 1817,
+            "end_year": 1825.0,
+            "cardinal_number": "5",
             "party": "Democratic-Republican"
         },
         {
             "name": "John Quincy Adams",
-            "start_year": 1825.0,
-            "end_year": "1829",
-            "cardinal_number": "6th",
+            "start_year": 1825,
+            "end_year": 1829.0,
+            "cardinal_number": "6",
             "party": "Democratic-Republican"
         },
         {
             "name": "Andrew Jackson",
-            "start_year": 1829.0,
-            "end_year": "1837",
-            "cardinal_number": "7th",
+            "start_year": 1829,
+            "end_year": 1837.0,
+            "cardinal_number": "7",
             "party": "Democratic"
         },
         {
             "name": "Martin Van Buren",
-            "start_year": 1837.0,
-            "end_year": "1841",
-            "cardinal_number": "8th",
+            "start_year": 1837,
+            "end_year": 1841.0,
+            "cardinal_number": "8",
             "party": "Democratic"
         },
         {
             "name": "William Henry Harrison",
-            "start_year": 1841.0,
-            "end_year": "1841",
-            "cardinal_number": "9th",
+            "start_year": 1841,
+            "end_year": 1841.0,
+            "cardinal_number": "9",
             "party": "Whig"
         },
         {
             "name": "John Tyler",
-            "start_year": 1841.0,
-            "end_year": "1845",
-            "cardinal_number": "10th",
-            "party": "Whig/Independent"
+            "start_year": 1841,
+            "end_year": 1845.0,
+            "cardinal_number": "10",
+            "party": "Whig"
         },
         {
             "name": "James K. Polk",
-            "start_year": 1845.0,
-            "end_year": "1849",
-            "cardinal_number": "11th",
+            "start_year": 1845,
+            "end_year": 1849.0,
+            "cardinal_number": "11",
             "party": "Democratic"
         },
         {
             "name": "Zachary Taylor",
-            "start_year": 1849.0,
-            "end_year": "1850",
-            "cardinal_number": "12th",
+            "start_year": 1849,
+            "end_year": 1850.0,
+            "cardinal_number": "12",
             "party": "Whig"
         },
         {
             "name": "Millard Fillmore",
-            "start_year": 1850.0,
-            "end_year": "1853",
-            "cardinal_number": "13th",
+            "start_year": 1850,
+            "end_year": 1853.0,
+            "cardinal_number": "13",
             "party": "Whig"
         },
         {
             "name": "Franklin Pierce",
-            "start_year": 1853.0,
-            "end_year": "1857",
-            "cardinal_number": "14th",
+            "start_year": 1853,
+            "end_year": 1857.0,
+            "cardinal_number": "14",
             "party": "Democratic"
         },
         {
             "name": "James Buchanan",
-            "start_year": 1857.0,
-            "end_year": "1861",
-            "cardinal_number": "15th",
+            "start_year": 1857,
+            "end_year": 1861.0,
+            "cardinal_number": "15",
             "party": "Democratic"
         },
         {
             "name": "Abraham Lincoln",
-            "start_year": 1861.0,
-            "end_year": "1865",
-            "cardinal_number": "16th",
+            "start_year": 1861,
+            "end_year": 1865.0,
+            "cardinal_number": "16",
             "party": "Republican"
         },
         {
             "name": "Andrew Johnson",
-            "start_year": 1865.0,
-            "end_year": "1869",
-            "cardinal_number": "17th",
-            "party": "National Union/Democratic"
+            "start_year": 1865,
+            "end_year": 1869.0,
+            "cardinal_number": "17",
+            "party": "National Union"
         },
         {
             "name": "Ulysses S. Grant",
-            "start_year": 1869.0,
-            "end_year": "1877",
-            "cardinal_number": "18th",
+            "start_year": 1869,
+            "end_year": 1877.0,
+            "cardinal_number": "18",
             "party": "Republican"
         },
         {
             "name": "Rutherford B. Hayes",
-            "start_year": 1877.0,
-            "end_year": "1881",
-            "cardinal_number": "19th",
+            "start_year": 1877,
+            "end_year": 1881.0,
+            "cardinal_number": "19",
             "party": "Republican"
         },
         {
             "name": "James A. Garfield",
-            "start_year": 1881.0,
-            "end_year": "1881",
-            "cardinal_number": "20th",
+            "start_year": 1881,
+            "end_year": 1881.0,
+            "cardinal_number": "20",
             "party": "Republican"
         },
         {
             "name": "Chester A. Arthur",
-            "start_year": 1881.0,
-            "end_year": "1885",
-            "cardinal_number": "21st",
+            "start_year": 1881,
+            "end_year": 1885.0,
+            "cardinal_number": "21",
             "party": "Republican"
         },
         {
             "name": "Grover Cleveland",
-            "start_year": 1885.0,
-            "end_year": "1889",
-            "cardinal_number": "22nd",
+            "start_year": 1885,
+            "end_year": 1889.0,
+            "cardinal_number": "22",
             "party": "Democratic"
         },
         {
             "name": "Benjamin Harrison",
-            "start_year": 1889.0,
-            "end_year": "1893",
-            "cardinal_number": "23rd",
+            "start_year": 1889,
+            "end_year": 1893.0,
+            "cardinal_number": "23",
             "party": "Republican"
         },
         {
-            "name": "Grover Cleveland",
-            "start_year": 1893.0,
-            "end_year": "1897",
-            "cardinal_number": "24th",
-            "party": "Democratic"
-        },
-        {
             "name": "William McKinley",
-            "start_year": 1897.0,
-            "end_year": "1901",
-            "cardinal_number": "25th",
+            "start_year": 1897,
+            "end_year": 1901.0,
+            "cardinal_number": "25",
             "party": "Republican"
         },
         {
             "name": "Theodore Roosevelt",
-            "start_year": 1901.0,
-            "end_year": "1909",
-            "cardinal_number": "26th",
+            "start_year": 1901,
+            "end_year": 1909.0,
+            "cardinal_number": "26",
             "party": "Republican"
         },
         {
             "name": "William Howard Taft",
-            "start_year": 1909.0,
-            "end_year": "1913",
-            "cardinal_number": "27th",
+            "start_year": 1909,
+            "end_year": 1913.0,
+            "cardinal_number": "27",
             "party": "Republican"
         },
         {
             "name": "Woodrow Wilson",
-            "start_year": 1913.0,
-            "end_year": "1921",
-            "cardinal_number": "28th",
+            "start_year": 1913,
+            "end_year": 1921.0,
+            "cardinal_number": "28",
             "party": "Democratic"
         },
         {
             "name": "Warren G. Harding",
-            "start_year": 1921.0,
-            "end_year": "1923",
-            "cardinal_number": "29th",
+            "start_year": 1921,
+            "end_year": 1923.0,
+            "cardinal_number": "29",
             "party": "Republican"
         },
         {
             "name": "Calvin Coolidge",
-            "start_year": 1923.0,
-            "end_year": "1929",
-            "cardinal_number": "30th",
+            "start_year": 1923,
+            "end_year": 1929.0,
+            "cardinal_number": "30",
             "party": "Republican"
         },
         {
             "name": "Herbert Hoover",
-            "start_year": 1929.0,
-            "end_year": "1933",
-            "cardinal_number": "31st",
+            "start_year": 1929,
+            "end_year": 1933.0,
+            "cardinal_number": "31",
             "party": "Republican"
         },
         {
             "name": "Franklin D. Roosevelt",
-            "start_year": 1933.0,
-            "end_year": "1945",
-            "cardinal_number": "32nd",
+            "start_year": 1933,
+            "end_year": 1945.0,
+            "cardinal_number": "32",
             "party": "Democratic"
         },
         {
             "name": "Harry S. Truman",
-            "start_year": 1945.0,
-            "end_year": "1953",
-            "cardinal_number": "33rd",
+            "start_year": 1945,
+            "end_year": 1953.0,
+            "cardinal_number": "33",
             "party": "Democratic"
         },
         {
             "name": "Dwight D. Eisenhower",
-            "start_year": 1953.0,
-            "end_year": "1961",
-            "cardinal_number": "34th",
+            "start_year": 1953,
+            "end_year": 1961.0,
+            "cardinal_number": "34",
             "party": "Republican"
         },
         {
             "name": "John F. Kennedy",
-            "start_year": 1961.0,
-            "end_year": "1963",
-            "cardinal_number": "35th",
+            "start_year": 1961,
+            "end_year": 1963.0,
+            "cardinal_number": "35",
             "party": "Democratic"
         },
         {
             "name": "Lyndon B. Johnson",
-            "start_year": 1963.0,
-            "end_year": "1969",
-            "cardinal_number": "36th",
+            "start_year": 1963,
+            "end_year": 1969.0,
+            "cardinal_number": "36",
             "party": "Democratic"
         },
         {
             "name": "Richard Nixon",
-            "start_year": 1969.0,
-            "end_year": "1974",
-            "cardinal_number": "37th",
+            "start_year": 1969,
+            "end_year": 1974.0,
+            "cardinal_number": "37",
             "party": "Republican"
         },
         {
             "name": "Gerald R. Ford",
-            "start_year": 1974.0,
-            "end_year": "1977",
-            "cardinal_number": "38th",
+            "start_year": 1974,
+            "end_year": 1977.0,
+            "cardinal_number": "38",
             "party": "Republican"
         },
         {
             "name": "Jimmy Carter",
-            "start_year": 1977.0,
-            "end_year": "1981",
-            "cardinal_number": "39th",
+            "start_year": 1977,
+            "end_year": 1981.0,
+            "cardinal_number": "39",
             "party": "Democratic"
         },
         {
             "name": "Ronald Reagan",
-            "start_year": 1981.0,
-            "end_year": "1989",
-            "cardinal_number": "40th",
+            "start_year": 1981,
+            "end_year": 1989.0,
+            "cardinal_number": "40",
             "party": "Republican"
         },
         {
             "name": "George H.W. Bush",
-            "start_year": 1989.0,
-            "end_year": "1993",
-            "cardinal_number": "41st",
+            "start_year": 1989,
+            "end_year": 1993.0,
+            "cardinal_number": "41",
             "party": "Republican"
         },
         {
             "name": "Bill Clinton",
-            "start_year": 1993.0,
-            "end_year": "2001",
-            "cardinal_number": "42nd",
+            "start_year": 1993,
+            "end_year": 2001.0,
+            "cardinal_number": "42",
             "party": "Democratic"
         },
         {
             "name": "George W. Bush",
-            "start_year": 2001.0,
-            "end_year": "2009",
-            "cardinal_number": "43rd",
+            "start_year": 2001,
+            "end_year": 2009.0,
+            "cardinal_number": "43",
             "party": "Republican"
         },
         {
             "name": "Barack Obama",
-            "start_year": 2009.0,
-            "end_year": "2017",
-            "cardinal_number": "44th",
+            "start_year": 2009,
+            "end_year": 2017.0,
+            "cardinal_number": "44",
             "party": "Democratic"
         },
         {
             "name": "Donald J. Trump",
-            "start_year": 2017.0,
-            "end_year": "2021",
-            "cardinal_number": "45th",
+            "start_year": 2017,
+            "end_year": 2021.0,
+            "cardinal_number": "45",
             "party": "Republican"
         },
         {
             "name": "Joe Biden",
-            "start_year": 2021.0,
-            "end_year": "present",
-            "cardinal_number": "46th",
+            "start_year": 2021,
+            "end_year": NaN,
+            "cardinal_number": "46",
             "party": "Democratic"
         }
-    ]
+    ],
+    "time": 34.52313017845154,
+    "tokens": 2568
 }

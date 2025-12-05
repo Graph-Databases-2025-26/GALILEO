@@ -3,8 +3,10 @@
     "sql": "SELECT m.director, (m.startyear - m.birthyear) as director_age FROM target.movies m WHERE m.startyear is not null AND m.birthyear is not null order by director_age desc limit 1;",
     "result_set": [
         {
-            "director": "Martin Scorsese",
-            "director_age": 48
+            "director": "Steven Spielberg",
+            "director_age": 28
         }
-    ]
+    ],
+    "time": 4.642333984375,
+    "tokens": 293
 }

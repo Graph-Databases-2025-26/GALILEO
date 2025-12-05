@@ -3,7 +3,9 @@
     "sql": "SELECT count(state_name) FROM target.usa_state;",
     "result_set": [
         {
-            "count(state_name)": 51
+            "count(state_name)": 50
         }
-    ]
+    ],
+    "time": 13.032788753509521,
+    "tokens": 444
 }

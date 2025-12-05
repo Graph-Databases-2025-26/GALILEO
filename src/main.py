@@ -50,7 +50,7 @@ def parse_args():
      )
      parser.add_argument(
          "--provider",
-         choices=["gemini", "watsonx"],
+         choices=["gemini", "watsonx", "open_router"],
          default=None,
          help="Override LLM provider. If omitted, uses config.llm.provider.",
      )

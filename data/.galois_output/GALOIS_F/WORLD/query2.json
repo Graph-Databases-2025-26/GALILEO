@@ -1,18 +1,338 @@
 {
     "query_id": 2,
-    "sql": "- added TRY_CAST to avoid errors with non-integer values\nSELECT name FROM target.country WHERE TRY_CAST(independence_year AS INTEGER) > 1950;",
+    "sql": "SELECT name FROM target.country WHERE CAST(independence_year AS INTEGER) > 1950;",
     "result_set": [
         {
-            "name": "Niue"
+            "name": "Qatar"
+        },
+        {
+            "name": "Cameroon"
+        },
+        {
+            "name": "Tuvalu"
+        },
+        {
+            "name": "Montenegro"
+        },
+        {
+            "name": "Comoros"
+        },
+        {
+            "name": "Equatorial Guinea"
+        },
+        {
+            "name": "Malta"
+        },
+        {
+            "name": "Bahamas"
+        },
+        {
+            "name": "Uganda"
+        },
+        {
+            "name": "Guinea"
+        },
+        {
+            "name": "Oman"
+        },
+        {
+            "name": "Malawi"
+        },
+        {
+            "name": "Libya"
+        },
+        {
+            "name": "Croatia"
+        },
+        {
+            "name": "Benin"
+        },
+        {
+            "name": "Cook Islands"
+        },
+        {
+            "name": "East Timor"
+        },
+        {
+            "name": "Chad"
+        },
+        {
+            "name": "Saint Kitts and Nevis"
+        },
+        {
+            "name": "Singapore"
+        },
+        {
+            "name": "North Macedonia"
+        },
+        {
+            "name": "Kenya"
+        },
+        {
+            "name": "Guyana"
+        },
+        {
+            "name": "Dominica"
+        },
+        {
+            "name": "Bangladesh"
+        },
+        {
+            "name": "Uzbekistan"
+        },
+        {
+            "name": "Botswana"
+        },
+        {
+            "name": "Malaysia"
+        },
+        {
+            "name": "Saint Lucia"
+        },
+        {
+            "name": "Central African Republic"
+        },
+        {
+            "name": "Madagascar"
+        },
+        {
+            "name": "South Africa"
+        },
+        {
+            "name": "Nigeria"
+        },
+        {
+            "name": "Fiji"
+        },
+        {
+            "name": "Togo"
+        },
+        {
+            "name": "Swaziland"
+        },
+        {
+            "name": "Palau"
+        },
+        {
+            "name": "Antigua and Barbuda"
+        },
+        {
+            "name": "Namibia"
+        },
+        {
+            "name": "Guinea-Bissau"
+        },
+        {
+            "name": "Saint Vincent and the Grenadines"
+        },
+        {
+            "name": "Tonga"
+        },
+        {
+            "name": "Maldives"
+        },
+        {
+            "name": "Bosnia and Herzegovina"
+        },
+        {
+            "name": "Kuwait"
+        },
+        {
+            "name": "Slovenia"
+        },
+        {
+            "name": "Greenland"
+        },
+        {
+            "name": "Tunisia"
+        },
+        {
+            "name": "United Arab Emirates"
+        },
+        {
+            "name": "Mauritius"
+        },
+        {
+            "name": "Djibouti"
+        },
+        {
+            "name": "Gabon"
+        },
+        {
+            "name": "Cayman Islands"
+        },
+        {
+            "name": "Zambia"
+        },
+        {
+            "name": "Belarus"
+        },
+        {
+            "name": "Trinidad and Tobago"
+        },
+        {
+            "name": "Seychelles"
+        },
+        {
+            "name": "Côte d'Ivoire"
+        },
+        {
+            "name": "Jamaica"
+        },
+        {
+            "name": "Moldova"
+        },
+        {
+            "name": "Mauritania"
+        },
+        {
+            "name": "Laos"
+        },
+        {
+            "name": "Palestine"
+        },
+        {
+            "name": "Mali"
+        },
+        {
+            "name": "Montserrat"
+        },
+        {
+            "name": "São Tomé and Principe"
+        },
+        {
+            "name": "Ukraine"
+        },
+        {
+            "name": "Serbia"
+        },
+        {
+            "name": "Turkmenistan"
+        },
+        {
+            "name": "Zimbabwe"
+        },
+        {
+            "name": "Gambia"
+        },
+        {
+            "name": "Congo (Brazzaville)"
+        },
+        {
+            "name": "Mexico"
+        },
+        {
+            "name": "Somalia"
+        },
+        {
+            "name": "Vanuatu"
+        },
+        {
+            "name": "Nauru"
+        },
+        {
+            "name": "Papua New Guinea"
+        },
+        {
+            "name": "Cambodia"
+        },
+        {
+            "name": "Ghana"
+        },
+        {
+            "name": "Senegal"
+        },
+        {
+            "name": "Grenada"
+        },
+        {
+            "name": "British Virgin Islands"
         },
         {
             "name": "Cape Verde"
         },
         {
-            "name": "Qatar"
+            "name": "Suriname"
+        },
+        {
+            "name": "Gambia"
+        },
+        {
+            "name": "Tajikistan"
+        },
+        {
+            "name": "Mozambique"
         },
         {
             "name": "Russia"
+        },
+        {
+            "name": "Slovakia"
+        },
+        {
+            "name": "Burkina Faso"
+        },
+        {
+            "name": "Sierra Leone"
+        },
+        {
+            "name": "Niger"
+        },
+        {
+            "name": "Cyprus"
+        },
+        {
+            "name": "Kyrgyzstan"
+        },
+        {
+            "name": "Belize"
+        },
+        {
+            "name": "Kazakhstan"
+        },
+        {
+            "name": "Armenia"
+        },
+        {
+            "name": "Georgia"
+        },
+        {
+            "name": "Eritrea"
+        },
+        {
+            "name": "Bahrain"
+        },
+        {
+            "name": "Kiribati"
+        },
+        {
+            "name": "Tokelau"
+        },
+        {
+            "name": "Niue"
+        },
+        {
+            "name": "Tanzania"
+        },
+        {
+            "name": "Congo (Kinshasa)"
+        },
+        {
+            "name": "Turks and Caicos Islands"
+        },
+        {
+            "name": "Burundi"
+        },
+        {
+            "name": "Samoa"
+        },
+        {
+            "name": "Rwanda"
+        },
+        {
+            "name": "Sudan"
         }
-    ]
+    ],
+    "time": 61.94686722755432,
+    "tokens": 4866
 }

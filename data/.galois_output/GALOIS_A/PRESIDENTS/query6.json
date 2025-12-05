@@ -4,73 +4,68 @@
     "result_set": [
         {
             "name": "Hugo Chávez",
-            "start_year": 1999.0,
-            "end_year": 2013.0,
-            "cardinal_number": "1st",
-            "party": "PSUV"
+            "start_year": 1999,
+            "end_year": 2013,
+            "cardinal_number": "President",
+            "party": "MVR"
         },
         {
             "name": "Nicolás Maduro",
-            "start_year": 2013.0,
-            "end_year": 2019.0,
-            "cardinal_number": "2nd",
+            "start_year": 2013,
+            "end_year": 2019,
+            "cardinal_number": "President",
             "party": "PSUV"
         },
         {
             "name": "Rómulo Betancourt",
-            "start_year": 1959.0,
-            "end_year": 1964.0,
-            "cardinal_number": "1st",
+            "start_year": 1959,
+            "end_year": 1964,
+            "cardinal_number": "President",
             "party": "Acción Democrática"
         },
         {
-            "name": "Rómulo Gallegos",
-            "start_year": 1948.0,
-            "end_year": 1948.0,
-            "cardinal_number": "1st",
-            "party": "Acción Democrática"
-        },
-        {
-            "name": "Carlos Andrés Pérez",
-            "start_year": 1974.0,
-            "end_year": 1979.0,
-            "cardinal_number": "1st",
+            "name": "Raúl Leoni",
+            "start_year": 1964,
+            "end_year": 1969,
+            "cardinal_number": "President",
             "party": "Acción Democrática"
         },
         {
             "name": "Carlos Andrés Pérez",
-            "start_year": 1989.0,
-            "end_year": 1993.0,
-            "cardinal_number": "2nd",
-            "party": "Acción Democrática"
-        },
-        {
-            "name": "Rafael Caldera",
-            "start_year": 1994.0,
-            "end_year": 1999.0,
-            "cardinal_number": "2nd",
-            "party": "Convergencia"
-        },
-        {
-            "name": "Nicolás Maduro",
-            "start_year": 2019.0,
-            "end_year": 2025.0,
-            "cardinal_number": "2nd",
-            "party": "PSUV"
-        },
-        {
-            "name": "Jaime Lusinchi",
-            "start_year": 1984.0,
-            "end_year": 1989.0,
-            "cardinal_number": "1st",
+            "start_year": 1974,
+            "end_year": 1979,
+            "cardinal_number": "President",
             "party": "Acción Democrática"
         },
         {
             "name": "Luis Herrera Campins",
-            "start_year": 1979.0,
-            "end_year": 1984.0,
-            "cardinal_number": "1st",
+            "start_year": 1979,
+            "end_year": 1984,
+            "cardinal_number": "President",
             "party": "COPEI"
+        },
+        {
+            "name": "Jaime Lusinchi",
+            "start_year": 1984,
+            "end_year": 1989,
+            "cardinal_number": "President",
+            "party": "Acción Democrática"
+        },
+        {
+            "name": "Rafael Caldera",
+            "start_year": 1994,
+            "end_year": 1999,
+            "cardinal_number": "President",
+            "party": "Acción Democrática"
+        },
+        {
+            "name": "Ramón J. Velásquez",
+            "start_year": 1993,
+            "end_year": 1994,
+            "cardinal_number": "President",
+            "party": "Acción Democrática"
         }
-    ]
+    ],
+    "time": 20.441022157669067,
+    "tokens": 910
 }

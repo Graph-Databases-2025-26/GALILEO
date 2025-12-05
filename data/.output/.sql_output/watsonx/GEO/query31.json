@@ -3,24 +3,24 @@
         {
             "state_name": "California",
             "capital": "Sacramento",
-            "population": "39512223"
+            "population": 39512223
         },
         {
             "state_name": "Texas",
             "capital": "Austin",
-            "population": "7477439"
+            "population": 7477439
         },
         {
             "state_name": "Florida",
             "capital": "Tallahassee",
-            "population": "7480538"
+            "population": 7487734
         },
         {
             "state_name": "Alaska",
             "capital": "Juneau",
-            "population": "739795"
+            "population": 739795
         }
     ],
-    "time": 4.323,
-    "tokens": 158
+    "time": 5.835,
+    "tokens": 156
 }

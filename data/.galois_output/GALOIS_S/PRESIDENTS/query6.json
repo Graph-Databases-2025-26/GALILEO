@@ -5,30 +5,32 @@
         {
             "name": "Hugo Chávez",
             "start_year": 1999,
-            "end_year": 2013,
-            "cardinal_number": "1st",
+            "end_year": 2002,
+            "cardinal_number": "1",
+            "party": "MVR"
+        },
+        {
+            "name": "Nicolás Maduro",
+            "start_year": 2013,
+            "end_year": 2019,
+            "cardinal_number": "4",
             "party": "PSUV"
         },
         {
-            "name": "Rómulo Gallegos",
-            "start_year": 1945,
-            "end_year": 1948,
-            "cardinal_number": "1st",
-            "party": "Acción Democrática"
+            "name": "Pedro Carmona",
+            "start_year": 2002,
+            "end_year": 2002,
+            "cardinal_number": "2",
+            "party": "Independent"
         },
         {
-            "name": "José María Vargas",
-            "start_year": 1835,
-            "end_year": 1836,
-            "cardinal_number": "1st",
-            "party": "Liberal"
-        },
-        {
-            "name": "Cipriano Castro",
-            "start_year": 1899,
-            "end_year": 1908,
-            "cardinal_number": "2nd",
-            "party": "Liberal"
+            "name": "Rafael Caldera",
+            "start_year": 1994,
+            "end_year": 1999,
+            "cardinal_number": "0",
+            "party": "Convergence"
         }
-    ]
+    ],
+    "time": 13.880762100219727,
+    "tokens": 955
 }

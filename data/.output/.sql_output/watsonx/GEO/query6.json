@@ -8,8 +8,11 @@
         },
         {
             "lake_name": "Clear Lake"
+        },
+        {
+            "lake_name": "Mono Lake"
         }
     ],
-    "time": 2.812,
-    "tokens": 71
+    "time": 4.2,
+    "tokens": 84
 }

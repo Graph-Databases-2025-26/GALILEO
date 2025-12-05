@@ -1,42 +1,7 @@
 {
     "query_id": 17,
     "sql": "SELECT p.name FROM target.world_presidents p WHERE p.country='United States' AND p.party='Republican';",
-    "result_set": [
-        {
-            "name": "George H.W. Bush"
-        },
-        {
-            "name": "Ronald Reagan"
-        },
-        {
-            "name": "Warren G. Harding"
-        },
-        {
-            "name": "Abraham Lincoln"
-        },
-        {
-            "name": "Donald Trump"
-        },
-        {
-            "name": "William Howard Taft"
-        },
-        {
-            "name": "William McKinley"
-        },
-        {
-            "name": "Gerald Ford"
-        },
-        {
-            "name": "George W. Bush"
-        },
-        {
-            "name": "Theodore Roosevelt"
-        },
-        {
-            "name": "James A. Garfield"
-        },
-        {
-            "name": "Herbert Hoover"
-        }
-    ]
+    "result_set": [],
+    "time": 21.88771915435791,
+    "tokens": 1336
 }

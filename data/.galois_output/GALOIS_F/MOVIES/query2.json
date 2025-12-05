@@ -3,40 +3,24 @@
     "sql": "SELECT m.originaltitle FROM target.movies m WHERE m.director='Steven Spielberg';",
     "result_set": [
         {
-            "originaltitle": "Indiana Jones and the Raiders of the Lost Ark"
-        },
-        {
-            "originaltitle": "Schindler's List"
-        },
-        {
-            "originaltitle": "Lincoln"
-        },
-        {
-            "originaltitle": "Amistad"
+            "originaltitle": "Saving Private Ryan"
         },
         {
             "originaltitle": "Jurassic Park"
         },
         {
-            "originaltitle": "Hook"
-        },
-        {
-            "originaltitle": "The Color Purple"
-        },
-        {
-            "originaltitle": "Bridge of Spies"
+            "originaltitle": "E.T. the Extra-Terrestrial"
         },
         {
             "originaltitle": "Jaws"
         },
         {
-            "originaltitle": "War of the Worlds"
+            "originaltitle": "Indiana Jones and the Raiders of the Lost Ark"
         },
         {
-            "originaltitle": "Always"
-        },
-        {
-            "originaltitle": "Empire of the Sun"
+            "originaltitle": "Schindler's List"
         }
-    ]
+    ],
+    "time": 20.46575379371643,
+    "tokens": 1271
 }

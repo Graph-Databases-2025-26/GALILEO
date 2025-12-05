@@ -1,110 +1,18 @@
 {
     "result_set": [
         {
-            "startyear": "1975",
-            "count": "1"
+            "startyear": 1982,
+            "count": 1
         },
         {
-            "startyear": "1977",
-            "count": "1"
+            "startyear": 1993,
+            "count": 1
         },
         {
-            "startyear": "1981",
-            "count": "1"
-        },
-        {
-            "startyear": "1982",
-            "count": "1"
-        },
-        {
-            "startyear": "1984",
-            "count": "1"
-        },
-        {
-            "startyear": "1985",
-            "count": "1"
-        },
-        {
-            "startyear": "1987",
-            "count": "1"
-        },
-        {
-            "startyear": "1989",
-            "count": "1"
-        },
-        {
-            "startyear": "1991",
-            "count": "2"
-        },
-        {
-            "startyear": "1993",
-            "count": "1"
-        },
-        {
-            "startyear": "1997",
-            "count": "1"
-        },
-        {
-            "startyear": "1998",
-            "count": "1"
-        },
-        {
-            "startyear": "2001",
-            "count": "1"
-        },
-        {
-            "startyear": "2002",
-            "count": "2"
-        },
-        {
-            "startyear": "2004",
-            "count": "1"
-        },
-        {
-            "startyear": "2005",
-            "count": "1"
-        },
-        {
-            "startyear": "2008",
-            "count": "1"
-        },
-        {
-            "startyear": "2011",
-            "count": "2"
-        },
-        {
-            "startyear": "2012",
-            "count": "1"
-        },
-        {
-            "startyear": "2015",
-            "count": "1"
-        },
-        {
-            "startyear": "2016",
-            "count": "1"
-        },
-        {
-            "startyear": "2017",
-            "count": "1"
-        },
-        {
-            "startyear": "2018",
-            "count": "1"
-        },
-        {
-            "startyear": "2021",
-            "count": "1"
-        },
-        {
-            "startyear": "2022",
-            "count": "1"
-        },
-        {
-            "startyear": "2023",
-            "count": "1"
+            "startyear": 2002,
+            "count": 1
         }
     ],
-    "time": 15.063,
-    "tokens": 453
+    "time": 3.761,
+    "tokens": 57
 }

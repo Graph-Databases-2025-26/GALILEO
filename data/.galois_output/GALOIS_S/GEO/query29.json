@@ -3,52 +3,78 @@
     "sql": "SELECT us.state_name, us.capital, us.density, us.population FROM target.usa_state us WHERE us.population > 5000000 AND us.density < 1000 AND us.area_squared_miles < 50000;",
     "result_set": [
         {
-            "state_name": "Indiana",
-            "capital": "Indianapolis",
-            "density": 184.65,
-            "population": 6732219.0
-        },
-        {
-            "state_name": "Maryland",
-            "capital": "Annapolis",
-            "density": 634.38,
-            "population": 6042718.0
-        },
-        {
-            "state_name": "Massachusetts",
-            "capital": "Boston",
-            "density": 652.11,
-            "population": 6892503.0
-        },
-        {
-            "state_name": "Ohio",
-            "capital": "Columbus",
-            "density": 283.89,
-            "population": 11689400.0
-        },
-        {
-            "state_name": "Pennsylvania",
-            "capital": "Harrisburg",
-            "density": 283.88,
-            "population": 12802000.0
-        },
-        {
             "state_name": "South Carolina",
             "capital": "Columbia",
-            "density": 159.07,
-            "population": 5086476.0
+            "density": 120,
+            "population": 5148714
+        },
+        {
+            "state_name": "Michigan",
+            "capital": "Lansing",
+            "density": 224,
+            "population": 10077331
+        },
+        {
+            "state_name": "Indiana",
+            "capital": "Indianapolis",
+            "density": 188,
+            "population": 6732219
         },
         {
             "state_name": "Tennessee",
             "capital": "Nashville",
-            "density": 162.45,
-            "population": 6838452.0
+            "density": 173,
+            "population": 6892504
+        },
+        {
+            "state_name": "North Carolina",
+            "capital": "Raleigh",
+            "density": 215,
+            "population": 10420000
+        },
+        {
+            "state_name": "Georgia",
+            "capital": "Atlanta",
+            "density": 183,
+            "population": 10511131
         },
         {
             "state_name": "Virginia",
             "capital": "Richmond",
-            "density": 199.59,
-            "population": 8532107.0
+            "density": 210,
+            "population": 8517685
+        },
+        {
+            "state_name": "Maryland",
+            "capital": "Annapolis",
+            "density": 648,
+            "population": 6042712
+        },
+        {
+            "state_name": "New York",
+            "capital": "Albany",
+            "density": 419,
+            "population": 19453561
+        },
+        {
+            "state_name": "Pennsylvania",
+            "capital": "Harrisburg",
+            "density": 267,
+            "population": 12802023
+        },
+        {
+            "state_name": "Ohio",
+            "capital": "Columbus",
+            "density": 281,
+            "population": 11689100
+        },
+        {
+            "state_name": "Florida",
+            "capital": "Tallahassee",
+            "density": 369,
+            "population": 21244317
         }
-    ]
+    ],
+    "time": 40.4814293384552,
+    "tokens": 2895
 }

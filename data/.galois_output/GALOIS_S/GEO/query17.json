@@ -1,5 +1,7 @@
 {
     "query_id": 17,
     "sql": "SELECT population FROM target.usa_city WHERE city_name = 'seattle' AND state_name = 'washington';",
-    "result_set": []
+    "result_set": [],
+    "time": 8.403110265731812,
+    "tokens": 461
 }

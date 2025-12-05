@@ -3,7 +3,9 @@
     "sql": "SELECT count(p.party) as party FROM target.world_presidents p WHERE p.country='Venezuela' AND p.party='Liberal';",
     "result_set": [
         {
-            "party": 21
+            "party": 1
         }
-    ]
+    ],
+    "time": 1.8446922302246094,
+    "tokens": 62
 }

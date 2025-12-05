@@ -22,20 +22,20 @@
         },
         {
             "state_name": "Illinois",
-            "population": 12886155,
+            "population": 12886108,
             "area_squared_miles": 59918
         },
         {
             "state_name": "Pennsylvania",
-            "population": 12802043,
+            "population": 12802027,
             "area_squared_miles": 46055
         },
         {
             "state_name": "Ohio",
-            "population": 11689100,
+            "population": 11689449,
             "area_squared_miles": 44828
         }
     ],
-    "time": 5.867,
+    "time": 8.193,
     "tokens": 245
 }

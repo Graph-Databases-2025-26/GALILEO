@@ -3,40 +3,52 @@
     "sql": "SELECT DISTINCT p.name, p.party FROM target.world_presidents p WHERE p.country='Venezuela';",
     "result_set": [
         {
-            "name": "Jaime Lusinchi",
-            "party": "Acción Democrática"
+            "name": "Tareck El Aissami",
+            "party": "Partido Socialista Unido de Venezuela"
         },
         {
-            "name": "Rómulo Betancourt",
-            "party": "Acción Democrática"
+            "name": "Jorge Arreaza",
+            "party": "Partido Socialista Unido de Venezuela"
         },
         {
-            "name": "Juan Guaidó",
-            "party": "Voluntad Popular"
+            "name": "Willian Barrientos",
+            "party": "Partido Socialista Unido de Venezuela"
         },
         {
-            "name": "Marcos Pérez Jiménez",
-            "party": "Military rule"
+            "name": "Delcy Rodríguez",
+            "party": "Partido Socialista Unido de Venezuela"
         },
         {
-            "name": "Rómulo Gallegos",
-            "party": "Acción Democrática"
+            "name": "Diosdado Cabello",
+            "party": "Partido Socialista Unido de Venezuela"
         },
         {
-            "name": "Luis Herrera Campins",
-            "party": "COPEI"
+            "name": "Jorge Rodríguez",
+            "party": "Partido Socialista Unido de Venezuela"
         },
         {
-            "name": "Carlos Andrés Pérez",
-            "party": "Acción Democrática"
+            "name": "Iris Varela",
+            "party": "Partido Socialista Unido de Venezuela"
         },
         {
-            "name": "Simón Bolívar",
-            "party": "Liberal"
+            "name": "Nicolás Maduro Guerra",
+            "party": "Partido Socialista Unido de Venezuela"
         },
         {
             "name": "Nicolás Maduro",
             "party": "Partido Socialista Unido de Venezuela"
+        },
+        {
+            "name": "Henrique Capriles",
+            "party": "Justice First"
+        },
+        {
+            "name": "María Corina Machado",
+            "party": "Vente Venezuela"
+        },
+        {
+            "name": "Juan Guaidó",
+            "party": "Voluntad Popular"
         },
         {
             "name": "Hugo Chávez",
@@ -47,24 +59,14 @@
             "party": "Progressive Advance"
         },
         {
-            "name": "Carlos Delgado Chalbaud",
-            "party": "Military rule"
+            "name": "Leopoldo López",
+            "party": "Voluntad Popular"
         },
         {
-            "name": "Rafael Caldera",
-            "party": "COPEI"
-        },
-        {
-            "name": "Eleazar López Contreras",
-            "party": "Military rule"
-        },
-        {
-            "name": "Isaías Medina Angarita",
-            "party": "Democratic Party"
-        },
-        {
-            "name": "Juan Vicente Gómez",
-            "party": "Military rule"
+            "name": "Freddy Bernal",
+            "party": "Partido Socialista Unido de Venezuela"
         }
-    ]
+    ],
+    "time": 17.4748854637146,
+    "tokens": 698
 }

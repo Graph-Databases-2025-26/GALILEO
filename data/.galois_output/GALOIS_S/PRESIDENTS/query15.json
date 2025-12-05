@@ -3,6 +3,10 @@
     "sql": "SELECT p.name, p.party FROM target.world_presidents p WHERE p.country='United States' AND p.party='Republican';",
     "result_set": [
         {
+            "name": "Donald Trump",
+            "party": "Republican"
+        },
+        {
             "name": "George W. Bush",
             "party": "Republican"
         },
@@ -15,7 +19,7 @@
             "party": "Republican"
         },
         {
-            "name": "Gerald R. Ford",
+            "name": "Gerald Ford",
             "party": "Republican"
         },
         {
@@ -39,19 +43,11 @@
             "party": "Republican"
         },
         {
-            "name": "William Howard Taft",
-            "party": "Republican"
-        },
-        {
-            "name": "Theodore Roosevelt",
+            "name": "William McKinley",
             "party": "Republican"
         },
         {
             "name": "Benjamin Harrison",
-            "party": "Republican"
-        },
-        {
-            "name": "Chester A. Arthur",
             "party": "Republican"
         },
         {
@@ -67,16 +63,22 @@
             "party": "Republican"
         },
         {
-            "name": "Donald Trump",
-            "party": "Republican"
-        },
-        {
             "name": "James A. Garfield",
             "party": "Republican"
         },
         {
-            "name": "William McKinley",
+            "name": "Chester A. Arthur",
+            "party": "Republican"
+        },
+        {
+            "name": "William Howard Taft",
+            "party": "Republican"
+        },
+        {
+            "name": "Theodore Roosevelt",
             "party": "Republican"
         }
-    ]
+    ],
+    "time": 13.491485834121704,
+    "tokens": 937
 }

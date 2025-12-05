@@ -17,16 +17,20 @@
             "independence_year": "1993"
         },
         {
-            "name": "Kosovo",
-            "independence_year": "2008"
+            "name": "Kazakhstan",
+            "independence_year": "1991"
+        },
+        {
+            "name": "Kyrgyzstan",
+            "independence_year": "1991"
+        },
+        {
+            "name": "Macedonia",
+            "independence_year": "1991"
         },
         {
             "name": "Montenegro",
             "independence_year": "2006"
-        },
-        {
-            "name": "Namibia",
-            "independence_year": "1990"
         },
         {
             "name": "Serbia",
@@ -39,8 +43,12 @@
         {
             "name": "South Sudan",
             "independence_year": "2011"
+        },
+        {
+            "name": "Uzbekistan",
+            "independence_year": "1991"
         }
     ],
-    "time": 7.067,
-    "tokens": 208
+    "time": 5.529,
+    "tokens": 249
 }

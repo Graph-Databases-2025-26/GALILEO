@@ -1,5 +1,7 @@
 {
     "query_id": 26,
     "sql": "SELECT state_name, population, area_squared_miles FROM target.usa_state WHERE capital = 'frankfort';",
-    "result_set": []
+    "result_set": [],
+    "time": 20.262264251708984,
+    "tokens": 1468
 }

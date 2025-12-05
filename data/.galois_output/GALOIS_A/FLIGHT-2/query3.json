@@ -1,18 +1,7 @@
 {
     "query_id": 3,
     "sql": "SELECT a.airline FROM target.usa_airline_companies a WHERE a.call_sign='ual';",
-    "result_set": [
-        {
-            "airline": "United Airlines"
-        },
-        {
-            "airline": "United Air Lines"
-        },
-        {
-            "airline": "United Airlines Inc."
-        },
-        {
-            "airline": "United Continental Holdings"
-        }
-    ]
+    "result_set": [],
+    "time": 2.6772501468658447,
+    "tokens": 68
 }

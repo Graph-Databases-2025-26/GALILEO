@@ -3,64 +3,63 @@
     "sql": "SELECT p.name FROM target.world_presidents p WHERE p.country='United States' AND p.party='Republican';",
     "result_set": [
         {
-            "name": "George H.W. Bush"
+            "name": "Donald Trump"
         },
         {
             "name": "George W. Bush"
         },
         {
-            "name": "Dwight D. Eisenhower"
-        },
-        {
-            "name": "Richard Nixon"
-        },
-        {
-            "name": "Gerald R. Ford"
+            "name": "George H.W. Bush"
         },
         {
             "name": "Ronald Reagan"
         },
         {
-            "name": "William McKinley"
+            "name": "Gerald Ford"
         },
         {
-            "name": "Theodore Roosevelt"
+            "name": "Richard Nixon"
         },
         {
-            "name": "William Howard Taft"
-        },
-        {
-            "name": "Warren G. Harding"
-        },
-        {
-            "name": "Calvin Coolidge"
+            "name": "Dwight D. Eisenhower"
         },
         {
             "name": "Herbert Hoover"
         },
         {
-            "name": "Abraham Lincoln"
+            "name": "Calvin Coolidge"
         },
         {
-            "name": "Rutherford B. Hayes"
+            "name": "Warren G. Harding"
         },
         {
-            "name": "James A. Garfield"
+            "name": "William McKinley"
         },
         {
             "name": "Benjamin Harrison"
         },
         {
-            "name": "James Buchanan"
+            "name": "Rutherford B. Hayes"
         },
         {
-            "name": "Donald Trump"
+            "name": "Ulysses S. Grant"
+        },
+        {
+            "name": "Abraham Lincoln"
+        },
+        {
+            "name": "James A. Garfield"
         },
         {
             "name": "Chester A. Arthur"
         },
         {
-            "name": "Ulysses S. Grant"
+            "name": "William Howard Taft"
+        },
+        {
+            "name": "Theodore Roosevelt"
         }
-    ]
+    ],
+    "time": 22.375672340393066,
+    "tokens": 937
 }

@@ -18,10 +18,6 @@
         },
         {
             "primarytitle": "Movie Title",
-            "startyear": 2008
-        },
-        {
-            "primarytitle": "Movie Title",
             "startyear": 2011
         },
         {
@@ -51,12 +47,8 @@
         {
             "primarytitle": "Movie Title",
             "startyear": 2022
-        },
-        {
-            "primarytitle": "Movie Title",
-            "startyear": 2023
         }
     ],
-    "time": 8.845,
-    "tokens": 263
+    "time": 25.756,
+    "tokens": 227
 }

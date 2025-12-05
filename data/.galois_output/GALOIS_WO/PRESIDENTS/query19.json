@@ -1,5 +1,15 @@
 {
     "query_id": 19,
     "sql": "SELECT p.name, p.start_year, p.end_year, p.cardinal_number, p.party FROM target.world_presidents p WHERE p.country='United States';",
-    "result_set": []
+    "result_set": [
+        {
+            "name": "Joe Biden",
+            "start_year": 2021,
+            "end_year": NaN,
+            "cardinal_number": "46th",
+            "party": "Democratic Party"
+        }
+    ],
+    "time": 25.408501148223877,
+    "tokens": 1797
 }

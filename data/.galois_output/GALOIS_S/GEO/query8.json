@@ -3,7 +3,9 @@
     "sql": "SELECT count(distinct river_name) FROM target.usa_river where length_in_km > 400;",
     "result_set": [
         {
-            "count(DISTINCT river_name)": 58
+            "count(DISTINCT river_name)": 22
         }
-    ]
+    ],
+    "time": 9.20405387878418,
+    "tokens": 506
 }

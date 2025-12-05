@@ -2,30 +2,30 @@
     "result_set": [
         {
             "state_name": "California",
-            "population": 10000000,
+            "population": "39461588",
             "capital": "Sacramento"
         },
         {
             "state_name": "Texas",
-            "population": 7000000,
+            "population": "28995881",
             "capital": "Austin"
         },
         {
             "state_name": "Florida",
-            "population": 6000000,
+            "population": "21244317",
             "capital": "Tallahassee"
         },
         {
             "state_name": "New York",
-            "population": 8000000,
+            "population": "19453561",
             "capital": "Albany"
         },
         {
-            "state_name": "Illinois",
-            "population": 12000000,
-            "capital": "Springfield"
+            "state_name": "Pennsylvania",
+            "population": "12802023",
+            "capital": "Harrisburg"
         }
     ],
-    "time": 4.49,
-    "tokens": 170
+    "time": 6.019,
+    "tokens": 195
 }

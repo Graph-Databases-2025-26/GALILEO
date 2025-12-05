@@ -3,7 +3,9 @@
     "sql": "SELECT p.name FROM target.world_presidents p WHERE p.country='United States' AND p.party='Whig' order by p.end_year desc limit 1;",
     "result_set": [
         {
-            "name": "William Henry Harrison"
+            "name": "Millard Fillmore"
         }
-    ]
+    ],
+    "time": 20.27247929573059,
+    "tokens": 1462
 }

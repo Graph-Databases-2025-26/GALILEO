@@ -1,9 +1,6 @@
 {
     "result_set": [
         {
-            "originaltitle": "Jaws"
-        },
-        {
             "originaltitle": "E.T. the Extra-Terrestrial"
         },
         {
@@ -11,6 +8,9 @@
         },
         {
             "originaltitle": "Indiana Jones and the Raiders of the Lost Ark"
+        },
+        {
+            "originaltitle": "Jaws"
         },
         {
             "originaltitle": "Saving Private Ryan"
@@ -25,6 +25,6 @@
             "originaltitle": "Lincoln"
         }
     ],
-    "time": 4.762,
+    "time": 6.225,
     "tokens": 145
 }

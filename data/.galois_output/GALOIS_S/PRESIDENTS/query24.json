@@ -6,43 +6,38 @@
             "name": "Woodrow Wilson",
             "party": "Democratic",
             "start_year": 1913,
-            "end_year": 1921,
-            "cardinal_number": 28
+            "end_year": 1921.0,
+            "cardinal_number": "28"
         },
         {
             "name": "Franklin D. Roosevelt",
             "party": "Democratic",
             "start_year": 1933,
-            "end_year": 1945,
-            "cardinal_number": 32
-        },
-        {
-            "name": "Harry S. Truman",
-            "party": "Democratic",
-            "start_year": 1945,
-            "end_year": 1953,
-            "cardinal_number": 33
+            "end_year": 1945.0,
+            "cardinal_number": "32"
         },
         {
             "name": "John F. Kennedy",
             "party": "Democratic",
             "start_year": 1961,
-            "end_year": 1963,
-            "cardinal_number": 35
+            "end_year": 1963.0,
+            "cardinal_number": "35"
         },
         {
             "name": "Lyndon B. Johnson",
             "party": "Democratic",
             "start_year": 1963,
-            "end_year": 1969,
-            "cardinal_number": 36
+            "end_year": 1969.0,
+            "cardinal_number": "36"
         },
         {
             "name": "Jimmy Carter",
             "party": "Democratic",
             "start_year": 1977,
-            "end_year": 1981,
-            "cardinal_number": 39
+            "end_year": 1981.0,
+            "cardinal_number": "39"
         }
-    ]
+    ],
+    "time": 18.71194815635681,
+    "tokens": 421
 }

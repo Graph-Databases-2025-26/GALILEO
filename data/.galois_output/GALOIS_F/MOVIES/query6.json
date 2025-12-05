@@ -3,44 +3,38 @@
     "sql": "SELECT m.originaltitle, m.startyear, m.genres, m.birthyear, m.deathyear, m.runtimeminutes FROM target.movies m WHERE m.director = 'Steven Spielberg' AND m.startyear > 1990 AND m.startyear < 2000;",
     "result_set": [
         {
-            "originaltitle": "Jurassic Park",
-            "startyear": 1993,
-            "genres": "Action,Adventure,Sci-Fi",
-            "birthyear": 1946,
-            "deathyear": NaN,
-            "runtimeminutes": 127
-        },
-        {
-            "originaltitle": "Schindler's List",
-            "startyear": 1993,
-            "genres": "Biography,Drama,History",
-            "birthyear": 1946,
-            "deathyear": NaN,
-            "runtimeminutes": 195
-        },
-        {
-            "originaltitle": "The Lost World: Jurassic Park",
-            "startyear": 1997,
-            "genres": "Action,Adventure,Sci-Fi",
-            "birthyear": 1946,
-            "deathyear": NaN,
-            "runtimeminutes": 129
-        },
-        {
             "originaltitle": "Amistad",
             "startyear": 1997,
-            "genres": "Drama,History",
+            "genres": "['Adventure', 'Drama']",
             "birthyear": 1946,
             "deathyear": NaN,
-            "runtimeminutes": 154
+            "runtimeminutes": 134
+        },
+        {
+            "originaltitle": "Jurassic Park",
+            "startyear": 1993,
+            "genres": "['Action', 'Adventure', 'Science Fiction']",
+            "birthyear": 1946,
+            "deathyear": NaN,
+            "runtimeminutes": 145
         },
         {
             "originaltitle": "Saving Private Ryan",
             "startyear": 1998,
-            "genres": "Drama,War",
+            "genres": "['Drama', 'War']",
             "birthyear": 1946,
             "deathyear": NaN,
-            "runtimeminutes": 169
+            "runtimeminutes": 156
+        },
+        {
+            "originaltitle": "Hook",
+            "startyear": 1991,
+            "genres": "['Adventure', 'Comedy', 'Family']",
+            "birthyear": 1946,
+            "deathyear": NaN,
+            "runtimeminutes": 115
         }
-    ]
+    ],
+    "time": 15.789578676223755,
+    "tokens": 1132
 }

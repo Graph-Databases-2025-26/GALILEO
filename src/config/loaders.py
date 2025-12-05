@@ -69,6 +69,17 @@ class WatsonxConfig(BaseModel):
     endpoint: str | None = Field(default_factory=lambda: os.getenv("WATSONX_ENDPOINT"))
     project_id: str | None = Field(default_factory=lambda: os.getenv("WATSONX_PROJECT_ID"))
 
+
+
+class OpenRouterConfig(BaseModel):
+    model: str
+    max_tokens: int
+    temperature: float
+    api_key: str | None = Field(default_factory=lambda: os.getenv("OPEN_ROUTER_KEY"))
+    endpoint: str | None = Field(default_factory=lambda: os.getenv("OPEN_ROUTER_ENDPOINT"))
+
+
+
 class DatasetConfig(BaseModel):
     """Configuration specifying which datasets to run."""
     
@@ -102,6 +113,7 @@ class AppConfig(BaseSettings):
     logging: LoggingConfig
     gemini: GeminiConfig
     watsonx: WatsonxConfig
+    open_router: OpenRouterConfig
     rag: RAGConfig
 
     def validate_provider_config_exists(self) -> 'AppConfig':
@@ -123,6 +135,9 @@ class AppConfig(BaseSettings):
         elif provider == 'gemini':
             if self.gemini is None: 
                 raise ValueError(ERR_PROVIDER_SECTION_MISSING.format("gemini"))
+        elif provider == 'open_router':
+            if self.open_router is None:
+                raise ValueError(ERR_PROVIDER_SECTION_MISSING.format("open_router"))
         
         return self
 

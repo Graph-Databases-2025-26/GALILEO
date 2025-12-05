@@ -1,5 +1,7 @@
 {
     "query_id": 22,
     "sql": "SELECT t2.capital FROM target.usa_city AS t1 JOIN target.usa_state AS t2 ON t1.state_name = t2.state_name WHERE t1.city_name = 'tempe';",
-    "result_set": []
+    "result_set": [],
+    "time": 84.40210056304932,
+    "tokens": 3270
 }

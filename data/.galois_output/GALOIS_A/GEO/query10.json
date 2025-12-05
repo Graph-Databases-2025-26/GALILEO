@@ -3,31 +3,57 @@
     "sql": "SELECT DISTINCT lake_name FROM target.usa_lake WHERE area_squared_km > 450;",
     "result_set": [
         {
-            "lake_name": "Lake Clark"
-        },
-        {
             "lake_name": "Lake Ontario"
         },
         {
-            "lake_name": "Lake Erie"
+            "lake_name": "Lake Victoria"
         },
         {
-            "lake_name": "Lake Winnebago"
+            "lake_name": "Lake Nicaragua"
         },
         {
-            "lake_name": "Crater Lake"
+            "lake_name": "Lake Titicaca"
+        },
+        {
+            "lake_name": "Lake Nipigon"
+        },
+        {
+            "lake_name": "Lake Vostok"
+        },
+        {
+            "lake_name": "Great Lakes"
         },
         {
             "lake_name": "Lake Superior"
         },
         {
+            "lake_name": "Lake Huron"
+        },
+        {
+            "lake_name": "Lake Erie"
+        },
+        {
             "lake_name": "Lake Michigan"
         },
         {
-            "lake_name": "Lake Iliamna"
+            "lake_name": "Lake Turkana"
         },
         {
-            "lake_name": "Lake Becharof"
+            "lake_name": "Lake Malawi"
+        },
+        {
+            "lake_name": "Lake Issyk-Kul"
+        },
+        {
+            "lake_name": "Lake Ladoga"
+        },
+        {
+            "lake_name": "Great Salt Lake"
+        },
+        {
+            "lake_name": "Lake Tanganyika"
         }
-    ]
+    ],
+    "time": 14.722296476364136,
+    "tokens": 644
 }

@@ -4,6 +4,6 @@
             "count(distinct river_name)": 2
         }
     ],
-    "time": 0.916,
+    "time": 1.231,
     "tokens": 20
 }

@@ -4,7 +4,9 @@
     "result_set": [
         {
             "avg(gnp)": 0.0,
-            "sum(population)": 4043.0
+            "sum(population)": 53.0
         }
-    ]
+    ],
+    "time": 7.59092116355896,
+    "tokens": 105
 }

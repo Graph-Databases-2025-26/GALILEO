@@ -6,29 +6,31 @@
             "name": "Rómulo Betancourt",
             "party": "Democratic Action",
             "start_year": 1959,
-            "end_year": 1964,
-            "cardinal_number": "First"
+            "end_year": 1958,
+            "cardinal_number": "1"
         },
         {
-            "name": "Raúl Leoni",
+            "name": "Rafael Caldera",
             "party": "Democratic Action",
-            "start_year": 1964,
-            "end_year": 1969,
-            "cardinal_number": "Second"
+            "start_year": 1969,
+            "end_year": 1973,
+            "cardinal_number": "3"
         },
         {
             "name": "Carlos Andrés Pérez",
             "party": "Democratic Action",
             "start_year": 1974,
-            "end_year": 1979,
-            "cardinal_number": "Third"
+            "end_year": 1974,
+            "cardinal_number": "4"
         },
         {
             "name": "Jaime Lusinchi",
             "party": "Democratic Action",
             "start_year": 1984,
-            "end_year": 1989,
-            "cardinal_number": "Fifth"
+            "end_year": 1984,
+            "cardinal_number": "6"
         }
-    ]
+    ],
+    "time": 14.176082134246826,
+    "tokens": 972
 }

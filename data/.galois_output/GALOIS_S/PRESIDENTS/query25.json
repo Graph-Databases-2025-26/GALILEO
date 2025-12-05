@@ -4,19 +4,21 @@
     "result_set": [
         {
             "party": "Republican",
-            "num": 7
+            "num": 6
         },
         {
             "party": "Democratic",
-            "num": 4
-        },
-        {
-            "party": "National Union",
-            "num": 1
+            "num": 3
         },
         {
             "party": "Whig",
             "num": 1
+        },
+        {
+            "party": "National Union",
+            "num": 1
         }
-    ]
+    ],
+    "time": 29.177687168121338,
+    "tokens": 1763
 }

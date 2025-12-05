@@ -3,37 +3,10 @@
     "sql": "SELECT p.name FROM target.world_presidents p WHERE p.country='United States' AND p.party='Republican';",
     "result_set": [
         {
-            "name": "George H.W. Bush"
+            "name": "Abraham Lincoln"
         },
         {
-            "name": "George W. Bush"
-        },
-        {
-            "name": "Dwight D. Eisenhower"
-        },
-        {
-            "name": "Richard Nixon"
-        },
-        {
-            "name": "Ronald Reagan"
-        },
-        {
-            "name": "Gerald R. Ford"
-        },
-        {
-            "name": "Herbert Hoover"
-        },
-        {
-            "name": "Warren G. Harding"
-        },
-        {
-            "name": "Calvin Coolidge"
-        },
-        {
-            "name": "William McKinley"
-        },
-        {
-            "name": "Benjamin Harrison"
+            "name": "Ulysses S. Grant"
         },
         {
             "name": "Rutherford B. Hayes"
@@ -42,13 +15,48 @@
             "name": "James A. Garfield"
         },
         {
-            "name": "Chester A. Arthur"
+            "name": "Benjamin Harrison"
         },
         {
-            "name": "Ulysses S. Grant"
+            "name": "William McKinley"
         },
         {
-            "name": "Abraham Lincoln"
+            "name": "Theodore Roosevelt"
+        },
+        {
+            "name": "William Howard Taft"
+        },
+        {
+            "name": "Warren G. Harding"
+        },
+        {
+            "name": "Calvin Coolidge"
+        },
+        {
+            "name": "Herbert Hoover"
+        },
+        {
+            "name": "Dwight D. Eisenhower"
+        },
+        {
+            "name": "Richard Nixon"
+        },
+        {
+            "name": "Gerald R. Ford"
+        },
+        {
+            "name": "Ronald Reagan"
+        },
+        {
+            "name": "George H.W. Bush"
+        },
+        {
+            "name": "George W. Bush"
+        },
+        {
+            "name": "Donald Trump"
         }
-    ]
+    ],
+    "time": 21.88433289527893,
+    "tokens": 869
 }

@@ -16,9 +16,18 @@
             "capital": "Phoenix"
         },
         {
+            "capital": "Nashville"
+        },
+        {
             "capital": "Boston"
+        },
+        {
+            "capital": "Atlanta"
+        },
+        {
+            "capital": "Richmond"
         }
     ],
-    "time": 3.006,
-    "tokens": 90
+    "time": 5.935,
+    "tokens": 126
 }

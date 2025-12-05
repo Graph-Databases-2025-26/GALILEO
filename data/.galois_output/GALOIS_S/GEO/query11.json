@@ -3,61 +3,9 @@
     "sql": "SELECT DISTINCT usa_state_traversed FROM target.usa_river WHERE length_in_km > 750;",
     "result_set": [
         {
-            "usa_state_traversed": "Colorado"
-        },
-        {
-            "usa_state_traversed": "Montana"
-        },
-        {
-            "usa_state_traversed": "Louisiana"
-        },
-        {
-            "usa_state_traversed": "Florida"
-        },
-        {
-            "usa_state_traversed": "Maryland"
-        },
-        {
-            "usa_state_traversed": "Minnesota"
-        },
-        {
-            "usa_state_traversed": "Wyoming"
-        },
-        {
-            "usa_state_traversed": "Arizona"
-        },
-        {
-            "usa_state_traversed": "New Mexico"
-        },
-        {
-            "usa_state_traversed": "Idaho"
-        },
-        {
-            "usa_state_traversed": "Missouri"
-        },
-        {
             "usa_state_traversed": "Alaska"
-        },
-        {
-            "usa_state_traversed": "Pennsylvania"
-        },
-        {
-            "usa_state_traversed": "Indiana"
-        },
-        {
-            "usa_state_traversed": "Arkansas"
-        },
-        {
-            "usa_state_traversed": "Texas"
-        },
-        {
-            "usa_state_traversed": "Oregon"
-        },
-        {
-            "usa_state_traversed": "Tennessee"
-        },
-        {
-            "usa_state_traversed": "Alabama"
         }
-    ]
+    ],
+    "time": 10.661769390106201,
+    "tokens": 769
 }

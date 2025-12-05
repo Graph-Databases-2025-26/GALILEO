@@ -3,56 +3,54 @@
     "sql": "SELECT DISTINCT p.name, p.party FROM target.world_presidents p WHERE p.country='Venezuela';",
     "result_set": [
         {
-            "name": "José Gregorio Monagas",
-            "party": "Liberal"
+            "name": "Juan Guaidó",
+            "party": "Popular Will"
         },
         {
-            "name": "Andrés Narvarte",
-            "party": "Conservative"
-        },
-        {
-            "name": "Simón Bolívar",
-            "party": "Liberal"
+            "name": "Tareck El Aissami",
+            "party": "United Socialist Party of Venezuela"
         },
         {
             "name": "Hugo Chávez",
-            "party": "PSUV"
+            "party": "United Socialist Party of Venezuela"
         },
         {
-            "name": "José María Vargas",
-            "party": "Liberal"
+            "name": "Henri Falcón",
+            "party": "Progressive Advance"
         },
         {
-            "name": "Manuel Felipe de Tovar",
-            "party": "Conservative"
+            "name": "Delcy Rodríguez",
+            "party": "United Socialist Party of Venezuela"
         },
         {
-            "name": "Pedro Gual",
-            "party": "Liberal"
+            "name": "Nicolás Maduro",
+            "party": "United Socialist Party of Venezuela"
         },
         {
-            "name": "José Tadeo Monagas",
-            "party": "Liberal"
+            "name": "Diosdado Cabello",
+            "party": "United Socialist Party of Venezuela"
         },
         {
-            "name": "Marcos Pérez Jiménez",
-            "party": "Military"
+            "name": "Jorge Rodríguez",
+            "party": "United Socialist Party of Venezuela"
         },
         {
-            "name": "José María Carreño",
-            "party": "Conservative"
+            "name": "Nicolás Maduro Guerra",
+            "party": "United Socialist Party of Venezuela"
         },
         {
-            "name": "Santiago Mariño",
-            "party": "Liberal"
+            "name": "Henrique Capriles",
+            "party": "Justice First"
         },
         {
-            "name": "José Antonio Páez",
-            "party": "Conservative"
+            "name": "María Corina Machado",
+            "party": "Independent"
         },
         {
-            "name": "Carlos Soublette",
-            "party": "Conservative"
+            "name": "Jorge Arreaza",
+            "party": "United Socialist Party of Venezuela"
         }
-    ]
+    ],
+    "time": 8.170534372329712,
+    "tokens": 425
 }

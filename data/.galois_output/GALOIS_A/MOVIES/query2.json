@@ -12,7 +12,7 @@
             "originaltitle": "Jurassic Park"
         },
         {
-            "originaltitle": "Raiders of the Lost Ark"
+            "originaltitle": "Indiana Jones and the Raiders of the Lost Ark"
         },
         {
             "originaltitle": "Saving Private Ryan"
@@ -21,10 +21,7 @@
             "originaltitle": "Catch Me If You Can"
         },
         {
-            "originaltitle": "Minority Report"
-        },
-        {
-            "originaltitle": "War of the Worlds"
+            "originaltitle": "War Horse"
         },
         {
             "originaltitle": "Lincoln"
@@ -33,13 +30,42 @@
             "originaltitle": "Bridge of Spies"
         },
         {
-            "originaltitle": "The BFG"
-        },
-        {
             "originaltitle": "Ready Player One"
         },
         {
-            "originaltitle": "West Side Story"
+            "originaltitle": "The Color Purple"
+        },
+        {
+            "originaltitle": "Empire of the Sun"
+        },
+        {
+            "originaltitle": "Always"
+        },
+        {
+            "originaltitle": "Hook"
+        },
+        {
+            "originaltitle": "Schindler's List"
+        },
+        {
+            "originaltitle": "Amistad"
+        },
+        {
+            "originaltitle": "Minority Report"
+        },
+        {
+            "originaltitle": "The Terminal"
+        },
+        {
+            "originaltitle": "Munich"
+        },
+        {
+            "originaltitle": "War of the Worlds"
+        },
+        {
+            "originaltitle": "A.I. Artificial Intelligence"
         }
-    ]
+    ],
+    "time": 47.38252639770508,
+    "tokens": 659
 }

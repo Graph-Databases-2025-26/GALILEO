@@ -3,13 +3,15 @@
     "sql": "SELECT m.originaltitle FROM target.movies m WHERE m.director='Richard Thorpe';",
     "result_set": [
         {
-            "originaltitle": "The Great Caruso"
-        },
-        {
             "originaltitle": "Ivanhoe"
         },
         {
-            "originaltitle": "The Prisoner of Zenda"
+            "originaltitle": "Knights of the Round Table"
+        },
+        {
+            "originaltitle": "The Great Caruso"
         }
-    ]
+    ],
+    "time": 11.209611415863037,
+    "tokens": 672
 }

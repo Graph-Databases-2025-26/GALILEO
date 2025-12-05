@@ -4,11 +4,13 @@
     "result_set": [
         {
             "party": "Republican",
-            "num": 2
+            "num": 4
         },
         {
             "party": "Democratic",
-            "num": 2
+            "num": 1
         }
-    ]
+    ],
+    "time": 20.322165966033936,
+    "tokens": 1348
 }

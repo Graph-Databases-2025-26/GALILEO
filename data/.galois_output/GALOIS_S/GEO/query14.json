@@ -3,43 +3,58 @@
     "sql": "SELECT DISTINCT lake_name FROM target.usa_lake WHERE area_squared_km > 750;",
     "result_set": [
         {
-            "lake_name": "Lake Clark"
+            "lake_name": "Lake Ontario"
         },
         {
-            "lake_name": "Tustumena Lake"
+            "lake_name": "Lake Nipigon"
+        },
+        {
+            "lake_name": "Lake Great Slave"
         },
         {
             "lake_name": "Lake Winnipegosis"
         },
         {
-            "lake_name": "Salton Sea"
+            "lake_name": "Lake Mille Lacs"
         },
         {
-            "lake_name": "Lake Ontario"
+            "lake_name": "Lake Winnibigoshish"
         },
         {
-            "lake_name": "Lake Nipissing"
-        },
-        {
-            "lake_name": "Kenai Lake"
+            "lake_name": "Lake Lewis and Clark"
         },
         {
             "lake_name": "Great Slave Lake"
         },
         {
-            "lake_name": "Lake Temiskaming"
+            "lake_name": "Leech Lake"
         },
         {
-            "lake_name": "Dillingham Lake"
+            "lake_name": "Great Salt Lake"
         },
         {
-            "lake_name": "Naknek Lake"
+            "lake_name": "Great Bear Lake"
+        },
+        {
+            "lake_name": "Lake Audubon"
+        },
+        {
+            "lake_name": "Lake Winnebago"
+        },
+        {
+            "lake_name": "Lake Powell"
         },
         {
             "lake_name": "Lake Abitibi"
         },
         {
-            "lake_name": "Becharof Lake"
+            "lake_name": "Lake Mohave"
+        },
+        {
+            "lake_name": "Lake Roosevelt"
+        },
+        {
+            "lake_name": "Lake Mead"
         },
         {
             "lake_name": "Lake Athabasca"
@@ -48,28 +63,25 @@
             "lake_name": "Reindeer Lake"
         },
         {
-            "lake_name": "Eklutna Lake"
+            "lake_name": "Rainy Lake"
         },
         {
-            "lake_name": "Lake George"
+            "lake_name": "Lake Havasu"
         },
         {
-            "lake_name": "Great Salt Lake"
+            "lake_name": "Lake Manitoba"
         },
         {
-            "lake_name": "Lake of the Prairies"
+            "lake_name": "Lake St. Clair"
         },
         {
-            "lake_name": "Lake Erie"
+            "lake_name": "Lake Francis Case"
         },
         {
-            "lake_name": "Lake Oahe"
+            "lake_name": "Lake Traverse"
         },
         {
-            "lake_name": "Lake Pontchartrain"
-        },
-        {
-            "lake_name": "Lake of the Woods"
+            "lake_name": "Red Lake"
         },
         {
             "lake_name": "Lake Superior"
@@ -81,16 +93,33 @@
             "lake_name": "Lake Huron"
         },
         {
+            "lake_name": "Lake Erie"
+        },
+        {
             "lake_name": "Lake Sakakawea"
         },
         {
-            "lake_name": "Skilak Lake"
+            "lake_name": "Lake Oahe"
         },
         {
-            "lake_name": "Lake Champlain"
+            "lake_name": "Lake Pontchartrain"
         },
         {
-            "lake_name": "Lake Iliamna"
+            "lake_name": "Lake Winnipeg"
+        },
+        {
+            "lake_name": "Lake Reindeer"
+        },
+        {
+            "lake_name": "Lake Sharpe"
+        },
+        {
+            "lake_name": "Sturgeon Lake"
+        },
+        {
+            "lake_name": "Lake Fort Peck"
         }
-    ]
+    ],
+    "time": 17.849539279937744,
+    "tokens": 1218
 }

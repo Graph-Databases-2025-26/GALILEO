@@ -25,6 +25,8 @@ ERR_UNSUPPORTED_PROVIDER = "LLM provider not supported: {}"
 # Gemini Specific Errors (Used in llm_wrappers.py)
 ERR_GEMINI_API_KEY_MISSING = "GOOGLE_API_KEY not configured for Gemini."
 
+ERR_OPENROUTER_API_KEY_MISSING = "OPENROUTER_API_KEY not configured for OpenRouter."
+
 # Watsonx Specific Errors (Used in llm_wrappers.py)
 ERR_WATSONX_API_KEY_MISSING = "WATSONX_API_KEY not configured for Watsonx."
 

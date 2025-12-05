@@ -7,12 +7,22 @@
             "num": 5
         },
         {
-            "party": "Independent",
-            "num": 3
+            "party": "COPEI",
+            "num": 2
         },
         {
-            "party": "Liberal Party",
+            "party": "Independiente",
+            "num": 2
+        },
+        {
+            "party": "Convergencia",
+            "num": 2
+        },
+        {
+            "party": "Militar",
             "num": 1
         }
-    ]
+    ],
+    "time": 15.828558683395386,
+    "tokens": 932
 }

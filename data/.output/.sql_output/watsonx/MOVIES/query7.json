@@ -17,11 +17,7 @@
             "numMovies": 1
         },
         {
-            "startyear": 1984,
-            "numMovies": 1
-        },
-        {
-            "startyear": 1991,
+            "startyear": 1985,
             "numMovies": 1
         },
         {
@@ -33,6 +29,6 @@
             "numMovies": 1
         }
     ],
-    "time": 5.879,
-    "tokens": 191
+    "time": 5.637,
+    "tokens": 168
 }

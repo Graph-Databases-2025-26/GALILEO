@@ -1,5 +1,7 @@
 {
     "query_id": 1,
     "sql": "SELECT m.originaltitle FROM target.movies m WHERE m.director='Richard Thorpe';",
-    "result_set": []
+    "result_set": [],
+    "time": 41.45004415512085,
+    "tokens": 1268
 }

@@ -1,5 +1,7 @@
 {
     "query_id": 4,
     "sql": "SELECT p.name FROM target.world_presidents p WHERE p.country='Venezuela' AND p.party='Liberal';",
-    "result_set": []
+    "result_set": [],
+    "time": 13.333943367004395,
+    "tokens": 830
 }

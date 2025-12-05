@@ -1,5 +1,7 @@
 {
     "query_id": 10,
     "sql": "SELECT p.name, p.party, start_year, end_year, p.cardinal_number FROM target.world_presidents p WHERE p.country ='Venezuela' AND start_year > 1900 AND end_year < 2000 AND party ='Democratic Action';",
-    "result_set": []
+    "result_set": [],
+    "time": 34.38970494270325,
+    "tokens": 2648
 }

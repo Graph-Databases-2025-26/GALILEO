@@ -3,100 +3,195 @@
     "sql": "SELECT city_name FROM target.usa_city WHERE population > 150000;",
     "result_set": [
         {
-            "city_name": "Boston"
+            "city_name": "Wichita"
         },
         {
-            "city_name": "Tucson"
-        },
-        {
-            "city_name": "Chandler"
-        },
-        {
-            "city_name": "Houston"
-        },
-        {
-            "city_name": "Seattle"
-        },
-        {
-            "city_name": "Fort Wayne"
-        },
-        {
-            "city_name": "St. Louis"
-        },
-        {
-            "city_name": "Boise"
+            "city_name": "Buffalo"
         },
         {
             "city_name": "Nashville"
         },
         {
-            "city_name": "Albuquerque"
+            "city_name": "New Orleans"
         },
         {
-            "city_name": "El Paso"
-        },
-        {
-            "city_name": "Sacramento"
-        },
-        {
-            "city_name": "Oklahoma City"
-        },
-        {
-            "city_name": "Glendale"
-        },
-        {
-            "city_name": "Reno"
-        },
-        {
-            "city_name": "Milwaukee"
-        },
-        {
-            "city_name": "Atlanta"
-        },
-        {
-            "city_name": "San Francisco"
-        },
-        {
-            "city_name": "Dallas"
-        },
-        {
-            "city_name": "San Antonio"
-        },
-        {
-            "city_name": "Irving"
-        },
-        {
-            "city_name": "Irvine"
-        },
-        {
-            "city_name": "Kansas City"
-        },
-        {
-            "city_name": "Anaheim"
-        },
-        {
-            "city_name": "Pittsburgh"
-        },
-        {
-            "city_name": "Birmingham"
+            "city_name": "St. Louis"
         },
         {
             "city_name": "Tulsa"
         },
         {
-            "city_name": "Madison"
+            "city_name": "Indianapolis"
         },
         {
-            "city_name": "Cincinnati"
+            "city_name": "Los Angeles"
+        },
+        {
+            "city_name": "Fresno"
+        },
+        {
+            "city_name": "Charlotte"
+        },
+        {
+            "city_name": "Pittsburgh"
+        },
+        {
+            "city_name": "Baltimore"
+        },
+        {
+            "city_name": "Stockton"
+        },
+        {
+            "city_name": "Detroit"
+        },
+        {
+            "city_name": "Baton Rouge"
+        },
+        {
+            "city_name": "San Antonio"
+        },
+        {
+            "city_name": "Greenville"
+        },
+        {
+            "city_name": "San Jose"
+        },
+        {
+            "city_name": "Denver"
+        },
+        {
+            "city_name": "Irvine"
+        },
+        {
+            "city_name": "Phoenix"
+        },
+        {
+            "city_name": "Newark"
+        },
+        {
+            "city_name": "Atlanta"
         },
         {
             "city_name": "St. Paul"
         },
         {
+            "city_name": "Des Moines"
+        },
+        {
+            "city_name": "Scottsdale"
+        },
+        {
+            "city_name": "San Francisco"
+        },
+        {
+            "city_name": "Arlington"
+        },
+        {
+            "city_name": "Spokane"
+        },
+        {
+            "city_name": "Las Vegas"
+        },
+        {
+            "city_name": "Chicago"
+        },
+        {
+            "city_name": "Colorado Springs"
+        },
+        {
+            "city_name": "Santa Ana"
+        },
+        {
+            "city_name": "Plano"
+        },
+        {
             "city_name": "Memphis"
         },
         {
-            "city_name": "Lexington"
+            "city_name": "Kansas City"
+        },
+        {
+            "city_name": "Milwaukee"
+        },
+        {
+            "city_name": "Dallas"
+        },
+        {
+            "city_name": "Madison"
+        },
+        {
+            "city_name": "Boise"
+        },
+        {
+            "city_name": "San Diego"
+        },
+        {
+            "city_name": "Lubbock"
+        },
+        {
+            "city_name": "Jacksonville"
+        },
+        {
+            "city_name": "Raleigh"
+        },
+        {
+            "city_name": "Washington"
+        },
+        {
+            "city_name": "Cleveland"
+        },
+        {
+            "city_name": "Seattle"
+        },
+        {
+            "city_name": "Birmingham"
+        },
+        {
+            "city_name": "Boston"
+        },
+        {
+            "city_name": "Orlando"
+        },
+        {
+            "city_name": "El Paso"
+        },
+        {
+            "city_name": "Oakland"
+        },
+        {
+            "city_name": "Rochester"
+        },
+        {
+            "city_name": "Anchorage"
+        },
+        {
+            "city_name": "Omaha"
+        },
+        {
+            "city_name": "Columbus"
+        },
+        {
+            "city_name": "Philadelphia"
+        },
+        {
+            "city_name": "Minneapolis"
+        },
+        {
+            "city_name": "Long Beach"
+        },
+        {
+            "city_name": "New York"
+        },
+        {
+            "city_name": "Miami"
+        },
+        {
+            "city_name": "Richmond"
+        },
+        {
+            "city_name": "Cincinnati"
         }
-    ]
+    ],
+    "time": 87.5804603099823,
+    "tokens": 2387
 }

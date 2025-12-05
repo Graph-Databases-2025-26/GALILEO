@@ -3,7 +3,12 @@
     "sql": "SELECT m.originaltitle FROM target.movies m WHERE m.director='Steven Spielberg';",
     "result_set": [
         {
+            "originaltitle": "Schindler's List"
+        },
+        {
             "originaltitle": "E.T. the Extra-Terrestrial"
         }
-    ]
+    ],
+    "time": 17.045380353927612,
+    "tokens": 1227
 }

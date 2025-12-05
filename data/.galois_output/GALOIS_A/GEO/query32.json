@@ -5,8 +5,10 @@
         {
             "state_name": "California",
             "capital": "Sacramento",
-            "population": 4700000.0,
-            "area_squared_miles": 56153.0
+            "population": 4700000,
+            "area_squared_miles": 56153
         }
-    ]
+    ],
+    "time": 15.730136394500732,
+    "tokens": 627
 }

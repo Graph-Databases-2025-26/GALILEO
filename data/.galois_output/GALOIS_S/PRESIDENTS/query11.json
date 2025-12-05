@@ -3,137 +3,132 @@
     "sql": "SELECT p.name, p.party, start_year, end_year, p.cardinal_number FROM target.world_presidents p WHERE p.country ='Venezuela' AND start_year > 1800 AND end_year < 1900 AND party ='Conservative';",
     "result_set": [
         {
+            "name": "Simón Bolívar",
+            "party": "Conservative",
+            "start_year": 1811,
+            "end_year": 1812,
+            "cardinal_number": "1"
+        },
+        {
+            "name": "José Antonio Páez",
+            "party": "Conservative",
+            "start_year": 1830,
+            "end_year": 1835,
+            "cardinal_number": "5"
+        },
+        {
+            "name": "José María Vargas",
+            "party": "Conservative",
+            "start_year": 1835,
+            "end_year": 1836,
+            "cardinal_number": "6"
+        },
+        {
+            "name": "Carlos Soublette",
+            "party": "Conservative",
+            "start_year": 1843,
+            "end_year": 1847,
+            "cardinal_number": "8"
+        },
+        {
+            "name": "José Tadeo Monagas",
+            "party": "Conservative",
+            "start_year": 1847,
+            "end_year": 1851,
+            "cardinal_number": "9"
+        },
+        {
+            "name": "José Gregorio Monagas",
+            "party": "Conservative",
+            "start_year": 1851,
+            "end_year": 1855,
+            "cardinal_number": "10"
+        },
+        {
+            "name": "Julio Zulia",
+            "party": "Conservative",
+            "start_year": 1858,
+            "end_year": 1859,
+            "cardinal_number": "12"
+        },
+        {
+            "name": "Manuel Felipe de Tovar",
+            "party": "Conservative",
+            "start_year": 1859,
+            "end_year": 1861,
+            "cardinal_number": "13"
+        },
+        {
+            "name": "Juan Crisóstomo Falcón",
+            "party": "Conservative",
+            "start_year": 1863,
+            "end_year": 1868,
+            "cardinal_number": "15"
+        },
+        {
+            "name": "Manuel Ezequiel Bruzüal",
+            "party": "Conservative",
+            "start_year": 1868,
+            "end_year": 1869,
+            "cardinal_number": "16"
+        },
+        {
+            "name": "José Ruperto Monagas",
+            "party": "Conservative",
+            "start_year": 1869,
+            "end_year": 1870,
+            "cardinal_number": "17"
+        },
+        {
             "name": "Antonio Guzmán Blanco",
             "party": "Conservative",
-            "start_year": 1870.0,
-            "end_year": 1877.0,
-            "cardinal_number": "1st"
+            "start_year": 1870,
+            "end_year": 1877,
+            "cardinal_number": "18"
         },
         {
             "name": "Francisco Linares Alcántara",
             "party": "Conservative",
-            "start_year": 1877.0,
-            "end_year": 1878.0,
-            "cardinal_number": "2nd"
-        },
-        {
-            "name": "José Gregorio Varela",
-            "party": "Conservative",
-            "start_year": 1878.0,
-            "end_year": 1880.0,
-            "cardinal_number": "3rd"
-        },
-        {
-            "name": "Antonio Guzmán Blanco",
-            "party": "Conservative",
-            "start_year": 1880.0,
-            "end_year": 1884.0,
-            "cardinal_number": "4th"
+            "start_year": 1877,
+            "end_year": 1878,
+            "cardinal_number": "19"
         },
         {
             "name": "Joaquín Crespo",
             "party": "Conservative",
-            "start_year": 1884.0,
-            "end_year": 1886.0,
-            "cardinal_number": "5th"
-        },
-        {
-            "name": "Antonio Guzmán Blanco",
-            "party": "Conservative",
-            "start_year": 1886.0,
-            "end_year": 1887.0,
-            "cardinal_number": "6th"
+            "start_year": 1884,
+            "end_year": 1886,
+            "cardinal_number": "21"
         },
         {
             "name": "Hermógenes López",
             "party": "Conservative",
-            "start_year": 1887.0,
-            "end_year": 1888.0,
-            "cardinal_number": "7th"
+            "start_year": 1887,
+            "end_year": 1888,
+            "cardinal_number": "23"
         },
         {
-            "name": "Juan Pablo Rojas Paúl",
+            "name": "Juan Pablo Rojas Paül",
             "party": "Conservative",
-            "start_year": 1888.0,
-            "end_year": 1890.0,
-            "cardinal_number": "8th"
+            "start_year": 1888,
+            "end_year": 1890,
+            "cardinal_number": "24"
         },
         {
             "name": "Raimundo Andueza Palacio",
             "party": "Conservative",
-            "start_year": 1890.0,
-            "end_year": 1892.0,
-            "cardinal_number": "9th"
-        },
-        {
-            "name": "Guillermo Tell Villegas",
-            "party": "Conservative",
-            "start_year": 1892.0,
-            "end_year": 1892.0,
-            "cardinal_number": "10th"
-        },
-        {
-            "name": "Guillermo Tell Villegas",
-            "party": "Conservative",
-            "start_year": 1892.0,
-            "end_year": 1893.0,
-            "cardinal_number": "11th"
-        },
-        {
-            "name": "Joaquín Crespo",
-            "party": "Conservative",
-            "start_year": 1893.0,
-            "end_year": 1894.0,
-            "cardinal_number": "12th"
-        },
-        {
-            "name": "Joaquín Crespo",
-            "party": "Conservative",
-            "start_year": 1894.0,
-            "end_year": 1895.0,
-            "cardinal_number": "13th"
-        },
-        {
-            "name": "Joaquín Crespo",
-            "party": "Conservative",
-            "start_year": 1895.0,
-            "end_year": 1896.0,
-            "cardinal_number": "14th"
-        },
-        {
-            "name": "Joaquín Crespo",
-            "party": "Conservative",
-            "start_year": 1896.0,
-            "end_year": 1897.0,
-            "cardinal_number": "15th"
+            "start_year": 1890,
+            "end_year": 1892,
+            "cardinal_number": "25"
         },
         {
             "name": "Ignacio Andrade",
             "party": "Conservative",
-            "start_year": 1897.0,
-            "end_year": 1898.0,
-            "cardinal_number": "16th"
-        },
-        {
-            "name": "Ignacio Andrade",
-            "party": "Conservative",
-            "start_year": 1898.0,
-            "end_year": 1899.0,
-            "cardinal_number": "17th"
-        },
-        {
-            "name": "Ignacio Andrade",
-            "party": "Conservative",
-            "start_year": 1899.0,
-            "end_year": 1899.0,
-            "cardinal_number": "18th"
-        },
-        {
-            "name": "Cipriano Castro",
-            "party": "Conservative",
-            "start_year": 1899.0,
-            "end_year": 1899.0,
-            "cardinal_number": "19th"
+            "start_year": 1898,
+            "end_year": 1899,
+            "cardinal_number": "27"
         }
-    ]
+    ],
+    "time": 38.15108871459961,
+    "tokens": 2855
 }

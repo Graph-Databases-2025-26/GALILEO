@@ -29,7 +29,7 @@
         },
         {
             "state_name": "Illinois",
-            "population": 12773630,
+            "population": 12886119,
             "capital": "Springfield"
         },
         {
@@ -54,8 +54,8 @@
         },
         {
             "state_name": "Minnesota",
-            "population": 5639632,
-            "capital": "St. Paul"
+            "population": 5648222,
+            "capital": "Saint Paul"
         },
         {
             "state_name": "Missouri",
@@ -79,7 +79,7 @@
         },
         {
             "state_name": "Ohio",
-            "population": 11693200,
+            "population": 11689100,
             "capital": "Columbus"
         },
         {
@@ -104,12 +104,12 @@
         },
         {
             "state_name": "Virginia",
-            "population": 8535519,
+            "population": 8517685,
             "capital": "Richmond"
         },
         {
             "state_name": "Washington",
-            "population": 7533861,
+            "population": 7535591,
             "capital": "Olympia"
         },
         {
@@ -117,5 +117,7 @@
             "population": 5822564,
             "capital": "Madison"
         }
-    ]
+    ],
+    "time": 19.680326461791992,
+    "tokens": 1504
 }

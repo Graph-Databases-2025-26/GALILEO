@@ -6,28 +6,40 @@
             "originaltitle": "Jaws"
         },
         {
-            "originaltitle": "Amistad"
+            "originaltitle": "E.T. the Extra-Terrestrial"
         },
         {
-            "originaltitle": "A.I. Artificial Intelligence"
+            "originaltitle": "Jurassic Park"
         },
         {
-            "originaltitle": "Minority Report"
+            "originaltitle": "Indiana Jones and the Raiders of the Lost Ark"
         },
         {
-            "originaltitle": "The Terminal"
+            "originaltitle": "Saving Private Ryan"
+        },
+        {
+            "originaltitle": "Catch Me If You Can"
         },
         {
             "originaltitle": "War of the Worlds"
         },
         {
-            "originaltitle": "Munich"
+            "originaltitle": "Lincoln"
         },
         {
-            "originaltitle": "Indiana Jones and the Kingdom of the Crystal Skull"
+            "originaltitle": "Bridge of Spies"
         },
         {
-            "originaltitle": "The Adventures of Tintin"
+            "originaltitle": "Ready Player One"
+        },
+        {
+            "originaltitle": "1941"
+        },
+        {
+            "originaltitle": "Always"
+        },
+        {
+            "originaltitle": "Amistad"
         },
         {
             "originaltitle": "Empire of the Sun"
@@ -36,16 +48,33 @@
             "originaltitle": "Hook"
         },
         {
-            "originaltitle": "Schindler's List"
+            "originaltitle": "Munich"
+        },
+        {
+            "originaltitle": "The Adventures of Tintin"
+        },
+        {
+            "originaltitle": "The BFG"
         },
         {
             "originaltitle": "The Color Purple"
         },
         {
-            "originaltitle": "Duel"
+            "originaltitle": "The Lost World: Jurassic Park"
         },
         {
-            "originaltitle": "The Sugarland Express"
+            "originaltitle": "The Terminal"
+        },
+        {
+            "originaltitle": "Schindler's List"
+        },
+        {
+            "originaltitle": "Minority Report"
+        },
+        {
+            "originaltitle": "A.I. Artificial Intelligence"
         }
-    ]
+    ],
+    "time": 10.181811571121216,
+    "tokens": 618
 }

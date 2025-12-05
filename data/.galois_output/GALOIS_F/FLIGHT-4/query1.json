@@ -3,31 +3,18 @@
     "sql": "SELECT a.name FROM target.airports a WHERE a.elevation_in_ft >= -50 and a.elevation_in_ft <= 50;",
     "result_set": [
         {
-            "name": "Kapalua Airport"
+            "name": "Wiley Post-Will Rogers Memorial Airport"
         },
         {
-            "name": "Rarotonga International Airport"
+            "name": "Gustavus Airport"
         },
         {
-            "name": "Brisbane Airport"
+            "name": "Unalaska Airport"
         },
         {
-            "name": "Cairns Airport"
-        },
-        {
-            "name": "Sydney Airport"
-        },
-        {
-            "name": "Adelaide Airport"
-        },
-        {
-            "name": "Hobart International Airport"
-        },
-        {
-            "name": "Gold Coast Airport"
-        },
-        {
-            "name": "Townsville Airport"
+            "name": "Juneau International Airport"
         }
-    ]
+    ],
+    "time": 5.7881691455841064,
+    "tokens": 266
 }

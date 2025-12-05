@@ -3,34 +3,75 @@
     "sql": "SELECT DISTINCT usa_state_traversed FROM target.usa_river WHERE length_in_km > 750;",
     "result_set": [
         {
-            "usa_state_traversed": "Montana, Idaho"
+            "usa_state_traversed": "Colorado, Utah, Arizona, Nevada, California, Mexico"
         },
         {
-            "usa_state_traversed": "Washington, Oregon"
+            "usa_state_traversed": "Arkansas, Oklahoma, Kansas, Missouri"
+        },
+        {
+            "usa_state_traversed": "Texas, New Mexico"
+        },
+        {
+            "usa_state_traversed": "Idaho, Oregon, Washington"
+        },
+        {
+            "usa_state_traversed": "Canada, Alaska"
+        },
+        {
+            "usa_state_traversed": "Texas, Oklahoma, Arkansas, Louisiana"
+        },
+        {
+            "usa_state_traversed": "British Columbia, Alberta"
+        },
+        {
+            "usa_state_traversed": "Montana, North Dakota"
+        },
+        {
+            "usa_state_traversed": "Texas"
         },
         {
             "usa_state_traversed": "Montana, North Dakota, South Dakota, Nebraska, Iowa, Kansas, Missouri"
         },
         {
-            "usa_state_traversed": "Minnesota, Wisconsin, Iowa, Illinois, Missouri, Kentucky, Tennessee, Arkansas, Mississippi"
+            "usa_state_traversed": "Ohio"
         },
         {
-            "usa_state_traversed": "Colorado, New Mexico, Texas"
+            "usa_state_traversed": "Kansas, Oklahoma"
         },
         {
-            "usa_state_traversed": "None"
+            "usa_state_traversed": "British Columbia, Alberta, Northwest Territories"
         },
         {
-            "usa_state_traversed": "Pennsylvania, Ohio, Indiana, Illinois, Kentucky"
+            "usa_state_traversed": "Alberta, Saskatchewan"
+        },
+        {
+            "usa_state_traversed": "Alberta"
+        },
+        {
+            "usa_state_traversed": "Manitoba"
+        },
+        {
+            "usa_state_traversed": "New Mexico, Texas"
+        },
+        {
+            "usa_state_traversed": "Alberta, Saskatchewan, Manitoba"
+        },
+        {
+            "usa_state_traversed": "Alaska"
         },
         {
             "usa_state_traversed": "Tennessee, Alabama, Kentucky"
         },
         {
-            "usa_state_traversed": "Colorado, Kansas, Oklahoma, Arkansas"
+            "usa_state_traversed": "Texas, Oklahoma"
         },
         {
-            "usa_state_traversed": "Colorado, Utah, Arizona, Nevada, California"
+            "usa_state_traversed": "Northwest Territories"
+        },
+        {
+            "usa_state_traversed": "Alberta, British Columbia, Northwest Territories"
         }
-    ]
+    ],
+    "time": 17.930479526519775,
+    "tokens": 1122
 }

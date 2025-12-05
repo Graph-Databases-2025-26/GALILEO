@@ -6,16 +6,25 @@
             "lake_name": "Lake Ontario"
         },
         {
+            "lake_name": "Lake Hartwell"
+        },
+        {
+            "lake_name": "Lake Marion"
+        },
+        {
+            "lake_name": "Lake Eufaula"
+        },
+        {
+            "lake_name": "Lake Pontchartrain"
+        },
+        {
             "lake_name": "Lake Oahe"
         },
         {
             "lake_name": "Lake Erie"
         },
         {
-            "lake_name": "Lake St. Clair"
-        },
-        {
-            "lake_name": "Lake Michigan"
+            "lake_name": "Lake Huron"
         },
         {
             "lake_name": "Lake Sakakawea"
@@ -24,7 +33,9 @@
             "lake_name": "Lake Superior"
         },
         {
-            "lake_name": "Lake Huron"
+            "lake_name": "Lake Michigan"
         }
-    ]
+    ],
+    "time": 39.99304223060608,
+    "tokens": 1407
 }

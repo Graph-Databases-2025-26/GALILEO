@@ -4,18 +4,21 @@
             "usa_state_traversed": "Alaska"
         },
         {
-            "usa_state_traversed": "Texas"
+            "usa_state_traversed": "Washington"
         },
         {
             "usa_state_traversed": "California"
         },
         {
-            "usa_state_traversed": "Florida"
+            "usa_state_traversed": "Oregon"
+        },
+        {
+            "usa_state_traversed": "Texas"
         },
         {
             "usa_state_traversed": "Louisiana"
         }
     ],
-    "time": 3.427,
-    "tokens": 102
+    "time": 4.555,
+    "tokens": 119
 }

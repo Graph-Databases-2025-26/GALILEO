@@ -1,3 +1,4 @@
+from langchain_openai import ChatOpenAI
 from langchain_core.language_models import BaseChatModel
 from langchain_core.messages import BaseMessage
 from langchain_google_genai import ChatGoogleGenerativeAI
@@ -6,6 +7,8 @@ from langchain_ibm import ChatWatsonx
 from abc import ABC, abstractmethod
 
 from src.utils import LOG, ERR_GEMINI_API_KEY_MISSING, ERR_WATSONX_API_KEY_MISSING
+from src.utils.errors import ERR_OPENROUTER_API_KEY_MISSING
+
 
 class LLMBaseWrapper(ABC):
     """
@@ -69,6 +72,28 @@ class LLMBaseWrapper(ABC):
         
         return self.llm_instance
     
+class OpenRouterWrapper(LLMBaseWrapper):
+    def get_provider_name(self) -> str:
+        return "open_router"
+
+    def _create_llm_instance(self, config):
+        if config.open_router.api_key:
+
+            LOG.info(f"Creating OpenRouter LLM ...")
+
+            return ChatOpenAI(
+                model=config.open_router.model,
+                temperature=config.open_router.temperature,
+                max_tokens=config.open_router.max_tokens,
+                api_key=config.open_router.api_key,
+                base_url=config.open_router.endpoint,
+            )
+
+        else:
+            raise RuntimeError(ERR_OPENROUTER_API_KEY_MISSING)
+
+    def get_output_tokens(self, raw_response: BaseMessage) -> int:
+        return raw_response.usage_metadata.get("output_tokens", 0)
 
 class GeminiWrapper(LLMBaseWrapper):
     """

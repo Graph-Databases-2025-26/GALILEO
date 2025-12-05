@@ -3,75 +3,95 @@
     "sql": "SELECT p.name, p.party FROM target.world_presidents p WHERE p.country='United States';",
     "result_set": [
         {
-            "name": "George Washington",
-            "party": "Independent"
-        },
-        {
-            "name": "John Adams",
-            "party": "Federalist"
-        },
-        {
-            "name": "Thomas Jefferson",
-            "party": "Democratic-Republican"
-        },
-        {
-            "name": "James Madison",
-            "party": "Democratic-Republican"
-        },
-        {
-            "name": "James Monroe",
-            "party": "Democratic-Republican"
-        },
-        {
-            "name": "John Quincy Adams",
-            "party": "Democratic-Republican"
-        },
-        {
-            "name": "Andrew Jackson",
+            "name": "Joe Biden",
             "party": "Democratic"
         },
         {
-            "name": "Martin Van Buren",
-            "party": "Democratic"
-        },
-        {
-            "name": "William Henry Harrison",
-            "party": "Whig"
-        },
-        {
-            "name": "John Tyler",
-            "party": "Whig/Independent"
-        },
-        {
-            "name": "James K. Polk",
-            "party": "Democratic"
-        },
-        {
-            "name": "Zachary Taylor",
-            "party": "Whig"
-        },
-        {
-            "name": "Millard Fillmore",
-            "party": "Whig"
-        },
-        {
-            "name": "Franklin Pierce",
-            "party": "Democratic"
-        },
-        {
-            "name": "James Buchanan",
-            "party": "Democratic"
-        },
-        {
-            "name": "Abraham Lincoln",
+            "name": "Donald Trump",
             "party": "Republican"
         },
         {
-            "name": "Andrew Johnson",
-            "party": "National Union"
+            "name": "Barack Obama",
+            "party": "Democratic"
         },
         {
-            "name": "Ulysses S. Grant",
+            "name": "George W. Bush",
+            "party": "Republican"
+        },
+        {
+            "name": "Bill Clinton",
+            "party": "Democratic"
+        },
+        {
+            "name": "Ronald Reagan",
+            "party": "Republican"
+        },
+        {
+            "name": "Jimmy Carter",
+            "party": "Democratic"
+        },
+        {
+            "name": "Gerald Ford",
+            "party": "Republican"
+        },
+        {
+            "name": "Richard Nixon",
+            "party": "Republican"
+        },
+        {
+            "name": "Lyndon B. Johnson",
+            "party": "Democratic"
+        },
+        {
+            "name": "Dwight D. Eisenhower",
+            "party": "Republican"
+        },
+        {
+            "name": "Harry S. Truman",
+            "party": "Democratic"
+        },
+        {
+            "name": "Franklin D. Roosevelt",
+            "party": "Democratic"
+        },
+        {
+            "name": "Herbert Hoover",
+            "party": "Republican"
+        },
+        {
+            "name": "Calvin Coolidge",
+            "party": "Republican"
+        },
+        {
+            "name": "Warren G. Harding",
+            "party": "Republican"
+        },
+        {
+            "name": "Woodrow Wilson",
+            "party": "Democratic"
+        },
+        {
+            "name": "William Howard Taft",
+            "party": "Republican"
+        },
+        {
+            "name": "Theodore Roosevelt",
+            "party": "Republican"
+        },
+        {
+            "name": "William McKinley",
+            "party": "Republican"
+        },
+        {
+            "name": "Benjamin Harrison",
+            "party": "Republican"
+        },
+        {
+            "name": "Grover Cleveland",
+            "party": "Democratic"
+        },
+        {
+            "name": "Chester A. Arthur",
             "party": "Republican"
         },
         {
@@ -83,108 +103,66 @@
             "party": "Republican"
         },
         {
-            "name": "Chester A. Arthur",
+            "name": "Ulysses S. Grant",
             "party": "Republican"
         },
         {
-            "name": "Grover Cleveland",
+            "name": "Andrew Johnson",
+            "party": "Republican"
+        },
+        {
+            "name": "Abraham Lincoln",
+            "party": "National Union"
+        },
+        {
+            "name": "Zachary Taylor",
+            "party": "Republican"
+        },
+        {
+            "name": "Millard Fillmore",
+            "party": "Whig"
+        },
+        {
+            "name": "William Henry Harrison",
+            "party": "Whig"
+        },
+        {
+            "name": "John Tyler",
             "party": "Democratic"
         },
         {
-            "name": "Benjamin Harrison",
-            "party": "Republican"
+            "name": "Martin Van Buren",
+            "party": "Whig"
         },
         {
-            "name": "Grover Cleveland",
+            "name": "Andrew Jackson",
             "party": "Democratic"
         },
         {
-            "name": "William McKinley",
-            "party": "Republican"
+            "name": "John Quincy Adams",
+            "party": "Democratic-Republican"
         },
         {
-            "name": "Theodore Roosevelt",
-            "party": "Republican"
+            "name": "James Monroe",
+            "party": "Democratic-Republican"
         },
         {
-            "name": "William Howard Taft",
-            "party": "Republican"
+            "name": "James Madison",
+            "party": "Democratic-Republican"
         },
         {
-            "name": "Woodrow Wilson",
-            "party": "Democratic"
+            "name": "Thomas Jefferson",
+            "party": "Democratic-Republican"
         },
         {
-            "name": "Warren G. Harding",
-            "party": "Republican"
+            "name": "John Adams",
+            "party": "Federalist"
         },
         {
-            "name": "Calvin Coolidge",
-            "party": "Republican"
-        },
-        {
-            "name": "Herbert Hoover",
-            "party": "Republican"
-        },
-        {
-            "name": "Franklin D. Roosevelt",
-            "party": "Democratic"
-        },
-        {
-            "name": "Harry S. Truman",
-            "party": "Democratic"
-        },
-        {
-            "name": "Dwight D. Eisenhower",
-            "party": "Republican"
-        },
-        {
-            "name": "John F. Kennedy",
-            "party": "Democratic"
-        },
-        {
-            "name": "Lyndon B. Johnson",
-            "party": "Democratic"
-        },
-        {
-            "name": "Richard Nixon",
-            "party": "Republican"
-        },
-        {
-            "name": "Gerald R. Ford",
-            "party": "Republican"
-        },
-        {
-            "name": "Jimmy Carter",
-            "party": "Democratic"
-        },
-        {
-            "name": "Ronald Reagan",
-            "party": "Republican"
-        },
-        {
-            "name": "George H.W. Bush",
-            "party": "Republican"
-        },
-        {
-            "name": "Bill Clinton",
-            "party": "Democratic"
-        },
-        {
-            "name": "George W. Bush",
-            "party": "Republican"
-        },
-        {
-            "name": "Barack Obama",
-            "party": "Democratic"
-        },
-        {
-            "name": "Donald J. Trump",
-            "party": "Republican"
-        },
-        {
-            "name": "Joe Biden",
-            "party": "Democratic"
+            "name": "George Washington",
+            "party": "None"
         }
-    ]
+    ],
+    "time": 17.990314722061157,
+    "tokens": 913
 }

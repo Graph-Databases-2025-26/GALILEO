@@ -1,5 +1,7 @@
 {
     "query_id": 18,
     "sql": "SELECT p.name FROM target.world_presidents p WHERE p.country='United States' AND p.party='Republican' AND p.start_year > 1980;",
-    "result_set": []
+    "result_set": [],
+    "time": 19.953160524368286,
+    "tokens": 1325
 }

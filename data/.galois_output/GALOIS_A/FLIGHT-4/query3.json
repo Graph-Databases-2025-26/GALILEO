@@ -7,30 +7,8 @@
             "city": "New York",
             "country": "United States",
             "elevation_in_ft": 13
-        },
-        {
-            "name": "LaGuardia Airport",
-            "city": "New York",
-            "country": "United States",
-            "elevation_in_ft": 21
-        },
-        {
-            "name": "Newark Liberty International Airport",
-            "city": "New York",
-            "country": "United States",
-            "elevation_in_ft": 18
-        },
-        {
-            "name": "Westchester County Airport",
-            "city": "New York",
-            "country": "United States",
-            "elevation_in_ft": 439
-        },
-        {
-            "name": "Teterboro Airport",
-            "city": "New York",
-            "country": "United States",
-            "elevation_in_ft": 8
         }
-    ]
+    ],
+    "time": 6.639491319656372,
+    "tokens": 259
 }

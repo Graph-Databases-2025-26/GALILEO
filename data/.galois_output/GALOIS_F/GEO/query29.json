@@ -5,50 +5,52 @@
         {
             "state_name": "Indiana",
             "capital": "Indianapolis",
-            "density": 184.93,
+            "density": 184.0,
             "population": 6732219
         },
         {
             "state_name": "Maryland",
             "capital": "Annapolis",
-            "density": 487.35,
-            "population": 6040668
+            "density": 634.0,
+            "population": 7882959
         },
         {
             "state_name": "Massachusetts",
             "capital": "Boston",
-            "density": 652.19,
+            "density": 873.0,
             "population": 6892503
         },
         {
             "state_name": "Ohio",
             "capital": "Columbus",
-            "density": 260.73,
+            "density": 284.0,
             "population": 11689100
         },
         {
             "state_name": "Pennsylvania",
             "capital": "Harrisburg",
-            "density": 278.05,
+            "density": 284.0,
             "population": 12802023
         },
         {
             "state_name": "South Carolina",
             "capital": "Columbia",
-            "density": 159.01,
+            "density": 157.0,
             "population": 5086476
         },
         {
             "state_name": "Tennessee",
             "capital": "Nashville",
-            "density": 162.23,
+            "density": 174.0,
             "population": 6833174
         },
         {
             "state_name": "Virginia",
             "capital": "Richmond",
-            "density": 199.67,
-            "population": 8535519
+            "density": 214.0,
+            "population": 8517685
         }
-    ]
+    ],
+    "time": 33.60394215583801,
+    "tokens": 2607
 }

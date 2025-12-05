@@ -3,12 +3,18 @@
     "sql": "SELECT m.originaltitle, m.startyear FROM target.movies m WHERE m.director='Richard Thorpe' AND m.startyear > 1950;",
     "result_set": [
         {
-            "originaltitle": "The Adventures of Quentin Durward",
-            "startyear": 1955.0
+            "originaltitle": "Tip on a Dead Jockey",
+            "startyear": 1957
+        },
+        {
+            "originaltitle": "Jailhouse Rock",
+            "startyear": 1957
         },
         {
             "originaltitle": "Ten Thousand Bedrooms",
-            "startyear": 1957.0
+            "startyear": 1957
         }
-    ]
+    ],
+    "time": 15.784470558166504,
+    "tokens": 1093
 }

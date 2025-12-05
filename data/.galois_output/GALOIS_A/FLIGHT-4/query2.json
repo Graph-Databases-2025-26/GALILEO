@@ -3,7 +3,9 @@
     "sql": "SELECT max(elevation_in_ft) FROM target.airports WHERE country = 'Iceland';",
     "result_set": [
         {
-            "max(elevation_in_ft)": 326.0
+            "max(elevation_in_ft)": 538
         }
-    ]
+    ],
+    "time": 5.00626277923584,
+    "tokens": 181
 }

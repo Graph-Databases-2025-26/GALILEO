@@ -1,9 +1,10 @@
 from src.utils import ERR_UNSUPPORTED_PROVIDER
-from .llm_wrappers import LLMBaseWrapper, GeminiWrapper, WatsonxWrapper
+from .llm_wrappers import LLMBaseWrapper, GeminiWrapper, WatsonxWrapper, OpenRouterWrapper
 
 PROVIDER_MAP = {
     "gemini": GeminiWrapper,
-    "watsonx": WatsonxWrapper
+    "watsonx": WatsonxWrapper,
+    "open_router": OpenRouterWrapper,
 }
 
 def get_llm_wrapper(config) -> LLMBaseWrapper:

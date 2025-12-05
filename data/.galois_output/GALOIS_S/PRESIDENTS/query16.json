@@ -3,7 +3,9 @@
     "sql": "SELECT count(p.party) FROM target.world_presidents p WHERE p.country='United States' AND p.party='Republican';",
     "result_set": [
         {
-            "count(p.party)": 21
+            "count(p.party)": 1
         }
-    ]
+    ],
+    "time": 3.855759382247925,
+    "tokens": 143
 }
