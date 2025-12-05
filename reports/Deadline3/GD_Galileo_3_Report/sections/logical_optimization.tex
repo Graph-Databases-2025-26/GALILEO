@@ -9,6 +9,7 @@ The framework supports four distinct logical variants:\begin{itemize}
     \item \textbf{Push-All (GALOIS-A)}: Maximizes delegation by translating all SQL predicates into natural language constraints within the prompt. This assumes high model capability in understanding and applying complex logic.
     \item \textbf{Push-Selective (GALOIS-S)}: A heuristic approach that identifies and pushes only the most selective condition, using the LLM's confidence self-assessment as a proxy to determine which conditions are “safe” or “selective” enough to be handled directly by the generative model and aims to reduce the search space without overwhelming the model context.
     \item \textbf{Push-Confident(GALOIS-F)}: An adaptive strategy that utilizes a \textbf{ConfidenceEstimator}. The system queries the LLM to self-evaluate its confidence in correctly assessing specific predicates (returning a "HIGH" or "LOW" score). Only conditions with high confidence scores are pushed down, while ambiguous ones are retained for local execution.
+    Furthermore the LLM also does an estimation process over the Physical optimization to apply looking to the entire query, the details will be discussed in section \ref{subsec:conf_est}. 
 \end{itemize}
 
 \subsection{Join Handling Details}

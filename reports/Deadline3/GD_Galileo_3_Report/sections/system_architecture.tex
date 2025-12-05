@@ -1,12 +1,28 @@
-\section{GALOIS system architecture}
+\section{GALOIS goal and System Architecture}
+
+Large Language Models (LLMs) can answer declarative queries expressed in Natural
+Language (NL) or SQL, but their one-shot responses frequently fail to recover complete
+and factually consistent tuples when queries involve filtering, joins, or aggregations. As
+highlighted in the GALOIS paper, direct prompting exhibits limited recall and incomplete
+enumeration, making LLMs unreliable as standalone query processors.
+\\
+The GALOIS framework mitigates these limitations by treating the LLM as a latent
+knowledge store and decomposing execution into logical and physical operators, in
+analogy with traditional DBMSs. Rather than issuing a single prompt, GALOIS executes
+structured scan and filtering strategies (Table Scan, Key Scan) together with multiple
+logical planning variants (push-all, push-selective, push-wo, and the optimized
+GALOIS-F). This operator-based design improves tuple completeness and stabilizes
+execution across heterogeneous query types.
+
 Our implementation orchestrates the interaction between a declarative SQL interface and the probabilistic nature of LLMs through four distinct stages: parsing, logical planning, physical execution, and local post-processing. This section details the core components implemented in the \texttt{Galois} orchestration class.
 
 
 \subsection{Orchestration and Schema Management}
 
+\begin{sloppypar}
 The entry point of the system is the \texttt{Galois} class, which initializes the workflow by parsing the input SQL query into an Abstract Syntax Tree (AST) using the \texttt{sql\_query\_parser} module. Unlike standard text-to-SQL approaches, GALOIS does not immediately prompt the LLM with the raw query, instead it inspects the database structure using the \texttt{GaloisSchemaManager}.
 This component connects to a read-only DuckDB instance to retrieve accurate metadata (column names, primary keys, and data types). This schema awareness allows the system to construct semantically valid JSON schemas for the prompts, ensuring that the LLM's output adheres to the strict typing required for the subsequent relational operations.
-
+\end{sloppypar}
 \subsection{The Execution Engine}
 The retrieval logic is encapsulated within the \texttt{GaloisExecutor} class. This component abstracts the complexity of the LLM interaction (via LangChain) and implements the iterative retrieval loops.
 
@@ -18,7 +34,7 @@ The retrieval logic is encapsulated within the \texttt{GaloisExecutor} class. Th
     \item \textbf{Key-Scan}: Decomposes retrieval into two phases. First, it iterates to collect all unique primary keys. Once the keys are consolidated, it issues a final "Tuple Request"  to retrieve non-key attributes for the collected identifiers.
 \end{itemize}
 
-\subsection{}
+
 
 
 

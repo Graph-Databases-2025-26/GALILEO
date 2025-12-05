@@ -128,7 +128,7 @@ The function concludes by performing a relational join operation between the col
 \end{algorithm}
 
 \newpage
-\subsection{Adaptive Strategy Selection and Confidence Estimation}
+\subsection{Adaptive Strategy Selection and Confidence Estimation}\label{subsec:conf_est}
 The framework incorporates an adaptive execution layer that dynamically mediates the selection between the $\text{Table-Scan}$ and $\text{Key-Scan}$ operators. This decision is parameterized by a Confidence Estimator, which quantitatively assesses the expected factual data retrieval reliability based on the $Q$'s schema complexity and the LLM's raw confidence score.
 
 The confidence estimation model incorporates a decay factor sensitive to the number of projected columns. The final confidence score $\text{C}_{final}$ is calculated from the LLM's intrinsic raw confidence ($\text{C}_{raw}$) by applying an exponential decay based on $\text{N}_{cols}$, the cardinality of attributes in the $\text{SELECT}$ clause:
