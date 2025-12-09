@@ -1,0 +1,39 @@
+{
+    "result_set": [
+        {
+            "Company": "Land O'Lakes",
+            "Ticker": "NA",
+            "Sector": "NA",
+            "Industry": "NA",
+            "Profitable": true,
+            "Founder_is_CEO": false,
+            "FemaleCEO": true,
+            "Growth_in_Jobs": false,
+            "Change_in_Rank": null,
+            "Gained_in_Rank": null,
+            "Dropped_in_Rank": null,
+            "Newcomer_to_the_Fortune500": false,
+            "Global500": false,
+            "Worlds_Most_Admired_Companies": false,
+            "Best_Companies_to_Work_For": false,
+            "Number_of_employees": 108000,
+            "MarketCap_March28_M": 49409.1,
+            "Revenues_M": 20376.9,
+            "RevenuePercentChange": null,
+            "Profits_M": 1874.5,
+            "ProfitsPercentChange": null,
+            "Assets_M": null,
+            "CEO": "Beth E. Ford",
+            "Country": "US",
+            "HeadquartersCity": "New York",
+            "HeadquartersState": "New York",
+            "Website": "https://www.rossstores.com",
+            "CompanyType": "Public",
+            "Footnote": "NA",
+            "MarketCap_Updated_M": null,
+            "Updated": "2024-03-28"
+        }
+    ],
+    "time": 26.295,
+    "tokens": 371
+}

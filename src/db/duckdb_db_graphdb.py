@@ -5,6 +5,9 @@ from typing import  List, Dict, Any
 
 import duckdb, os, glob, time, sys
 
+from src.utils.constants import get_tables
+
+
 # Function for creating tables and loading data using the "ingest_'foldername'.sql"
 def execute_ingest_sql(con, folder_path: str):
     """
@@ -98,12 +101,7 @@ def db_creation(dataset_name: str) -> None:
         # Show created tables
         LOG.info("Listing created tables...")
         try:
-            table_names_tuples = con.execute("""
-            SELECT table_name
-            FROM information_schema.tables
-            WHERE table_type = 'BASE TABLE'
-            ORDER BY table_name
-            """).fetchall()
+            table_names_tuples = con.execute(get_tables()).fetchall()
 
             table_names = [name[0] for name in table_names_tuples]
             

@@ -1,0 +1,14 @@
+{
+    "result_set": [
+        {
+            "Company": "Oneok",
+            "CEO": "Pierce H. Norton II"
+        },
+        {
+            "Company": "Chesapeake Energy",
+            "CEO": "Michael J. Wichterich"
+        }
+    ],
+    "time": 27.702,
+    "tokens": 70
+}

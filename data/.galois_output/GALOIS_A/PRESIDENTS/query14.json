@@ -23,146 +23,42 @@
             "party": "Democratic"
         },
         {
-            "name": "Ronald Reagan",
+            "name": "Jill Stein",
+            "party": "Green"
+        },
+        {
+            "name": "Bernie Sanders",
+            "party": "Independent"
+        },
+        {
+            "name": "Jo Jorgensen",
+            "party": "Libertarian"
+        },
+        {
+            "name": "Mitt Romney",
             "party": "Republican"
         },
         {
-            "name": "Jimmy Carter",
-            "party": "Democratic"
+            "name": "Alexandria Ocasio-Cortez",
+            "party": "Socialist"
         },
         {
-            "name": "Gerald Ford",
-            "party": "Republican"
+            "name": "Sarah Palin",
+            "party": "Tea Party"
         },
         {
-            "name": "Richard Nixon",
-            "party": "Republican"
+            "name": "Robert Bowman",
+            "party": "Veterans"
         },
         {
-            "name": "Lyndon B. Johnson",
-            "party": "Democratic"
+            "name": "William Lindsay",
+            "party": "Working Class"
         },
         {
-            "name": "Dwight D. Eisenhower",
-            "party": "Republican"
-        },
-        {
-            "name": "Harry S. Truman",
-            "party": "Democratic"
-        },
-        {
-            "name": "Franklin D. Roosevelt",
-            "party": "Democratic"
-        },
-        {
-            "name": "Herbert Hoover",
-            "party": "Republican"
-        },
-        {
-            "name": "Calvin Coolidge",
-            "party": "Republican"
-        },
-        {
-            "name": "Warren G. Harding",
-            "party": "Republican"
-        },
-        {
-            "name": "Woodrow Wilson",
-            "party": "Democratic"
-        },
-        {
-            "name": "William Howard Taft",
-            "party": "Republican"
-        },
-        {
-            "name": "Theodore Roosevelt",
-            "party": "Republican"
-        },
-        {
-            "name": "William McKinley",
-            "party": "Republican"
-        },
-        {
-            "name": "Benjamin Harrison",
-            "party": "Republican"
-        },
-        {
-            "name": "Grover Cleveland",
-            "party": "Democratic"
-        },
-        {
-            "name": "Chester A. Arthur",
-            "party": "Republican"
-        },
-        {
-            "name": "Rutherford B. Hayes",
-            "party": "Republican"
-        },
-        {
-            "name": "James A. Garfield",
-            "party": "Republican"
-        },
-        {
-            "name": "Ulysses S. Grant",
-            "party": "Republican"
-        },
-        {
-            "name": "Andrew Johnson",
-            "party": "Republican"
-        },
-        {
-            "name": "Abraham Lincoln",
-            "party": "National Union"
-        },
-        {
-            "name": "Zachary Taylor",
-            "party": "Republican"
-        },
-        {
-            "name": "Millard Fillmore",
-            "party": "Whig"
-        },
-        {
-            "name": "William Henry Harrison",
-            "party": "Whig"
-        },
-        {
-            "name": "John Tyler",
-            "party": "Democratic"
-        },
-        {
-            "name": "Martin Van Buren",
-            "party": "Whig"
-        },
-        {
-            "name": "Andrew Jackson",
-            "party": "Democratic"
-        },
-        {
-            "name": "John Quincy Adams",
-            "party": "Democratic-Republican"
-        },
-        {
-            "name": "James Monroe",
-            "party": "Democratic-Republican"
-        },
-        {
-            "name": "James Madison",
-            "party": "Democratic-Republican"
-        },
-        {
-            "name": "Thomas Jefferson",
-            "party": "Democratic-Republican"
-        },
-        {
-            "name": "John Adams",
-            "party": "Federalist"
-        },
-        {
-            "name": "George Washington",
-            "party": "None"
+            "name": "Teresa Gutierrez",
+            "party": "Working Family"
         }
     ],
-    "time": 17.990314722061157,
-    "tokens": 913
+    "time": 7.7046074867248535,
+    "tokens": 352
 }

@@ -76,7 +76,18 @@ TABLE_SCAN_FIRST_PROMPT ="""
 
 TABLE_SCAN_ITER_PROMPT = """
     List more values if there are more, otherwise return an empty JSON.  Respond with JSON only.
-""" 
+"""
+
+TABLE_KEY_SCAN_ITER_PROMPT_PAGINATION= """
+    You have previously retrieved tuples up to the value: '{last_val}'.
+    
+    Task:
+    1. List more unique tuples that come strictly AFTER '{last_val}' (alphabetically or numerically based on the key/first attribute).
+    2. Do NOT repeat any value found in the history.
+    3. If you cannot find any new unique value after '{last_val}', return an empty JSON list [].
+    
+    Respond with JSON only.
+"""
 
 KEY_SCAN_FIRST_PROMPT = """
     List the {key} of {table} {conditions}.

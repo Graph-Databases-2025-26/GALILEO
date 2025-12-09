@@ -2,6 +2,6 @@
     "query_id": 12,
     "sql": "SELECT state_name FROM target.usa_city WHERE city_name = 'springfield' AND population > 62000;",
     "result_set": [],
-    "time": 24.00484800338745,
-    "tokens": 1720
+    "time": 38.133312702178955,
+    "tokens": 1444
 }

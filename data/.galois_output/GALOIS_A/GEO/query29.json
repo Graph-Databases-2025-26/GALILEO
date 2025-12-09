@@ -3,27 +3,21 @@
     "sql": "SELECT us.state_name, us.capital, us.density, us.population FROM target.usa_state us WHERE us.population > 5000000 AND us.density < 1000 AND us.area_squared_miles < 50000;",
     "result_set": [
         {
-            "state_name": "Pennsylvania",
-            "capital": "Harrisburg",
-            "density": 284.9,
-            "population": 12802023
-        },
-        {
             "state_name": "Ohio",
             "capital": "Columbus",
-            "density": 284.1,
+            "density": 284.9,
             "population": 11689100
         },
         {
-            "state_name": "Virginia",
-            "capital": "Richmond",
-            "density": 214.3,
-            "population": 8531794
+            "state_name": "Tennessee",
+            "capital": "Nashville",
+            "density": 174.8,
+            "population": 6829174
         },
         {
             "state_name": "Massachusetts",
             "capital": "Boston",
-            "density": 874.8,
+            "density": 873.8,
             "population": 6892503
         },
         {
@@ -33,24 +27,24 @@
             "population": 6732219
         },
         {
-            "state_name": "Tennessee",
-            "capital": "Nashville",
-            "density": 173.5,
-            "population": 6689074
+            "state_name": "Virginia",
+            "capital": "Richmond",
+            "density": 214.0,
+            "population": 8535759
         },
         {
             "state_name": "Maryland",
-            "capital": "Annapolis",
-            "density": 643.1,
-            "population": 6042170
+            "capital": "Salisbury",
+            "density": 634.0,
+            "population": 6042718
         },
         {
-            "state_name": "South Carolina",
-            "capital": "Columbia",
-            "density": 157.0,
-            "population": 5086476
+            "state_name": "Florida",
+            "capital": "Tallahassee",
+            "density": 394.0,
+            "population": 21244317
         }
     ],
-    "time": 39.38740086555481,
-    "tokens": 1939
+    "time": 21.557316541671753,
+    "tokens": 1035
 }

@@ -2,6 +2,5 @@
     "query_id": 1,
     "sql": "SELECT call_sign FROM target.usa_airline_companies WHERE airline='jetblue airways';",
     "result_set": [],
-    "time": 7.996124267578125,
-    "tokens": 486
+    "error": "Failed to parse Response from completion null. Got: 1 validation error for Response\n  Input should be a valid list [type=list_type, input_value=None, input_type=NoneType]\n    For further information visit https://errors.pydantic.dev/2.12/v/list_type\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langchain/errors/OUTPUT_PARSING_FAILURE "
 }

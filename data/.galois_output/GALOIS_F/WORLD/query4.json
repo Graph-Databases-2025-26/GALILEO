@@ -3,18 +3,9 @@
     "sql": "SELECT distinct t2.region FROM target.country_language as t1 join target.country as t2 on t1.country_code_3_letters = t2.code_3_letters WHERE t1.language = 'English' or t1.language = 'Dutch';",
     "result_set": [
         {
-            "region": "Africa"
-        },
-        {
-            "region": "North America"
-        },
-        {
-            "region": "Europe"
-        },
-        {
-            "region": "Oceania"
+            "region": "Western Europe"
         }
     ],
-    "time": 132.02124524116516,
-    "tokens": 9182
+    "time": 144.80558371543884,
+    "tokens": 5747
 }

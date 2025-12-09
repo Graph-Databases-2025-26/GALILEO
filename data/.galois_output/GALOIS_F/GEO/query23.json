@@ -1,11 +1,7 @@
 {
     "query_id": 23,
     "sql": "SELECT t2.capital FROM target.usa_city AS t1 JOIN target.usa_state AS t2 ON t1.city_name=t2.capital WHERE t1.population <= 150000;",
-    "result_set": [
-        {
-            "capital": "Montgomery"
-        }
-    ],
-    "time": 37.474801540374756,
-    "tokens": 2587
+    "result_set": [],
+    "time": 28.441890954971313,
+    "tokens": 1156
 }

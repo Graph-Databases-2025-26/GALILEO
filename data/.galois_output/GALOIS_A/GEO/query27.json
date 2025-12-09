@@ -24,43 +24,18 @@
         },
         {
             "state_name": "Ohio",
-            "population": 11689400,
+            "population": 11754200,
             "capital": "Columbus"
         },
         {
             "state_name": "Oklahoma",
-            "population": 5919569,
+            "population": 5217435,
             "capital": "Oklahoma City"
         },
         {
             "state_name": "Tennessee",
-            "population": 6829174,
+            "population": 6892503,
             "capital": "Nashville"
-        },
-        {
-            "state_name": "Indiana",
-            "population": 6732219,
-            "capital": "Indianapolis"
-        },
-        {
-            "state_name": "North Carolina",
-            "population": 10420000,
-            "capital": "Raleigh"
-        },
-        {
-            "state_name": "Wisconsin",
-            "population": 5822564,
-            "capital": "Madison"
-        },
-        {
-            "state_name": "New York",
-            "population": 19453561,
-            "capital": "Albany"
-        },
-        {
-            "state_name": "Pennsylvania",
-            "population": 12802000,
-            "capital": "Harrisburg"
         },
         {
             "state_name": "Massachusetts",
@@ -68,29 +43,24 @@
             "capital": "Boston"
         },
         {
-            "state_name": "Michigan",
-            "population": 10077331,
-            "capital": "Lansing"
-        },
-        {
-            "state_name": "Minnesota",
-            "population": 5640730,
-            "capital": "Saint Paul"
+            "state_name": "Indiana",
+            "population": 6732219,
+            "capital": "Indianapolis"
         },
         {
             "state_name": "Colorado",
-            "population": 5758741,
+            "population": 5691287,
             "capital": "Denver"
         },
         {
-            "state_name": "Washington",
-            "population": 7524000,
-            "capital": "Olympia"
+            "state_name": "New York",
+            "population": 19453561,
+            "capital": "Albany"
         },
         {
-            "state_name": "Florida",
-            "population": 21244317,
-            "capital": "Tallahassee"
+            "state_name": "Wisconsin",
+            "population": 5822564,
+            "capital": "Madison"
         },
         {
             "state_name": "Virginia",
@@ -98,8 +68,43 @@
             "capital": "Richmond"
         },
         {
+            "state_name": "Pennsylvania",
+            "population": 12802043,
+            "capital": "Harrisburg"
+        },
+        {
+            "state_name": "Minnesota",
+            "population": 5639632,
+            "capital": "Saint Paul"
+        },
+        {
+            "state_name": "Mississippi",
+            "population": 5217435,
+            "capital": "Jackson"
+        },
+        {
+            "state_name": "Florida",
+            "population": 21244317,
+            "capital": "Tallahassee"
+        },
+        {
+            "state_name": "Michigan",
+            "population": 10077331,
+            "capital": "Lansing"
+        },
+        {
+            "state_name": "North Carolina",
+            "population": 10420000,
+            "capital": "Raleigh"
+        },
+        {
+            "state_name": "South Carolina",
+            "population": 5138374,
+            "capital": "Columbia"
+        },
+        {
             "state_name": "Maryland",
-            "population": 6040668,
+            "population": 6041380,
             "capital": "Annapolis"
         },
         {
@@ -108,11 +113,16 @@
             "capital": "Trenton"
         },
         {
-            "state_name": "South Carolina",
-            "population": 5086476,
-            "capital": "Columbia"
+            "state_name": "Washington",
+            "population": 7594934,
+            "capital": "Olympia"
+        },
+        {
+            "state_name": "Illinois",
+            "population": 12659748,
+            "capital": "Springfield"
         }
     ],
-    "time": 24.875664234161377,
-    "tokens": 1237
+    "time": 30.614534378051758,
+    "tokens": 1220
 }

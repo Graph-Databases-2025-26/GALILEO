@@ -3,30 +3,38 @@
     "sql": "SELECT m.originaltitle, m.startyear, m.genres, m.birthyear, m.deathyear, m.runtimeminutes FROM target.movies m WHERE m.director = 'Steven Spielberg' AND m.startyear > 1990 AND m.startyear < 2000;",
     "result_set": [
         {
-            "originaltitle": "Schindler's List",
+            "originaltitle": "Hook",
+            "startyear": 1991,
+            "genres": "Adventure,Family,Fantasy",
+            "birthyear": 1946,
+            "deathyear": null,
+            "runtimeminutes": 142
+        },
+        {
+            "originaltitle": "Jurassic Park",
             "startyear": 1993,
-            "genres": "Adventure, Drama",
-            "birthyear": NaN,
-            "deathyear": NaN,
+            "genres": "Adventure,Drama",
+            "birthyear": 1946,
+            "deathyear": null,
             "runtimeminutes": 127
         },
         {
             "originaltitle": "The Lost World: Jurassic Park",
             "startyear": 1997,
-            "genres": "Adventure, Science Fiction",
-            "birthyear": NaN,
-            "deathyear": NaN,
-            "runtimeminutes": 125
+            "genres": "Drama,Sci-Fi",
+            "birthyear": 1946,
+            "deathyear": null,
+            "runtimeminutes": 129
         },
         {
             "originaltitle": "Saving Private Ryan",
             "startyear": 1998,
-            "genres": "Drama, War",
-            "birthyear": NaN,
-            "deathyear": NaN,
+            "genres": "Drama,War",
+            "birthyear": 1946,
+            "deathyear": null,
             "runtimeminutes": 169
         }
     ],
-    "time": 18.391227960586548,
-    "tokens": 842
+    "time": 30.220170736312866,
+    "tokens": 990
 }

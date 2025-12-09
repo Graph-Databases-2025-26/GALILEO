@@ -3,110 +3,46 @@
     "sql": "SELECT DISTINCT p.name, p.party FROM target.world_presidents p WHERE p.country='Venezuela';",
     "result_set": [
         {
-            "name": "Teodoro Petkoff",
-            "party": "Movimiento al Socialismo"
+            "name": "Carlos Andrés Pérez",
+            "party": "Democratic Action"
         },
         {
-            "name": "Henrique Salas Romer",
-            "party": "Proyecto Venezuela"
+            "name": "Eduardo Fernández",
+            "party": "Independent"
         },
         {
-            "name": "Gregorio Mirabal",
-            "party": "Alianza Bravo Pueblo"
+            "name": "Leopoldo López",
+            "party": "Popular Will"
         },
         {
-            "name": "José Tomás Sánchez",
-            "party": "Patria Para Todos"
+            "name": "Nicolás Maduro",
+            "party": "United Socialist Party of Venezuela"
         },
         {
-            "name": "Juan José Caldera",
-            "party": "Convergencia"
+            "name": "Ramón José Velásquez",
+            "party": "For Social Democracy"
+        },
+        {
+            "name": "Hugo Chávez",
+            "party": "United Socialist Party of Venezuela"
+        },
+        {
+            "name": "Simón Planas",
+            "party": "Venezuelan Progressive Movement"
         },
         {
             "name": "Andrés Velásquez",
-            "party": "La Causa R"
-        },
-        {
-            "name": "Carlos Tablante",
-            "party": "Nueva Fuerza"
+            "party": "Radical Cause"
         },
         {
             "name": "Rafael Caldera",
             "party": "COPEI"
         },
         {
-            "name": "Ismael García",
-            "party": "Un Solo Pueblo"
-        },
-        {
-            "name": "María Corina Machado",
-            "party": "Vente Venezuela"
-        },
-        {
-            "name": "Gabriel Puerta Aponte",
-            "party": "Bandera Roja"
-        },
-        {
-            "name": "Pompeyo Márquez",
-            "party": "Partido Comunista de Venezuela"
-        },
-        {
-            "name": "Jorge Rodríguez",
-            "party": "Unidad"
-        },
-        {
-            "name": "José Albornoz",
-            "party": "Patria Para Todos"
-        },
-        {
-            "name": "Alfonso Marquina",
-            "party": "Fuerza Liberal"
-        },
-        {
-            "name": "Hugo Chávez",
-            "party": "PSUV"
-        },
-        {
-            "name": "Diosdado Cabello",
-            "party": "Partido Socialista Unido de Venezuela"
-        },
-        {
-            "name": "Carlos Andrés Pérez",
-            "party": "Acción Democrática"
-        },
-        {
-            "name": "Manuel Rosales",
-            "party": "Un Nuevo Tiempo"
-        },
-        {
-            "name": "Felipe Mujica",
-            "party": "Movimiento Al Socialismo"
-        },
-        {
-            "name": "Nicolás Maduro",
-            "party": "PSUV"
-        },
-        {
-            "name": "Henrique Capriles Radonski",
-            "party": "Primero Justicia"
-        },
-        {
-            "name": "Leopoldo López",
-            "party": "Voluntad Popular"
-        },
-        {
-            "name": "Alfredo Romero",
-            "party": "Foro Penal"
-        },
-        {
-            "name": "Yon Goicochea",
-            "party": "Movimiento Estudiantil"
-        },
-        {
-            "name": "Oscar Figuera",
-            "party": "Partido Comunista de Venezuela"
+            "name": "Henrique Capriles",
+            "party": "Justice First"
         }
     ],
-    "time": 16.66918921470642,
-    "tokens": 776
+    "time": 9.840627193450928,
+    "tokens": 335
 }

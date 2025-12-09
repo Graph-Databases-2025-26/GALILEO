@@ -2,6 +2,6 @@
     "query_id": 21,
     "sql": "SELECT country_name FROM target.usa_state WHERE state_name = 'massachusetts';",
     "result_set": [],
-    "time": 46.74742889404297,
-    "tokens": 336
+    "time": 13.518164873123169,
+    "tokens": 537
 }

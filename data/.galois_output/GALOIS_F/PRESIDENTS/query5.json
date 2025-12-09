@@ -2,6 +2,6 @@
     "query_id": 5,
     "sql": "SELECT p.name FROM target.world_presidents p WHERE p.country='Venezuela' AND p.party='Liberal' AND p.start_year > 1858;",
     "result_set": [],
-    "time": 12.230354070663452,
-    "tokens": 736
+    "time": 17.29481267929077,
+    "tokens": 777
 }

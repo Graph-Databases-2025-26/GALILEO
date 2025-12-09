@@ -2,6 +2,6 @@
     "query_id": 15,
     "sql": "SELECT state_name FROM target.usa_city WHERE city_name = 'austin' AND population > 150000;",
     "result_set": [],
-    "time": 14.125681161880493,
-    "tokens": 824
+    "time": 56.01850461959839,
+    "tokens": 2219
 }

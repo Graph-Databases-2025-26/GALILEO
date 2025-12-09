@@ -3,60 +3,51 @@
     "sql": "SELECT p.name FROM target.world_presidents p WHERE p.country='United States' AND p.party='Republican';",
     "result_set": [
         {
-            "name": "Abraham Lincoln"
-        },
-        {
-            "name": "Ulysses S. Grant"
-        },
-        {
-            "name": "Rutherford B. Hayes"
-        },
-        {
-            "name": "James A. Garfield"
-        },
-        {
-            "name": "Benjamin Harrison"
-        },
-        {
-            "name": "William McKinley"
-        },
-        {
-            "name": "Theodore Roosevelt"
-        },
-        {
-            "name": "William Howard Taft"
-        },
-        {
-            "name": "Warren G. Harding"
-        },
-        {
-            "name": "Calvin Coolidge"
-        },
-        {
-            "name": "Herbert Hoover"
-        },
-        {
-            "name": "Dwight D. Eisenhower"
-        },
-        {
-            "name": "Richard Nixon"
-        },
-        {
-            "name": "Gerald R. Ford"
-        },
-        {
-            "name": "Ronald Reagan"
-        },
-        {
-            "name": "George H.W. Bush"
+            "name": "Donald Trump"
         },
         {
             "name": "George W. Bush"
         },
         {
-            "name": "Donald Trump"
+            "name": "George H.W. Bush"
+        },
+        {
+            "name": "Ronald Reagan"
+        },
+        {
+            "name": "Gerald Ford"
+        },
+        {
+            "name": "Richard Nixon"
+        },
+        {
+            "name": "Dwight D. Eisenhower"
+        },
+        {
+            "name": "Herbert Hoover"
+        },
+        {
+            "name": "Calvin Coolidge"
+        },
+        {
+            "name": "Warren G. Harding"
+        },
+        {
+            "name": "William McKinley"
+        },
+        {
+            "name": "Benjamin Harrison"
+        },
+        {
+            "name": "Rutherford B. Hayes"
+        },
+        {
+            "name": "Ulysses S. Grant"
+        },
+        {
+            "name": "Abraham Lincoln"
         }
     ],
-    "time": 21.88433289527893,
-    "tokens": 869
+    "time": 15.971973180770874,
+    "tokens": 741
 }

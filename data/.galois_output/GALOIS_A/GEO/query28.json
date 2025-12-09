@@ -15,16 +15,16 @@
             "capital": "Phoenix"
         },
         {
-            "state_name": "Georgia",
-            "capital": "Atlanta"
-        },
-        {
             "state_name": "Ohio",
             "capital": "Columbus"
         },
         {
-            "state_name": "Oklahoma",
-            "capital": "Oklahoma City"
+            "state_name": "Georgia",
+            "capital": "Atlanta"
+        },
+        {
+            "state_name": "Michigan",
+            "capital": "Lansing"
         },
         {
             "state_name": "Tennessee",
@@ -35,36 +35,16 @@
             "capital": "Indianapolis"
         },
         {
-            "state_name": "North Carolina",
-            "capital": "Raleigh"
+            "state_name": "Oklahoma",
+            "capital": "Oklahoma City"
         },
         {
             "state_name": "Wisconsin",
             "capital": "Madison"
         },
         {
-            "state_name": "New York",
-            "capital": "Albany"
-        },
-        {
-            "state_name": "Pennsylvania",
-            "capital": "Harrisburg"
-        },
-        {
-            "state_name": "Massachusetts",
-            "capital": "Boston"
-        },
-        {
-            "state_name": "Michigan",
-            "capital": "Lansing"
-        },
-        {
-            "state_name": "Minnesota",
-            "capital": "Saint Paul"
-        },
-        {
-            "state_name": "Mississippi",
-            "capital": "Jackson"
+            "state_name": "North Carolina",
+            "capital": "Raleigh"
         },
         {
             "state_name": "Florida",
@@ -75,22 +55,46 @@
             "capital": "Richmond"
         },
         {
+            "state_name": "New York",
+            "capital": "Albany"
+        },
+        {
+            "state_name": "Massachusetts",
+            "capital": "Boston"
+        },
+        {
+            "state_name": "Pennsylvania",
+            "capital": "Harrisburg"
+        },
+        {
+            "state_name": "Minnesota",
+            "capital": "Saint Paul"
+        },
+        {
             "state_name": "Colorado",
             "capital": "Denver"
         },
         {
-            "state_name": "Illinois",
-            "capital": "Springfield"
+            "state_name": "South Carolina",
+            "capital": "Columbia"
+        },
+        {
+            "state_name": "Mississippi",
+            "capital": "Jackson"
         },
         {
             "state_name": "Maryland",
             "capital": "Annapolis"
         },
         {
+            "state_name": "New Jersey",
+            "capital": "Trenton"
+        },
+        {
             "state_name": "Washington",
             "capital": "Olympia"
         }
     ],
-    "time": 59.45823383331299,
-    "tokens": 2364
+    "time": 37.19247007369995,
+    "tokens": 1694
 }

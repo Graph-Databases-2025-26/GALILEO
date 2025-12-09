@@ -1,0 +1,36 @@
+{
+    "result_set": [
+        {
+            "HeadquartersCity": "Long Island City"
+        },
+        {
+            "HeadquartersCity": "Fort Worth"
+        },
+        {
+            "HeadquartersCity": "Chicago"
+        },
+        {
+            "HeadquartersCity": "Houston"
+        },
+        {
+            "HeadquartersCity": "Palm Beach Gardens"
+        },
+        {
+            "HeadquartersCity": "Columbus"
+        },
+        {
+            "HeadquartersCity": "San Francisco"
+        },
+        {
+            "HeadquartersCity": "Fort Worth"
+        },
+        {
+            "HeadquartersCity": "Omaha"
+        },
+        {
+            "HeadquartersCity": "Palo Alto"
+        }
+    ],
+    "time": 28.727,
+    "tokens": 146
+}

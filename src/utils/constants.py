@@ -182,31 +182,48 @@ HUMAN_PROMPT = {
 
 #SQL QUERIES
 
-GET_TABLES = """
-        SELECT table_name
-        FROM information_schema.tables
-        WHERE table_schema = current_schema()
-        ORDER BY table_name;
-        """
+def get_tables() -> str:
+    """Returns the query for retrieving all table names in the current schema."""
+    return  """
+    SELECT table_name
+    FROM information_schema.tables
+    WHERE table_schema = current_schema()
+    ORDER BY table_name;
+    """
 
-GET_ATTRIBUTES = """
-PRAGMA table_info('{table_name}')
-"""
+def get_attributes() -> str:
+    """Returns the query for retrieving attributes of a table."""
+    return """
+    PRAGMA table_info('{table_name}')
+    """
 
-GET_EXACT_TABLE_NAME = """
-SELECT table_name
-FROM information_schema.tables
-WHERE LOWER(table_name) = '{table_name}.lower()'
-"""
+def get_exact_table_name() -> str:
+    """Returns the query for retrieving the exact table name."""
+    return  """
+    SELECT table_name
+    FROM information_schema.tables
+    WHERE LOWER(table_name) = '{table_name}'
+    """
 
-GET_PRIMARY_KEYS = """
-SELECT cols
-FROM (
-    SELECT unnest(constraint_column_names) AS cols, constraint_type, table_name
-    FROM duckdb_constraints()
-)
-WHERE table_name = '{table_name}'
-  AND constraint_type = 'PRIMARY KEY';
-"""
 
-POST_PROCESSING_BUILD_TABLE_SQL = "SELECT * FROM row_buffer WHERE {where_clause}"
+def get_primary_keys(table_name: str) -> str:
+    """Returns the query for retrieving primary keys of a table."""
+    return f"""
+    SELECT cols
+    FROM (
+        SELECT unnest(constraint_column_names) AS cols, constraint_type, table_name
+        FROM duckdb_constraints()
+    )
+    WHERE table_name = '{table_name}'
+      AND constraint_type = 'PRIMARY KEY';
+    """
+
+
+def q_get_sample_values(table_name: str, column_name: str, limit: int = 3) -> str:
+    """Returns the query for retrieving distinct value samples."""
+    return f"""
+        SELECT DISTINCT CAST({column_name} AS VARCHAR) 
+        FROM {table_name} 
+        WHERE {column_name} IS NOT NULL 
+        LIMIT {limit}
+    """

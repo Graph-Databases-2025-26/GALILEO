@@ -2,6 +2,6 @@
     "query_id": 3,
     "sql": "SELECT a.airline FROM target.usa_airline_companies a WHERE a.call_sign='ual';",
     "result_set": [],
-    "time": 2.6772501468658447,
-    "tokens": 68
+    "time": 1.9041399955749512,
+    "tokens": 56
 }

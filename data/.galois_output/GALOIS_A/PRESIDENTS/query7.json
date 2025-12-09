@@ -3,10 +3,10 @@
     "sql": "SELECT p.party, count(p.party) num FROM target.world_presidents p WHERE p.country='Venezuela' group by p.party order by num desc limit 1;",
     "result_set": [
         {
-            "party": "PSUV",
+            "party": "Popular Will",
             "num": 1
         }
     ],
-    "time": 2.7407984733581543,
-    "tokens": 106
+    "time": 3.5076358318328857,
+    "tokens": 132
 }

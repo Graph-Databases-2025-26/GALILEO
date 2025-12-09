@@ -1,0 +1,18 @@
+{
+    "result_set": [
+        {
+            "player_name": "J. Zirkzee"
+        },
+        {
+            "player_name": "Bruno Fernandes"
+        },
+        {
+            "player_name": "A. Diallo"
+        },
+        {
+            "player_name": "Diogo Dalot"
+        }
+    ],
+    "time": 12.97,
+    "tokens": 85
+}

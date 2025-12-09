@@ -3,22 +3,10 @@
     "sql": "SELECT DISTINCT lake_name FROM target.usa_lake WHERE area_squared_km > 450;",
     "result_set": [
         {
-            "lake_name": "Lake Ontario"
+            "lake_name": "Lake Powell"
         },
         {
-            "lake_name": "Lake Cumberland"
-        },
-        {
-            "lake_name": "Lake Lanier"
-        },
-        {
-            "lake_name": "Lake Tugalo"
-        },
-        {
-            "lake_name": "Lake Seed"
-        },
-        {
-            "lake_name": "Lake Superior"
+            "lake_name": "Lake Mead"
         },
         {
             "lake_name": "Lake Michigan"
@@ -27,129 +15,27 @@
             "lake_name": "Lake Huron"
         },
         {
-            "lake_name": "Lake Erie"
+            "lake_name": "Lake Superior"
         },
         {
             "lake_name": "Lake Sakakawea"
         },
         {
+            "lake_name": "Lake Tahoe"
+        },
+        {
+            "lake_name": "Lake Erie"
+        },
+        {
             "lake_name": "Lake Oahe"
-        },
-        {
-            "lake_name": "Lake Texoma"
-        },
-        {
-            "lake_name": "Lake Russell"
         },
         {
             "lake_name": "Lake Pontchartrain"
         },
         {
-            "lake_name": "Lake Yonah"
-        },
-        {
-            "lake_name": "Lake Sunapee"
-        },
-        {
-            "lake_name": "Lake Hopatcong"
-        },
-        {
-            "lake_name": "Lake Wallenpaupack"
-        },
-        {
-            "lake_name": "Lake Tallulah"
-        },
-        {
-            "lake_name": "Great Salt Lake"
-        },
-        {
-            "lake_name": "Lake Powell"
-        },
-        {
-            "lake_name": "Lake Seminole"
-        },
-        {
-            "lake_name": "Lake Chatuge"
-        },
-        {
-            "lake_name": "Lake George"
-        },
-        {
-            "lake_name": "Lake Moultrie"
-        },
-        {
-            "lake_name": "Lake Norman"
-        },
-        {
-            "lake_name": "Lake Thurmond"
-        },
-        {
-            "lake_name": "Lake Allatoona"
-        },
-        {
-            "lake_name": "Lake St. Clair"
-        },
-        {
-            "lake_name": "Lake Tarpon"
-        },
-        {
-            "lake_name": "Lake Tohopekaliga"
-        },
-        {
-            "lake_name": "Lake Istokpoga"
-        },
-        {
-            "lake_name": "Lake Winnipesaukee"
-        },
-        {
-            "lake_name": "Lake Hartwell"
-        },
-        {
-            "lake_name": "Lake Sidney Lanier"
-        },
-        {
-            "lake_name": "Lake Walter F. George"
-        },
-        {
-            "lake_name": "Lake Chautauqua"
-        },
-        {
-            "lake_name": "Lake Glenville"
-        },
-        {
-            "lake_name": "Lake Jocassee"
-        },
-        {
-            "lake_name": "Lake Mead"
-        },
-        {
-            "lake_name": "Lake Ouachita"
-        },
-        {
-            "lake_name": "Lake Eufaula"
-        },
-        {
-            "lake_name": "Lake Marion"
-        },
-        {
-            "lake_name": "Lake Dardanelle"
-        },
-        {
-            "lake_name": "Lake Wylie"
-        },
-        {
-            "lake_name": "Lake Keowee"
-        },
-        {
-            "lake_name": "Lake Okeechobee"
-        },
-        {
-            "lake_name": "Lake Burton"
-        },
-        {
-            "lake_name": "Lake Rabun"
+            "lake_name": "Lake Ontario"
         }
     ],
-    "time": 30.745954036712646,
-    "tokens": 2077
+    "time": 21.052834510803223,
+    "tokens": 720
 }

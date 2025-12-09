@@ -3,9 +3,9 @@
     "sql": "SELECT DISTINCT usa_state_traversed FROM target.usa_river WHERE length_in_km > 750;",
     "result_set": [
         {
-            "usa_state_traversed": "Alaska"
+            "usa_state_traversed": "Minnesota, Wisconsin, Iowa, Illinois, Missouri, Kentucky, Tennessee, Arkansas, Mississippi, Louisiana"
         }
     ],
-    "time": 12.971641778945923,
-    "tokens": 515
+    "time": 11.60367727279663,
+    "tokens": 436
 }

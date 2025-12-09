@@ -1,0 +1,14 @@
+{
+    "result_set": [
+        {
+            "Company": "Comcast",
+            "HeadquartersState": "Pennsylvania"
+        },
+        {
+            "Company": "Verizon Communications",
+            "HeadquartersState": "New York"
+        }
+    ],
+    "time": 29.815,
+    "tokens": 48
+}

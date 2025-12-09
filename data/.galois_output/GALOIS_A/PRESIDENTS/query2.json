@@ -3,18 +3,14 @@
     "sql": "SELECT p.name, p.party FROM target.world_presidents p WHERE p.country='Venezuela' AND p.party='Liberal';",
     "result_set": [
         {
-            "name": "Ricardo Hausmann",
+            "name": "Antonio Guzmán Blanco",
             "party": "Liberal"
         },
         {
-            "name": "Rafael Caldera",
-            "party": "Liberal"
-        },
-        {
-            "name": "Carlos Andres Perez",
+            "name": "Juan Vicente Gómez",
             "party": "Liberal"
         }
     ],
-    "time": 20.222672939300537,
-    "tokens": 644
+    "time": 4.853178262710571,
+    "tokens": 204
 }

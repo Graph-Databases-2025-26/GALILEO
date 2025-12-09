@@ -3,70 +3,10 @@
     "sql": "SELECT DISTINCT p.name, p.party FROM target.world_presidents p WHERE p.country='Venezuela';",
     "result_set": [
         {
-            "name": "Tareck El Aissami",
-            "party": "Partido Socialista Unido de Venezuela"
-        },
-        {
-            "name": "Jorge Arreaza",
-            "party": "Partido Socialista Unido de Venezuela"
-        },
-        {
-            "name": "Willian Barrientos",
-            "party": "Partido Socialista Unido de Venezuela"
-        },
-        {
-            "name": "Delcy Rodríguez",
-            "party": "Partido Socialista Unido de Venezuela"
-        },
-        {
-            "name": "Diosdado Cabello",
-            "party": "Partido Socialista Unido de Venezuela"
-        },
-        {
-            "name": "Jorge Rodríguez",
-            "party": "Partido Socialista Unido de Venezuela"
-        },
-        {
-            "name": "Iris Varela",
-            "party": "Partido Socialista Unido de Venezuela"
-        },
-        {
-            "name": "Nicolás Maduro Guerra",
-            "party": "Partido Socialista Unido de Venezuela"
-        },
-        {
             "name": "Nicolás Maduro",
-            "party": "Partido Socialista Unido de Venezuela"
-        },
-        {
-            "name": "Henrique Capriles",
-            "party": "Justice First"
-        },
-        {
-            "name": "María Corina Machado",
-            "party": "Vente Venezuela"
-        },
-        {
-            "name": "Juan Guaidó",
-            "party": "Voluntad Popular"
-        },
-        {
-            "name": "Hugo Chávez",
-            "party": "Partido Socialista Unido de Venezuela"
-        },
-        {
-            "name": "Henri Falcón",
-            "party": "Progressive Advance"
-        },
-        {
-            "name": "Leopoldo López",
-            "party": "Voluntad Popular"
-        },
-        {
-            "name": "Freddy Bernal",
-            "party": "Partido Socialista Unido de Venezuela"
+            "party": "United Socialist Party of Venezuela"
         }
     ],
-    "time": 17.4748854637146,
-    "tokens": 698
+    "time": 28.861744165420532,
+    "tokens": 1135
 }

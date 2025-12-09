@@ -5,7 +5,7 @@
         {
             "state_name": "Nevada",
             "capital": "Carson City",
-            "population": 3139651.0
+            "population": 3139641.0
         },
         {
             "state_name": "Iowa",
@@ -15,7 +15,7 @@
         {
             "state_name": "Utah",
             "capital": "Salt Lake City",
-            "population": 3255953.0
+            "population": 3255952.0
         },
         {
             "state_name": "Oklahoma",
@@ -28,9 +28,9 @@
             "population": 4237251.0
         },
         {
-            "state_name": "Louisiana",
-            "capital": "Baton Rouge",
-            "population": 4648794.0
+            "state_name": "Kentucky",
+            "capital": "Frankfort",
+            "population": 4461153.0
         },
         {
             "state_name": "Alabama",
@@ -38,9 +38,19 @@
             "population": 4903186.0
         },
         {
+            "state_name": "Michigan",
+            "capital": "Lansing",
+            "population": 5031827.0
+        },
+        {
+            "state_name": "South Carolina",
+            "capital": "Columbia",
+            "population": 5138374.0
+        },
+        {
             "state_name": "Minnesota",
             "capital": "Saint Paul",
-            "population": 5648222.0
+            "population": 5674219.0
         },
         {
             "state_name": "Colorado",
@@ -53,6 +63,31 @@
             "population": 5822564.0
         },
         {
+            "state_name": "Maryland",
+            "capital": "Annapolis",
+            "population": 6049949.0
+        },
+        {
+            "state_name": "Indiana",
+            "capital": "Indianapolis",
+            "population": 6732219.0
+        },
+        {
+            "state_name": "Massachusetts",
+            "capital": "Boston",
+            "population": 6892503.0
+        },
+        {
+            "state_name": "Tennessee",
+            "capital": "Nashville",
+            "population": 6892504.0
+        },
+        {
+            "state_name": "Ohio",
+            "capital": "Columbus",
+            "population": 7116449.0
+        },
+        {
             "state_name": "Arizona",
             "capital": "Phoenix",
             "population": 7278717.0
@@ -63,6 +98,6 @@
             "population": 7550481.0
         }
     ],
-    "time": 53.942394971847534,
-    "tokens": 2603
+    "time": 41.63061332702637,
+    "tokens": 1980
 }

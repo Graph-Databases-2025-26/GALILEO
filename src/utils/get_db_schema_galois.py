@@ -31,7 +31,9 @@ class GaloisSchemaManager:
     def get_attributes(self, table_name: str) -> List[str]:
         """ Retrieve all attributes (columns) for a table. """
         try:
-            result = self.con.execute(f"PRAGMA table_info('{table_name}')").fetchall()
+            query_template = get_attributes()
+            query = query_template.format(table_name=table_name)
+            result = self.con.execute(query).fetchall()
             # The 'name' column is at index 1
             return [row[1] for row in result]
         except duckdb.CatalogException:
@@ -53,11 +55,8 @@ class GaloisSchemaManager:
         Retrieves the exact name of the table in the database, ignoring case sensitivity.
         """
         try:
-            query = """
-SELECT table_name
-FROM information_schema.tables
-WHERE LOWER(table_name) = '{table_name}.lower()'
-"""
+            query_template = get_exact_table_name()
+            query = query_template.format(table_name=table_name.lower())
             result = self.con.execute(query).fetchone()
             return result[0] if result else None
         except duckdb.Error as e:
@@ -70,15 +69,8 @@ WHERE LOWER(table_name) = '{table_name}.lower()'
         Retrieve key attributes (Primary Key) for a table.
         """
         try:
-            query = """
-SELECT cols
-FROM (
-    SELECT unnest(constraint_column_names) AS cols, constraint_type, table_name
-    FROM duckdb_constraints()
-)
-WHERE table_name = '{table_name}'
-  AND constraint_type = 'PRIMARY KEY';
-"""
+            query_template = get_primary_keys(table_name)
+            query = query_template.format(table_name=table_name)
             result = self.con.execute(query).fetchall()
             keys = [row[0] for row in result]
 

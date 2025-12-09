@@ -1,0 +1,15 @@
+{
+    "result_set": [
+        {
+            "Company": "Nvidia",
+            "HeadquartersState": "California",
+            "Ticker": null,
+            "CEO": "Jensen Huang",
+            "Founder_is_CEO": null,
+            "FemaleCEO": null,
+            "Number_of_employees": "29,600"
+        }
+    ],
+    "time": 30.221,
+    "tokens": 81
+}

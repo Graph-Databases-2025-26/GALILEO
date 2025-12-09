@@ -3,37 +3,16 @@
     "sql": "SELECT DISTINCT lake_name FROM target.usa_lake WHERE area_squared_km > 750;",
     "result_set": [
         {
-            "lake_name": "Lake Malawi"
+            "lake_name": "Lake Ontario"
         },
         {
-            "lake_name": "Lake Mead"
+            "lake_name": "Lake Winnipegosis"
         },
         {
-            "lake_name": "Reindeer Lake"
+            "lake_name": "Great Salt Lake"
         },
         {
-            "lake_name": "Lake Tanganyika"
-        },
-        {
-            "lake_name": "Caspian Sea"
-        },
-        {
-            "lake_name": "Lake Issyk-Kul"
-        },
-        {
-            "lake_name": "Great Slave Lake"
-        },
-        {
-            "lake_name": "Lake Nipigon"
-        },
-        {
-            "lake_name": "Lake Baikal"
-        },
-        {
-            "lake_name": "Lake Victoria"
-        },
-        {
-            "lake_name": "Lake Sakakawea"
+            "lake_name": "Lake Erie"
         },
         {
             "lake_name": "Lake Oahe"
@@ -42,33 +21,24 @@
             "lake_name": "Lake Pontchartrain"
         },
         {
-            "lake_name": "Lake Superior"
+            "lake_name": "Lake of the Woods"
         },
         {
-            "lake_name": "Lake Huron"
+            "lake_name": "Lake Superior"
         },
         {
             "lake_name": "Lake Michigan"
         },
         {
+            "lake_name": "Lake Huron"
+        },
+        {
+            "lake_name": "Lake Sakakawea"
+        },
+        {
             "lake_name": "Lake Winnipeg"
-        },
-        {
-            "lake_name": "Lake of the Woods"
-        },
-        {
-            "lake_name": "Lake Powell"
-        },
-        {
-            "lake_name": "Great Salt Lake"
-        },
-        {
-            "lake_name": "Lake Winnipegosis"
-        },
-        {
-            "lake_name": "Lake Vostok"
         }
     ],
-    "time": 14.417593002319336,
-    "tokens": 679
+    "time": 14.059262990951538,
+    "tokens": 422
 }

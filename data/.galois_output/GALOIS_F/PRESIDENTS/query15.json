@@ -1,7 +1,80 @@
 {
     "query_id": 15,
     "sql": "SELECT p.name, p.party FROM target.world_presidents p WHERE p.country='United States' AND p.party='Republican';",
-    "result_set": [],
-    "time": 19.161976099014282,
-    "tokens": 1368
+    "result_set": [
+        {
+            "name": "William McKinley",
+            "party": "Republican"
+        },
+        {
+            "name": "Ulysses S. Grant",
+            "party": "Republican"
+        },
+        {
+            "name": "Rutherford B. Hayes",
+            "party": "Republican"
+        },
+        {
+            "name": "Calvin Coolidge",
+            "party": "Republican"
+        },
+        {
+            "name": "Theodore Roosevelt",
+            "party": "Republican"
+        },
+        {
+            "name": "Warren G. Harding",
+            "party": "Republican"
+        },
+        {
+            "name": "Gerald Ford",
+            "party": "Republican"
+        },
+        {
+            "name": "Ronald Reagan",
+            "party": "Republican"
+        },
+        {
+            "name": "Donald Trump",
+            "party": "Republican"
+        },
+        {
+            "name": "Herbert Hoover",
+            "party": "Republican"
+        },
+        {
+            "name": "Abraham Lincoln",
+            "party": "Republican"
+        },
+        {
+            "name": "Benjamin Harrison",
+            "party": "Republican"
+        },
+        {
+            "name": "Richard Nixon",
+            "party": "Republican"
+        },
+        {
+            "name": "Dwight D. Eisenhower",
+            "party": "Republican"
+        },
+        {
+            "name": "George W. Bush",
+            "party": "Republican"
+        },
+        {
+            "name": "Chester A. Arthur",
+            "party": "Republican"
+        },
+        {
+            "name": "George H.W. Bush",
+            "party": "Republican"
+        },
+        {
+            "name": "William Howard Taft",
+            "party": "Republican"
+        }
+    ],
+    "time": 46.59957265853882,
+    "tokens": 1424
 }

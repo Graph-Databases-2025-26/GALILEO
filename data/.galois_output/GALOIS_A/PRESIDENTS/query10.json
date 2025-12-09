@@ -7,37 +7,44 @@
             "party": "Democratic Action",
             "start_year": 1959,
             "end_year": 1964,
-            "cardinal_number": "1st"
+            "cardinal_number": "47th"
         },
         {
             "name": "Raúl Leoni",
             "party": "Democratic Action",
             "start_year": 1964,
             "end_year": 1969,
-            "cardinal_number": "2nd"
+            "cardinal_number": "48th"
         },
         {
             "name": "Carlos Andrés Pérez",
             "party": "Democratic Action",
             "start_year": 1974,
             "end_year": 1979,
-            "cardinal_number": "3rd"
+            "cardinal_number": "50th"
+        },
+        {
+            "name": "Luis Herrera Campins",
+            "party": "Democratic Action",
+            "start_year": 1979,
+            "end_year": 1984,
+            "cardinal_number": "51st"
         },
         {
             "name": "Jaime Lusinchi",
             "party": "Democratic Action",
             "start_year": 1984,
             "end_year": 1989,
-            "cardinal_number": "5th"
+            "cardinal_number": "52nd"
         },
         {
             "name": "Rafael Caldera",
             "party": "Democratic Action",
             "start_year": 1994,
             "end_year": 1999,
-            "cardinal_number": "7th"
+            "cardinal_number": "54th"
         }
     ],
-    "time": 29.909817934036255,
-    "tokens": 675
+    "time": 21.92234468460083,
+    "tokens": 841
 }

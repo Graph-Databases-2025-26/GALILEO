@@ -1,0 +1,143 @@
+{
+    "result_set": [
+        {
+            "home_team": "Arsenal",
+            "away_team": "Leicester City",
+            "home_goals": 4,
+            "away_goals": 2
+        },
+        {
+            "home_team": "Chelsea",
+            "away_team": "Manchester City",
+            "home_goals": 0,
+            "away_goals": 2
+        },
+        {
+            "home_team": "Manchester United",
+            "away_team": "Tottenham Hotspur",
+            "home_goals": 0,
+            "away_goals": 3
+        },
+        {
+            "home_team": "Leicester City",
+            "away_team": "Arsenal",
+            "home_goals": 1,
+            "away_goals": 2
+        },
+        {
+            "home_team": "Chelsea",
+            "away_team": "Brighton & Hove Albion",
+            "home_goals": 4,
+            "away_goals": 2
+        },
+        {
+            "home_team": "Newcastle United",
+            "away_team": "Tottenham Hotspur",
+            "home_goals": 2,
+            "away_goals": 1
+        },
+        {
+            "home_team": "Everton",
+            "away_team": "Brighton & Hove Albion",
+            "home_goals": 0,
+            "away_goals": 3
+        },
+        {
+            "home_team": "Aston Villa",
+            "away_team": "Everton",
+            "home_goals": 3,
+            "away_goals": 2
+        },
+        {
+            "home_team": "Manchester City",
+            "away_team": "Arsenal",
+            "home_goals": 2,
+            "away_goals": 2
+        },
+        {
+            "home_team": "Leicester City",
+            "away_team": "Aston Villa",
+            "home_goals": 1,
+            "away_goals": 2
+        },
+        {
+            "home_team": "Liverpool",
+            "away_team": "AFC Bournemouth",
+            "home_goals": 3,
+            "away_goals": 0
+        },
+        {
+            "home_team": "Manchester United",
+            "away_team": "Fulham",
+            "home_goals": 1,
+            "away_goals": 0
+        },
+        {
+            "home_team": "Crystal Palace",
+            "away_team": "Leicester City",
+            "home_goals": 2,
+            "away_goals": 2
+        },
+        {
+            "home_team": "Fulham",
+            "away_team": "Newcastle United",
+            "home_goals": 3,
+            "away_goals": 1
+        },
+        {
+            "home_team": "Bournemouth",
+            "away_team": "Newcastle United",
+            "home_goals": 1,
+            "away_goals": 1
+        },
+        {
+            "home_team": "West Ham United",
+            "away_team": "Chelsea",
+            "home_goals": 0,
+            "away_goals": 3
+        },
+        {
+            "home_team": "Aston Villa",
+            "away_team": "Arsenal",
+            "home_goals": 2,
+            "away_goals": 0
+        },
+        {
+            "home_team": "West Ham United",
+            "away_team": "Aston Villa",
+            "home_goals": 1,
+            "away_goals": 2
+        },
+        {
+            "home_team": "Newcastle United",
+            "away_team": "Manchester City",
+            "home_goals": 1,
+            "away_goals": 1
+        },
+        {
+            "home_team": "Manchester City",
+            "away_team": "Brentford",
+            "home_goals": 2,
+            "away_goals": 1
+        },
+        {
+            "home_team": "Liverpool",
+            "away_team": "Brentford",
+            "home_goals": 2,
+            "away_goals": 0
+        },
+        {
+            "home_team": "Haaland",
+            "away_team": "Ipswich Town",
+            "home_goals": 4,
+            "away_goals": 1
+        },
+        {
+            "home_team": "Fulham",
+            "away_team": "Leicester City",
+            "home_goals": 2
+        }
+    ],
+    "time": 21.562,
+    "tokens": 1024
+}

@@ -3,39 +3,39 @@
     "sql": "SELECT DISTINCT lake_name FROM target.usa_lake WHERE area_squared_km > 750;",
     "result_set": [
         {
-            "lake_name": "Lake Ontario"
-        },
-        {
-            "lake_name": "Lake Erie"
-        },
-        {
-            "lake_name": "Lake Oahe"
-        },
-        {
-            "lake_name": "Lake Huron"
-        },
-        {
-            "lake_name": "Lake Sakakawea"
-        },
-        {
-            "lake_name": "Lake Superior"
-        },
-        {
-            "lake_name": "Lake Michigan"
-        },
-        {
-            "lake_name": "Lake Pontchartrain"
+            "lake_name": "Lake Mohave"
         },
         {
             "lake_name": "Great Salt Lake"
         },
         {
-            "lake_name": "Lake Champlain"
+            "lake_name": "Lake Marion"
         },
         {
-            "lake_name": "Lake St. Clair"
+            "lake_name": "Lake Ontario"
+        },
+        {
+            "lake_name": "Lake Eufaula"
+        },
+        {
+            "lake_name": "Lake Michigan"
+        },
+        {
+            "lake_name": "Lake Huron"
+        },
+        {
+            "lake_name": "Lake Superior"
+        },
+        {
+            "lake_name": "Lake Erie"
+        },
+        {
+            "lake_name": "Lake Pontchartrain"
+        },
+        {
+            "lake_name": "Lake Champlain"
         }
     ],
-    "time": 33.790801763534546,
-    "tokens": 2420
+    "time": 31.618731021881104,
+    "tokens": 1404
 }

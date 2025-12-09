@@ -7,23 +7,23 @@
             "party": "Democratic",
             "start_year": 1961,
             "end_year": 1963,
-            "cardinal_number": "32"
+            "cardinal_number": "32nd"
         },
         {
             "name": "Lyndon B. Johnson",
             "party": "Democratic",
             "start_year": 1963,
             "end_year": 1969,
-            "cardinal_number": "33"
+            "cardinal_number": "35th"
         },
         {
             "name": "Jimmy Carter",
             "party": "Democratic",
             "start_year": 1977,
-            "end_year": 1977,
-            "cardinal_number": "35"
+            "end_year": 1981,
+            "cardinal_number": "39th"
         }
     ],
-    "time": 9.356637239456177,
-    "tokens": 577
+    "time": 14.555286645889282,
+    "tokens": 502
 }

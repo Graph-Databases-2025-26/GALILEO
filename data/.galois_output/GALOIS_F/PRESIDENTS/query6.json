@@ -3,104 +3,48 @@
     "sql": "SELECT p.name, p.start_year, p.end_year, p.cardinal_number, p.party FROM target.world_presidents p WHERE p.country='Venezuela';",
     "result_set": [
         {
-            "name": "Juan Vicente Gómez",
-            "start_year": 1908,
-            "end_year": 1935,
-            "cardinal_number": "1",
-            "party": "None"
+            "name": "Hugo Chavez",
+            "start_year": 1999,
+            "end_year": 2013,
+            "cardinal_number": "43rd",
+            "party": "Democratic Action"
         },
         {
-            "name": "Eleazar López Contreras",
-            "start_year": 1935,
-            "end_year": 1941,
-            "cardinal_number": "2",
-            "party": "None"
-        },
-        {
-            "name": "Isaías Medina Angarita",
-            "start_year": 1941,
-            "end_year": 1945,
-            "cardinal_number": "3",
-            "party": "None"
-        },
-        {
-            "name": "Rómulo Gallegos",
-            "start_year": 1948,
-            "end_year": 1948,
-            "cardinal_number": "4",
-            "party": "AD"
-        },
-        {
-            "name": "Marcos Pérez Jiménez",
-            "start_year": 1952,
-            "end_year": 1958,
-            "cardinal_number": "5",
-            "party": "None"
-        },
-        {
-            "name": "Rómulo Betancourt",
-            "start_year": 1959,
-            "end_year": 1964,
-            "cardinal_number": "6",
-            "party": "AD"
-        },
-        {
-            "name": "Raúl Leoni",
-            "start_year": 1964,
-            "end_year": 1969,
-            "cardinal_number": "7",
-            "party": "COPEI"
-        },
-        {
-            "name": "Rafael Caldera",
-            "start_year": 1969,
-            "end_year": 1974,
-            "cardinal_number": "8",
-            "party": "AD"
-        },
-        {
-            "name": "Carlos Andrés Pérez",
-            "start_year": 1974,
-            "end_year": 1979,
-            "cardinal_number": "9",
-            "party": "AD"
-        },
-        {
-            "name": "Luis Herrera Campins",
-            "start_year": 1979,
-            "end_year": 1984,
-            "cardinal_number": "10",
-            "party": "COPEI"
+            "name": "Nicolas Maduro",
+            "start_year": 2013,
+            "end_year": 2018,
+            "cardinal_number": "44th",
+            "party": "United Socialist Party of Venezuela"
         },
         {
             "name": "Jaime Lusinchi",
             "start_year": 1984,
             "end_year": 1989,
-            "cardinal_number": "11",
-            "party": "AD"
+            "cardinal_number": "37th",
+            "party": "COPEI"
         },
         {
-            "name": "Ramon José Velásquez",
-            "start_year": 1993,
+            "name": "Carlos Andres Perez",
+            "start_year": 1989,
             "end_year": 1994,
-            "cardinal_number": "13",
-            "party": "None"
+            "cardinal_number": "38th",
+            "party": "Democratic Action"
         },
         {
-            "name": "Hugo Chávez",
-            "start_year": 1999,
-            "end_year": 2007,
-            "cardinal_number": "15",
-            "party": "MVR"
+            "name": "Rafael Caldera",
+            "start_year": 1994,
+            "end_year": 1999,
+            "cardinal_number": "40th",
+            "party": "National Convergence"
         },
         {
-            "name": "Nicolás Maduro",
-            "start_year": 2013,
-            "end_year": 2019,
-            "cardinal_number": "17",
-            "party": "PSUV"
+            "name": "Juan Guaido",
+            "start_year": 2019,
+            "end_year": 2023,
+            "cardinal_number": "45th",
+            "party": "Popular Will"
         }
     ],
-    "time": 18.08874797821045,
-    "tokens": 1216
+    "time": 8.99959683418274,
+    "tokens": 357
 }

@@ -3,25 +3,37 @@
     "sql": "SELECT DISTINCT lake_name FROM target.usa_lake WHERE area_squared_km > 450;",
     "result_set": [
         {
+            "lake_name": "Lake Powell"
+        },
+        {
             "lake_name": "Lake Ontario"
         },
         {
-            "lake_name": "Lake Victoria"
+            "lake_name": "Lake Winnipegosis"
         },
         {
-            "lake_name": "Lake Nicaragua"
+            "lake_name": "Lake Tahoe"
         },
         {
-            "lake_name": "Lake Titicaca"
+            "lake_name": "Lake Erie"
         },
         {
-            "lake_name": "Lake Nipigon"
+            "lake_name": "Lake Oahe"
         },
         {
-            "lake_name": "Lake Vostok"
+            "lake_name": "Lake Pontchartrain"
         },
         {
-            "lake_name": "Great Lakes"
+            "lake_name": "Lake of the Woods"
+        },
+        {
+            "lake_name": "Lake Mead"
+        },
+        {
+            "lake_name": "Great Salt Lake"
+        },
+        {
+            "lake_name": "Lake Winnebago"
         },
         {
             "lake_name": "Lake Superior"
@@ -30,30 +42,15 @@
             "lake_name": "Lake Huron"
         },
         {
-            "lake_name": "Lake Erie"
-        },
-        {
             "lake_name": "Lake Michigan"
         },
         {
-            "lake_name": "Lake Turkana"
+            "lake_name": "Lake Sakakawea"
         },
         {
-            "lake_name": "Lake Malawi"
-        },
-        {
-            "lake_name": "Lake Issyk-Kul"
-        },
-        {
-            "lake_name": "Lake Ladoga"
-        },
-        {
-            "lake_name": "Great Salt Lake"
-        },
-        {
-            "lake_name": "Lake Tanganyika"
+            "lake_name": "Lake Winnipeg"
         }
     ],
-    "time": 14.722296476364136,
-    "tokens": 644
+    "time": 17.529037475585938,
+    "tokens": 422
 }

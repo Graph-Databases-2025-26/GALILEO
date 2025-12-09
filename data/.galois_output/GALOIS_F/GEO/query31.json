@@ -3,6 +3,11 @@
     "sql": "SELECT us.state_name, us.capital, us.population FROM target.usa_state us WHERE us.population > 3000000 AND us.population < 8000000 AND us.area_squared_miles > 50000 order by us.population;",
     "result_set": [
         {
+            "state_name": "Nevada",
+            "capital": "Carson City",
+            "population": 3132532
+        },
+        {
             "state_name": "Iowa",
             "capital": "Des Moines",
             "population": 3155070
@@ -10,17 +15,22 @@
         {
             "state_name": "Utah",
             "capital": "Salt Lake City",
-            "population": 3205958
+            "population": 3255954
         },
         {
             "state_name": "Oklahoma",
             "capital": "Oklahoma City",
-            "population": 3955091
+            "population": 3956971
         },
         {
             "state_name": "Oregon",
             "capital": "Salem",
             "population": 4237251
+        },
+        {
+            "state_name": "Louisiana",
+            "capital": "Baton Rouge",
+            "population": 4648794
         },
         {
             "state_name": "Alabama",
@@ -30,7 +40,7 @@
         {
             "state_name": "Minnesota",
             "capital": "St. Paul",
-            "population": 5648222
+            "population": 5639632
         },
         {
             "state_name": "Colorado",
@@ -43,11 +53,6 @@
             "population": 5822564
         },
         {
-            "state_name": "Missouri",
-            "capital": "Jefferson City",
-            "population": 6137422
-        },
-        {
             "state_name": "Arizona",
             "capital": "Phoenix",
             "population": 7278717
@@ -58,6 +63,6 @@
             "population": 7535591
         }
     ],
-    "time": 100.0841052532196,
-    "tokens": 7642
+    "time": 58.70297455787659,
+    "tokens": 1911
 }

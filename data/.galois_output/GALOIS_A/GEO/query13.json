@@ -1,7 +1,20 @@
 {
     "query_id": 13,
     "sql": "SELECT lake_name FROM target.usa_lake WHERE area_squared_km > 750 AND state_name = 'michigan';",
-    "result_set": [],
-    "time": 10.612120866775513,
-    "tokens": 475
+    "result_set": [
+        {
+            "lake_name": "Lake Superior"
+        },
+        {
+            "lake_name": "Lake Michigan"
+        },
+        {
+            "lake_name": "Lake Huron"
+        },
+        {
+            "lake_name": "Lake Erie"
+        }
+    ],
+    "time": 13.097293376922607,
+    "tokens": 393
 }

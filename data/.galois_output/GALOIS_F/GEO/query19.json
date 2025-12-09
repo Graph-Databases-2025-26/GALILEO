@@ -3,28 +3,127 @@
     "sql": "SELECT DISTINCT capital FROM target.usa_state;",
     "result_set": [
         {
-            "capital": "Montpelier"
+            "capital": "Indianapolis"
         },
         {
             "capital": "Trenton"
         },
         {
-            "capital": "Hartford"
+            "capital": "Frankfort"
+        },
+        {
+            "capital": "Phoenix"
+        },
+        {
+            "capital": "Juneau"
+        },
+        {
+            "capital": "Harrisburg"
+        },
+        {
+            "capital": "Augusta"
+        },
+        {
+            "capital": "Lansing"
+        },
+        {
+            "capital": "Austin"
         },
         {
             "capital": "Salem"
         },
         {
-            "capital": "Indianapolis"
+            "capital": "Hartford"
+        },
+        {
+            "capital": "Montpelier"
+        },
+        {
+            "capital": "Pierre"
+        },
+        {
+            "capital": "Cheyenne"
+        },
+        {
+            "capital": "Madison"
+        },
+        {
+            "capital": "Baton Rouge"
+        },
+        {
+            "capital": "Topeka"
+        },
+        {
+            "capital": "Bismarck"
+        },
+        {
+            "capital": "Denver"
+        },
+        {
+            "capital": "Jackson"
+        },
+        {
+            "capital": "Columbia"
         },
         {
             "capital": "Helena"
         },
         {
-            "capital": "Des Moines"
+            "capital": "Saint Paul"
         },
         {
-            "capital": "Denver"
+            "capital": "Tallahassee"
+        },
+        {
+            "capital": "Columbus"
+        },
+        {
+            "capital": "Boston"
+        },
+        {
+            "capital": "Olympia"
+        },
+        {
+            "capital": "Carson City"
+        },
+        {
+            "capital": "Annapolis"
+        },
+        {
+            "capital": "Boise"
+        },
+        {
+            "capital": "Honolulu"
+        },
+        {
+            "capital": "Nashville"
+        },
+        {
+            "capital": "Springfield"
+        },
+        {
+            "capital": "Montgomery"
+        },
+        {
+            "capital": "Lincoln"
+        },
+        {
+            "capital": "Oklahoma City"
+        },
+        {
+            "capital": "Sacramento"
+        },
+        {
+            "capital": "Salt Lake City"
+        },
+        {
+            "capital": "Santa Fe"
+        },
+        {
+            "capital": "Jefferson City"
+        },
+        {
+            "capital": "Des Moines"
         },
         {
             "capital": "Charleston"
@@ -33,126 +132,27 @@
             "capital": "Albany"
         },
         {
-            "capital": "Jefferson City"
-        },
-        {
-            "capital": "Columbia"
-        },
-        {
-            "capital": "Tallahassee"
-        },
-        {
-            "capital": "Jackson"
-        },
-        {
-            "capital": "Austin"
-        },
-        {
-            "capital": "Richmond"
-        },
-        {
-            "capital": "Lansing"
-        },
-        {
-            "capital": "Annapolis"
-        },
-        {
-            "capital": "Nashville"
-        },
-        {
-            "capital": "Boise"
-        },
-        {
-            "capital": "Carson City"
-        },
-        {
-            "capital": "Honolulu"
-        },
-        {
-            "capital": "St. Paul"
-        },
-        {
-            "capital": "Juneau"
-        },
-        {
-            "capital": "Augusta"
-        },
-        {
-            "capital": "Frankfort"
-        },
-        {
-            "capital": "Olympia"
-        },
-        {
-            "capital": "Harrisburg"
-        },
-        {
-            "capital": "Phoenix"
-        },
-        {
-            "capital": "Raleigh"
-        },
-        {
-            "capital": "Topeka"
-        },
-        {
-            "capital": "Atlanta"
-        },
-        {
-            "capital": "Dover"
-        },
-        {
-            "capital": "Bismarck"
-        },
-        {
-            "capital": "Little Rock"
-        },
-        {
-            "capital": "Baton Rouge"
-        },
-        {
-            "capital": "Madison"
-        },
-        {
-            "capital": "Oklahoma City"
+            "capital": "Concord"
         },
         {
             "capital": "Providence"
         },
         {
-            "capital": "Springfield"
+            "capital": "Richmond"
         },
         {
-            "capital": "Salt Lake City"
+            "capital": "Dover"
         },
         {
-            "capital": "Concord"
+            "capital": "Raleigh"
         },
         {
-            "capital": "Santa Fe"
+            "capital": "Atlanta"
         },
         {
-            "capital": "Sacramento"
-        },
-        {
-            "capital": "Lincoln"
-        },
-        {
-            "capital": "Montgomery"
-        },
-        {
-            "capital": "Columbus"
-        },
-        {
-            "capital": "Cheyenne"
-        },
-        {
-            "capital": "Boston"
-        },
-        {
-            "capital": "Pierre"
+            "capital": "Little Rock"
         }
     ],
-    "time": 18.00369429588318,
-    "tokens": 1253
+    "time": 23.285308361053467,
+    "tokens": 863
 }

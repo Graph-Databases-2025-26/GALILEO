@@ -6,6 +6,6 @@
             "count(DISTINCT usa_state_traversed)": 1
         }
     ],
-    "time": 13.604507207870483,
-    "tokens": 591
+    "time": 16.027206897735596,
+    "tokens": 701
 }

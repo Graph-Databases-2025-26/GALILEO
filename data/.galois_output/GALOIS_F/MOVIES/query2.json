@@ -3,24 +3,75 @@
     "sql": "SELECT m.originaltitle FROM target.movies m WHERE m.director='Steven Spielberg';",
     "result_set": [
         {
+            "originaltitle": "Empire of the Sun"
+        },
+        {
+            "originaltitle": "Indiana Jones and the Raiders of the Lost Ark"
+        },
+        {
+            "originaltitle": "Hook"
+        },
+        {
+            "originaltitle": "The Terminal"
+        },
+        {
+            "originaltitle": "Jaws"
+        },
+        {
+            "originaltitle": "Schindler's List"
+        },
+        {
+            "originaltitle": "Munich"
+        },
+        {
+            "originaltitle": "E.T. the Extra-Terrestrial"
+        },
+        {
             "originaltitle": "Saving Private Ryan"
         },
         {
             "originaltitle": "Jurassic Park"
         },
         {
-            "originaltitle": "E.T. the Extra-Terrestrial"
+            "originaltitle": "War of the Worlds"
         },
         {
-            "originaltitle": "Jaws"
+            "originaltitle": "A.I. Artificial Intelligence"
         },
         {
-            "originaltitle": "Indiana Jones and the Raiders of the Lost Ark"
+            "originaltitle": "Sugarland Express"
         },
         {
-            "originaltitle": "Schindler's List"
+            "originaltitle": "Amistad"
+        },
+        {
+            "originaltitle": "The Color Purple"
+        },
+        {
+            "originaltitle": "Lincoln"
+        },
+        {
+            "originaltitle": "1941"
+        },
+        {
+            "originaltitle": "Always"
+        },
+        {
+            "originaltitle": "Minority Report"
+        },
+        {
+            "originaltitle": "Catch Me If You Can"
+        },
+        {
+            "originaltitle": "Close Encounters of the Third Kind"
+        },
+        {
+            "originaltitle": "War Horse"
+        },
+        {
+            "originaltitle": "Duel"
         }
     ],
-    "time": 20.46575379371643,
-    "tokens": 1271
+    "time": 24.5930917263031,
+    "tokens": 675
 }

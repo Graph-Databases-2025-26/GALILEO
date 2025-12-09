@@ -3,14 +3,14 @@
     "sql": "SELECT party, count(*) num FROM target.world_presidents p WHERE p.country ='United States' AND start_year > 1800 AND end_year < 1900 group by p.party order by num desc;",
     "result_set": [
         {
-            "party": "Republican",
+            "party": "Republican Party",
             "num": 4
         },
         {
-            "party": "Democratic",
+            "party": "Democratic Party",
             "num": 1
         }
     ],
-    "time": 33.20186519622803,
-    "tokens": 1361
+    "time": 31.26911759376526,
+    "tokens": 1397
 }

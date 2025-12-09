@@ -3,114 +3,54 @@
     "sql": "SELECT m.originaltitle, m.startyear FROM target.movies m WHERE m.director='Steven Spielberg' AND m.startyear > 2000;",
     "result_set": [
         {
-            "originaltitle": "The Adventures of Tintin",
-            "startyear": 2011
+            "originaltitle": "The Terminal",
+            "startyear": 2004
+        },
+        {
+            "originaltitle": "The BFG",
+            "startyear": 2016
         },
         {
             "originaltitle": "Munich",
             "startyear": 2005
-        },
-        {
-            "originaltitle": "West Side Story",
-            "startyear": 2021
         },
         {
             "originaltitle": "Indiana Jones and the Kingdom of the Crystal Skull",
             "startyear": 2008
         },
         {
-            "originaltitle": "Munich",
+            "originaltitle": "War of the Worlds",
             "startyear": 2005
         },
         {
-            "originaltitle": "The BFG",
-            "startyear": 2016
+            "originaltitle": "A.I. Artificial Intelligence",
+            "startyear": 2001
+        },
+        {
+            "originaltitle": "Lincoln",
+            "startyear": 2012
+        },
+        {
+            "originaltitle": "Minority Report",
+            "startyear": 2002
+        },
+        {
+            "originaltitle": "Catch Me If You Can",
+            "startyear": 2002
+        },
+        {
+            "originaltitle": "Ready Player One",
+            "startyear": 2018
+        },
+        {
+            "originaltitle": "War Horse",
+            "startyear": 2011
         },
         {
             "originaltitle": "Bridge of Spies",
             "startyear": 2015
-        },
-        {
-            "originaltitle": "Ready Player One",
-            "startyear": 2018
-        },
-        {
-            "originaltitle": "War of the Worlds",
-            "startyear": 2005
-        },
-        {
-            "originaltitle": "Ready Player One",
-            "startyear": 2018
-        },
-        {
-            "originaltitle": "The Terminal",
-            "startyear": 2004
-        },
-        {
-            "originaltitle": "Catch Me If You Can",
-            "startyear": 2002
-        },
-        {
-            "originaltitle": "A.I. Artificial Intelligence",
-            "startyear": 2001
-        },
-        {
-            "originaltitle": "War Horse",
-            "startyear": 2011
-        },
-        {
-            "originaltitle": "Lincoln",
-            "startyear": 2012
-        },
-        {
-            "originaltitle": "War of the Worlds",
-            "startyear": 2005
-        },
-        {
-            "originaltitle": "Catch Me If You Can",
-            "startyear": 2002
-        },
-        {
-            "originaltitle": "Minority Report",
-            "startyear": 2002
-        },
-        {
-            "originaltitle": "Lincoln",
-            "startyear": 2012
-        },
-        {
-            "originaltitle": "War Horse",
-            "startyear": 2011
-        },
-        {
-            "originaltitle": "A.I. Artificial Intelligence",
-            "startyear": 2001
-        },
-        {
-            "originaltitle": "The Terminal",
-            "startyear": 2004
-        },
-        {
-            "originaltitle": "Indiana Jones and the Kingdom of the Crystal Skull",
-            "startyear": 2008
-        },
-        {
-            "originaltitle": "Minority Report",
-            "startyear": 2002
-        },
-        {
-            "originaltitle": "The BFG",
-            "startyear": 2016
-        },
-        {
-            "originaltitle": "The Adventures of Tintin",
-            "startyear": 2011
-        },
-        {
-            "originaltitle": "The Adventures of Tintin",
-            "startyear": 2011
         }
     ],
-    "time": 32.01110315322876,
-    "tokens": 2291
+    "time": 24.69214701652527,
+    "tokens": 1084
 }

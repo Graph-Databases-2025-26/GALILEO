@@ -3,9 +3,9 @@
     "sql": "SELECT avg(population) FROM target.usa_state;",
     "result_set": [
         {
-            "avg(population)": 331002651.0
+            "avg(population)": 331449281.0
         }
     ],
-    "time": 15.250890493392944,
-    "tokens": 682
+    "time": 33.85974383354187,
+    "tokens": 1066
 }

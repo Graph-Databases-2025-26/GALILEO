@@ -1,0 +1,46 @@
+{
+    "result_set": [
+        {
+            "Rank": "3",
+            "Company": "Apple"
+        },
+        {
+            "Rank": "66",
+            "Company": "StoneX Group"
+        },
+        {
+            "Rank": "90",
+            "Company": "Enterprise Products Partners"
+        },
+        {
+            "Rank": "95",
+            "Company": "The Coca-Cola Company"
+        },
+        {
+            "Rank": "127",
+            "Company": "Eli Lilly"
+        },
+        {
+            "Rank": "177",
+            "Company": "Halliburton"
+        },
+        {
+            "Rank": "270",
+            "Company": "Baxter International"
+        },
+        {
+            "Rank": "309",
+            "Company": "Labcorp Holdings"
+        },
+        {
+            "Rank": "312",
+            "Company": "Raymond James Financial"
+        },
+        {
+            "Rank": "344",
+            "Company": "Crown Holdings"
+        }
+    ],
+    "time": 33.435,
+    "tokens": 149
+}

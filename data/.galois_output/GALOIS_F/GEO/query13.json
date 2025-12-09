@@ -2,6 +2,6 @@
     "query_id": 13,
     "sql": "SELECT lake_name FROM target.usa_lake WHERE area_squared_km > 750 AND state_name = 'michigan';",
     "result_set": [],
-    "time": 78.95482301712036,
-    "tokens": 5860
+    "time": 17.506192684173584,
+    "tokens": 649
 }

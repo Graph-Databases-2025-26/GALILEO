@@ -1,7 +1,89 @@
 {
     "query_id": 2,
     "sql": "SELECT name FROM target.country WHERE CAST(independence_year AS INTEGER) > 1950;",
-    "result_set": [],
-    "time": 84.01868796348572,
-    "tokens": 6695
+    "result_set": [
+        {
+            "name": "Libya"
+        },
+        {
+            "name": "Morocco"
+        },
+        {
+            "name": "Belarus"
+        },
+        {
+            "name": "Sierra Leone"
+        },
+        {
+            "name": "Solomon Islands"
+        },
+        {
+            "name": "Tonga"
+        },
+        {
+            "name": "Botswana"
+        },
+        {
+            "name": "Belize"
+        },
+        {
+            "name": "Russia"
+        },
+        {
+            "name": "Palau"
+        },
+        {
+            "name": "Uganda"
+        },
+        {
+            "name": "Saint Lucia"
+        },
+        {
+            "name": "Ukraine"
+        },
+        {
+            "name": "Burkina Faso"
+        },
+        {
+            "name": "Malaysia"
+        },
+        {
+            "name": "Marshall Islands"
+        },
+        {
+            "name": "Montenegro"
+        },
+        {
+            "name": "Samoa"
+        },
+        {
+            "name": "East Timor"
+        },
+        {
+            "name": "Tuvalu"
+        },
+        {
+            "name": "Nauru"
+        },
+        {
+            "name": "Cape Verde"
+        },
+        {
+            "name": "Papua New Guinea"
+        },
+        {
+            "name": "Mauritania"
+        },
+        {
+            "name": "Vanuatu"
+        },
+        {
+            "name": "Cambodia"
+        },
+        {
+            "name": "Austria"
+        }
+    ],
+    "time": 80.02297163009644,
+    "tokens": 3172
 }

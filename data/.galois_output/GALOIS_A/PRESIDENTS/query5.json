@@ -3,18 +3,15 @@
     "sql": "SELECT p.name FROM target.world_presidents p WHERE p.country='Venezuela' AND p.party='Liberal' AND p.start_year > 1858;",
     "result_set": [
         {
-            "name": "Juan Crisostomo Falcón"
-        },
-        {
             "name": "Antonio Guzmán Blanco"
         },
         {
-            "name": "Cipriano Castro"
+            "name": "João Goulart"
         },
         {
-            "name": "Juan Vicente Gómez"
+            "name": "Andrés Velásquez"
         }
     ],
-    "time": 18.271986484527588,
-    "tokens": 787
+    "time": 13.137368440628052,
+    "tokens": 456
 }

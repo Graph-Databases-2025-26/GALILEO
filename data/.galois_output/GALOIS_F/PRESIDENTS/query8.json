@@ -3,9 +3,9 @@
     "sql": "SELECT count(*) FROM target.world_presidents p where p.country='Venezuela' AND p.start_year >= 1990  AND p.start_year < 2000;",
     "result_set": [
         {
-            "count_star()": 4
+            "count_star()": 1
         }
     ],
-    "time": 28.898521900177002,
-    "tokens": 2015
+    "time": 22.78641963005066,
+    "tokens": 935
 }

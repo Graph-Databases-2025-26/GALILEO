@@ -1,9 +1,8 @@
-from sqlalchemy import create_engine, inspect
+from sqlalchemy import create_engine, inspect, text
 from typing import List
-
 from src.utils import LOG, log_init, DATA_DIR, ERR_FILE_READ_FAILURE, ERR_INVALID_JSON_FORMAT, ERR_INVALID_TABLE_NAME
-
 import json
+from src.utils.constants import q_get_sample_values
 
 
 class BaseSchemaManager:
@@ -50,7 +49,25 @@ class BaseSchemaManager:
         else:
             LOG.error(ERR_INVALID_TABLE_NAME.format(table_name))
             return []
-            
+
+
+    def get_sample_values(self, table_name: str, column_name: str, limit: int = 3):
+        """
+        Retrieves a list of sample values with the purpose to help the LLM to understand the content of a specific column in a table.
+        """
+        try:
+            query = q_get_sample_values(table_name, column_name, limit)
+
+            with self.engine.connect() as connection:
+                try:
+                    connection.execute(text("USE target;"))
+                except Exception:
+                    pass
+                result = connection.execute(text(query)).fetchall()
+                return [row[0] for row in result]
+        except Exception as e:
+            LOG.error(f"Error retrieving sample values for {table_name}.{column_name}: {e}")
+            return []
     
     def get_json_schema(self, table_name: str, attribute_set: str) -> dict:
         """
@@ -64,39 +81,44 @@ class BaseSchemaManager:
         Returns:
             dict: A dictionary representing the JSON schema structure. Returns an empty list if the table_name is invalid.
         """
-        
+
         if self.db_schema.get(table_name, "") != "":
-            
+            # Filtriamo le colonne in base ad attribute_set (all, key, non_key)
+            # (Logica esistente da mantenere per selezionare 'target_cols')
             if attribute_set == "all":
-                return {
-                    "table_name": table_name,
-                    "type": "object",
-                    "attributes": {
-                        col["name"]: {"type": col["type"], "key": col["key"]} for col in self.db_schema[table_name]
-                    }
-                }
-                                
+                target_cols = self.db_schema[table_name]
             elif attribute_set == "key":
-                return {
-                    "table_name": table_name,
-                    "type": "object",
-                    "attributes": {
-                        col["name"]: {"type": col["type"], "key": col["key"]} for col in self.db_schema[table_name] if col.get("key") is True
-                    }
-                }
-            
-            elif attribute_set == "non_key":
-                return {
-                    "table_name": table_name,
-                    "type": "object",
-                    "attributes": {
-                        col["name"]: {"type": col["type"], "key": col["key"]} for col in self.db_schema[table_name] if col.get("key") is False
-                    }
-                }
-                
-        else:
-            LOG.error(ERR_INVALID_TABLE_NAME.format(table_name))
-            return []
+                target_cols = [c for c in self.db_schema[table_name] if c.get("key") is True]
+            else:  # non_key
+                target_cols = [c for c in self.db_schema[table_name] if c.get("key") is False]
+
+            attributes_dict = {}
+            for col in target_cols:
+                col_name = col["name"]
+                col_type = col["type"]
+
+                col_schema = {"type": col_type, "key": col["key"]}
+
+                # --- NUOVA LOGICA: INJECTION DEI VALORI ---
+                # Lo facciamo solo per tipi stringa (VARCHAR, TEXT) per risparmiare token
+                # e solo se NON è una chiave primaria (che avrebbe troppi valori unici e disordinati)
+                if "VARCHAR" in col_type.upper() or "TEXT" in col_type.upper():
+                    if not col["key"]:
+                        samples = self.get_sample_values(table_name, col_name)
+                        if samples:
+                            # Aggiungiamo gli esempi allo schema
+                            col_schema["examples"] = samples
+                            # Opzionale: Aggiungiamo anche alla descrizione per renderlo più esplicito all'LLM
+                            col_schema["description"] = f"Examples of valid values: {', '.join(samples)}"
+                # ------------------------------------------
+
+                attributes_dict[col_name] = col_schema
+
+            return {
+                "table_name": table_name,
+                "type": "object",
+                "attributes": attributes_dict
+            }
     
     
     def get_json_schema_from_set(self, table_name: str, attribute_set: List[str]):
@@ -113,16 +135,45 @@ class BaseSchemaManager:
             dict: A dictionary representing the JSON schema structure for the specified subset of attributes. Returns None if the table name 
                   is not found in the cached schema (`self.db_schema`).
         """
-        
+
         if self.db_schema.get(table_name, "") != "":
-            
+
+            # Creiamo un set per rendere la ricerca veloce (O(1))
+            target_attr_names = set(attribute_set)
+
+            attributes_dict = {}
+
+            # Iteriamo su tutte le colonne dello schema della tabella
+            for col in self.db_schema[table_name]:
+
+                # SELEZIONE: Prendiamo solo le colonne richieste in attribute_set
+                if col["name"] in target_attr_names:
+
+                    col_name = col["name"]
+                    col_type = col["type"]
+                    col_key = col["key"]
+
+                    col_schema = {"type": col_type, "key": col_key}
+
+                    # --- NUOVA LOGICA: INJECTION DEI VALORI ---
+                    # Identica a quella usata in get_json_schema
+                    if "VARCHAR" in col_type.upper() or "TEXT" in col_type.upper():
+                        if not col_key:
+                            samples = self.get_sample_values(table_name, col_name)
+                            if samples:
+                                col_schema["examples"] = samples
+                                col_schema["description"] = f"Examples of valid values: {', '.join(samples)}"
+                    # ------------------------------------------
+
+                    attributes_dict[col_name] = col_schema
+
             return {
                 "table_name": table_name,
-                    "type": "object",
-                    "attributes": {
-                        col["name"]: {"type": col["type"], "key": col["key"]} for col in self.db_schema[table_name] if col["name"] in set(attribute_set)    
-                    }
-            }     
+                "type": "object",
+                "attributes": attributes_dict
+            }
+
+        return None
       
             
     def dispose_manager(self) -> None:

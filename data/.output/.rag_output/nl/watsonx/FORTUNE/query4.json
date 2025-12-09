@@ -1,0 +1,24 @@
+{
+    "result_set": [
+        {
+            "HeadquartersCity": "Long Island City"
+        },
+        {
+            "HeadquartersCity": "Chicago"
+        },
+        {
+            "HeadquartersCity": "Seattle"
+        },
+        {
+            "HeadquartersCity": "Fort Worth"
+        },
+        {
+            "HeadquartersCity": "Dallas"
+        },
+        {
+            "HeadquartersCity": "Atlanta"
+        }
+    ],
+    "time": 30.618,
+    "tokens": 72
+}

@@ -5,25 +5,31 @@
         {
             "originaltitle": "Minority Report",
             "startyear": 2002,
-            "genres": "Action,Adventure,Sci-Fi",
+            "genres": "Action,Sci-Fi,Thriller",
+            "birthyear": 1946
+        },
+        {
+            "originaltitle": "The Terminal",
+            "startyear": 2004,
+            "genres": "Comedy,Drama,Romance",
             "birthyear": 1946
         },
         {
             "originaltitle": "War of the Worlds",
             "startyear": 2005,
-            "genres": "Action,Adventure,Thriller",
+            "genres": "Action,Adventure,Sci-Fi",
             "birthyear": 1946
         },
         {
             "originaltitle": "Indiana Jones and the Kingdom of the Crystal Skull",
             "startyear": 2008,
-            "genres": "Adventure,Drama",
+            "genres": "Action,Adventure,Fantasy",
             "birthyear": 1946
         },
         {
-            "originaltitle": "War Horse",
+            "originaltitle": "The Adventures of Tintin",
             "startyear": 2011,
-            "genres": "Adventure,Drama",
+            "genres": "Action,Adventure,Animation",
             "birthyear": 1946
         },
         {
@@ -33,42 +39,36 @@
             "birthyear": 1946
         },
         {
-            "originaltitle": "The BFG",
-            "startyear": 2016,
-            "genres": "Adventure,Drama,Fantasy",
+            "originaltitle": "Bridge of Spies",
+            "startyear": 2015,
+            "genres": "Drama,History,Thriller",
+            "birthyear": 1946
+        },
+        {
+            "originaltitle": "The Post",
+            "startyear": 2017,
+            "genres": "Drama,History,Thriller",
             "birthyear": 1946
         },
         {
             "originaltitle": "Ready Player One",
             "startyear": 2018,
-            "genres": "Adventure,Sci-Fi",
+            "genres": "Action,Adventure,Sci-Fi",
             "birthyear": 1946
         },
         {
-            "originaltitle": "Indiana Jones 5",
+            "originaltitle": "West Side Story",
+            "startyear": 2021,
+            "genres": "Crime,Drama,Musical",
+            "birthyear": 1946
+        },
+        {
+            "originaltitle": "The Fabelmans",
             "startyear": 2023,
-            "genres": "Action,Adventure",
-            "birthyear": 1946
-        },
-        {
-            "originaltitle": "Catch Me If You Can",
-            "startyear": 2002,
-            "genres": "Action,Adventure",
-            "birthyear": 1946
-        },
-        {
-            "originaltitle": "The Terminal",
-            "startyear": 2004,
-            "genres": "Drama",
-            "birthyear": 1946
-        },
-        {
-            "originaltitle": "Munich",
-            "startyear": 2005,
-            "genres": "Adventure,Drama",
+            "genres": "Biography,Drama",
             "birthyear": 1946
         }
     ],
-    "time": 22.069310903549194,
-    "tokens": 1627
+    "time": 23.060238122940063,
+    "tokens": 867
 }

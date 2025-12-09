@@ -3,22 +3,18 @@
     "sql": "SELECT m.originaltitle, m.startyear FROM target.movies m WHERE m.director='Richard Thorpe' AND m.startyear > 1950;",
     "result_set": [
         {
+            "originaltitle": "The Thin Gray Line",
+            "startyear": 1954
+        },
+        {
             "originaltitle": "Tip on a Dead Jockey",
             "startyear": 1957
         },
         {
             "originaltitle": "The Last Challenge",
             "startyear": 1967
-        },
-        {
-            "originaltitle": "Ivanhoe",
-            "startyear": 1952
-        },
-        {
-            "originaltitle": "Knights of the Round Table",
-            "startyear": 1953
         }
     ],
-    "time": 13.353727102279663,
-    "tokens": 534
+    "time": 15.309353351593018,
+    "tokens": 702
 }

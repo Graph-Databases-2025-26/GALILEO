@@ -1,0 +1,108 @@
+{
+    "result_set": [
+        {
+            "match_date_month": 9,
+            "match_date_year": 2024,
+            "match_date_day": 28,
+            "opponent_team": "Leicester City"
+        },
+        {
+            "match_date_month": 9,
+            "match_date_year": 2024,
+            "match_date_day": 21,
+            "opponent_team": "Tottenham Hotspur"
+        },
+        {
+            "match_date_month": 8,
+            "match_date_year": 2024,
+            "match_date_day": 31,
+            "opponent_team": "Brighton & Hove Albion"
+        },
+        {
+            "match_date_month": 9,
+            "match_date_year": 2024,
+            "match_date_day": 15,
+            "opponent_team": "Chelsea"
+        },
+        {
+            "match_date_month": 8,
+            "match_date_year": 2024,
+            "match_date_day": 25,
+            "opponent_team": "Newcastle United"
+        },
+        {
+            "match_date_month": 9,
+            "match_date_year": 2024,
+            "match_date_day": 1,
+            "opponent_team": "Brighton & Hove Albion"
+        },
+        {
+            "match_date_month": 9,
+            "match_date_year": 2024,
+            "match_date_day": 28,
+            "opponent_team": "Leicester City"
+        },
+        {
+            "match_date_month": 8,
+            "match_date_year": 2024,
+            "match_date_day": 17,
+            "opponent_team": "Aston Villa"
+        },
+        {
+            "match_date_month": 9,
+            "match_date_year": 2024,
+            "match_date_day": 1,
+            "opponent_team": "Newcastle United"
+        },
+        {
+            "match_date_month": 8,
+            "match_date_year": 2024,
+            "match_date_day": 17,
+            "opponent_team": "Wolverhampton Wanderers"
+        },
+        {
+            "match_date_month": 9,
+            "match_date_year": 2024,
+            "match_date_day": 22,
+            "opponent_team": "Manchester City"
+        },
+        {
+            "match_date_month": 9,
+            "match_date_year": 2024,
+            "match_date_day": 29,
+            "opponent_team": "Southampton"
+        },
+        {
+            "match_date_month": 8,
+            "match_date_year": 2024,
+            "match_date_day": 31,
+            "opponent_team": "Aston Villa"
+        },
+        {
+            "match_date_month": 9,
+            "match_date_year": 2024,
+            "match_date_day": 28,
+            "opponent_team": "Newcastle United"
+        },
+        {
+            "match_date_month": 8,
+            "match_date_year": 2024,
+            "match_date_day": 16,
+            "opponent_team": "Fulham"
+        },
+        {
+            "match_date_month": 9,
+            "match_date_year": 2024,
+            "match_date_day": 15,
+            "opponent_team": "Wolverhampton Wanderers"
+        },
+        {
+            "match_date_month": 9,
+            "match_date_year": 2024,
+            "match_date_day": 1,
+            "opponent_team": "Manchester United"
+        }
+    ],
+    "time": 20.094,
+    "tokens": 941
+}

@@ -1,0 +1,13 @@
+{
+    "result_set": [
+        {
+            "day_of_the_week": "",
+            "opponent_team": "Arsenal",
+            "match_date_month": 8,
+            "match_date_year": 2024,
+            "match_date_day": 17
+        }
+    ],
+    "time": 12.756,
+    "tokens": 76
+}

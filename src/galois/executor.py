@@ -1,3 +1,4 @@
+import re
 from typing import Any, Dict, List, Optional, Union
 from langchain_core.runnables import RunnableLambda
 from langchain_core.prompts import ChatPromptTemplate
@@ -5,7 +6,8 @@ from langchain_core.output_parsers import PydanticOutputParser
 from langchain_classic.base_memory import BaseMemory
 from pydantic import BaseModel, RootModel, Field 
 
-from .galois_prompts import KEY_SCAN_FIRST_PROMPT, KEY_SCAN_ITER_PROMPT, KEY_SCAN_TUPLE_PROMPT, TABLE_SCAN_FIRST_PROMPT, TABLE_SCAN_ITER_PROMPT, build_condition 
+from .galois_prompts import KEY_SCAN_FIRST_PROMPT, KEY_SCAN_ITER_PROMPT, KEY_SCAN_TUPLE_PROMPT, TABLE_SCAN_FIRST_PROMPT, \
+    TABLE_SCAN_ITER_PROMPT, build_condition, TABLE_KEY_SCAN_ITER_PROMPT_PAGINATION
 from .schema_factory import GaloisSchemaManagerWrapper
 
 from src.config import AppConfig, Config_Loader
@@ -252,7 +254,23 @@ class GaloisExecutor:
             "history": input_d["history"],
             "prompt_t": input_d["prompt_t"]
         }
-        
+
+        """Implementation of pagination for enhancing performance: at each iteration for generate new values, the LLM will start from the last value that it returned in the
+        previous iteration , in this way it has a starting point for generating new values.
+        """
+        last_val = "START"
+
+        #recevoery the actual memory
+        current_memory = self.g_memory.get_memory
+
+        if current_memory and len(current_memory) >0:
+            last_record = current_memory[-1]
+            if last_record:
+                first_key = list(last_record.keys())[0]
+                last_val = str(last_record[first_key])
+
+        output["last_val"] = last_val
+
         if input_d["prompt_t"] not in  ["key_i", "table_i"]:
 
             parsed_q = parse_sql(input_d["query"])
@@ -327,10 +345,10 @@ class GaloisExecutor:
         
         Human_prompt ={
             "key_f": KEY_SCAN_FIRST_PROMPT,
-            "key_i": KEY_SCAN_ITER_PROMPT,
+            "key_i": TABLE_KEY_SCAN_ITER_PROMPT_PAGINATION,
             "key_t": KEY_SCAN_TUPLE_PROMPT,
             "table_f": TABLE_SCAN_FIRST_PROMPT,
-            "table_i": TABLE_SCAN_ITER_PROMPT 
+            "table_i": TABLE_KEY_SCAN_ITER_PROMPT_PAGINATION
         }
         
         return {
@@ -430,6 +448,7 @@ class GaloisExecutor:
                 t_end = time.time()
                 
                 content_fixed = raw_response.content.replace("\\'", "'")
+                content_fixed = repair_json_content(content_fixed)
                 response = self.resp_parser.parse(content_fixed)
                 LOG.info(f"LLM Response Parsed: {response.root}")
                 
@@ -511,8 +530,11 @@ class GaloisExecutor:
                     raw_response = chain.invoke(input_d)
                 
                 t_end = time.time()
+
+                content_fixed = raw_response.content.replace("\\'", "'")
+                content_fixed = repair_json_content(content_fixed)
                 
-                response = self.resp_parser.parse(raw_response.content)
+                response = self.resp_parser.parse(content_fixed)
                 LOG.info(f"LLM Response Parsed: {response.root}")
                 
                 self.g_memory.save_context(
@@ -540,6 +562,48 @@ class GaloisExecutor:
         self.g_memory.clear()
         
         return output
+
+    import re
+
+def repair_json_content(json_str: str) -> str:
+    """
+    Tenta di riparare errori comuni nel JSON generato dagli LLM.
+    """
+    original_str = json_str
+    # 1. Rimuove blocchi Markdown (```json ... ```) se presenti
+    json_str = json_str.strip()
+    if json_str.startswith("```"):
+        # Rimuove la prima riga (es. ```json)
+        json_str = re.sub(r"^```[a-zA-Z]*\n", "", json_str)
+        # Rimuove l'ultima riga (```)
+        json_str = re.sub(r"\n```$", "", json_str)
+        json_str = json_str.strip()
+
+    match = re.search(r'[\[\{]', json_str)
+    if match:
+        start_idx = match.start()
+        if start_idx > 0:
+            # Se trova spazzatura prima, la taglia via
+            json_str = json_str[start_idx:]
+
+            # Cerca anche l'ultima parentesi valida per pulire la coda
+            last_idx = max(json_str.rfind(']'), json_str.rfind('}'))
+            if last_idx != -1:
+                json_str = json_str[:last_idx + 1]
+
+
+    # 2. FIX CRITICO PER IL TUO ERRORE: "key": ,  --> "key": null,
+    # Cerca due punti, spazi opzionali e poi subito una virgola o parentesi chiusa
+    json_str = re.sub(r':\s*,', ': null,', json_str)
+    json_str = re.sub(r':\s*}', ': null}', json_str)
+
+    # 3. Rimuove virgole "trailing" (es. [1, 2,]) che rompono il parser Python standard
+    json_str = re.sub(r',\s*([\]}])', r'\1', json_str)
+
+    if json_str != original_str:
+        LOG.warning("Malformed JSON detected and repaired automatically.")
+
+    return json_str
 
         
 

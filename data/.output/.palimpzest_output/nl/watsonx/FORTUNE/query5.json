@@ -1,0 +1,12 @@
+{
+    "result_set": [
+        {
+            "Company": "Microsoft",
+            "Sector": "Technology",
+            "Profitable": true,
+            "Founder_is_CEO": true
+        }
+    ],
+    "time": 27.729,
+    "tokens": 50
+}

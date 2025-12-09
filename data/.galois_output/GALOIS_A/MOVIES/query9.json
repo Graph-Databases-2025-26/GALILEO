@@ -3,10 +3,10 @@
     "sql": "SELECT m.director, (m.startyear - m.birthyear) as director_age FROM target.movies m WHERE m.startyear is not null AND m.birthyear is not null order by director_age desc limit 1;",
     "result_set": [
         {
-            "director": "Lee Ang",
-            "director_age": 33
+            "director": "Gerardo Chijona",
+            "director_age": 55
         }
     ],
-    "time": 9.764951944351196,
-    "tokens": 285
+    "time": 4.954246520996094,
+    "tokens": 228
 }

@@ -3,175 +3,82 @@
     "sql": "SELECT name FROM target.country WHERE CAST(independence_year AS INTEGER) > 1950;",
     "result_set": [
         {
-            "name": "Qatar"
+            "name": "Sierra Leone"
         },
         {
-            "name": "Cameroon"
+            "name": "Gambia"
         },
         {
-            "name": "Tuvalu"
+            "name": "Serbia"
         },
         {
-            "name": "Montenegro"
-        },
-        {
-            "name": "Comoros"
-        },
-        {
-            "name": "Equatorial Guinea"
-        },
-        {
-            "name": "Malta"
-        },
-        {
-            "name": "Bahamas"
-        },
-        {
-            "name": "Uganda"
-        },
-        {
-            "name": "Guinea"
-        },
-        {
-            "name": "Oman"
-        },
-        {
-            "name": "Malawi"
-        },
-        {
-            "name": "Libya"
-        },
-        {
-            "name": "Croatia"
-        },
-        {
-            "name": "Benin"
-        },
-        {
-            "name": "Cook Islands"
-        },
-        {
-            "name": "East Timor"
-        },
-        {
-            "name": "Chad"
-        },
-        {
-            "name": "Saint Kitts and Nevis"
-        },
-        {
-            "name": "Singapore"
-        },
-        {
-            "name": "North Macedonia"
-        },
-        {
-            "name": "Kenya"
-        },
-        {
-            "name": "Guyana"
-        },
-        {
-            "name": "Dominica"
-        },
-        {
-            "name": "Bangladesh"
-        },
-        {
-            "name": "Uzbekistan"
-        },
-        {
-            "name": "Botswana"
-        },
-        {
-            "name": "Malaysia"
-        },
-        {
-            "name": "Saint Lucia"
-        },
-        {
-            "name": "Central African Republic"
-        },
-        {
-            "name": "Madagascar"
-        },
-        {
-            "name": "South Africa"
-        },
-        {
-            "name": "Nigeria"
-        },
-        {
-            "name": "Fiji"
-        },
-        {
-            "name": "Togo"
-        },
-        {
-            "name": "Swaziland"
-        },
-        {
-            "name": "Palau"
-        },
-        {
-            "name": "Antigua and Barbuda"
-        },
-        {
-            "name": "Namibia"
-        },
-        {
-            "name": "Guinea-Bissau"
-        },
-        {
-            "name": "Saint Vincent and the Grenadines"
-        },
-        {
-            "name": "Tonga"
-        },
-        {
-            "name": "Maldives"
-        },
-        {
-            "name": "Bosnia and Herzegovina"
-        },
-        {
-            "name": "Kuwait"
-        },
-        {
-            "name": "Slovenia"
-        },
-        {
-            "name": "Greenland"
-        },
-        {
-            "name": "Tunisia"
-        },
-        {
-            "name": "United Arab Emirates"
-        },
-        {
-            "name": "Mauritius"
-        },
-        {
-            "name": "Djibouti"
-        },
-        {
-            "name": "Gabon"
-        },
-        {
-            "name": "Cayman Islands"
+            "name": "Lithuania"
         },
         {
             "name": "Zambia"
         },
         {
-            "name": "Belarus"
+            "name": "Djibouti"
         },
         {
-            "name": "Trinidad and Tobago"
+            "name": "Maldives"
         },
         {
-            "name": "Seychelles"
+            "name": "Moldova"
+        },
+        {
+            "name": "Nauru"
+        },
+        {
+            "name": "Nigeria"
+        },
+        {
+            "name": "Swaziland"
+        },
+        {
+            "name": "Russia"
+        },
+        {
+            "name": "East Timor"
+        },
+        {
+            "name": "Kyrgyzstan"
+        },
+        {
+            "name": "Mali"
+        },
+        {
+            "name": "Micronesia"
+        },
+        {
+            "name": "Grenada"
+        },
+        {
+            "name": "Namibia"
+        },
+        {
+            "name": "Morocco"
+        },
+        {
+            "name": "Algeria"
+        },
+        {
+            "name": "Tanzania"
+        },
+        {
+            "name": "Belize"
+        },
+        {
+            "name": "Qatar"
+        },
+        {
+            "name": "Botswana"
+        },
+        {
+            "name": "Angola"
+        },
+        {
+            "name": "Madagascar"
         },
         {
             "name": "Côte d'Ivoire"
@@ -180,159 +87,36 @@
             "name": "Jamaica"
         },
         {
-            "name": "Moldova"
+            "name": "Tuvalu"
         },
         {
-            "name": "Mauritania"
-        },
-        {
-            "name": "Laos"
-        },
-        {
-            "name": "Palestine"
-        },
-        {
-            "name": "Mali"
-        },
-        {
-            "name": "Montserrat"
-        },
-        {
-            "name": "São Tomé and Principe"
-        },
-        {
-            "name": "Ukraine"
-        },
-        {
-            "name": "Serbia"
-        },
-        {
-            "name": "Turkmenistan"
-        },
-        {
-            "name": "Zimbabwe"
-        },
-        {
-            "name": "Gambia"
-        },
-        {
-            "name": "Congo (Brazzaville)"
-        },
-        {
-            "name": "Mexico"
-        },
-        {
-            "name": "Somalia"
-        },
-        {
-            "name": "Vanuatu"
-        },
-        {
-            "name": "Nauru"
-        },
-        {
-            "name": "Papua New Guinea"
+            "name": "Barbados"
         },
         {
             "name": "Cambodia"
         },
         {
-            "name": "Ghana"
+            "name": "Malawi"
         },
         {
-            "name": "Senegal"
+            "name": "Comoros"
         },
         {
-            "name": "Grenada"
+            "name": "Laos"
         },
         {
-            "name": "British Virgin Islands"
+            "name": "South Sudan"
         },
         {
-            "name": "Cape Verde"
+            "name": "Tonga"
         },
         {
-            "name": "Suriname"
+            "name": "Kuwait"
         },
         {
-            "name": "Gambia"
-        },
-        {
-            "name": "Tajikistan"
-        },
-        {
-            "name": "Mozambique"
-        },
-        {
-            "name": "Russia"
-        },
-        {
-            "name": "Slovakia"
-        },
-        {
-            "name": "Burkina Faso"
-        },
-        {
-            "name": "Sierra Leone"
-        },
-        {
-            "name": "Niger"
-        },
-        {
-            "name": "Cyprus"
-        },
-        {
-            "name": "Kyrgyzstan"
-        },
-        {
-            "name": "Belize"
-        },
-        {
-            "name": "Kazakhstan"
-        },
-        {
-            "name": "Armenia"
-        },
-        {
-            "name": "Georgia"
-        },
-        {
-            "name": "Eritrea"
-        },
-        {
-            "name": "Bahrain"
-        },
-        {
-            "name": "Kiribati"
-        },
-        {
-            "name": "Tokelau"
-        },
-        {
-            "name": "Niue"
-        },
-        {
-            "name": "Tanzania"
-        },
-        {
-            "name": "Congo (Kinshasa)"
-        },
-        {
-            "name": "Turks and Caicos Islands"
-        },
-        {
-            "name": "Burundi"
-        },
-        {
-            "name": "Samoa"
-        },
-        {
-            "name": "Rwanda"
-        },
-        {
-            "name": "Sudan"
+            "name": "Oman"
         }
     ],
-    "time": 61.94686722755432,
-    "tokens": 4866
+    "time": 60.77163743972778,
+    "tokens": 2463
 }

@@ -3,15 +3,12 @@
     "sql": "SELECT p.name FROM target.world_presidents p WHERE p.country='Venezuela' AND p.party='Liberal';",
     "result_set": [
         {
-            "name": "Ricardo Hausmann"
+            "name": "Rómulo Betancourt"
         },
         {
-            "name": "Rafael Caldera"
-        },
-        {
-            "name": "Carlos Andres Perez"
+            "name": "Rómulo Gallegos"
         }
     ],
-    "time": 12.954055070877075,
-    "tokens": 644
+    "time": 4.645262956619263,
+    "tokens": 190
 }

@@ -3,10 +3,6 @@
     "sql": "SELECT us.state_name, us.capital FROM target.usa_state us WHERE us.population > 3000000 AND us.area_squared_miles > 50000 order by us.capital;",
     "result_set": [
         {
-            "state_name": "New York",
-            "capital": "Albany"
-        },
-        {
             "state_name": "Georgia",
             "capital": "Atlanta"
         },
@@ -15,8 +11,16 @@
             "capital": "Austin"
         },
         {
-            "state_name": "Nevada",
-            "capital": "Carson City"
+            "state_name": "Massachusetts",
+            "capital": "Boston"
+        },
+        {
+            "state_name": "South Carolina",
+            "capital": "Columbia"
+        },
+        {
+            "state_name": "Ohio",
+            "capital": "Columbus"
         },
         {
             "state_name": "Colorado",
@@ -27,8 +31,20 @@
             "capital": "Des Moines"
         },
         {
+            "state_name": "Connecticut",
+            "capital": "Hartford"
+        },
+        {
+            "state_name": "Alaska",
+            "capital": "Juneau"
+        },
+        {
             "state_name": "Michigan",
             "capital": "Lansing"
+        },
+        {
+            "state_name": "Arkansas",
+            "capital": "Little Rock"
         },
         {
             "state_name": "Wisconsin",
@@ -37,6 +53,10 @@
         {
             "state_name": "Alabama",
             "capital": "Montgomery"
+        },
+        {
+            "state_name": "Tennessee",
+            "capital": "Nashville"
         },
         {
             "state_name": "Oklahoma",
@@ -55,30 +75,26 @@
             "capital": "Raleigh"
         },
         {
+            "state_name": "Virginia",
+            "capital": "Richmond"
+        },
+        {
             "state_name": "California",
             "capital": "Sacramento"
         },
         {
-            "state_name": "Minnesota",
-            "capital": "Saint Paul"
+            "state_name": "New Mexico",
+            "capital": "Santa Fe"
         },
         {
-            "state_name": "Oregon",
-            "capital": "Salem"
+            "state_name": "Kansas",
+            "capital": "Topeka"
         },
         {
-            "state_name": "Utah",
-            "capital": "Salt Lake City"
-        },
-        {
-            "state_name": "Illinois",
-            "capital": "Springfield"
-        },
-        {
-            "state_name": "Florida",
-            "capital": "Tallahassee"
+            "state_name": "New Jersey",
+            "capital": "Trenton"
         }
     ],
-    "time": 36.217464208602905,
-    "tokens": 1605
+    "time": 34.89247488975525,
+    "tokens": 1468
 }

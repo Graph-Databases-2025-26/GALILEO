@@ -1,20 +1,7 @@
 {
     "query_id": 1,
     "sql": "SELECT a.name FROM target.airports a WHERE a.elevation_in_ft >= -50 and a.elevation_in_ft <= 50;",
-    "result_set": [
-        {
-            "name": "Wiley Post-Will Rogers Memorial Airport"
-        },
-        {
-            "name": "Gustavus Airport"
-        },
-        {
-            "name": "Unalaska Airport"
-        },
-        {
-            "name": "Juneau International Airport"
-        }
-    ],
-    "time": 5.7881691455841064,
-    "tokens": 266
+    "result_set": [],
+    "time": 15.034769296646118,
+    "tokens": 435
 }

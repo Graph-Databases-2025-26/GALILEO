@@ -3,18 +3,6 @@
     "sql": "SELECT us.state_name, us.capital FROM target.usa_state us WHERE us.population > 3000000 AND us.area_squared_miles > 50000 order by us.capital;",
     "result_set": [
         {
-            "state_name": "New York",
-            "capital": "Albany"
-        },
-        {
-            "state_name": "Georgia",
-            "capital": "Atlanta"
-        },
-        {
-            "state_name": "Texas",
-            "capital": "Austin"
-        },
-        {
             "state_name": "Louisiana",
             "capital": "Baton Rouge"
         },
@@ -59,34 +47,14 @@
             "capital": "Phoenix"
         },
         {
-            "state_name": "North Carolina",
-            "capital": "Raleigh"
-        },
-        {
-            "state_name": "California",
-            "capital": "Sacramento"
-        },
-        {
             "state_name": "Oregon",
             "capital": "Salem"
         },
         {
-            "state_name": "Utah",
-            "capital": "Salt Lake City"
-        },
-        {
             "state_name": "Illinois",
             "capital": "Springfield"
-        },
-        {
-            "state_name": "Minnesota",
-            "capital": "St. Paul"
-        },
-        {
-            "state_name": "Florida",
-            "capital": "Tallahassee"
         }
     ],
-    "time": 32.11994385719299,
-    "tokens": 2497
+    "time": 32.44333577156067,
+    "tokens": 1468
 }

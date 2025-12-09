@@ -1,0 +1,46 @@
+{
+    "result_set": [
+        {
+            "Rank": 3,
+            "Company": "Apple"
+        },
+        {
+            "Rank": 1,
+            "Company": "Microsoft"
+        },
+        {
+            "Rank": 2,
+            "Company": "Alphabet"
+        },
+        {
+            "Rank": 4,
+            "Company": "Amazon"
+        },
+        {
+            "Rank": 5,
+            "Company": "Facebook"
+        },
+        {
+            "Rank": 6,
+            "Company": "Berkshire Hathaway"
+        },
+        {
+            "Rank": 7,
+            "Company": "Johnson & Johnson"
+        },
+        {
+            "Rank": 8,
+            "Company": "JPMorgan Chase & Co."
+        },
+        {
+            "Rank": 9,
+            "Company": "Exxon Mobil"
+        },
+        {
+            "Rank": 10,
+            "Company": "General Motors"
+        }
+    ],
+    "time": 29.769,
+    "tokens": 216
+}

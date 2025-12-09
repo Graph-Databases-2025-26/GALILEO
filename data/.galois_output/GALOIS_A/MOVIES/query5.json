@@ -3,78 +3,72 @@
     "sql": "SELECT m.originaltitle, m.startyear, m.genres, m.birthyear FROM target.movies m WHERE m.director='Steven Spielberg' AND m.startyear > 2000;",
     "result_set": [
         {
-            "originaltitle": "Catch Me If You Can",
+            "originaltitle": "Minority Report",
             "startyear": 2002,
-            "genres": "Adventure, Drama",
+            "genres": "Action,Adventure,Sci-Fi",
             "birthyear": 1946
         },
         {
-            "originaltitle": "Minority Report",
-            "startyear": 2002,
-            "genres": "Action, Adventure, Thriller",
+            "originaltitle": "The Terminal",
+            "startyear": 2004,
+            "genres": "Adventure,Drama",
             "birthyear": 1946
         },
         {
             "originaltitle": "War of the Worlds",
             "startyear": 2005,
-            "genres": "Adventure, Drama",
+            "genres": "Adventure,Drama",
+            "birthyear": 1946
+        },
+        {
+            "originaltitle": "Indiana Jones and the Kingdom of the Crystal Skull",
+            "startyear": 2008,
+            "genres": "Action,Adventure",
             "birthyear": 1946
         },
         {
             "originaltitle": "The Adventures of Tintin",
             "startyear": 2011,
-            "genres": "Adventure, Drama",
-            "birthyear": 1946
-        },
-        {
-            "originaltitle": "War Horse",
-            "startyear": 2011,
-            "genres": "Adventure, Drama, War",
+            "genres": "Adventure,Fantasy",
             "birthyear": 1946
         },
         {
             "originaltitle": "Lincoln",
             "startyear": 2012,
-            "genres": "Biography, Drama, History",
+            "genres": "Biography,Drama,History",
             "birthyear": 1946
         },
         {
             "originaltitle": "Bridge of Spies",
             "startyear": 2015,
-            "genres": "Adventure, Drama",
+            "genres": "Cold War,Drama,Thriller",
             "birthyear": 1946
         },
         {
-            "originaltitle": "The BFG",
+            "originaltitle": "The Post",
             "startyear": 2017,
-            "genres": "Adventure, Drama",
+            "genres": "Drama,History",
             "birthyear": 1946
         },
         {
             "originaltitle": "Ready Player One",
-            "startyear": 2017,
-            "genres": "Adventure, Drama",
-            "birthyear": 1946
-        },
-        {
-            "originaltitle": "Jurassic World: Fallen Kingdom",
             "startyear": 2018,
-            "genres": "Adventure, Drama",
+            "genres": "Adventure,Sci-Fi",
             "birthyear": 1946
         },
         {
             "originaltitle": "West Side Story",
-            "startyear": 2020,
-            "genres": "Adventure, Drama",
+            "startyear": 2021,
+            "genres": "Adventure,Comedy,Family",
             "birthyear": 1946
         },
         {
             "originaltitle": "The Fabelmans",
             "startyear": 2022,
-            "genres": "Adventure, Drama",
+            "genres": "Biography,Drama",
             "birthyear": 1946
         }
     ],
-    "time": 28.811895608901978,
-    "tokens": 1056
+    "time": 11.673398971557617,
+    "tokens": 569
 }

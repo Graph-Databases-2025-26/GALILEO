@@ -1,0 +1,15 @@
+{
+    "result_set": [
+        {
+            "Company": "Cisco Systems",
+            "HeadquartersState": "California",
+            "Ticker": "CSCO",
+            "CEO": "Chuck Robbins",
+            "Founder_is_CEO": false,
+            "FemaleCEO": false,
+            "Number_of_employees": 80000
+        }
+    ],
+    "time": 23.136,
+    "tokens": 90
+}
