@@ -1,0 +1,10 @@
+{
+    "query_id": "12",
+    "complexity": "SP2",
+    "result_set": {
+        "columns": [],
+        "rows": []
+    },
+    "tokens": 997,
+    "time": 20.673128128051758
+}

@@ -1,0 +1,31 @@
+{
+    "query_id": "14",
+    "complexity": "DIST",
+    "result_set": {
+        "columns": [
+            "lake_name"
+        ],
+        "rows": [
+            [
+                "Lake Superior"
+            ],
+            [
+                "Lake Erie"
+            ],
+            [
+                "Lake Michigan"
+            ],
+            [
+                "Lake Huron"
+            ],
+            [
+                "Great Salt Lake"
+            ],
+            [
+                "Lake Ontario"
+            ]
+        ]
+    },
+    "tokens": 338,
+    "time": 9.448529481887817
+}

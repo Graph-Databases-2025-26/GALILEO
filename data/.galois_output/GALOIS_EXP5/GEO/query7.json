@@ -1,0 +1,16 @@
+{
+    "query_id": "7",
+    "complexity": "AGGR",
+    "result_set": {
+        "columns": [
+            "avg(population)"
+        ],
+        "rows": [
+            [
+                "6252361.270833333"
+            ]
+        ]
+    },
+    "tokens": 869,
+    "time": 18.62639808654785
+}

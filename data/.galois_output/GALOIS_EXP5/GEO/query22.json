@@ -1,0 +1,10 @@
+{
+    "query_id": "22",
+    "complexity": "JOIN",
+    "result_set": {
+        "columns": [],
+        "rows": []
+    },
+    "tokens": 2348,
+    "time": 56.703633308410645
+}

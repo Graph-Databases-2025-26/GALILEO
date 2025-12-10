@@ -1,0 +1,40 @@
+{
+    "query_id": "11",
+    "complexity": "DIST",
+    "result_set": {
+        "columns": [
+            "usa_state_traversed"
+        ],
+        "rows": [
+            [
+                "Minnesota, Wisconsin, Iowa, Illinois, Missouri, Kentucky, Tennessee, Arkansas, Louisiana, Mississippi"
+            ],
+            [
+                "Montana, North Dakota, South Dakota, Nebraska, Iowa, Kansas, Missouri"
+            ],
+            [
+                "Canada"
+            ],
+            [
+                "New York"
+            ],
+            [
+                "Wyoming, Montana, North Dakota"
+            ],
+            [
+                "Texas, New Mexico, Colorado"
+            ],
+            [
+                "Wyoming, Idaho, Oregon, Washington"
+            ],
+            [
+                "Alaska"
+            ],
+            [
+                "Alaska, Canada"
+            ]
+        ]
+    },
+    "tokens": 472,
+    "time": 11.759474515914917
+}

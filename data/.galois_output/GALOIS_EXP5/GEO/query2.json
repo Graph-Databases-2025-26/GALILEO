@@ -1,0 +1,112 @@
+{
+    "query_id": "2",
+    "complexity": "SP2",
+    "result_set": {
+        "columns": [
+            "city_name"
+        ],
+        "rows": [
+            [
+                "Pittsburgh"
+            ],
+            [
+                "Miami"
+            ],
+            [
+                "Los Angeles"
+            ],
+            [
+                "Dallas"
+            ],
+            [
+                "Virginia Beach"
+            ],
+            [
+                "New Orleans"
+            ],
+            [
+                "San Jose"
+            ],
+            [
+                "Baltimore"
+            ],
+            [
+                "Portland"
+            ],
+            [
+                "Las Vegas"
+            ],
+            [
+                "New York City"
+            ],
+            [
+                "Sacramento"
+            ],
+            [
+                "Tampa"
+            ],
+            [
+                "San Antonio"
+            ],
+            [
+                "San Diego"
+            ],
+            [
+                "Chicago"
+            ],
+            [
+                "Philadelphia"
+            ],
+            [
+                "Minneapolis"
+            ],
+            [
+                "Seattle"
+            ],
+            [
+                "Houston"
+            ],
+            [
+                "Nashville"
+            ],
+            [
+                "Memphis"
+            ],
+            [
+                "Saint Louis"
+            ],
+            [
+                "Oklahoma City"
+            ],
+            [
+                "Denver"
+            ],
+            [
+                "Milwaukee"
+            ],
+            [
+                "Oakland"
+            ],
+            [
+                "Raleigh"
+            ],
+            [
+                "Omaha"
+            ],
+            [
+                "Boston"
+            ],
+            [
+                "Phoenix"
+            ],
+            [
+                "Wichita"
+            ],
+            [
+                "Washington D.C."
+            ]
+        ]
+    },
+    "tokens": 1104,
+    "time": 36.55090570449829
+}

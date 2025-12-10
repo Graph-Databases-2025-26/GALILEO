@@ -1,0 +1,245 @@
+{
+    "query_id": "25",
+    "complexity": "SP2",
+    "result_set": {
+        "columns": [
+            "state_name",
+            "capital",
+            "area_squared_miles"
+        ],
+        "rows": [
+            [
+                "Alabama",
+                "Montgomery",
+                "52420.0"
+            ],
+            [
+                "Alaska",
+                "Juneau",
+                "663268.0"
+            ],
+            [
+                "Arizona",
+                "Phoenix",
+                "113990.0"
+            ],
+            [
+                "Arkansas",
+                "Little Rock",
+                "53182.0"
+            ],
+            [
+                "California",
+                "Sacramento",
+                "163696.0"
+            ],
+            [
+                "Colorado",
+                "Denver",
+                "104094.0"
+            ],
+            [
+                "Connecticut",
+                "Hartford",
+                "5544.0"
+            ],
+            [
+                "Delaware",
+                "Dover",
+                "2489.0"
+            ],
+            [
+                "Florida",
+                "Tallahassee",
+                "170312.0"
+            ],
+            [
+                "Georgia",
+                "Atlanta",
+                "59425.0"
+            ],
+            [
+                "Hawaii",
+                "Honolulu",
+                "10932.0"
+            ],
+            [
+                "Idaho",
+                "Boise",
+                "83574.0"
+            ],
+            [
+                "Illinois",
+                "Springfield",
+                "59918.0"
+            ],
+            [
+                "Indiana",
+                "Indianapolis",
+                "36420.0"
+            ],
+            [
+                "Iowa",
+                "Des Moines",
+                "58557.0"
+            ],
+            [
+                "Kansas",
+                "Topeka",
+                "82277.0"
+            ],
+            [
+                "Kentucky",
+                "Frankfort",
+                "40409.0"
+            ],
+            [
+                "Louisiana",
+                "Baton Rouge",
+                "51843.0"
+            ],
+            [
+                "Maine",
+                "Augusta",
+                "35380.0"
+            ],
+            [
+                "Maryland",
+                "Annapolis",
+                "12407.0"
+            ],
+            [
+                "Massachusetts",
+                "Boston",
+                "10577.0"
+            ],
+            [
+                "Michigan",
+                "Lansing",
+                "96716.0"
+            ],
+            [
+                "Minnesota",
+                "St. Paul",
+                "86936.0"
+            ],
+            [
+                "Mississippi",
+                "Jackson",
+                "48434.0"
+            ],
+            [
+                "Missouri",
+                "Jefferson City",
+                "69562.0"
+            ],
+            [
+                "Montana",
+                "Helena",
+                "147040.0"
+            ],
+            [
+                "Nebraska",
+                "Lincoln",
+                "77348.0"
+            ],
+            [
+                "Nevada",
+                "Carson City",
+                "110567.0"
+            ],
+            [
+                "New Hampshire",
+                "Concord",
+                "9350.0"
+            ],
+            [
+                "New Jersey",
+                "Trenton",
+                "8722.0"
+            ],
+            [
+                "None",
+                "None",
+                "nan"
+            ],
+            [
+                "Oklahoma",
+                "Oklahoma City",
+                "69662.0"
+            ],
+            [
+                "Oregon",
+                "Salem",
+                "98386.0"
+            ],
+            [
+                "Pennsylvania",
+                "Harrisburg",
+                "46055.0"
+            ],
+            [
+                "Rhode Island",
+                "Providence",
+                "1545.0"
+            ],
+            [
+                "South Carolina",
+                "Columbia",
+                "32020.0"
+            ],
+            [
+                "South Dakota",
+                "Pierre",
+                "77116.0"
+            ],
+            [
+                "Tennessee",
+                "Nashville",
+                "42144.0"
+            ],
+            [
+                "Texas",
+                "Austin",
+                "268597.0"
+            ],
+            [
+                "Utah",
+                "Salt Lake City",
+                "84997.0"
+            ],
+            [
+                "Vermont",
+                "Montpelier",
+                "9615.0"
+            ],
+            [
+                "Virginia",
+                "Richmond",
+                "42775.0"
+            ],
+            [
+                "Washington",
+                "Olympia",
+                "71298.0"
+            ],
+            [
+                "West Virginia",
+                "Charleston",
+                "24230.0"
+            ],
+            [
+                "Wisconsin",
+                "Madison",
+                "55994.0"
+            ],
+            [
+                "Wyoming",
+                "Cheyenne",
+                "97818.0"
+            ]
+        ]
+    },
+    "tokens": 1439,
+    "time": 28.145366430282593
+}

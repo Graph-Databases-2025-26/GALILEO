@@ -1,0 +1,16 @@
+{
+    "query_id": "3",
+    "complexity": "AGGR",
+    "result_set": {
+        "columns": [
+            "count(capital)"
+        ],
+        "rows": [
+            [
+                "0"
+            ]
+        ]
+    },
+    "tokens": 304,
+    "time": 11.24607801437378
+}

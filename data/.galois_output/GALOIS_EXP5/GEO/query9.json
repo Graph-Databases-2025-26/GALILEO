@@ -1,0 +1,10 @@
+{
+    "query_id": "9",
+    "complexity": "DIST",
+    "result_set": {
+        "columns": [],
+        "rows": []
+    },
+    "tokens": 152,
+    "time": 9.713853597640991
+}

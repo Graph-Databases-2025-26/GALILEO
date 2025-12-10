@@ -1,0 +1,163 @@
+{
+    "query_id": "19",
+    "complexity": "DIST",
+    "result_set": {
+        "columns": [
+            "capital"
+        ],
+        "rows": [
+            [
+                "Trenton"
+            ],
+            [
+                "Hartford"
+            ],
+            [
+                "Montpelier"
+            ],
+            [
+                "Salem"
+            ],
+            [
+                "Indianapolis"
+            ],
+            [
+                "Tallahassee"
+            ],
+            [
+                "Jackson"
+            ],
+            [
+                "Columbia"
+            ],
+            [
+                "Helena"
+            ],
+            [
+                "Des Moines"
+            ],
+            [
+                "Jefferson City"
+            ],
+            [
+                "Albany"
+            ],
+            [
+                "Denver"
+            ],
+            [
+                "Saint Paul"
+            ],
+            [
+                "Charleston"
+            ],
+            [
+                "Richmond"
+            ],
+            [
+                "Austin"
+            ],
+            [
+                "Lansing"
+            ],
+            [
+                "Augusta"
+            ],
+            [
+                "Phoenix"
+            ],
+            [
+                "Juneau"
+            ],
+            [
+                "Frankfort"
+            ],
+            [
+                "Harrisburg"
+            ],
+            [
+                "Olympia"
+            ],
+            [
+                "Nashville"
+            ],
+            [
+                "Honolulu"
+            ],
+            [
+                "Carson City"
+            ],
+            [
+                "Annapolis"
+            ],
+            [
+                "Boise"
+            ],
+            [
+                "Lincoln"
+            ],
+            [
+                "Salt Lake City"
+            ],
+            [
+                "Santa Fe"
+            ],
+            [
+                "Oklahoma City"
+            ],
+            [
+                "Montgomery"
+            ],
+            [
+                "Providence"
+            ],
+            [
+                "Concord"
+            ],
+            [
+                "Sacramento"
+            ],
+            [
+                "Springfield"
+            ],
+            [
+                "Pierre"
+            ],
+            [
+                "Cheyenne"
+            ],
+            [
+                "Boston"
+            ],
+            [
+                "Columbus"
+            ],
+            [
+                "Madison"
+            ],
+            [
+                "Atlanta"
+            ],
+            [
+                "Little Rock"
+            ],
+            [
+                "Bismarck"
+            ],
+            [
+                "Raleigh"
+            ],
+            [
+                "Topeka"
+            ],
+            [
+                "Dover"
+            ],
+            [
+                "Baton Rouge"
+            ]
+        ]
+    },
+    "tokens": 863,
+    "time": 18.72729516029358
+}

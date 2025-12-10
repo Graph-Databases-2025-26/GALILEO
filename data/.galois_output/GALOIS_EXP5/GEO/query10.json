@@ -1,0 +1,58 @@
+{
+    "query_id": "10",
+    "complexity": "DIST",
+    "result_set": {
+        "columns": [
+            "lake_name"
+        ],
+        "rows": [
+            [
+                "Lake Ontario"
+            ],
+            [
+                "Lake Superior"
+            ],
+            [
+                "Lake Michigan"
+            ],
+            [
+                "Lake Sakakawea"
+            ],
+            [
+                "Lake Erie"
+            ],
+            [
+                "Lake Pontchartrain"
+            ],
+            [
+                "Lake Oahe"
+            ],
+            [
+                "Lake of the Woods"
+            ],
+            [
+                "Lake Huron"
+            ],
+            [
+                "Lake Mead"
+            ],
+            [
+                "Lake Powell"
+            ],
+            [
+                "Lake Winnebago"
+            ],
+            [
+                "Lake Mille Lacs"
+            ],
+            [
+                "Lake Tahoe"
+            ],
+            [
+                "Lake St. Clair"
+            ]
+        ]
+    },
+    "tokens": 997,
+    "time": 24.94362449645996
+}

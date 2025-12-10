@@ -1,0 +1,16 @@
+{
+    "query_id": "5",
+    "complexity": "AGGR",
+    "result_set": {
+        "columns": [
+            "count(state_name)"
+        ],
+        "rows": [
+            [
+                "50"
+            ]
+        ]
+    },
+    "tokens": 886,
+    "time": 18.499125242233276
+}

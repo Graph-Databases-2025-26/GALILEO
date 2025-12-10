@@ -1,0 +1,54 @@
+{
+    "query_id": "28",
+    "complexity": "SP2",
+    "result_set": {
+        "columns": [
+            "state_name",
+            "capital"
+        ],
+        "rows": [
+            [
+                "Tennessee",
+                "Nashville"
+            ],
+            [
+                "Florida",
+                "Tallahassee"
+            ],
+            [
+                "South Carolina",
+                "Columbia"
+            ],
+            [
+                "Virginia",
+                "Richmond"
+            ],
+            [
+                "Wisconsin",
+                "Madison"
+            ],
+            [
+                "Arizona",
+                "Phoenix"
+            ],
+            [
+                "Georgia",
+                "Atlanta"
+            ],
+            [
+                "Missouri",
+                "Jefferson City"
+            ],
+            [
+                "Texas",
+                "Austin"
+            ],
+            [
+                "New York",
+                "Albany"
+            ]
+        ]
+    },
+    "tokens": 1468,
+    "time": 30.399852514266968
+}

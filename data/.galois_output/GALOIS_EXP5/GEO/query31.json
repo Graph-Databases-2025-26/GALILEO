@@ -1,0 +1,75 @@
+{
+    "query_id": "31",
+    "complexity": "G/O",
+    "result_set": {
+        "columns": [
+            "state_name",
+            "capital",
+            "population"
+        ],
+        "rows": [
+            [
+                "Nevada",
+                "Carson City",
+                "3139651"
+            ],
+            [
+                "Iowa",
+                "Des Moines",
+                "3155070"
+            ],
+            [
+                "Utah",
+                "Salt Lake City",
+                "3250844"
+            ],
+            [
+                "Oklahoma",
+                "Oklahoma City",
+                "3956971"
+            ],
+            [
+                "Oregon",
+                "Salem",
+                "4237251"
+            ],
+            [
+                "Louisiana",
+                "Baton Rouge",
+                "4648794"
+            ],
+            [
+                "Alabama",
+                "Montgomery",
+                "4887681"
+            ],
+            [
+                "Minnesota",
+                "St. Paul",
+                "5639759"
+            ],
+            [
+                "Colorado",
+                "Denver",
+                "5691287"
+            ],
+            [
+                "Wisconsin",
+                "Madison",
+                "5822564"
+            ],
+            [
+                "Arizona",
+                "Phoenix",
+                "7278717"
+            ],
+            [
+                "Washington",
+                "Olympia",
+                "7533861"
+            ]
+        ]
+    },
+    "tokens": 1911,
+    "time": 37.14587068557739
+}

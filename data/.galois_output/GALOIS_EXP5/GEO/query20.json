@@ -1,0 +1,16 @@
+{
+    "query_id": "20",
+    "complexity": "AGGR",
+    "result_set": {
+        "columns": [
+            "count(river_name)"
+        ],
+        "rows": [
+            [
+                "0"
+            ]
+        ]
+    },
+    "tokens": 535,
+    "time": 11.964787483215332
+}

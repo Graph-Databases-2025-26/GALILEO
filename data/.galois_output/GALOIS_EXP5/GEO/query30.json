@@ -1,0 +1,58 @@
+{
+    "query_id": "30",
+    "complexity": "G/O",
+    "result_set": {
+        "columns": [
+            "state_name",
+            "capital"
+        ],
+        "rows": [
+            [
+                "Georgia",
+                "Atlanta"
+            ],
+            [
+                "Texas",
+                "Austin"
+            ],
+            [
+                "Nevada",
+                "Carson City"
+            ],
+            [
+                "Iowa",
+                "Des Moines"
+            ],
+            [
+                "Missouri",
+                "Jefferson City"
+            ],
+            [
+                "Arkansas",
+                "Little Rock"
+            ],
+            [
+                "Wisconsin",
+                "Madison"
+            ],
+            [
+                "Oklahoma",
+                "Oklahoma City"
+            ],
+            [
+                "Arizona",
+                "Phoenix"
+            ],
+            [
+                "Utah",
+                "Salt Lake City"
+            ],
+            [
+                "Florida",
+                "Tallahassee"
+            ]
+        ]
+    },
+    "tokens": 1468,
+    "time": 30.81168532371521
+}
