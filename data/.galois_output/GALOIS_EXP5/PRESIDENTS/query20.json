@@ -1,0 +1,18 @@
+{
+    "query_id": "20",
+    "complexity": "AGGR",
+    "result_set": {
+        "columns": [
+            "party",
+            "num"
+        ],
+        "rows": [
+            [
+                "Democratic",
+                "9"
+            ]
+        ]
+    },
+    "tokens": 576,
+    "time": 18.817612409591675
+}

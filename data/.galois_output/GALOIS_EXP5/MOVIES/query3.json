@@ -1,0 +1,34 @@
+{
+    "query_id": "3",
+    "complexity": "SP2",
+    "result_set": {
+        "columns": [
+            "originaltitle",
+            "startyear"
+        ],
+        "rows": [
+            [
+                "Jailhouse Rock",
+                "1957"
+            ],
+            [
+                "Tip on a Dead Jockey",
+                "1957"
+            ],
+            [
+                "Ten Thousand Bedrooms",
+                "1957"
+            ],
+            [
+                "Vengeance Valley",
+                "1951"
+            ],
+            [
+                "The Adventures of Quentin Durward",
+                "1955"
+            ]
+        ]
+    },
+    "tokens": 835,
+    "time": 26.4605770111084
+}

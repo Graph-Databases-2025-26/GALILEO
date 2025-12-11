@@ -1,0 +1,50 @@
+{
+    "query_id": "6",
+    "complexity": "AGGR",
+    "result_set": {
+        "columns": [
+            "originaltitle",
+            "startyear",
+            "genres",
+            "birthyear",
+            "deathyear",
+            "runtimeminutes"
+        ],
+        "rows": [
+            [
+                "Hook",
+                "1991",
+                "Adventure,Fantasy",
+                "1946",
+                "None",
+                "134"
+            ],
+            [
+                "Jurassic Park",
+                "1993",
+                "Action,Adventure,Sci-Fi",
+                "1946",
+                "None",
+                "124"
+            ],
+            [
+                "Amistad",
+                "1997",
+                "Drama,History",
+                "1946",
+                "None",
+                "156"
+            ],
+            [
+                "Saving Private Ryan",
+                "1998",
+                "Drama,War",
+                "1946",
+                "None",
+                "146"
+            ]
+        ]
+    },
+    "tokens": 819,
+    "time": 20.0007004737854
+}

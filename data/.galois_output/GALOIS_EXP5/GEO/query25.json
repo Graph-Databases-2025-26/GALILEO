@@ -164,6 +164,31 @@
                 "nan"
             ],
             [
+                "New Mexico",
+                "Santa Fe",
+                "121669.0"
+            ],
+            [
+                "New York",
+                "Albany",
+                "54475.0"
+            ],
+            [
+                "North Carolina",
+                "Raleigh",
+                "53819.0"
+            ],
+            [
+                "North Dakota",
+                "Bismarck",
+                "70704.0"
+            ],
+            [
+                "Ohio",
+                "Columbus",
+                "44828.0"
+            ],
+            [
                 "Oklahoma",
                 "Oklahoma City",
                 "69662.0"
@@ -240,6 +265,6 @@
             ]
         ]
     },
-    "tokens": 1439,
-    "time": 28.145366430282593
+    "tokens": 1577,
+    "time": 39.887330055236816
 }

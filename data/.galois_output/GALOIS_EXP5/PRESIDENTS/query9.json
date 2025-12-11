@@ -1,0 +1,10 @@
+{
+    "query_id": "9",
+    "complexity": "G/O",
+    "result_set": {
+        "columns": [],
+        "rows": []
+    },
+    "tokens": 178,
+    "time": 5.525743722915649
+}

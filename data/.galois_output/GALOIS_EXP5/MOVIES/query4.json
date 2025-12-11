@@ -1,0 +1,50 @@
+{
+    "query_id": "4",
+    "complexity": "SP2",
+    "result_set": {
+        "columns": [
+            "originaltitle",
+            "startyear"
+        ],
+        "rows": [
+            [
+                "Ready Player One",
+                "2018"
+            ],
+            [
+                "The Terminal",
+                "2004"
+            ],
+            [
+                "Lincoln",
+                "2012"
+            ],
+            [
+                "The BFG",
+                "2016"
+            ],
+            [
+                "War Horse",
+                "2011"
+            ],
+            [
+                "The Adventures of Tintin",
+                "2011"
+            ],
+            [
+                "War of the Worlds",
+                "2005"
+            ],
+            [
+                "West Side Story",
+                "2021"
+            ],
+            [
+                "Bridge of Spies",
+                "2015"
+            ]
+        ]
+    },
+    "tokens": 569,
+    "time": 20.54447650909424
+}

@@ -1,0 +1,18 @@
+{
+    "query_id": "3",
+    "complexity": "AGGR",
+    "result_set": {
+        "columns": [
+            "avg(gnp)",
+            "sum(population)"
+        ],
+        "rows": [
+            [
+                "nan",
+                "nan"
+            ]
+        ]
+    },
+    "tokens": 2212,
+    "time": 75.9346821308136
+}

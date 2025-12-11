@@ -1,0 +1,18 @@
+{
+    "query_id": "8",
+    "complexity": "AGGR",
+    "result_set": {
+        "columns": [
+            "startyear",
+            "count"
+        ],
+        "rows": [
+            [
+                "2003",
+                "1"
+            ]
+        ]
+    },
+    "tokens": 1438,
+    "time": 35.50366806983948
+}

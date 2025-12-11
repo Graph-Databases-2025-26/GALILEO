@@ -10,136 +10,28 @@
                 "Trenton"
             ],
             [
-                "Hartford"
+                "Indianapolis"
             ],
             [
-                "Montpelier"
+                "Hartford"
             ],
             [
                 "Salem"
             ],
             [
-                "Indianapolis"
-            ],
-            [
-                "Tallahassee"
-            ],
-            [
-                "Jackson"
-            ],
-            [
-                "Columbia"
-            ],
-            [
-                "Helena"
-            ],
-            [
-                "Des Moines"
-            ],
-            [
-                "Jefferson City"
-            ],
-            [
-                "Albany"
-            ],
-            [
-                "Denver"
-            ],
-            [
-                "Saint Paul"
-            ],
-            [
-                "Charleston"
-            ],
-            [
-                "Richmond"
-            ],
-            [
-                "Austin"
-            ],
-            [
-                "Lansing"
-            ],
-            [
-                "Augusta"
-            ],
-            [
-                "Phoenix"
-            ],
-            [
-                "Juneau"
-            ],
-            [
-                "Frankfort"
-            ],
-            [
-                "Harrisburg"
-            ],
-            [
-                "Olympia"
-            ],
-            [
-                "Nashville"
-            ],
-            [
-                "Honolulu"
-            ],
-            [
-                "Carson City"
-            ],
-            [
-                "Annapolis"
-            ],
-            [
-                "Boise"
-            ],
-            [
-                "Lincoln"
-            ],
-            [
-                "Salt Lake City"
-            ],
-            [
-                "Santa Fe"
-            ],
-            [
-                "Oklahoma City"
-            ],
-            [
-                "Montgomery"
-            ],
-            [
-                "Providence"
-            ],
-            [
-                "Concord"
-            ],
-            [
-                "Sacramento"
-            ],
-            [
-                "Springfield"
-            ],
-            [
-                "Pierre"
-            ],
-            [
-                "Cheyenne"
+                "Montpelier"
             ],
             [
                 "Boston"
             ],
             [
+                "Cheyenne"
+            ],
+            [
+                "Pierre"
+            ],
+            [
                 "Columbus"
-            ],
-            [
-                "Madison"
-            ],
-            [
-                "Atlanta"
-            ],
-            [
-                "Little Rock"
             ],
             [
                 "Bismarck"
@@ -148,16 +40,124 @@
                 "Raleigh"
             ],
             [
-                "Topeka"
+                "Atlanta"
+            ],
+            [
+                "Little Rock"
+            ],
+            [
+                "Madison"
             ],
             [
                 "Dover"
             ],
             [
+                "Topeka"
+            ],
+            [
                 "Baton Rouge"
+            ],
+            [
+                "Annapolis"
+            ],
+            [
+                "Boise"
+            ],
+            [
+                "Carson City"
+            ],
+            [
+                "Honolulu"
+            ],
+            [
+                "Nashville"
+            ],
+            [
+                "Augusta"
+            ],
+            [
+                "Olympia"
+            ],
+            [
+                "Frankfort"
+            ],
+            [
+                "Phoenix"
+            ],
+            [
+                "Harrisburg"
+            ],
+            [
+                "Juneau"
+            ],
+            [
+                "Des Moines"
+            ],
+            [
+                "Charleston"
+            ],
+            [
+                "Columbia"
+            ],
+            [
+                "Jefferson City"
+            ],
+            [
+                "Tallahassee"
+            ],
+            [
+                "Saint Paul"
+            ],
+            [
+                "Helena"
+            ],
+            [
+                "Jackson"
+            ],
+            [
+                "Denver"
+            ],
+            [
+                "Albany"
+            ],
+            [
+                "Springfield"
+            ],
+            [
+                "Salt Lake City"
+            ],
+            [
+                "Sacramento"
+            ],
+            [
+                "Montgomery"
+            ],
+            [
+                "Concord"
+            ],
+            [
+                "Oklahoma City"
+            ],
+            [
+                "Lincoln"
+            ],
+            [
+                "Providence"
+            ],
+            [
+                "Santa Fe"
+            ],
+            [
+                "Austin"
+            ],
+            [
+                "Richmond"
+            ],
+            [
+                "Lansing"
             ]
         ]
     },
     "tokens": 863,
-    "time": 18.72729516029358
+    "time": 26.19404673576355
 }

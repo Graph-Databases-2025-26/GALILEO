@@ -1,0 +1,18 @@
+{
+    "query_id": "1",
+    "complexity": "DIST",
+    "result_set": {
+        "columns": [
+            "name",
+            "party"
+        ],
+        "rows": [
+            [
+                "Nicolás Maduro",
+                "United Socialist Party"
+            ]
+        ]
+    },
+    "tokens": 591,
+    "time": 14.199058771133423
+}

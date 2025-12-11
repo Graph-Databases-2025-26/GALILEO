@@ -10,49 +10,85 @@
         ],
         "rows": [
             [
-                "Indiana",
-                "Indianapolis",
-                "185.0",
-                "6732219"
+                "Michigan",
+                "Lansing",
+                "298.4",
+                "10687723"
             ],
             [
-                "Massachusetts",
+                "North Carolina",
+                "Raleigh",
+                "218.1",
+                "16765479"
+            ],
+            [
+                "Oregon",
+                "Salem",
+                "130.8",
+                "17321523"
+            ],
+            [
+                "Oklahoma",
+                "Oklahoma City",
+                "55.2",
+                "19738324"
+            ],
+            [
+                "Maryland",
+                "Annapolis",
+                "626.0",
+                "21429166"
+            ],
+            [
+                "None",
                 "Boston",
-                "651.4",
-                "6892503"
+                "446.0",
+                "21668713"
             ],
             [
-                "Ohio",
-                "Columbus",
-                "260.8",
-                "11689497"
+                "Wyoming",
+                "Cheyenne",
+                "6.0",
+                "22393909"
             ],
             [
                 "Pennsylvania",
                 "Harrisburg",
-                "278.2",
-                "12802023"
+                "591.0",
+                "22845073"
             ],
             [
-                "South Carolina",
-                "Columbia",
-                "159.1",
-                "5086476"
+                "New Hampshire",
+                "Concord",
+                "96.0",
+                "23344471"
             ],
             [
-                "Tennessee",
-                "Nashville",
-                "162.1",
-                "6829174"
+                "New York",
+                "Albany",
+                "493.7",
+                "23552119"
             ],
             [
-                "Virginia",
-                "Richmond",
-                "199.7",
-                "8535519"
+                "West Virginia",
+                "Charleston",
+                "603.0",
+                "23779658"
+            ],
+            [
+                "Iowa",
+                "Des Moines",
+                "60.4",
+                "23856324"
+            ],
+            [
+                "Kentucky",
+                "Frankfort",
+                "73.6",
+                "23944745"
             ]
         ]
     },
-    "tokens": 2310,
-    "time": 51.28077983856201
+    "tokens": 2272,
+    "time": 64.58962631225586
 }

@@ -1,0 +1,16 @@
+{
+    "query_id": "22",
+    "complexity": "G/O",
+    "result_set": {
+        "columns": [
+            "name"
+        ],
+        "rows": [
+            [
+                "Millard Fillmore"
+            ]
+        ]
+    },
+    "tokens": 1373,
+    "time": 38.101197242736816
+}

@@ -1,0 +1,18 @@
+{
+    "query_id": "9",
+    "complexity": "G/O",
+    "result_set": {
+        "columns": [
+            "director",
+            "director_age"
+        ],
+        "rows": [
+            [
+                "Sidney Lumet",
+                "55"
+            ]
+        ]
+    },
+    "tokens": 918,
+    "time": 29.414225101470947
+}

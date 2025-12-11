@@ -1,0 +1,22 @@
+{
+    "query_id": "3",
+    "complexity": "AGGR",
+    "result_set": {
+        "columns": [
+            "name",
+            "city",
+            "country",
+            "elevation_in_ft"
+        ],
+        "rows": [
+            [
+                "John F Kennedy International Airport",
+                "New York",
+                "United States",
+                "13"
+            ]
+        ]
+    },
+    "tokens": 228,
+    "time": 6.658771991729736
+}

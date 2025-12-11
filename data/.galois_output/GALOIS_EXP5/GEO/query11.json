@@ -7,34 +7,28 @@
         ],
         "rows": [
             [
-                "Minnesota, Wisconsin, Iowa, Illinois, Missouri, Kentucky, Tennessee, Arkansas, Louisiana, Mississippi"
+                "missouri"
             ],
             [
-                "Montana, North Dakota, South Dakota, Nebraska, Iowa, Kansas, Missouri"
+                "texas"
             ],
             [
-                "Canada"
+                "minnesota"
             ],
             [
-                "New York"
+                "montana"
             ],
             [
-                "Wyoming, Montana, North Dakota"
+                "alaska"
             ],
             [
-                "Texas, New Mexico, Colorado"
+                "idaho"
             ],
             [
-                "Wyoming, Idaho, Oregon, Washington"
-            ],
-            [
-                "Alaska"
-            ],
-            [
-                "Alaska, Canada"
+                "new york"
             ]
         ]
     },
-    "tokens": 472,
-    "time": 11.759474515914917
+    "tokens": 422,
+    "time": 13.594310283660889
 }

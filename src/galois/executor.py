@@ -567,15 +567,15 @@ class GaloisExecutor:
 
 def repair_json_content(json_str: str) -> str:
     """
-    Tenta di riparare errori comuni nel JSON generato dagli LLM.
+    Attempts to fix common JSON errors produced by LLMs.
     """
     original_str = json_str
-    # 1. Rimuove blocchi Markdown (```json ... ```) se presenti
+    # 1. Remove Markdown code blocks (```json ... ```) if present
     json_str = json_str.strip()
     if json_str.startswith("```"):
-        # Rimuove la prima riga (es. ```json)
+        # Remove the first line (e.g. ```json)
         json_str = re.sub(r"^```[a-zA-Z]*\n", "", json_str)
-        # Rimuove l'ultima riga (```)
+        # Remove the last line (```)
         json_str = re.sub(r"\n```$", "", json_str)
         json_str = json_str.strip()
 
@@ -583,22 +583,26 @@ def repair_json_content(json_str: str) -> str:
     if match:
         start_idx = match.start()
         if start_idx > 0:
-            # Se trova spazzatura prima, la taglia via
+            # If there is garbage before the JSON, cut it away
             json_str = json_str[start_idx:]
 
-            # Cerca anche l'ultima parentesi valida per pulire la coda
+            # Also look for the last valid bracket to clean the tail
             last_idx = max(json_str.rfind(']'), json_str.rfind('}'))
             if last_idx != -1:
                 json_str = json_str[:last_idx + 1]
 
 
-    # 2. FIX CRITICO PER IL TUO ERRORE: "key": ,  --> "key": null,
-    # Cerca due punti, spazi opzionali e poi subito una virgola o parentesi chiusa
+    # 2. CRITICAL FIX FOR THE ERROR: "key": ,  --> "key": null,
+    # Look for a colon, optional spaces, then immediately a comma or closing bracket
     json_str = re.sub(r':\s*,', ': null,', json_str)
-    json_str = re.sub(r':\s*}', ': null}', json_str)
+    #json_str = re.sub(r':\s*}', ': null}', json_str)
 
-    # 3. Rimuove virgole "trailing" (es. [1, 2,]) che rompono il parser Python standard
+    # Remove trailing commas before closing brackets/braces
     json_str = re.sub(r',\s*([\]}])', r'\1', json_str)
+    #json has at the beginning, an extra '('
+    json_str = re.sub(r'\[\s*\(', '[', json_str)
+    # json has at the end, an extra ')'
+    json_str = re.sub(r'\)\s*\]', ']', json_str)
 
     if json_str != original_str:
         LOG.warning("Malformed JSON detected and repaired automatically.")

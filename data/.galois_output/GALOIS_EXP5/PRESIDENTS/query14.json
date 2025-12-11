@@ -1,0 +1,90 @@
+{
+    "query_id": "14",
+    "complexity": "SP2",
+    "result_set": {
+        "columns": [
+            "name",
+            "party"
+        ],
+        "rows": [
+            [
+                "Woodrow Wilson",
+                "Democratic"
+            ],
+            [
+                "Zachary Taylor",
+                "Whig"
+            ],
+            [
+                "Joe Biden",
+                "Democratic"
+            ],
+            [
+                "Harry S. Truman",
+                "Democratic"
+            ],
+            [
+                "Richard Nixon",
+                "Republican"
+            ],
+            [
+                "Jimmy Carter",
+                "Democratic"
+            ],
+            [
+                "George W. Bush",
+                "Republican"
+            ],
+            [
+                "Herbert Hoover",
+                "Republican"
+            ],
+            [
+                "Lyndon B. Johnson",
+                "Democratic"
+            ],
+            [
+                "George H.W. Bush",
+                "Republican"
+            ],
+            [
+                "Barack Obama",
+                "Democratic"
+            ],
+            [
+                "Bill Clinton",
+                "Democratic"
+            ],
+            [
+                "Theodore Roosevelt",
+                "Republican"
+            ],
+            [
+                "John F. Kennedy",
+                "Democratic"
+            ],
+            [
+                "Ronald Reagan",
+                "Republican"
+            ],
+            [
+                "Franklin D. Roosevelt",
+                "Democratic"
+            ],
+            [
+                "Donald Trump",
+                "Republican"
+            ],
+            [
+                "Gerald Ford",
+                "Republican"
+            ],
+            [
+                "Warren G. Harding",
+                "Republican"
+            ]
+        ]
+    },
+    "tokens": 621,
+    "time": 23.72336435317993
+}

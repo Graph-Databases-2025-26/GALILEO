@@ -1,0 +1,61 @@
+{
+    "query_id": "17",
+    "complexity": "SP2",
+    "result_set": {
+        "columns": [
+            "name"
+        ],
+        "rows": [
+            [
+                "Dwight D. Eisenhower"
+            ],
+            [
+                "William Howard Taft"
+            ],
+            [
+                "Abraham Lincoln"
+            ],
+            [
+                "Richard Nixon"
+            ],
+            [
+                "George W. Bush"
+            ],
+            [
+                "Herbert Hoover"
+            ],
+            [
+                "Ulysses S. Grant"
+            ],
+            [
+                "George H.W. Bush"
+            ],
+            [
+                "James A. Garfield"
+            ],
+            [
+                "Calvin Coolidge"
+            ],
+            [
+                "Theodore Roosevelt"
+            ],
+            [
+                "Ronald Reagan"
+            ],
+            [
+                "Donald Trump"
+            ],
+            [
+                "Gerald Ford"
+            ],
+            [
+                "Warren G. Harding"
+            ],
+            [
+                "Rutherford B. Hayes"
+            ]
+        ]
+    },
+    "tokens": 1227,
+    "time": 34.75630044937134
+}

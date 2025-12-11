@@ -1,0 +1,31 @@
+{
+    "query_id": "23",
+    "complexity": "SP2>",
+    "result_set": {
+        "columns": [
+            "name",
+            "party",
+            "start_year",
+            "end_year",
+            "cardinal_number"
+        ],
+        "rows": [
+            [
+                "Chester A. Arthur",
+                "Democratic",
+                "1881",
+                "1881",
+                "22nd"
+            ],
+            [
+                "Grover Cleveland",
+                "Democratic",
+                "1885",
+                "1889",
+                "22nd"
+            ]
+        ]
+    },
+    "tokens": 1226,
+    "time": 33.85422730445862
+}

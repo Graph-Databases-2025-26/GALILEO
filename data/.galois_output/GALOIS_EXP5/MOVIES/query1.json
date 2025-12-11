@@ -1,0 +1,19 @@
+{
+    "query_id": "1",
+    "complexity": "SP2",
+    "result_set": {
+        "columns": [
+            "originaltitle"
+        ],
+        "rows": [
+            [
+                "The Adventures of Quentin Durward"
+            ],
+            [
+                "Knights of the Round Table"
+            ]
+        ]
+    },
+    "tokens": 687,
+    "time": 23.54084610939026
+}

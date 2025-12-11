@@ -8,20 +8,48 @@
         ],
         "rows": [
             [
-                "Tennessee",
-                "Nashville"
+                "Maryland",
+                "Annapolis"
             ],
             [
-                "Florida",
-                "Tallahassee"
+                "Illinois",
+                "Springfield"
             ],
             [
                 "South Carolina",
                 "Columbia"
             ],
             [
-                "Virginia",
-                "Richmond"
+                "California",
+                "Sacramento"
+            ],
+            [
+                "Missouri",
+                "Jefferson City"
+            ],
+            [
+                "Massachusetts",
+                "Boston"
+            ],
+            [
+                "North Carolina",
+                "Raleigh"
+            ],
+            [
+                "Georgia",
+                "Atlanta"
+            ],
+            [
+                "Indiana",
+                "Indianapolis"
+            ],
+            [
+                "Washington",
+                "Olympia"
+            ],
+            [
+                "Florida",
+                "Tallahassee"
             ],
             [
                 "Wisconsin",
@@ -32,23 +60,11 @@
                 "Phoenix"
             ],
             [
-                "Georgia",
-                "Atlanta"
-            ],
-            [
-                "Missouri",
-                "Jefferson City"
-            ],
-            [
-                "Texas",
-                "Austin"
-            ],
-            [
-                "New York",
-                "Albany"
+                "Minnesota",
+                "St. Paul"
             ]
         ]
     },
     "tokens": 1468,
-    "time": 30.399852514266968
+    "time": 38.273072957992554
 }

@@ -21,17 +21,17 @@
             [
                 "Utah",
                 "Salt Lake City",
-                "3250844"
+                "3251042"
             ],
             [
                 "Oklahoma",
                 "Oklahoma City",
-                "3956971"
+                "3930784"
             ],
             [
                 "Oregon",
                 "Salem",
-                "4237251"
+                "4217737"
             ],
             [
                 "Louisiana",
@@ -46,7 +46,7 @@
             [
                 "Minnesota",
                 "St. Paul",
-                "5639759"
+                "5639632"
             ],
             [
                 "Colorado",
@@ -66,10 +66,10 @@
             [
                 "Washington",
                 "Olympia",
-                "7533861"
+                "7550481"
             ]
         ]
     },
-    "tokens": 1911,
-    "time": 37.14587068557739
+    "tokens": 1947,
+    "time": 51.32735300064087
 }

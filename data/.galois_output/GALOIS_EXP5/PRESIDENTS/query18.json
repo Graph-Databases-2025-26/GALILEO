@@ -1,0 +1,28 @@
+{
+    "query_id": "18",
+    "complexity": "SP2>",
+    "result_set": {
+        "columns": [
+            "name"
+        ],
+        "rows": [
+            [
+                "Mike Pence"
+            ],
+            [
+                "George H. W. Bush"
+            ],
+            [
+                "Ronald Reagan"
+            ],
+            [
+                "George W. Bush"
+            ],
+            [
+                "Donald Trump"
+            ]
+        ]
+    },
+    "tokens": 372,
+    "time": 12.056617498397827
+}

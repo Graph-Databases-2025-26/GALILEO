@@ -1,0 +1,115 @@
+{
+    "query_id": "2",
+    "complexity": "SP2",
+    "result_set": {
+        "columns": [
+            "name"
+        ],
+        "rows": [
+            [
+                "Slovenia"
+            ],
+            [
+                "Micronesia"
+            ],
+            [
+                "Grenada"
+            ],
+            [
+                "Botswana"
+            ],
+            [
+                "Eritrea"
+            ],
+            [
+                "Comoros"
+            ],
+            [
+                "Palau"
+            ],
+            [
+                "Cambodia"
+            ],
+            [
+                "Sierra Leone"
+            ],
+            [
+                "Cameroon"
+            ],
+            [
+                "Malawi"
+            ],
+            [
+                "Bahamas"
+            ],
+            [
+                "Nauru"
+            ],
+            [
+                "Belize"
+            ],
+            [
+                "Ghana"
+            ],
+            [
+                "Cape Verde"
+            ],
+            [
+                "Malaysia"
+            ],
+            [
+                "Kyrgyzstan"
+            ],
+            [
+                "Angola"
+            ],
+            [
+                "Kenya"
+            ],
+            [
+                "Cote d'Ivoire"
+            ],
+            [
+                "Bosnia and Herzegovina"
+            ],
+            [
+                "Benin"
+            ],
+            [
+                "Mauritania"
+            ],
+            [
+                "Bahrain"
+            ],
+            [
+                "Slovakia"
+            ],
+            [
+                "Lesotho"
+            ],
+            [
+                "Nigeria"
+            ],
+            [
+                "Papua New Guinea"
+            ],
+            [
+                "Bhutan"
+            ],
+            [
+                "Guyana"
+            ],
+            [
+                "Kazakhstan"
+            ],
+            [
+                "Libya"
+            ],
+            [
+                "Antigua and Barbuda"
+            ]
+        ]
+    },
+    "tokens": 2050,
+    "time": 60.928040742874146
+}

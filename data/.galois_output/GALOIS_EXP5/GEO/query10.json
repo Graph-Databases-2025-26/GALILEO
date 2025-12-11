@@ -10,49 +10,31 @@
                 "Lake Ontario"
             ],
             [
-                "Lake Superior"
-            ],
-            [
-                "Lake Michigan"
-            ],
-            [
-                "Lake Sakakawea"
-            ],
-            [
-                "Lake Erie"
-            ],
-            [
-                "Lake Pontchartrain"
-            ],
-            [
-                "Lake Oahe"
-            ],
-            [
-                "Lake of the Woods"
-            ],
-            [
-                "Lake Huron"
-            ],
-            [
-                "Lake Mead"
-            ],
-            [
                 "Lake Powell"
             ],
             [
                 "Lake Winnebago"
             ],
             [
-                "Lake Mille Lacs"
-            ],
-            [
                 "Lake Tahoe"
             ],
             [
-                "Lake St. Clair"
+                "Lake Michigan"
+            ],
+            [
+                "Lake Huron"
+            ],
+            [
+                "Lake Erie"
+            ],
+            [
+                "Lake Sakakawea"
+            ],
+            [
+                "Lake Superior"
             ]
         ]
     },
-    "tokens": 997,
-    "time": 24.94362449645996
+    "tokens": 393,
+    "time": 11.64909815788269
 }

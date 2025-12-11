@@ -1,0 +1,16 @@
+{
+    "query_id": "8",
+    "complexity": "AGGR",
+    "result_set": {
+        "columns": [
+            "count_star()"
+        ],
+        "rows": [
+            [
+                "1"
+            ]
+        ]
+    },
+    "tokens": 1236,
+    "time": 34.573073863983154
+}

@@ -247,3 +247,114 @@ Individual scripts are available for specific tasks, primarily located in `src/u
 
 ## IX. GALOIS Implementation
 We explain our GALOIS implementation in `reports/Deadline3/GD_Galileo_3_Report/GD_Galileo_Report_3.pdf` pdf
+
+##  System Architecture
+
+The system is modular, dividing responsibilities between parsing, confidence estimation, schema management, and actual execution.
+
+### 1. Main Orchestration (`Galois` Class)
+The `Galois` class (in `galois.py`) acts as the *Query Planner* and *Orchestrator*.
+* **SQL Parsing:** Uses a parser based on `sqlglot` to decompose the query into projections (`SELECT`), target tables (`FROM`), conditions (`WHERE`), and joins.
+* **Logical Optimization (Push-Down):** Decides which SQL filters to "push" into the LLM prompt and which to apply locally during post-processing.
+* **Physical Optimization:** Dynamically selects the optimal scan strategy (`Table-Scan` vs `Key-Scan`) or delegates it to an `auto` mode based on confidence estimation.
+
+### 2. Execution Engine (`GaloisExecutor`)
+The `GaloisExecutor` (in `executor.py`) manages direct interaction with the LLM.
+* **Scan Algorithms:** Implements two fundamental data retrieval strategies:
+    * **Table-Scan:** Requests the LLM to generate complete tuples in iterative batches, paginating results until the model's knowledge is exhausted.
+    * **Key-Scan:** Splits the process into two phases: first extracting unique primary key values, then iterating over them to retrieve the remaining attributes (lookup).
+* **Memory Management:** Uses `GaloisMemory` to deduplicate tuples generated across iterations and maintain conversation history for context.
+* **Parsing and Validation:** Converts raw LLM text output into validated JSON objects, handling common formatting errors and truncation.
+
+### 3. Schema Management (`SchemaManager`)
+To query the LLM like a relational database, the system injects the schema structure into prompts.
+* **Metadata Store:** Uses a local DuckDB database to retrieve column names, data types, and primary key constraints.
+* **Wrapper Factory:** `GaloisSchemaManagerWrapper` instantiates the correct manager (e.g., `GaloisWO`, `GaloisA`) depending on the selected baseline, handling connections and logging.
+* **Example Injection:** Enriches the prompt with real example values (sampled from the DB) to guide the LLM in generating the correct JSON format.
+
+### 4. Confidence Estimation (`ConfidenceEstimator`)
+A critical component (in `galois_estimator.py`) that evaluates the LLM's ability to handle specific filters.
+* Queries the LLM asking for a confidence estimate ("HIGH" or "LOW") regarding the evaluation of a specific `WHERE` clause.
+* This score determines whether to filter data "at the source" (saving tokens) or download the full dataset and filter locally.
+
+### 5. Post-Processing & Local Join
+Once "raw" data is obtained from the LLM, the `GaloisPostProcessor` (in `galois_post_processing.py`) takes over.
+* **Virtual Tables:** JSON data is loaded into in-memory virtual tables on DuckDB.
+* **Type Casting:** Robust casting is performed to convert approximate LLM strings (e.g., "None", "N/A") into correct SQL types (`NULL`, `INTEGER`, etc.).
+* **Local Joins:** If the original query involved JOINs, Galois downloads the tables separately from the LLM and joins them locally using the DuckDB Relational API.
+* **Residual Filters:** `WHERE` conditions discarded during the logical optimization phase are applied here with deterministic precision.
+
+---
+
+##  Execution Workflow
+
+The execution flow of a query (e.g., `SELECT * FROM movies WHERE year > 2000`) follows these steps:
+
+1.  **Parsing:** The query is analyzed to extract the target table and conditions.
+2.  **Estimation (Optional):** The system estimates if the LLM can handle "year > 2000".
+    * *High Confidence:* The condition is added to the prompt.
+    * *Low Confidence:* The condition is removed from the prompt (becoming "residual").
+3.  **Prompt Construction:** The template (`KEY_SCAN` or `TABLE_SCAN`) is selected. The prompt includes the table's JSON schema.
+4.  **LLM Loop:** The Executor iteratively calls the LLM to paginate results until no new unique tuples are generated.
+5.  **Data Assembly:** Responses are aggregated and cleaned.
+6.  **Local Execution:** DuckDB executes the final SQL query on the extracted in-memory data.
+
+---
+
+##  Optimization Variants (Baselines)
+
+The system supports several strategic configurations defined in `galois.py`:
+
+| Variant | Push-Down Logic | Description |
+| :--- | :--- | :--- |
+| **GALOIS_WO** (Without Opt.) | **No Push** | Downloads all data or keys from the table without filters in the prompt. Filters everything locally. |
+| **GALOIS_A** (Push-All) | **Full Push** | Pushes all `WHERE` conditions into the prompt. Relies completely on the LLM for filtering. |
+| **GALOIS_S** (Push-Selective) | **Heuristic Push** | Pushes only the condition deemed most "selective" (e.g., based on confidence estimation). |
+| **GALOIS_F** (Push-Confident) | **Dynamic Push** | Uses `ConfidenceEstimator` to decide pointwise which filters to push (only those with "HIGH" confidence). |
+
+---
+
+## GALOIS Results
+### GALOIS WO Results comparison
+
+| Metric | PAPER | Ours | Δ (PAPER - Ours) |
+| :--- | ---: | ---: | ---: |
+| F1-Cell | 0.518 | 0.157 | 0.361 |
+| Cardinality | 0.691 | 0.357 | 0.334 |
+| Tuple Constr. | 0.389 | 0.060 | 0.329 |
+| **AVG-Score** | **0.531** | **0.191** | **0.340** |
+| #Tokens (M) | 19.710 | 0.163 | 19.709 |
+| Avg Time | 1460.0 | 43.103 | 1416.897 |
+
+### GALOIS S Results comparison
+
+| Metric | PAPER | Ours | Δ (PAPER - Ours) |
+| :--- | ---: | ---: | ---: |
+| F1-Cell | 0.480 | 0.434 | 0.046 |
+| Cardinality | 0.655 | 0.667 | -0.012 |
+| Tuple Constr. | 0.365 | 0.297 | 0.068 |
+| **AVG-Score** | **0.500** | **0.466** | **0.034** |
+| #Tokens (M) | 0.960 | 0.088 | 0.872 |
+| Avg Time | 130.00 | 17.952 | 112.048 |
+
+### GALOIS A Results comparison
+
+| Metric | PAPER | Ours | Δ (PAPER - Ours) |
+| :--- | ---: | ---: | ---: |
+| F1-Cell | 0.543 | 0.417 | 0.126 |
+| Cardinality | 0.799 | 0.614 | 0.185 |
+| Tuple Constr. | 0.448 | 0.279 | 0.169 |
+| **AVG-Score** | **0.592** | **0.436** | **0.156** |
+| #Tokens (M) | 0.950 | 0.076 | 0.874 |
+| Avg Time | 120.50 | 24.481 | 96.019 |
+
+### GALOIS F Results comparison
+
+| Metric | PAPER | Ours | Δ (PAPER - Ours) |
+| :--- | ---: | ---: | ---: |
+| F1-Cell | 0.563 | 0.319 | 0.244 |
+| Cardinality | 0.835 | 0.528 | 0.307 |
+| Tuple Constr. | 0.464 | 0.166 | 0.298 |
+| **AVG-Score** | **0.622** | **0.338** | **0.284** |
+| #Tokens (M) | 1.720 | 0.142 | 1.578 |
+| Avg Time | 47.400 | 26.196 | 21.204 |

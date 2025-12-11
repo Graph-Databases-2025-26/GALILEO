@@ -1,0 +1,82 @@
+{
+    "query_id": "5",
+    "complexity": "SP2",
+    "result_set": {
+        "columns": [
+            "originaltitle",
+            "startyear",
+            "genres",
+            "birthyear"
+        ],
+        "rows": [
+            [
+                "Catch Me If You Can",
+                "2002",
+                "Biography,Crime,Drama",
+                "1946"
+            ],
+            [
+                "The Terminal",
+                "2004",
+                "Comedy,Drama,Romance",
+                "1946"
+            ],
+            [
+                "War of the Worlds",
+                "2005",
+                "Adventure,Sci-Fi,Thriller",
+                "1946"
+            ],
+            [
+                "Indiana Jones and the Kingdom of the Crystal Skull",
+                "2008",
+                "Action,Adventure,Fantasy",
+                "1946"
+            ],
+            [
+                "The Adventures of Tintin",
+                "2011",
+                "Animation,Action,Adventure",
+                "1946"
+            ],
+            [
+                "Lincoln",
+                "2012",
+                "Biography,Drama,History",
+                "1946"
+            ],
+            [
+                "Bridge of Spies",
+                "2015",
+                "Drama,History,Thriller",
+                "1946"
+            ],
+            [
+                "The Post",
+                "2017",
+                "Drama,History,Thriller",
+                "1946"
+            ],
+            [
+                "Ready Player One",
+                "2018",
+                "Action,Adventure,Sci-Fi",
+                "1946"
+            ],
+            [
+                "West Side Story",
+                "2021",
+                "Crime,Drama,Musical",
+                "1946"
+            ],
+            [
+                "The Fabelmans",
+                "2022",
+                "Biography,Drama",
+                "1946"
+            ]
+        ]
+    },
+    "tokens": 589,
+    "time": 16.662161588668823
+}

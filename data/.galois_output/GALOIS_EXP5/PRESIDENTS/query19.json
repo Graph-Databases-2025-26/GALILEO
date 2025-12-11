@@ -1,0 +1,227 @@
+{
+    "query_id": "19",
+    "complexity": "SP2",
+    "result_set": {
+        "columns": [
+            "name",
+            "start_year",
+            "end_year",
+            "cardinal_number",
+            "party"
+        ],
+        "rows": [
+            [
+                "Abraham Lincoln",
+                "1861",
+                "1861",
+                "16th",
+                "Republican"
+            ],
+            [
+                "Andrew Johnson",
+                "1865",
+                "1869",
+                "17th",
+                "National Union"
+            ],
+            [
+                "Ulysses S. Grant",
+                "1869",
+                "1877",
+                "18th",
+                "Republican"
+            ],
+            [
+                "Rutherford B. Hayes",
+                "1877",
+                "1881",
+                "19th",
+                "Republican"
+            ],
+            [
+                "James A. Garfield",
+                "1881",
+                "1885",
+                "20th",
+                "Republican"
+            ],
+            [
+                "Chester A. Arthur",
+                "1881",
+                "1889",
+                "21st",
+                "Republican"
+            ],
+            [
+                "Grover Cleveland",
+                "1885",
+                "1893",
+                "22nd",
+                "Democratic"
+            ],
+            [
+                "Benjamin Harrison",
+                "1889",
+                "1897",
+                "23rd",
+                "Republican"
+            ],
+            [
+                "William McKinley",
+                "1897",
+                "1901",
+                "24th",
+                "Republican"
+            ],
+            [
+                "Theodore Roosevelt",
+                "1901",
+                "1909",
+                "26th",
+                "Republican"
+            ],
+            [
+                "William Howard Taft",
+                "1909",
+                "1913",
+                "27th",
+                "Republican"
+            ],
+            [
+                "Woodrow Wilson",
+                "1913",
+                "1921",
+                "28th",
+                "Democratic"
+            ],
+            [
+                "Warren G. Harding",
+                "1921",
+                "1923",
+                "29th",
+                "Republican"
+            ],
+            [
+                "Calvin Coolidge",
+                "1923",
+                "1929",
+                "30th",
+                "Republican"
+            ],
+            [
+                "Herbert Hoover",
+                "1929",
+                "1933",
+                "31st",
+                "Republican"
+            ],
+            [
+                "Franklin D. Roosevelt",
+                "1933",
+                "1945",
+                "32nd",
+                "Democratic"
+            ],
+            [
+                "Harry S. Truman",
+                "1945",
+                "1953",
+                "33rd",
+                "Democratic"
+            ],
+            [
+                "Dwight D. Eisenhower",
+                "1953",
+                "1961",
+                "34th",
+                "Republican"
+            ],
+            [
+                "John F. Kennedy",
+                "1961",
+                "1969",
+                "35th",
+                "Democratic"
+            ],
+            [
+                "Lyndon B. Johnson",
+                "1963",
+                "1974",
+                "36th",
+                "Democratic"
+            ],
+            [
+                "Richard Nixon",
+                "1969",
+                "1977",
+                "37th",
+                "Republican"
+            ],
+            [
+                "Gerald R. Ford",
+                "1974",
+                "1981",
+                "38th",
+                "Republican"
+            ],
+            [
+                "Jimmy Carter",
+                "1977",
+                "1989",
+                "39th",
+                "Democratic"
+            ],
+            [
+                "Ronald Reagan",
+                "1981",
+                "1993",
+                "40th",
+                "Republican"
+            ],
+            [
+                "George H.W. Bush",
+                "1989",
+                "2001",
+                "41st",
+                "Republican"
+            ],
+            [
+                "Bill Clinton",
+                "1993",
+                "2009",
+                "42nd",
+                "Democratic"
+            ],
+            [
+                "George W. Bush",
+                "2001",
+                "2017",
+                "43rd",
+                "Republican"
+            ],
+            [
+                "Barack Obama",
+                "2009",
+                "2021",
+                "44th",
+                "Democratic"
+            ],
+            [
+                "Donald J. Trump",
+                "2017",
+                "2025",
+                "45th",
+                "Republican"
+            ],
+            [
+                "Joe Biden",
+                "2021",
+                "2029",
+                "46th",
+                "Democratic"
+            ]
+        ]
+    },
+    "tokens": 1634,
+    "time": 61.63347673416138
+}

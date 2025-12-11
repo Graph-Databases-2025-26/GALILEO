@@ -7,106 +7,139 @@
         ],
         "rows": [
             [
-                "Pittsburgh"
-            ],
-            [
-                "Miami"
-            ],
-            [
-                "Los Angeles"
-            ],
-            [
-                "Dallas"
-            ],
-            [
-                "Virginia Beach"
-            ],
-            [
-                "New Orleans"
-            ],
-            [
-                "San Jose"
-            ],
-            [
-                "Baltimore"
-            ],
-            [
-                "Portland"
-            ],
-            [
-                "Las Vegas"
-            ],
-            [
-                "New York City"
-            ],
-            [
-                "Sacramento"
-            ],
-            [
-                "Tampa"
-            ],
-            [
-                "San Antonio"
-            ],
-            [
-                "San Diego"
-            ],
-            [
-                "Chicago"
-            ],
-            [
                 "Philadelphia"
-            ],
-            [
-                "Minneapolis"
-            ],
-            [
-                "Seattle"
-            ],
-            [
-                "Houston"
-            ],
-            [
-                "Nashville"
-            ],
-            [
-                "Memphis"
-            ],
-            [
-                "Saint Louis"
             ],
             [
                 "Oklahoma City"
             ],
             [
-                "Denver"
+                "San Antonio"
             ],
             [
-                "Milwaukee"
+                "Austin"
             ],
             [
-                "Oakland"
-            ],
-            [
-                "Raleigh"
-            ],
-            [
-                "Omaha"
-            ],
-            [
-                "Boston"
+                "Saint Louis"
             ],
             [
                 "Phoenix"
             ],
             [
+                "San Diego"
+            ],
+            [
+                "Louisville"
+            ],
+            [
+                "Boston"
+            ],
+            [
+                "Nashville"
+            ],
+            [
+                "Baltimore"
+            ],
+            [
+                "Tampa"
+            ],
+            [
+                "New York"
+            ],
+            [
+                "Birmingham"
+            ],
+            [
+                "Columbus"
+            ],
+            [
+                "Charlotte"
+            ],
+            [
+                "Virginia Beach"
+            ],
+            [
+                "Jacksonville"
+            ],
+            [
+                "Sacramento"
+            ],
+            [
+                "Cleveland"
+            ],
+            [
+                "Seattle"
+            ],
+            [
+                "San Jose"
+            ],
+            [
+                "Houston"
+            ],
+            [
                 "Wichita"
             ],
             [
-                "Washington D.C."
+                "Los Angeles"
+            ],
+            [
+                "Fort Worth"
+            ],
+            [
+                "Portland"
+            ],
+            [
+                "Detroit"
+            ],
+            [
+                "Minneapolis"
+            ],
+            [
+                "Indianapolis"
+            ],
+            [
+                "Las Vegas"
+            ],
+            [
+                "Raleigh"
+            ],
+            [
+                "Denver"
+            ],
+            [
+                "Memphis"
+            ],
+            [
+                "Colorado Springs"
+            ],
+            [
+                "Dallas"
+            ],
+            [
+                "Winston-Salem"
+            ],
+            [
+                "El Paso"
+            ],
+            [
+                "Chicago"
+            ],
+            [
+                "Washington"
+            ],
+            [
+                "Long Beach"
+            ],
+            [
+                "Milwaukee"
+            ],
+            [
+                "Kansas City"
+            ],
+            [
+                "Fresno"
             ]
         ]
     },
-    "tokens": 1104,
-    "time": 36.55090570449829
+    "tokens": 1409,
+    "time": 48.0656623840332
 }

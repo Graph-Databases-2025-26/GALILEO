@@ -12,10 +12,6 @@
                 "Atlanta"
             ],
             [
-                "Texas",
-                "Austin"
-            ],
-            [
                 "Nevada",
                 "Carson City"
             ],
@@ -36,16 +32,40 @@
                 "Madison"
             ],
             [
+                "Alabama",
+                "Montgomery"
+            ],
+            [
                 "Oklahoma",
                 "Oklahoma City"
+            ],
+            [
+                "Washington",
+                "Olympia"
             ],
             [
                 "Arizona",
                 "Phoenix"
             ],
             [
+                "North Carolina",
+                "Raleigh"
+            ],
+            [
+                "California",
+                "Sacramento"
+            ],
+            [
                 "Utah",
                 "Salt Lake City"
+            ],
+            [
+                "Illinois",
+                "Springfield"
+            ],
+            [
+                "Minnesota",
+                "St. Paul"
             ],
             [
                 "Florida",
@@ -54,5 +74,5 @@
         ]
     },
     "tokens": 1468,
-    "time": 30.81168532371521
+    "time": 46.954344034194946
 }

@@ -1,0 +1,16 @@
+{
+    "query_id": "16",
+    "complexity": "AGGR",
+    "result_set": {
+        "columns": [
+            "count(p.party)"
+        ],
+        "rows": [
+            [
+                "0"
+            ]
+        ]
+    },
+    "tokens": 974,
+    "time": 25.877743244171143
+}

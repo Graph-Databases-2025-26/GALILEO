@@ -4,7 +4,7 @@ import statistics
 import subprocess
 from collections import defaultdict
 from pathlib import Path
-from src.utils import PY, DATA_DIR, GROUND_PATH
+from src.utils import PY, DATA_DIR, GROUND_PATH, IK_DATASETS
 from src.config import Config_Loader
 from src.db import load_queries_from_folder
 from src.galois.galois import Galois, save_galois_results
@@ -26,43 +26,96 @@ def classify_query_complexity(sql_query: str) -> str:
     except:
         return "UNKNOWN"
 
-    # 1. JOIN
+    #  JOIN
     if len(parsed.get('joins', [])) > 0:
         return "JOIN"
 
-    # 2. AGGREGATE (AGGR)
+    #  AGGREGATE (AGGR)
     cols = parsed.get('select_columns', [])
     # Check for aggregation keywords in select columns
     is_aggr = any(kw in str(col).upper() for col in cols for kw in ['COUNT', 'SUM', 'AVG', 'MAX', 'MIN'])
     if is_aggr:
         return "AGGR"
 
-    # 3. GROUP BY / ORDER BY (G/O)
+    #  GROUP BY / ORDER BY (G/O)
     if parsed.get('group_by_columns') or parsed.get('order_by_clauses'):
         return "G/O"
 
-    # 4. DISTINCT (DIST)
+    #  DISTINCT (DIST)
     # Check original query string for DISTINCT
     if "DISTINCT" in parsed.get('original_query', '').upper():
         return "DIST"
 
-    # 5. SP2 vs SP2> (Selection Projection)
+    #  SP2 vs SP2> (Selection Projection)
     num_conditions = len(parsed.get('where_conditions', []))
     if num_conditions > 2:
         return "SP2>"
     else:
         return "SP2"
 
-    clea
+def save_summary_for_plot(results_by_category):
+    """
+    Salva i punteggi medi per categoria in un file JSON
+    che può essere letto direttamente dal Jupyter Notebook.
+    """
+    ordered_cats = ["SP2", "SP2>", "DIST", "AGGR", "G/O", "JOIN"]
+    summary_data = {}
+
+    for cat in ordered_cats:
+        scores = results_by_category.get(cat, [])
+        if scores:
+            # Calcola la media
+            avg = statistics.mean(scores)
+            summary_data[cat] = avg
+        else:
+            # Se non ci sono query per questa categoria, metti 0
+            summary_data[cat] = 0.0
+
+    # Salva nella root del progetto
+    output_file = Path(__file__).resolve().parent / "exp5_summary.json"
+    try:
+        with open(output_file, "w") as f:
+            json.dump(summary_data, f, indent=4)
+        print(f"\n[AUTO] Dati per il grafico salvati in: {output_file.absolute()}")
+    except Exception as e:
+        LOG.error(f"Impossibile salvare i dati di riepilogo: {e}")
+
+
+
+def print_summary_table(results_by_category):
+    print("\n" + "=" * 60)
+    print(f"   RESULTS SUMMARY - EXP 5 (Dataset: ALL DATASETS)")
+    print("=" * 50)
+    print(f"{'COMPLEXITY':<12} | {'AVG SCORE':<12} | {'COUNT':<12}")
+    print("-" * 46)
+
+    # Order categories by complexity logic
+    ordered_cats = ["SP2", "SP2>", "DIST", "AGGR", "G/O", "JOIN"]
+
+    # Add any unexpected categories found at runtime
+    found_cats = set(results_by_category.keys())
+    for c in found_cats:
+        if c not in ordered_cats:
+            ordered_cats.append(c)
+
+    for cat in ordered_cats:
+        scores = results_by_category.get(cat, [])
+        if scores:
+            avg = statistics.mean(scores)
+            count = len(scores)
+            print(f"{cat:<12} | {avg:<12.4f} | {count:<12}")
+        else:
+            print(f"{cat:<12} | {'0.0000':<12} | {'0':<12}")
+    print("=" * 60)
 
 
 class Exp5Runner:
-    def __init__(self, dataset_name="GEO"):
+    def __init__(self, dataset_name: str, shared_results_dict: dict):
         self.config = Config_Loader().get_config()
         self.dataset_name = dataset_name.upper()
 
         # Dictionary to accumulate scores
-        self.results_by_category = defaultdict(list)
+        self.results_by_category = shared_results_dict
 
     def get_ground_truth_from_json(self, query_id):
         """
@@ -116,7 +169,7 @@ class Exp5Runner:
         dataset_path = DATA_DIR / self.dataset_name
         queries = load_queries_from_folder(dataset_path)
 
-        full_results_json = []
+        dataset_detailed_json = []
 
         for i, (source_file, raw_sql) in enumerate(queries):
             sql_clean = re.sub(r'--query\d+', '', raw_sql)
@@ -129,7 +182,7 @@ class Exp5Runner:
 
             # 2. CLASSIFICATION (Join, Aggregates, etc.)
             category = classify_query_complexity(sql)
-            print(f"\n>> Running {query_id} | Type: [{category}]")
+            print(f"\n>> Running [{self.dataset_name}] {query_id} | Type: [{category}]")
 
             try:
                 # 3. EXECUTE GALOIS F (Push Confident)
@@ -165,7 +218,7 @@ class Exp5Runner:
                 print(f"   [Score: {avg_score:.4f}] F1: {f1:.2f} | Card: {card:.2f} | TCon: {tcon:.2f}")
 
                 # Accumulate data for the output file
-                full_results_json.append({
+                dataset_detailed_json.append({
                     "query_id": str(i+1),
                     "complexity": category,
                     "result_set": {"columns": pred_cols, "rows": pred_rows},
@@ -178,47 +231,28 @@ class Exp5Runner:
                 # Penalize failed queries with score 0
                 self.results_by_category[category].append(0.0)
 
-        # 6. Save detailed results to disk
+        #  Save detailed results to disk
         try:
             # "EXP5" will be the variant name in the output folder
-            save_path = save_galois_results(full_results_json, "EXP5", "openai", self.dataset_name)
+            save_path = save_galois_results(dataset_detailed_json, "EXP5", "openai", self.dataset_name)
             print(f"\nDetailed JSON results saved to: {save_path}")
         except Exception as e:
             LOG.error(f"Could not save JSON results: {e}")
 
-        # 7. PRINT SUMMARY TABLE
-        self.print_summary_table()
 
-    def print_summary_table(self):
-        print("\n" + "=" * 50)
-        print(f"   RESULTS SUMMARY - EXP 5 (Dataset: {self.dataset_name})")
-        print("=" * 50)
-        print(f"{'COMPLEXITY':<12} | {'AVG SCORE':<12} | {'COUNT':<6}")
-        print("-" * 36)
-
-        # Order categories by complexity logic
-        ordered_cats = ["SP2", "SP2>", "DIST", "AGGR", "G/O", "JOIN"]
-
-        # Add any unexpected categories found at runtime
-        found_cats = set(self.results_by_category.keys())
-        for c in found_cats:
-            if c not in ordered_cats:
-                ordered_cats.append(c)
-
-        for cat in ordered_cats:
-            scores = self.results_by_category.get(cat, [])
-            if scores:
-                avg = statistics.mean(scores)
-                count = len(scores)
-                print(f"{cat:<12} | {avg:<12.4f} | {count:<6}")
-            else:
-                pass
-                # If a category has no queries in the dataset, do not print it or print N/A
-                # print(f"{cat:<12} | {'N/A':<12} | 0")
-        print("=" * 50)
 
 
 if __name__ == "__main__":
-    # Run the experiment. Change `GEO` to the correct dataset if necessary.
-    runner = Exp5Runner(dataset_name="GEO")
-    runner.run()
+    # 1. Creiamo il dizionario accumulatore GLOBALE
+    global_results = defaultdict(list)
+
+    # 2. Iteriamo sui dataset
+    for dataset in IK_DATASETS:
+        # Passiamo l'accumulatore globale al runner
+        runner = Exp5Runner(dataset_name=dataset, shared_results_dict=global_results)
+        runner.run()
+
+    # 3. Solo alla fine di TUTTI i dataset, stampiamo e salviamo il riepilogo totale
+    print("\n--- ELABORAZIONE TERMINATA SU TUTTI I DATASET ---")
+    print_summary_table(global_results)
+    save_summary_for_plot(global_results)

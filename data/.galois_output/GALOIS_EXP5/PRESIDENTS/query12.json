@@ -1,0 +1,26 @@
+{
+    "query_id": "12",
+    "complexity": "AGGR",
+    "result_set": {
+        "columns": [
+            "party",
+            "num"
+        ],
+        "rows": [
+            [
+                "Liberal",
+                "3"
+            ],
+            [
+                "Conservative",
+                "2"
+            ],
+            [
+                "None",
+                "0"
+            ]
+        ]
+    },
+    "tokens": 1441,
+    "time": 39.91716432571411
+}

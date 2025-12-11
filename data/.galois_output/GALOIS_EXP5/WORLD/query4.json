@@ -1,0 +1,19 @@
+{
+    "query_id": "4",
+    "complexity": "JOIN",
+    "result_set": {
+        "columns": [
+            "region"
+        ],
+        "rows": [
+            [
+                "Australia and Oceania"
+            ],
+            [
+                "West Africa"
+            ]
+        ]
+    },
+    "tokens": 5044,
+    "time": 137.96962761878967
+}

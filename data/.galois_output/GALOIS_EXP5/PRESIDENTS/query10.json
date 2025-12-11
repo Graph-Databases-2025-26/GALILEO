@@ -1,0 +1,52 @@
+{
+    "query_id": "10",
+    "complexity": "SP2>",
+    "result_set": {
+        "columns": [
+            "name",
+            "party",
+            "start_year",
+            "end_year",
+            "cardinal_number"
+        ],
+        "rows": [
+            [
+                "Carlos Andrés Pérez",
+                "Democratic Action",
+                "1974",
+                "1979",
+                "45th"
+            ],
+            [
+                "Rómulo Betancourt",
+                "Democratic Action",
+                "1959",
+                "1959",
+                "42nd"
+            ],
+            [
+                "Raúl Leoni",
+                "Democratic Action",
+                "1960",
+                "1964",
+                "43rd"
+            ],
+            [
+                "Jaime Lusinchi",
+                "Democratic Action",
+                "1984",
+                "1984",
+                "46th"
+            ],
+            [
+                "Omar Carreño",
+                "Democratic Action",
+                "1993",
+                "1993",
+                "48th"
+            ]
+        ]
+    },
+    "tokens": 764,
+    "time": 23.78325343132019
+}

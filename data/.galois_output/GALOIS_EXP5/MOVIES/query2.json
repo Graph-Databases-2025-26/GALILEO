@@ -1,0 +1,37 @@
+{
+    "query_id": "2",
+    "complexity": "SP2",
+    "result_set": {
+        "columns": [
+            "originaltitle"
+        ],
+        "rows": [
+            [
+                "Schindler's List"
+            ],
+            [
+                "E.T. the Extra-Terrestrial"
+            ],
+            [
+                "Jaws"
+            ],
+            [
+                "Jurassic Park"
+            ],
+            [
+                "War Horse"
+            ],
+            [
+                "West Side Story"
+            ],
+            [
+                "Indiana Jones and the Raiders of the Lost Ark"
+            ],
+            [
+                "Saving Private Ryan"
+            ]
+        ]
+    },
+    "tokens": 409,
+    "time": 12.385100841522217
+}

@@ -1,0 +1,18 @@
+{
+    "query_id": "7",
+    "complexity": "AGGR",
+    "result_set": {
+        "columns": [
+            "party",
+            "num"
+        ],
+        "rows": [
+            [
+                "United Socialist Party of Venezuela",
+                "1"
+            ]
+        ]
+    },
+    "tokens": 551,
+    "time": 14.341932535171509
+}

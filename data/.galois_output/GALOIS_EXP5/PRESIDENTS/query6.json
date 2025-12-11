@@ -1,0 +1,31 @@
+{
+    "query_id": "6",
+    "complexity": "SP2",
+    "result_set": {
+        "columns": [
+            "name",
+            "start_year",
+            "end_year",
+            "cardinal_number",
+            "party"
+        ],
+        "rows": [
+            [
+                "Hugo Chavez",
+                "1999",
+                "2013",
+                "16th",
+                "United Socialist Party"
+            ],
+            [
+                "Nicolás Maduro",
+                "2013",
+                "2019",
+                "17th",
+                "United Socialist Party"
+            ]
+        ]
+    },
+    "tokens": 124,
+    "time": 6.992959260940552
+}

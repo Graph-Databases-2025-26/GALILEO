@@ -7,10 +7,22 @@
         ],
         "rows": [
             [
-                "Lake Superior"
+                "Lake Ontario"
             ],
             [
-                "Lake Erie"
+                "Lake Nicaragua"
+            ],
+            [
+                "Lake Victoria"
+            ],
+            [
+                "Lake Issyk-Kul"
+            ],
+            [
+                "Great Salt Lake"
+            ],
+            [
+                "Lake Tanganyika"
             ],
             [
                 "Lake Michigan"
@@ -19,13 +31,19 @@
                 "Lake Huron"
             ],
             [
-                "Great Salt Lake"
+                "Lake Erie"
             ],
             [
-                "Lake Ontario"
+                "Lake Winnipeg"
+            ],
+            [
+                "Lake of the Woods"
+            ],
+            [
+                "Lake Superior"
             ]
         ]
     },
-    "tokens": 338,
-    "time": 9.448529481887817
+    "tokens": 454,
+    "time": 14.003695011138916
 }
