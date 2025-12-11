@@ -1,0 +1,11 @@
+{
+    "query_id": "24",
+    "dataset": "GEO",
+    "scores": {
+        "galois_a": 0.44050976020285476,
+        "galois_wo": 0.35264632168656934,
+        "galois_f": 0.44050976020285476,
+        "optimal": 0.44050976020285476
+    },
+    "optimality_gap": 0.0
+}

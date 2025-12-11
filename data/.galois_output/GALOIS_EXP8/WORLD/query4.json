@@ -1,0 +1,11 @@
+{
+    "query_id": "4",
+    "dataset": "WORLD",
+    "scores": {
+        "galois_a": 0.1272727272727273,
+        "galois_wo": 0.0,
+        "galois_f": 0.15555555555555556,
+        "optimal": 0.15555555555555556
+    },
+    "optimality_gap": 0.0
+}

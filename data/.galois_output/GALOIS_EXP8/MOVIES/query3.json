@@ -1,0 +1,11 @@
+{
+    "query_id": "3",
+    "dataset": "MOVIES",
+    "scores": {
+        "galois_a": 0.2201418439716312,
+        "galois_wo": 0.0,
+        "galois_f": 0.15936507936507938,
+        "optimal": 0.2201418439716312
+    },
+    "optimality_gap": 0.06077676460655182
+}
