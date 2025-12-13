@@ -56,11 +56,13 @@ The memory state is maintained by the following core attributes:
 
 Both the $\texttt{Table-Scan}$ and $\texttt{Key-Scan}$ physical operators rely on a fundamental Iterative Execution Loop (lines 4-19 in Algorithms \ref{alg:table_scan} and \ref{alg:key_scan}) to overcome the LLM context window limitations and maximize data extraction coverage. The core mechanism involves repeatedly querying the LLM and dynamically updating the prompt with historical data.
 
-\subsubsection{Loop Mechanism: History Injection}
+\subsubsection{Loop Mechanism: Pagination \& History Injection}
 In both strategies, the iterative process is driven by the dynamic insertion of previously acquired data into the subsequent prompt. This mechanism ensures two critical functions:
 \begin{enumerate}
     \item \textbf{Deduplication:} The LLM is implicitly guided to avoid regenerating records already present in the injected history ($\mathcal{H}$).
     \item \textbf{Novelty Search:} The context directs the LLM to explore uncollected portions of the solution space, thereby maximizing the cardinality of the final result set ($\mathcal{R}_{final}$).
+    \item To enhance retrieval efficiency and prevent the LLM from wandering randomly, the iterative mechanism implements a \textbf{value-based pagination} strategy: In addition to the history the system identifies the last retrieved value (\texttt{last\_val}) from the memory.
+    The prompt logic explicitly instructs the LLM to generate unique tuples that strictly follow \texttt{last\_val} (alphabetically or numerically). This transforms the extraction into a pseudo-sequential scan, improving coverage compared to simple history injection.
 \end{enumerate}
 The difference lies in the content of the history: $\texttt{Table-Scan}$ injects a history of complete tuples, while $\texttt{Key-Scan}$ injects only the unique key values ($\mathcal{K}$) collected so far.
 

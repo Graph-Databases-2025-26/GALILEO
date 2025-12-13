@@ -22,7 +22,11 @@ Our implementation orchestrates the interaction between a declarative SQL interf
 \begin{sloppypar}
 The entry point of the system is the \texttt{Galois} class, which initializes the workflow by parsing the input SQL query into an Abstract Syntax Tree (AST) using the \texttt{sql\_query\_parser} module. Unlike standard text-to-SQL approaches, GALOIS does not immediately prompt the LLM with the raw query, instead it inspects the database structure using the \texttt{GaloisSchemaManager}.
 This component connects to a read-only DuckDB instance to retrieve accurate metadata (column names, primary keys, and data types). This schema awareness allows the system to construct semantically valid JSON schemas for the prompts, ensuring that the LLM's output adheres to the strict typing required for the subsequent relational operations.
+\\\textbf{Data-Driven Schema Enrichment}: The Schema Manager has been enhanced to support few-shot context injection. For textual columns (VARCHAR/TEXT) that are not primary keys, the manager queries the underlying DuckDB instance to retrieve a small sample of actual values (e.g., 3 examples).
+These examples are injected directly into the JSON schema description passed to the LLM ("description": "Examples: ..."), providing the model with immediate context about data formatting and distribution.
+
 \end{sloppypar}
+
 \subsection{The Execution Engine}
 The retrieval logic is encapsulated within the \texttt{GaloisExecutor} class. This component abstracts the complexity of the LLM interaction (via LangChain) and implements the iterative retrieval loops.
 
