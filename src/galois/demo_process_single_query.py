@@ -1,11 +1,11 @@
 import json
 from src.config.loaders import Config_Loader
-from src.utils.logging_config import log_init
+from src.utils.logging_config import log_init, LOG
 from src.utils import sql_query_parser
 from src.galois.galois import Galois
 
-def main():
-    log_init()
+def debug():
+    #log_init()
     cfg = Config_Loader().get_config() # load default config
 
     dataset = "WORLD" # use WORLD dataset
@@ -17,12 +17,12 @@ def main():
     WHERE t1.language = 'English'
     OR t1.language = 'Dutch';
     """
-    print("\n=== INPUT QUERY ===") 
-    print(sql_query)
+    LOG.info("\n=== INPUT QUERY ===")
+    LOG.debug(sql_query)
 
-    print("\n=== PARSER OUTPUT (sql_query_parser.parse_sql) ===")
+    LOG.info("\n=== PARSER OUTPUT (sql_query_parser.parse_sql) ===")
     parsed = sql_query_parser.parse_sql(sql_query) # parse the SQL query
-    print(json.dumps(parsed, indent=2, ensure_ascii=False)) 
+    LOG.debug(json.dumps(parsed, indent=2, ensure_ascii=False))
 
 # initialize Galois with the query
     g = Galois(
@@ -41,19 +41,19 @@ def main():
     ] 
 
     for tag, fn in variants:
-        print(f"\n\n================ {tag} ================\n")
+        LOG.info(f"\n\n================ {tag} ================\n")
 
         results, stats, debug_info = fn(debug=True) # execute the query
 
-        print("=== DEBUG INFO ===")
-        print(json.dumps(debug_info, indent=2, ensure_ascii=False))
+        LOG.info("=== DEBUG INFO ===")
+        LOG.debug(json.dumps(debug_info, indent=2, ensure_ascii=False))
 
-        print("=== STATS ===")
-        print(json.dumps(stats, indent=2, ensure_ascii=False))
+        LOG.info("=== STATS ===")
+        LOG.debug(json.dumps(stats, indent=2, ensure_ascii=False))
 
-        print("=== RESULT (first 10 rows) ===")
-        print(json.dumps(results[:10], indent=2, ensure_ascii=False))
+        LOG.info("=== RESULT (first 10 rows) ===")
+        LOG.debug(json.dumps(results[:10], indent=2, ensure_ascii=False))
 
 
 if __name__ == "__main__":
-    main()
+    debug()

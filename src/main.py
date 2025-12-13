@@ -1,3 +1,4 @@
+from src.galois.demo_process_single_query import debug
 from src.galois.galois import Galois, save_galois_results
 from src.utils import PY, SUBMISSIONS_PATH, GROUND_PATH, DATA_DIR, IK_DATASETS, MC_DATASETS, BASELINE_OUTPUT
 from src.utils import get_dataset_selection, load_queries_from_folder
@@ -53,6 +54,12 @@ def parse_args():
          choices=["gemini", "watsonx", "open_router"],
          default=None,
          help="Override LLM provider. If omitted, uses config.llm.provider.",
+     )
+     parser.add_argument(
+         "--debug",
+         action="store_true",
+         default=None,
+         help="Debug the system with a dummy query",
      )
      return parser.parse_args()
 
@@ -129,6 +136,10 @@ def main():
     config = Config_Loader().get_config()
     args = parse_args()
     #log_init()
+
+    if args.debug:
+        debug()
+        return
 
     if args.provider:
         #if args.mode in ("pzsql", "pznl") and args.provider == "gemini":

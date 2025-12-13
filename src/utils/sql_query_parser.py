@@ -68,6 +68,13 @@ def parse_sql(sql_query: str) -> Dict[str, Any]:
         # We use parse_one to ensure it's a single query
         parsed_ast = sqlglot.parse_one(sql_query_string, read="duckdb")
 
+        # --- 1. DETECT DISTINCT ---
+        # In sqlglot, the Select expression usually has an arg called "distinct"
+        # which is not None if DISTINCT is present.o
+        is_distinct = False
+        if parsed_ast.args.get("distinct"):
+            is_distinct = True
+
         # Extract SELECT columns
         # .expressions holds the list of selected items (e.g., columns, functions)
         select_cols = [col.sql(dialect="duckdb") for col in parsed_ast.expressions]
@@ -92,10 +99,11 @@ def parse_sql(sql_query: str) -> Dict[str, Any]:
             on_expression = join.args.get("on")
             on_condition = on_expression.sql(dialect="duckdb") if on_expression else None
 
+            join_type = join.kind if join.kind else "INNER"
             joins_list.append({
                 "table": join_table,
                 "alias": join_alias,
-                "type": join.kind,  # LEFT, INNER, etc.
+                "type": join_type,  # LEFT, INNER, etc.
                 "on_condition": on_condition
             })
 
@@ -134,6 +142,7 @@ def parse_sql(sql_query: str) -> Dict[str, Any]:
 
         # Return the clean dictionary plan
         parsed_plan = {
+            "distinct": is_distinct,
             "select_columns": select_cols,
             "from_table": table_name,
             "from_alias": table_alias,
