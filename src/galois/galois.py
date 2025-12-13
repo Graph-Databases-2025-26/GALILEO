@@ -89,7 +89,7 @@ class Galois:
             "original_query": self.sql_query
         }
 
-    def  execute_variant(self, plan: Dict[str, Any], variant_name: str):
+    def  execute_variant(self, plan: Dict[str, Any], variant_name: str, debug: bool = False):
         """
         Instantiates the Executor and runs the query according to the plan.
         """
@@ -129,6 +129,8 @@ class Galois:
 
         #Find the residual conditions
         residual_conditions = [c for c in all_conditions if c not in pushed_conditions]
+        
+        per_table_stats = [] #to collect per-table scan info
 
         try:
 
@@ -214,6 +216,17 @@ class Galois:
                                 table_executor.schema_mgr.dispose_manager()
                             elif hasattr(table_executor.schema_mgr, 'close'):
                                 table_executor.schema_mgr.close()
+                
+                scan_used = "KEY" if final_strategy == "KEY" else "TABLE" #for logging
+                per_table_stats.append({ 
+                    "table": t_name, 
+                    "alias": t_alias,
+                    "scan": scan_used,
+                    "columns": cols_to_pass if cols_to_pass else "*",
+                    "pushed_conditions": current_push_conditions,
+                    "time": f_response.get("time", 0),
+                    "tokens": f_response.get("tokens", 0),
+                    }) 
 
                 total_execution_time += f_response.get("time", 0)
                 total_tokens_used += f_response.get("tokens", 0)
@@ -225,14 +238,25 @@ class Galois:
                 "total_time": total_execution_time,
                 "total_tokens": total_tokens_used
             }
-            return results, stats
+            if not debug:
+              return results, stats
+            
+            debug_info = {
+                "variant_name": variant_name,
+                "physical_strategy_requested": self.physical_strategy,
+                "physical_strategy_final": final_strategy,
+                "conditions_to_push": pushed_conditions,
+                "residual_conditions": residual_conditions,
+                "tables": per_table_stats,
+                }
+            return results, stats, debug_info
 
         except Exception as e:
             LOG.error(f"Error during the plan selection execution of the query {plan['original_query']} : {e}")
             raise e
 
     # --- LOGICAL OPTIMIZATION VARIANTS (Fig.2 in the paper)
-    def run_no_push(self) -> tuple[list[dict[str, Any]], dict[str, int]]:
+    def run_no_push(self, debug:bool =False) -> tuple[list[dict[str, Any]], dict[str, int]]:
         """
         Variant: GALOIS_WO (Without Optimizations / No-Push)
 
@@ -247,9 +271,9 @@ class Galois:
         plan = self.build_execution_plan(conditions_to_push=[])
         #Force GaloisWO to use KeyScan as indicated in the former paper
         self.physical_strategy = "key"
-        return self.execute_variant(plan, "GALOIS_WO (No-Push)")
+        return self.execute_variant(plan, "GALOIS_WO (No-Push)",debug=debug)
 
-    def run_push_all(self) -> tuple[list[dict[str, Any]], dict[str, int]]:
+    def run_push_all(self, debug: bool = False) -> tuple[list[dict[str, Any]], dict[str, int]]:
         """
         Variant: GALOIS_A (Push-All)
 
@@ -264,9 +288,9 @@ class Galois:
         # We pass all conditions found by the parser
         all_conditions = self.parsed_sql['where_conditions']
         plan = self.build_execution_plan(conditions_to_push=all_conditions)
-        return self.execute_variant(plan, "GALOIS_A (Push-All)")
+        return self.execute_variant(plan, "GALOIS_A (Push-All)",debug=debug)
 
-    def run_push_selective(self) -> tuple[list[dict[str, Any]], dict[str, int]]:
+    def run_push_selective(self, debug: bool = False) -> tuple[list[dict[str, Any]], dict[str, int]]:
         """
         Variant: GALOIS_S (Push-Selective)
 
@@ -308,9 +332,9 @@ class Galois:
         LOG.info(f"Selectivity Analysis Result: {num_high} selective conditions found. Action: {variant_desc}")
 
         plan = self.build_execution_plan(conditions_to_push=conditions_to_push)
-        return self.execute_variant(plan, variant_desc)
+        return self.execute_variant(plan, variant_desc,debug=debug)
 
-    def run_push_confident(self) -> tuple[list[dict[str, Any]], dict[str, int]]:
+    def run_push_confident(self, debug: bool = False) -> tuple[list[dict[str, Any]], dict[str, int]]:
         """
         Variant: GALOIS_F (Full / Push-Confident)
 
@@ -365,7 +389,7 @@ class Galois:
         #The conditions that are not involved here will be ignored by the Scan.
         plan = self.build_execution_plan(conditions_to_push=conditions_to_push)
 
-        return self.execute_variant(plan, execution_variant)
+        return self.execute_variant(plan, execution_variant,debug=debug)
 
     def perform_local_join_and_query(self, original_sql: str, data_map: Dict[str, List[Dict[str, Any]]]) -> List[Dict[str, Any]]:
 
