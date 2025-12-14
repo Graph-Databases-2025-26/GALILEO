@@ -4,6 +4,41 @@
 \subsection{Experiment 2:}
 \subsection{Experiment 3:}
 \subsection{Experiment 4:}
+
+Here we implemented an automated evaluation pipeline  ("Impact of Rarity and Temporality"), focusing on the \textbf{PRESIDENTS} domain. The primary objective is to quantify how the frequency of data in pre-training (popularity) and its temporal recency influence the ability of Large Language Models (LLMs)  to measure two specific biases.
+\begin{itemize}
+    \item \textbf{Rarity}: Compares performance on popular entities (USA) versus rare entities (Venezuela).
+    \item \textbf{Temporality}: Compares performance on recent events versus historical events . For this purpose we split the queries into three categories: ALL-TIME covering all dates, RECENT for queries that cover data from late 1900 to today, and PAST for queries
+for data till the late 1900.
+\end{itemize}
+
+
+
+By benchmarking model modalities (GALOIS, NL, SQL) against the Ground Truth, the script calculates the AVG-SCORE. The results confirm that query generation quality degrades significantly when dealing with rare or historical data, as we can see in the tables below:
+
+\begin{table}[ht]
+    \centering
+    \caption{Experimental Results: Impact of Rarity and Temporality on Query Execution Quality (AVG-SCORE).}
+    \label{tab:combined_results}
+    \begin{tabular}{lcccccc}
+        \toprule
+        \textbf{Category} & \textbf{GALOIS\textsubscript{A}} & \textbf{GALOIS\textsubscript{F}} & \textbf{GALOIS\textsubscript{S}} & \textbf{GALOIS\textsubscript{WO}} & \textbf{NL} & \textbf{SQL} \\
+        \midrule
+        \multicolumn{7}{l}{\textit{Impact of Rarity (Country)}} \\
+        \midrule
+        Presidents-USA & 0.570 & \textbf{0.652} & 0.587 & 0.089 & 0.352 & 0.320 \\
+        Presidents-Venezuela & 0.282 & 0.212 & \textbf{0.323} & 0.051 & 0.091 & 0.257 \\
+        \midrule
+        \multicolumn{7}{l}{\textit{Impact of Temporality}} \\
+        \midrule
+        Recent & \textbf{0.532} & 0.531 & 0.449 & 0.095 & 0.375 & 0.318 \\
+        Past & 0.240 & 0.305 & \textbf{0.378} & 0.000 & 0.183 & 0.281 \\
+        All-Time & 0.427 & 0.420 & \textbf{0.479} & 0.077 & 0.160 & 0.277 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+
 \subsection{Experiment 5: Impact of SQL Query Complexity on Retrieval Quality}
 \textbf{Objective}: The objective of this experiment is to evaluate the robustness and stability of the GALOIS system as the structural and logical complexity of the input SQL query varies. Since Large Language Models (LLMs) tend to degrade in performance when handling complex logic (such as multiple joins or nested aggregations).
 \\\textbf{Methodology and Query Taxonomy}: To conduct this analysis, we implemented a static classifier (\texttt{classify\_query\_complexity}) that parses the Abstract Syntax Tree (AST) of each SQL query via \texttt{sqlglot} and assigns it to one of six mutually exclusive complexity categories, ordered by expected difficulty:
