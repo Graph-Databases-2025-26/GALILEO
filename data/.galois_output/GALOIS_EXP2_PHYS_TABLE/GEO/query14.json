@@ -1,0 +1,267 @@
+{
+    "query_id": "14",
+    "result_set": {
+        "columns": [
+            "lake_name"
+        ],
+        "rows": [
+            [
+                "Lake Nipigon"
+            ],
+            [
+                "Lake Baikal"
+            ],
+            [
+                "Lake Victoria"
+            ],
+            [
+                "Lake Biwa"
+            ],
+            [
+                "Lake Kivu"
+            ],
+            [
+                "Lake Onega"
+            ],
+            [
+                "Lake Siljan"
+            ],
+            [
+                "Lake Torneträsk"
+            ],
+            [
+                "Lake Heinävesi"
+            ],
+            [
+                "Lake Albert"
+            ],
+            [
+                "Lake Akkajaure"
+            ],
+            [
+                "Lake Fluka"
+            ],
+            [
+                "Aral Sea"
+            ],
+            [
+                "Lake Maracaibo"
+            ],
+            [
+                "Lake Kaitum"
+            ],
+            [
+                "Lake Kallavesi"
+            ],
+            [
+                "Great Slave Lake"
+            ],
+            [
+                "Lake Chad"
+            ],
+            [
+                "Lake Van"
+            ],
+            [
+                "Lake Ladoga"
+            ],
+            [
+                "Lake Abisko"
+            ],
+            [
+                "Lake Ontario"
+            ],
+            [
+                "Lake Huron (including Georgian Bay)"
+            ],
+            [
+                "Tonle Sap"
+            ],
+            [
+                "Lake Nicaragua"
+            ],
+            [
+                "Lake Keitele"
+            ],
+            [
+                "Lake Pyhäselkä"
+            ],
+            [
+                "Lake Vostok"
+            ],
+            [
+                "Dead Sea"
+            ],
+            [
+                "Lake Enriquillo"
+            ],
+            [
+                "Lake Urmia"
+            ],
+            [
+                "Lake Edward"
+            ],
+            [
+                "Lake Peipus"
+            ],
+            [
+                "Lake Hornavan"
+            ],
+            [
+                "Lake Mead"
+            ],
+            [
+                "Lake Athabasca"
+            ],
+            [
+                "Reindeer Lake"
+            ],
+            [
+                "Lake Tanganyika"
+            ],
+            [
+                "Lake Nasser"
+            ],
+            [
+                "Lake Orivesi"
+            ],
+            [
+                "Lake Superior (including Isle Royale)"
+            ],
+            [
+                "Lake Managua"
+            ],
+            [
+                "Lake Inari"
+            ],
+            [
+                "Lake Sarek"
+            ],
+            [
+                "Lake Superior"
+            ],
+            [
+                "Lake Huron"
+            ],
+            [
+                "Lake Sakakawea"
+            ],
+            [
+                "Lake Winnipeg"
+            ],
+            [
+                "Lake Michigan"
+            ],
+            [
+                "Lake Sevan"
+            ],
+            [
+                "Lake Saimaa (including P"
+            ],
+            [
+                "Great Salt Lake"
+            ],
+            [
+                "Lake Argentino"
+            ],
+            [
+                "Lake Kyoga"
+            ],
+            [
+                "Lake Tana"
+            ],
+            [
+                "Lake Abitibi"
+            ],
+            [
+                "Lake Malawi"
+            ],
+            [
+                "Lake Ysyk"
+            ],
+            [
+                "Lake Oulujärvi"
+            ],
+            [
+                "Lake Erie"
+            ],
+            [
+                "Lake Oahe"
+            ],
+            [
+                "Lake of the Woods"
+            ],
+            [
+                "Lake Turkana"
+            ],
+            [
+                "Lake Pontchartrain"
+            ],
+            [
+                "Lake Mälaren"
+            ],
+            [
+                "Lake Skalka"
+            ],
+            [
+                "Lake Konnevesi"
+            ],
+            [
+                "Lake Haukivesi"
+            ],
+            [
+                "Lake Puruvesi"
+            ],
+            [
+                "Lake Iliamna"
+            ],
+            [
+                "Lake Storsjön"
+            ],
+            [
+                "Lake Randi"
+            ],
+            [
+                "Lake Kalljoki"
+            ],
+            [
+                "Lake Issyk-Kul"
+            ],
+            [
+                "Caspian Sea"
+            ],
+            [
+                "Lake Volta"
+            ],
+            [
+                "Lake Aswan"
+            ],
+            [
+                "Lake Eyre"
+            ],
+            [
+                "Lake Rukwa"
+            ],
+            [
+                "Lake Vättern"
+            ],
+            [
+                "Lake Päijänne"
+            ],
+            [
+                "Great Bear Lake"
+            ],
+            [
+                "Lake Mweru"
+            ],
+            [
+                "Lake Saimaa"
+            ],
+            [
+                "Lake Uddjaure"
+            ]
+        ]
+    },
+    "total_tokens": 1648,
+    "total_time": 37.30855584144592
+}

@@ -1,0 +1,21 @@
+{
+    "query_id": "23",
+    "result_set": {
+        "columns": [
+            "capital"
+        ],
+        "rows": [
+            [
+                "Springfield"
+            ],
+            [
+                "Carson City"
+            ],
+            [
+                "Bismarck"
+            ]
+        ]
+    },
+    "total_tokens": 3957,
+    "total_time": 82.3675639629364
+}

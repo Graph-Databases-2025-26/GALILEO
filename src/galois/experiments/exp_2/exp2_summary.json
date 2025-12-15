@@ -1,0 +1,33 @@
+{
+  "dataset_db": "geo",
+  "dataset_ground_truth": "GEO",
+  "provider": "watsonx",
+  "only": "all",
+  "physical": {
+    "n_queries": 32,
+    "auto_accuracy": 0.59375,
+    "avg_score_mean": {
+      "table": 0.3149698630531834,
+      "key": 0.2717955583962222,
+      "auto": 0.27402056601254715
+    },
+    "tokens_m_total": {
+      "table": 0.030147,
+      "key": 0.032895,
+      "auto": 0.031311
+    }
+  },
+  "logical": {
+    "n_queries": 11,
+    "avg_score_mean": {
+      "no_push": 0.318106712688756,
+      "galois_a": 0.2742553742553743,
+      "galois_f": 0.39704784184449254
+    },
+    "tokens_m_total": {
+      "no_push": 0.015466,
+      "galois_a": 0.009407,
+      "galois_f": 0.013726
+    }
+  }
+}

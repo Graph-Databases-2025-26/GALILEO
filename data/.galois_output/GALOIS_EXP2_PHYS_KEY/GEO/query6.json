@@ -1,0 +1,11 @@
+{
+    "query_id": "6",
+    "result_set": {
+        "columns": [
+            "lake_name"
+        ],
+        "rows": []
+    },
+    "total_tokens": 837,
+    "total_time": 18.1843740940094
+}

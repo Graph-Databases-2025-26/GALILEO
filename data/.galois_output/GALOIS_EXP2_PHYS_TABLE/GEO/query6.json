@@ -1,0 +1,27 @@
+{
+    "query_id": "6",
+    "result_set": {
+        "columns": [
+            "lake_name"
+        ],
+        "rows": [
+            [
+                "Clear Lake"
+            ],
+            [
+                "Salton Sea"
+            ],
+            [
+                "Lake Shasta"
+            ],
+            [
+                "Lake Berryessa"
+            ],
+            [
+                "New Bullards Bar Reservoir"
+            ]
+        ]
+    },
+    "total_tokens": 882,
+    "total_time": 18.74439787864685
+}

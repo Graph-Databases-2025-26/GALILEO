@@ -1,0 +1,15 @@
+{
+    "query_id": "19",
+    "result_set": {
+        "columns": [
+            "capital"
+        ],
+        "rows": [
+            [
+                "Montgomery"
+            ]
+        ]
+    },
+    "total_tokens": 459,
+    "total_time": 8.97252368927002
+}

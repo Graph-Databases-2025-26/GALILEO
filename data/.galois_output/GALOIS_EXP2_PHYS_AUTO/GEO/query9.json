@@ -1,0 +1,11 @@
+{
+    "query_id": "9",
+    "result_set": {
+        "columns": [
+            "length_in_km"
+        ],
+        "rows": []
+    },
+    "total_tokens": 142,
+    "total_time": 9.036619901657104
+}

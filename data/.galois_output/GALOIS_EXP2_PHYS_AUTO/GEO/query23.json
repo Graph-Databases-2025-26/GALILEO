@@ -1,0 +1,11 @@
+{
+    "query_id": "23",
+    "result_set": {
+        "columns": [
+            "capital"
+        ],
+        "rows": []
+    },
+    "total_tokens": 1177,
+    "total_time": 24.157974243164062
+}

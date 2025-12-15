@@ -1,0 +1,51 @@
+{
+    "query_id": "29",
+    "result_set": {
+        "columns": [
+            "state_name",
+            "capital",
+            "density",
+            "population"
+        ],
+        "rows": [
+            [
+                "Indiana",
+                "Indianapolis",
+                "185.0",
+                "6732219"
+            ],
+            [
+                "Massachusetts",
+                "Boston",
+                "652.0",
+                "6892503"
+            ],
+            [
+                "Ohio",
+                "Columbus",
+                "261.0",
+                "11689100"
+            ],
+            [
+                "Pennsylvania",
+                "Harrisburg",
+                "278.0",
+                "12802023"
+            ],
+            [
+                "South Carolina",
+                "Columbia",
+                "159.0",
+                "5088477"
+            ],
+            [
+                "Tennessee",
+                "Nashville",
+                "162.0",
+                "6829174"
+            ]
+        ]
+    },
+    "total_tokens": 2224,
+    "total_time": 51.16777515411377
+}

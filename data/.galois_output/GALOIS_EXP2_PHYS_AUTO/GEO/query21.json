@@ -1,0 +1,11 @@
+{
+    "query_id": "21",
+    "result_set": {
+        "columns": [
+            "country_name"
+        ],
+        "rows": []
+    },
+    "total_tokens": 795,
+    "total_time": 20.07876944541931
+}

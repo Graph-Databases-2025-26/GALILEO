@@ -1,0 +1,21 @@
+{
+    "query_id": "32",
+    "result_set": {
+        "columns": [
+            "state_name",
+            "capital",
+            "population",
+            "area_squared_miles"
+        ],
+        "rows": [
+            [
+                "California",
+                "Sacramento",
+                "4700000",
+                "56153"
+            ]
+        ]
+    },
+    "total_tokens": 876,
+    "total_time": 19.91817808151245
+}

@@ -1,0 +1,27 @@
+{
+    "query_id": "14",
+    "result_set": {
+        "columns": [
+            "lake_name"
+        ],
+        "rows": [
+            [
+                "Lake St. Clair"
+            ],
+            [
+                "Lake Sakakawea"
+            ],
+            [
+                "Lake Pontchartrain"
+            ],
+            [
+                "Lake of the Woods"
+            ],
+            [
+                "Great Salt Lake"
+            ]
+        ]
+    },
+    "total_tokens": 621,
+    "total_time": 13.034111499786377
+}

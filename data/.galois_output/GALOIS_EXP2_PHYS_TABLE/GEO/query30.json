@@ -1,0 +1,93 @@
+{
+    "query_id": "30",
+    "result_set": {
+        "columns": [
+            "state_name",
+            "capital"
+        ],
+        "rows": [
+            [
+                "New York",
+                "Albany"
+            ],
+            [
+                "Georgia",
+                "Atlanta"
+            ],
+            [
+                "Texas",
+                "Austin"
+            ],
+            [
+                "Louisiana",
+                "Baton Rouge"
+            ],
+            [
+                "Nevada",
+                "Carson City"
+            ],
+            [
+                "Colorado",
+                "Denver"
+            ],
+            [
+                "Iowa",
+                "Des Moines"
+            ],
+            [
+                "Michigan",
+                "Lansing"
+            ],
+            [
+                "Wisconsin",
+                "Madison"
+            ],
+            [
+                "Alabama",
+                "Montgomery"
+            ],
+            [
+                "Oklahoma",
+                "Oklahoma City"
+            ],
+            [
+                "Washington",
+                "Olympia"
+            ],
+            [
+                "Arizona",
+                "Phoenix"
+            ],
+            [
+                "North Carolina",
+                "Raleigh"
+            ],
+            [
+                "California",
+                "Sacramento"
+            ],
+            [
+                "Oregon",
+                "Salem"
+            ],
+            [
+                "Utah",
+                "Salt Lake City"
+            ],
+            [
+                "Illinois",
+                "Springfield"
+            ],
+            [
+                "Minnesota",
+                "St. Paul"
+            ],
+            [
+                "Kansas",
+                "Topeka"
+            ]
+        ]
+    },
+    "total_tokens": 1912,
+    "total_time": 41.00580453872681
+}

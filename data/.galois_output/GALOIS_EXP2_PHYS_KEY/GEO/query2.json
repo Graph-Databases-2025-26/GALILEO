@@ -1,0 +1,105 @@
+{
+    "query_id": "2",
+    "result_set": {
+        "columns": [
+            "city_name"
+        ],
+        "rows": [
+            [
+                "Virginia Beach"
+            ],
+            [
+                "Milwaukee"
+            ],
+            [
+                "Houston"
+            ],
+            [
+                "Philadelphia"
+            ],
+            [
+                "Raleigh"
+            ],
+            [
+                "Minneapolis"
+            ],
+            [
+                "Seattle"
+            ],
+            [
+                "San Antonio"
+            ],
+            [
+                "Columbus"
+            ],
+            [
+                "San Jose"
+            ],
+            [
+                "Chicago"
+            ],
+            [
+                "New York"
+            ],
+            [
+                "Fort Worth"
+            ],
+            [
+                "Memphis"
+            ],
+            [
+                "Dallas"
+            ],
+            [
+                "Denver"
+            ],
+            [
+                "Jacksonville"
+            ],
+            [
+                "Portland"
+            ],
+            [
+                "Phoenix"
+            ],
+            [
+                "Washington"
+            ],
+            [
+                "Austin"
+            ],
+            [
+                "Sacramento"
+            ],
+            [
+                "Oklahoma City"
+            ],
+            [
+                "San Diego"
+            ],
+            [
+                "Los Angeles"
+            ],
+            [
+                "Kansas City"
+            ],
+            [
+                "Las Vegas"
+            ],
+            [
+                "Boston"
+            ],
+            [
+                "Charlotte"
+            ],
+            [
+                "Miami"
+            ],
+            [
+                "Nashville"
+            ]
+        ]
+    },
+    "total_tokens": 1011,
+    "total_time": 24.14509630203247
+}

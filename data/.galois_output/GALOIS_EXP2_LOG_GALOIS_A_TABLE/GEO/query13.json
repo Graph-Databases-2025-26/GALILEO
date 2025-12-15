@@ -1,0 +1,24 @@
+{
+    "query_id": "13",
+    "result_set": {
+        "columns": [
+            "lake_name"
+        ],
+        "rows": [
+            [
+                "Lake Superior"
+            ],
+            [
+                "Lake Huron"
+            ],
+            [
+                "Lake Erie"
+            ],
+            [
+                "Lake Michigan"
+            ]
+        ]
+    },
+    "total_tokens": 938,
+    "total_time": 21.70839500427246
+}

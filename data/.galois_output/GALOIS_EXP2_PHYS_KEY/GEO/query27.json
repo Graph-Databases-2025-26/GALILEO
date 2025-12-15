@@ -1,0 +1,119 @@
+{
+    "query_id": "27",
+    "result_set": {
+        "columns": [
+            "state_name",
+            "population",
+            "capital"
+        ],
+        "rows": [
+            [
+                "Michigan",
+                "10077331",
+                "Lansing"
+            ],
+            [
+                "Massachusetts",
+                "6892503",
+                "Boston"
+            ],
+            [
+                "Georgia",
+                "10511131",
+                "Atlanta"
+            ],
+            [
+                "New Jersey",
+                "8944469",
+                "Trenton"
+            ],
+            [
+                "North Carolina",
+                "10420000",
+                "Raleigh"
+            ],
+            [
+                "South Carolina",
+                "5138374",
+                "Columbia"
+            ],
+            [
+                "Colorado",
+                "5758741",
+                "Denver"
+            ],
+            [
+                "Florida",
+                "21244317",
+                "Tallahassee"
+            ],
+            [
+                "Missouri",
+                "6137428",
+                "Jefferson City"
+            ],
+            [
+                "Pennsylvania",
+                "12802023",
+                "Harrisburg"
+            ],
+            [
+                "Washington",
+                "7535591",
+                "Olympia"
+            ],
+            [
+                "Virginia",
+                "8517689",
+                "Richmond"
+            ],
+            [
+                "California",
+                "39461588",
+                "Sacramento"
+            ],
+            [
+                "Arizona",
+                "7278717",
+                "Phoenix"
+            ],
+            [
+                "Tennessee",
+                "6892503",
+                "Nashville"
+            ],
+            [
+                "Minnesota",
+                "5694286",
+                "St. Paul"
+            ],
+            [
+                "Indiana",
+                "6732219",
+                "Indianapolis"
+            ],
+            [
+                "Illinois",
+                "12802023",
+                "Springfield"
+            ],
+            [
+                "Ohio",
+                "11754200",
+                "Columbus"
+            ],
+            [
+                "Texas",
+                "28995881",
+                "Austin"
+            ],
+            [
+                "Wisconsin",
+                "5822564",
+                "Madison"
+            ]
+        ]
+    },
+    "total_tokens": 1468,
+    "total_time": 30.652145385742188
+}

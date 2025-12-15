@@ -1,0 +1,11 @@
+{
+    "query_id": "17",
+    "result_set": {
+        "columns": [
+            "population"
+        ],
+        "rows": []
+    },
+    "total_tokens": 241,
+    "total_time": 6.916282892227173
+}

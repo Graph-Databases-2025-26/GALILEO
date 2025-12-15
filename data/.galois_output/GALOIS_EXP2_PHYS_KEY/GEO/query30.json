@@ -1,0 +1,65 @@
+{
+    "query_id": "30",
+    "result_set": {
+        "columns": [
+            "state_name",
+            "capital"
+        ],
+        "rows": [
+            [
+                "Georgia",
+                "Atlanta"
+            ],
+            [
+                "Louisiana",
+                "Baton Rouge"
+            ],
+            [
+                "Colorado",
+                "Denver"
+            ],
+            [
+                "Missouri",
+                "Jefferson City"
+            ],
+            [
+                "Michigan",
+                "Lansing"
+            ],
+            [
+                "Alabama",
+                "Montgomery"
+            ],
+            [
+                "Washington",
+                "Olympia"
+            ],
+            [
+                "Arizona",
+                "Phoenix"
+            ],
+            [
+                "North Carolina",
+                "Raleigh"
+            ],
+            [
+                "California",
+                "Sacramento"
+            ],
+            [
+                "Oregon",
+                "Salem"
+            ],
+            [
+                "Utah",
+                "Salt Lake City"
+            ],
+            [
+                "Florida",
+                "Tallahassee"
+            ]
+        ]
+    },
+    "total_tokens": 1468,
+    "total_time": 30.07611346244812
+}

@@ -1,0 +1,27 @@
+{
+    "query_id": "13",
+    "result_set": {
+        "columns": [
+            "lake_name"
+        ],
+        "rows": [
+            [
+                "Lake Michigan"
+            ],
+            [
+                "Lake Huron"
+            ],
+            [
+                "Lake Erie"
+            ],
+            [
+                "Lake Superior"
+            ],
+            [
+                "Houghton Lake"
+            ]
+        ]
+    },
+    "total_tokens": 992,
+    "total_time": 24.70104217529297
+}

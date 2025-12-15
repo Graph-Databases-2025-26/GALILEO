@@ -1,0 +1,15 @@
+{
+    "query_id": "11",
+    "result_set": {
+        "columns": [
+            "usa_state_traversed"
+        ],
+        "rows": [
+            [
+                "alaska"
+            ]
+        ]
+    },
+    "total_tokens": 394,
+    "total_time": 9.310900449752808
+}

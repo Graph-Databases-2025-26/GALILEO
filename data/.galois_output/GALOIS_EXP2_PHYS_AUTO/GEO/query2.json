@@ -1,0 +1,111 @@
+{
+    "query_id": "2",
+    "result_set": {
+        "columns": [
+            "city_name"
+        ],
+        "rows": [
+            [
+                "New York City"
+            ],
+            [
+                "Wichita"
+            ],
+            [
+                "Virginia Beach"
+            ],
+            [
+                "Nashville"
+            ],
+            [
+                "Milwaukee"
+            ],
+            [
+                "Houston"
+            ],
+            [
+                "Philadelphia"
+            ],
+            [
+                "Raleigh"
+            ],
+            [
+                "Tampa"
+            ],
+            [
+                "Des Moines"
+            ],
+            [
+                "El Paso"
+            ],
+            [
+                "Indianapolis"
+            ],
+            [
+                "Seattle"
+            ],
+            [
+                "San Antonio"
+            ],
+            [
+                "San Jose"
+            ],
+            [
+                "Salt Lake City"
+            ],
+            [
+                "Chicago"
+            ],
+            [
+                "Memphis"
+            ],
+            [
+                "Dallas"
+            ],
+            [
+                "Denver"
+            ],
+            [
+                "Jacksonville"
+            ],
+            [
+                "Detroit"
+            ],
+            [
+                "Portland"
+            ],
+            [
+                "Phoenix"
+            ],
+            [
+                "Washington"
+            ],
+            [
+                "San Francisco"
+            ],
+            [
+                "Sacramento"
+            ],
+            [
+                "Oklahoma City"
+            ],
+            [
+                "San Diego"
+            ],
+            [
+                "Los Angeles"
+            ],
+            [
+                "Las Vegas"
+            ],
+            [
+                "Saint Louis"
+            ],
+            [
+                "Fort Worth"
+            ]
+        ]
+    },
+    "total_tokens": 1065,
+    "total_time": 22.00211453437805
+}

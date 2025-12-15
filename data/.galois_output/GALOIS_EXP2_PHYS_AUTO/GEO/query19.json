@@ -1,0 +1,162 @@
+{
+    "query_id": "19",
+    "result_set": {
+        "columns": [
+            "capital"
+        ],
+        "rows": [
+            [
+                "Salem"
+            ],
+            [
+                "Hartford"
+            ],
+            [
+                "Montpelier"
+            ],
+            [
+                "Richmond"
+            ],
+            [
+                "Olympia"
+            ],
+            [
+                "Nashville"
+            ],
+            [
+                "St. Paul"
+            ],
+            [
+                "Honolulu"
+            ],
+            [
+                "Lansing"
+            ],
+            [
+                "Austin"
+            ],
+            [
+                "Carson City"
+            ],
+            [
+                "Annapolis"
+            ],
+            [
+                "Boise"
+            ],
+            [
+                "Baton Rouge"
+            ],
+            [
+                "Topeka"
+            ],
+            [
+                "Madison"
+            ],
+            [
+                "Bismarck"
+            ],
+            [
+                "Frankfort"
+            ],
+            [
+                "Harrisburg"
+            ],
+            [
+                "Juneau"
+            ],
+            [
+                "Augusta"
+            ],
+            [
+                "Phoenix"
+            ],
+            [
+                "Columbia"
+            ],
+            [
+                "Denver"
+            ],
+            [
+                "Tallahassee"
+            ],
+            [
+                "Jackson"
+            ],
+            [
+                "Helena"
+            ],
+            [
+                "Trenton"
+            ],
+            [
+                "Indianapolis"
+            ],
+            [
+                "Pierre"
+            ],
+            [
+                "Cheyenne"
+            ],
+            [
+                "Charleston"
+            ],
+            [
+                "Jefferson City"
+            ],
+            [
+                "Des Moines"
+            ],
+            [
+                "Albany"
+            ],
+            [
+                "Concord"
+            ],
+            [
+                "Providence"
+            ],
+            [
+                "Montgomery"
+            ],
+            [
+                "Salt Lake City"
+            ],
+            [
+                "Sacramento"
+            ],
+            [
+                "Santa Fe"
+            ],
+            [
+                "Oklahoma City"
+            ],
+            [
+                "Springfield"
+            ],
+            [
+                "Lincoln"
+            ],
+            [
+                "Boston"
+            ],
+            [
+                "Columbus"
+            ],
+            [
+                "Atlanta"
+            ],
+            [
+                "Raleigh"
+            ],
+            [
+                "Little Rock"
+            ],
+            [
+                "Dover"
+            ]
+        ]
+    },
+    "total_tokens": 864,
+    "total_time": 19.85599160194397
+}

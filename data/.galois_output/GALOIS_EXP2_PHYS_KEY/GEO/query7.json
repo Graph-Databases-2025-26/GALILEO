@@ -1,0 +1,15 @@
+{
+    "query_id": "7",
+    "result_set": {
+        "columns": [
+            "avg(population)"
+        ],
+        "rows": [
+            [
+                "6206660.6"
+            ]
+        ]
+    },
+    "total_tokens": 802,
+    "total_time": 18.629995822906494
+}

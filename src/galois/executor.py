@@ -533,7 +533,7 @@ class GaloisExecutor:
 
                 content_fixed = raw_response.content.replace("\\'", "'")
                 content_fixed = repair_json_content(content_fixed)
-                
+                content_fixed = re.sub(r"(?<=\d),(?=\d)", "", content_fixed) #remove commas in numbers
                 response = self.resp_parser.parse(content_fixed)
                 LOG.info(f"LLM Response Parsed: {response.root}")
                 

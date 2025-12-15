@@ -1,0 +1,13 @@
+{
+    "query_id": "26",
+    "result_set": {
+        "columns": [
+            "state_name",
+            "population",
+            "area_squared_miles"
+        ],
+        "rows": []
+    },
+    "total_tokens": 1301,
+    "total_time": 25.976152181625366
+}

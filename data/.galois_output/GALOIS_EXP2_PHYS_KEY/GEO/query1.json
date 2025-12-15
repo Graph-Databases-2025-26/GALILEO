@@ -1,0 +1,11 @@
+{
+    "query_id": "1",
+    "result_set": {
+        "columns": [
+            "area_squared_miles"
+        ],
+        "rows": []
+    },
+    "total_tokens": 591,
+    "total_time": 12.262980222702026
+}

@@ -1,0 +1,15 @@
+{
+    "query_id": "3",
+    "result_set": {
+        "columns": [
+            "count(capital)"
+        ],
+        "rows": [
+            [
+                "0"
+            ]
+        ]
+    },
+    "total_tokens": 304,
+    "total_time": 8.589580535888672
+}

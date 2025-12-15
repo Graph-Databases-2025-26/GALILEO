@@ -1,0 +1,273 @@
+{
+    "query_id": "2",
+    "result_set": {
+        "columns": [
+            "city_name"
+        ],
+        "rows": [
+            [
+                "New York City"
+            ],
+            [
+                "Los Angeles"
+            ],
+            [
+                "Chicago"
+            ],
+            [
+                "Houston"
+            ],
+            [
+                "Phoenix"
+            ],
+            [
+                "Philadelphia"
+            ],
+            [
+                "San Antonio"
+            ],
+            [
+                "San Diego"
+            ],
+            [
+                "Dallas"
+            ],
+            [
+                "San Jose"
+            ],
+            [
+                "Austin"
+            ],
+            [
+                "Jacksonville"
+            ],
+            [
+                "San Francisco"
+            ],
+            [
+                "Indianapolis"
+            ],
+            [
+                "Seattle"
+            ],
+            [
+                "Denver"
+            ],
+            [
+                "Washington"
+            ],
+            [
+                "Boston"
+            ],
+            [
+                "Nashville"
+            ],
+            [
+                "Memphis"
+            ],
+            [
+                "Oklahoma City"
+            ],
+            [
+                "Portland"
+            ],
+            [
+                "Baltimore"
+            ],
+            [
+                "Milwaukee"
+            ],
+            [
+                "Kansas City"
+            ],
+            [
+                "St. Louis"
+            ],
+            [
+                "Raleigh"
+            ],
+            [
+                "Cleveland"
+            ],
+            [
+                "Virginia Beach"
+            ],
+            [
+                "Miami"
+            ],
+            [
+                "Oakland"
+            ],
+            [
+                "Minneapolis"
+            ],
+            [
+                "Tulsa"
+            ],
+            [
+                "Colorado Springs"
+            ],
+            [
+                "Santa Ana"
+            ],
+            [
+                "Anaheim"
+            ],
+            [
+                "Tampa"
+            ],
+            [
+                "Pittsburgh"
+            ],
+            [
+                "Cincinnati"
+            ],
+            [
+                "St. Paul"
+            ],
+            [
+                "Newark"
+            ],
+            [
+                "Buffalo"
+            ],
+            [
+                "Norfolk"
+            ],
+            [
+                "Jersey City"
+            ],
+            [
+                "Charlotte"
+            ],
+            [
+                "Fort Worth"
+            ],
+            [
+                "Chula Vista"
+            ],
+            [
+                "Toledo"
+            ],
+            [
+                "Lincoln"
+            ],
+            [
+                "Plano"
+            ],
+            [
+                "Henderson"
+            ],
+            [
+                "Chandler"
+            ],
+            [
+                "Irvine"
+            ],
+            [
+                "Orlando"
+            ],
+            [
+                "Laredo"
+            ],
+            [
+                "Durham"
+            ],
+            [
+                "Glendale"
+            ],
+            [
+                "Arlington"
+            ],
+            [
+                "Madison"
+            ],
+            [
+                "Wichita"
+            ],
+            [
+                "St. Petersburg"
+            ],
+            [
+                "Reno"
+            ],
+            [
+                "Scottsdale"
+            ],
+            [
+                "Lubbock"
+            ],
+            [
+                "Chesapeake"
+            ],
+            [
+                "Fresno"
+            ],
+            [
+                "Baton Rouge"
+            ],
+            [
+                "Boise"
+            ],
+            [
+                "Richmond"
+            ],
+            [
+                "Spokane"
+            ],
+            [
+                "Des Moines"
+            ],
+            [
+                "Albuquerque"
+            ],
+            [
+                "Tucson"
+            ],
+            [
+                "New Orleans"
+            ],
+            [
+                "Sacramento"
+            ],
+            [
+                "Long Beach"
+            ],
+            [
+                "Birmingham"
+            ],
+            [
+                "Rochester"
+            ],
+            [
+                "Grand Rapids"
+            ],
+            [
+                "Salt Lake City"
+            ],
+            [
+                "Hartford"
+            ],
+            [
+                "Greenville"
+            ],
+            [
+                "Providence"
+            ],
+            [
+                "Oklahoma"
+            ],
+            [
+                "Louisville"
+            ],
+            [
+                "Albany"
+            ],
+            [
+                ""
+            ]
+        ]
+    },
+    "total_tokens": 1474,
+    "total_time": 34.562740087509155
+}

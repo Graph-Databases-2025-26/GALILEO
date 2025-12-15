@@ -1,0 +1,45 @@
+{
+    "query_id": "11",
+    "result_set": {
+        "columns": [
+            "usa_state_traversed"
+        ],
+        "rows": [
+            [
+                "Montana, North Dakota, South Dakota, Nebraska, Iowa, Kansas, Missouri"
+            ],
+            [
+                "Alaska, British Columbia"
+            ],
+            [
+                "Oregon, Idaho, Wyoming, Utah, Nevada, California"
+            ],
+            [
+                "Alaska"
+            ],
+            [
+                "Alaska, Canada"
+            ],
+            [
+                "New York, Ontario"
+            ],
+            [
+                "Wyoming, Montana, North Dakota"
+            ],
+            [
+                ""
+            ],
+            [
+                "Minnesota, Wisconsin, Iowa, Illinois, Missouri, Kentucky, Tennessee, Arkansas, Louisiana"
+            ],
+            [
+                "Idaho, Oregon, Washington"
+            ],
+            [
+                "Tennessee, Alabama, Kentucky"
+            ]
+        ]
+    },
+    "total_tokens": 600,
+    "total_time": 12.315114259719849
+}

@@ -1,0 +1,99 @@
+{
+    "query_id": "10",
+    "result_set": {
+        "columns": [
+            "lake_name"
+        ],
+        "rows": [
+            [
+                "Lake Nipigon"
+            ],
+            [
+                "Lake Baikal"
+            ],
+            [
+                "Lake Victoria"
+            ],
+            [
+                "Lake Kivu"
+            ],
+            [
+                "Lake Abitibi"
+            ],
+            [
+                "Lake Maracaibo"
+            ],
+            [
+                "Lake Ontario"
+            ],
+            [
+                "Lake Nicaragua"
+            ],
+            [
+                "Lake Sakakawea"
+            ],
+            [
+                "Lake Winnipeg"
+            ],
+            [
+                "Lake Superior"
+            ],
+            [
+                "Lake Michigan"
+            ],
+            [
+                "Lake Huron"
+            ],
+            [
+                "Lake Powell"
+            ],
+            [
+                "Lake Issyk-Kul"
+            ],
+            [
+                "Lake Balkhash"
+            ],
+            [
+                "Lake Telemark"
+            ],
+            [
+                "Lake Oahe"
+            ],
+            [
+                "Lake Pontchartrain"
+            ],
+            [
+                "Lake Erie"
+            ],
+            [
+                "Lake Mead"
+            ],
+            [
+                "Lake Athabasca"
+            ],
+            [
+                "Lake Tanganyika"
+            ],
+            [
+                "Lake Mattagami"
+            ],
+            [
+                "Lake Argentino"
+            ],
+            [
+                "Lake Urmia"
+            ],
+            [
+                "Lake Vostok"
+            ],
+            [
+                "Lake Iliamna"
+            ],
+            [
+                "Lake Managua"
+            ]
+        ]
+    },
+    "total_tokens": 557,
+    "total_time": 13.438575506210327
+}

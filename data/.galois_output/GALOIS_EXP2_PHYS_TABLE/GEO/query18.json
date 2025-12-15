@@ -1,0 +1,15 @@
+{
+    "query_id": "18",
+    "result_set": {
+        "columns": [
+            "count(DISTINCT usa_state_traversed)"
+        ],
+        "rows": [
+            [
+                "1"
+            ]
+        ]
+    },
+    "total_tokens": 324,
+    "total_time": 7.953050136566162
+}

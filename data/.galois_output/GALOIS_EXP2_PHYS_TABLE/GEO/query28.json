@@ -1,0 +1,89 @@
+{
+    "query_id": "28",
+    "result_set": {
+        "columns": [
+            "state_name",
+            "capital"
+        ],
+        "rows": [
+            [
+                "Arizona",
+                "Phoenix"
+            ],
+            [
+                "California",
+                "Sacramento"
+            ],
+            [
+                "Colorado",
+                "Denver"
+            ],
+            [
+                "Florida",
+                "Tallahassee"
+            ],
+            [
+                "Georgia",
+                "Atlanta"
+            ],
+            [
+                "Illinois",
+                "Springfield"
+            ],
+            [
+                "Indiana",
+                "Indianapolis"
+            ],
+            [
+                "Maryland",
+                "Annapolis"
+            ],
+            [
+                "Massachusetts",
+                "Boston"
+            ],
+            [
+                "Michigan",
+                "Lansing"
+            ],
+            [
+                "Minnesota",
+                "Saint Paul"
+            ],
+            [
+                "Missouri",
+                "Jefferson City"
+            ],
+            [
+                "Wisconsin",
+                "Madison"
+            ],
+            [
+                "Tennessee",
+                "Nashville"
+            ],
+            [
+                "Pennsylvania",
+                "Harrisburg"
+            ],
+            [
+                "South Carolina",
+                "Columbia"
+            ],
+            [
+                "Texas",
+                "Austin"
+            ],
+            [
+                "Virginia",
+                "Richmond"
+            ],
+            [
+                "Washington",
+                "Olympia"
+            ]
+        ]
+    },
+    "total_tokens": 1561,
+    "total_time": 34.61449432373047
+}

@@ -1,0 +1,73 @@
+{
+    "query_id": "28",
+    "result_set": {
+        "columns": [
+            "state_name",
+            "capital"
+        ],
+        "rows": [
+            [
+                "Michigan",
+                "Lansing"
+            ],
+            [
+                "Massachusetts",
+                "Boston"
+            ],
+            [
+                "Georgia",
+                "Atlanta"
+            ],
+            [
+                "North Carolina",
+                "Raleigh"
+            ],
+            [
+                "South Carolina",
+                "Columbia"
+            ],
+            [
+                "Colorado",
+                "Denver"
+            ],
+            [
+                "Florida",
+                "Tallahassee"
+            ],
+            [
+                "Missouri",
+                "Jefferson City"
+            ],
+            [
+                "Pennsylvania",
+                "Harrisburg"
+            ],
+            [
+                "Washington",
+                "Olympia"
+            ],
+            [
+                "Virginia",
+                "Richmond"
+            ],
+            [
+                "California",
+                "Sacramento"
+            ],
+            [
+                "Arizona",
+                "Phoenix"
+            ],
+            [
+                "Tennessee",
+                "Nashville"
+            ],
+            [
+                "Minnesota",
+                "St. Paul"
+            ]
+        ]
+    },
+    "total_tokens": 1468,
+    "total_time": 34.54800510406494
+}

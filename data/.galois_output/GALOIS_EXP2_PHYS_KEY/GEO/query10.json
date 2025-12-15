@@ -1,0 +1,51 @@
+{
+    "query_id": "10",
+    "result_set": {
+        "columns": [
+            "lake_name"
+        ],
+        "rows": [
+            [
+                "Lake Victoria"
+            ],
+            [
+                "Lake Ontario"
+            ],
+            [
+                "Lake Nicaragua"
+            ],
+            [
+                "Great Salt Lake"
+            ],
+            [
+                "Lake Mead"
+            ],
+            [
+                "Lake Tanganyika"
+            ],
+            [
+                "Lake Issyk-Kul"
+            ],
+            [
+                "Lake of the Woods"
+            ],
+            [
+                "Lake Erie"
+            ],
+            [
+                "Lake Michigan"
+            ],
+            [
+                "Lake Superior"
+            ],
+            [
+                "Lake Winnipeg"
+            ],
+            [
+                "Lake Huron"
+            ]
+        ]
+    },
+    "total_tokens": 454,
+    "total_time": 9.86753225326538
+}

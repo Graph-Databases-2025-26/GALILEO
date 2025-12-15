@@ -1,0 +1,11 @@
+{
+    "query_id": "12",
+    "result_set": {
+        "columns": [
+            "state_name"
+        ],
+        "rows": []
+    },
+    "total_tokens": 494,
+    "total_time": 12.483705043792725
+}

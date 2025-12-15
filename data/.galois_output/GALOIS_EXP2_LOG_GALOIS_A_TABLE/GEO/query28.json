@@ -1,0 +1,97 @@
+{
+    "query_id": "28",
+    "result_set": {
+        "columns": [
+            "state_name",
+            "capital"
+        ],
+        "rows": [
+            [
+                "California",
+                "Sacramento"
+            ],
+            [
+                "Texas",
+                "Austin"
+            ],
+            [
+                "Arizona",
+                "Phoenix"
+            ],
+            [
+                "Georgia",
+                "Atlanta"
+            ],
+            [
+                "Ohio",
+                "Columbus"
+            ],
+            [
+                "Oklahoma",
+                "Oklahoma City"
+            ],
+            [
+                "Tennessee",
+                "Nashville"
+            ],
+            [
+                "North Carolina",
+                "Raleigh"
+            ],
+            [
+                "Wisconsin",
+                "Madison"
+            ],
+            [
+                "Mississippi",
+                "Jackson"
+            ],
+            [
+                "Indiana",
+                "Indianapolis"
+            ],
+            [
+                "Pennsylvania",
+                "Harrisburg"
+            ],
+            [
+                "New York",
+                "Albany"
+            ],
+            [
+                "Florida",
+                "Tallahassee"
+            ],
+            [
+                "Virginia",
+                "Richmond"
+            ],
+            [
+                "Michigan",
+                "Lansing"
+            ],
+            [
+                "Minnesota",
+                "Saint Paul"
+            ],
+            [
+                "Colorado",
+                "Denver"
+            ],
+            [
+                "Massachusetts",
+                "Boston"
+            ],
+            [
+                "Maryland",
+                "Annapolis"
+            ],
+            [
+                "Illinois",
+                "Springfield"
+            ]
+        ]
+    },
+    "total_tokens": 1308,
+    "total_time": 29.00445580482483
+}

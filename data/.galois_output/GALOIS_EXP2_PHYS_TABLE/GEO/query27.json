@@ -1,0 +1,124 @@
+{
+    "query_id": "27",
+    "result_set": {
+        "columns": [
+            "state_name",
+            "population",
+            "capital"
+        ],
+        "rows": [
+            [
+                "Arizona",
+                "7278717.0",
+                "Phoenix"
+            ],
+            [
+                "California",
+                "39461588.0",
+                "Sacramento"
+            ],
+            [
+                "Colorado",
+                "5691287.0",
+                "Denver"
+            ],
+            [
+                "Florida",
+                "21244317.0",
+                "Tallahassee"
+            ],
+            [
+                "Georgia",
+                "10511131.0",
+                "Atlanta"
+            ],
+            [
+                "Illinois",
+                "12886119.0",
+                "Springfield"
+            ],
+            [
+                "Indiana",
+                "6732219.0",
+                "Indianapolis"
+            ],
+            [
+                "Maryland",
+                "6040668.0",
+                "Annapolis"
+            ],
+            [
+                "Massachusetts",
+                "6892503.0",
+                "Boston"
+            ],
+            [
+                "Michigan",
+                "10077331.0",
+                "Lansing"
+            ],
+            [
+                "Minnesota",
+                "5639632.0",
+                "Saint Paul"
+            ],
+            [
+                "Missouri",
+                "6137428.0",
+                "Jefferson City"
+            ],
+            [
+                "New Jersey",
+                "8944469.0",
+                "Trenton"
+            ],
+            [
+                "New York",
+                "19453561.0",
+                "Albany"
+            ],
+            [
+                "North Carolina",
+                "10420000.0",
+                "Raleigh"
+            ],
+            [
+                "Pennsylvania",
+                "12802023.0",
+                "Harrisburg"
+            ],
+            [
+                "South Carolina",
+                "5086476.0",
+                "Columbia"
+            ],
+            [
+                "Tennessee",
+                "6829174.0",
+                "Nashville"
+            ],
+            [
+                "Texas",
+                "28995881.0",
+                "Austin"
+            ],
+            [
+                "Virginia",
+                "8517685.0",
+                "Richmond"
+            ],
+            [
+                "Washington",
+                "7535591.0",
+                "Olympia"
+            ],
+            [
+                "Wisconsin",
+                "5822564.0",
+                "Madison"
+            ]
+        ]
+    },
+    "total_tokens": 1377,
+    "total_time": 29.319534063339233
+}

@@ -1,0 +1,15 @@
+{
+    "query_id": "20",
+    "result_set": {
+        "columns": [
+            "count(river_name)"
+        ],
+        "rows": [
+            [
+                "0"
+            ]
+        ]
+    },
+    "total_tokens": 414,
+    "total_time": 9.697266101837158
+}

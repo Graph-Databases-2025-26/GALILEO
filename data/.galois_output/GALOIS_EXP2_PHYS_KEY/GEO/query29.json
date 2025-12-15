@@ -1,0 +1,51 @@
+{
+    "query_id": "29",
+    "result_set": {
+        "columns": [
+            "state_name",
+            "capital",
+            "density",
+            "population"
+        ],
+        "rows": [
+            [
+                "Massachusetts",
+                "Boston",
+                "652.1",
+                "6892503.0"
+            ],
+            [
+                "South Carolina",
+                "Columbia",
+                "160.8",
+                "5148714.0"
+            ],
+            [
+                "Pennsylvania",
+                "Harrisburg",
+                "278.1",
+                "12802000.0"
+            ],
+            [
+                "Virginia",
+                "Richmond",
+                "201.9",
+                "8631399.0"
+            ],
+            [
+                "Tennessee",
+                "Nashville",
+                "163.7",
+                "6892503.0"
+            ],
+            [
+                "Ohio",
+                "Columbus",
+                "262.2",
+                "11747700.0"
+            ]
+        ]
+    },
+    "total_tokens": 1314,
+    "total_time": 28.504823207855225
+}

@@ -1,0 +1,15 @@
+{
+    "query_id": "8",
+    "result_set": {
+        "columns": [
+            "count(DISTINCT river_name)"
+        ],
+        "rows": [
+            [
+                "7"
+            ]
+        ]
+    },
+    "total_tokens": 775,
+    "total_time": 16.34298849105835
+}

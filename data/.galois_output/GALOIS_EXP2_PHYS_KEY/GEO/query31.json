@@ -1,0 +1,54 @@
+{
+    "query_id": "31",
+    "result_set": {
+        "columns": [
+            "state_name",
+            "capital",
+            "population"
+        ],
+        "rows": [
+            [
+                "Utah",
+                "Salt Lake City",
+                "3255958.0"
+            ],
+            [
+                "Oregon",
+                "Salem",
+                "4217731.0"
+            ],
+            [
+                "Louisiana",
+                "Baton Rouge",
+                "4648794.0"
+            ],
+            [
+                "Alabama",
+                "Montgomery",
+                "4903186.0"
+            ],
+            [
+                "Colorado",
+                "Denver",
+                "5691287.0"
+            ],
+            [
+                "Missouri",
+                "Jefferson City",
+                "6137428.0"
+            ],
+            [
+                "Arizona",
+                "Phoenix",
+                "7278717.0"
+            ],
+            [
+                "Washington",
+                "Olympia",
+                "7535591.0"
+            ]
+        ]
+    },
+    "total_tokens": 1468,
+    "total_time": 49.19750380516052
+}

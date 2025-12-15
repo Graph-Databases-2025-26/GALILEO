@@ -1,0 +1,117 @@
+{
+    "query_id": "30",
+    "result_set": {
+        "columns": [
+            "state_name",
+            "capital"
+        ],
+        "rows": [
+            [
+                "New York",
+                "Albany"
+            ],
+            [
+                "Georgia",
+                "Atlanta"
+            ],
+            [
+                "Texas",
+                "Austin"
+            ],
+            [
+                "Massachusetts",
+                "Boston"
+            ],
+            [
+                "South Carolina",
+                "Columbia"
+            ],
+            [
+                "Ohio",
+                "Columbus"
+            ],
+            [
+                "Colorado",
+                "Denver"
+            ],
+            [
+                "Iowa",
+                "Des Moines"
+            ],
+            [
+                "Pennsylvania",
+                "Harrisburg"
+            ],
+            [
+                "Indiana",
+                "Indianapolis"
+            ],
+            [
+                "Missouri",
+                "Jefferson City"
+            ],
+            [
+                "Michigan",
+                "Lansing"
+            ],
+            [
+                "Arkansas",
+                "Little Rock"
+            ],
+            [
+                "Wisconsin",
+                "Madison"
+            ],
+            [
+                "Alabama",
+                "Montgomery"
+            ],
+            [
+                "Tennessee",
+                "Nashville"
+            ],
+            [
+                "Oklahoma",
+                "Oklahoma City"
+            ],
+            [
+                "Washington",
+                "Olympia"
+            ],
+            [
+                "Arizona",
+                "Phoenix"
+            ],
+            [
+                "North Carolina",
+                "Raleigh"
+            ],
+            [
+                "Virginia",
+                "Richmond"
+            ],
+            [
+                "California",
+                "Sacramento"
+            ],
+            [
+                "Minnesota",
+                "Saint Paul"
+            ],
+            [
+                "Illinois",
+                "Springfield"
+            ],
+            [
+                "Florida",
+                "Tallahassee"
+            ],
+            [
+                "New Jersey",
+                "Trenton"
+            ]
+        ]
+    },
+    "total_tokens": 1523,
+    "total_time": 35.10651469230652
+}

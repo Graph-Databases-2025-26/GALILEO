@@ -1,0 +1,104 @@
+{
+    "query_id": "31",
+    "result_set": {
+        "columns": [
+            "state_name",
+            "capital",
+            "population"
+        ],
+        "rows": [
+            [
+                "Iowa",
+                "Des Moines",
+                "3155070"
+            ],
+            [
+                "Utah",
+                "Salt Lake City",
+                "3255954"
+            ],
+            [
+                "Oklahoma",
+                "Oklahoma City",
+                "3957081"
+            ],
+            [
+                "Kentucky",
+                "Frankfort",
+                "4468402"
+            ],
+            [
+                "Louisiana",
+                "Baton Rouge",
+                "4648794"
+            ],
+            [
+                "Alabama",
+                "Montgomery",
+                "4903186"
+            ],
+            [
+                "Michigan",
+                "Lansing",
+                "5036217"
+            ],
+            [
+                "South Carolina",
+                "Columbia",
+                "5138374"
+            ],
+            [
+                "Minnesota",
+                "Saint Paul",
+                "5648223"
+            ],
+            [
+                "Colorado",
+                "Denver",
+                "5758741"
+            ],
+            [
+                "Wisconsin",
+                "Madison",
+                "5822564"
+            ],
+            [
+                "Maryland",
+                "Annapolis",
+                "6049949"
+            ],
+            [
+                "Indiana",
+                "Indianapolis",
+                "6732219"
+            ],
+            [
+                "Massachusetts",
+                "Boston",
+                "6892503"
+            ],
+            [
+                "Tennessee",
+                "Nashville",
+                "6892504"
+            ],
+            [
+                "Ohio",
+                "Columbus",
+                "7115363"
+            ],
+            [
+                "Arizona",
+                "Phoenix",
+                "7278717"
+            ],
+            [
+                "Washington",
+                "Olympia",
+                "7550481"
+            ]
+        ]
+    },
+    "total_tokens": 1768,
+    "total_time": 43.928101778030396
+}

@@ -1,0 +1,15 @@
+{
+    "query_id": "5",
+    "result_set": {
+        "columns": [
+            "count(state_name)"
+        ],
+        "rows": [
+            [
+                "50"
+            ]
+        ]
+    },
+    "total_tokens": 2716,
+    "total_time": 54.36199998855591
+}
