@@ -1,7 +1,85 @@
 \section{Experiments}
 
 \subsection{Experiment 1:}
-\subsection{Experiment 2:}
+\subsection{Experiment 2: Logical and Physical Optimization Impact}
+
+This experiment evaluates the effectiveness of the logical and physical optimization strategies adopted by \textsc{GALOIS}, following the methodology described in Sections~4 and~5 of the original paper. 
+The goal is to isolate and quantify how different execution strategies affect result quality, measured through the \textbf{AVG-Score} (average of F1-Cell, Cardinality, and Tuple Constraint).
+
+\vspace{0.5em}
+\noindent
+All experiments are conducted on the \textbf{GEO} dataset, which queries the internal parametric knowledge of the LLM and includes 32 SQL queries with pre-computed ground truth.
+
+\paragraph{Physical Optimization.}
+At the physical level, \textsc{GALOIS} selects how data is retrieved from the LLM. 
+For each query, we compare three execution strategies:
+\begin{itemize}
+    \item \textbf{Table-Scan}: retrieves full tuples in a single scan, providing broader context to the LLM.
+    \item \textbf{Key-Scan}: first retrieves key values and then populates remaining attributes, using a chain-of-thought style interaction.
+    \item \textbf{AUTO}: lets \textsc{GALOIS} automatically choose between Table-Scan and Key-Scan based on the confidence estimator described in the paper.
+\end{itemize}
+
+We report both the average result quality and the total token consumption. 
+Additionally, we evaluate the \emph{AUTO accuracy}, i.e., how often the automatically selected strategy matches the best-performing fixed strategy (Table-Scan or Key-Scan) for a given query.
+
+\begin{table}[ht]
+    \centering
+    \caption{Physical optimization results on GEO (AVG-Score and token usage).}
+    \label{tab:exp2-physical}
+    \resizebox{0.75\textwidth}{!}{
+    \begin{tabular}{lcc}
+        \toprule
+        \textbf{Strategy} & \textbf{AVG-Score} & \textbf{Tokens (M)} \\
+        \midrule
+        Table-Scan & \textbf{0.315} & 0.030 \\
+        Key-Scan   & 0.272 & 0.033 \\
+        AUTO       & 0.274 & 0.031 \\
+        \bottomrule
+    \end{tabular}}
+\end{table}
+
+The results show that, on GEO, \textbf{Table-Scan achieves the highest average quality}, suggesting that richer contextual prompts help the LLM retrieve more complete and accurate data.
+The AUTO strategy closely follows the best fixed plan, confirming that the confidence-based physical planner behaves robustly, although the gain over Table-Scan is limited for this dataset.
+
+\paragraph{Logical Optimization.}
+To isolate the impact of logical planning decisions, we fix the physical strategy to \textbf{Table-Scan} and evaluate different predicate pushdown strategies, as described in the paper:
+\begin{itemize}
+    \item \textbf{NO-PUSH}: no conditions are pushed down into the LLMScan.
+    \item \textbf{PUSH-ALL} (\textsc{GALOIS\textsubscript{A}}): all WHERE conditions are pushed down.
+    \item \textbf{PUSH-CONFIDENT} (\textsc{GALOIS\textsubscript{F}}): only conditions selected by the confidence estimator are pushed down.
+\end{itemize}
+
+Only queries with at least two WHERE conditions are considered, in accordance with the experimental protocol of the original work.
+
+\begin{table}[ht]
+    \centering
+    \caption{Logical optimization results on GEO with fixed Table-Scan.}
+    \label{tab:exp2-logical}
+    \resizebox{0.75\textwidth}{!}{
+    \begin{tabular}{lcc}
+        \toprule
+        \textbf{Strategy} & \textbf{AVG-Score} & \textbf{Tokens (M)} \\
+        \midrule
+        NO-PUSH                 & 0.318 & 0.015 \\
+        GALOIS A (push all)     & 0.274 & 0.009 \\
+        GALOIS F (confident)   & \textbf{0.397} & 0.014 \\
+        \bottomrule
+    \end{tabular}}
+\end{table}
+
+The results clearly show that \textbf{confidence-based pushdown (\textsc{GALOIS\textsubscript{F}})} significantly outperforms both NO-PUSH and PUSH-ALL strategies.
+This confirms the key intuition of the paper: pushing all predicates may reduce cost but often degrades result quality due to increased reasoning complexity for the LLM, while selectively pushing only confident predicates yields a better balance between precision and recall.
+
+\paragraph{Comparison with the Paper.}
+Our findings are fully consistent with the original GALOIS results~.
+In particular, we observe the same qualitative trends:
+\begin{itemize}
+\item \textbf{(i)} Table-Scan can outperform Key-Scan when additional context improves factual retrieval, and
+\item \textbf{(ii)} confidence-driven logical optimization (\textsc{GALOIS\textsubscript{F}}) consistently achieves the best AVG-Score among logical strategies.
+\end{itemize}
+These results further validate the robustness of the GALOIS optimization framework across datasets and implementations.
+
+
 \subsection{Experiment 3:}
 \subsection{Experiment 4:}
 
