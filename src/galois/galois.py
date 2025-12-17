@@ -367,20 +367,20 @@ class Galois:
         execution_variant = ""
 
         if num_confident == 0:
-            # Case 0: No "HIGH" confidence -> No Pushdown
+            #  No "HIGH" confidence -> No Pushdown
             conditions_to_push = []
             execution_variant = "GALOIS_F (Push-Confident): No-Push Heuristic"
             LOG.info("Heuristic: 0 confident conditions -> Pushing NONE.")
 
         elif num_confident == 1:
-            # Caso 1: Only one "HIGH" confidence-> Pushdown that condition
+            #  Only one "HIGH" confidence-> Pushdown that condition
             conditions_to_push = confidence_conditions
             execution_variant = "GALOIS_F (Push-Confident): Single-Push Heuristic"
             LOG.info(f"Heuristic: 1 confident condition -> Pushing ONLY: {conditions_to_push}")
 
 
         elif num_confident > 1:
-            # Caso >1: MOre than one "HIGH" confidence-> Pushdown all original conditions
+            #  More than one "HIGH" confidence-> Pushdown all original conditions
             conditions_to_push = all_conditions
             execution_variant = "GALOIS_F (Push-Confident): Push-All Heuristic"
             LOG.info("Heuristic: >1 confident conditions -> Pushing ALL original conditions.")
@@ -566,7 +566,6 @@ def save_galois_results(results_list, variant, provider, dataset_name):
     """
     variant_key = f"GALOIS_{variant}"
 
-    # Cerca il path corretto in BASELINE_OUTPUT, altrimenti crea un path di default
     try:
         base_dir = SUBMISSIONS_PATH_GALOIS
     except KeyError:

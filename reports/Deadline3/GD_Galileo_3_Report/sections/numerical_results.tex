@@ -86,4 +86,16 @@ Avg Time      & 47.400 &  26.196   &  21.204     \\
 \label{galoisF_results}
 \end{table}
 
-The tables are not complete as tokens and time metrics are missing, so once we have the possibility to renew the watsonx API KEY we will update the tables and provide an analysis about the results.
+As we can see from the tables above, we obtained the worst results from GALOIS WO version due to three factors:
+the probabilistic nature of "Context-Free" retrieval, the loss of semantic cohesion in the Key-Scan operator, and the depth of iteration in simulated table scans.
+\begin{itemize}
+    \item \textbf{Context-Free Retrieval and Popularity Bias}:The primary cause of the low recall in GALOIS WO is the absence of predicate pushdown. By design, GALOIS WO forces the logical plan to strip all \texttt{WHERE} clauses , presenting the LLM with a generic query (e.g., "List all presidents" instead of "List presidents of Venezuela"). Unlike a deterministic database storage engine that scans all records faithfully, an LLM is a probabilistic engine heavily influenced by popularity bias. Without the "guidance" of specific filters in the prompt, the model generates general entities.
+    Since the GaloisPostProcessor can only filter data that has been successfully retrieved analyzing the former query, the lack of relevant entries renders the local filtering phase ineffective.
+    \item \textbf{Semantic Decohesion in the Key-Scan Operator}: Our implementation highlights a structural weakness in the Key-Scan physical operator, in details it decouples the retrieval of keys (Phase 1) from their attributes (Phase 2).
+    In a standard Table-Scan (used in GALOIS A/S), the co-occurrence of related tokens in the generation window (e.g., generating "Venezuela" immediately next to a candidate name) helps the LLM's self-attention mechanism maintain semantic consistency.
+    By isolating the key generation, the Key-Scan loses this context, furthermore in a "No-Push" scenario, the first phase wastes significant token budget generating irrelevant keys, which are then discarded during post-processing, drastically reducing the system's overall efficiency.
+    \item \textbf{The Trade-off Between Execution Time and Scan Depth}:A critical divergence from the reference paper is observed in the average execution time.
+    This discrepancy indicates that our implementation imposes a stricter limit on iterations (\texttt{max\_iter} defaults to 4 in \texttt{executor.py}). To successfully simulate a "Full Table Scan" on an LLM—essentially brute-forcing the model to output its entire knowledge base for a given entity—a system must iterate significantly longer to bypass the initial layer of popular results. Our lower execution time suggests that the retrieval process is terminated prematurely, capturing only the "surface" data.
+    This suggests that GALOIS WO is theoretically viable only with massive iteration depth, which may be inefficient for real-world applications due to latency and token cost constraints.
+    Conversely, GALOIS S and A perform better because the prompt acts as a "soft index" allowing the LLM to jump directly to the relevant data partition without requiring exhaustive iteration.
+\end{itemize}

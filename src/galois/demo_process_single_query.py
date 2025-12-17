@@ -1,5 +1,6 @@
 import json
 from src.config.loaders import Config_Loader
+from src.utils.constants import debug_query
 from src.utils.logging_config import log_init, LOG
 from src.utils import sql_query_parser
 from src.galois.galois import Galois
@@ -9,14 +10,8 @@ def debug():
     cfg = Config_Loader().get_config() # load default config
 
     dataset = "WORLD" # use WORLD dataset
-    sql_query = """ 
-    SELECT distinct t2.region
-    FROM target.country_language AS t1
-    JOIN target.country AS t2
-    ON t1.country_code_3_letters = t2.code_3_letters
-    WHERE t1.language = 'English'
-    OR t1.language = 'Dutch';
-    """
+    query_template = debug_query()
+    sql_query = query_template.format()
     LOG.info("\n=== INPUT QUERY ===")
     LOG.debug(sql_query)
 

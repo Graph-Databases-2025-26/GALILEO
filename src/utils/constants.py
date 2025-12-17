@@ -227,3 +227,13 @@ def q_get_sample_values(table_name: str, column_name: str, limit: int = 3) -> st
         WHERE {column_name} IS NOT NULL 
         LIMIT {limit}
     """
+
+def debug_query() -> str:
+    return """ 
+    SELECT distinct t2.region
+    FROM target.country_language AS t1
+    JOIN target.country AS t2
+    ON t1.country_code_3_letters = t2.code_3_letters
+    WHERE t1.language = 'English'
+    OR t1.language = 'Dutch';
+    """
