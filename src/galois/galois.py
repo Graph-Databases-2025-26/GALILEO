@@ -423,13 +423,13 @@ class Galois:
                         db_type = schema_cols_lower.get(col_lower, "")
 
                         numeric_series = pd.to_numeric(df[col], errors='coerce')
-                        # Se è un tipo numerico (INT, FLOAT, ecc.)
+                        # If it's a numeric type (INT, FLOAT, etc.)
                         if any(x in db_type for x in ["INT", "DOUBLE", "FLOAT", "DECIMAL", "REAL", "NUMERIC"]):
-                            # pd.to_numeric con 'coerce' trasforma QUALSIASI cosa non numerica (incluso "None", "error", ecc.) in NaN
+                            # pd.to_numeric with 'coerce' turns ANY non-numeric thing (including "None", "error", etc.) into NaN
                             df[col] = numeric_series
 
-                            # IMPORTANTE: DuckDB vuole None (NULL SQL), non NaN (Not a Number float)
-                            # Sostituiamo i NaN di pandas con None di Python
+                            # IMPORTANT: DuckDB expects None (SQL NULL), not NaN (float Not a Number)
+                            # Replace pandas NaNs with Python None
                             df[col] = df[col].astype(object).where(df[col].notnull(), None)
 
                         elif "VARCHAR" in db_type or "TEXT" in db_type or "STRING" in db_type:
@@ -445,11 +445,11 @@ class Galois:
                             numeric_count = numeric_series.count()
 
                             if numeric_count > 0 and numeric_count >= (non_na_count * 0.8):
-                                # Trattalo come numero
+                                # Treat it as a number
                                 df[col] = numeric_series
                                 df[col] = df[col].astype(object).where(df[col].notnull(), None)
                             else:
-                                # Trattalo come oggetto/stringa ma pulisci i None
+                                # Treat it as object/string but clean None values
                                 df[col] = df[col].astype(object).where(df[col].notnull(), None)
 
                     # Important for JOINs to work (e.g. "Arizona " -> "Arizona")
@@ -505,55 +505,55 @@ class Galois:
 
     def _get_involved_columns(self, sql_query: str, table_name: str, alias: str) -> Optional[List[str]]:
         """
-        Analizza la query SQL completa ed estrae TUTTE le colonne (SELECT, JOIN, WHERE, GROUP BY, ecc.)
-        che appartengono alla tabella specificata o al suo alias.
+        Parse the full SQL query and extract ALL columns (SELECT, JOIN, WHERE, GROUP BY, etc.)
+        that belong to the specified table or its alias.
 
         Args:
-            sql_query: La query SQL originale completa.
-            table_name: Il nome reale della tabella (es. 'world_presidents').
-            alias: L'alias usato nella query (es. 'p'). Può essere None o stringa vuota.
+            sql_query: The original full SQL query.
+            table_name: The real table name (e.g. `world_presidents`).
+            alias: The alias used in the query (e.g. `p`). Can be None or empty string.
 
         Returns:
-            List[str]: Lista di nomi colonna puliti (es. ['name', 'party']) da scaricare.
-            None: Se c'è un errore o un Wildcard (*), indica di scaricare TUTTO.
+            List[str]: Clean list of column names (e.g. ['name', 'party']) to fetch.
+            None: If there's an error or a wildcard (*), indicates to fetch EVERYTHING.
         """
         try:
-            # Parsa la query SQL completa.
-            # parse_one gestisce automaticamente la complessità sintattica.
+            # Parse the full SQL query.
+            # parse_one automatically handles syntactic complexity.
             parsed = parse_one(sql_query, read="duckdb")
         except Exception as e:
             LOG.warning(f"Sqlglot parsing failed for table {table_name}: {e}. Fallback to ALL columns.")
             return None
 
-        # Se c'è un asterisco (*) globale nella query, non rischiamo filtri: scarichiamo tutto.
+        # If there's a global asterisk (*) in the query, avoid risking filters: fetch everything.
         if parsed.find(exp.Star):
             return None
 
         found_columns = set()
 
-        # Costruiamo il set dei nomi validi (Table Name + Alias) normalizzati in minuscolo
+        # Build the set of valid names (Table Name + Alias) normalized to lowercase
         target_names = {table_name.lower()}
         if alias:
             target_names.add(alias.lower())
 
-        # Cerchiamo tutte le colonne ovunque appaiano (SELECT, WHERE, JOIN, funzioni...)
+        # Find all columns wherever they appear (SELECT, WHERE, JOIN, functions...)
         for col in parsed.find_all(exp.Column):
             col_name = col.name
-            table_ref = col.table  # Questo è il prefisso (es. 'p' in 'p.name')
+            table_ref = col.table  # This is the prefix (e.g., 'p' in 'p.name')
 
             if table_ref:
-                # CASO 1: C'è un prefisso (es. p.name)
-                # La colonna è nostra SOLO se il prefisso corrisponde alla tabella o all'alias
+                # CASE 1: There is a prefix (e.g., p.name)
+                # The column is ours ONLY if the prefix matches the table or alias
                 if table_ref.lower() in target_names:
                     found_columns.add(col_name)
             else:
-                # CASO 2: Nessun prefisso (es. 'name')
-                # Euristica di sicurezza: Se non c'è prefisso, assumiamo che la colonna
-                # possa appartenere a questa tabella. È meglio scaricare una colonna in più
-                # (che poi DuckDB ignorerà se non serve) piuttosto che una in meno.
+                # CASE 2: No prefix (e.g., 'name')
+                # Safety heuristic: If there's no prefix, assume the column may belong to this table.
+                # It's better to download one extra column (which DuckDB will ignore if not needed)
+                # than to miss a required one.
                 found_columns.add(col_name)
 
-        # Se non abbiamo trovato nulla (caso raro), ritorniamo None per sicurezza (scarica tutto)
+        # If we found nothing (rare case), return None for safety (fetch everything)
         if not found_columns:
             return None
 
@@ -562,7 +562,7 @@ class Galois:
 
 def save_galois_results(results_list, variant, provider, dataset_name):
     """
-    Salva i risultati di GALOIS in JSON per la valutazione.
+        Save GALOIS results to JSON for evaluation.
     """
     variant_key = f"GALOIS_{variant}"
 
