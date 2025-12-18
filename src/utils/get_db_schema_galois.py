@@ -16,10 +16,6 @@ class GaloisSchemaManager:
     def __init__(self, database_name: str):
         self.database_name = database_name
         try:
-            #db_object = get_duckdb_path(database_name)
-            #uri_string = str(db_object._engine.url)
-            #db_object._engine.dispose()
-            #db_path = uri_string.removeprefix("duckdb:///")
             db_path = DATA_DIR / self.database_name.upper() / f"{self.database_name.lower()}.duckdb"
             self.con = duckdb.connect(database=db_path, read_only=True)
             self.con.execute("USE target;")
@@ -129,7 +125,6 @@ if __name__ == "__main__":
             print("JSON example (all attributes):", mgr.get_json_schema_example("movies", attrs))
             print("JSON example (keys):", mgr.get_json_schema_example("movies", keys))
 
-            # Esempio subset (primi 2 non-key)
             subset = [a for a in attrs if a not in keys][:2]
             print("JSON example (subset):", mgr.get_json_schema_example("movies", subset))
 
