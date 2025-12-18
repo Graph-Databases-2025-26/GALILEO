@@ -1,0 +1,45 @@
+{
+    "query_id": "1",
+    "result_set": [],
+    "tokens": 412,
+    "time": 13.097800016403198,
+    "exp6": {
+        "input_tokens_total": 1106.0,
+        "n_iters": 5,
+        "max_iter": 10
+    },
+    "debug": {
+        "variant_name": "EXP6_GALOIS_A_TABLE",
+        "physical_strategy_requested": "table",
+        "physical_strategy_final": "TABLE",
+        "conditions_to_push": [
+            "state_name = 'new mexico'"
+        ],
+        "residual_conditions": [],
+        "tables": [
+            {
+                "table": "usa_state",
+                "alias": "usa_state",
+                "scan": "TABLE",
+                "columns": [
+                    "state_name",
+                    "area_squared_miles"
+                ],
+                "pushed_conditions": [
+                    "state_name = 'new mexico'"
+                ],
+                "time": 13.097800016403198,
+                "tokens": 412,
+                "n_iters": 5,
+                "input_tokens_by_iter": [
+                    619,
+                    121,
+                    121,
+                    121,
+                    124
+                ],
+                "input_tokens_total_all_iters": 1106
+            }
+        ]
+    }
+}

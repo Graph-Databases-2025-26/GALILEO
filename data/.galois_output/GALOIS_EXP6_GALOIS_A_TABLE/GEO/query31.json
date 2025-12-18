@@ -1,0 +1,93 @@
+{
+    "query_id": "31",
+    "result_set": [
+        {
+            "state_name": "Nevada",
+            "capital": "Carson City",
+            "population": 3139651
+        },
+        {
+            "state_name": "Utah",
+            "capital": "Salt Lake City",
+            "population": 3255954
+        },
+        {
+            "state_name": "Oklahoma",
+            "capital": "Oklahoma City",
+            "population": 3957081
+        },
+        {
+            "state_name": "Oregon",
+            "capital": "Salem",
+            "population": 4237251
+        },
+        {
+            "state_name": "Colorado",
+            "capital": "Denver",
+            "population": 5758741
+        },
+        {
+            "state_name": "Wisconsin",
+            "capital": "Madison",
+            "population": 5822564
+        },
+        {
+            "state_name": "Arizona",
+            "capital": "Phoenix",
+            "population": 7278717
+        },
+        {
+            "state_name": "Washington",
+            "capital": "Olympia",
+            "population": 7550481
+        }
+    ],
+    "tokens": 1072,
+    "time": 37.07970714569092,
+    "exp6": {
+        "input_tokens_total": 1265.0,
+        "n_iters": 6,
+        "max_iter": 10
+    },
+    "debug": {
+        "variant_name": "EXP6_GALOIS_A_TABLE",
+        "physical_strategy_requested": "table",
+        "physical_strategy_final": "TABLE",
+        "conditions_to_push": [
+            "us.population > 3000000",
+            "us.population < 8000000",
+            "us.area_squared_miles > 50000"
+        ],
+        "residual_conditions": [],
+        "tables": [
+            {
+                "table": "usa_state",
+                "alias": "us",
+                "scan": "TABLE",
+                "columns": [
+                    "capital",
+                    "area_squared_miles",
+                    "state_name",
+                    "population"
+                ],
+                "pushed_conditions": [
+                    "us.population > 3000000",
+                    "us.population < 8000000",
+                    "us.area_squared_miles > 50000"
+                ],
+                "time": 37.07970714569092,
+                "tokens": 1072,
+                "n_iters": 6,
+                "input_tokens_by_iter": [
+                    642,
+                    124,
+                    121,
+                    127,
+                    124,
+                    127
+                ],
+                "input_tokens_total_all_iters": 1265
+            }
+        ]
+    }
+}

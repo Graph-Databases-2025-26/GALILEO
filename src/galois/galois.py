@@ -197,7 +197,7 @@ class Galois:
                     ################
                     key_executor = Francesco_Executor(self.config, self.dataset)
                     try:
-                        f_response = key_executor.key_scan(query=simple_query, columns=cols_to_pass, conditions_to_push=current_push_conditions)
+                        f_response = key_executor.key_scan(query=simple_query, columns=cols_to_pass, conditions_to_push=current_push_conditions, max_iter=plan.get("max_iter"))
                     finally:
                         # close connection
                         if hasattr(key_executor, 'schema_mgr') and hasattr(key_executor.schema_mgr, 'dispose_manager'):
@@ -208,7 +208,7 @@ class Galois:
                     LOG.info(f"Executing TABLE SCAN on {t_name}")
                     table_executor = Francesco_Executor(self.config, self.dataset)
                     try:
-                        f_response = table_executor.table_scan(query=simple_query, columns=cols_to_pass, conditions_to_push=current_push_conditions)
+                        f_response = table_executor.table_scan(query=simple_query, columns=cols_to_pass, conditions_to_push=current_push_conditions, max_iter=plan.get("max_iter"))
                     finally:
                         # Close connection
                         if hasattr(table_executor, 'schema_mgr'):
@@ -226,6 +226,10 @@ class Galois:
                     "pushed_conditions": current_push_conditions,
                     "time": f_response.get("time", 0),
                     "tokens": f_response.get("tokens", 0),
+                    # exp 6 stats
+                    "n_iters": f_response.get("n_iters"),
+                    "input_tokens_by_iter": f_response.get("input_tokens_by_iter"),
+                    "input_tokens_total_all_iters": f_response.get("input_tokens_total_all_iters"),
                     }) 
 
                 total_execution_time += f_response.get("time", 0)

@@ -1,0 +1,46 @@
+{
+    "query_id": "1",
+    "result_set": [
+        {
+            "call_sign": "jetblue"
+        }
+    ],
+    "tokens": 132,
+    "time": 4.917269229888916,
+    "exp6": {
+        "input_tokens_total": 743.0,
+        "n_iters": 2,
+        "max_iter": 10
+    },
+    "debug": {
+        "variant_name": "EXP6_GALOIS_A_TABLE",
+        "physical_strategy_requested": "table",
+        "physical_strategy_final": "TABLE",
+        "conditions_to_push": [
+            "airline = 'jetblue airways'"
+        ],
+        "residual_conditions": [],
+        "tables": [
+            {
+                "table": "usa_airline_companies",
+                "alias": "usa_airline_companies",
+                "scan": "TABLE",
+                "columns": [
+                    "airline",
+                    "call_sign"
+                ],
+                "pushed_conditions": [
+                    "airline = 'jetblue airways'"
+                ],
+                "time": 4.917269229888916,
+                "tokens": 132,
+                "n_iters": 2,
+                "input_tokens_by_iter": [
+                    616,
+                    127
+                ],
+                "input_tokens_total_all_iters": 743
+            }
+        ]
+    }
+}

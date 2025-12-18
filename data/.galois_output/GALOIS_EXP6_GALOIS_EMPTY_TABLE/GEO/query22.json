@@ -1,0 +1,63 @@
+{
+    "query_id": "22",
+    "result_set": [],
+    "tokens": 1460,
+    "time": 44.881752490997314,
+    "exp6": {
+        "input_tokens_total": 1747.0,
+        "n_iters": 6,
+        "max_iter": 10
+    },
+    "debug": {
+        "variant_name": "EXP6_GALOIS_EMPTY_TABLE",
+        "physical_strategy_requested": "table",
+        "physical_strategy_final": "TABLE",
+        "conditions_to_push": [],
+        "residual_conditions": [
+            "t1.city_name = 'tempe'"
+        ],
+        "tables": [
+            {
+                "table": "usa_city",
+                "alias": "t1",
+                "scan": "TABLE",
+                "columns": [
+                    "city_name",
+                    "state_name"
+                ],
+                "pushed_conditions": [],
+                "time": 12.735814571380615,
+                "tokens": 400,
+                "n_iters": 6,
+                "input_tokens_by_iter": [
+                    297,
+                    118,
+                    124,
+                    121,
+                    130,
+                    118
+                ],
+                "input_tokens_total_all_iters": 908
+            },
+            {
+                "table": "usa_state",
+                "alias": "t2",
+                "scan": "TABLE",
+                "columns": [
+                    "capital",
+                    "state_name"
+                ],
+                "pushed_conditions": [],
+                "time": 32.1459379196167,
+                "tokens": 1060,
+                "n_iters": 3,
+                "input_tokens_by_iter": [
+                    597,
+                    118,
+                    124
+                ],
+                "input_tokens_total_all_iters": 839
+            }
+        ]
+    }
+}

@@ -512,15 +512,40 @@ class GaloisExecutor:
         if max_iter is None:
             max_iter = self.max_iter
         
-        input_d = {"query": query, "columns":columns, "prompt_t": "table_f", "conditions": conditions_to_push, "history": ""}
+        parsed = parse_sql(query)
+        original_where = parsed.get("where_conditions") or []
+
+# None -> use original WHERE, [] -> push nothing, [..] -> push those
+        where_conditions = original_where if conditions_to_push is None else conditions_to_push
+
+        input_d = {"query": query, "columns":columns, "prompt_t": "table_f", "conditions": where_conditions, "history": ""}
         chain = self._build_galois_chain(self.llm_wrapper)
         
+        input_tokens_by_iter: List[int] = []
+        iters_done = 0
+
         i = 0
         while i < max_iter:
             
-            t_start =time.time()
-            
+            t_start = time.time()
             try:
+                # ----- Exp-6 input-token estimate for this iteration prompt -----
+                try:
+                    # build the same human prompt text you will send (best-effort)
+                    tmp_input = dict(input_d)
+                    if i > 0:
+                        tmp_input.update({"prompt_t": "table_i", **self.g_memory.load_memory_variables({})})
+                    ctx = self._get_context(tmp_input)
+                    human_prompt = self._select_prompt(ctx)["human_prompt"]
+                    
+                    llm = self.llm_wrapper.get_llm_instance()
+                    if hasattr(llm, "get_num_tokens"):
+                        prompt_input_tokens = int(llm.get_num_tokens(human_prompt))
+                    else:
+                        prompt_input_tokens = 0
+                except Exception:
+                    prompt_input_tokens = 0
+
                 if i == 0:
                     raw_response = chain.invoke(input_d)
                     
@@ -530,6 +555,10 @@ class GaloisExecutor:
                     raw_response = chain.invoke(input_d)
                 
                 t_end = time.time()
+
+                # count this iteration EVEN if it terminates
+                input_tokens_by_iter.append(prompt_input_tokens)
+                iters_done = i + 1
 
                 content_fixed = raw_response.content.replace("\\'", "'")
                 content_fixed = repair_json_content(content_fixed)
@@ -555,7 +584,10 @@ class GaloisExecutor:
         output ={
             "response": self.g_memory.get_memory,
             "time": self.g_memory.get_time,
-            "tokens": self.g_memory.get_tokens
+            "tokens": self.g_memory.get_tokens,
+            "n_iters": iters_done,
+            "input_tokens_by_iter": input_tokens_by_iter,
+            "input_tokens_total_all_iters": sum(input_tokens_by_iter),
         }
         LOG.info(f"LLM Response Parsed: {output}")
         

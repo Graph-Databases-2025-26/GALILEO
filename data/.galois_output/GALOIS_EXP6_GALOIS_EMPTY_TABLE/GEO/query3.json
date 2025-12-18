@@ -1,0 +1,45 @@
+{
+    "query_id": "3",
+    "result_set": [
+        {
+            "count(capital)": 0
+        }
+    ],
+    "tokens": 1060,
+    "time": 24.988181591033936,
+    "exp6": {
+        "input_tokens_total": 839.0,
+        "n_iters": 3,
+        "max_iter": 10
+    },
+    "debug": {
+        "variant_name": "EXP6_GALOIS_EMPTY_TABLE",
+        "physical_strategy_requested": "table",
+        "physical_strategy_final": "TABLE",
+        "conditions_to_push": [],
+        "residual_conditions": [
+            "state_name = 'rhode island'"
+        ],
+        "tables": [
+            {
+                "table": "usa_state",
+                "alias": "usa_state",
+                "scan": "TABLE",
+                "columns": [
+                    "capital",
+                    "state_name"
+                ],
+                "pushed_conditions": [],
+                "time": 24.988181591033936,
+                "tokens": 1060,
+                "n_iters": 3,
+                "input_tokens_by_iter": [
+                    597,
+                    118,
+                    124
+                ],
+                "input_tokens_total_all_iters": 839
+            }
+        ]
+    }
+}

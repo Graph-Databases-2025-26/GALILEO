@@ -1,0 +1,139 @@
+{
+    "query_id": "28",
+    "result_set": [
+        {
+            "state_name": "California",
+            "capital": "Sacramento"
+        },
+        {
+            "state_name": "Texas",
+            "capital": "Austin"
+        },
+        {
+            "state_name": "Arizona",
+            "capital": "Phoenix"
+        },
+        {
+            "state_name": "Georgia",
+            "capital": "Atlanta"
+        },
+        {
+            "state_name": "Ohio",
+            "capital": "Columbus"
+        },
+        {
+            "state_name": "Oklahoma",
+            "capital": "Oklahoma City"
+        },
+        {
+            "state_name": "Tennessee",
+            "capital": "Nashville"
+        },
+        {
+            "state_name": "North Carolina",
+            "capital": "Raleigh"
+        },
+        {
+            "state_name": "Wisconsin",
+            "capital": "Madison"
+        },
+        {
+            "state_name": "New York",
+            "capital": "Albany"
+        },
+        {
+            "state_name": "Maryland",
+            "capital": "Annapolis"
+        },
+        {
+            "state_name": "Massachusetts",
+            "capital": "Boston"
+        },
+        {
+            "state_name": "Colorado",
+            "capital": "Denver"
+        },
+        {
+            "state_name": "Pennsylvania",
+            "capital": "Harrisburg"
+        },
+        {
+            "state_name": "Indiana",
+            "capital": "Indianapolis"
+        },
+        {
+            "state_name": "Missouri",
+            "capital": "Jefferson City"
+        },
+        {
+            "state_name": "Michigan",
+            "capital": "Lansing"
+        },
+        {
+            "state_name": "Washington",
+            "capital": "Olympia"
+        },
+        {
+            "state_name": "Virginia",
+            "capital": "Richmond"
+        },
+        {
+            "state_name": "Minnesota",
+            "capital": "Saint Paul"
+        },
+        {
+            "state_name": "Illinois",
+            "capital": "Springfield"
+        },
+        {
+            "state_name": "Florida",
+            "capital": "Tallahassee"
+        }
+    ],
+    "tokens": 1298,
+    "time": 36.494218587875366,
+    "exp6": {
+        "input_tokens_total": 1230.0,
+        "n_iters": 6,
+        "max_iter": 10
+    },
+    "debug": {
+        "variant_name": "EXP6_GALOIS_A_TABLE",
+        "physical_strategy_requested": "table",
+        "physical_strategy_final": "TABLE",
+        "conditions_to_push": [
+            "us.population > 5000000",
+            "us.density < 1000"
+        ],
+        "residual_conditions": [],
+        "tables": [
+            {
+                "table": "usa_state",
+                "alias": "us",
+                "scan": "TABLE",
+                "columns": [
+                    "capital",
+                    "density",
+                    "state_name",
+                    "population"
+                ],
+                "pushed_conditions": [
+                    "us.population > 5000000",
+                    "us.density < 1000"
+                ],
+                "time": 36.494218587875366,
+                "tokens": 1298,
+                "n_iters": 6,
+                "input_tokens_by_iter": [
+                    622,
+                    124,
+                    118,
+                    121,
+                    121,
+                    124
+                ],
+                "input_tokens_total_all_iters": 1230
+            }
+        ]
+    }
+}

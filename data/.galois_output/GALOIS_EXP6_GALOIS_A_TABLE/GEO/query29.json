@@ -1,0 +1,77 @@
+{
+    "query_id": "29",
+    "result_set": [
+        {
+            "state_name": "Tennessee",
+            "capital": "Nashville",
+            "density": 162.2,
+            "population": 6829174
+        },
+        {
+            "state_name": "Ohio",
+            "capital": "Columbus",
+            "density": 260.8,
+            "population": 11689497
+        },
+        {
+            "state_name": "Virginia",
+            "capital": "Richmond",
+            "density": 199.7,
+            "population": 8535759
+        },
+        {
+            "state_name": "Florida",
+            "capital": "Tallahassee",
+            "density": 394.2,
+            "population": 21244317
+        }
+    ],
+    "tokens": 1134,
+    "time": 29.676946878433228,
+    "exp6": {
+        "input_tokens_total": 1131.0,
+        "n_iters": 5,
+        "max_iter": 10
+    },
+    "debug": {
+        "variant_name": "EXP6_GALOIS_A_TABLE",
+        "physical_strategy_requested": "table",
+        "physical_strategy_final": "TABLE",
+        "conditions_to_push": [
+            "us.population > 5000000",
+            "us.density < 1000",
+            "us.area_squared_miles < 50000"
+        ],
+        "residual_conditions": [],
+        "tables": [
+            {
+                "table": "usa_state",
+                "alias": "us",
+                "scan": "TABLE",
+                "columns": [
+                    "capital",
+                    "area_squared_miles",
+                    "state_name",
+                    "population",
+                    "density"
+                ],
+                "pushed_conditions": [
+                    "us.population > 5000000",
+                    "us.density < 1000",
+                    "us.area_squared_miles < 50000"
+                ],
+                "time": 29.676946878433228,
+                "tokens": 1134,
+                "n_iters": 5,
+                "input_tokens_by_iter": [
+                    644,
+                    118,
+                    124,
+                    121,
+                    124
+                ],
+                "input_tokens_total_all_iters": 1131
+            }
+        ]
+    }
+}

@@ -1,0 +1,84 @@
+{
+    "query_id": "29",
+    "result_set": [
+        {
+            "state_name": "Indiana",
+            "capital": "Indianapolis",
+            "density": 185.0,
+            "population": 6732219.0
+        },
+        {
+            "state_name": "Massachusetts",
+            "capital": "Boston",
+            "density": 874.0,
+            "population": 6892503.0
+        },
+        {
+            "state_name": "Ohio",
+            "capital": "Columbus",
+            "density": 283.0,
+            "population": 11689100.0
+        },
+        {
+            "state_name": "Pennsylvania",
+            "capital": "Harrisburg",
+            "density": 278.0,
+            "population": 12802022.0
+        },
+        {
+            "state_name": "South Carolina",
+            "capital": "Columbia",
+            "density": 159.0,
+            "population": 5086476.0
+        },
+        {
+            "state_name": "Tennessee",
+            "capital": "Nashville",
+            "density": 164.0,
+            "population": 6833174.0
+        }
+    ],
+    "tokens": 2224,
+    "time": 51.6911506652832,
+    "exp6": {
+        "input_tokens_total": 981.0,
+        "n_iters": 4,
+        "max_iter": 10
+    },
+    "debug": {
+        "variant_name": "EXP6_GALOIS_F_TABLE",
+        "physical_strategy_requested": "table",
+        "physical_strategy_final": "TABLE",
+        "conditions_to_push": [],
+        "residual_conditions": [
+            "us.population > 5000000",
+            "us.density < 1000",
+            "us.area_squared_miles < 50000"
+        ],
+        "tables": [
+            {
+                "table": "usa_state",
+                "alias": "us",
+                "scan": "TABLE",
+                "columns": [
+                    "capital",
+                    "area_squared_miles",
+                    "state_name",
+                    "population",
+                    "density"
+                ],
+                "pushed_conditions": [],
+                "time": 51.6911506652832,
+                "tokens": 2224,
+                "n_iters": 4,
+                "input_tokens_by_iter": [
+                    612,
+                    121,
+                    124,
+                    124
+                ],
+                "input_tokens_total_all_iters": 981
+            }
+        ]
+    }
+}

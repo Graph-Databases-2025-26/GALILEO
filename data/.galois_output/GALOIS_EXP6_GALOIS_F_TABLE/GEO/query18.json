@@ -1,0 +1,46 @@
+{
+    "query_id": "18",
+    "result_set": [
+        {
+            "count(DISTINCT usa_state_traversed)": 1
+        }
+    ],
+    "tokens": 325,
+    "time": 11.36720871925354,
+    "exp6": {
+        "input_tokens_total": 633.0,
+        "n_iters": 2,
+        "max_iter": 10
+    },
+    "debug": {
+        "variant_name": "EXP6_GALOIS_F_TABLE",
+        "physical_strategy_requested": "table",
+        "physical_strategy_final": "TABLE",
+        "conditions_to_push": [
+            "length_in_km > 750"
+        ],
+        "residual_conditions": [],
+        "tables": [
+            {
+                "table": "usa_river",
+                "alias": "usa_river",
+                "scan": "TABLE",
+                "columns": [
+                    "usa_state_traversed",
+                    "length_in_km"
+                ],
+                "pushed_conditions": [
+                    "length_in_km > 750"
+                ],
+                "time": 11.36720871925354,
+                "tokens": 325,
+                "n_iters": 2,
+                "input_tokens_by_iter": [
+                    512,
+                    121
+                ],
+                "input_tokens_total_all_iters": 633
+            }
+        ]
+    }
+}

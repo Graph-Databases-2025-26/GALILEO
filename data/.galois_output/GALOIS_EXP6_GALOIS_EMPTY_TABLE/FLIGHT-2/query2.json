@@ -1,0 +1,47 @@
+{
+    "query_id": "2",
+    "result_set": [
+        {
+            "count_star()": 126
+        }
+    ],
+    "tokens": 4107,
+    "time": 125.87021970748901,
+    "exp6": {
+        "input_tokens_total": 1683.0,
+        "n_iters": 10,
+        "max_iter": 10
+    },
+    "debug": {
+        "variant_name": "EXP6_GALOIS_EMPTY_TABLE",
+        "physical_strategy_requested": "table",
+        "physical_strategy_final": "TABLE",
+        "conditions_to_push": [],
+        "residual_conditions": [],
+        "tables": [
+            {
+                "table": "usa_flights",
+                "alias": "f",
+                "scan": "TABLE",
+                "columns": "*",
+                "pushed_conditions": [],
+                "time": 125.87021970748901,
+                "tokens": 4107,
+                "n_iters": 10,
+                "input_tokens_by_iter": [
+                    594,
+                    121,
+                    121,
+                    121,
+                    121,
+                    121,
+                    121,
+                    121,
+                    121,
+                    121
+                ],
+                "input_tokens_total_all_iters": 1683
+            }
+        ]
+    }
+}

@@ -1,0 +1,59 @@
+{
+    "query_id": "32",
+    "result_set": [
+        {
+            "state_name": "California",
+            "capital": "Sacramento",
+            "population": 4700000,
+            "area_squared_miles": 56153
+        }
+    ],
+    "tokens": 448,
+    "time": 13.98908019065857,
+    "exp6": {
+        "input_tokens_total": 1491.0,
+        "n_iters": 8,
+        "max_iter": 10
+    },
+    "debug": {
+        "variant_name": "EXP6_GALOIS_A_TABLE",
+        "physical_strategy_requested": "table",
+        "physical_strategy_final": "TABLE",
+        "conditions_to_push": [
+            "us.population = 4700000",
+            "us.area_squared_miles = 56153"
+        ],
+        "residual_conditions": [],
+        "tables": [
+            {
+                "table": "usa_state",
+                "alias": "us",
+                "scan": "TABLE",
+                "columns": [
+                    "capital",
+                    "area_squared_miles",
+                    "state_name",
+                    "population"
+                ],
+                "pushed_conditions": [
+                    "us.population = 4700000",
+                    "us.area_squared_miles = 56153"
+                ],
+                "time": 13.98908019065857,
+                "tokens": 448,
+                "n_iters": 8,
+                "input_tokens_by_iter": [
+                    635,
+                    124,
+                    121,
+                    121,
+                    124,
+                    121,
+                    121,
+                    124
+                ],
+                "input_tokens_total_all_iters": 1491
+            }
+        ]
+    }
+}

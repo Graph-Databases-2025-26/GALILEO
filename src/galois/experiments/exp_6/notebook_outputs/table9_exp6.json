@@ -1,0 +1,16 @@
+[
+  {
+    "variant":"GALOIS_A",
+    "avg_input_tokens_all_iters":1102,
+    "avg_iters_per_query":3.5,
+    "n_queries_ge_max_iter":1,
+    "n_queries_total":42
+  },
+  {
+    "variant":"GALOIS_F",
+    "avg_input_tokens_all_iters":1081,
+    "avg_iters_per_query":3.36,
+    "n_queries_ge_max_iter":1,
+    "n_queries_total":42
+  }
+]

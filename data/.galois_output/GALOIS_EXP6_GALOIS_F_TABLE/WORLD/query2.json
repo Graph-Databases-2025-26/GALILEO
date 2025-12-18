@@ -1,0 +1,46 @@
+{
+    "query_id": "2",
+    "result_set": [
+        {
+            "name": "Senegal"
+        }
+    ],
+    "tokens": 1111,
+    "time": 28.849160194396973,
+    "exp6": {
+        "input_tokens_total": 2479.0,
+        "n_iters": 2,
+        "max_iter": 10
+    },
+    "debug": {
+        "variant_name": "EXP6_GALOIS_F_TABLE",
+        "physical_strategy_requested": "table",
+        "physical_strategy_final": "TABLE",
+        "conditions_to_push": [
+            "CAST(independence_year AS INT) > 1950"
+        ],
+        "residual_conditions": [],
+        "tables": [
+            {
+                "table": "country",
+                "alias": "country",
+                "scan": "TABLE",
+                "columns": [
+                    "independence_year",
+                    "name"
+                ],
+                "pushed_conditions": [
+                    "CAST(independence_year AS INT) > 1950"
+                ],
+                "time": 28.849160194396973,
+                "tokens": 1111,
+                "n_iters": 2,
+                "input_tokens_by_iter": [
+                    2361,
+                    118
+                ],
+                "input_tokens_total_all_iters": 2479
+            }
+        ]
+    }
+}

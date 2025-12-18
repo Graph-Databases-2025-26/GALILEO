@@ -1,0 +1,71 @@
+{
+    "query_id": "4",
+    "result_set": [
+        {
+            "region": "Western Europe"
+        },
+        {
+            "region": "Oceania"
+        }
+    ],
+    "tokens": 969,
+    "time": 29.200926303863525,
+    "exp6": {
+        "input_tokens_total": 3334.0,
+        "n_iters": 4,
+        "max_iter": 10
+    },
+    "debug": {
+        "variant_name": "EXP6_GALOIS_F_TABLE",
+        "physical_strategy_requested": "table",
+        "physical_strategy_final": "TABLE",
+        "conditions_to_push": [
+            "t1.language = 'English' OR t1.language = 'Dutch'"
+        ],
+        "residual_conditions": [],
+        "tables": [
+            {
+                "table": "country_language",
+                "alias": "t1",
+                "scan": "TABLE",
+                "columns": [
+                    "language",
+                    "country_code_3_letters"
+                ],
+                "pushed_conditions": [
+                    "t1.language = 'English' OR t1.language = 'Dutch'"
+                ],
+                "time": 15.841745853424072,
+                "tokens": 467,
+                "n_iters": 4,
+                "input_tokens_by_iter": [
+                    248,
+                    118,
+                    118,
+                    124
+                ],
+                "input_tokens_total_all_iters": 608
+            },
+            {
+                "table": "country",
+                "alias": "t2",
+                "scan": "TABLE",
+                "columns": [
+                    "code_3_letters",
+                    "region"
+                ],
+                "pushed_conditions": [],
+                "time": 13.359180450439453,
+                "tokens": 502,
+                "n_iters": 4,
+                "input_tokens_by_iter": [
+                    2363,
+                    121,
+                    121,
+                    121
+                ],
+                "input_tokens_total_all_iters": 2726
+            }
+        ]
+    }
+}

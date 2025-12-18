@@ -1,0 +1,232 @@
+{
+    "query_id": "2",
+    "result_set": [
+        {
+            "city_name": "New York City"
+        },
+        {
+            "city_name": "Los Angeles"
+        },
+        {
+            "city_name": "Chicago"
+        },
+        {
+            "city_name": "Houston"
+        },
+        {
+            "city_name": "Philadelphia"
+        },
+        {
+            "city_name": "Phoenix"
+        },
+        {
+            "city_name": "San Antonio"
+        },
+        {
+            "city_name": "San Diego"
+        },
+        {
+            "city_name": "San Jose"
+        },
+        {
+            "city_name": "San Francisco"
+        },
+        {
+            "city_name": "Seattle"
+        },
+        {
+            "city_name": "Washington D.C."
+        },
+        {
+            "city_name": "Denver"
+        },
+        {
+            "city_name": "Dallas"
+        },
+        {
+            "city_name": "Detroit"
+        },
+        {
+            "city_name": "El Paso"
+        },
+        {
+            "city_name": "Fort Worth"
+        },
+        {
+            "city_name": "Indianapolis"
+        },
+        {
+            "city_name": "Jacksonville"
+        },
+        {
+            "city_name": "Las Vegas"
+        },
+        {
+            "city_name": "Memphis"
+        },
+        {
+            "city_name": "Milwaukee"
+        },
+        {
+            "city_name": "Nashville"
+        },
+        {
+            "city_name": "Oklahoma City"
+        },
+        {
+            "city_name": "Portland"
+        },
+        {
+            "city_name": "Raleigh"
+        },
+        {
+            "city_name": "Sacramento"
+        },
+        {
+            "city_name": "Saint Louis"
+        },
+        {
+            "city_name": "Santa Ana"
+        },
+        {
+            "city_name": "Tampa"
+        },
+        {
+            "city_name": "Tucson"
+        },
+        {
+            "city_name": "Virginia Beach"
+        },
+        {
+            "city_name": "Wichita"
+        },
+        {
+            "city_name": "Winston-Salem"
+        },
+        {
+            "city_name": "Anaheim"
+        },
+        {
+            "city_name": "Arlington"
+        },
+        {
+            "city_name": "Austin"
+        },
+        {
+            "city_name": "Baltimore"
+        },
+        {
+            "city_name": "Boston"
+        },
+        {
+            "city_name": "Charlotte"
+        },
+        {
+            "city_name": "Cleveland"
+        },
+        {
+            "city_name": "Colorado Springs"
+        },
+        {
+            "city_name": "Columbus"
+        },
+        {
+            "city_name": "Fresno"
+        },
+        {
+            "city_name": "Kansas City"
+        },
+        {
+            "city_name": "Long Beach"
+        },
+        {
+            "city_name": "Louisville"
+        },
+        {
+            "city_name": "Miami"
+        },
+        {
+            "city_name": "Minneapolis"
+        },
+        {
+            "city_name": "Oakland"
+        },
+        {
+            "city_name": "Omaha"
+        },
+        {
+            "city_name": "Orlando"
+        },
+        {
+            "city_name": "Pittsburgh"
+        },
+        {
+            "city_name": "Riverside"
+        },
+        {
+            "city_name": "Stockton"
+        },
+        {
+            "city_name": "Staten Island"
+        },
+        {
+            "city_name": "Toledo"
+        },
+        {
+            "city_name": "Tulsa"
+        },
+        {
+            "city_name": "Vancouver"
+        },
+        {
+            "city_name": "Washington"
+        },
+        {
+            "city_name": "Wilmington"
+        }
+    ],
+    "tokens": 1069,
+    "time": 31.446858167648315,
+    "exp6": {
+        "input_tokens_total": 1401.0,
+        "n_iters": 10,
+        "max_iter": 10
+    },
+    "debug": {
+        "variant_name": "EXP6_GALOIS_EMPTY_TABLE",
+        "physical_strategy_requested": "table",
+        "physical_strategy_final": "TABLE",
+        "conditions_to_push": [],
+        "residual_conditions": [
+            "population > 150000"
+        ],
+        "tables": [
+            {
+                "table": "usa_city",
+                "alias": "usa_city",
+                "scan": "TABLE",
+                "columns": [
+                    "city_name",
+                    "population"
+                ],
+                "pushed_conditions": [],
+                "time": 31.446858167648315,
+                "tokens": 1069,
+                "n_iters": 10,
+                "input_tokens_by_iter": [
+                    295,
+                    118,
+                    121,
+                    129,
+                    118,
+                    124,
+                    124,
+                    121,
+                    130,
+                    121
+                ],
+                "input_tokens_total_all_iters": 1401
+            }
+        ]
+    }
+}

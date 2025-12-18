@@ -1,0 +1,48 @@
+{
+    "query_id": "3",
+    "result_set": [
+        {
+            "avg(gnp)": 3148.0,
+            "sum(population)": 154800.0
+        }
+    ],
+    "tokens": 114,
+    "time": 3.1041600704193115,
+    "exp6": {
+        "input_tokens_total": 2485.0,
+        "n_iters": 2,
+        "max_iter": 10
+    },
+    "debug": {
+        "variant_name": "EXP6_GALOIS_A_TABLE",
+        "physical_strategy_requested": "table",
+        "physical_strategy_final": "TABLE",
+        "conditions_to_push": [
+            "government_form = 'US Territory'"
+        ],
+        "residual_conditions": [],
+        "tables": [
+            {
+                "table": "country",
+                "alias": "country",
+                "scan": "TABLE",
+                "columns": [
+                    "population",
+                    "gnp",
+                    "government_form"
+                ],
+                "pushed_conditions": [
+                    "government_form = 'US Territory'"
+                ],
+                "time": 3.1041600704193115,
+                "tokens": 114,
+                "n_iters": 2,
+                "input_tokens_by_iter": [
+                    2361,
+                    124
+                ],
+                "input_tokens_total_all_iters": 2485
+            }
+        ]
+    }
+}

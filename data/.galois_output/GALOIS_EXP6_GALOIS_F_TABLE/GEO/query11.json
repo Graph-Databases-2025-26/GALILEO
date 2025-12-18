@@ -1,0 +1,46 @@
+{
+    "query_id": "11",
+    "result_set": [
+        {
+            "usa_state_traversed": "alaska"
+        }
+    ],
+    "tokens": 927,
+    "time": 23.92434000968933,
+    "exp6": {
+        "input_tokens_total": 629.0,
+        "n_iters": 2,
+        "max_iter": 10
+    },
+    "debug": {
+        "variant_name": "EXP6_GALOIS_F_TABLE",
+        "physical_strategy_requested": "table",
+        "physical_strategy_final": "TABLE",
+        "conditions_to_push": [
+            "length_in_km > 750"
+        ],
+        "residual_conditions": [],
+        "tables": [
+            {
+                "table": "usa_river",
+                "alias": "usa_river",
+                "scan": "TABLE",
+                "columns": [
+                    "usa_state_traversed",
+                    "length_in_km"
+                ],
+                "pushed_conditions": [
+                    "length_in_km > 750"
+                ],
+                "time": 23.92434000968933,
+                "tokens": 927,
+                "n_iters": 2,
+                "input_tokens_by_iter": [
+                    508,
+                    121
+                ],
+                "input_tokens_total_all_iters": 629
+            }
+        ]
+    }
+}

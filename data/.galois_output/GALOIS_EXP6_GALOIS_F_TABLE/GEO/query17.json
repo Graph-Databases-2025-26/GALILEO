@@ -1,0 +1,52 @@
+{
+    "query_id": "17",
+    "result_set": [],
+    "tokens": 1454,
+    "time": 61.95646929740906,
+    "exp6": {
+        "input_tokens_total": 1300.0,
+        "n_iters": 9,
+        "max_iter": 10
+    },
+    "debug": {
+        "variant_name": "EXP6_GALOIS_F_TABLE",
+        "physical_strategy_requested": "table",
+        "physical_strategy_final": "TABLE",
+        "conditions_to_push": [
+            "city_name = 'seattle'",
+            "state_name = 'washington'"
+        ],
+        "residual_conditions": [],
+        "tables": [
+            {
+                "table": "usa_city",
+                "alias": "usa_city",
+                "scan": "TABLE",
+                "columns": [
+                    "city_name",
+                    "state_name",
+                    "population"
+                ],
+                "pushed_conditions": [
+                    "city_name = 'seattle'",
+                    "state_name = 'washington'"
+                ],
+                "time": 61.95646929740906,
+                "tokens": 1454,
+                "n_iters": 9,
+                "input_tokens_by_iter": [
+                    323,
+                    118,
+                    124,
+                    121,
+                    130,
+                    124,
+                    118,
+                    121,
+                    121
+                ],
+                "input_tokens_total_all_iters": 1300
+            }
+        ]
+    }
+}

@@ -23,9 +23,8 @@ from src.utils.tutor.galois_eval import (
     tuple_constraint,
 )
 
-# -----------------------------
+
 # Robustness helpers
-# -----------------------------
 
 def with_retries(fn, *, tries=4, base_sleep=2.0, what="call"):
     last = None
@@ -48,9 +47,8 @@ def with_retries(fn, *, tries=4, base_sleep=2.0, what="call"):
     raise last
 
 
-# -----------------------------
+
 # Helpers
-# -----------------------------
 
 def resolve_existing_dir(base: Path, candidates: List[str]) -> str:
     for c in candidates:
@@ -129,9 +127,6 @@ class VariantResult:
     total_time: float
 
 
-# -----------------------------
-# Core logic
-# -----------------------------
 
 def compute_galois_f_pushdown_conditions(
     config, dataset_db: str, sql_query: str
@@ -178,9 +173,9 @@ def run_fixed_pushdown(
     return with_retries(_run, what=f"execute_variant {physical_strategy}")
 
 
-# -----------------------------
+
 # Experiment 2
-# -----------------------------
+
 
 def run_exp2(
     dataset_db: str,

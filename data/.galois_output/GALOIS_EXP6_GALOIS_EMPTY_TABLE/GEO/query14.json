@@ -1,0 +1,109 @@
+{
+    "query_id": "14",
+    "result_set": [
+        {
+            "lake_name": "Lake Baikal"
+        },
+        {
+            "lake_name": "Lake Winnipegosis"
+        },
+        {
+            "lake_name": "Great Lakes"
+        },
+        {
+            "lake_name": "Lake Nipissing"
+        },
+        {
+            "lake_name": "Lake Ontario"
+        },
+        {
+            "lake_name": "Lake Powell"
+        },
+        {
+            "lake_name": "Caspian Sea"
+        },
+        {
+            "lake_name": "Lake Abitibi"
+        },
+        {
+            "lake_name": "Great Slave Lake"
+        },
+        {
+            "lake_name": "Lake Mead"
+        },
+        {
+            "lake_name": "Lake Athabasca"
+        },
+        {
+            "lake_name": "Lake Tanganyika"
+        },
+        {
+            "lake_name": "Lake Superior"
+        },
+        {
+            "lake_name": "Lake Huron"
+        },
+        {
+            "lake_name": "Lake Michigan"
+        },
+        {
+            "lake_name": "Lake Sakakawea"
+        },
+        {
+            "lake_name": "Lake Reindeer"
+        },
+        {
+            "lake_name": "Lake Winnipeg"
+        },
+        {
+            "lake_name": "Lake Oahe"
+        },
+        {
+            "lake_name": "Lake Pontchartrain"
+        },
+        {
+            "lake_name": "Lake of the Woods"
+        },
+        {
+            "lake_name": "Lake Erie"
+        }
+    ],
+    "tokens": 503,
+    "time": 12.10669207572937,
+    "exp6": {
+        "input_tokens_total": 869.0,
+        "n_iters": 4,
+        "max_iter": 10
+    },
+    "debug": {
+        "variant_name": "EXP6_GALOIS_EMPTY_TABLE",
+        "physical_strategy_requested": "table",
+        "physical_strategy_final": "TABLE",
+        "conditions_to_push": [],
+        "residual_conditions": [
+            "area_squared_km > 750"
+        ],
+        "tables": [
+            {
+                "table": "usa_lake",
+                "alias": "usa_lake",
+                "scan": "TABLE",
+                "columns": [
+                    "area_squared_km",
+                    "lake_name"
+                ],
+                "pushed_conditions": [],
+                "time": 12.10669207572937,
+                "tokens": 503,
+                "n_iters": 4,
+                "input_tokens_by_iter": [
+                    485,
+                    127,
+                    127,
+                    130
+                ],
+                "input_tokens_total_all_iters": 869
+            }
+        ]
+    }
+}

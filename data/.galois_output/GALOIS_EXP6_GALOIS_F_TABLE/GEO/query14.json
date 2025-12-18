@@ -1,0 +1,429 @@
+{
+    "query_id": "14",
+    "result_set": [
+        {
+            "lake_name": "Lake Powell"
+        },
+        {
+            "lake_name": "Lake Seminole"
+        },
+        {
+            "lake_name": "Lake Apalachia"
+        },
+        {
+            "lake_name": "Lake Blue Ridge"
+        },
+        {
+            "lake_name": "Lake Waco"
+        },
+        {
+            "lake_name": "Lake Granbury"
+        },
+        {
+            "lake_name": "Lake Cypress Springs"
+        },
+        {
+            "lake_name": "Lake Wright Patman"
+        },
+        {
+            "lake_name": "Lake Ontario"
+        },
+        {
+            "lake_name": "Lake Lanier"
+        },
+        {
+            "lake_name": "Lake Seed"
+        },
+        {
+            "lake_name": "Lake Nantahala"
+        },
+        {
+            "lake_name": "Lake Weiss"
+        },
+        {
+            "lake_name": "Lake Falcon"
+        },
+        {
+            "lake_name": "Lake LBJ"
+        },
+        {
+            "lake_name": "Lake Travis"
+        },
+        {
+            "lake_name": "Lake Austin"
+        },
+        {
+            "lake_name": "Lake Mineral Wells"
+        },
+        {
+            "lake_name": "Lake Bob Sandlin"
+        },
+        {
+            "lake_name": "Lake DeGray"
+        },
+        {
+            "lake_name": "Lake Fort Gibson"
+        },
+        {
+            "lake_name": "Lake El Reno"
+        },
+        {
+            "lake_name": "Lake Hartwell"
+        },
+        {
+            "lake_name": "Lake Jocassee"
+        },
+        {
+            "lake_name": "Lake Sidney Lanier"
+        },
+        {
+            "lake_name": "Lake Glenville"
+        },
+        {
+            "lake_name": "Lake Marble Falls"
+        },
+        {
+            "lake_name": "Lady Bird Lake"
+        },
+        {
+            "lake_name": "Lake Konawa"
+        },
+        {
+            "lake_name": "Lake Marion"
+        },
+        {
+            "lake_name": "Lake Texoma North"
+        },
+        {
+            "lake_name": "Lake Gilmer"
+        },
+        {
+            "lake_name": "Lake Dardanelle"
+        },
+        {
+            "lake_name": "Lake Ouachita"
+        },
+        {
+            "lake_name": "Lake Beaver"
+        },
+        {
+            "lake_name": "Lake Kaw"
+        },
+        {
+            "lake_name": "Lake Winnipegosis"
+        },
+        {
+            "lake_name": "Lake Tallulah"
+        },
+        {
+            "lake_name": "Lake Livingston"
+        },
+        {
+            "lake_name": "Lake Stillhouse Hollow"
+        },
+        {
+            "lake_name": "Lake Georgetown"
+        },
+        {
+            "lake_name": "Lake Lyndon B Johnson"
+        },
+        {
+            "lake_name": "Lake Tawakoni"
+        },
+        {
+            "lake_name": "Lake Wayne Wallace"
+        },
+        {
+            "lake_name": "Lake Altus"
+        },
+        {
+            "lake_name": "Lake Manitoba"
+        },
+        {
+            "lake_name": "Lake Junaluska"
+        },
+        {
+            "lake_name": "Lake Hiwassee"
+        },
+        {
+            "lake_name": "Lake Buchanan"
+        },
+        {
+            "lake_name": "Lake Inks"
+        },
+        {
+            "lake_name": "Lake Tom Steed"
+        },
+        {
+            "lake_name": "Great Salt Lake"
+        },
+        {
+            "lake_name": "Lake Winnebago"
+        },
+        {
+            "lake_name": "Lake Audubon"
+        },
+        {
+            "lake_name": "Lake Chatuge"
+        },
+        {
+            "lake_name": "Lake Sooner"
+        },
+        {
+            "lake_name": "Lake Mead"
+        },
+        {
+            "lake_name": "Lake Athabasca"
+        },
+        {
+            "lake_name": "Reindeer Lake"
+        },
+        {
+            "lake_name": "Lake Eufaula"
+        },
+        {
+            "lake_name": "Lake Texarkana"
+        },
+        {
+            "lake_name": "Lake Nipigon"
+        },
+        {
+            "lake_name": "Lake Walter F George"
+        },
+        {
+            "lake_name": "Lake Tugalo"
+        },
+        {
+            "lake_name": "Lake Santeetlah"
+        },
+        {
+            "lake_name": "Lake Bridgeport"
+        },
+        {
+            "lake_name": "Lake Spavinaw"
+        },
+        {
+            "lake_name": "Lake Hudson"
+        },
+        {
+            "lake_name": "Lake Thunderbird"
+        },
+        {
+            "lake_name": "Lake Lawtonka"
+        },
+        {
+            "lake_name": "Lake Fuqua"
+        },
+        {
+            "lake_name": "Lake Superior"
+        },
+        {
+            "lake_name": "Lake Huron"
+        },
+        {
+            "lake_name": "Lake Sakakawea"
+        },
+        {
+            "lake_name": "Lake McConaughy"
+        },
+        {
+            "lake_name": "Lake Texoma"
+        },
+        {
+            "lake_name": "Lake Russell"
+        },
+        {
+            "lake_name": "Lake Yonah"
+        },
+        {
+            "lake_name": "Lake Draper"
+        },
+        {
+            "lake_name": "Lake Francis Case"
+        },
+        {
+            "lake_name": "Lake Thurmond"
+        },
+        {
+            "lake_name": "Lake Norman"
+        },
+        {
+            "lake_name": "Lake Allatoona"
+        },
+        {
+            "lake_name": "Lake Cooper"
+        },
+        {
+            "lake_name": "Lake Keystone"
+        },
+        {
+            "lake_name": "Lake Hulah"
+        },
+        {
+            "lake_name": "Lake Eufaula Oklahoma"
+        },
+        {
+            "lake_name": "Lake Overholser"
+        },
+        {
+            "lake_name": "Lake Keowee"
+        },
+        {
+            "lake_name": "Lake Rabun"
+        },
+        {
+            "lake_name": "Lake Fontana"
+        },
+        {
+            "lake_name": "Lake Grapevine"
+        },
+        {
+            "lake_name": "Lake Pat Mayse"
+        },
+        {
+            "lake_name": "Lake Millwood"
+        },
+        {
+            "lake_name": "Lake Burton"
+        },
+        {
+            "lake_name": "Lake Monticello"
+        },
+        {
+            "lake_name": "Lake Erie"
+        },
+        {
+            "lake_name": "Lake Pontchartrain"
+        },
+        {
+            "lake_name": "Lake of the Woods"
+        },
+        {
+            "lake_name": "Lake Oahe"
+        },
+        {
+            "lake_name": "Lake Sharpe"
+        },
+        {
+            "lake_name": "Lake Wallenpaupack"
+        },
+        {
+            "lake_name": "Lake Toxaway"
+        },
+        {
+            "lake_name": "Lake Belton"
+        },
+        {
+            "lake_name": "Lake Fork"
+        },
+        {
+            "lake_name": "Lake Tenkiller"
+        },
+        {
+            "lake_name": "Lake Skiatook"
+        },
+        {
+            "lake_name": "Lake Ellsworth"
+        },
+        {
+            "lake_name": "Lake Mille Lacs"
+        },
+        {
+            "lake_name": "Lake Lewis and Clark"
+        },
+        {
+            "lake_name": "Lake Sakakawea South"
+        },
+        {
+            "lake_name": "Lake Maumelle"
+        },
+        {
+            "lake_name": "Lake Eucha"
+        },
+        {
+            "lake_name": "Lake Copan"
+        },
+        {
+            "lake_name": "Lake Chickasha"
+        },
+        {
+            "lake_name": "Lake Abitibi"
+        },
+        {
+            "lake_name": "Lake Harding"
+        },
+        {
+            "lake_name": "Lake Oliver"
+        },
+        {
+            "lake_name": "Lake Amistad"
+        },
+        {
+            "lake_name": "Lake Conroe"
+        },
+        {
+            "lake_name": "Lake Houston"
+        },
+        {
+            "lake_name": "Lake Ray Roberts"
+        },
+        {
+            "lake_name": "Lake Lewisville"
+        },
+        {
+            "lake_name": "Lake Whitney"
+        },
+        {
+            "lake_name": "Lake Arcadia"
+        },
+        {
+            "lake_name": "Lake Lugert"
+        }
+    ],
+    "tokens": 2791,
+    "time": 76.20829391479492,
+    "exp6": {
+        "input_tokens_total": 1586.0,
+        "n_iters": 10,
+        "max_iter": 10
+    },
+    "debug": {
+        "variant_name": "EXP6_GALOIS_F_TABLE",
+        "physical_strategy_requested": "table",
+        "physical_strategy_final": "TABLE",
+        "conditions_to_push": [
+            "area_squared_km > 750"
+        ],
+        "residual_conditions": [],
+        "tables": [
+            {
+                "table": "usa_lake",
+                "alias": "usa_lake",
+                "scan": "TABLE",
+                "columns": [
+                    "area_squared_km",
+                    "lake_name"
+                ],
+                "pushed_conditions": [
+                    "area_squared_km > 750"
+                ],
+                "time": 76.20829391479492,
+                "tokens": 2791,
+                "n_iters": 10,
+                "input_tokens_by_iter": [
+                    500,
+                    121,
+                    121,
+                    121,
+                    118,
+                    121,
+                    121,
+                    121,
+                    121,
+                    121
+                ],
+                "input_tokens_total_all_iters": 1586
+            }
+        ]
+    }
+}

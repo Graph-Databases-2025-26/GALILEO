@@ -1,0 +1,417 @@
+{
+    "query_id": "14",
+    "result_set": [
+        {
+            "lake_name": "Lake Eau Galle"
+        },
+        {
+            "lake_name": "Lake O'Higgins"
+        },
+        {
+            "lake_name": "Lake Memphrémagog"
+        },
+        {
+            "lake_name": "Lake Diefenbaker"
+        },
+        {
+            "lake_name": "Lake Clark"
+        },
+        {
+            "lake_name": "Lake Bethel"
+        },
+        {
+            "lake_name": "Lake Goodwin"
+        },
+        {
+            "lake_name": "Lake Quinault"
+        },
+        {
+            "lake_name": "Lake Petersburg"
+        },
+        {
+            "lake_name": "Lake Ontario"
+        },
+        {
+            "lake_name": "Lake Kampeska"
+        },
+        {
+            "lake_name": "Lake Nipissing"
+        },
+        {
+            "lake_name": "Lake Viedma"
+        },
+        {
+            "lake_name": "Lake Egegik"
+        },
+        {
+            "lake_name": "Lake Canim"
+        },
+        {
+            "lake_name": "Lake Okanagan"
+        },
+        {
+            "lake_name": "Lake Lewis and Clark"
+        },
+        {
+            "lake_name": "Lake Winnibigoshish"
+        },
+        {
+            "lake_name": "Lake Mille Lacs"
+        },
+        {
+            "lake_name": "Lake Duparquet"
+        },
+        {
+            "lake_name": "Lake Ugashik"
+        },
+        {
+            "lake_name": "Lake Chelan"
+        },
+        {
+            "lake_name": "Lake Enriquillo"
+        },
+        {
+            "lake_name": "Lake San Martin"
+        },
+        {
+            "lake_name": "Lake Edward"
+        },
+        {
+            "lake_name": "Lake Naknek"
+        },
+        {
+            "lake_name": "Lake Crescent"
+        },
+        {
+            "lake_name": "Lake Shelbyville"
+        },
+        {
+            "lake_name": "Lake Taylorville"
+        },
+        {
+            "lake_name": "Lake La Martre"
+        },
+        {
+            "lake_name": "Lake Argentino"
+        },
+        {
+            "lake_name": "Lake Cochrane"
+        },
+        {
+            "lake_name": "Lake Hochelaga"
+        },
+        {
+            "lake_name": "Lake Goodnews"
+        },
+        {
+            "lake_name": "Lake Atlin"
+        },
+        {
+            "lake_name": "Lake Fazon"
+        },
+        {
+            "lake_name": "Lake Godfrey"
+        },
+        {
+            "lake_name": "Lake Powell"
+        },
+        {
+            "lake_name": "Lake Poinsett"
+        },
+        {
+            "lake_name": "Lake Athapapuskow"
+        },
+        {
+            "lake_name": "Lake George"
+        },
+        {
+            "lake_name": "Lake Aniakchak"
+        },
+        {
+            "lake_name": "Lake Sutherland"
+        },
+        {
+            "lake_name": "Lake Decatur"
+        },
+        {
+            "lake_name": "Lake Pittsfield"
+        },
+        {
+            "lake_name": "Lake Worden"
+        },
+        {
+            "lake_name": "Lake General Carrera"
+        },
+        {
+            "lake_name": "Lake Kipawa"
+        },
+        {
+            "lake_name": "Lake Nerka"
+        },
+        {
+            "lake_name": "Lake Tagish"
+        },
+        {
+            "lake_name": "Lake Louis"
+        },
+        {
+            "lake_name": "Lake Ripley"
+        },
+        {
+            "lake_name": "Lake Hazen"
+        },
+        {
+            "lake_name": "Lake Togiak"
+        },
+        {
+            "lake_name": "Lake Skaha"
+        },
+        {
+            "lake_name": "Lake Cushman"
+        },
+        {
+            "lake_name": "Lake Mattagami"
+        },
+        {
+            "lake_name": "Lake Deschenes"
+        },
+        {
+            "lake_name": "Lake Teslin"
+        },
+        {
+            "lake_name": "Lake Mahoney"
+        },
+        {
+            "lake_name": "Lake Osoyoos"
+        },
+        {
+            "lake_name": "Lake Pend Oreille"
+        },
+        {
+            "lake_name": "Lake Roosevelt"
+        },
+        {
+            "lake_name": "Lake Dickey"
+        },
+        {
+            "lake_name": "Lake Pepin"
+        },
+        {
+            "lake_name": "Lake Abitibi"
+        },
+        {
+            "lake_name": "Lake Buenos Aires"
+        },
+        {
+            "lake_name": "Lake Aleknagik"
+        },
+        {
+            "lake_name": "Lake Kuskokwim"
+        },
+        {
+            "lake_name": "Lake Elwha"
+        },
+        {
+            "lake_name": "Lake Maracaibo"
+        },
+        {
+            "lake_name": "Lake Becharof"
+        },
+        {
+            "lake_name": "Lake Revelstoke"
+        },
+        {
+            "lake_name": "Lake Whatcom"
+        },
+        {
+            "lake_name": "Lake Stevens"
+        },
+        {
+            "lake_name": "Lake Erie"
+        },
+        {
+            "lake_name": "Lake Oahe"
+        },
+        {
+            "lake_name": "Lake Sharpe"
+        },
+        {
+            "lake_name": "Lake of the Woods"
+        },
+        {
+            "lake_name": "Lake Belcher"
+        },
+        {
+            "lake_name": "Lake Timiskaming"
+        },
+        {
+            "lake_name": "Lake Abitibi-Temiscamingue"
+        },
+        {
+            "lake_name": "Lake Kinbasket"
+        },
+        {
+            "lake_name": "Lake Roesiger"
+        },
+        {
+            "lake_name": "Lake Ozette"
+        },
+        {
+            "lake_name": "Lake Barry"
+        },
+        {
+            "lake_name": "Lake Superior"
+        },
+        {
+            "lake_name": "Lake Michigan"
+        },
+        {
+            "lake_name": "Lake Huron"
+        },
+        {
+            "lake_name": "Lake Sakakawea"
+        },
+        {
+            "lake_name": "Lake Reindeer"
+        },
+        {
+            "lake_name": "Lake Kuichan"
+        },
+        {
+            "lake_name": "Lake Yukon"
+        },
+        {
+            "lake_name": "Lake McConaughy"
+        },
+        {
+            "lake_name": "Lake Springfield"
+        },
+        {
+            "lake_name": "Lake Alton"
+        },
+        {
+            "lake_name": "Lake Francis Case"
+        },
+        {
+            "lake_name": "Lake Traverse"
+        },
+        {
+            "lake_name": "Lake St. Clair"
+        },
+        {
+            "lake_name": "Lake Manouan"
+        },
+        {
+            "lake_name": "Lake Cedar"
+        },
+        {
+            "lake_name": "Lake Nuyakuk"
+        },
+        {
+            "lake_name": "Lake Washington"
+        },
+        {
+            "lake_name": "Lake Aldwell"
+        },
+        {
+            "lake_name": "Lake Mount Sterling"
+        },
+        {
+            "lake_name": "Lake Mead"
+        },
+        {
+            "lake_name": "Lake Athabasca"
+        },
+        {
+            "lake_name": "Lake Kootenay"
+        },
+        {
+            "lake_name": "Lake Koocanusa"
+        },
+        {
+            "lake_name": "Lake Union"
+        },
+        {
+            "lake_name": "Lake Glendale"
+        },
+        {
+            "lake_name": "Lake Carlyle"
+        },
+        {
+            "lake_name": "Lake Mauvaisterre"
+        },
+        {
+            "lake_name": "Lake Jacksonville"
+        },
+        {
+            "lake_name": "Lake Témiscamingue"
+        },
+        {
+            "lake_name": "Lake Iliamna"
+        },
+        {
+            "lake_name": "Lake Chignik"
+        },
+        {
+            "lake_name": "Lake Tikchik"
+        },
+        {
+            "lake_name": "Lake Dease"
+        },
+        {
+            "lake_name": "Lake Morgan"
+        },
+        {
+            "lake_name": "Lake Virginia"
+        },
+        {
+            "lake_name": "Lake Brighton"
+        }
+    ],
+    "tokens": 2617,
+    "time": 73.73797965049744,
+    "exp6": {
+        "input_tokens_total": 1625.0,
+        "n_iters": 10,
+        "max_iter": 10
+    },
+    "debug": {
+        "variant_name": "EXP6_GALOIS_A_TABLE",
+        "physical_strategy_requested": "table",
+        "physical_strategy_final": "TABLE",
+        "conditions_to_push": [
+            "area_squared_km > 750"
+        ],
+        "residual_conditions": [],
+        "tables": [
+            {
+                "table": "usa_lake",
+                "alias": "usa_lake",
+                "scan": "TABLE",
+                "columns": [
+                    "area_squared_km",
+                    "lake_name"
+                ],
+                "pushed_conditions": [
+                    "area_squared_km > 750"
+                ],
+                "time": 73.73797965049744,
+                "tokens": 2617,
+                "n_iters": 10,
+                "input_tokens_by_iter": [
+                    503,
+                    124,
+                    124,
+                    124,
+                    124,
+                    124,
+                    124,
+                    124,
+                    127,
+                    127
+                ],
+                "input_tokens_total_all_iters": 1625
+            }
+        ]
+    }
+}

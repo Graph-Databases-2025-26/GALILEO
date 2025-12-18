@@ -1,0 +1,44 @@
+{
+    "query_id": "2",
+    "result_set": [
+        {
+            "max(elevation_in_ft)": null
+        }
+    ],
+    "tokens": 173,
+    "time": 4.092211961746216,
+    "exp6": {
+        "input_tokens_total": 1326.0,
+        "n_iters": 2,
+        "max_iter": 10
+    },
+    "debug": {
+        "variant_name": "EXP6_GALOIS_EMPTY_TABLE",
+        "physical_strategy_requested": "table",
+        "physical_strategy_final": "TABLE",
+        "conditions_to_push": [],
+        "residual_conditions": [
+            "country = 'Iceland'"
+        ],
+        "tables": [
+            {
+                "table": "airports",
+                "alias": "airports",
+                "scan": "TABLE",
+                "columns": [
+                    "elevation_in_ft",
+                    "country"
+                ],
+                "pushed_conditions": [],
+                "time": 4.092211961746216,
+                "tokens": 173,
+                "n_iters": 2,
+                "input_tokens_by_iter": [
+                    1205,
+                    121
+                ],
+                "input_tokens_total_all_iters": 1326
+            }
+        ]
+    }
+}

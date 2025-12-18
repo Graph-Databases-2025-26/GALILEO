@@ -1,0 +1,255 @@
+{
+    "query_id": "2",
+    "result_set": [
+        {
+            "city_name": "New York City"
+        },
+        {
+            "city_name": "Los Angeles"
+        },
+        {
+            "city_name": "Chicago"
+        },
+        {
+            "city_name": "Houston"
+        },
+        {
+            "city_name": "Phoenix"
+        },
+        {
+            "city_name": "Philadelphia"
+        },
+        {
+            "city_name": "San Antonio"
+        },
+        {
+            "city_name": "San Diego"
+        },
+        {
+            "city_name": "Dallas"
+        },
+        {
+            "city_name": "San Jose"
+        },
+        {
+            "city_name": "Seattle"
+        },
+        {
+            "city_name": "Denver"
+        },
+        {
+            "city_name": "Washington"
+        },
+        {
+            "city_name": "Wichita"
+        },
+        {
+            "city_name": "Boston"
+        },
+        {
+            "city_name": "Baltimore"
+        },
+        {
+            "city_name": "Charlotte"
+        },
+        {
+            "city_name": "Colorado Springs"
+        },
+        {
+            "city_name": "Columbus"
+        },
+        {
+            "city_name": "Fort Worth"
+        },
+        {
+            "city_name": "Indianapolis"
+        },
+        {
+            "city_name": "Jacksonville"
+        },
+        {
+            "city_name": "Kansas City"
+        },
+        {
+            "city_name": "Las Vegas"
+        },
+        {
+            "city_name": "Memphis"
+        },
+        {
+            "city_name": "Milwaukee"
+        },
+        {
+            "city_name": "Nashville"
+        },
+        {
+            "city_name": "Oklahoma City"
+        },
+        {
+            "city_name": "Portland"
+        },
+        {
+            "city_name": "Raleigh"
+        },
+        {
+            "city_name": "Sacramento"
+        },
+        {
+            "city_name": "Saint Louis"
+        },
+        {
+            "city_name": "Salt Lake City"
+        },
+        {
+            "city_name": "San Francisco"
+        },
+        {
+            "city_name": "Tampa"
+        },
+        {
+            "city_name": "Tucson"
+        },
+        {
+            "city_name": "Tulsa"
+        },
+        {
+            "city_name": "Virginia Beach"
+        },
+        {
+            "city_name": "Austin"
+        },
+        {
+            "city_name": "Bakersfield"
+        },
+        {
+            "city_name": "Birmingham"
+        },
+        {
+            "city_name": "Boise"
+        },
+        {
+            "city_name": "Buffalo"
+        },
+        {
+            "city_name": "Chandler"
+        },
+        {
+            "city_name": "Cleveland"
+        },
+        {
+            "city_name": "Detroit"
+        },
+        {
+            "city_name": "El Paso"
+        },
+        {
+            "city_name": "Fresno"
+        },
+        {
+            "city_name": "Grand Rapids"
+        },
+        {
+            "city_name": "Henderson"
+        },
+        {
+            "city_name": "Irvine"
+        },
+        {
+            "city_name": "Long Beach"
+        },
+        {
+            "city_name": "Louisville"
+        },
+        {
+            "city_name": "Madison"
+        },
+        {
+            "city_name": "Miami"
+        },
+        {
+            "city_name": "Minneapolis"
+        },
+        {
+            "city_name": "New Orleans"
+        },
+        {
+            "city_name": "Oakland"
+        },
+        {
+            "city_name": "Omaha"
+        },
+        {
+            "city_name": "Orlando"
+        },
+        {
+            "city_name": "Pittsburgh"
+        },
+        {
+            "city_name": "Riverside"
+        },
+        {
+            "city_name": "Santa Ana"
+        },
+        {
+            "city_name": "Stockton"
+        },
+        {
+            "city_name": "Toledo"
+        },
+        {
+            "city_name": "Vancouver"
+        },
+        {
+            "city_name": "Winston-Salem"
+        },
+        {
+            "city_name": "Yonkers"
+        }
+    ],
+    "tokens": 1144,
+    "time": 28.479838371276855,
+    "exp6": {
+        "input_tokens_total": 1398.0,
+        "n_iters": 10,
+        "max_iter": 10
+    },
+    "debug": {
+        "variant_name": "EXP6_GALOIS_A_TABLE",
+        "physical_strategy_requested": "table",
+        "physical_strategy_final": "TABLE",
+        "conditions_to_push": [
+            "population > 150000"
+        ],
+        "residual_conditions": [],
+        "tables": [
+            {
+                "table": "usa_city",
+                "alias": "usa_city",
+                "scan": "TABLE",
+                "columns": [
+                    "city_name",
+                    "population"
+                ],
+                "pushed_conditions": [
+                    "population > 150000"
+                ],
+                "time": 28.479838371276855,
+                "tokens": 1144,
+                "n_iters": 10,
+                "input_tokens_by_iter": [
+                    306,
+                    121,
+                    118,
+                    118,
+                    121,
+                    121,
+                    124,
+                    118,
+                    121,
+                    130
+                ],
+                "input_tokens_total_all_iters": 1398
+            }
+        ]
+    }
+}

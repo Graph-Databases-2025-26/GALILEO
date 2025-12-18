@@ -1,0 +1,51 @@
+{
+    "query_id": "3",
+    "result_set": [
+        {
+            "name": "John F Kennedy International Airport",
+            "city": "New York",
+            "country": "United States",
+            "elevation_in_ft": 13
+        }
+    ],
+    "tokens": 237,
+    "time": 7.345346689224243,
+    "exp6": {
+        "input_tokens_total": 1342.0,
+        "n_iters": 2,
+        "max_iter": 10
+    },
+    "debug": {
+        "variant_name": "EXP6_GALOIS_F_TABLE",
+        "physical_strategy_requested": "table",
+        "physical_strategy_final": "TABLE",
+        "conditions_to_push": [
+            "city = 'New York'"
+        ],
+        "residual_conditions": [],
+        "tables": [
+            {
+                "table": "airports",
+                "alias": "airports",
+                "scan": "TABLE",
+                "columns": [
+                    "country",
+                    "elevation_in_ft",
+                    "name",
+                    "city"
+                ],
+                "pushed_conditions": [
+                    "city = 'New York'"
+                ],
+                "time": 7.345346689224243,
+                "tokens": 237,
+                "n_iters": 2,
+                "input_tokens_by_iter": [
+                    1221,
+                    121
+                ],
+                "input_tokens_total_all_iters": 1342
+            }
+        ]
+    }
+}

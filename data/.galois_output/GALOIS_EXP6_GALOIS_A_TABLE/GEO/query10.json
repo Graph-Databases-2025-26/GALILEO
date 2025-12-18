@@ -1,0 +1,597 @@
+{
+    "query_id": "10",
+    "result_set": [
+        {
+            "lake_name": "Lake Cumberland"
+        },
+        {
+            "lake_name": "Lake Nipigon"
+        },
+        {
+            "lake_name": "Lake Baikal"
+        },
+        {
+            "lake_name": "Lake Victoria"
+        },
+        {
+            "lake_name": "Lake Onega"
+        },
+        {
+            "lake_name": "Lake O'Higgins"
+        },
+        {
+            "lake_name": "Lake Cochrane and Grey"
+        },
+        {
+            "lake_name": "Lake Strand"
+        },
+        {
+            "lake_name": "Lake Triton"
+        },
+        {
+            "lake_name": "Lake Trumpet"
+        },
+        {
+            "lake_name": "Lake Turtle"
+        },
+        {
+            "lake_name": "Lake Ventisquero"
+        },
+        {
+            "lake_name": "Lake Winnipegosis"
+        },
+        {
+            "lake_name": "Lake Vostok"
+        },
+        {
+            "lake_name": "Lake Peipus"
+        },
+        {
+            "lake_name": "Lake San Martin"
+        },
+        {
+            "lake_name": "Lake Viedma and Upsala"
+        },
+        {
+            "lake_name": "Lake Summer"
+        },
+        {
+            "lake_name": "Lake Townsend"
+        },
+        {
+            "lake_name": "Lake Utica"
+        },
+        {
+            "lake_name": "Lake Vaughn"
+        },
+        {
+            "lake_name": "Lake Verret"
+        },
+        {
+            "lake_name": "Lake Winnebago"
+        },
+        {
+            "lake_name": "Lake Argentino"
+        },
+        {
+            "lake_name": "Lake Cochrane"
+        },
+        {
+            "lake_name": "Lake Grey"
+        },
+        {
+            "lake_name": "Lake San Martin and O'Higgins"
+        },
+        {
+            "lake_name": "Lake Viedma and Grey"
+        },
+        {
+            "lake_name": "Lake O'Higgins and General Carrera"
+        },
+        {
+            "lake_name": "Lake Stream"
+        },
+        {
+            "lake_name": "Lake Utopia"
+        },
+        {
+            "lake_name": "Lake Vail"
+        },
+        {
+            "lake_name": "Lake Lanier"
+        },
+        {
+            "lake_name": "Lake Ontario"
+        },
+        {
+            "lake_name": "Lake Nicaragua"
+        },
+        {
+            "lake_name": "Lake Viedma"
+        },
+        {
+            "lake_name": "Lake O'Higgins and San Martin"
+        },
+        {
+            "lake_name": "Lake Thames"
+        },
+        {
+            "lake_name": "Lake Trail"
+        },
+        {
+            "lake_name": "Lake Trophy"
+        },
+        {
+            "lake_name": "Lake Truffle"
+        },
+        {
+            "lake_name": "Lake Vanda"
+        },
+        {
+            "lake_name": "Lake Powell"
+        },
+        {
+            "lake_name": "Lake Seminole"
+        },
+        {
+            "lake_name": "Lake George"
+        },
+        {
+            "lake_name": "Great Bear Lake"
+        },
+        {
+            "lake_name": "Lake Argentino and San Martin"
+        },
+        {
+            "lake_name": "Lake General Carrera and O'Higgins"
+        },
+        {
+            "lake_name": "Lake Storm"
+        },
+        {
+            "lake_name": "Lake Sugar"
+        },
+        {
+            "lake_name": "Lake Vermilion"
+        },
+        {
+            "lake_name": "Lake Chelan"
+        },
+        {
+            "lake_name": "Lake Mille Lacs"
+        },
+        {
+            "lake_name": "Lake Managua"
+        },
+        {
+            "lake_name": "Lake Totem"
+        },
+        {
+            "lake_name": "Lake Vega Island"
+        },
+        {
+            "lake_name": "Great Slave Lake"
+        },
+        {
+            "lake_name": "Lake Ladoga"
+        },
+        {
+            "lake_name": "Lake Pehoe"
+        },
+        {
+            "lake_name": "Lake General Carrera and Buenos Aires"
+        },
+        {
+            "lake_name": "Lake Pueyrredon and Buenos Aires"
+        },
+        {
+            "lake_name": "Lake Stellar"
+        },
+        {
+            "lake_name": "Lake Strawberry"
+        },
+        {
+            "lake_name": "Lake Sun"
+        },
+        {
+            "lake_name": "Lake Tarn"
+        },
+        {
+            "lake_name": "Lake Thorn"
+        },
+        {
+            "lake_name": "Lake Titan"
+        },
+        {
+            "lake_name": "Lake Twinkle"
+        },
+        {
+            "lake_name": "Lake Upper"
+        },
+        {
+            "lake_name": "Lake Van"
+        },
+        {
+            "lake_name": "Lake Victor"
+        },
+        {
+            "lake_name": "Lake Victoria Peak"
+        },
+        {
+            "lake_name": "Lake Abitibi"
+        },
+        {
+            "lake_name": "Lake Malawi"
+        },
+        {
+            "lake_name": "Lake Buenos Aires"
+        },
+        {
+            "lake_name": "Lake Argentino and Viedma"
+        },
+        {
+            "lake_name": "Lake Pehoe and Dickson"
+        },
+        {
+            "lake_name": "Lake Sunset"
+        },
+        {
+            "lake_name": "Lake Teal"
+        },
+        {
+            "lake_name": "Lake Terra"
+        },
+        {
+            "lake_name": "Lake Thunder"
+        },
+        {
+            "lake_name": "Lake Tracy"
+        },
+        {
+            "lake_name": "Lake Triangle"
+        },
+        {
+            "lake_name": "Lake Triplet"
+        },
+        {
+            "lake_name": "Lake Tuba"
+        },
+        {
+            "lake_name": "Lake Turquoise"
+        },
+        {
+            "lake_name": "Lake Veneta"
+        },
+        {
+            "lake_name": "Lake Hartwell"
+        },
+        {
+            "lake_name": "Lake Ontario and Erie"
+        },
+        {
+            "lake_name": "Lake Dickson"
+        },
+        {
+            "lake_name": "Lake Tiffany"
+        },
+        {
+            "lake_name": "Lake Tolmie"
+        },
+        {
+            "lake_name": "Lake Tourmaline"
+        },
+        {
+            "lake_name": "Lake Maracaibo"
+        },
+        {
+            "lake_name": "Lake O'Higgins and Argentino"
+        },
+        {
+            "lake_name": "Lake Thayer"
+        },
+        {
+            "lake_name": "Lake Tobin"
+        },
+        {
+            "lake_name": "Lake Vida"
+        },
+        {
+            "lake_name": "Lake Issyk-Kul"
+        },
+        {
+            "lake_name": "Caspian Sea"
+        },
+        {
+            "lake_name": "Lake Balkhash"
+        },
+        {
+            "lake_name": "Lake General Carrera"
+        },
+        {
+            "lake_name": "Lake Grey and Tyndall"
+        },
+        {
+            "lake_name": "Lake Dickson and Tyndall"
+        },
+        {
+            "lake_name": "Lake Stardust"
+        },
+        {
+            "lake_name": "Lake Swift"
+        },
+        {
+            "lake_name": "Lake Tranquil"
+        },
+        {
+            "lake_name": "Lake Tucker"
+        },
+        {
+            "lake_name": "Lake Tunnel"
+        },
+        {
+            "lake_name": "Lake Venice"
+        },
+        {
+            "lake_name": "Lake Mead"
+        },
+        {
+            "lake_name": "Lake Athabasca"
+        },
+        {
+            "lake_name": "Lake Tanganyika"
+        },
+        {
+            "lake_name": "Lake del Toro"
+        },
+        {
+            "lake_name": "Lake Sarmiento and del Toro"
+        },
+        {
+            "lake_name": "Lake Starlight"
+        },
+        {
+            "lake_name": "Lake Stone"
+        },
+        {
+            "lake_name": "Lake Sunrise"
+        },
+        {
+            "lake_name": "Lake Toy"
+        },
+        {
+            "lake_name": "Lake Traveler"
+        },
+        {
+            "lake_name": "Lake Tulip"
+        },
+        {
+            "lake_name": "Lake Tyee"
+        },
+        {
+            "lake_name": "Lake Ullswater"
+        },
+        {
+            "lake_name": "Lake Union"
+        },
+        {
+            "lake_name": "Lake Valley"
+        },
+        {
+            "lake_name": "Lake Vernon"
+        },
+        {
+            "lake_name": "Lake Vienna"
+        },
+        {
+            "lake_name": "Lake Pontchartrain"
+        },
+        {
+            "lake_name": "Lake Oahe"
+        },
+        {
+            "lake_name": "Lake Erie"
+        },
+        {
+            "lake_name": "Lake Sharpe"
+        },
+        {
+            "lake_name": "Lake Wallenpaupack"
+        },
+        {
+            "lake_name": "Lake of the Woods"
+        },
+        {
+            "lake_name": "Lake Timiskaming"
+        },
+        {
+            "lake_name": "Lake Cochrane and Pueyrredon"
+        },
+        {
+            "lake_name": "Lake San Martin and Viedma"
+        },
+        {
+            "lake_name": "Lake Taylor"
+        },
+        {
+            "lake_name": "Lake Topaz"
+        },
+        {
+            "lake_name": "Lake Trout"
+        },
+        {
+            "lake_name": "Lake Tudor"
+        },
+        {
+            "lake_name": "Lake Unalga"
+        },
+        {
+            "lake_name": "Lake Vega"
+        },
+        {
+            "lake_name": "Lake Vella"
+        },
+        {
+            "lake_name": "Lake Vernal"
+        },
+        {
+            "lake_name": "Lake Viburnum"
+        },
+        {
+            "lake_name": "Lake Norman"
+        },
+        {
+            "lake_name": "Lake St. Clair"
+        },
+        {
+            "lake_name": "Lake Aral"
+        },
+        {
+            "lake_name": "Lake Sarmiento"
+        },
+        {
+            "lake_name": "Lake Sylvan"
+        },
+        {
+            "lake_name": "Lake Timber"
+        },
+        {
+            "lake_name": "Lake Torch"
+        },
+        {
+            "lake_name": "Lake Troy"
+        },
+        {
+            "lake_name": "Lake Tubby"
+        },
+        {
+            "lake_name": "Lake Tumble"
+        },
+        {
+            "lake_name": "Lake Tyndall"
+        },
+        {
+            "lake_name": "Lake Umbagog"
+        },
+        {
+            "lake_name": "Lake Valhalla"
+        },
+        {
+            "lake_name": "Lake Iliamna"
+        },
+        {
+            "lake_name": "Lake Toketie"
+        },
+        {
+            "lake_name": "Lake Tower"
+        },
+        {
+            "lake_name": "Lake Troika"
+        },
+        {
+            "lake_name": "Lake Twain"
+        },
+        {
+            "lake_name": "Lake Upton"
+        },
+        {
+            "lake_name": "Lake Verde"
+        },
+        {
+            "lake_name": "Lake Superior"
+        },
+        {
+            "lake_name": "Lake Sakakawea"
+        },
+        {
+            "lake_name": "Lake Huron"
+        },
+        {
+            "lake_name": "Lake Michigan"
+        },
+        {
+            "lake_name": "Lake Texoma"
+        },
+        {
+            "lake_name": "Lake Grey and Sarmiento"
+        },
+        {
+            "lake_name": "Lake del Toro and Tyndall"
+        },
+        {
+            "lake_name": "Lake Grey and San Martin"
+        },
+        {
+            "lake_name": "Lake Swan"
+        },
+        {
+            "lake_name": "Lake Troll"
+        },
+        {
+            "lake_name": "Lake Tupelo"
+        },
+        {
+            "lake_name": "Lake Vaseux"
+        },
+        {
+            "lake_name": "Lake Vector"
+        },
+        {
+            "lake_name": "Lake Velasco"
+        },
+        {
+            "lake_name": "Lake Venado"
+        },
+        {
+            "lake_name": "Lake Vera"
+        },
+        {
+            "lake_name": "Lake Vesuvius"
+        }
+    ],
+    "tokens": 3420,
+    "time": 91.93863129615784,
+    "exp6": {
+        "input_tokens_total": 1586.0,
+        "n_iters": 10,
+        "max_iter": 10
+    },
+    "debug": {
+        "variant_name": "EXP6_GALOIS_A_TABLE",
+        "physical_strategy_requested": "table",
+        "physical_strategy_final": "TABLE",
+        "conditions_to_push": [
+            "area_squared_km > 450"
+        ],
+        "residual_conditions": [],
+        "tables": [
+            {
+                "table": "usa_lake",
+                "alias": "usa_lake",
+                "scan": "TABLE",
+                "columns": [
+                    "area_squared_km",
+                    "lake_name"
+                ],
+                "pushed_conditions": [
+                    "area_squared_km > 450"
+                ],
+                "time": 91.93863129615784,
+                "tokens": 3420,
+                "n_iters": 10,
+                "input_tokens_by_iter": [
+                    503,
+                    118,
+                    118,
+                    121,
+                    121,
+                    121,
+                    121,
+                    121,
+                    121,
+                    121
+                ],
+                "input_tokens_total_all_iters": 1586
+            }
+        ]
+    }
+}

@@ -1,0 +1,450 @@
+{
+    "query_id": "10",
+    "result_set": [
+        {
+            "lake_name": "Lake Ontario"
+        },
+        {
+            "lake_name": "Lake Nipissing"
+        },
+        {
+            "lake_name": "Lake Viedma"
+        },
+        {
+            "lake_name": "Lake Hawea"
+        },
+        {
+            "lake_name": "Lake Ellesmere"
+        },
+        {
+            "lake_name": "Lake Forsyth"
+        },
+        {
+            "lake_name": "Lake Waikaremoana"
+        },
+        {
+            "lake_name": "Lake McKerrow"
+        },
+        {
+            "lake_name": "Lake Diefenbaker"
+        },
+        {
+            "lake_name": "Lake O'Higgins"
+        },
+        {
+            "lake_name": "Lake Onega"
+        },
+        {
+            "lake_name": "Lake Baikal"
+        },
+        {
+            "lake_name": "Lake Victoria"
+        },
+        {
+            "lake_name": "Lake Baringo"
+        },
+        {
+            "lake_name": "Lake Kamburu"
+        },
+        {
+            "lake_name": "Lake Imbak"
+        },
+        {
+            "lake_name": "Great Lakes"
+        },
+        {
+            "lake_name": "Lake Crescent"
+        },
+        {
+            "lake_name": "Lake Winnipegosis"
+        },
+        {
+            "lake_name": "Lake Vostok"
+        },
+        {
+            "lake_name": "Lake Qinghai"
+        },
+        {
+            "lake_name": "Lake Dagze"
+        },
+        {
+            "lake_name": "Lake Gyaring"
+        },
+        {
+            "lake_name": "Lake Natron"
+        },
+        {
+            "lake_name": "Lake Bogoria"
+        },
+        {
+            "lake_name": "Lake Enriquillo"
+        },
+        {
+            "lake_name": "Lake Puruhanta"
+        },
+        {
+            "lake_name": "Lake Argentino"
+        },
+        {
+            "lake_name": "Lake Te Anau"
+        },
+        {
+            "lake_name": "Lake Paniai"
+        },
+        {
+            "lake_name": "Lake Tana"
+        },
+        {
+            "lake_name": "Lake Solai"
+        },
+        {
+            "lake_name": "Lake Powell"
+        },
+        {
+            "lake_name": "Lake George"
+        },
+        {
+            "lake_name": "Lake Athabasca South"
+        },
+        {
+            "lake_name": "Lake Rotorua"
+        },
+        {
+            "lake_name": "Lake Siling"
+        },
+        {
+            "lake_name": "Lake Abaya"
+        },
+        {
+            "lake_name": "Lake Nakuru"
+        },
+        {
+            "lake_name": "Lake Tele"
+        },
+        {
+            "lake_name": "Lake Azuei"
+        },
+        {
+            "lake_name": "Lake Valencia"
+        },
+        {
+            "lake_name": "Lake Chini"
+        },
+        {
+            "lake_name": "Lake General Carrera"
+        },
+        {
+            "lake_name": "Lake Issyk-Kul"
+        },
+        {
+            "lake_name": "Lake Balkhash"
+        },
+        {
+            "lake_name": "Caspian Sea"
+        },
+        {
+            "lake_name": "Lake Wakatipu"
+        },
+        {
+            "lake_name": "Lake Whakatipu"
+        },
+        {
+            "lake_name": "Lake Towuti"
+        },
+        {
+            "lake_name": "Lake Chamo"
+        },
+        {
+            "lake_name": "Lake Rutundu"
+        },
+        {
+            "lake_name": "Lake Bera"
+        },
+        {
+            "lake_name": "Lake Chelan"
+        },
+        {
+            "lake_name": "Lake Wairarapa"
+        },
+        {
+            "lake_name": "Lake Hauroko"
+        },
+        {
+            "lake_name": "Lake Namtso"
+        },
+        {
+            "lake_name": "Lake Naivasha"
+        },
+        {
+            "lake_name": "Lake Kiambere"
+        },
+        {
+            "lake_name": "Lake Cochitambo"
+        },
+        {
+            "lake_name": "Lake Ladoga"
+        },
+        {
+            "lake_name": "Great Slave Lake"
+        },
+        {
+            "lake_name": "Lake Sentani"
+        },
+        {
+            "lake_name": "Lake Elementaita"
+        },
+        {
+            "lake_name": "Lake Ol Bolossat"
+        },
+        {
+            "lake_name": "Lake Jipe"
+        },
+        {
+            "lake_name": "Lake Chad"
+        },
+        {
+            "lake_name": "Lake Abitibi"
+        },
+        {
+            "lake_name": "Williston Lake"
+        },
+        {
+            "lake_name": "Lake Buenos Aires"
+        },
+        {
+            "lake_name": "Lake Malawi"
+        },
+        {
+            "lake_name": "Lake Lanao"
+        },
+        {
+            "lake_name": "Lake Manasarovar"
+        },
+        {
+            "lake_name": "Lake Rakshastal"
+        },
+        {
+            "lake_name": "Lake Fitri"
+        },
+        {
+            "lake_name": "Lake Etang Sumatre"
+        },
+        {
+            "lake_name": "Lake Sakakawea"
+        },
+        {
+            "lake_name": "Lake Superior"
+        },
+        {
+            "lake_name": "Lake Huron"
+        },
+        {
+            "lake_name": "Lake Michigan"
+        },
+        {
+            "lake_name": "Lake Winnipeg"
+        },
+        {
+            "lake_name": "Lake Tekapo"
+        },
+        {
+            "lake_name": "Lake Tarawera"
+        },
+        {
+            "lake_name": "Lake Poteriteri"
+        },
+        {
+            "lake_name": "Lake Tigi"
+        },
+        {
+            "lake_name": "Lake Ngoring"
+        },
+        {
+            "lake_name": "Lake Eyasi"
+        },
+        {
+            "lake_name": "Lake Mead"
+        },
+        {
+            "lake_name": "Lake Athabasca"
+        },
+        {
+            "lake_name": "Reindeer Lake"
+        },
+        {
+            "lake_name": "South Indian Lake"
+        },
+        {
+            "lake_name": "Lake Tanganyika"
+        },
+        {
+            "lake_name": "Lake Huron Michigan"
+        },
+        {
+            "lake_name": "Lake Magadi"
+        },
+        {
+            "lake_name": "Lake Kamnarok"
+        },
+        {
+            "lake_name": "Lake Saumatre"
+        },
+        {
+            "lake_name": "Lake Yambo"
+        },
+        {
+            "lake_name": "Lake Oahe"
+        },
+        {
+            "lake_name": "Lake Pontchartrain"
+        },
+        {
+            "lake_name": "Lake Erie"
+        },
+        {
+            "lake_name": "Lake of the Woods"
+        },
+        {
+            "lake_name": "Lake Sumner"
+        },
+        {
+            "lake_name": "Lake Turkana"
+        },
+        {
+            "lake_name": "Lake Manyara"
+        },
+        {
+            "lake_name": "Lake Iro"
+        },
+        {
+            "lake_name": "Lake Miragoane"
+        },
+        {
+            "lake_name": "Lake Cuenca"
+        },
+        {
+            "lake_name": "Lake Aral"
+        },
+        {
+            "lake_name": "Lake Coleridge"
+        },
+        {
+            "lake_name": "Lake Yamdrok"
+        },
+        {
+            "lake_name": "Lake Paradise"
+        },
+        {
+            "lake_name": "Lake Masinga"
+        },
+        {
+            "lake_name": "Lake Colta"
+        },
+        {
+            "lake_name": "Lake Manitoba"
+        },
+        {
+            "lake_name": "Lake Rotoiti"
+        },
+        {
+            "lake_name": "Lake Te Kapo"
+        },
+        {
+            "lake_name": "Lake Te Anau West"
+        },
+        {
+            "lake_name": "Lake Tangra Yumco"
+        },
+        {
+            "lake_name": "Lake Karura"
+        },
+        {
+            "lake_name": "Lake Tritrivakely"
+        },
+        {
+            "lake_name": "Lake Pend Oreille"
+        },
+        {
+            "lake_name": "Lake Ohau"
+        },
+        {
+            "lake_name": "Lake Taupo"
+        },
+        {
+            "lake_name": "Lake Manapouri"
+        },
+        {
+            "lake_name": "Lake Monowai"
+        },
+        {
+            "lake_name": "Lake Toba"
+        },
+        {
+            "lake_name": "Lake Matano"
+        },
+        {
+            "lake_name": "Lake Awasa"
+        },
+        {
+            "lake_name": "Lake Simbi"
+        },
+        {
+            "lake_name": "Lake Salton"
+        },
+        {
+            "lake_name": "Lake Taymyr"
+        },
+        {
+            "lake_name": "Lake Pukaki"
+        },
+        {
+            "lake_name": "Lake Maracaibo"
+        }
+    ],
+    "tokens": 2525,
+    "time": 64.55705571174622,
+    "exp6": {
+        "input_tokens_total": 1589.0,
+        "n_iters": 10,
+        "max_iter": 10
+    },
+    "debug": {
+        "variant_name": "EXP6_GALOIS_F_TABLE",
+        "physical_strategy_requested": "table",
+        "physical_strategy_final": "TABLE",
+        "conditions_to_push": [
+            "area_squared_km > 450"
+        ],
+        "residual_conditions": [],
+        "tables": [
+            {
+                "table": "usa_lake",
+                "alias": "usa_lake",
+                "scan": "TABLE",
+                "columns": [
+                    "area_squared_km",
+                    "lake_name"
+                ],
+                "pushed_conditions": [
+                    "area_squared_km > 450"
+                ],
+                "time": 64.55705571174622,
+                "tokens": 2525,
+                "n_iters": 10,
+                "input_tokens_by_iter": [
+                    503,
+                    118,
+                    121,
+                    121,
+                    121,
+                    121,
+                    121,
+                    121,
+                    121,
+                    121
+                ],
+                "input_tokens_total_all_iters": 1589
+            }
+        ]
+    }
+}

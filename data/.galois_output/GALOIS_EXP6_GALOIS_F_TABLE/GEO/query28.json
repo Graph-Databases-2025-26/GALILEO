@@ -1,0 +1,121 @@
+{
+    "query_id": "28",
+    "result_set": [
+        {
+            "state_name": "Arizona",
+            "capital": "Phoenix"
+        },
+        {
+            "state_name": "California",
+            "capital": "Sacramento"
+        },
+        {
+            "state_name": "Colorado",
+            "capital": "Denver"
+        },
+        {
+            "state_name": "Florida",
+            "capital": "Tallahassee"
+        },
+        {
+            "state_name": "Georgia",
+            "capital": "Atlanta"
+        },
+        {
+            "state_name": "Illinois",
+            "capital": "Springfield"
+        },
+        {
+            "state_name": "Indiana",
+            "capital": "Indianapolis"
+        },
+        {
+            "state_name": "Kansas",
+            "capital": "Topeka"
+        },
+        {
+            "state_name": "Maryland",
+            "capital": "Annapolis"
+        },
+        {
+            "state_name": "Massachusetts",
+            "capital": "Boston"
+        },
+        {
+            "state_name": "Michigan",
+            "capital": "Lansing"
+        },
+        {
+            "state_name": "Minnesota",
+            "capital": "Saint Paul"
+        },
+        {
+            "state_name": "Missouri",
+            "capital": "Jefferson City"
+        },
+        {
+            "state_name": "Wisconsin",
+            "capital": "Madison"
+        },
+        {
+            "state_name": "Tennessee",
+            "capital": "Nashville"
+        },
+        {
+            "state_name": "Ohio",
+            "capital": "Columbus"
+        },
+        {
+            "state_name": "Texas",
+            "capital": "Austin"
+        },
+        {
+            "state_name": "Virginia",
+            "capital": "Richmond"
+        },
+        {
+            "state_name": "Washington",
+            "capital": "Olympia"
+        }
+    ],
+    "tokens": 1434,
+    "time": 34.315558195114136,
+    "exp6": {
+        "input_tokens_total": 847.0,
+        "n_iters": 3,
+        "max_iter": 10
+    },
+    "debug": {
+        "variant_name": "EXP6_GALOIS_F_TABLE",
+        "physical_strategy_requested": "table",
+        "physical_strategy_final": "TABLE",
+        "conditions_to_push": [],
+        "residual_conditions": [
+            "us.population > 5000000",
+            "us.density < 1000"
+        ],
+        "tables": [
+            {
+                "table": "usa_state",
+                "alias": "us",
+                "scan": "TABLE",
+                "columns": [
+                    "capital",
+                    "density",
+                    "state_name",
+                    "population"
+                ],
+                "pushed_conditions": [],
+                "time": 34.315558195114136,
+                "tokens": 1434,
+                "n_iters": 3,
+                "input_tokens_by_iter": [
+                    602,
+                    121,
+                    124
+                ],
+                "input_tokens_total_all_iters": 847
+            }
+        ]
+    }
+}

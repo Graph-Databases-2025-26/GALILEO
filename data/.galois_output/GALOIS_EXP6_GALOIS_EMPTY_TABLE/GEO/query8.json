@@ -1,0 +1,52 @@
+{
+    "query_id": "8",
+    "result_set": [
+        {
+            "count(DISTINCT river_name)": 90
+        }
+    ],
+    "tokens": 1737,
+    "time": 45.70820379257202,
+    "exp6": {
+        "input_tokens_total": 1575.0,
+        "n_iters": 10,
+        "max_iter": 10
+    },
+    "debug": {
+        "variant_name": "EXP6_GALOIS_EMPTY_TABLE",
+        "physical_strategy_requested": "table",
+        "physical_strategy_final": "TABLE",
+        "conditions_to_push": [],
+        "residual_conditions": [
+            "length_in_km > 400"
+        ],
+        "tables": [
+            {
+                "table": "usa_river",
+                "alias": "usa_river",
+                "scan": "TABLE",
+                "columns": [
+                    "length_in_km",
+                    "river_name"
+                ],
+                "pushed_conditions": [],
+                "time": 45.70820379257202,
+                "tokens": 1737,
+                "n_iters": 10,
+                "input_tokens_by_iter": [
+                    489,
+                    121,
+                    121,
+                    121,
+                    121,
+                    121,
+                    121,
+                    121,
+                    118,
+                    121
+                ],
+                "input_tokens_total_all_iters": 1575
+            }
+        ]
+    }
+}

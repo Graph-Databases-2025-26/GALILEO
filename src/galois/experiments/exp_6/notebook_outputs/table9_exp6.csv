@@ -1,0 +1,3 @@
+variant,avg_input_tokens_all_iters,avg_iters_per_query,n_queries_ge_max_iter,n_queries_total
+GALOIS_A,1102,3.5,1,42
+GALOIS_F,1081,3.36,1,42

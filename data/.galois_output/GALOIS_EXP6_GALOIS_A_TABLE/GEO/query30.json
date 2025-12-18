@@ -1,0 +1,114 @@
+{
+    "query_id": "30",
+    "result_set": [
+        {
+            "state_name": "Georgia",
+            "capital": "Atlanta"
+        },
+        {
+            "state_name": "Texas",
+            "capital": "Austin"
+        },
+        {
+            "state_name": "Colorado",
+            "capital": "Denver"
+        },
+        {
+            "state_name": "Iowa",
+            "capital": "Des Moines"
+        },
+        {
+            "state_name": "Missouri",
+            "capital": "Jefferson City"
+        },
+        {
+            "state_name": "Michigan",
+            "capital": "Lansing"
+        },
+        {
+            "state_name": "Wisconsin",
+            "capital": "Madison"
+        },
+        {
+            "state_name": "Alabama",
+            "capital": "Montgomery"
+        },
+        {
+            "state_name": "Oklahoma",
+            "capital": "Oklahoma City"
+        },
+        {
+            "state_name": "Washington",
+            "capital": "Olympia"
+        },
+        {
+            "state_name": "Arizona",
+            "capital": "Phoenix"
+        },
+        {
+            "state_name": "North Carolina",
+            "capital": "Raleigh"
+        },
+        {
+            "state_name": "California",
+            "capital": "Sacramento"
+        },
+        {
+            "state_name": "Minnesota",
+            "capital": "Saint Paul"
+        },
+        {
+            "state_name": "Oregon",
+            "capital": "Salem"
+        },
+        {
+            "state_name": "Illinois",
+            "capital": "Springfield"
+        }
+    ],
+    "tokens": 1547,
+    "time": 35.27708625793457,
+    "exp6": {
+        "input_tokens_total": 1122.0,
+        "n_iters": 5,
+        "max_iter": 10
+    },
+    "debug": {
+        "variant_name": "EXP6_GALOIS_A_TABLE",
+        "physical_strategy_requested": "table",
+        "physical_strategy_final": "TABLE",
+        "conditions_to_push": [
+            "us.population > 3000000",
+            "us.area_squared_miles > 50000"
+        ],
+        "residual_conditions": [],
+        "tables": [
+            {
+                "table": "usa_state",
+                "alias": "us",
+                "scan": "TABLE",
+                "columns": [
+                    "capital",
+                    "area_squared_miles",
+                    "state_name",
+                    "population"
+                ],
+                "pushed_conditions": [
+                    "us.population > 3000000",
+                    "us.area_squared_miles > 50000"
+                ],
+                "time": 35.27708625793457,
+                "tokens": 1547,
+                "n_iters": 5,
+                "input_tokens_by_iter": [
+                    635,
+                    118,
+                    124,
+                    121,
+                    124
+                ],
+                "input_tokens_total_all_iters": 1122
+            }
+        ]
+    }
+}

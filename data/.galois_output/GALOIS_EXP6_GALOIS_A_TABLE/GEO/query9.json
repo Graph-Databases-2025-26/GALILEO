@@ -1,0 +1,50 @@
+{
+    "query_id": "9",
+    "result_set": [],
+    "tokens": 2212,
+    "time": 78.58916187286377,
+    "exp6": {
+        "input_tokens_total": 1595.0,
+        "n_iters": 10,
+        "max_iter": 10
+    },
+    "debug": {
+        "variant_name": "EXP6_GALOIS_A_TABLE",
+        "physical_strategy_requested": "table",
+        "physical_strategy_final": "TABLE",
+        "conditions_to_push": [
+            "r.river_name = 'rio grande'"
+        ],
+        "residual_conditions": [],
+        "tables": [
+            {
+                "table": "usa_river",
+                "alias": "r",
+                "scan": "TABLE",
+                "columns": [
+                    "length_in_km",
+                    "river_name"
+                ],
+                "pushed_conditions": [
+                    "r.river_name = 'rio grande'"
+                ],
+                "time": 78.58916187286377,
+                "tokens": 2212,
+                "n_iters": 10,
+                "input_tokens_by_iter": [
+                    506,
+                    121,
+                    121,
+                    121,
+                    121,
+                    121,
+                    121,
+                    121,
+                    121,
+                    121
+                ],
+                "input_tokens_total_all_iters": 1595
+            }
+        ]
+    }
+}

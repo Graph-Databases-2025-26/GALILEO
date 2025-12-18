@@ -1,0 +1,45 @@
+{
+    "query_id": "20",
+    "result_set": [
+        {
+            "count(river_name)": 1
+        }
+    ],
+    "tokens": 1231,
+    "time": 36.31698203086853,
+    "exp6": {
+        "input_tokens_total": 736.0,
+        "n_iters": 3,
+        "max_iter": 10
+    },
+    "debug": {
+        "variant_name": "EXP6_GALOIS_EMPTY_TABLE",
+        "physical_strategy_requested": "table",
+        "physical_strategy_final": "TABLE",
+        "conditions_to_push": [],
+        "residual_conditions": [
+            "usa_state_traversed = 'idaho'"
+        ],
+        "tables": [
+            {
+                "table": "usa_river",
+                "alias": "usa_river",
+                "scan": "TABLE",
+                "columns": [
+                    "usa_state_traversed",
+                    "river_name"
+                ],
+                "pushed_conditions": [],
+                "time": 36.31698203086853,
+                "tokens": 1231,
+                "n_iters": 3,
+                "input_tokens_by_iter": [
+                    491,
+                    124,
+                    121
+                ],
+                "input_tokens_total_all_iters": 736
+            }
+        ]
+    }
+}

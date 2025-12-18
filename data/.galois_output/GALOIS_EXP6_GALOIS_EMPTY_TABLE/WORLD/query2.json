@@ -1,0 +1,40 @@
+{
+    "query_id": "2",
+    "result_set": [],
+    "tokens": 278,
+    "time": 7.532361745834351,
+    "exp6": {
+        "input_tokens_total": 2461.0,
+        "n_iters": 2,
+        "max_iter": 10
+    },
+    "debug": {
+        "variant_name": "EXP6_GALOIS_EMPTY_TABLE",
+        "physical_strategy_requested": "table",
+        "physical_strategy_final": "TABLE",
+        "conditions_to_push": [],
+        "residual_conditions": [
+            "CAST(independence_year AS INT) > 1950"
+        ],
+        "tables": [
+            {
+                "table": "country",
+                "alias": "country",
+                "scan": "TABLE",
+                "columns": [
+                    "independence_year",
+                    "name"
+                ],
+                "pushed_conditions": [],
+                "time": 7.532361745834351,
+                "tokens": 278,
+                "n_iters": 2,
+                "input_tokens_by_iter": [
+                    2340,
+                    121
+                ],
+                "input_tokens_total_all_iters": 2461
+            }
+        ]
+    }
+}

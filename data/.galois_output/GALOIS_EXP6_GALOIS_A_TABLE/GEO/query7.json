@@ -1,0 +1,41 @@
+{
+    "query_id": "7",
+    "result_set": [
+        {
+            "avg(population)": 331449281.0
+        }
+    ],
+    "tokens": 117,
+    "time": 3.4703586101531982,
+    "exp6": {
+        "input_tokens_total": 719.0,
+        "n_iters": 2,
+        "max_iter": 10
+    },
+    "debug": {
+        "variant_name": "EXP6_GALOIS_A_TABLE",
+        "physical_strategy_requested": "table",
+        "physical_strategy_final": "TABLE",
+        "conditions_to_push": [],
+        "residual_conditions": [],
+        "tables": [
+            {
+                "table": "usa_state",
+                "alias": "usa_state",
+                "scan": "TABLE",
+                "columns": [
+                    "population"
+                ],
+                "pushed_conditions": [],
+                "time": 3.4703586101531982,
+                "tokens": 117,
+                "n_iters": 2,
+                "input_tokens_by_iter": [
+                    592,
+                    127
+                ],
+                "input_tokens_total_all_iters": 719
+            }
+        ]
+    }
+}

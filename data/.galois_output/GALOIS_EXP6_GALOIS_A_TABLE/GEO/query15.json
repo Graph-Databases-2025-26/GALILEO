@@ -1,0 +1,49 @@
+{
+    "query_id": "15",
+    "result_set": [],
+    "tokens": 790,
+    "time": 22.46083927154541,
+    "exp6": {
+        "input_tokens_total": 925.0,
+        "n_iters": 6,
+        "max_iter": 10
+    },
+    "debug": {
+        "variant_name": "EXP6_GALOIS_A_TABLE",
+        "physical_strategy_requested": "table",
+        "physical_strategy_final": "TABLE",
+        "conditions_to_push": [
+            "city_name = 'austin'",
+            "population > 150000"
+        ],
+        "residual_conditions": [],
+        "tables": [
+            {
+                "table": "usa_city",
+                "alias": "usa_city",
+                "scan": "TABLE",
+                "columns": [
+                    "city_name",
+                    "state_name",
+                    "population"
+                ],
+                "pushed_conditions": [
+                    "city_name = 'austin'",
+                    "population > 150000"
+                ],
+                "time": 22.46083927154541,
+                "tokens": 790,
+                "n_iters": 6,
+                "input_tokens_by_iter": [
+                    321,
+                    118,
+                    118,
+                    118,
+                    121,
+                    129
+                ],
+                "input_tokens_total_all_iters": 925
+            }
+        ]
+    }
+}

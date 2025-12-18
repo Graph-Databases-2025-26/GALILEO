@@ -1,0 +1,66 @@
+{
+    "query_id": "13",
+    "result_set": [
+        {
+            "lake_name": "Lake Superior"
+        },
+        {
+            "lake_name": "Lake Michigan"
+        },
+        {
+            "lake_name": "Lake Huron"
+        },
+        {
+            "lake_name": "Lake Erie"
+        }
+    ],
+    "tokens": 2685,
+    "time": 89.06645512580872,
+    "exp6": {
+        "input_tokens_total": 1654.0,
+        "n_iters": 10,
+        "max_iter": 10
+    },
+    "debug": {
+        "variant_name": "EXP6_GALOIS_F_TABLE",
+        "physical_strategy_requested": "table",
+        "physical_strategy_final": "TABLE",
+        "conditions_to_push": [
+            "area_squared_km > 750",
+            "state_name = 'michigan'"
+        ],
+        "residual_conditions": [],
+        "tables": [
+            {
+                "table": "usa_lake",
+                "alias": "usa_lake",
+                "scan": "TABLE",
+                "columns": [
+                    "area_squared_km",
+                    "lake_name",
+                    "state_name"
+                ],
+                "pushed_conditions": [
+                    "area_squared_km > 750",
+                    "state_name = 'michigan'"
+                ],
+                "time": 89.06645512580872,
+                "tokens": 2685,
+                "n_iters": 10,
+                "input_tokens_by_iter": [
+                    517,
+                    124,
+                    127,
+                    127,
+                    127,
+                    127,
+                    127,
+                    124,
+                    127,
+                    127
+                ],
+                "input_tokens_total_all_iters": 1654
+            }
+        ]
+    }
+}

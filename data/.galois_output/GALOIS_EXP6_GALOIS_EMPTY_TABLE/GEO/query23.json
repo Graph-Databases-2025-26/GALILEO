@@ -1,0 +1,65 @@
+{
+    "query_id": "23",
+    "result_set": [],
+    "tokens": 1344,
+    "time": 44.04922366142273,
+    "exp6": {
+        "input_tokens_total": 2120.0,
+        "n_iters": 10,
+        "max_iter": 10
+    },
+    "debug": {
+        "variant_name": "EXP6_GALOIS_EMPTY_TABLE",
+        "physical_strategy_requested": "table",
+        "physical_strategy_final": "TABLE",
+        "conditions_to_push": [],
+        "residual_conditions": [
+            "t1.population <= 150000"
+        ],
+        "tables": [
+            {
+                "table": "usa_city",
+                "alias": "t1",
+                "scan": "TABLE",
+                "columns": [
+                    "city_name",
+                    "population"
+                ],
+                "pushed_conditions": [],
+                "time": 29.033394813537598,
+                "tokens": 885,
+                "n_iters": 10,
+                "input_tokens_by_iter": [
+                    295,
+                    118,
+                    121,
+                    132,
+                    118,
+                    124,
+                    124,
+                    121,
+                    130,
+                    124
+                ],
+                "input_tokens_total_all_iters": 1407
+            },
+            {
+                "table": "usa_state",
+                "alias": "t2",
+                "scan": "TABLE",
+                "columns": [
+                    "capital"
+                ],
+                "pushed_conditions": [],
+                "time": 15.015828847885132,
+                "tokens": 459,
+                "n_iters": 2,
+                "input_tokens_by_iter": [
+                    592,
+                    121
+                ],
+                "input_tokens_total_all_iters": 713
+            }
+        ]
+    }
+}

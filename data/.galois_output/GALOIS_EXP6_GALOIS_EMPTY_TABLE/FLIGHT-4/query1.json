@@ -1,0 +1,45 @@
+{
+    "query_id": "1",
+    "result_set": [
+        {
+            "name": "Wewak International Airport"
+        }
+    ],
+    "tokens": 287,
+    "time": 9.493836879730225,
+    "exp6": {
+        "input_tokens_total": 1321.0,
+        "n_iters": 2,
+        "max_iter": 10
+    },
+    "debug": {
+        "variant_name": "EXP6_GALOIS_EMPTY_TABLE",
+        "physical_strategy_requested": "table",
+        "physical_strategy_final": "TABLE",
+        "conditions_to_push": [],
+        "residual_conditions": [
+            "a.elevation_in_ft >= -50",
+            "a.elevation_in_ft <= 50"
+        ],
+        "tables": [
+            {
+                "table": "airports",
+                "alias": "a",
+                "scan": "TABLE",
+                "columns": [
+                    "elevation_in_ft",
+                    "name"
+                ],
+                "pushed_conditions": [],
+                "time": 9.493836879730225,
+                "tokens": 287,
+                "n_iters": 2,
+                "input_tokens_by_iter": [
+                    1203,
+                    118
+                ],
+                "input_tokens_total_all_iters": 1321
+            }
+        ]
+    }
+}

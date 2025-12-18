@@ -1,0 +1,40 @@
+{
+    "query_id": "3",
+    "result_set": [],
+    "tokens": 288,
+    "time": 9.948116064071655,
+    "exp6": {
+        "input_tokens_total": 723.0,
+        "n_iters": 2,
+        "max_iter": 10
+    },
+    "debug": {
+        "variant_name": "EXP6_GALOIS_EMPTY_TABLE",
+        "physical_strategy_requested": "table",
+        "physical_strategy_final": "TABLE",
+        "conditions_to_push": [],
+        "residual_conditions": [
+            "a.call_sign = 'ual'"
+        ],
+        "tables": [
+            {
+                "table": "usa_airline_companies",
+                "alias": "a",
+                "scan": "TABLE",
+                "columns": [
+                    "airline",
+                    "call_sign"
+                ],
+                "pushed_conditions": [],
+                "time": 9.948116064071655,
+                "tokens": 288,
+                "n_iters": 2,
+                "input_tokens_by_iter": [
+                    602,
+                    121
+                ],
+                "input_tokens_total_all_iters": 723
+            }
+        ]
+    }
+}

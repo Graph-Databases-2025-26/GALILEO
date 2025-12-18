@@ -1,0 +1,43 @@
+{
+    "query_id": "5",
+    "result_set": [
+        {
+            "count(state_name)": 50
+        }
+    ],
+    "tokens": 2716,
+    "time": 61.58393383026123,
+    "exp6": {
+        "input_tokens_total": 957.0,
+        "n_iters": 4,
+        "max_iter": 10
+    },
+    "debug": {
+        "variant_name": "EXP6_GALOIS_EMPTY_TABLE",
+        "physical_strategy_requested": "table",
+        "physical_strategy_final": "TABLE",
+        "conditions_to_push": [],
+        "residual_conditions": [],
+        "tables": [
+            {
+                "table": "usa_state",
+                "alias": "usa_state",
+                "scan": "TABLE",
+                "columns": [
+                    "state_name"
+                ],
+                "pushed_conditions": [],
+                "time": 61.58393383026123,
+                "tokens": 2716,
+                "n_iters": 4,
+                "input_tokens_by_iter": [
+                    594,
+                    121,
+                    118,
+                    124
+                ],
+                "input_tokens_total_all_iters": 957
+            }
+        ]
+    }
+}

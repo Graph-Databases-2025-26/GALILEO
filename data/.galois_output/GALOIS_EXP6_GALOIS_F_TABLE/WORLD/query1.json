@@ -1,0 +1,46 @@
+{
+    "query_id": "1",
+    "result_set": [
+        {
+            "count(DISTINCT government_form)": 1
+        }
+    ],
+    "tokens": 1041,
+    "time": 23.213199853897095,
+    "exp6": {
+        "input_tokens_total": 2473.0,
+        "n_iters": 2,
+        "max_iter": 10
+    },
+    "debug": {
+        "variant_name": "EXP6_GALOIS_F_TABLE",
+        "physical_strategy_requested": "table",
+        "physical_strategy_final": "TABLE",
+        "conditions_to_push": [
+            "continent = 'Africa'"
+        ],
+        "residual_conditions": [],
+        "tables": [
+            {
+                "table": "country",
+                "alias": "country",
+                "scan": "TABLE",
+                "columns": [
+                    "continent",
+                    "government_form"
+                ],
+                "pushed_conditions": [
+                    "continent = 'Africa'"
+                ],
+                "time": 23.213199853897095,
+                "tokens": 1041,
+                "n_iters": 2,
+                "input_tokens_by_iter": [
+                    2352,
+                    121
+                ],
+                "input_tokens_total_all_iters": 2473
+            }
+        ]
+    }
+}

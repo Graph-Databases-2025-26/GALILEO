@@ -1,0 +1,48 @@
+{
+    "query_id": "6",
+    "result_set": [],
+    "tokens": 2309,
+    "time": 54.094504594802856,
+    "exp6": {
+        "input_tokens_total": 1368.0,
+        "n_iters": 8,
+        "max_iter": 10
+    },
+    "debug": {
+        "variant_name": "EXP6_GALOIS_EMPTY_TABLE",
+        "physical_strategy_requested": "table",
+        "physical_strategy_final": "TABLE",
+        "conditions_to_push": [],
+        "residual_conditions": [
+            "state_name = 'california'",
+            "area_squared_km > 450"
+        ],
+        "tables": [
+            {
+                "table": "usa_lake",
+                "alias": "usa_lake",
+                "scan": "TABLE",
+                "columns": [
+                    "area_squared_km",
+                    "lake_name",
+                    "state_name"
+                ],
+                "pushed_conditions": [],
+                "time": 54.094504594802856,
+                "tokens": 2309,
+                "n_iters": 8,
+                "input_tokens_by_iter": [
+                    494,
+                    124,
+                    124,
+                    124,
+                    124,
+                    127,
+                    127,
+                    124
+                ],
+                "input_tokens_total_all_iters": 1368
+            }
+        ]
+    }
+}

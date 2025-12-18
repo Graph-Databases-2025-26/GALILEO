@@ -1,0 +1,48 @@
+{
+    "query_id": "1",
+    "result_set": [
+        {
+            "name": "Reykjavik Airport"
+        }
+    ],
+    "tokens": 303,
+    "time": 9.935003757476807,
+    "exp6": {
+        "input_tokens_total": 1376.0,
+        "n_iters": 2,
+        "max_iter": 10
+    },
+    "debug": {
+        "variant_name": "EXP6_GALOIS_A_TABLE",
+        "physical_strategy_requested": "table",
+        "physical_strategy_final": "TABLE",
+        "conditions_to_push": [
+            "a.elevation_in_ft >= -50",
+            "a.elevation_in_ft <= 50"
+        ],
+        "residual_conditions": [],
+        "tables": [
+            {
+                "table": "airports",
+                "alias": "a",
+                "scan": "TABLE",
+                "columns": [
+                    "elevation_in_ft",
+                    "name"
+                ],
+                "pushed_conditions": [
+                    "a.elevation_in_ft >= -50",
+                    "a.elevation_in_ft <= 50"
+                ],
+                "time": 9.935003757476807,
+                "tokens": 303,
+                "n_iters": 2,
+                "input_tokens_by_iter": [
+                    1258,
+                    118
+                ],
+                "input_tokens_total_all_iters": 1376
+            }
+        ]
+    }
+}

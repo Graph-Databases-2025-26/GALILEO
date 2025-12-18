@@ -4,6 +4,7 @@ import ast
 import json
 import re
 from typing import Any, Dict, List, Optional, Set, Tuple
+import time
 
 from langchain_core.messages import BaseMessage, HumanMessage, SystemMessage
 from sqlglot import parse_one, exp
@@ -79,9 +80,13 @@ class GaloisExecutor:
         original_where = parsed.get("where_conditions") or []
 
         # Decide which conditions to actually push down
-        if conditions_to_push:
+        # None  -> use original WHERE (default behaviour)
+        # # []    -> push nothing (Galois )
+        # # [..]  -> push those conditions (Galois A / F)
+        if conditions_to_push is not None:
             where_conditions = conditions_to_push
             LOG.info(f"[GaloisExecutor] Using pushed-down conditions from plan: {where_conditions}")
+            
         else:
             where_conditions = original_where
             LOG.info(f"[GaloisExecutor] Using original WHERE conditions: {where_conditions}")
@@ -99,7 +104,7 @@ class GaloisExecutor:
         query_attributes = self._get_involved_columns(
             table_name=exact_table,
             sql_query=sql_query,
-            conditions=conditions_to_push or []
+            conditions=where_conditions,
         )
 
         # Clever Merging
@@ -142,8 +147,22 @@ class GaloisExecutor:
         all_rows: List[Dict[str, Any]] = []
         seen_rows: Set[Tuple[Tuple[str, Any], ...]] = set()
 
+        input_tokens_by_iter: List[int] = []
+        iters_done = 0
+        total_time = 0.0
+
         for i in range(max_iter):
             LOG.info(f"[GaloisExecutor] Table-Scan iteration {i+1}/{max_iter}")
+
+            t0 = time.time()
+            # Prefer an explicit "input tokens" if provider gives it; otherwise approximate from the prompt
+            
+            prompt_input_tokens = 0
+            try:
+                if hasattr(self.llm, "get_num_tokens_from_messages"):
+                    prompt_input_tokens = int(self.llm.get_num_tokens_from_messages(history))
+            except Exception:
+                prompt_input_tokens = 0
 
             # Call the LLM with exponential backoff
             raw_response = invoke_with_backoff(
@@ -156,6 +175,11 @@ class GaloisExecutor:
             # Parse tuples produced in this iteration
             iter_rows = self._parse_table_scan_response(raw_response, exact_table)
             has_new = self._merge_new_rows(iter_rows, all_rows, seen_rows)
+
+            # count this iteration EVEN if it terminates
+            input_tokens_by_iter.append(prompt_input_tokens)
+            iters_done = i + 1
+            total_time += (time.time() - t0)
 
             # Append AI message to history (H ← H ∪ {ai})
             if isinstance(raw_response, BaseMessage):
@@ -174,7 +198,17 @@ class GaloisExecutor:
 
         LOG.info(f"[GaloisExecutor] Table-Scan completed. total_rows={len(all_rows)} unique tuples collected.")
 
-        return all_rows
+        return {
+    "response": all_rows,
+    "time": total_time,
+    # keep this as 0 if you don't have a reliable provider token count
+    # (exp-6 will use input_tokens_* anyway)
+    "tokens": 0,
+    "n_iters": iters_done,
+    "input_tokens_by_iter": input_tokens_by_iter,
+    "input_tokens_total_all_iters": sum(input_tokens_by_iter),
+}
+
 
 
     #method that does an accurate analysis of the columns used in a query and returns it as a list of strings

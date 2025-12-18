@@ -1,0 +1,52 @@
+{
+    "query_id": "16",
+    "result_set": [
+        {
+            "count(DISTINCT state_name)": 0
+        }
+    ],
+    "tokens": 966,
+    "time": 26.465840101242065,
+    "exp6": {
+        "input_tokens_total": 810.0,
+        "n_iters": 5,
+        "max_iter": 10
+    },
+    "debug": {
+        "variant_name": "EXP6_GALOIS_A_TABLE",
+        "physical_strategy_requested": "table",
+        "physical_strategy_final": "TABLE",
+        "conditions_to_push": [
+            "city_name = 'springfield'",
+            "population > 72000"
+        ],
+        "residual_conditions": [],
+        "tables": [
+            {
+                "table": "usa_city",
+                "alias": "usa_city",
+                "scan": "TABLE",
+                "columns": [
+                    "city_name",
+                    "state_name",
+                    "population"
+                ],
+                "pushed_conditions": [
+                    "city_name = 'springfield'",
+                    "population > 72000"
+                ],
+                "time": 26.465840101242065,
+                "tokens": 966,
+                "n_iters": 5,
+                "input_tokens_by_iter": [
+                    320,
+                    121,
+                    121,
+                    124,
+                    124
+                ],
+                "input_tokens_total_all_iters": 810
+            }
+        ]
+    }
+}

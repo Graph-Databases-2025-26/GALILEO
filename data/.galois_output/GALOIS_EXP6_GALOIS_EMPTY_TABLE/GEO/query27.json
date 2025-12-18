@@ -1,0 +1,153 @@
+{
+    "query_id": "27",
+    "result_set": [
+        {
+            "state_name": "Arizona",
+            "population": 7278717.0,
+            "capital": "Phoenix"
+        },
+        {
+            "state_name": "California",
+            "population": 39461588.0,
+            "capital": "Sacramento"
+        },
+        {
+            "state_name": "Colorado",
+            "population": 5691287.0,
+            "capital": "Denver"
+        },
+        {
+            "state_name": "Florida",
+            "population": 21244317.0,
+            "capital": "Tallahassee"
+        },
+        {
+            "state_name": "Georgia",
+            "population": 10511131.0,
+            "capital": "Atlanta"
+        },
+        {
+            "state_name": "Illinois",
+            "population": 12886124.0,
+            "capital": "Springfield"
+        },
+        {
+            "state_name": "Indiana",
+            "population": 6732219.0,
+            "capital": "Indianapolis"
+        },
+        {
+            "state_name": "Maryland",
+            "population": 6040668.0,
+            "capital": "Annapolis"
+        },
+        {
+            "state_name": "Massachusetts",
+            "population": 6892503.0,
+            "capital": "Boston"
+        },
+        {
+            "state_name": "Michigan",
+            "population": 10077331.0,
+            "capital": "Lansing"
+        },
+        {
+            "state_name": "Minnesota",
+            "population": 5639759.0,
+            "capital": "Saint Paul"
+        },
+        {
+            "state_name": "Missouri",
+            "population": 6137428.0,
+            "capital": "Jefferson City"
+        },
+        {
+            "state_name": "New Jersey",
+            "population": 8944461.0,
+            "capital": "Trenton"
+        },
+        {
+            "state_name": "New York",
+            "population": 19453561.0,
+            "capital": "Albany"
+        },
+        {
+            "state_name": "North Carolina",
+            "population": 10420000.0,
+            "capital": "Raleigh"
+        },
+        {
+            "state_name": "Pennsylvania",
+            "population": 12802023.0,
+            "capital": "Harrisburg"
+        },
+        {
+            "state_name": "South Carolina",
+            "population": 5086476.0,
+            "capital": "Columbia"
+        },
+        {
+            "state_name": "Tennessee",
+            "population": 6833174.0,
+            "capital": "Nashville"
+        },
+        {
+            "state_name": "Texas",
+            "population": 28995881.0,
+            "capital": "Austin"
+        },
+        {
+            "state_name": "Virginia",
+            "population": 8535519.0,
+            "capital": "Richmond"
+        },
+        {
+            "state_name": "Washington",
+            "population": 7535591.0,
+            "capital": "Olympia"
+        },
+        {
+            "state_name": "Wisconsin",
+            "population": 5822564.0,
+            "capital": "Madison"
+        }
+    ],
+    "tokens": 1376,
+    "time": 59.011693716049194,
+    "exp6": {
+        "input_tokens_total": 838.0,
+        "n_iters": 3,
+        "max_iter": 10
+    },
+    "debug": {
+        "variant_name": "EXP6_GALOIS_EMPTY_TABLE",
+        "physical_strategy_requested": "table",
+        "physical_strategy_final": "TABLE",
+        "conditions_to_push": [],
+        "residual_conditions": [
+            "us.population > 5000000"
+        ],
+        "tables": [
+            {
+                "table": "usa_state",
+                "alias": "us",
+                "scan": "TABLE",
+                "columns": [
+                    "capital",
+                    "state_name",
+                    "population"
+                ],
+                "pushed_conditions": [],
+                "time": 59.011693716049194,
+                "tokens": 1376,
+                "n_iters": 3,
+                "input_tokens_by_iter": [
+                    600,
+                    114,
+                    124
+                ],
+                "input_tokens_total_all_iters": 838
+            }
+        ]
+    }
+}

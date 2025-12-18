@@ -1,0 +1,47 @@
+{
+    "query_id": "26",
+    "result_set": [],
+    "tokens": 1170,
+    "time": 48.5558648109436,
+    "exp6": {
+        "input_tokens_total": 1109.0,
+        "n_iters": 5,
+        "max_iter": 10
+    },
+    "debug": {
+        "variant_name": "EXP6_GALOIS_A_TABLE",
+        "physical_strategy_requested": "table",
+        "physical_strategy_final": "TABLE",
+        "conditions_to_push": [
+            "capital = 'frankfort'"
+        ],
+        "residual_conditions": [],
+        "tables": [
+            {
+                "table": "usa_state",
+                "alias": "usa_state",
+                "scan": "TABLE",
+                "columns": [
+                    "capital",
+                    "area_squared_miles",
+                    "state_name",
+                    "population"
+                ],
+                "pushed_conditions": [
+                    "capital = 'frankfort'"
+                ],
+                "time": 48.5558648109436,
+                "tokens": 1170,
+                "n_iters": 5,
+                "input_tokens_by_iter": [
+                    622,
+                    121,
+                    121,
+                    121,
+                    124
+                ],
+                "input_tokens_total_all_iters": 1109
+            }
+        ]
+    }
+}

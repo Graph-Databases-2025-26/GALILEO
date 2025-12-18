@@ -1,0 +1,45 @@
+{
+    "query_id": "13",
+    "result_set": [],
+    "tokens": 699,
+    "time": 16.587841749191284,
+    "exp6": {
+        "input_tokens_total": 1008.0,
+        "n_iters": 5,
+        "max_iter": 10
+    },
+    "debug": {
+        "variant_name": "EXP6_GALOIS_EMPTY_TABLE",
+        "physical_strategy_requested": "table",
+        "physical_strategy_final": "TABLE",
+        "conditions_to_push": [],
+        "residual_conditions": [
+            "area_squared_km > 750",
+            "state_name = 'michigan'"
+        ],
+        "tables": [
+            {
+                "table": "usa_lake",
+                "alias": "usa_lake",
+                "scan": "TABLE",
+                "columns": [
+                    "area_squared_km",
+                    "lake_name",
+                    "state_name"
+                ],
+                "pushed_conditions": [],
+                "time": 16.587841749191284,
+                "tokens": 699,
+                "n_iters": 5,
+                "input_tokens_by_iter": [
+                    497,
+                    127,
+                    127,
+                    127,
+                    130
+                ],
+                "input_tokens_total_all_iters": 1008
+            }
+        ]
+    }
+}
