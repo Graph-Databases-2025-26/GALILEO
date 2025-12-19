@@ -131,12 +131,21 @@ By benchmarking model modalities (GALOIS, NL, SQL) against the Ground Truth, the
 The GALOIS results are compared against the Ground Truth (loaded from pre-calculated JSON files) using three metrics: F1-Cell Exact, Cardinality, and Tuple Constraint of the \texttt{galois\_eval.py} script.
 In Figure \ref{fig:exp5-avg} we compare metrics of our run with the GALOIS paper ones and is clear that JOIN operations are worsening the results.
 The main reason for that is the difficulty of LLM to retrieve results that match the queries with JOIN clause, something already seen in the GALOIS results in Section \ref{results_galois}.
+Instead figure \ref{fig:exp5-tokens} shows the token usage of our run compared to the GALOIS paper ones.
+
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.9\textwidth]{images/exp-5-avg.png}
     \caption{Result quality w.r.t query complexity}
     \label{fig:exp5-avg}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{images/exp-5-tokens.png}
+    \caption{Costs w.r.t query complexity. Galois WO (not reported)}
+    \label{fig:exp5-tokens}
 \end{figure}
 
 

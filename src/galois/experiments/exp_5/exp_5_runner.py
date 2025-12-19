@@ -81,8 +81,34 @@ def save_summary_for_plot(results_by_category):
         LOG.error(f"Impossibile salvare i dati di riepilogo: {e}")
 
 
+def save_token_summary_for_plot(tokens_by_category):
+    """
+    Salva i token medi (TOKENS) per categoria in un file JSON.
+    """
+    ordered_cats = ["SP2", "SP2>", "DIST", "AGGR", "G/O", "JOIN"]
+    summary_data = {}
 
-def print_summary_table(results_by_category):
+    for cat in ordered_cats:
+        tokens = tokens_by_category.get(cat, [])
+        if tokens:
+            # Calcola la media dei token
+            avg = statistics.mean(tokens)
+            summary_data[cat] = avg
+        else:
+            summary_data[cat] = 0.0
+
+    # Salviamo in un file DIVERSO: exp5_tokens_summary.json
+    output_file = Path(__file__).resolve().parent / "exp5_tokens_summary.json"
+    try:
+        with open(output_file, "w") as f:
+            json.dump(summary_data, f, indent=4)
+        print(f"[AUTO] Dati TOKENS salvati in: {output_file.absolute()}")
+    except Exception as e:
+        LOG.error(f"Impossibile salvare i dati di riepilogo token: {e}")
+
+
+
+def print_summary_table(results_by_category, tokens_by_category):
     print("\n" + "=" * 60)
     print(f"   RESULTS SUMMARY - EXP 5 (Dataset: ALL DATASETS)")
     print("=" * 50)
@@ -100,22 +126,25 @@ def print_summary_table(results_by_category):
 
     for cat in ordered_cats:
         scores = results_by_category.get(cat, [])
+        tokens_list = tokens_by_category.get(cat, [])
         if scores:
-            avg = statistics.mean(scores)
+            avg_score = statistics.mean(scores)
+            avg_tokens = statistics.mean(tokens_list) if tokens_list else 0
             count = len(scores)
-            print(f"{cat:<12} | {avg:<12.4f} | {count:<12}")
+            print(f"{cat:<12} | {avg_score:<12.4f} | {avg_tokens:<12.1f} | {count:<12}")
         else:
             print(f"{cat:<12} | {'0.0000':<12} | {'0':<12}")
     print("=" * 60)
 
 
 class Exp5Runner:
-    def __init__(self, dataset_name: str, shared_results_dict: dict):
+    def __init__(self, dataset_name: str, shared_results_dict: dict, shared_tokens_dict: dict):
         self.config = Config_Loader().get_config()
         self.dataset_name = dataset_name.upper()
 
         # Dictionary to accumulate scores
         self.results_by_category = shared_results_dict
+        self.tokens_by_category = shared_tokens_dict
 
     def get_ground_truth_from_json(self, query_id):
         """
@@ -212,8 +241,12 @@ class Exp5Runner:
                 # Compute AVG-SCORE
                 avg_score = (f1 + card + tcon) / 3.0
 
-                # Accumulate by category
+                # Accumulate score by category
                 self.results_by_category[category].append(avg_score)
+
+                #Accumulate token count by category
+                token_count = stats.get('total_tokens', 0)
+                self.tokens_by_category[category].append(token_count)
 
                 print(f"   [Score: {avg_score:.4f}] F1: {f1:.2f} | Card: {card:.2f} | TCon: {tcon:.2f}")
 
@@ -222,7 +255,7 @@ class Exp5Runner:
                     "query_id": str(i+1),
                     "complexity": category,
                     "result_set": {"columns": pred_cols, "rows": pred_rows},
-                    "tokens": stats.get('total_tokens', 0),
+                    "tokens": token_count,
                     "time": stats.get('total_time', 0)
                 })
 
@@ -245,14 +278,16 @@ class Exp5Runner:
 if __name__ == "__main__":
     # 1. Creiamo il dizionario accumulatore GLOBALE
     global_results = defaultdict(list)
+    global_tokens = defaultdict(list)
 
     # 2. Iteriamo sui dataset
     for dataset in IK_DATASETS:
         # Passiamo l'accumulatore globale al runner
-        runner = Exp5Runner(dataset_name=dataset, shared_results_dict=global_results)
+        runner = Exp5Runner(dataset_name=dataset, shared_results_dict=global_results, shared_tokens_dict=global_tokens)
         runner.run()
 
     # 3. Solo alla fine di TUTTI i dataset, stampiamo e salviamo il riepilogo totale
     print("\n--- ELABORAZIONE TERMINATA SU TUTTI I DATASET ---")
-    print_summary_table(global_results)
+    print_summary_table(global_results, global_tokens)
     save_summary_for_plot(global_results)
+    save_token_summary_for_plot(global_tokens)
