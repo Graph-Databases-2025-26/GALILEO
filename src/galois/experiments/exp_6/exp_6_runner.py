@@ -4,235 +4,170 @@ import time
 from pathlib import Path
 from statistics import mean
 from typing import Any, Dict, List, Optional
-
 import httpx
-
 from src.config import Config_Loader
 from src.db import load_queries_from_folder
-from src.galois.galois import Galois, save_galois_results
-from src.galois.galois_estimator import ConfidenceEstimator
-from src.galois.galois_prompts import (
-    system_prompt_galois_confidence,
-    human_prompt_galois_confidence,
-)
+from src.galois.galois import Galois
 from src.utils import DATA_DIR, IK_DATASETS, LOG
 
 
+# --- Helpers ---
 
-# helpers for retrying network calls with exponential backoff
 def with_retries(fn, *, tries=4, base_sleep=2.0, what="call"):
     last = None
     for t in range(tries):
         try:
             return fn()
         except (
-            httpx.RemoteProtocolError,
-            httpx.ReadTimeout,
-            httpx.ConnectTimeout,
-            httpx.ConnectError,
+                httpx.RemoteProtocolError,
+                httpx.ReadTimeout,
+                httpx.ConnectTimeout,
+                httpx.ConnectError,
         ) as e:
             last = e
             sleep_s = base_sleep * (2 ** t)
             LOG.warning(
                 f"[EXP6] {what} failed ({type(e).__name__}): {e}. "
-                f"Retry {t+1}/{tries} in {sleep_s:.1f}s"
+                f"Retry {t + 1}/{tries} in {sleep_s:.1f}s"
             )
             time.sleep(sleep_s)
     raise last
 
 
-
-# metric extraction from debug info
-
-def extract_exp6_stats_from_debug(debug: Dict[str, Any]) -> Dict[str, Any]:
+def extract_exp6_stats_from_debug(debug_info: Dict[str, Any]) -> Dict[str, Any]:
     """
-    Returns:
-      - input_tokens_total: float  (proxy: sum of per-table scan tokens)
-      - n_iters: Optional[int]     (if present somewhere, otherwise None)
+    Extracts statistics by reading the correct structure returned by galois.py.
+    The data is inside the 'tables' list in the debug dictionary.
     """
+    # Retrieve the list of scanned tables (usually 1, but supports JOIN)
+    tables = debug_info.get("tables", [])
 
-    tables = debug.get("tables", []) if isinstance(debug, dict) else []
-    input_tokens_total = 0.0
-    iters: List[int] = []
+    # Sum tokens from all involved tables
+    input_tokens = sum(t.get("input_tokens_total_all_iters", 0) for t in tables)
 
-    for t in tables:
-        if not isinstance(t, dict):
-            continue
-        
-        if t.get("input_tokens_total_all_iters") is not None:
-            try:
-                input_tokens_total += float(t["input_tokens_total_all_iters"])
-            except Exception:
-                pass
-        else:
-            # fallback to old proxy if needed
-            try:
-                input_tokens_total += float(t.get("tokens", 0) or 0)
-            except Exception:
-              pass
-            
-        if isinstance(t.get("n_iters"), int):
-            iters.append(t["n_iters"])
+    # Take the maximum number of iterations across the tables (query depth)
+    n_iters = max((t.get("n_iters", 0) for t in tables), default=0)
 
+    # Heuristic fallback: if watsonx returns 0 tokens, try to estimate (optional)
     return {
-        "input_tokens_total": input_tokens_total,
-        "n_iters": (max(iters) if iters else None),
+        "input_tokens_total_all_iters": input_tokens,
+        "n_iters": n_iters,
+        "ge_max_iters": n_iters >= 10  # Assume 10 as the standard threshold from the paper
     }
 
 
 def summarize_exp6(per_query_stats: List[Dict[str, Any]], max_iter: int) -> Dict[str, Any]:
+    """Aggregate results per dataset."""
     if not per_query_stats:
-        return {
-            "n_queries": 0,
-            "n_success": 0,
-            "avg_input_tokens_all_iters": 0.0,
-            "avg_iters_per_query": None,
-            "n_queries_ge_max_iter": 0,
-        }
+        return _empty_summary(0)
 
-    # Only successful stats (skip failures where token total is None)
+    # Filter only valid runs (where tokens are numbers)
     valid = [
         x for x in per_query_stats
-        if isinstance(x.get("input_tokens_total"), (int, float))
+        if isinstance(x.get("input_tokens_total_all_iters"), (int, float))
     ]
 
     if not valid:
-        return {
-            "n_queries": len(per_query_stats),
-            "n_success": 0,
-            "avg_input_tokens_all_iters": 0.0,
-            "avg_iters_per_query": None,
-            "n_queries_ge_max_iter": 0,
-        }
+        return _empty_summary(len(per_query_stats))
 
-    avg_tokens = mean(x["input_tokens_total"] for x in valid)
+    avg_tokens = mean(x["input_tokens_total_all_iters"] for x in valid)
 
-    iters = [x["n_iters"] for x in valid if isinstance(x.get("n_iters"), int)]
-    avg_iters = mean(iters) if iters else None
-    n_ge = sum(
-        1 for x in valid
-        if isinstance(x.get("n_iters"), int) and x["n_iters"] >= max_iter
-    )
+    # Compute average iterations only on entries that have the data
+    iters_vals = [x["n_iters"] for x in valid if x.get("n_iters") is not None]
+    avg_iters = mean(iters_vals) if iters_vals else 0
+
+    n_ge = sum(1 for x in valid if x.get("n_iters", 0) >= max_iter)
 
     return {
-        "n_queries": len(per_query_stats),  # attempted
-        "n_success": len(valid),            # successful parsed
+        "n_queries": len(per_query_stats),
+        "n_success": len(valid),
         "avg_input_tokens_all_iters": avg_tokens,
         "avg_iters_per_query": avg_iters,
         "n_queries_ge_max_iter": n_ge,
     }
 
 
+def _empty_summary(n_queries):
+    return {
+        "n_queries": n_queries, "n_success": 0,
+        "avg_input_tokens_all_iters": 0.0, "avg_iters_per_query": 0.0,
+        "n_queries_ge_max_iter": 0
+    }
 
-def run_exp6_dataset(dataset: str, provider: str, max_iter: int, only_ids: Optional[set[int]] = None) -> Dict[str, Any]:
+# --- Core Logic ---
+
+def run_exp6_dataset(dataset_name: str, provider: str, max_iter: int, only_ids: Optional[set] = None):
     config = Config_Loader().get_config()
-    dataset_path = DATA_DIR / dataset
+    dataset_path = DATA_DIR / dataset_name
     queries = load_queries_from_folder(dataset_path)
 
-    out_empty: List[Dict[str, Any]] = []
-    out_a: List[Dict[str, Any]] = []
-    out_f: List[Dict[str, Any]] = []
+    stats_empty = []
+    stats_a = []
+    stats_f = []
 
-    stats_empty: List[Dict[str, Any]] = []
-    stats_a: List[Dict[str, Any]] = []
-    stats_f: List[Dict[str, Any]] = []
+    LOG.info(f"[EXP6] Starting dataset {dataset_name} ({len(queries)} queries)")
 
-    for q_idx, (_, sql_query) in enumerate(queries, start=1):
-        if only_ids is not None and q_idx not in only_ids:
+    for i, (_, sql_query) in enumerate(queries):
+        # Optional filter for ID
+        if only_ids and (i + 1) not in only_ids:
             continue
-        query_id = f"query{q_idx}"
-        LOG.info(f"[EXP6] {dataset} – {query_id}")
 
-        # Build base Galois object 
-        g = Galois(config, dataset, sql_query, physical_strategy="table")
+        LOG.info(f"--- Query {i + 1}/{len(queries)} ---")
 
-        all_conds = g.parsed_sql.get("where_conditions", []) or []
+        # Initialize Galois forcing the physical strategy "table" (exception for Exp 6)
+        g = Galois(
+            config=config,
+            dataset=dataset_name,
+            sql_query=sql_query,
+            physical_strategy="table"
+        )
 
-        # Confidence-based filter 
-        confident_conds: List[str] = []
-        if all_conds:
-            estimator = ConfidenceEstimator(
-                g.llm_wrapper,
-                g.dataset,
-                system_prompt_galois_confidence(),
-                human_prompt_galois_confidence("CONDITION"),
-            )
-            # Wrap estimator call with retries (network robustness)
-            confident_conds = with_retries(
-                lambda: estimator.estimate_confidence_conditions(
-                    g.parsed_sql["from_table"], all_conds
-                ),
-                what=f"confidence-estimator {dataset}/{query_id}",
-            ) or []
+        # -----------------------------------------------------------
+        #  GALOIS Ø (No-Push) - Manual to force Table-Scan
+        # -----------------------------------------------------------
+        try:
+            # We don't use g.run_no_push() because it would force KEY-SCAN.
+            # Manually build an empty plan.
+            plan_empty = g.build_execution_plan(conditions_to_push=[])
+            # Inject max_iter into the plan if supported by the executor
+            plan_empty["max_iter"] = max_iter
 
-        variants = [
-            # Paper Exp-6: Galois ∅ = Table-Scan without push-down. 
-            ("EXP6_GALOIS_EMPTY_TABLE", [], out_empty, stats_empty),
-            # Galois A = push all conditions
-            ("EXP6_GALOIS_A_TABLE", all_conds, out_a, stats_a),
-            # Galois F = push only confident conditions
-            ("EXP6_GALOIS_F_TABLE", confident_conds, out_f, stats_f),
-        ]
+            # Execute by calling execute_variant with debug=True to obtain tokens
+            # execute_variant returns (results, stats, debug_info)
+            _, _, debug_empty = g.execute_variant(plan_empty, "GALOIS_WO (No-Push)", debug=True)
+            stats_empty.append(extract_exp6_stats_from_debug(debug_empty))
 
-        for variant_name, conds, out_list, stat_list in variants:
-            try:
-                plan = g.build_execution_plan(conditions_to_push=conds)
+        except Exception as e:
+            LOG.error(f"Error GALOIS_EMPTY query {i}: {e}")
+            stats_empty.append({})
 
-                plan["max_iter"] = max_iter  # set max_iter in plan
+        # -----------------------------------------------------------
+        #  GALOIS A (Push-All) - Use native method
+        # -----------------------------------------------------------
+        try:
+            # g.run_push_all internally forces Table-Scan, so it's safe.
+            _, _, debug_a = g.run_push_all(debug=True)
+            stats_a.append(extract_exp6_stats_from_debug(debug_a))
+        except Exception as e:
+            LOG.error(f"Error GALOIS_A query {i}: {e}")
+            stats_a.append({})
 
-                # execute_variant(...) with debug=True to get detailed stats
-                results, base_stats, debug = g.execute_variant(plan, variant_name, debug=True)
-
-                exp6_stats = extract_exp6_stats_from_debug(debug)
-
-                # Record per-query output
-                out_list.append({
-                    "query_id": str(q_idx),
-                    "result_set": results,
-                    "tokens": base_stats.get("total_tokens", 0),
-                    "time": base_stats.get("total_time", 0.0),
-                    "exp6": {
-                        "input_tokens_total": exp6_stats["input_tokens_total"],
-                        "n_iters": exp6_stats["n_iters"],          
-                        "max_iter": max_iter,
-                    },
-                    "debug": debug,  
-                })
-                stat_list.append({"input_tokens_total": exp6_stats["input_tokens_total"],"n_iters": exp6_stats["n_iters"],
-                                  })
-
-
-            except Exception as e:
-                LOG.exception("[EXP6] {} query{} {} failed: {}", dataset, q_idx, variant_name, str(e))
-                
-                out_list.append({
-                    "query_id": str(q_idx),
-                    "result_set": None,
-                    "tokens": None,
-                    "time": None,
-                    "exp6": {"input_tokens_total": None, "n_iters": None, "max_iter": max_iter},
-                    "error": str(e),
-                    })
-                stat_list.append({"input_tokens_total": None, "n_iters": None})
-                
-                continue
-
-    # Save per-query 
-    save_galois_results(out_empty, "EXP6_GALOIS_EMPTY_TABLE", provider, dataset)
-    save_galois_results(out_a, "EXP6_GALOIS_A_TABLE", provider, dataset)
-    save_galois_results(out_f, "EXP6_GALOIS_F_TABLE", provider, dataset)
+        # -----------------------------------------------------------
+        #  GALOIS F (Smart) - Use native method
+        # -----------------------------------------------------------
+        try:
+            # g.run_push_confident uses the instance strategy (which is "table"), so it's safe.
+            # Internally includes the call to the Estimator.
+            _, _, debug_f = g.run_push_confident(debug=True)
+            stats_f.append(extract_exp6_stats_from_debug(debug_f))
+        except Exception as e:
+            LOG.error(f"Error GALOIS_F query {i}: {e}")
+            stats_f.append({})
 
     return {
         "galois_empty": summarize_exp6(stats_empty, max_iter),
         "galois_a": summarize_exp6(stats_a, max_iter),
         "galois_f": summarize_exp6(stats_f, max_iter),
-        "notes": {
-            "iters_available": any(isinstance(x.get("n_iters"), int) for x in (stats_empty + stats_a + stats_f)),
-            "iters_note": (
-                "n_iters is not exposed by current execute_variant(debug=True). "
-                "To match paper Table 9 exactly, propagate iteration counts from the scan executor into debug_info."
-            ),
-        }
     }
 
 
@@ -249,6 +184,7 @@ def main():
 
     args = ap.parse_args()
 
+    # If no dataset is specified, use all IK datasets (Exp-1 set)
     datasets = [args.dataset] if args.dataset else IK_DATASETS
 
     only_ids = None
@@ -257,7 +193,10 @@ def main():
 
     summary: Dict[str, Any] = {}
     for ds in datasets:
-        summary[ds] = run_exp6_dataset(ds, args.provider, args.max_iter, only_ids=only_ids,)
+        try:
+            summary[ds] = run_exp6_dataset(ds, args.provider, args.max_iter, only_ids)
+        except Exception as e:
+            LOG.error(f"Failed dataset {ds}: {e}")
 
     out_path = Path(__file__).parent / f"exp6_summary_maxiter{args.max_iter}.json"
     out_path.write_text(json.dumps(summary, indent=2), encoding="utf-8")
@@ -266,4 +205,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-

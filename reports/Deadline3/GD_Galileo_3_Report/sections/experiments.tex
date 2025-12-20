@@ -1,6 +1,49 @@
 \section{Experiments}
 
-\subsection{Experiment 1:}
+\subsection{Experiment 1: Overall Evaluation} 
+In this experiment, we obtain structured data from the internal
+parametric knowledge of the LLM. We evaluate the performance of the variants of Galois against
+the NL, SQL, and Galois baselines, using llama-3.3-70b-instruct. The datasets used are FLIGHT-2, FLIGHT-4, GEO, MOVIES, PRESIDENTS, WORLD excluding PREMIER and FORTUNE.
+A threshold \texttt{\texttau = 0.6} is used for Physical Plan selection.
+The results comparison between our implementation and the former Galois paper is shown in the following tables:
+
+\begin{table}[H]
+\centering
+\begin{tabular}{lcccccc}
+\hline
+\textbf{Metric} & \textbf{NL} & \textbf{SQL} & \textbf{Galois$_{WO}$} & \textbf{Galois$_S$} & \textbf{Galois$_A$} & \textbf{Galois$_F$} \\
+\hline
+F1-Cell        & 0.237 & 0.431 & 0.518 & 0.480 & 0.543 & \textbf{0.563} \\
+Cardinality    & 0.462 & 0.659 & 0.691 & 0.655 & 0.799 & \textbf{0.835} \\
+Tuple Constr.  & 0.065 & 0.351 & 0.389 & 0.365 & 0.448 & \textbf{0.464} \\
+Avg-Score      & 0.254 & 0.481 & 0.531 & 0.500 & 0.592 & \textbf{0.622} \\
+\#Tokens (M)   & 0.83  & \textbf{0.33} & 19.71 & 0.96 & 0.95 & 1.72 \\
+Avg Time       & 120   & 61.4  & 1460  & 130  & 120.5 & \textbf{47.4} \\
+\hline
+\end{tabular}
+\caption{GALOIS Paper}
+\label{tab:galois_comparison}
+\end{table}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{lcccccc}
+\hline
+\textbf{Metric} & \textbf{NL} & \textbf{SQL} & \textbf{Galois$_{WO}$} & \textbf{Galois$_S$} & \textbf{Galois$_A$} & \textbf{Galois$_F$} \\
+\hline
+F1-Cell        & 0.271 & 0.403 & 0.157 & \textbf{0.434} & 0.417 & 0.319 \\
+Cardinality    & 0.500 & 0.465 & 0.357 & \textbf{0.6667} & 0.614 & 0.528 \\
+Tuple Constr.  & 0.091 & 0.197 & 0.060 & \textbf{0.297} & 0.279 & 0.166 \\
+Avg-Score      & 0.287 & 0.355 & 0.191 & \textbf{0.466} & 0.436 & 0.338 \\
+\#Tokens (M)   & 0.005 & 0.008 & \textbf{0.163} & 0.088 & 0.076 & 0.142 \\
+Avg Time       & 2.206   & 5.263  & \textbf{43.103}  & 17.952  & 24.481 & 26.196 \\
+\hline
+\end{tabular}
+\caption{Our implementation}
+\label{tab:galois_comparison}
+\end{table}
+
+
 \subsection{Experiment 2: Logical and Physical Optimization Impact}
 
 This experiment evaluates the effectiveness of the logical and physical optimization strategies adopted by \textsc{GALOIS}, following the methodology described in Sections~4 and~5 of the original paper. 
@@ -80,8 +123,8 @@ In particular, we observe the same qualitative trends:
 These results further validate the robustness of the GALOIS optimization framework across datasets and implementations.
 
 
-\subsection{Experiment 3:}
-\subsection{Experiment 4:}
+\subsection{Experiment 3: Impact of LLMs parameters}
+\subsection{Experiment 4: Impact of retrieved values}
 
 Here we implemented an automated evaluation pipeline  ("Impact of Rarity and Temporality"), focusing on the \textbf{PRESIDENTS} domain. The primary objective is to quantify how the frequency of data in pre-training (popularity) and its temporal recency influence the ability of Large Language Models (LLMs)  to measure two specific biases.
 \begin{itemize}
@@ -153,9 +196,38 @@ Instead figure \ref{fig:exp5-tokens} shows the token usage of our run compared t
 
 
 
-\subsection{Experiment 6:}
-\subsection{Experiment 7:}
-\subsection{Experiment 8:}
+\subsection{Experiment 6: Evolution of Prompt Size}
+
+The goal is to evaluate how logical optimizations impact both the prompt size and the number of iterations required to answer a query.
+For every query in the Internal Knowledge (IK) datasets, this task executes three distinct configurations of the system, all fixed to use the Table-Scan physical strategy.
+The first configuration is \textbf{GALOIS $\emptyset$ (No-Push)}, which serves as the unoptimized baseline where no conditions are pushed to the LLM. The second is \textbf{GALOIS A (Push-All)}, an aggressive optimization that pushes all WHERE conditions into the prompt. The third is \textbf{GALOIS F}, the confidence-based approach that selectively pushes only high-confidence conditions.
+For each run, the script logs the total number of input tokens, the number of iterations performed, and whether the execution converged within the maximum limit of 10 iterations.
+
+The results from this replication, conducted using llama-3.3-70b-instruct, align closely with the findings of the original paper, confirming the significant efficiency gains provided by the optimizations. The baseline GALOIS $\emptyset$ proves to be the most resource-intensive approach in terms of tokens and time consuming. 
+Furthermore, this unoptimized strategy exhibits stability issues, failing to converge for 11 queries within the iteration limit. Conversely, applying logical optimizations drastically improves performance. GALOIS A reduces the average token count and the iterations, successfully eliminating all convergence failures. 
+GALOIS F achieves the best overall efficiency, further lowering the token usage and the average iterations. These findings demonstrate that pushing filter conditions down to the LLM not only reduces the volume of data processed but also creates a more robust and faster extraction process, preventing the model from getting stuck in long retrieval loops.
+
+\begin{table}[h]
+    \centering
+    \caption{Prompt size without push-down (Galois $\emptyset$ ) and with Galois’s optimizations.}
+    \label{tab:exp6-prompt-size}
+    \begin{tabularx}{\textwidth}{l >{\centering\arraybackslash}X >{\centering\arraybackslash}X >{\centering\arraybackslash}X}
+        \toprule
+        \textbf{Method} & \textbf{AVG \# INPUT TOKENS} & \textbf{AVG \# ITERATIONS} & \textbf{\# QUERIES $\ge$ MAX\_ITER} \\
+        \midrule
+        GALOIS $\emptyset$ (No-Push) & 1301 & 5.05 & 11 \\
+        GALOIS A (Push-All)         & 1100 & 3.31 & \textbf{0} \\
+        GALOIS F             & \textbf{1090} & \textbf{3.26} & \textbf{0} \\
+        \bottomrule
+    \end{tabularx}
+    
+    \vspace{0.1cm}
+    \footnotesize
+    \textit{Note: Results aggregated over 77 queries from IK datasets.}
+\end{table}
+
+\subsection{Experiment 7: Threshold Setup}
+\subsection{Experiment 8: Errors w.r.t. the optimal plan}
 \textbf{Objective}: This experiment aims to quantify the efficacy of the \textbf{Logical Planner} (the component deciding which strategy to adopt) by measuring the "Optimality Gap". The Optimality Gap represents the performance difference between the automatic choice made by \texttt{GALOIS\_F} and the theoretical optimal choice ("Oracle") that the system could have made if it had selected the best possible strategy for every single query.
 For every query present in the target datasets (GEO, WORLD, MOVIES), the runner  executes the configurations in "brute-force" mode.
 \\\textbf{Oracle Definition and Gap Calculation}: For each query $q$, we define the Oracle score ($S_{opt}$) as the maximum score obtainable among the available strategies:$$S_{opt}(q) = \max(S_{GALOIS\_A}(q), S_{GALOIS\_WO}(q), S_{GALOIS\_F}(q))$$.\\ \textbf{The Optimality Gap} is calculated as the average difference between the Oracle and the adaptive variant:$$Gap = \frac{1}{N} \sum_{q \in Q} (S_{opt}(q) - S_{GALOIS\_F}(q))$$ A gap close to 0 indicates that the GALOIS\_F automatic selector is choosing the best available strategy almost every time. A high gap suggests that, although a winning strategy exists for that query (e.g., Key-Scan), the system erroneously opted for another

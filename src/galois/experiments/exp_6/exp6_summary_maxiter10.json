@@ -1,0 +1,140 @@
+{
+  "FLIGHT-2": {
+    "galois_empty": {
+      "n_queries": 3,
+      "n_success": 3,
+      "avg_input_tokens_all_iters": 1046.3333333333333,
+      "avg_iters_per_query": 4.666666666666667,
+      "n_queries_ge_max_iter": 1
+    },
+    "galois_a": {
+      "n_queries": 3,
+      "n_success": 3,
+      "avg_input_tokens_all_iters": 811.3333333333334,
+      "avg_iters_per_query": 2.6666666666666665,
+      "n_queries_ge_max_iter": 0
+    },
+    "galois_f": {
+      "n_queries": 3,
+      "n_success": 3,
+      "avg_input_tokens_all_iters": 811,
+      "avg_iters_per_query": 2.6666666666666665,
+      "n_queries_ge_max_iter": 0
+    }
+  },
+  "FLIGHT-4": {
+    "galois_empty": {
+      "n_queries": 3,
+      "n_success": 3,
+      "avg_input_tokens_all_iters": 1353.6666666666667,
+      "avg_iters_per_query": 2,
+      "n_queries_ge_max_iter": 0
+    },
+    "galois_a": {
+      "n_queries": 3,
+      "n_success": 3,
+      "avg_input_tokens_all_iters": 1369,
+      "avg_iters_per_query": 2,
+      "n_queries_ge_max_iter": 0
+    },
+    "galois_f": {
+      "n_queries": 3,
+      "n_success": 3,
+      "avg_input_tokens_all_iters": 1368,
+      "avg_iters_per_query": 2,
+      "n_queries_ge_max_iter": 0
+    }
+  },
+  "GEO": {
+    "galois_empty": {
+      "n_queries": 32,
+      "n_success": 32,
+      "avg_input_tokens_all_iters": 1059.71875,
+      "avg_iters_per_query": 5.25,
+      "n_queries_ge_max_iter": 7
+    },
+    "galois_a": {
+      "n_queries": 32,
+      "n_success": 32,
+      "avg_input_tokens_all_iters": 873.90625,
+      "avg_iters_per_query": 3.59375,
+      "n_queries_ge_max_iter": 0
+    },
+    "galois_f": {
+      "n_queries": 32,
+      "n_success": 32,
+      "avg_input_tokens_all_iters": 849.71875,
+      "avg_iters_per_query": 3.4375,
+      "n_queries_ge_max_iter": 0
+    }
+  },
+  "MOVIES": {
+    "galois_empty": {
+      "n_queries": 9,
+      "n_success": 9,
+      "avg_input_tokens_all_iters": 1695.888888888889,
+      "avg_iters_per_query": 6.333333333333333,
+      "n_queries_ge_max_iter": 1
+    },
+    "galois_a": {
+      "n_queries": 9,
+      "n_success": 9,
+      "avg_input_tokens_all_iters": 1355.4444444444443,
+      "avg_iters_per_query": 3.5555555555555554,
+      "n_queries_ge_max_iter": 0
+    },
+    "galois_f": {
+      "n_queries": 9,
+      "n_success": 9,
+      "avg_input_tokens_all_iters": 1344,
+      "avg_iters_per_query": 3.5555555555555554,
+      "n_queries_ge_max_iter": 0
+    }
+  },
+  "PRESIDENTS": {
+    "galois_empty": {
+      "n_queries": 26,
+      "n_success": 26,
+      "avg_input_tokens_all_iters": 1246.4615384615386,
+      "avg_iters_per_query": 5,
+      "n_queries_ge_max_iter": 2
+    },
+    "galois_a": {
+      "n_queries": 26,
+      "n_success": 26,
+      "avg_input_tokens_all_iters": 1050.7307692307693,
+      "avg_iters_per_query": 3.230769230769231,
+      "n_queries_ge_max_iter": 0
+    },
+    "galois_f": {
+      "n_queries": 26,
+      "n_success": 26,
+      "avg_input_tokens_all_iters": 1056.076923076923,
+      "avg_iters_per_query": 3.269230769230769,
+      "n_queries_ge_max_iter": 0
+    }
+  },
+  "WORLD": {
+    "galois_empty": {
+      "n_queries": 4,
+      "n_success": 4,
+      "avg_input_tokens_all_iters": 2842,
+      "avg_iters_per_query": 3.5,
+      "n_queries_ge_max_iter": 0
+    },
+    "galois_a": {
+      "n_queries": 4,
+      "n_success": 4,
+      "avg_input_tokens_all_iters": 2672.5,
+      "avg_iters_per_query": 2.5,
+      "n_queries_ge_max_iter": 0
+    },
+    "galois_f": {
+      "n_queries": 4,
+      "n_success": 4,
+      "avg_input_tokens_all_iters": 2665.5,
+      "avg_iters_per_query": 2.5,
+      "n_queries_ge_max_iter": 0
+    }
+  }
+}
