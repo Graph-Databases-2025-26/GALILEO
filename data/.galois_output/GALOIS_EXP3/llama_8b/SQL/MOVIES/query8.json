@@ -1,0 +1,18 @@
+{
+    "result_set": [
+        {
+            "startyear": 2007,
+            "count": 1
+        },
+        {
+            "startyear": 1999,
+            "count": 1
+        },
+        {
+            "startyear": 1990,
+            "count": 1
+        }
+    ],
+    "time": 4.388,
+    "tokens": 91
+}

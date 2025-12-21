@@ -1,0 +1,27 @@
+{
+    "result_set": [
+        {
+            "name": "Jos\u00e9 Antonio P\u00e1ez",
+            "party": "Conservative",
+            "start_year": 1830,
+            "end_year": 1835,
+            "cardinal_number": "1st"
+        },
+        {
+            "name": "Antonio Guzm\u00e1n Blanco",
+            "party": "Conservative",
+            "start_year": 1870,
+            "end_year": 1888,
+            "cardinal_number": "2nd"
+        },
+        {
+            "name": "Julio C\u00e9sar Pineda",
+            "party": "Conservative",
+            "start_year": 1858,
+            "end_year": 1859,
+            "cardinal_number": "3rd"
+        }
+    ],
+    "time": 5.385,
+    "tokens": 182
+}

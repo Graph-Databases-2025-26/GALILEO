@@ -1,0 +1,39 @@
+{
+    "result_set": [
+        {
+            "primarytitle": "Edward Scissorhands",
+            "originaltitle": "Edward Scissorhands",
+            "startyear": 1990,
+            "endyear": 1990,
+            "runtimeminutes": 105,
+            "genres": "Fantasy, Romance, Drama",
+            "director": "Tim Burton",
+            "birthyear": 1958,
+            "deathyear": null
+        },
+        {
+            "primarytitle": "Batman",
+            "originaltitle": "Batman",
+            "startyear": 1989,
+            "endyear": 1989,
+            "runtimeminutes": 126,
+            "genres": "Action, Adventure, Thriller",
+            "director": "Tim Burton",
+            "birthyear": 1958,
+            "deathyear": null
+        },
+        {
+            "primarytitle": "Beetlejuice",
+            "originaltitle": "Beetlejuice",
+            "startyear": 1988,
+            "endyear": 1988,
+            "runtimeminutes": 92,
+            "genres": "Comedy, Fantasy",
+            "director": "Tim Burton",
+            "birthyear": 1958,
+            "deathyear": null
+        }
+    ],
+    "time": 1.92,
+    "tokens": 278
+}

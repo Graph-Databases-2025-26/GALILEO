@@ -1,0 +1,22 @@
+{
+    "result_set": [
+        {
+            "originaltitle": "The Bad Sisters",
+            "startyear": 1956
+        },
+        {
+            "originaltitle": "Green Dolphin Street",
+            "startyear": 1947
+        },
+        {
+            "originaltitle": "The Hasty Heart",
+            "startyear": 1949
+        },
+        {
+            "originaltitle": "The Eagle and the Hawk",
+            "startyear": 1950
+        }
+    ],
+    "time": 3.718,
+    "tokens": 127
+}

@@ -1,0 +1,36 @@
+{
+    "result_set": [
+        {
+            "state_name": "California",
+            "capital": "Sacramento",
+            "density": 253.0,
+            "population": 39461588
+        },
+        {
+            "state_name": "Texas",
+            "capital": "Austin",
+            "density": 108.0,
+            "population": 29091051
+        },
+        {
+            "state_name": "Florida",
+            "capital": "Tallahassee",
+            "density": 396.0,
+            "population": 21477737
+        },
+        {
+            "state_name": "New York",
+            "capital": "Albany",
+            "density": 411.0,
+            "population": 20090156
+        },
+        {
+            "state_name": "Pennsylvania",
+            "capital": "Harrisburg",
+            "density": 284.0,
+            "population": 12801989
+        }
+    ],
+    "time": 3.693,
+    "tokens": 228
+}

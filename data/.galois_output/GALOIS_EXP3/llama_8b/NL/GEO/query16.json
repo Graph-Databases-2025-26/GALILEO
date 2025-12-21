@@ -1,0 +1,30 @@
+{
+    "result_set": [
+        {
+            "state_name": "Illinois",
+            "population": 1282056,
+            "area_squared_miles": 59.6,
+            "country_name": "United States",
+            "capital": "Springfield",
+            "density": 216.0
+        },
+        {
+            "state_name": "Massachusetts",
+            "population": 6945832,
+            "area_squared_miles": 10.4,
+            "country_name": "United States",
+            "capital": "Springfield",
+            "density": 679.0
+        },
+        {
+            "state_name": "Ohio",
+            "population": 11564855,
+            "area_squared_miles": 44.8,
+            "country_name": "United States",
+            "capital": "Springfield",
+            "density": 259.0
+        }
+    ],
+    "time": 3.31,
+    "tokens": 190
+}

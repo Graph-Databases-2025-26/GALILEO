@@ -1,0 +1,15 @@
+{
+    "result_set": [
+        {
+            "capital": "Phoenix"
+        },
+        {
+            "capital": "Tucson"
+        },
+        {
+            "capital": "Flagstaff"
+        }
+    ],
+    "time": 3.615,
+    "tokens": 66
+}

@@ -1,0 +1,30 @@
+{
+    "result_set": [
+        {
+            "name": "John F. Kennedy International Airport",
+            "city": "New York",
+            "country": "United States",
+            "elevation_in_ft": 13,
+            "iata": "JFK",
+            "icao": "KJFK"
+        },
+        {
+            "name": "LaGuardia Airport",
+            "city": "New York",
+            "country": "United States",
+            "elevation_in_ft": 13,
+            "iata": "LGA",
+            "icao": "KLGA"
+        },
+        {
+            "name": "Newark Liberty International Airport",
+            "city": "Newark",
+            "country": "United States",
+            "elevation_in_ft": 10,
+            "iata": "EWR",
+            "icao": "KEWR"
+        }
+    ],
+    "time": 1.23,
+    "tokens": 185
+}

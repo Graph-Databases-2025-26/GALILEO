@@ -1,0 +1,30 @@
+{
+    "result_set": [
+        {
+            "name": "George W. Bush",
+            "party": "Republican"
+        },
+        {
+            "name": "George H.W. Bush",
+            "party": "Republican"
+        },
+        {
+            "name": "Ronald Reagan",
+            "party": "Republican"
+        },
+        {
+            "name": "Richard Nixon",
+            "party": "Republican"
+        },
+        {
+            "name": "Gerald Ford",
+            "party": "Republican"
+        },
+        {
+            "name": "Dwight D. Eisenhower",
+            "party": "Republican"
+        }
+    ],
+    "time": 6.305,
+    "tokens": 158
+}

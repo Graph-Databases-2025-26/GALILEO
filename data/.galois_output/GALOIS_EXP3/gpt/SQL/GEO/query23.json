@@ -1,0 +1,15 @@
+{
+    "result_set": [
+        {
+            "capital": "Springfield"
+        },
+        {
+            "capital": "Montpelier"
+        },
+        {
+            "capital": "Helena"
+        }
+    ],
+    "time": 3.013,
+    "tokens": 67
+}

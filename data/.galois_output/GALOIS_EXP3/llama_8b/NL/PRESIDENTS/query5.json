@@ -1,0 +1,54 @@
+{
+    "result_set": [
+        {
+            "name": "Isa\u00edas Medina Angarita",
+            "start_year": 1941,
+            "end_year": 1945,
+            "cardinal_number": "",
+            "party": "Liberal",
+            "country": "Venezuela"
+        },
+        {
+            "name": "R\u00f3mulo Betancourt",
+            "start_year": 1945,
+            "end_year": 1948,
+            "cardinal_number": "",
+            "party": "Liberal",
+            "country": "Venezuela"
+        },
+        {
+            "name": "J\u00f3vito Villalba",
+            "start_year": 1952,
+            "end_year": 1953,
+            "cardinal_number": "",
+            "party": "Liberal",
+            "country": "Venezuela"
+        },
+        {
+            "name": "R\u00f3mulo Betancourt",
+            "start_year": 1959,
+            "end_year": 1964,
+            "cardinal_number": "",
+            "party": "Liberal",
+            "country": "Venezuela"
+        },
+        {
+            "name": "Rafael Caldera",
+            "start_year": 1969,
+            "end_year": 1974,
+            "cardinal_number": "",
+            "party": "Liberal",
+            "country": "Venezuela"
+        },
+        {
+            "name": "Rafael Caldera",
+            "start_year": 1994,
+            "end_year": 1999,
+            "cardinal_number": "",
+            "party": "Liberal",
+            "country": "Venezuela"
+        }
+    ],
+    "time": 4.618,
+    "tokens": 359
+}

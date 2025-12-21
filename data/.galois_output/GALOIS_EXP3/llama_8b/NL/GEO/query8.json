@@ -1,0 +1,24 @@
+{
+    "result_set": [
+        {
+            "river_name": "Mississippi River",
+            "length_in_km": 3762,
+            "country_name": "USA",
+            "usa_state_traversed": "Minnesota, Wisconsin, Iowa, Illinois, Kentucky, Tennessee, Arkansas, Mississippi, Louisiana"
+        },
+        {
+            "river_name": "Missouri River",
+            "length_in_km": 3471,
+            "country_name": "USA",
+            "usa_state_traversed": "Montana, North Dakota, South Dakota, Nebraska, Iowa, Kansas, Missouri"
+        },
+        {
+            "river_name": "Colorado River",
+            "length_in_km": 2174,
+            "country_name": "USA",
+            "usa_state_traversed": "Colorado, Utah, Arizona, California"
+        }
+    ],
+    "time": 3.295,
+    "tokens": 176
+}

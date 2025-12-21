@@ -1,0 +1,21 @@
+{
+    "result_set": [
+        {
+            "state_name": "Arizona",
+            "capital": "Phoenix",
+            "population": 7000000
+        },
+        {
+            "state_name": "North Carolina",
+            "capital": "Raleigh",
+            "population": 5000000
+        },
+        {
+            "state_name": "Tennessee",
+            "capital": "Nashville",
+            "population": 6000000
+        }
+    ],
+    "time": 3.977,
+    "tokens": 119
+}

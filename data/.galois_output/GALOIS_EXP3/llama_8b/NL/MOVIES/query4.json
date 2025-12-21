@@ -1,0 +1,71 @@
+{
+    "result_set": [
+        {
+            "primarytitle": "Catch Me If You Can",
+            "startyear": 2002,
+            "director": "Steven Spielberg"
+        },
+        {
+            "primarytitle": "The Terminal",
+            "startyear": 2004,
+            "director": "Steven Spielberg"
+        },
+        {
+            "primarytitle": "War of the Worlds",
+            "startyear": 2005,
+            "director": "Steven Spielberg"
+        },
+        {
+            "primarytitle": "Munich",
+            "startyear": 2005,
+            "director": "Steven Spielberg"
+        },
+        {
+            "primarytitle": "Indiana Jones and the Kingdom of the Crystal Skull",
+            "startyear": 2008,
+            "director": "Steven Spielberg"
+        },
+        {
+            "primarytitle": "The Adventures of Tintin",
+            "startyear": 2011,
+            "director": "Steven Spielberg"
+        },
+        {
+            "primarytitle": "War Horse",
+            "startyear": 2011,
+            "director": "Steven Spielberg"
+        },
+        {
+            "primarytitle": "Lincoln",
+            "startyear": 2012,
+            "director": "Steven Spielberg"
+        },
+        {
+            "primarytitle": "Bridge of Spies",
+            "startyear": 2015,
+            "director": "Steven Spielberg"
+        },
+        {
+            "primarytitle": "The BFG",
+            "startyear": 2016,
+            "director": "Steven Spielberg"
+        },
+        {
+            "primarytitle": "Ready Player One",
+            "startyear": 2018,
+            "director": "Steven Spielberg"
+        },
+        {
+            "primarytitle": "The Post",
+            "startyear": 2017,
+            "director": "Steven Spielberg"
+        },
+        {
+            "primarytitle": "West Side Story",
+            "startyear": 2021,
+            "director": "Steven Spielberg"
+        }
+    ],
+    "time": 1.894,
+    "tokens": 423
+}

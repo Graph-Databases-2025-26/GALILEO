@@ -1,0 +1,15 @@
+{
+    "result_set": [
+        {
+            "originaltitle": "The Adventures of Tom Sawyer"
+        },
+        {
+            "originaltitle": "The Prisoner of Zenda"
+        },
+        {
+            "originaltitle": "The Last of the Mohicans"
+        }
+    ],
+    "time": 3.726,
+    "tokens": 80
+}

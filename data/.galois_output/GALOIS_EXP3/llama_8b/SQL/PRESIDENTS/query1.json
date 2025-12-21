@@ -1,0 +1,22 @@
+{
+    "result_set": [
+        {
+            "name": "Ulpiano Paez",
+            "party": "Conservative"
+        },
+        {
+            "name": "Rafael Caldera",
+            "party": "Christian Democratic"
+        },
+        {
+            "name": "Hugo Chavez",
+            "party": "Fifth Republic Movement"
+        },
+        {
+            "name": "Isabel Peron",
+            "party": "Accion Democratica"
+        }
+    ],
+    "time": 4.317,
+    "tokens": 127
+}

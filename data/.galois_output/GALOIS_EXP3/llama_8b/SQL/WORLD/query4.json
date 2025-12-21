@@ -1,0 +1,18 @@
+{
+    "result_set": [
+        {
+            "region": "Northern Europe"
+        },
+        {
+            "region": "Southern Europe"
+        },
+        {
+            "region": "Eastern Europe"
+        },
+        {
+            "region": "Western Europe"
+        }
+    ],
+    "time": 4.018,
+    "tokens": 105
+}

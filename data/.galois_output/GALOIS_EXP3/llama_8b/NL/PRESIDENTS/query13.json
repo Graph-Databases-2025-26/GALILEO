@@ -1,0 +1,14 @@
+{
+    "result_set": [
+        {
+            "party": "Democratic Action",
+            "cardinal_number": "2"
+        },
+        {
+            "party": "Acci\u00f3n Democr\u00e1tica",
+            "cardinal_number": "2"
+        }
+    ],
+    "time": 3.019,
+    "tokens": 75
+}

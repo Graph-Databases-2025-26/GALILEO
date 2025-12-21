@@ -1,0 +1,14 @@
+{
+    "result_set": [
+        {
+            "name": "Bill Clinton",
+            "start_year": 1993,
+            "end_year": 2001,
+            "cardinal_number": "42",
+            "party": "Democratic",
+            "country": "United States"
+        }
+    ],
+    "time": 1.57,
+    "tokens": 65
+}

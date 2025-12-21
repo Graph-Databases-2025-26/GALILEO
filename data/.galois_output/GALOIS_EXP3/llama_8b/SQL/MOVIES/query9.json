@@ -1,0 +1,18 @@
+{
+    "result_set": [
+        {
+            "director": "Martin Scorsese",
+            "director_age": 73
+        },
+        {
+            "director": "Francis Ford Coppola",
+            "director_age": 74
+        },
+        {
+            "director": "Akira Kurosawa",
+            "director_age": 78
+        }
+    ],
+    "time": 3.439,
+    "tokens": 100
+}

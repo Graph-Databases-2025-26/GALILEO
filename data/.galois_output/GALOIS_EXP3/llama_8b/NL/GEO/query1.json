@@ -1,0 +1,14 @@
+{
+    "result_set": [
+        {
+            "area_squared_miles": 121768.0,
+            "population": 2098954,
+            "density": 17.0,
+            "capital": "Santa Fe",
+            "country_name": "United States",
+            "state_name": "New Mexico"
+        }
+    ],
+    "time": 2.334,
+    "tokens": 73
+}

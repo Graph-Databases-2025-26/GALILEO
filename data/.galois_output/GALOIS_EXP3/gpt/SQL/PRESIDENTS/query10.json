@@ -1,0 +1,27 @@
+{
+    "result_set": [
+        {
+            "name": "R\u00f3mulo Betancourt",
+            "party": "Democratic Action",
+            "start_year": 1945,
+            "end_year": 1948,
+            "cardinal_number": "27th"
+        },
+        {
+            "name": "Ra\u00fal Leoni",
+            "party": "Democratic Action",
+            "start_year": 1964,
+            "end_year": 1969,
+            "cardinal_number": "28th"
+        },
+        {
+            "name": "Carlos Andr\u00e9s P\u00e9rez",
+            "party": "Democratic Action",
+            "start_year": 1974,
+            "end_year": 1979,
+            "cardinal_number": "29th"
+        }
+    ],
+    "time": 6.002,
+    "tokens": 184
+}

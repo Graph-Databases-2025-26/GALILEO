@@ -1,0 +1,246 @@
+{
+    "result_set": [
+        {
+            "state_name": "California",
+            "capital": "Sacramento",
+            "population": 39461588
+        },
+        {
+            "state_name": "Texas",
+            "capital": "Austin",
+            "population": 29145506
+        },
+        {
+            "state_name": "Florida",
+            "capital": "Tallahassee",
+            "population": 21477737
+        },
+        {
+            "state_name": "New York",
+            "capital": "Albany",
+            "population": 19453561
+        },
+        {
+            "state_name": "Pennsylvania",
+            "capital": "Harrisburg",
+            "population": 12801989
+        },
+        {
+            "state_name": "Illinois",
+            "capital": "Springfield",
+            "population": 12671046
+        },
+        {
+            "state_name": "Ohio",
+            "capital": "Columbus",
+            "population": 11584834
+        },
+        {
+            "state_name": "Georgia",
+            "capital": "Atlanta",
+            "population": 10511131
+        },
+        {
+            "state_name": "North Carolina",
+            "capital": "Raleigh",
+            "population": 10343144
+        },
+        {
+            "state_name": "Michigan",
+            "capital": "Lansing",
+            "population": 10007155
+        },
+        {
+            "state_name": "New Jersey",
+            "capital": "Trenton",
+            "population": 8921138
+        },
+        {
+            "state_name": "Virginia",
+            "capital": "Richmond",
+            "population": 8535514
+        },
+        {
+            "state_name": "Washington",
+            "capital": "Olympia",
+            "population": 8138014
+        },
+        {
+            "state_name": "Arizona",
+            "capital": "Phoenix",
+            "population": 7278717
+        },
+        {
+            "state_name": "Massachusetts",
+            "capital": "Boston",
+            "population": 6949503
+        },
+        {
+            "state_name": "Indiana",
+            "capital": "Indianapolis",
+            "population": 6732217
+        },
+        {
+            "state_name": "Tennessee",
+            "capital": "Nashville",
+            "population": 6606438
+        },
+        {
+            "state_name": "Missouri",
+            "capital": "Jefferson City",
+            "population": 6480448
+        },
+        {
+            "state_name": "Maryland",
+            "capital": "Annapolis",
+            "population": 6045681
+        },
+        {
+            "state_name": "Minnesota",
+            "capital": "St. Paul",
+            "population": 5895915
+        },
+        {
+            "state_name": "Colorado",
+            "capital": "Denver",
+            "population": 5758748
+        },
+        {
+            "state_name": "South Carolina",
+            "capital": "Columbia",
+            "population": 5030978
+        },
+        {
+            "state_name": "Alabama",
+            "capital": "Montgomery",
+            "population": 4903183
+        },
+        {
+            "state_name": "Louisiana",
+            "capital": "Baton Rouge",
+            "population": 4648794
+        },
+        {
+            "state_name": "Kentucky",
+            "capital": "Frankfort",
+            "population": 4467674
+        },
+        {
+            "state_name": "Oklahoma",
+            "capital": "Oklahoma City",
+            "population": 3956971
+        },
+        {
+            "state_name": "Connecticut",
+            "capital": "Hartford",
+            "population": 3571520
+        },
+        {
+            "state_name": "Iowa",
+            "capital": "Des Moines",
+            "population": 3155071
+        },
+        {
+            "state_name": "Mississippi",
+            "capital": "Jackson",
+            "population": 2966217
+        },
+        {
+            "state_name": "West Virginia",
+            "capital": "Charleston",
+            "population": 1792147
+        },
+        {
+            "state_name": "New Hampshire",
+            "capital": "Concord",
+            "population": 1354014
+        },
+        {
+            "state_name": "Nebraska",
+            "capital": "Lincoln",
+            "population": 1934408
+        },
+        {
+            "state_name": "Nevada",
+            "capital": "Carson City",
+            "population": 3176263
+        },
+        {
+            "state_name": "Utah",
+            "capital": "Salt Lake City",
+            "population": 3254533
+        },
+        {
+            "state_name": "Oregon",
+            "capital": "Salem",
+            "population": 4257633
+        },
+        {
+            "state_name": "Wisconsin",
+            "capital": "Madison",
+            "population": 5840432
+        },
+        {
+            "state_name": "Kansas",
+            "capital": "Topeka",
+            "population": 2916968
+        },
+        {
+            "state_name": "Maine",
+            "capital": "Augusta",
+            "population": 1367680
+        },
+        {
+            "state_name": "Montana",
+            "capital": "Helena",
+            "population": 1041183
+        },
+        {
+            "state_name": "Delaware",
+            "capital": "Dover",
+            "population": 984307
+        },
+        {
+            "state_name": "North Dakota",
+            "capital": "Bismarck",
+            "population": 760077
+        },
+        {
+            "state_name": "South Dakota",
+            "capital": "Pierre",
+            "population": 892508
+        },
+        {
+            "state_name": "Rhode Island",
+            "capital": "Providence",
+            "population": 1052567
+        },
+        {
+            "state_name": "Arkansas",
+            "capital": "Little Rock",
+            "population": 3009738
+        },
+        {
+            "state_name": "Idaho",
+            "capital": "Boise",
+            "population": 1787843
+        },
+        {
+            "state_name": "Wyoming",
+            "capital": "Cheyenne",
+            "population": 579315
+        },
+        {
+            "state_name": "Alaska",
+            "capital": "Juneau",
+            "population": 739795
+        },
+        {
+            "state_name": "Hawaii",
+            "capital": "Honolulu",
+            "population": 1420593
+        }
+    ],
+    "time": 17.374,
+    "tokens": 1449
+}

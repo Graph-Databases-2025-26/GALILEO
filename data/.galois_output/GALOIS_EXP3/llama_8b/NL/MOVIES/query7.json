@@ -1,0 +1,50 @@
+{
+    "result_set": [
+        {
+            "startyear": 1975,
+            "count": 1
+        },
+        {
+            "startyear": 1981,
+            "count": 1
+        },
+        {
+            "startyear": 1985,
+            "count": 1
+        },
+        {
+            "startyear": 1993,
+            "count": 1
+        },
+        {
+            "startyear": 1998,
+            "count": 1
+        },
+        {
+            "startyear": 2002,
+            "count": 1
+        },
+        {
+            "startyear": 2012,
+            "count": 1
+        },
+        {
+            "startyear": 2015,
+            "count": 1
+        },
+        {
+            "startyear": 2016,
+            "count": 1
+        },
+        {
+            "startyear": 2018,
+            "count": 1
+        },
+        {
+            "startyear": 2021,
+            "count": 1
+        }
+    ],
+    "time": 3.27,
+    "tokens": 231
+}

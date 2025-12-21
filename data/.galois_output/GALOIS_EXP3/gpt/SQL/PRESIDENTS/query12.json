@@ -1,0 +1,18 @@
+{
+    "result_set": [
+        {
+            "party": "Liberal Party",
+            "num": 3
+        },
+        {
+            "party": "Conservative Party",
+            "num": 2
+        },
+        {
+            "party": "Revolutionary Party",
+            "num": 1
+        }
+    ],
+    "time": 4.195,
+    "tokens": 91
+}

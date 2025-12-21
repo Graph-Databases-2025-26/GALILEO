@@ -1,0 +1,237 @@
+{
+    "result_set": [
+        {
+            "usa_state_traversed": "California",
+            "river_name": "Colorado River",
+            "length_in_km": 2330,
+            "country_name": "USA",
+            "usa_river_id": 1
+        },
+        {
+            "usa_state_traversed": "Arizona",
+            "river_name": "Colorado River",
+            "length_in_km": 2330,
+            "country_name": "USA",
+            "usa_river_id": 1
+        },
+        {
+            "usa_state_traversed": "Nevada",
+            "river_name": "Colorado River",
+            "length_in_km": 2330,
+            "country_name": "USA",
+            "usa_river_id": 1
+        },
+        {
+            "usa_state_traversed": "Texas",
+            "river_name": "Rio Grande",
+            "length_in_km": 1850,
+            "country_name": "USA",
+            "usa_river_id": 2
+        },
+        {
+            "usa_state_traversed": "New Mexico",
+            "river_name": "Rio Grande",
+            "length_in_km": 1850,
+            "country_name": "USA",
+            "usa_river_id": 2
+        },
+        {
+            "usa_state_traversed": "Louisiana",
+            "river_name": "Mississippi River",
+            "length_in_km": 3760,
+            "country_name": "USA",
+            "usa_river_id": 3
+        },
+        {
+            "usa_state_traversed": "Mississippi",
+            "river_name": "Mississippi River",
+            "length_in_km": 3760,
+            "country_name": "USA",
+            "usa_river_id": 3
+        },
+        {
+            "usa_state_traversed": "Arkansas",
+            "river_name": "Mississippi River",
+            "length_in_km": 3760,
+            "country_name": "USA",
+            "usa_river_id": 3
+        },
+        {
+            "usa_state_traversed": "Tennessee",
+            "river_name": "Mississippi River",
+            "length_in_km": 3760,
+            "country_name": "USA",
+            "usa_river_id": 3
+        },
+        {
+            "usa_state_traversed": "Illinois",
+            "river_name": "Mississippi River",
+            "length_in_km": 3760,
+            "country_name": "USA",
+            "usa_river_id": 3
+        },
+        {
+            "usa_state_traversed": "Iowa",
+            "river_name": "Mississippi River",
+            "length_in_km": 3760,
+            "country_name": "USA",
+            "usa_river_id": 3
+        },
+        {
+            "usa_state_traversed": "Wisconsin",
+            "river_name": "Mississippi River",
+            "length_in_km": 3760,
+            "country_name": "USA",
+            "usa_river_id": 3
+        },
+        {
+            "usa_state_traversed": "Minnesota",
+            "river_name": "Mississippi River",
+            "length_in_km": 3760,
+            "country_name": "USA",
+            "usa_river_id": 3
+        },
+        {
+            "usa_state_traversed": "North Dakota",
+            "river_name": "Missouri River",
+            "length_in_km": 3380,
+            "country_name": "USA",
+            "usa_river_id": 4
+        },
+        {
+            "usa_state_traversed": "South Dakota",
+            "river_name": "Missouri River",
+            "length_in_km": 3380,
+            "country_name": "USA",
+            "usa_river_id": 4
+        },
+        {
+            "usa_state_traversed": "Montana",
+            "river_name": "Missouri River",
+            "length_in_km": 3380,
+            "country_name": "USA",
+            "usa_river_id": 4
+        },
+        {
+            "usa_state_traversed": "Idaho",
+            "river_name": "Snake River",
+            "length_in_km": 1675,
+            "country_name": "USA",
+            "usa_river_id": 5
+        },
+        {
+            "usa_state_traversed": "Oregon",
+            "river_name": "Snake River",
+            "length_in_km": 1675,
+            "country_name": "USA",
+            "usa_river_id": 5
+        },
+        {
+            "usa_state_traversed": "Washington",
+            "river_name": "Snake River",
+            "length_in_km": 1675,
+            "country_name": "USA",
+            "usa_river_id": 5
+        },
+        {
+            "usa_state_traversed": "Wyoming",
+            "river_name": "Snake River",
+            "length_in_km": 1675,
+            "country_name": "USA",
+            "usa_river_id": 5
+        },
+        {
+            "usa_state_traversed": "Utah",
+            "river_name": "Colorado River",
+            "length_in_km": 2330,
+            "country_name": "USA",
+            "usa_river_id": 1
+        },
+        {
+            "usa_state_traversed": "Colorado",
+            "river_name": "Colorado River",
+            "length_in_km": 2330,
+            "country_name": "USA",
+            "usa_river_id": 1
+        },
+        {
+            "usa_state_traversed": "New York",
+            "river_name": "St. Lawrence River",
+            "length_in_km": 1130,
+            "country_name": "USA",
+            "usa_river_id": 6
+        },
+        {
+            "usa_state_traversed": "Pennsylvania",
+            "river_name": "Allegheny River",
+            "length_in_km": 652,
+            "country_name": "USA",
+            "usa_river_id": 7
+        },
+        {
+            "usa_state_traversed": "Ohio",
+            "river_name": "Allegheny River",
+            "length_in_km": 652,
+            "country_name": "USA",
+            "usa_river_id": 7
+        },
+        {
+            "usa_state_traversed": "Michigan",
+            "river_name": "Detroit River",
+            "length_in_km": 52,
+            "country_name": "USA",
+            "usa_river_id": 8
+        },
+        {
+            "usa_state_traversed": "Wisconsin",
+            "river_name": "Wisconsin River",
+            "length_in_km": 563,
+            "country_name": "USA",
+            "usa_river_id": 9
+        },
+        {
+            "usa_state_traversed": "Minnesota",
+            "river_name": "Minnesota River",
+            "length_in_km": 565,
+            "country_name": "USA",
+            "usa_river_id": 10
+        },
+        {
+            "usa_state_traversed": "North Dakota",
+            "river_name": "Red River of the North",
+            "length_in_km": 845,
+            "country_name": "USA",
+            "usa_river_id": 11
+        },
+        {
+            "usa_state_traversed": "Minnesota",
+            "river_name": "Red River of the North",
+            "length_in_km": 845,
+            "country_name": "USA",
+            "usa_river_id": 11
+        },
+        {
+            "usa_state_traversed": "South Dakota",
+            "river_name": "White River",
+            "length_in_km": 644,
+            "country_name": "USA",
+            "usa_river_id": 12
+        },
+        {
+            "usa_state_traversed": "Montana",
+            "river_name": "Bighorn River",
+            "length_in_km": 724,
+            "country_name": "USA",
+            "usa_river_id": 13
+        },
+        {
+            "usa_state_traversed": "Wyoming",
+            "river_name": "Bighorn River",
+            "length_in_km": 724,
+            "country_name": "USA",
+            "usa_river_id": 13
+        }
+    ],
+    "time": 43.512,
+    "tokens": 2669
+}

@@ -1,0 +1,18 @@
+{
+    "result_set": [
+        {
+            "party": "Acci\u00f3n Democr\u00e1tica",
+            "num": 2
+        },
+        {
+            "party": "Copei",
+            "num": 1
+        },
+        {
+            "party": "Democratic Action",
+            "num": 1
+        }
+    ],
+    "time": 5.579,
+    "tokens": 133
+}

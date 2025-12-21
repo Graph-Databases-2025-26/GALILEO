@@ -1,0 +1,282 @@
+{
+    "result_set": [
+        {
+            "state_name": "California",
+            "capital": "Sacramento",
+            "population": 39461588,
+            "area_squared_miles": 163695
+        },
+        {
+            "state_name": "Texas",
+            "capital": "Austin",
+            "population": 29145561,
+            "area_squared_miles": 268597
+        },
+        {
+            "state_name": "Florida",
+            "capital": "Tallahassee",
+            "population": 21477737,
+            "area_squared_miles": 65773
+        },
+        {
+            "state_name": "New York",
+            "capital": "Albany",
+            "population": 19453561,
+            "area_squared_miles": 54407
+        },
+        {
+            "state_name": "Pennsylvania",
+            "capital": "Harrisburg",
+            "population": 12801989,
+            "area_squared_miles": 46047
+        },
+        {
+            "state_name": "Illinois",
+            "capital": "Springfield",
+            "population": 12671844,
+            "area_squared_miles": 57962
+        },
+        {
+            "state_name": "Ohio",
+            "capital": "Columbus",
+            "population": 11584834,
+            "area_squared_miles": 44828
+        },
+        {
+            "state_name": "Georgia",
+            "capital": "Atlanta",
+            "population": 10542893,
+            "area_squared_miles": 59415
+        },
+        {
+            "state_name": "North Carolina",
+            "capital": "Raleigh",
+            "population": 10551343,
+            "area_squared_miles": 53820
+        },
+        {
+            "state_name": "Michigan",
+            "capital": "Lansing",
+            "population": 10007165,
+            "area_squared_miles": 96258
+        },
+        {
+            "state_name": "New Jersey",
+            "capital": "Trenton",
+            "population": 8925116,
+            "area_squared_miles": 8484
+        },
+        {
+            "state_name": "Virginia",
+            "capital": "Richmond",
+            "population": 8535514,
+            "area_squared_miles": 42775
+        },
+        {
+            "state_name": "Washington",
+            "capital": "Olympia",
+            "population": 7614891,
+            "area_squared_miles": 72253
+        },
+        {
+            "state_name": "Arizona",
+            "capital": "Phoenix",
+            "population": 7278717,
+            "area_squared_miles": 113990
+        },
+        {
+            "state_name": "Massachusetts",
+            "capital": "Boston",
+            "population": 6949503,
+            "area_squared_miles": 10586
+        },
+        {
+            "state_name": "Indiana",
+            "capital": "Indianapolis",
+            "population": 6732216,
+            "area_squared_miles": 36420
+        },
+        {
+            "state_name": "Tennessee",
+            "capital": "Nashville",
+            "population": 6709948,
+            "area_squared_miles": 42145
+        },
+        {
+            "state_name": "Missouri",
+            "capital": "Jefferson City",
+            "population": 6576768,
+            "area_squared_miles": 69742
+        },
+        {
+            "state_name": "Maryland",
+            "capital": "Annapolis",
+            "population": 6045684,
+            "area_squared_miles": 12415
+        },
+        {
+            "state_name": "Minnesota",
+            "capital": "St. Paul",
+            "population": 5945505,
+            "area_squared_miles": 86936
+        },
+        {
+            "state_name": "Colorado",
+            "capital": "Denver",
+            "population": 5691287,
+            "area_squared_miles": 104094
+        },
+        {
+            "state_name": "Alabama",
+            "capital": "Montgomery",
+            "population": 4903185,
+            "area_squared_miles": 52423
+        },
+        {
+            "state_name": "South Carolina",
+            "capital": "Columbia",
+            "population": 4793485,
+            "area_squared_miles": 32012
+        },
+        {
+            "state_name": "Louisiana",
+            "capital": "Baton Rouge",
+            "population": 4648794,
+            "area_squared_miles": 51843
+        },
+        {
+            "state_name": "Kentucky",
+            "capital": "Frankfort",
+            "population": 4467676,
+            "area_squared_miles": 40409
+        },
+        {
+            "state_name": "Oklahoma",
+            "capital": "Oklahoma City",
+            "population": 3956971,
+            "area_squared_miles": 69331
+        },
+        {
+            "state_name": "Connecticut",
+            "capital": "Hartford",
+            "population": 3571520,
+            "area_squared_miles": 5540
+        },
+        {
+            "state_name": "Iowa",
+            "capital": "Des Moines",
+            "population": 3150867,
+            "area_squared_miles": 58518
+        },
+        {
+            "state_name": "Mississippi",
+            "capital": "Jackson",
+            "population": 2966258,
+            "area_squared_miles": 48434
+        },
+        {
+            "state_name": "West Virginia",
+            "capital": "Charleston",
+            "population": 1792147,
+            "area_squared_miles": 24205
+        },
+        {
+            "state_name": "New Hampshire",
+            "capital": "Concord",
+            "population": 1359288,
+            "area_squared_miles": 9389
+        },
+        {
+            "state_name": "Nebraska",
+            "capital": "Lincoln",
+            "population": 1939378,
+            "area_squared_miles": 77352
+        },
+        {
+            "state_name": "Kansas",
+            "capital": "Topeka",
+            "population": 2918855,
+            "area_squared_miles": 82542
+        },
+        {
+            "state_name": "Oregon",
+            "capital": "Salem",
+            "population": 4314744,
+            "area_squared_miles": 98384
+        },
+        {
+            "state_name": "Wisconsin",
+            "capital": "Madison",
+            "population": 5844344,
+            "area_squared_miles": 55949
+        },
+        {
+            "state_name": "Utah",
+            "capital": "Salt Lake City",
+            "population": 3259066,
+            "area_squared_miles": 84938
+        },
+        {
+            "state_name": "Arkansas",
+            "capital": "Little Rock",
+            "population": 3009738,
+            "area_squared_miles": 53192
+        },
+        {
+            "state_name": "Maine",
+            "capital": "Augusta",
+            "population": 1344212,
+            "area_squared_miles": 35398
+        },
+        {
+            "state_name": "Montana",
+            "capital": "Helena",
+            "population": 1068778,
+            "area_squared_miles": 147040
+        },
+        {
+            "state_name": "Delaware",
+            "capital": "Dover",
+            "population": 984307,
+            "area_squared_miles": 2486
+        },
+        {
+            "state_name": "South Dakota",
+            "capital": "Pierre",
+            "population": 892508,
+            "area_squared_miles": 77100
+        },
+        {
+            "state_name": "North Dakota",
+            "capital": "Bismarck",
+            "population": 760077,
+            "area_squared_miles": 70704
+        },
+        {
+            "state_name": "Alaska",
+            "capital": "Juneau",
+            "population": 739795,
+            "area_squared_miles": 663268
+        },
+        {
+            "state_name": "Hawaii",
+            "capital": "Honolulu",
+            "population": 1420593,
+            "area_squared_miles": 10200
+        },
+        {
+            "state_name": "Idaho",
+            "capital": "Boise",
+            "population": 1750536,
+            "area_squared_miles": 83574
+        },
+        {
+            "state_name": "Wyoming",
+            "capital": "Cheyenne",
+            "population": 579315,
+            "area_squared_miles": 97817
+        }
+    ],
+    "time": 10.25,
+    "tokens": 1893
+}

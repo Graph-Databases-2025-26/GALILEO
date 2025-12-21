@@ -1,0 +1,90 @@
+{
+    "result_set": [
+        {
+            "state_name": "California",
+            "river_name": "Colorado River",
+            "length_in_km": 2330,
+            "country_name": "USA",
+            "usa_state_traversed": "California"
+        },
+        {
+            "state_name": "Arizona",
+            "river_name": "Colorado River",
+            "length_in_km": 2330,
+            "country_name": "USA",
+            "usa_state_traversed": "Arizona"
+        },
+        {
+            "state_name": "Nevada",
+            "river_name": "Colorado River",
+            "length_in_km": 2330,
+            "country_name": "USA",
+            "usa_state_traversed": "Nevada"
+        },
+        {
+            "state_name": "Texas",
+            "river_name": "Rio Grande",
+            "length_in_km": 1850,
+            "country_name": "USA",
+            "usa_state_traversed": "Texas"
+        },
+        {
+            "state_name": "New Mexico",
+            "river_name": "Rio Grande",
+            "length_in_km": 1850,
+            "country_name": "USA",
+            "usa_state_traversed": "New Mexico"
+        },
+        {
+            "state_name": "Louisiana",
+            "river_name": "Mississippi River",
+            "length_in_km": 3760,
+            "country_name": "USA",
+            "usa_state_traversed": "Louisiana"
+        },
+        {
+            "state_name": "Mississippi",
+            "river_name": "Mississippi River",
+            "length_in_km": 3760,
+            "country_name": "USA",
+            "usa_state_traversed": "Mississippi"
+        },
+        {
+            "state_name": "Arkansas",
+            "river_name": "Mississippi River",
+            "length_in_km": 3760,
+            "country_name": "USA",
+            "usa_state_traversed": "Arkansas"
+        },
+        {
+            "state_name": "Tennessee",
+            "river_name": "Mississippi River",
+            "length_in_km": 3760,
+            "country_name": "USA",
+            "usa_state_traversed": "Tennessee"
+        },
+        {
+            "state_name": "Alabama",
+            "river_name": "Tennessee River",
+            "length_in_km": 1067,
+            "country_name": "USA",
+            "usa_state_traversed": "Alabama"
+        },
+        {
+            "state_name": "Georgia",
+            "river_name": "Chattahoochee River",
+            "length_in_km": 590,
+            "country_name": "USA",
+            "usa_state_traversed": "Georgia"
+        },
+        {
+            "state_name": "Florida",
+            "river_name": "St. Johns River",
+            "length_in_km": 354,
+            "country_name": "USA",
+            "usa_state_traversed": "Florida"
+        }
+    ],
+    "time": 22.2,
+    "tokens": 633
+}

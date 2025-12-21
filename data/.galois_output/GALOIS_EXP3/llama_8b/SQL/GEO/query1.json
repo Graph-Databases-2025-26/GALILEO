@@ -1,0 +1,15 @@
+{
+    "result_set": [
+        {
+            "area_squared_miles": 121768.0
+        },
+        {
+            "area_squared_miles": 306145.0
+        },
+        {
+            "area_squared_miles": 121669.0
+        }
+    ],
+    "time": 6.715,
+    "tokens": 117
+}

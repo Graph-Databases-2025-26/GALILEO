@@ -1,0 +1,21 @@
+{
+    "result_set": [
+        {
+            "name": "Isa\u00edas Medina Angarita",
+            "party": "Democratic Action",
+            "country": "Venezuela"
+        },
+        {
+            "name": "R\u00f3mulo Betancourt",
+            "party": "Democratic Action",
+            "country": "Venezuela"
+        },
+        {
+            "name": "Marcos P\u00e9rez Jim\u00e9nez",
+            "party": "Military Junta",
+            "country": "Venezuela"
+        }
+    ],
+    "time": 1.021,
+    "tokens": 113
+}

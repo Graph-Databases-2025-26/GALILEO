@@ -1,0 +1,15 @@
+{
+    "result_set": [
+        {
+            "COUNT ( DISTINCT state_name )": 1
+        },
+        {
+            "COUNT ( DISTINCT state_name )": 2
+        },
+        {
+            "COUNT ( DISTINCT state_name )": 3
+        }
+    ],
+    "time": 3.184,
+    "tokens": 75
+}

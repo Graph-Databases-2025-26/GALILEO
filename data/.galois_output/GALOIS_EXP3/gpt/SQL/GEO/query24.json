@@ -1,0 +1,26 @@
+{
+    "result_set": [
+        {
+            "state_name": "California",
+            "population": 39538223,
+            "area_squared_miles": 163696.32
+        },
+        {
+            "state_name": "Texas",
+            "population": 29145505,
+            "area_squared_miles": 268596.46
+        },
+        {
+            "state_name": "Florida",
+            "population": 21538187,
+            "area_squared_miles": 65758.26
+        },
+        {
+            "state_name": "New York",
+            "population": 20201249,
+            "area_squared_miles": 54555.33
+        }
+    ],
+    "time": 4.584,
+    "tokens": 167
+}

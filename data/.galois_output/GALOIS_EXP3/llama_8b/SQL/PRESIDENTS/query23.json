@@ -1,0 +1,27 @@
+{
+    "result_set": [
+        {
+            "name": "Grover Cleveland",
+            "party": "Democratic",
+            "start_year": 1885,
+            "end_year": 1889,
+            "cardinal_number": "24th"
+        },
+        {
+            "name": "Woodrow Wilson",
+            "party": "Democratic",
+            "start_year": 1913,
+            "end_year": 1921,
+            "cardinal_number": "28th"
+        },
+        {
+            "name": "Franklin D. Roosevelt",
+            "party": "Democratic",
+            "start_year": 1933,
+            "end_year": 1945,
+            "cardinal_number": "32nd"
+        }
+    ],
+    "time": 6.6,
+    "tokens": 177
+}

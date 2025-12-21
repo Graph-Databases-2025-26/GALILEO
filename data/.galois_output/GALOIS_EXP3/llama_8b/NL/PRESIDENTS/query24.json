@@ -1,0 +1,13 @@
+{
+    "result_set": [
+        {
+            "name": "Abraham Lincoln",
+            "party": "Democratic",
+            "start_year": 1861,
+            "end_year": 1865,
+            "cardinal_number": "16"
+        }
+    ],
+    "time": 1.526,
+    "tokens": 58
+}

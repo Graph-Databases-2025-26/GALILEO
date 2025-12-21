@@ -1,0 +1,26 @@
+{
+    "result_set": [
+        {
+            "primarytitle": "The House of the Seven Gables",
+            "startyear": 1940,
+            "director": "Richard Thorpe"
+        },
+        {
+            "primarytitle": "The Sea Hornet",
+            "startyear": 1947,
+            "director": "Richard Thorpe"
+        },
+        {
+            "primarytitle": "The Student Prince in Heidelberg",
+            "startyear": 1954,
+            "director": "Richard Thorpe"
+        },
+        {
+            "primarytitle": "The Student Prince in Heidelberg",
+            "startyear": 1954,
+            "director": "Richard"
+        }
+    ],
+    "time": 11.742,
+    "tokens": 4096
+}

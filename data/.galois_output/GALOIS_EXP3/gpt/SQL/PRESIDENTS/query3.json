@@ -1,0 +1,15 @@
+{
+    "result_set": [
+        {
+            "party": "0"
+        },
+        {
+            "party": "1"
+        },
+        {
+            "party": "2"
+        }
+    ],
+    "time": 3.958,
+    "tokens": 63
+}

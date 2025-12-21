@@ -1,0 +1,15 @@
+{
+    "result_set": [
+        {
+            "count(p.party)": 2
+        },
+        {
+            "count(p.party)": 3
+        },
+        {
+            "count(p.party)": 4
+        }
+    ],
+    "time": 3.485,
+    "tokens": 72
+}

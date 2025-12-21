@@ -1,0 +1,15 @@
+{
+    "result_set": [
+        {
+            "count(distinct government_form)": 2
+        },
+        {
+            "count(distinct government_form)": 3
+        },
+        {
+            "count(distinct government_form)": 1
+        }
+    ],
+    "time": 3.502,
+    "tokens": 76
+}

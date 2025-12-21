@@ -1,0 +1,24 @@
+{
+    "result_set": [
+        {
+            "capital": "Sacramento"
+        },
+        {
+            "capital": "Denver"
+        },
+        {
+            "capital": "Santa Fe"
+        },
+        {
+            "capital": "Juneau"
+        },
+        {
+            "capital": "Olympia"
+        },
+        {
+            "capital": "Topeka"
+        }
+    ],
+    "time": 3.901,
+    "tokens": 106
+}

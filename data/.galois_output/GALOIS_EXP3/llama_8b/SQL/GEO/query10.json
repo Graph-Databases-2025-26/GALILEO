@@ -1,0 +1,27 @@
+{
+    "result_set": [
+        {
+            "lake_name": "Lake Superior"
+        },
+        {
+            "lake_name": "Lake Michigan"
+        },
+        {
+            "lake_name": "Lake Huron"
+        },
+        {
+            "lake_name": "Lake Erie"
+        },
+        {
+            "lake_name": "Lake Ontario"
+        },
+        {
+            "lake_name": "Lake Mead"
+        },
+        {
+            "lake_name": "Lake Tahoe"
+        }
+    ],
+    "time": 5.244,
+    "tokens": 125
+}

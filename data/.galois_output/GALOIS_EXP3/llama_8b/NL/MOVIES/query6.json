@@ -1,0 +1,30 @@
+{
+    "result_set": [
+        {
+            "primarytitle": "Hook",
+            "startyear": 1991,
+            "genres": "Adventure, Family, Fantasy",
+            "birthyear": 1946,
+            "deathyear": null,
+            "runtimeminutes": 144
+        },
+        {
+            "primarytitle": "Jurassic Park",
+            "startyear": 1993,
+            "genres": "Action, Adventure, Sci-Fi",
+            "birthyear": 1946,
+            "deathyear": null,
+            "runtimeminutes": 127
+        },
+        {
+            "primarytitle": "Saving Private Ryan",
+            "startyear": 1998,
+            "genres": "Action, Drama, War",
+            "birthyear": 1946,
+            "deathyear": null,
+            "runtimeminutes": 169
+        }
+    ],
+    "time": 3.038,
+    "tokens": 193
+}

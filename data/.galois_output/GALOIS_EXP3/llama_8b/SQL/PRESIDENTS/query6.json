@@ -1,0 +1,70 @@
+{
+    "result_set": [
+        {
+            "name": "Ulpiano Paez",
+            "start_year": 1830,
+            "end_year": 1833,
+            "cardinal_number": "1st",
+            "party": "Conservative",
+            "country": "Venezuela"
+        },
+        {
+            "name": "Jose Antonio Paez",
+            "start_year": 1839,
+            "end_year": 1843,
+            "cardinal_number": "2nd",
+            "party": "Conservative",
+            "country": "Venezuela"
+        },
+        {
+            "name": "Carlos Soublette",
+            "start_year": 1843,
+            "end_year": 1847,
+            "cardinal_number": "3rd",
+            "party": "Conservative",
+            "country": "Venezuela"
+        },
+        {
+            "name": "Jose Maria Ezequiel Zamora",
+            "start_year": 1855,
+            "end_year": 1859,
+            "cardinal_number": "4th",
+            "party": "Liberal",
+            "country": "Venezuela"
+        },
+        {
+            "name": "Julio Hernandez",
+            "start_year": 1861,
+            "end_year": 1863,
+            "cardinal_number": "5th",
+            "party": "Liberal",
+            "country": "Venezuela"
+        },
+        {
+            "name": "Antonio Guzman Blanco",
+            "start_year": 1870,
+            "end_year": 1877,
+            "cardinal_number": "6th",
+            "party": "Liberal",
+            "country": "Venezuela"
+        },
+        {
+            "name": "Guillermo Tell Villegas",
+            "start_year": 1877,
+            "end_year": 1878,
+            "cardinal_number": "7th",
+            "party": "Liberal",
+            "country": "Venezuela"
+        },
+        {
+            "name": "Antonio Guzman Blanco",
+            "start_year": 1879,
+            "end_year": 1884,
+            "cardinal_number": "8th",
+            "party": "Liberal",
+            "country": "Venezuela"
+        }
+    ],
+    "time": 8.488,
+    "tokens": 516
+}

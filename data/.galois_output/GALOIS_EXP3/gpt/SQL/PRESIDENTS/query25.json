@@ -1,0 +1,18 @@
+{
+    "result_set": [
+        {
+            "party": "Republican",
+            "num": 5
+        },
+        {
+            "party": "Democratic",
+            "num": 3
+        },
+        {
+            "party": "Whig",
+            "num": 2
+        }
+    ],
+    "time": 4.232,
+    "tokens": 87
+}

@@ -1,0 +1,15 @@
+{
+    "result_set": [
+        {
+            "usa_state_traversed": "California"
+        },
+        {
+            "usa_state_traversed": "Alaska"
+        },
+        {
+            "usa_state_traversed": "Texas"
+        }
+    ],
+    "time": 3.621,
+    "tokens": 74
+}

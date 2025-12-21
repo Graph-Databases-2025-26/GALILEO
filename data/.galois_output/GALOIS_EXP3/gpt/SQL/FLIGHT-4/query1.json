@@ -1,0 +1,15 @@
+{
+    "result_set": [
+        {
+            "name": "Sample Airport 1"
+        },
+        {
+            "name": "Sample Airport 2"
+        },
+        {
+            "name": "Sample Airport 3"
+        }
+    ],
+    "time": 3.671,
+    "tokens": 72
+}

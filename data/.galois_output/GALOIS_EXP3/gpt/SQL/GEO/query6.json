@@ -1,0 +1,15 @@
+{
+    "result_set": [
+        {
+            "lake_name": "Clear Lake"
+        },
+        {
+            "lake_name": "Mono Lake"
+        },
+        {
+            "lake_name": "Lake Tahoe"
+        }
+    ],
+    "time": 3.076,
+    "tokens": 69
+}

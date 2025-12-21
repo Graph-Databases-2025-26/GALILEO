@@ -1,0 +1,18 @@
+{
+    "result_set": [
+        {
+            "originaltitle": "A.I. Artificial Intelligence",
+            "startyear": 2001
+        },
+        {
+            "originaltitle": "War of the Worlds",
+            "startyear": 2005
+        },
+        {
+            "originaltitle": "Lincoln",
+            "startyear": 2012
+        }
+    ],
+    "time": 3.801,
+    "tokens": 100
+}

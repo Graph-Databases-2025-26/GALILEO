@@ -1,0 +1,30 @@
+{
+    "result_set": [
+        {
+            "state_name": "Alabama",
+            "population": 4887681,
+            "area_squared_miles": 52420.0,
+            "country_name": "USA",
+            "capital": "Montgomery",
+            "density": 93.0
+        },
+        {
+            "state_name": "Alaska",
+            "population": 739795,
+            "area_squared_miles": 663268.0,
+            "country_name": "USA",
+            "capital": "Juneau",
+            "density": 1.0
+        },
+        {
+            "state_name": "Arizona",
+            "population": 7278717,
+            "area_squared_miles": 113990.0,
+            "country_name": "USA",
+            "capital": "Phoenix",
+            "density": 21.0
+        }
+    ],
+    "time": 6.803,
+    "tokens": 186
+}

@@ -1,0 +1,15 @@
+{
+    "result_set": [
+        {
+            "capital": "Montgomery"
+        },
+        {
+            "capital": "Juneau"
+        },
+        {
+            "capital": "Sacramento"
+        }
+    ],
+    "time": 1.13,
+    "tokens": 41
+}

@@ -1,0 +1,42 @@
+{
+    "result_set": [
+        {
+            "lake_name": "Lake Superior"
+        },
+        {
+            "lake_name": "Lake Michigan"
+        },
+        {
+            "lake_name": "Lake Huron"
+        },
+        {
+            "lake_name": "Lake Erie"
+        },
+        {
+            "lake_name": "Lake Ontario"
+        },
+        {
+            "lake_name": "Lake Mead"
+        },
+        {
+            "lake_name": "Lake Powell"
+        },
+        {
+            "lake_name": "Lake Tahoe"
+        },
+        {
+            "lake_name": "Lake Oahe"
+        },
+        {
+            "lake_name": "Lake Sakakawea"
+        },
+        {
+            "lake_name": "Lake Pontchartrain"
+        },
+        {
+            "lake_name": "Lake Pontchar"
+        }
+    ],
+    "time": 45.673,
+    "tokens": 4096
+}

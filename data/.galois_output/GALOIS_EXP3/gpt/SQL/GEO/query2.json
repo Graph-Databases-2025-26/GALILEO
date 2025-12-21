@@ -1,0 +1,15 @@
+{
+    "result_set": [
+        {
+            "city_name": "Phoenix"
+        },
+        {
+            "city_name": "San Antonio"
+        },
+        {
+            "city_name": "Dallas"
+        }
+    ],
+    "time": 3.193,
+    "tokens": 67
+}

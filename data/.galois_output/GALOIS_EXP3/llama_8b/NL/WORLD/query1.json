@@ -1,0 +1,57 @@
+{
+    "result_set": [
+        {
+            "government_form": "Republic",
+            "name": "South Africa",
+            "code_3_letters": "ZAF",
+            "continent": "Africa",
+            "region": "Southern Africa",
+            "surface_area_in_km2": 1219700.0,
+            "independence_year": "1910",
+            "population": 58800000,
+            "life_expectancy": "65.0",
+            "gnp": 225500000000.0,
+            "gnp_old": "2017",
+            "local_name": "South Africa",
+            "head_of_state": "Cyril Ramaphosa",
+            "capital": "Pretoria",
+            "code_2_letters": "ZA"
+        },
+        {
+            "government_form": "Monarchy",
+            "name": "Morocco",
+            "code_3_letters": "MAR",
+            "continent": "Africa",
+            "region": "North Africa",
+            "surface_area_in_km2": 432200.0,
+            "independence_year": "1956",
+            "population": 37100000,
+            "life_expectancy": "75.0",
+            "gnp": 112300000000.0,
+            "gnp_old": "2017",
+            "local_name": "almaghrib",
+            "head_of_state": "Mohammed VI",
+            "capital": "Rabat",
+            "code_2_letters": "MA"
+        },
+        {
+            "government_form": "Federal Republic",
+            "name": "Nigeria",
+            "code_3_letters": "NGA",
+            "continent": "Africa",
+            "region": "West Africa",
+            "surface_area_in_km2": 909200.0,
+            "independence_year": "1960",
+            "population": 202000000,
+            "life_expectancy": "54.0",
+            "gnp": 244900000000.0,
+            "gnp_old": "2017",
+            "local_name": "Nijeriya",
+            "head_of_state": "Muhammadu Buhari",
+            "capital": "Abuja",
+            "code_2_letters": "NG"
+        }
+    ],
+    "time": 9.372,
+    "tokens": 483
+}

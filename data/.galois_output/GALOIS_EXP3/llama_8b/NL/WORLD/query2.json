@@ -1,0 +1,82 @@
+{
+    "result_set": [
+        {
+            "name": "United States",
+            "independence_year": "1776"
+        },
+        {
+            "name": "India",
+            "independence_year": "1947"
+        },
+        {
+            "name": "Indonesia",
+            "independence_year": "1945"
+        },
+        {
+            "name": "Israel",
+            "independence_year": "1948"
+        },
+        {
+            "name": "South Africa",
+            "independence_year": "1931"
+        },
+        {
+            "name": "Sri Lanka",
+            "independence_year": "1948"
+        },
+        {
+            "name": "Malaysia",
+            "independence_year": "1957"
+        },
+        {
+            "name": "Singapore",
+            "independence_year": "1959"
+        },
+        {
+            "name": "Ghana",
+            "independence_year": "1957"
+        },
+        {
+            "name": "Morocco",
+            "independence_year": "1956"
+        },
+        {
+            "name": "Tunisia",
+            "independence_year": "1956"
+        },
+        {
+            "name": "Jordan",
+            "independence_year": "1946"
+        },
+        {
+            "name": "Pakistan",
+            "independence_year": "1947"
+        },
+        {
+            "name": "Philippines",
+            "independence_year": "1946"
+        },
+        {
+            "name": "Vietnam",
+            "independence_year": "1945"
+        },
+        {
+            "name": "Cambodia",
+            "independence_year": "1953"
+        },
+        {
+            "name": "Laos",
+            "independence_year": "1953"
+        },
+        {
+            "name": "Myanmar",
+            "independence_year": "1948"
+        },
+        {
+            "name": "Bangladesh",
+            "independence_year": "1971"
+        }
+    ],
+    "time": 9.671,
+    "tokens": 426
+}

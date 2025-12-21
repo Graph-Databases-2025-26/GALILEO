@@ -1,0 +1,18 @@
+{
+    "result_set": [
+        {
+            "party": "AD",
+            "num": 1
+        },
+        {
+            "party": "COPEI",
+            "num": 1
+        },
+        {
+            "party": "AC",
+            "num": 1
+        }
+    ],
+    "time": 3.909,
+    "tokens": 144
+}

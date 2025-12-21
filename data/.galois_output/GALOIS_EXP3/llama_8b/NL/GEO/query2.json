@@ -1,0 +1,24 @@
+{
+    "result_set": [
+        {
+            "city_name": "New York City",
+            "population": 8405837,
+            "country_name": "United States",
+            "state_name": "New York"
+        },
+        {
+            "city_name": "Los Angeles",
+            "population": 3990456,
+            "country_name": "United States",
+            "state_name": "California"
+        },
+        {
+            "city_name": "Chicago",
+            "population": 2695594,
+            "country_name": "United States",
+            "state_name": "Illinois"
+        }
+    ],
+    "time": 2.308,
+    "tokens": 130
+}

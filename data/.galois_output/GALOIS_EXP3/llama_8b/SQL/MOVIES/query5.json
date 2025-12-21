@@ -1,0 +1,30 @@
+{
+    "result_set": [
+        {
+            "originaltitle": "Catch Me If You Can",
+            "startyear": 2002,
+            "genres": "Biography,Crime,Drama",
+            "birthyear": 1946
+        },
+        {
+            "originaltitle": "E.T. the Extra-Terrestrial",
+            "startyear": 1982,
+            "genres": "Adventure,Family,Science Fiction",
+            "birthyear": 1946
+        },
+        {
+            "originaltitle": "Jurassic Park",
+            "startyear": 1993,
+            "genres": "Action,Adventure,Science Fiction",
+            "birthyear": 1946
+        },
+        {
+            "originaltitle": "Indiana Jones and the Kingdom of the Crystal Skull",
+            "startyear": 2008,
+            "genres": "Action,Adventure,Science Fiction",
+            "birthyear": 1946
+        }
+    ],
+    "time": 5.024,
+    "tokens": 223
+}

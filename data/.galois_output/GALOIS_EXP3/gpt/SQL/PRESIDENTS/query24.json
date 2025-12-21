@@ -1,0 +1,27 @@
+{
+    "result_set": [
+        {
+            "name": "Bill Clinton",
+            "party": "Democratic",
+            "start_year": 1993,
+            "end_year": 2001,
+            "cardinal_number": "42nd"
+        },
+        {
+            "name": "Lyndon B. Johnson",
+            "party": "Democratic",
+            "start_year": 1963,
+            "end_year": 1969,
+            "cardinal_number": "36th"
+        },
+        {
+            "name": "Harry S. Truman",
+            "party": "Democratic",
+            "start_year": 1945,
+            "end_year": 1953,
+            "cardinal_number": "33rd"
+        }
+    ],
+    "time": 5.543,
+    "tokens": 180
+}

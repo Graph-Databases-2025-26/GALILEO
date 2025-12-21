@@ -1,0 +1,24 @@
+{
+    "result_set": [
+        {
+            "lake_name": "Lake Tahoe",
+            "area_squared_km": 491,
+            "country_name": "USA",
+            "state_name": "California"
+        },
+        {
+            "lake_name": "Clear Lake",
+            "area_squared_km": 143,
+            "country_name": "USA",
+            "state_name": "California"
+        },
+        {
+            "lake_name": "Lake Berryessa",
+            "area_squared_km": 43,
+            "country_name": "USA",
+            "state_name": "California"
+        }
+    ],
+    "time": 4.26,
+    "tokens": 125
+}

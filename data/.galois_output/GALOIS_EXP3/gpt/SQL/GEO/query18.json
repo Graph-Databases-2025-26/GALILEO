@@ -1,0 +1,15 @@
+{
+    "result_set": [
+        {
+            "COUNT ( DISTINCT usa_state_traversed )": 2
+        },
+        {
+            "COUNT ( DISTINCT usa_state_traversed )": 3
+        },
+        {
+            "COUNT ( DISTINCT usa_state_traversed )": 4
+        }
+    ],
+    "time": 3.664,
+    "tokens": 87
+}

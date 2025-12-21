@@ -1,0 +1,18 @@
+{
+    "result_set": [
+        {
+            "name": "Joe Biden",
+            "party": "Democratic"
+        },
+        {
+            "name": "Donald Trump",
+            "party": "Republican"
+        },
+        {
+            "name": "Barack Obama",
+            "party": "Democratic"
+        }
+    ],
+    "time": 3.592,
+    "tokens": 91
+}

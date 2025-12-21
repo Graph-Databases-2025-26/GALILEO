@@ -1,0 +1,36 @@
+{
+    "result_set": [
+        {
+            "name": "John F. Kennedy International Airport",
+            "city": "New York",
+            "country": "United States",
+            "elevation_in_ft": 13
+        },
+        {
+            "name": "LaGuardia Airport",
+            "city": "New York",
+            "country": "United States",
+            "elevation_in_ft": 13
+        },
+        {
+            "name": "Newark Liberty International Airport",
+            "city": "New York",
+            "country": "United States",
+            "elevation_in_ft": 10
+        },
+        {
+            "name": "Teterboro Airport",
+            "city": "New York",
+            "country": "United States",
+            "elevation_in_ft": 10
+        },
+        {
+            "name": "Stewart International Airport",
+            "city": "New York",
+            "country": "United States",
+            "elevation_in_ft": 124
+        }
+    ],
+    "time": 5.864,
+    "tokens": 235
+}

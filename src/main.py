@@ -160,7 +160,7 @@ def main():
                 datasets = MC_DATASETS
                 LOG.info("PZSQL/PZNL mode detected. Loading MC_DATASETS.")
             # Le modalità che caricano IK_DATASETS (fallback, es. NL, SQL, o altre)
-            elif args.mode in ["NL", "SQL", "sql", "nl"] or args.galois.lower() in ["wo", "s", "a", "f", "all"]:
+            elif args.mode in ["NL", "SQL", "sql", "nl"]:
                 datasets = IK_DATASETS
                 LOG.info("NL/SQL mode or galois framework detected. Loading IK_DATASETS.")
         else:
@@ -181,7 +181,7 @@ def main():
         #nl_queries = load_nl_queries_from_txt(dataset_path)
         queries = load_queries_from_folder(dataset_path)
 
-        """
+
         # ------------------------------------------
         # NL SQL BASELINES BLOCK
         # ------------------------------------------
@@ -229,7 +229,7 @@ def main():
                     run_types.add("PZNL")
                 else:
                     LOG.warning(f"[BOTH] Dataset")
-        """
+
         
 
         # ------------------------------------------

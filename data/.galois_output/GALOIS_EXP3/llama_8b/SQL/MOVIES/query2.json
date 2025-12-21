@@ -1,0 +1,18 @@
+{
+    "result_set": [
+        {
+            "originaltitle": "E.T. the Extra-Terrestrial"
+        },
+        {
+            "originaltitle": "Jaws"
+        },
+        {
+            "originaltitle": "Indiana Jones and the Raiders of the Lost Ark"
+        },
+        {
+            "originaltitle": "Jurassic Park"
+        }
+    ],
+    "time": 3.068,
+    "tokens": 99
+}

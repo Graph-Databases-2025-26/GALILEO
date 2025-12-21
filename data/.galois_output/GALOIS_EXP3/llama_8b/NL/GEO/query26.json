@@ -1,0 +1,14 @@
+{
+    "result_set": [
+        {
+            "state_name": "Kentucky",
+            "population": 4395821,
+            "area_squared_miles": 40491.0,
+            "country_name": "United States",
+            "capital": "Frankfort",
+            "density": 108.7
+        }
+    ],
+    "time": 1.57,
+    "tokens": 72
+}

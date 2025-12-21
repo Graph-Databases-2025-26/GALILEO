@@ -1,0 +1,24 @@
+{
+    "result_set": [
+        {
+            "lake_name": "Lake Superior",
+            "area_squared_km": 31800,
+            "country_name": "United States",
+            "state_name": "Minnesota"
+        },
+        {
+            "lake_name": "Lake Michigan",
+            "area_squared_km": 22400,
+            "country_name": "United States",
+            "state_name": "Wisconsin"
+        },
+        {
+            "lake_name": "Lake Huron",
+            "area_squared_km": 59600,
+            "country_name": "United States",
+            "state_name": "Michigan"
+        }
+    ],
+    "time": 2.25,
+    "tokens": 121
+}

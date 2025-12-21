@@ -1,0 +1,24 @@
+{
+    "result_set": [
+        {
+            "primarytitle": "Catch Me If You Can",
+            "startyear": 2002,
+            "genres": "Biography,Crime,Drama",
+            "birthyear": 1946
+        },
+        {
+            "primarytitle": "Minority Report",
+            "startyear": 2002,
+            "genres": "Action,Sci-Fi,Thriller",
+            "birthyear": 1946
+        },
+        {
+            "primarytitle": "War of the Worlds",
+            "startyear": 2005,
+            "genres": "Action,Adventure,Sci-Fi",
+            "birthyear": 1946
+        }
+    ],
+    "time": 1.216,
+    "tokens": 148
+}

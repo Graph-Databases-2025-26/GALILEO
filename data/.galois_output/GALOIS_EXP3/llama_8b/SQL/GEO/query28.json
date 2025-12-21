@@ -1,0 +1,22 @@
+{
+    "result_set": [
+        {
+            "state_name": "California",
+            "capital": "Sacramento"
+        },
+        {
+            "state_name": "Texas",
+            "capital": "Austin"
+        },
+        {
+            "state_name": "Florida",
+            "capital": "Tallahassee"
+        },
+        {
+            "state_name": "New York",
+            "capital": "Albany"
+        }
+    ],
+    "time": 2.971,
+    "tokens": 116
+}

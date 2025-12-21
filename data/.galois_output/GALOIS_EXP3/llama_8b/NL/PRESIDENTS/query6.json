@@ -1,0 +1,30 @@
+{
+    "result_set": [
+        {
+            "name": "Ulpiano P\u00e1ez",
+            "start_year": 1839,
+            "end_year": 1848,
+            "cardinal_number": "1",
+            "party": "Conservative",
+            "country": "Venezuela"
+        },
+        {
+            "name": "Carlos Soublette",
+            "start_year": 1848,
+            "end_year": 1853,
+            "cardinal_number": "2",
+            "party": "Conservative",
+            "country": "Venezuela"
+        },
+        {
+            "name": "Jos\u00e9 Gregorio Monagas",
+            "start_year": 1855,
+            "end_year": 1858,
+            "cardinal_number": "3",
+            "party": "Liberal",
+            "country": "Venezuela"
+        }
+    ],
+    "time": 4.51,
+    "tokens": 189
+}

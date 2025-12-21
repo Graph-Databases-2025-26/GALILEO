@@ -1,0 +1,55 @@
+{
+    "result_set": [
+        {
+            "name": "William McKinley",
+            "party": "Republican",
+            "start_year": 1897,
+            "end_year": 1901,
+            "cardinal_number": "25th"
+        },
+        {
+            "name": "Benjamin Harrison",
+            "party": "Republican",
+            "start_year": 1889,
+            "end_year": 1893,
+            "cardinal_number": "23rd"
+        },
+        {
+            "name": "Rutherford B. Hayes",
+            "party": "Republican",
+            "start_year": 1877,
+            "end_year": 1881,
+            "cardinal_number": "19th"
+        },
+        {
+            "name": "James A. Garfield",
+            "party": "Republican",
+            "start_year": 1881,
+            "end_year": 1881,
+            "cardinal_number": "20th"
+        },
+        {
+            "name": "Chester A. Arthur",
+            "party": "Republican",
+            "start_year": 1881,
+            "end_year": 1885,
+            "cardinal_number": "21st"
+        },
+        {
+            "name": "Grover Cleveland",
+            "party": "Democratic",
+            "start_year": 1885,
+            "end_year": 1889,
+            "cardinal_number": "22nd"
+        },
+        {
+            "name": "Grover Cleveland",
+            "party": "Democratic",
+            "start_year": 1893,
+            "end_year": 1897,
+            "cardinal_number": "24th"
+        }
+    ],
+    "time": 7.831,
+    "tokens": 353
+}

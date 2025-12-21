@@ -1,0 +1,30 @@
+{
+    "result_set": [
+        {
+            "state_name": "California",
+            "population": 39461588,
+            "area_squared_miles": 163695.6,
+            "country_name": "United States",
+            "capital": "Sacramento",
+            "density": 253.0
+        },
+        {
+            "state_name": "Texas",
+            "population": 29145506,
+            "area_squared_miles": 268597.0,
+            "country_name": "United States",
+            "capital": "Austin",
+            "density": 105.0
+        },
+        {
+            "state_name": "Florida",
+            "population": 21477737,
+            "area_squared_miles": 65773.2,
+            "country_name": "United States",
+            "capital": "Tallahassee",
+            "density": 394.0
+        }
+    ],
+    "time": 3.847,
+    "tokens": 192
+}

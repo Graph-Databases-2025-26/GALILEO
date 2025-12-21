@@ -90,49 +90,49 @@ def llm_interaction_nl_baseline(config, database: str, prompts: list[str], b_typ
                 "prompt": iteration_prompt,
             }
 
-        t_start = time()
-        try:
-            raw_response = invoke_with_backoff(chain, payload)
-        except Exception as e:
-            LOG.error(f"LLM invocation error in NL baseline: {e}")
-            break
-        t_end = time()
+            t_start = time()
+            try:
+                raw_response = invoke_with_backoff(chain, payload)
+            except Exception as e:
+                LOG.error(f"LLM invocation error in NL baseline: {e}")
+                break
+            t_end = time()
 
 
-        result = parse_llm_response(raw_response, t_end - t_start, llm)
-        rows = result.get("result_set", [])
+            result = parse_llm_response(raw_response, t_end - t_start, llm)
+            rows = result.get("result_set", [])
 
-# If LLM returns empty result_set, nothing more to add
-        if not rows:
+        # If LLM returns empty result_set, nothing more to add
+            if not rows:
+                LOG.info(
+                    f"Empty result_set returned by LLM at iteration {iteration}; "
+                    "stopping NL iterations for this prompt."
+                )
+                break
+
+            # Deduplicate vs all previously seen rows
+            new_rows = []
+            for row in rows:
+                key = tuple(sorted(row.items()))
+                if key not in seen_rows:
+                    seen_rows.add(key)
+                    all_rows.append(row)
+                    new_rows.append(row)
+
             LOG.info(
-                f"Empty result_set returned by LLM at iteration {iteration}; "
-                "stopping NL iterations for this prompt."
+                f"NL iteration {iteration}: "
+                f"{len(rows)} rows returned, {len(new_rows)} new rows after deduplication."
             )
-            break
-        
-        # Deduplicate vs all previously seen rows
-        new_rows = []
-        for row in rows:
-            key = tuple(sorted(row.items()))
-            if key not in seen_rows:
-                seen_rows.add(key)
-                all_rows.append(row)
-                new_rows.append(row)
 
-        LOG.info(
-            f"NL iteration {iteration}: "
-            f"{len(rows)} rows returned, {len(new_rows)} new rows after deduplication."
-        )
+            if not new_rows:
+                LOG.info(
+                    "All rows in this NL iteration were duplicates; "
+                    "no new rows to add. Stopping iterations for this prompt."
+                )
+                break
 
-        if not new_rows:
-            LOG.info(
-                "All rows in this NL iteration were duplicates; "
-                "no new rows to add. Stopping iterations for this prompt."
-            )
-            break
-
-        total_time += result.get("time", 0.0)
-        total_tokens += result.get("tokens", 0)
+            total_time += result.get("time", 0.0)
+            total_tokens += result.get("tokens", 0)
 
         # Aggregated FULL_JSON result for this NL prompt / SQL query pair
         aggregated_result = {

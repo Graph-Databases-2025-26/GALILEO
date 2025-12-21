@@ -1,0 +1,46 @@
+{
+    "result_set": [
+        {
+            "originaltitle": "Catch Me If You Can",
+            "startyear": 2002
+        },
+        {
+            "originaltitle": "Jaws",
+            "startyear": 1975
+        },
+        {
+            "originaltitle": "E.T. the Extra-Terrestrial",
+            "startyear": 1982
+        },
+        {
+            "originaltitle": "Indiana Jones and the Last Crusade",
+            "startyear": 1989
+        },
+        {
+            "originaltitle": "Schindler's List",
+            "startyear": 1993
+        },
+        {
+            "originaltitle": "Saving Private Ryan",
+            "startyear": 1998
+        },
+        {
+            "originaltitle": "Minority Report",
+            "startyear": 2002
+        },
+        {
+            "originaltitle": "War Horse",
+            "startyear": 2011
+        },
+        {
+            "originaltitle": "Lincoln",
+            "startyear": 2012
+        },
+        {
+            "originaltitle": "Jurassic Park",
+            "startyear": 1993
+        }
+    ],
+    "time": 6.763,
+    "tokens": 371
+}

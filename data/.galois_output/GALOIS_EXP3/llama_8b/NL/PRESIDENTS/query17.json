@@ -1,0 +1,30 @@
+{
+    "result_set": [
+        {
+            "name": "George Washington",
+            "start_year": null,
+            "end_year": null,
+            "cardinal_number": null,
+            "party": null,
+            "country": null
+        },
+        {
+            "name": "Abraham Lincoln",
+            "start_year": null,
+            "end_year": null,
+            "cardinal_number": null,
+            "party": null,
+            "country": null
+        },
+        {
+            "name": "Theodore Roosevelt",
+            "start_year": null,
+            "end_year": null,
+            "cardinal_number": null,
+            "party": null,
+            "country": null
+        }
+    ],
+    "time": 2.462,
+    "tokens": 151
+}

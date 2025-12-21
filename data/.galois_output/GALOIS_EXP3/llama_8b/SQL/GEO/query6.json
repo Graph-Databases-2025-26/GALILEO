@@ -1,0 +1,18 @@
+{
+    "result_set": [
+        {
+            "lake_name": "Lake Tahoe"
+        },
+        {
+            "lake_name": "Lake Berryessa"
+        },
+        {
+            "lake_name": "Clear Lake"
+        },
+        {
+            "lake_name": "Lake Shasta"
+        }
+    ],
+    "time": 3.363,
+    "tokens": 86
+}

@@ -1,0 +1,10 @@
+{
+    "result_set": [
+        {
+            "gnp": 123456.0,
+            "population": 987654321
+        }
+    ],
+    "time": 0.469,
+    "tokens": 35
+}

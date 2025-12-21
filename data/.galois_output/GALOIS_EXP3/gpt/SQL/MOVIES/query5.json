@@ -1,0 +1,24 @@
+{
+    "result_set": [
+        {
+            "originaltitle": "A.I. Artificial Intelligence",
+            "startyear": 2001,
+            "genres": "Adventure, Drama, Sci-Fi",
+            "birthyear": 1946
+        },
+        {
+            "originaltitle": "War of the Worlds",
+            "startyear": 2005,
+            "genres": "Action, Adventure, Sci-Fi",
+            "birthyear": 1946
+        },
+        {
+            "originaltitle": "Lincoln",
+            "startyear": 2012,
+            "genres": "Biography, Drama, History",
+            "birthyear": 1946
+        }
+    ],
+    "time": 5.522,
+    "tokens": 162
+}

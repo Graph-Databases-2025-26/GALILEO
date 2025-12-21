@@ -1,0 +1,24 @@
+{
+    "result_set": [
+        {
+            "lake_name": "Lake Michigan",
+            "area_squared_km": 58.0,
+            "country_name": "USA",
+            "state_name": "Michigan"
+        },
+        {
+            "lake_name": "Lake Superior",
+            "area_squared_km": 82.1,
+            "country_name": "USA",
+            "state_name": "Minnesota"
+        },
+        {
+            "lake_name": "Lake Erie",
+            "area_squared_km": 9.9,
+            "country_name": "USA",
+            "state_name": "Ohio"
+        }
+    ],
+    "time": 1.125,
+    "tokens": 131
+}

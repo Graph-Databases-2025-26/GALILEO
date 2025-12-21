@@ -1,0 +1,18 @@
+{
+    "result_set": [
+        {
+            "originaltitle": "The Hunchback of Notre Dame"
+        },
+        {
+            "originaltitle": "The Student Prince in Old Heidelberg"
+        },
+        {
+            "originaltitle": "Green Dolphin Street"
+        },
+        {
+            "originaltitle": "The Lady Takes a Sailor"
+        }
+    ],
+    "time": 3.91,
+    "tokens": 117
+}

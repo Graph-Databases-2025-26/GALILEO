@@ -11,6 +11,7 @@ from .llm_factory import LLMBaseWrapper
 from .rag import pz_context
 from ..db.duckdb_db_graphdb import get_duckdb_path
 from ..utils.constants import RAG_RESOURCES
+import re
 
 
 class Response(BaseModel):
@@ -48,6 +49,7 @@ def parse_llm_response(raw_response, time: float, llm_wrapper: LLMBaseWrapper) -
 
     # Get the text out of the response object (Gemini / Watsonx)
     text = raw_response.content if hasattr(raw_response, "content") else str(raw_response)
+    text = re.sub(r'(\d),(\d)', r'\1\2', text)
 
     try:
         parsed = parser.parse(text)
@@ -90,7 +92,7 @@ def save_baseline_to_json(dataset: str, baseline: list[dict], llm_wrapper: LLMBa
     """
 
     #bline_folder = BASELINE_OUTPUT[b_type][llm_wrapper.get_provider_name().upper()]/dataset
-    bline_folder = BASELINE_OUTPUT["EXP_3"]["NL_8B"] / dataset
+    bline_folder = BASELINE_OUTPUT["EXP3"]["NL_GPT"] / dataset
     print(bline_folder)
     
     bline_folder.mkdir(parents=True, exist_ok=True)    

@@ -1,0 +1,38 @@
+{
+    "result_set": [
+        {
+            "originaltitle": "Saving Private Ryan",
+            "startyear": 1998,
+            "genres": "Action, Drama, War",
+            "birthyear": 1946,
+            "deathyear": null,
+            "runtimeminutes": 169
+        },
+        {
+            "originaltitle": "Catch Me If You Can",
+            "startyear": 2002,
+            "genres": "Biography, Crime, Drama",
+            "birthyear": 1946,
+            "deathyear": null,
+            "runtimeminutes": 141
+        },
+        {
+            "originaltitle": "E.T. the Extra-Terrestrial",
+            "startyear": 1982,
+            "genres": "Adventure, Family, Fantasy, Romance, Science Fiction",
+            "birthyear": 1946,
+            "deathyear": null,
+            "runtimeminutes": 115
+        },
+        {
+            "originaltitle": "Indiana Jones and the Last Crusade",
+            "startyear": 1989,
+            "genres": "Action, Adventure, Comedy, Fantasy, Romance",
+            "birthyear": 1946,
+            "deathyear": null,
+            "runtimeminutes": 128
+        }
+    ],
+    "time": 7.099,
+    "tokens": 297
+}

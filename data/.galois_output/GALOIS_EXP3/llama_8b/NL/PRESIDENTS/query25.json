@@ -1,0 +1,14 @@
+{
+    "result_set": [
+        {
+            "party": "Democratic",
+            "cardinal_number": "2"
+        },
+        {
+            "party": "Republican",
+            "cardinal_number": "1"
+        }
+    ],
+    "time": 1.061,
+    "tokens": 51
+}

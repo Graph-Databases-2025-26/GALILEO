@@ -1,0 +1,27 @@
+{
+    "result_set": [
+        {
+            "name": "Grover Cleveland",
+            "party": "Democratic",
+            "start_year": 1885,
+            "end_year": 1889,
+            "cardinal_number": "22nd"
+        },
+        {
+            "name": "James Buchanan",
+            "party": "Democratic",
+            "start_year": 1857,
+            "end_year": 1861,
+            "cardinal_number": "15th"
+        },
+        {
+            "name": "Woodrow Wilson",
+            "party": "Democratic",
+            "start_year": 1913,
+            "end_year": 1921,
+            "cardinal_number": "28th"
+        }
+    ],
+    "time": 4.72,
+    "tokens": 176
+}

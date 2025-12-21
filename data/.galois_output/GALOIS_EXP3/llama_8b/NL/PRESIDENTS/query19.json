@@ -1,0 +1,30 @@
+{
+    "result_set": [
+        {
+            "name": "George Washington",
+            "start_year": 1789,
+            "end_year": 1797,
+            "cardinal_number": "1st",
+            "party": "Independent",
+            "country": "USA"
+        },
+        {
+            "name": "John Adams",
+            "start_year": 1797,
+            "end_year": 1801,
+            "cardinal_number": "2nd",
+            "party": "Federalist",
+            "country": "USA"
+        },
+        {
+            "name": "Thomas Jefferson",
+            "start_year": 1801,
+            "end_year": 1809,
+            "cardinal_number": "3rd",
+            "party": "Democratic-Republican",
+            "country": "USA"
+        }
+    ],
+    "time": 3.534,
+    "tokens": 175
+}

@@ -1,0 +1,14 @@
+{
+    "result_set": [
+        {
+            "state_name": "Arizona",
+            "capital": "Phoenix",
+            "area_squared_miles": 113990.0,
+            "population": 7278717,
+            "density": 22.0,
+            "country_name": "USA"
+        }
+    ],
+    "time": 1.738,
+    "tokens": 69
+}

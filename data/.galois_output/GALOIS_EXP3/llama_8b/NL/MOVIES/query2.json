@@ -1,0 +1,39 @@
+{
+    "result_set": [
+        {
+            "primarytitle": "Jaws",
+            "originaltitle": "Jaws",
+            "startyear": 1975,
+            "endyear": 1975,
+            "runtimeminutes": 124,
+            "genres": "Thriller, Adventure",
+            "director": "Steven Spielberg",
+            "birthyear": 1946,
+            "deathyear": null
+        },
+        {
+            "primarytitle": "E.T. the Extra-Terrestrial",
+            "originaltitle": "E.T. the Extra-Terrestrial",
+            "startyear": 1981,
+            "endyear": 1981,
+            "runtimeminutes": 115,
+            "genres": "Adventure, Drama, Family, Fantasy, Romance, Science Fiction",
+            "director": "Steven Spielberg",
+            "birthyear": 1946,
+            "deathyear": null
+        },
+        {
+            "primarytitle": "Indiana Jones and the Raiders of the Lost Ark",
+            "originaltitle": "Raiders of the Lost Ark",
+            "startyear": 1981,
+            "endyear": 1981,
+            "runtimeminutes": 115,
+            "genres": "Action, Adventure, Thriller",
+            "director": "Steven Spielberg",
+            "birthyear": 1946,
+            "deathyear": null
+        }
+    ],
+    "time": 1.869,
+    "tokens": 300
+}

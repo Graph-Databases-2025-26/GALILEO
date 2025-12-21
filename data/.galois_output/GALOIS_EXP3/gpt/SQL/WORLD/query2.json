@@ -1,0 +1,15 @@
+{
+    "result_set": [
+        {
+            "name": "Country A"
+        },
+        {
+            "name": "Country B"
+        },
+        {
+            "name": "Country C"
+        }
+    ],
+    "time": 4.252,
+    "tokens": 66
+}

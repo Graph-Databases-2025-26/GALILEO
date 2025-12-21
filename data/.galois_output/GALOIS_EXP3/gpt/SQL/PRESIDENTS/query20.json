@@ -1,0 +1,18 @@
+{
+    "result_set": [
+        {
+            "party": "Democratic Party",
+            "num": 16
+        },
+        {
+            "party": "Republican Party",
+            "num": 15
+        },
+        {
+            "party": "Independent",
+            "num": 5
+        }
+    ],
+    "time": 3.672,
+    "tokens": 88
+}

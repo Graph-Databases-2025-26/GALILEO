@@ -1,0 +1,18 @@
+{
+    "result_set": [
+        {
+            "party": "United Socialist Party of Venezuela",
+            "num": 5
+        },
+        {
+            "party": "Democratic Action",
+            "num": 3
+        },
+        {
+            "party": "Christian Democratic COPEI",
+            "num": 2
+        }
+    ],
+    "time": 4.554,
+    "tokens": 94
+}

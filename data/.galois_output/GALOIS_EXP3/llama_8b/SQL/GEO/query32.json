@@ -1,0 +1,30 @@
+{
+    "result_set": [
+        {
+            "state_name": "California",
+            "capital": "Sacramento",
+            "population": 4700000,
+            "area_squared_miles": 56153
+        },
+        {
+            "state_name": "Texas",
+            "capital": "Austin",
+            "population": 29000000,
+            "area_squared_miles": 268597
+        },
+        {
+            "state_name": "Florida",
+            "capital": "Tallahassee",
+            "population": 21477737,
+            "area_squared_miles": 65773
+        },
+        {
+            "state_name": "New York",
+            "capital": "Albany",
+            "population": 20000000,
+            "area_squared_miles": 54400
+        }
+    ],
+    "time": 4.465,
+    "tokens": 196
+}

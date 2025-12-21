@@ -1,0 +1,28 @@
+{
+    "result_set": [
+        {
+            "primarytitle": "The Hunchback of Notre Dame",
+            "originaltitle": "The Hunchback of Notre Dame",
+            "startyear": 1939,
+            "endyear": 1939,
+            "runtimeminutes": 117,
+            "genres": "Drama, Romance",
+            "director": "Richard Thorpe",
+            "birthyear": null,
+            "deathyear": null
+        },
+        {
+            "primarytitle": "The Prisoner of Zenda",
+            "originaltitle": "The Prisoner of Zenda",
+            "startyear": 1937,
+            "endyear": 1937,
+            "runtimeminutes": 101,
+            "genres": "Adventure, Comedy, Romance",
+            "director": "Richard Thorpe",
+            "birthyear": null,
+            "deathyear": null
+        }
+    ],
+    "time": 4.966,
+    "tokens": 292
+}

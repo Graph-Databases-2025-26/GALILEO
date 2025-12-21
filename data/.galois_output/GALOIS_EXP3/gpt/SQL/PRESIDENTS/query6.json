@@ -1,0 +1,30 @@
+{
+    "result_set": [
+        {
+            "name": "Nicol\u00e1s Maduro",
+            "start_year": 2013,
+            "end_year": 2023,
+            "cardinal_number": "45th",
+            "party": "United Socialist Party of Venezuela",
+            "country": "Venezuela"
+        },
+        {
+            "name": "Hugo Ch\u00e1vez",
+            "start_year": 1999,
+            "end_year": 2013,
+            "cardinal_number": "44th",
+            "party": "United Socialist Party of Venezuela",
+            "country": "Venezuela"
+        },
+        {
+            "name": "R\u00f3mulo Betancourt",
+            "start_year": 1959,
+            "end_year": 1964,
+            "cardinal_number": "30th",
+            "party": "Democratic Action",
+            "country": "Venezuela"
+        }
+    ],
+    "time": 5.967,
+    "tokens": 215
+}

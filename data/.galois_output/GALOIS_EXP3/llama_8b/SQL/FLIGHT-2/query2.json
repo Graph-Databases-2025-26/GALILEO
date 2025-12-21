@@ -1,0 +1,9 @@
+{
+    "result_set": [
+        {
+            "count(*)": 3
+        }
+    ],
+    "time": 1.055,
+    "tokens": 23
+}

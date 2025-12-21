@@ -1,0 +1,27 @@
+{
+    "result_set": [
+        {
+            "name": "Rafael Caldera",
+            "party": "Democratic Action",
+            "start_year": 1969,
+            "end_year": 1974,
+            "cardinal_number": "4"
+        },
+        {
+            "name": "Isa\u00edas Medina Angarita",
+            "party": "Democratic Action",
+            "start_year": 1941,
+            "end_year": 1945,
+            "cardinal_number": "3"
+        },
+        {
+            "name": "Luis Herrera Campins",
+            "party": "Democratic Action",
+            "start_year": 1979,
+            "end_year": 1984,
+            "cardinal_number": "5"
+        }
+    ],
+    "time": 5.76,
+    "tokens": 286
+}
