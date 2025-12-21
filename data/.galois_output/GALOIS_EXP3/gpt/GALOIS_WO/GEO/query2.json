@@ -1,0 +1,8 @@
+{
+    "query_id": 2,
+    "sql": "SELECT city_name FROM target.usa_city WHERE population > 150000;",
+    "result_set": [],
+    "logprobs": [],
+    "tokens": 397,
+    "time": 0.8851640224456787
+}

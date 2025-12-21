@@ -1,0 +1,30 @@
+{
+    "query_id": 4,
+    "sql": "SELECT p.name FROM target.world_presidents p WHERE p.country='Venezuela' AND p.party='Liberal';",
+    "result_set": [
+        {
+            "name": "Isaías Medina Angarita"
+        },
+        {
+            "name": "Jósé María Lozada"
+        },
+        {
+            "name": "Juan Bautista Pérez Mendoza"
+        },
+        {
+            "name": "Juan Crisóstomo Falcón"
+        },
+        {
+            "name": "Luis Beltrán Prieto"
+        }
+    ],
+    "logprobs": [
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0
+    ],
+    "tokens": 1410,
+    "time": 2.934647798538208
+}

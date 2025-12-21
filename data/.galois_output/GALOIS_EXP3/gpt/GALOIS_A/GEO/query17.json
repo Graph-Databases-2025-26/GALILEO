@@ -1,0 +1,14 @@
+{
+    "query_id": 17,
+    "sql": "SELECT population FROM target.usa_city WHERE city_name = 'seattle' AND state_name = 'washington';",
+    "result_set": [
+        {
+            "population": 744955
+        }
+    ],
+    "logprobs": [
+        -0.15078224773414442
+    ],
+    "tokens": 483,
+    "time": 1.7972149848937988
+}

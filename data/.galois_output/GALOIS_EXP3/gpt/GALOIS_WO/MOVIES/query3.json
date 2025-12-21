@@ -1,0 +1,8 @@
+{
+    "query_id": 3,
+    "sql": "SELECT m.originaltitle, m.startyear FROM target.movies m WHERE m.director='Richard Thorpe' AND m.startyear > 1950;",
+    "result_set": [],
+    "logprobs": [],
+    "tokens": 655,
+    "time": 1.222477912902832
+}

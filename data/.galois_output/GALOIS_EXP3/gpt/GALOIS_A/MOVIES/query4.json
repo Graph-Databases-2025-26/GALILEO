@@ -1,0 +1,15 @@
+{
+    "query_id": 4,
+    "sql": "SELECT m.originaltitle, m.startyear FROM target.movies m WHERE m.director='Steven Spielberg' AND m.startyear > 2000;",
+    "result_set": [
+        {
+            "originaltitle": "War of the Worlds",
+            "startyear": 2005
+        }
+    ],
+    "logprobs": [
+        -0.004997450275837423
+    ],
+    "tokens": 825,
+    "time": 2.639960765838623
+}

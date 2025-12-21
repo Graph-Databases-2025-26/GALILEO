@@ -1,0 +1,14 @@
+{
+    "query_id": 19,
+    "sql": "SELECT DISTINCT capital FROM target.usa_state;",
+    "result_set": [
+        {
+            "capital": "helena"
+        }
+    ],
+    "logprobs": [
+        -0.2624101899667896
+    ],
+    "tokens": 587,
+    "time": 1.5882172584533691
+}

@@ -1,0 +1,14 @@
+{
+    "query_id": 9,
+    "sql": "SELECT DISTINCT r.length_in_km FROM target.usa_river r WHERE r.river_name = 'rio grande';",
+    "result_set": [
+        {
+            "length_in_km": 3034
+        }
+    ],
+    "logprobs": [
+        -0.05000039556267666
+    ],
+    "tokens": 534,
+    "time": 1.453118085861206
+}

@@ -1,0 +1,8 @@
+{
+    "query_id": 20,
+    "sql": "SELECT COUNT ( river_name ) FROM target.usa_river WHERE usa_state_traversed = 'idaho';",
+    "result_set": [],
+    "logprobs": [],
+    "tokens": 451,
+    "time": 0.935786247253418
+}

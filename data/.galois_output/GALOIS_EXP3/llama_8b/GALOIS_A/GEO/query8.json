@@ -1,0 +1,14 @@
+{
+    "query_id": 8,
+    "sql": "SELECT count(distinct river_name) FROM target.usa_river where length_in_km > 400;",
+    "result_set": [
+        {
+            "count(DISTINCT river_name)": 26
+        }
+    ],
+    "logprobs": [
+        -999.0
+    ],
+    "tokens": 5312,
+    "time": 5.94243860244751
+}

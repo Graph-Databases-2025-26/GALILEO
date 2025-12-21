@@ -1,0 +1,15 @@
+{
+    "query_id": 9,
+    "sql": "SELECT m.director, (m.startyear - m.birthyear) as director_age FROM target.movies m WHERE m.startyear is not null AND m.birthyear is not null order by director_age desc limit 1;",
+    "result_set": [
+        {
+            "director": "Fernand Dansereau",
+            "director_age": 45
+        }
+    ],
+    "logprobs": [
+        -0.09790071248913819
+    ],
+    "tokens": 764,
+    "time": 1.6223244667053223
+}

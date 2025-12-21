@@ -1,0 +1,18 @@
+{
+    "query_id": 11,
+    "sql": "SELECT p.name, p.party, start_year, end_year, p.cardinal_number FROM target.world_presidents p WHERE p.country ='Venezuela' AND start_year > 1800 AND end_year < 1900 AND party ='Conservative';",
+    "result_set": [
+        {
+            "name": "Antonio Guzmán Blanco",
+            "party": "Conservative",
+            "start_year": 1870,
+            "end_year": 1877,
+            "cardinal_number": "26th"
+        }
+    ],
+    "logprobs": [
+        -0.1177310308046117
+    ],
+    "tokens": 711,
+    "time": 1.5251131057739258
+}

@@ -1,0 +1,8 @@
+{
+    "query_id": 28,
+    "sql": "SELECT us.state_name, us.capital FROM target.usa_state us WHERE us.population > 5000000 AND us.density < 1000;",
+    "result_set": [],
+    "logprobs": [],
+    "tokens": 484,
+    "time": 1.1791157722473145
+}

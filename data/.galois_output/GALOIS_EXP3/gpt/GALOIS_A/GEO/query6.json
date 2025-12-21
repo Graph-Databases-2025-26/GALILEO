@@ -1,0 +1,14 @@
+{
+    "query_id": 6,
+    "sql": "SELECT lake_name FROM target.usa_lake WHERE state_name = 'california' and area_squared_km > 450;",
+    "result_set": [
+        {
+            "lake_name": "Clear Lake"
+        }
+    ],
+    "logprobs": [
+        -0.3637490724370634
+    ],
+    "tokens": 561,
+    "time": 2.0141983032226562
+}

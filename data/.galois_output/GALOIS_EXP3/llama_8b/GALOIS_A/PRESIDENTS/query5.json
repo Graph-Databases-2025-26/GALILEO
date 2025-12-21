@@ -1,0 +1,54 @@
+{
+    "query_id": 5,
+    "sql": "SELECT p.name FROM target.world_presidents p WHERE p.country='Venezuela' AND p.party='Liberal' AND p.start_year > 1858;",
+    "result_set": [
+        {
+            "name": "Andrés Eloy Blanco"
+        },
+        {
+            "name": "Isaías Medina Angarita"
+        },
+        {
+            "name": "Rómulo Betancourt"
+        },
+        {
+            "name": "Rómulo Gallegos"
+        },
+        {
+            "name": "Marcos Pérez Jiménez"
+        },
+        {
+            "name": "Rafael Caldera"
+        },
+        {
+            "name": "Luis Herrera Campins"
+        },
+        {
+            "name": "Jaime Lusinchi"
+        },
+        {
+            "name": "Ramón J. Velásquez"
+        },
+        {
+            "name": "Henrique Salas Romer"
+        },
+        {
+            "name": "Oscar Pérez"
+        }
+    ],
+    "logprobs": [
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0
+    ],
+    "tokens": 7748,
+    "time": 15.163649320602417
+}

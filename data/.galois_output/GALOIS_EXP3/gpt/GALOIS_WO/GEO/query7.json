@@ -1,0 +1,8 @@
+{
+    "query_id": 7,
+    "sql": "SELECT avg(population) FROM target.usa_state;",
+    "result_set": [],
+    "logprobs": [],
+    "tokens": 474,
+    "time": 1.0280365943908691
+}

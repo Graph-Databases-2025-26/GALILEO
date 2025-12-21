@@ -1,0 +1,8 @@
+{
+    "query_id": 32,
+    "sql": "SELECT us.state_name, us.capital, us.population, us.area_squared_miles FROM target.usa_state us WHERE us.population = 4700000 AND us.area_squared_miles=56153;",
+    "result_set": [],
+    "logprobs": [],
+    "tokens": 1472,
+    "time": 10.568175077438354
+}

@@ -1,0 +1,14 @@
+{
+    "query_id": 1,
+    "sql": "SELECT count(distinct government_form) FROM target.country WHERE continent = 'Africa';",
+    "result_set": [
+        {
+            "count(DISTINCT government_form)": 1
+        }
+    ],
+    "logprobs": [
+        -999.0
+    ],
+    "tokens": 5318,
+    "time": 72.53925514221191
+}

@@ -1,0 +1,16 @@
+{
+    "query_id": 25,
+    "sql": "SELECT us.state_name, us.capital, us.area_squared_miles FROM target.usa_state us;",
+    "result_set": [
+        {
+            "state_name": "california",
+            "capital": "sacramento",
+            "area_squared_miles": 163696
+        }
+    ],
+    "logprobs": [
+        -0.1920573490933748
+    ],
+    "tokens": 650,
+    "time": 2.785202741622925
+}

@@ -1,0 +1,15 @@
+{
+    "query_id": 25,
+    "sql": "SELECT party, count(*) num FROM target.world_presidents p WHERE p.country ='United States' AND start_year > 1800 AND end_year < 1900 group by p.party order by num desc;",
+    "result_set": [
+        {
+            "party": "Republican",
+            "num": 1
+        }
+    ],
+    "logprobs": [
+        -1.1898680187170742e-06
+    ],
+    "tokens": 982,
+    "time": 9.448635816574097
+}

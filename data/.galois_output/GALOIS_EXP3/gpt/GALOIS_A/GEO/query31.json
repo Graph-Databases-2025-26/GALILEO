@@ -1,0 +1,16 @@
+{
+    "query_id": 31,
+    "sql": "SELECT us.state_name, us.capital, us.population FROM target.usa_state us WHERE us.population > 3000000 AND us.population < 8000000 AND us.area_squared_miles > 50000 order by us.population;",
+    "result_set": [
+        {
+            "state_name": "arizona",
+            "capital": "phoenix",
+            "population": 7000000
+        }
+    ],
+    "logprobs": [
+        -0.1891326504261299
+    ],
+    "tokens": 640,
+    "time": 1.8804738521575928
+}

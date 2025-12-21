@@ -1,0 +1,46 @@
+{
+    "query_id": 27,
+    "sql": "SELECT us.state_name, us.population, us.capital FROM target.usa_state us WHERE us.population > 5000000;",
+    "result_set": [
+        {
+            "state_name": "Arizona",
+            "population": 7000000,
+            "capital": "Phoenix"
+        },
+        {
+            "state_name": "Texas",
+            "population": 29000000,
+            "capital": "Austin"
+        },
+        {
+            "state_name": "Ohio",
+            "population": 11700000,
+            "capital": "Columbus"
+        },
+        {
+            "state_name": "Georgia",
+            "population": 10000000,
+            "capital": "Atlanta"
+        },
+        {
+            "state_name": "California",
+            "population": 10000000,
+            "capital": "Los Angeles"
+        },
+        {
+            "state_name": "Illinois",
+            "population": 9000000,
+            "capital": "Chicago"
+        }
+    ],
+    "logprobs": [
+        -0.15235325030432706,
+        -0.14808708417004937,
+        -0.11286587066044262,
+        -0.18598241716590563,
+        -0.11778064761889813,
+        -0.48493160892694503
+    ],
+    "tokens": 830,
+    "time": 7.498294115066528
+}

@@ -1,0 +1,14 @@
+{
+    "query_id": 11,
+    "sql": "SELECT DISTINCT usa_state_traversed FROM target.usa_river WHERE length_in_km > 750;",
+    "result_set": [
+        {
+            "usa_state_traversed": "montana"
+        }
+    ],
+    "logprobs": [
+        -0.9719193625296612
+    ],
+    "tokens": 584,
+    "time": 2.652592420578003
+}

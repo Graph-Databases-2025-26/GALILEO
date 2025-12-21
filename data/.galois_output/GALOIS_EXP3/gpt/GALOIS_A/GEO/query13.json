@@ -1,0 +1,14 @@
+{
+    "query_id": 13,
+    "sql": "SELECT lake_name FROM target.usa_lake WHERE area_squared_km > 750 AND state_name = 'michigan';",
+    "result_set": [
+        {
+            "lake_name": "Lake Michigan"
+        }
+    ],
+    "logprobs": [
+        -0.29506288548711584
+    ],
+    "tokens": 564,
+    "time": 1.6104187965393066
+}

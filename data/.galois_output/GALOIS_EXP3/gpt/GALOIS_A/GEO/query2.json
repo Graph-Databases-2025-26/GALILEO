@@ -1,0 +1,30 @@
+{
+    "query_id": 2,
+    "sql": "SELECT city_name FROM target.usa_city WHERE population > 150000;",
+    "result_set": [
+        {
+            "city_name": "Los Angeles"
+        },
+        {
+            "city_name": "Chicago"
+        },
+        {
+            "city_name": "Houston"
+        },
+        {
+            "city_name": "Phoenix"
+        },
+        {
+            "city_name": "Philadelphia"
+        }
+    ],
+    "logprobs": [
+        -0.1966676523107708,
+        -0.2793994218593525,
+        -0.08041946563002966,
+        -0.08806331182154281,
+        -0.3421519918119884
+    ],
+    "tokens": 571,
+    "time": 2.9936470985412598
+}

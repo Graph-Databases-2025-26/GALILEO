@@ -1,0 +1,8 @@
+{
+    "query_id": 6,
+    "sql": "SELECT m.originaltitle, m.startyear, m.genres, m.birthyear, m.deathyear, m.runtimeminutes FROM target.movies m WHERE m.director = 'Steven Spielberg' AND m.startyear > 1990 AND m.startyear < 2000;",
+    "result_set": [],
+    "logprobs": [],
+    "tokens": 690,
+    "time": 2.1261301040649414
+}

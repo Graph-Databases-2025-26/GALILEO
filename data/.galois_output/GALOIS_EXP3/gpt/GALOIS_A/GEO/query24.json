@@ -1,0 +1,40 @@
+{
+    "query_id": 24,
+    "sql": "SELECT state_name, population, area_squared_miles FROM target.usa_state;",
+    "result_set": [
+        {
+            "state_name": "California",
+            "population": 39538223,
+            "area_squared_miles": 163696.32
+        },
+        {
+            "state_name": "Texas",
+            "population": 29145505,
+            "area_squared_miles": 268596.46
+        },
+        {
+            "state_name": "Florida",
+            "population": 21538187,
+            "area_squared_miles": 65758.26
+        },
+        {
+            "state_name": "New York",
+            "population": 20201249,
+            "area_squared_miles": 54555.29
+        },
+        {
+            "state_name": "Pennsylvania",
+            "population": 12812508,
+            "area_squared_miles": 46054.55
+        }
+    ],
+    "logprobs": [
+        -0.10660019318983416,
+        -0.039958135938029216,
+        -0.37508104940468456,
+        -0.26199084984187315,
+        -0.4901509938977837
+    ],
+    "tokens": 799,
+    "time": 4.43824315071106
+}

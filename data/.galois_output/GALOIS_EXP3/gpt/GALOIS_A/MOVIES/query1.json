@@ -1,0 +1,14 @@
+{
+    "query_id": 1,
+    "sql": "SELECT m.originaltitle FROM target.movies m WHERE m.director='Richard Thorpe';",
+    "result_set": [
+        {
+            "originaltitle": "The Last of the Mohicans"
+        }
+    ],
+    "logprobs": [
+        -0.3049292522597382
+    ],
+    "tokens": 750,
+    "time": 2.7266898155212402
+}

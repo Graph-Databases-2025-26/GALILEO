@@ -1,0 +1,17 @@
+{
+    "query_id": 5,
+    "sql": "SELECT m.originaltitle, m.startyear, m.genres, m.birthyear FROM target.movies m WHERE m.director='Steven Spielberg' AND m.startyear > 2000;",
+    "result_set": [
+        {
+            "originaltitle": "War Horse",
+            "startyear": 2011,
+            "genres": "Drama,War",
+            "birthyear": 1966
+        }
+    ],
+    "logprobs": [
+        -0.02593070087395404
+    ],
+    "tokens": 933,
+    "time": 4.0036537647247314
+}

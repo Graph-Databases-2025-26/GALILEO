@@ -1,0 +1,15 @@
+{
+    "query_id": 28,
+    "sql": "SELECT us.state_name, us.capital FROM target.usa_state us WHERE us.population > 5000000 AND us.density < 1000;",
+    "result_set": [
+        {
+            "state_name": "arizona",
+            "capital": "phoenix"
+        }
+    ],
+    "logprobs": [
+        -0.3934060610995175
+    ],
+    "tokens": 645,
+    "time": 3.4981517791748047
+}

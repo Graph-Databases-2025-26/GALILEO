@@ -1,0 +1,8 @@
+{
+    "query_id": 2,
+    "sql": "SELECT m.originaltitle FROM target.movies m WHERE m.director='Steven Spielberg';",
+    "result_set": [],
+    "logprobs": [],
+    "tokens": 637,
+    "time": 0.936286449432373
+}

@@ -1,0 +1,15 @@
+{
+    "query_id": 3,
+    "sql": "SELECT m.originaltitle, m.startyear FROM target.movies m WHERE m.director='Richard Thorpe' AND m.startyear > 1950;",
+    "result_set": [
+        {
+            "originaltitle": "The Great Caruso",
+            "startyear": 1951
+        }
+    ],
+    "logprobs": [
+        -0.21426729692508356
+    ],
+    "tokens": 824,
+    "time": 2.067856788635254
+}

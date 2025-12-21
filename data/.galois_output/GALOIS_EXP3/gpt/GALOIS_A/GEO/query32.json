@@ -1,0 +1,17 @@
+{
+    "query_id": 32,
+    "sql": "SELECT us.state_name, us.capital, us.population, us.area_squared_miles FROM target.usa_state us WHERE us.population = 4700000 AND us.area_squared_miles=56153;",
+    "result_set": [
+        {
+            "state_name": "Vermont",
+            "capital": "Montpelier",
+            "population": 4700000,
+            "area_squared_miles": 56153
+        }
+    ],
+    "logprobs": [
+        -0.22756405691013804
+    ],
+    "tokens": 643,
+    "time": 1.6968450546264648
+}

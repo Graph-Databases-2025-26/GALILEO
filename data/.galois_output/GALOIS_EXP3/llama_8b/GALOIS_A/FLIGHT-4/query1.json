@@ -1,0 +1,14 @@
+{
+    "query_id": 1,
+    "sql": "SELECT a.name FROM target.airports a WHERE a.elevation_in_ft >= -50 and a.elevation_in_ft <= 50;",
+    "result_set": [
+        {
+            "name": "Wewak International Airport"
+        }
+    ],
+    "logprobs": [
+        -999.0
+    ],
+    "tokens": 939,
+    "time": 2.4436683654785156
+}

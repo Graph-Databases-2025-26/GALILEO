@@ -1,0 +1,8 @@
+{
+    "query_id": 9,
+    "sql": "SELECT m.director, (m.startyear - m.birthyear) as director_age FROM target.movies m WHERE m.startyear is not null AND m.birthyear is not null order by director_age desc limit 1;",
+    "result_set": [],
+    "logprobs": [],
+    "tokens": 649,
+    "time": 1.0610690116882324
+}

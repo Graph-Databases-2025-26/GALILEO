@@ -1,0 +1,14 @@
+{
+    "query_id": 8,
+    "sql": "SELECT count(*) FROM target.world_presidents p where p.country='Venezuela' AND p.start_year >= 1990  AND p.start_year < 2000;",
+    "result_set": [
+        {
+            "count_star()": 1
+        }
+    ],
+    "logprobs": [
+        -999.0
+    ],
+    "tokens": 1568,
+    "time": 11.16221308708191
+}

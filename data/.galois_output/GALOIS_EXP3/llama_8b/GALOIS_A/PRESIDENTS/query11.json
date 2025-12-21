@@ -1,0 +1,18 @@
+{
+    "query_id": 11,
+    "sql": "SELECT p.name, p.party, start_year, end_year, p.cardinal_number FROM target.world_presidents p WHERE p.country ='Venezuela' AND start_year > 1800 AND end_year < 1900 AND party ='Conservative';",
+    "result_set": [
+        {
+            "name": "Juan Pablo Rojas Paúl",
+            "party": "Conservative",
+            "start_year": 1888,
+            "end_year": 1892,
+            "cardinal_number": "34th"
+        }
+    ],
+    "logprobs": [
+        -999.0
+    ],
+    "tokens": 1085,
+    "time": 3.26792049407959
+}

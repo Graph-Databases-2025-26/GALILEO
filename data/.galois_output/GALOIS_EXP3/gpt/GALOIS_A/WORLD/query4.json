@@ -1,0 +1,8 @@
+{
+    "query_id": 4,
+    "sql": "SELECT distinct t2.region FROM target.country_language as t1 join target.country as t2 on t1.country_code_3_letters = t2.code_3_letters WHERE t1.language = 'English' or t1.language = 'Dutch';",
+    "result_set": [],
+    "logprobs": [],
+    "tokens": 2214,
+    "time": 8.05745816230774
+}

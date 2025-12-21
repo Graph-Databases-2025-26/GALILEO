@@ -1,0 +1,15 @@
+{
+    "query_id": 3,
+    "sql": "SELECT m.originaltitle, m.startyear FROM target.movies m WHERE m.director='Richard Thorpe' AND m.startyear > 1950;",
+    "result_set": [
+        {
+            "originaltitle": "The People Against O'Hara",
+            "startyear": 1951
+        }
+    ],
+    "logprobs": [
+        -999.0
+    ],
+    "tokens": 5390,
+    "time": 69.08382654190063
+}

@@ -1,0 +1,14 @@
+{
+    "query_id": 5,
+    "sql": "SELECT p.name FROM target.world_presidents p WHERE p.country='Venezuela' AND p.party='Liberal' AND p.start_year > 1858;",
+    "result_set": [
+        {
+            "name": "Rómulo Betancourt"
+        }
+    ],
+    "logprobs": [
+        -0.050846699006980925
+    ],
+    "tokens": 665,
+    "time": 1.5013346672058105
+}

@@ -1,0 +1,8 @@
+{
+    "query_id": 16,
+    "sql": "SELECT COUNT ( DISTINCT state_name ) FROM target.usa_city WHERE city_name = 'springfield' AND population > 72000;",
+    "result_set": [],
+    "logprobs": [],
+    "tokens": 401,
+    "time": 1.220808744430542
+}

@@ -1,0 +1,14 @@
+{
+    "query_id": 2,
+    "sql": "SELECT m.originaltitle FROM target.movies m WHERE m.director='Steven Spielberg';",
+    "result_set": [
+        {
+            "originaltitle": "Jurassic Park"
+        }
+    ],
+    "logprobs": [
+        -0.05321831056124081
+    ],
+    "tokens": 774,
+    "time": 2.599884271621704
+}

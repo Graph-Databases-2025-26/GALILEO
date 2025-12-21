@@ -1,0 +1,95 @@
+{
+    "query_id": 1,
+    "sql": "SELECT DISTINCT p.name, p.party FROM target.world_presidents p WHERE p.country='Venezuela';",
+    "result_set": [
+        {
+            "name": "Wolfgang Larrazábal",
+            "party": "Military"
+        },
+        {
+            "name": "Eugenio Márquez",
+            "party": "Military"
+        },
+        {
+            "name": "Jorge Pérez",
+            "party": "Democratic Action"
+        },
+        {
+            "name": "Joaquín Crespo",
+            "party": "Copei"
+        },
+        {
+            "name": "Luis Herrera Campins",
+            "party": "Christian Democratic"
+        },
+        {
+            "name": "Antonio Guzmán Blanco",
+            "party": "Liberal"
+        },
+        {
+            "name": "Rafael Caldera",
+            "party": "Christian Democratic"
+        },
+        {
+            "name": "Joel Antonio Ortiz",
+            "party": "Liberal"
+        },
+        {
+            "name": "Isaías Medina Angarita",
+            "party": "Liberal"
+        },
+        {
+            "name": "Rómulo Betancourt",
+            "party": "Democratic Action"
+        },
+        {
+            "name": "Andrés Eloy Blanco",
+            "party": "Liberal"
+        },
+        {
+            "name": "Edgar Sanabria",
+            "party": "Military"
+        },
+        {
+            "name": "Ulpiano Páez",
+            "party": "Conservative"
+        },
+        {
+            "name": "Marcos Pérez Jiménez",
+            "party": "Military"
+        },
+        {
+            "name": "Carlo Andrés Pérez",
+            "party": "Democratic Action"
+        },
+        {
+            "name": "Julio César Salas",
+            "party": "Liberal"
+        },
+        {
+            "name": "Carlos Andrés Pérez",
+            "party": "Democratic Action"
+        }
+    ],
+    "logprobs": [
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0
+    ],
+    "tokens": 5202,
+    "time": 197.00340056419373
+}

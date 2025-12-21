@@ -1,0 +1,14 @@
+{
+    "query_id": 3,
+    "sql": "SELECT count(capital) FROM target.usa_state WHERE state_name = 'rhode island';",
+    "result_set": [
+        {
+            "count(capital)": 1
+        }
+    ],
+    "logprobs": [
+        -999.0
+    ],
+    "tokens": 5606,
+    "time": 48.077333211898804
+}

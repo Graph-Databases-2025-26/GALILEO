@@ -1,0 +1,40 @@
+{
+    "query_id": 2,
+    "sql": "SELECT p.name, p.party FROM target.world_presidents p WHERE p.country='Venezuela' AND p.party='Liberal';",
+    "result_set": [
+        {
+            "name": "Isaías Medina Angarita",
+            "party": "Liberal"
+        },
+        {
+            "name": "Jósé Antonio Pino y Vera",
+            "party": "Liberal"
+        },
+        {
+            "name": "Juan Crisóstomo Falcón",
+            "party": "Liberal"
+        },
+        {
+            "name": "Juan Félix Tovar Groot",
+            "party": "Liberal"
+        },
+        {
+            "name": "Juan José Montoya",
+            "party": "Liberal"
+        },
+        {
+            "name": "Juan Pablo Rojas",
+            "party": "Liberal"
+        }
+    ],
+    "logprobs": [
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0
+    ],
+    "tokens": 1448,
+    "time": 5.0291972160339355
+}

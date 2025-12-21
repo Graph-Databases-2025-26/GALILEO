@@ -1,0 +1,114 @@
+{
+    "query_id": 6,
+    "sql": "SELECT p.name, p.start_year, p.end_year, p.cardinal_number, p.party FROM target.world_presidents p WHERE p.country='Venezuela';",
+    "result_set": [
+        {
+            "name": "Cipriano Castro",
+            "start_year": 1899,
+            "end_year": 1909,
+            "cardinal_number": "14th",
+            "party": "Liberal Party"
+        },
+        {
+            "name": "Juan Vicente Gómez",
+            "start_year": 1909,
+            "end_year": 1914,
+            "cardinal_number": "15th",
+            "party": "Military"
+        },
+        {
+            "name": "Eleazar López Contreras",
+            "start_year": 1931,
+            "end_year": 1935,
+            "cardinal_number": "19th",
+            "party": "Military"
+        },
+        {
+            "name": "Isaías Medina Angarita",
+            "start_year": 1935,
+            "end_year": 1941,
+            "cardinal_number": "20th",
+            "party": "Liberal Party"
+        },
+        {
+            "name": "Rómulo Betancourt",
+            "start_year": 1945,
+            "end_year": 1948,
+            "cardinal_number": "22nd",
+            "party": "Democratic Action"
+        },
+        {
+            "name": "Marcos Pérez Jiménez",
+            "start_year": 1948,
+            "end_year": 1952,
+            "cardinal_number": "23rd",
+            "party": "Military"
+        },
+        {
+            "name": "Rafael Caldera",
+            "start_year": 1964,
+            "end_year": 1969,
+            "cardinal_number": "27th",
+            "party": "Christian Democratic Party"
+        },
+        {
+            "name": "Carlos Andrés Pérez",
+            "start_year": 1974,
+            "end_year": 1979,
+            "cardinal_number": "29th",
+            "party": "Democratic Action"
+        },
+        {
+            "name": "Luis Herrera Campins",
+            "start_year": 1979,
+            "end_year": 1984,
+            "cardinal_number": "30th",
+            "party": "Christian Democratic Party"
+        },
+        {
+            "name": "Jaime Lusinchi",
+            "start_year": 1984,
+            "end_year": 1989,
+            "cardinal_number": "31st",
+            "party": "Democratic Action"
+        },
+        {
+            "name": "Hugo Chávez",
+            "start_year": 1998,
+            "end_year": 1999,
+            "cardinal_number": "34th",
+            "party": "Fifth Republic Movement"
+        },
+        {
+            "name": "Nicolás Maduro",
+            "start_year": 2013,
+            "end_year": 2013,
+            "cardinal_number": "38th",
+            "party": "United Socialist Party of Venezuela"
+        },
+        {
+            "name": "Juan Guaidó",
+            "start_year": 2019,
+            "end_year": 2019,
+            "cardinal_number": "40th",
+            "party": "Popular Will"
+        }
+    ],
+    "logprobs": [
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0
+    ],
+    "tokens": 3016,
+    "time": 78.95898246765137
+}

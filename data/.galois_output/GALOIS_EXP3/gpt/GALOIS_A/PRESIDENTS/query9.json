@@ -1,0 +1,14 @@
+{
+    "query_id": 9,
+    "sql": "SELECT p.name FROM target.world_presidents p where p.country='Venezuela' AND p.party = 'Military' order by p.end_year desc limit 1;",
+    "result_set": [
+        {
+            "name": "Hugo Chávez"
+        }
+    ],
+    "logprobs": [
+        -0.05502376609139345
+    ],
+    "tokens": 661,
+    "time": 1.7112805843353271
+}

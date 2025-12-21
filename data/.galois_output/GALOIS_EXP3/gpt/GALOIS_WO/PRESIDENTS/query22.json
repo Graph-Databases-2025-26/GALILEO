@@ -1,0 +1,8 @@
+{
+    "query_id": 22,
+    "sql": "SELECT p.name FROM target.world_presidents p WHERE p.country='United States' AND p.party='Whig' order by p.end_year desc limit 1;",
+    "result_set": [],
+    "logprobs": [],
+    "tokens": 535,
+    "time": 1.2036993503570557
+}

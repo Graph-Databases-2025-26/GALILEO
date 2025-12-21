@@ -1,0 +1,14 @@
+{
+    "query_id": 19,
+    "sql": "SELECT DISTINCT capital FROM target.usa_state;",
+    "result_set": [
+        {
+            "capital": "Juneau"
+        }
+    ],
+    "logprobs": [
+        -999.0
+    ],
+    "tokens": 917,
+    "time": 5.483031988143921
+}

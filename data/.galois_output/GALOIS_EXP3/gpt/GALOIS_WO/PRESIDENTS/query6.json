@@ -1,0 +1,8 @@
+{
+    "query_id": 6,
+    "sql": "SELECT p.name, p.start_year, p.end_year, p.cardinal_number, p.party FROM target.world_presidents p WHERE p.country='Venezuela';",
+    "result_set": [],
+    "logprobs": [],
+    "tokens": 544,
+    "time": 0.9761185646057129
+}

@@ -1,0 +1,14 @@
+{
+    "query_id": 1,
+    "sql": "SELECT call_sign FROM target.usa_airline_companies WHERE airline='jetblue airways';",
+    "result_set": [
+        {
+            "call_sign": "jetblue"
+        }
+    ],
+    "logprobs": [
+        -8.711738679778591e-06
+    ],
+    "tokens": 564,
+    "time": 3.594972610473633
+}

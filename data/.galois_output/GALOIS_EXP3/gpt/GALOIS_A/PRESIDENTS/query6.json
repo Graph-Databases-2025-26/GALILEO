@@ -1,0 +1,18 @@
+{
+    "query_id": 6,
+    "sql": "SELECT p.name, p.start_year, p.end_year, p.cardinal_number, p.party FROM target.world_presidents p WHERE p.country='Venezuela';",
+    "result_set": [
+        {
+            "name": "Hugo Chávez",
+            "start_year": 1999,
+            "end_year": 2013,
+            "cardinal_number": "26th",
+            "party": "United Socialist Party"
+        }
+    ],
+    "logprobs": [
+        -0.0032846566538990984
+    ],
+    "tokens": 727,
+    "time": 2.6151647567749023
+}

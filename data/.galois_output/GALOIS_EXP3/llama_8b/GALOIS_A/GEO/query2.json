@@ -1,0 +1,190 @@
+{
+    "query_id": 2,
+    "sql": "SELECT city_name FROM target.usa_city WHERE population > 150000;",
+    "result_set": [
+        {
+            "city_name": "New York City"
+        },
+        {
+            "city_name": "Los Angeles"
+        },
+        {
+            "city_name": "Chicago"
+        },
+        {
+            "city_name": "Houston"
+        },
+        {
+            "city_name": "Phoenix"
+        },
+        {
+            "city_name": "Philadelphia"
+        },
+        {
+            "city_name": "San Antonio"
+        },
+        {
+            "city_name": "San Diego"
+        },
+        {
+            "city_name": "Dallas"
+        },
+        {
+            "city_name": "San Jose"
+        },
+        {
+            "city_name": "Austin"
+        },
+        {
+            "city_name": "Jacksonville"
+        },
+        {
+            "city_name": "San Francisco"
+        },
+        {
+            "city_name": "Indianapolis"
+        },
+        {
+            "city_name": "Columbus"
+        },
+        {
+            "city_name": "Fort Worth"
+        },
+        {
+            "city_name": "Charlotte"
+        },
+        {
+            "city_name": "Memphis"
+        },
+        {
+            "city_name": "Boston"
+        },
+        {
+            "city_name": "Baltimore"
+        },
+        {
+            "city_name": "El Paso"
+        },
+        {
+            "city_name": "Seattle"
+        },
+        {
+            "city_name": "Denver"
+        },
+        {
+            "city_name": "Nashville"
+        },
+        {
+            "city_name": "Washington"
+        },
+        {
+            "city_name": "Milwaukee"
+        },
+        {
+            "city_name": "Portland"
+        },
+        {
+            "city_name": "Oklahoma City"
+        },
+        {
+            "city_name": "Kansas City"
+        },
+        {
+            "city_name": "Raleigh"
+        },
+        {
+            "city_name": "Sacramento"
+        },
+        {
+            "city_name": "Oakland"
+        },
+        {
+            "city_name": "Tulsa"
+        },
+        {
+            "city_name": "Minneapolis"
+        },
+        {
+            "city_name": "Long Beach"
+        },
+        {
+            "city_name": "Colorado Springs"
+        },
+        {
+            "city_name": "Albuquerque"
+        },
+        {
+            "city_name": "Tucson"
+        },
+        {
+            "city_name": "Arlington"
+        },
+        {
+            "city_name": "New Orleans"
+        },
+        {
+            "city_name": "Cleveland"
+        },
+        {
+            "city_name": "Henderson"
+        },
+        {
+            "city_name": "St. Louis"
+        },
+        {
+            "city_name": "Virginia Beach"
+        },
+        {
+            "city_name": "Miami"
+        }
+    ],
+    "logprobs": [
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0
+    ],
+    "tokens": 2499,
+    "time": 16.253580570220947
+}

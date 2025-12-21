@@ -1,0 +1,14 @@
+{
+    "query_id": 3,
+    "sql": "SELECT a.airline FROM target.usa_airline_companies a WHERE a.call_sign='ual';",
+    "result_set": [
+        {
+            "airline": "united airlines"
+        }
+    ],
+    "logprobs": [
+        -0.0040974799283901575
+    ],
+    "tokens": 556,
+    "time": 1.9911046028137207
+}

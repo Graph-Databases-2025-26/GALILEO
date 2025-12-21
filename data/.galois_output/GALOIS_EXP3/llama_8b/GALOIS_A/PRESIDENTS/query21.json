@@ -1,0 +1,14 @@
+{
+    "query_id": 21,
+    "sql": "SELECT count(*) FROM target.world_presidents p WHERE p.country='United States' AND p.start_year >= 1990  AND p.start_year < 2000;",
+    "result_set": [
+        {
+            "count_star()": 1
+        }
+    ],
+    "logprobs": [
+        -999.0
+    ],
+    "tokens": 853,
+    "time": 2.2139623165130615
+}

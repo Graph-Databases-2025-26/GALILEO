@@ -1,0 +1,54 @@
+{
+    "query_id": 14,
+    "sql": "SELECT DISTINCT lake_name FROM target.usa_lake WHERE area_squared_km > 750;",
+    "result_set": [
+        {
+            "lake_name": "Lake Mead"
+        },
+        {
+            "lake_name": "Lake George"
+        },
+        {
+            "lake_name": "Lake Powell"
+        },
+        {
+            "lake_name": "Lake Texoma"
+        },
+        {
+            "lake_name": "Lake Oahe"
+        },
+        {
+            "lake_name": "Lake Sakakawea"
+        },
+        {
+            "lake_name": "Lake Buchanan"
+        },
+        {
+            "lake_name": "Lake Hartwell"
+        },
+        {
+            "lake_name": "Lake Cumberland"
+        },
+        {
+            "lake_name": "Lake Eufaula"
+        },
+        {
+            "lake_name": "Lake Norman"
+        }
+    ],
+    "logprobs": [
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0
+    ],
+    "tokens": 9934,
+    "time": 74.71751999855042
+}
