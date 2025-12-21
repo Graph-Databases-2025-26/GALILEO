@@ -1,0 +1,26 @@
+{
+    "query_id": 1,
+    "sql": "SELECT a.name FROM target.airports a WHERE a.elevation_in_ft >= -50 and a.elevation_in_ft <= 50;",
+    "result_set": [
+        {
+            "name": "Sisimiut Airport"
+        },
+        {
+            "name": "Aasiaat Airport"
+        },
+        {
+            "name": "Qeqertarsuaq Airport"
+        },
+        {
+            "name": "Maniitsoq Airport"
+        }
+    ],
+    "logprobs": [
+        -0.08518796387684667,
+        -0.47589550492556,
+        -0.202089176387375,
+        -0.17659968462621428
+    ],
+    "tokens": 1917,
+    "time": 9.32187795639038
+}

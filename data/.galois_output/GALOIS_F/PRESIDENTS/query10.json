@@ -1,29 +1,8 @@
 {
     "query_id": 10,
     "sql": "SELECT p.name, p.party, start_year, end_year, p.cardinal_number FROM target.world_presidents p WHERE p.country ='Venezuela' AND start_year > 1900 AND end_year < 2000 AND party ='Democratic Action';",
-    "result_set": [
-        {
-            "name": "Carlos Andrés Pérez",
-            "party": "Democratic Action",
-            "start_year": 1974,
-            "end_year": 1979,
-            "cardinal_number": "34th"
-        },
-        {
-            "name": "Luis Herrera Campins",
-            "party": "Democratic Action",
-            "start_year": 1979,
-            "end_year": 1984,
-            "cardinal_number": "35th"
-        },
-        {
-            "name": "Jaime Lusinchi",
-            "party": "Democratic Action",
-            "start_year": 1984,
-            "end_year": 1989,
-            "cardinal_number": "36th"
-        }
-    ],
-    "time": 27.021654844284058,
-    "tokens": 1022
+    "result_set": [],
+    "logprobs": [],
+    "tokens": 1338,
+    "time": 5.690798282623291
 }

@@ -1,0 +1,8 @@
+{
+    "query_id": 3,
+    "sql": "select m.player_of_the_match from target.premier_league_2024_2025_match_result m;",
+    "result_set": [],
+    "logprobs": [],
+    "tokens": 588,
+    "time": 1.3642871379852295
+}

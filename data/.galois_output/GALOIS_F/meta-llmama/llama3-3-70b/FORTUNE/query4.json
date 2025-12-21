@@ -1,0 +1,58 @@
+{
+    "query_id": 4,
+    "sql": "select headquarterscity from target.fortune_2024 f where f.industry = 'Airlines';",
+    "result_set": [
+        {
+            "headquarterscity": "Honolulu"
+        },
+        {
+            "headquarterscity": "Denver"
+        },
+        {
+            "headquarterscity": "Atlanta"
+        },
+        {
+            "headquarterscity": "Las Vegas"
+        },
+        {
+            "headquarterscity": "Miramar"
+        },
+        {
+            "headquarterscity": "Minneapolis"
+        },
+        {
+            "headquarterscity": "Fort Worth"
+        },
+        {
+            "headquarterscity": "Seattle"
+        },
+        {
+            "headquarterscity": "Long Island City"
+        },
+        {
+            "headquarterscity": "Chicago"
+        },
+        {
+            "headquarterscity": "Burlingame"
+        },
+        {
+            "headquarterscity": "Dallas"
+        }
+    ],
+    "logprobs": [
+        -0.0024435364723199996,
+        -1.692746616666667e-05,
+        -7.748559666666666e-06,
+        -1.2516948e-06,
+        -3.755067145e-06,
+        -0.00033681025207,
+        -0.0001793464096,
+        -6.397519093333334e-06,
+        -0.00043771042926399995,
+        -1.5894536866666665e-06,
+        -0.03811101621092167,
+        -5.1657326e-07
+    ],
+    "tokens": 2865,
+    "time": 12.99938178062439
+}

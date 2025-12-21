@@ -1,0 +1,18 @@
+{
+    "query_id": 6,
+    "sql": "SELECT p.name, p.start_year, p.end_year, p.cardinal_number, p.party FROM target.world_presidents p WHERE p.country='Venezuela';",
+    "result_set": [
+        {
+            "name": "Hugo Chávez",
+            "start_year": 1999,
+            "end_year": 2013,
+            "cardinal_number": "38th",
+            "party": "Fifth Republic Movement"
+        }
+    ],
+    "logprobs": [
+        -0.00891336439724455
+    ],
+    "tokens": 732,
+    "time": 2.473134756088257
+}

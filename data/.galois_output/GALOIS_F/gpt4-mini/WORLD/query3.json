@@ -1,0 +1,8 @@
+{
+    "query_id": 3,
+    "sql": "SELECT avg(gnp), sum(population) FROM target.country WHERE government_form = 'US Territory';",
+    "result_set": [],
+    "logprobs": [],
+    "tokens": 1111,
+    "time": 1.8606045246124268
+}

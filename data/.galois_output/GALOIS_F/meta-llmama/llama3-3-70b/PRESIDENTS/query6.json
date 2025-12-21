@@ -1,0 +1,34 @@
+{
+    "query_id": 6,
+    "sql": "SELECT p.name, p.start_year, p.end_year, p.cardinal_number, p.party FROM target.world_presidents p WHERE p.country='Venezuela';",
+    "result_set": [
+        {
+            "name": "Hugo Chavez",
+            "start_year": 1999,
+            "end_year": 2013,
+            "cardinal_number": "55th",
+            "party": "United Socialist Party"
+        },
+        {
+            "name": "Nicolas Maduro",
+            "start_year": 2013,
+            "end_year": 2019,
+            "cardinal_number": "56th",
+            "party": "United Socialist Party"
+        },
+        {
+            "name": "Rafael Caldera",
+            "start_year": 1994,
+            "end_year": 1999,
+            "cardinal_number": "54th",
+            "party": "National Convergence"
+        }
+    ],
+    "logprobs": [
+        -0.07701916753058666,
+        -0.06383494104920534,
+        -0.00017177662405235287
+    ],
+    "tokens": 1713,
+    "time": 10.027633428573608
+}

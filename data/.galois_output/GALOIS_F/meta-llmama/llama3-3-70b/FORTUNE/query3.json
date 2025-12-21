@@ -1,0 +1,15 @@
+{
+    "query_id": 3,
+    "sql": "select company, headquartersstate from target.fortune_2024 where number_of_employees > 1000000;",
+    "result_set": [
+        {
+            "Company": "Walmart Inc.",
+            "headquartersstate": "Arkansas"
+        }
+    ],
+    "logprobs": [
+        -8.22530516e-06
+    ],
+    "tokens": 4069,
+    "time": 32.783711433410645
+}

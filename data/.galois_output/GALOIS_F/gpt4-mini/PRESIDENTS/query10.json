@@ -1,0 +1,18 @@
+{
+    "query_id": 10,
+    "sql": "SELECT p.name, p.party, start_year, end_year, p.cardinal_number FROM target.world_presidents p WHERE p.country ='Venezuela' AND start_year > 1900 AND end_year < 2000 AND party ='Democratic Action';",
+    "result_set": [
+        {
+            "name": "Rómulo Betancourt",
+            "party": "Democratic Action",
+            "start_year": 1959,
+            "end_year": 1964,
+            "cardinal_number": "10th"
+        }
+    ],
+    "logprobs": [
+        -0.013318103616628225
+    ],
+    "tokens": 839,
+    "time": 5.016066789627075
+}

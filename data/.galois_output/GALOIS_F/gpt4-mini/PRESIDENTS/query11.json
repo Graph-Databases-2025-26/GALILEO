@@ -1,0 +1,18 @@
+{
+    "query_id": 11,
+    "sql": "SELECT p.name, p.party, start_year, end_year, p.cardinal_number FROM target.world_presidents p WHERE p.country ='Venezuela' AND start_year > 1800 AND end_year < 1900 AND party ='Conservative';",
+    "result_set": [
+        {
+            "name": "José Antonio Páez",
+            "party": "Conservative",
+            "start_year": 1830,
+            "end_year": 1835,
+            "cardinal_number": "1st"
+        }
+    ],
+    "logprobs": [
+        -0.05097218937638293
+    ],
+    "tokens": 718,
+    "time": 1.7468562126159668
+}

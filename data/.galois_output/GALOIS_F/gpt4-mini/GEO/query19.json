@@ -1,0 +1,8 @@
+{
+    "query_id": 19,
+    "sql": "SELECT DISTINCT capital FROM target.usa_state;",
+    "result_set": [],
+    "logprobs": [],
+    "tokens": 472,
+    "time": 1.1045539379119873
+}

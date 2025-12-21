@@ -1,0 +1,14 @@
+{
+    "query_id": 21,
+    "sql": "SELECT country_name FROM target.usa_state WHERE state_name = 'massachusetts';",
+    "result_set": [
+        {
+            "country_name": "united states"
+        }
+    ],
+    "logprobs": [
+        -4.499378519540187e-07
+    ],
+    "tokens": 710,
+    "time": 3.9817347526550293
+}

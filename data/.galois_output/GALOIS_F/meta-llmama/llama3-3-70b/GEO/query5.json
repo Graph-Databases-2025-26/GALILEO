@@ -1,0 +1,14 @@
+{
+    "query_id": 5,
+    "sql": "SELECT count(state_name) FROM target.usa_state;",
+    "result_set": [
+        {
+            "count(state_name)": 50
+        }
+    ],
+    "logprobs": [
+        -1.2226845735333335e-06
+    ],
+    "tokens": 2221,
+    "time": 49.24207520484924
+}

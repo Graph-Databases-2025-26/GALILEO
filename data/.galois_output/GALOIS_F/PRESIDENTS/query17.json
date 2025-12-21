@@ -1,62 +1,8 @@
 {
     "query_id": 17,
     "sql": "SELECT p.name FROM target.world_presidents p WHERE p.country='United States' AND p.party='Republican';",
-    "result_set": [
-        {
-            "name": "William McKinley"
-        },
-        {
-            "name": "Ulysses S. Grant"
-        },
-        {
-            "name": "Rutherford B. Hayes"
-        },
-        {
-            "name": "Calvin Coolidge"
-        },
-        {
-            "name": "Theodore Roosevelt"
-        },
-        {
-            "name": "Warren G. Harding"
-        },
-        {
-            "name": "Gerald Ford"
-        },
-        {
-            "name": "Ronald Reagan"
-        },
-        {
-            "name": "Donald Trump"
-        },
-        {
-            "name": "Herbert Hoover"
-        },
-        {
-            "name": "Abraham Lincoln"
-        },
-        {
-            "name": "Benjamin Harrison"
-        },
-        {
-            "name": "Richard Nixon"
-        },
-        {
-            "name": "Dwight D. Eisenhower"
-        },
-        {
-            "name": "George W. Bush"
-        },
-        {
-            "name": "Chester A. Arthur"
-        },
-        {
-            "name": "George H.W. Bush"
-        },
-        {
-            "name": "William Howard Taft"
-        }
-    ],
-    "time": 33.877174615859985,
-    "tokens": 1422
+    "result_set": [],
+    "logprobs": [],
+    "tokens": 1207,
+    "time": 3.906820774078369
 }

@@ -1,0 +1,136 @@
+{
+    "query_id": 1,
+    "sql": "select m.opponent_team, m.match_date_year, m.match_date_month, m.match_date_day from target.premier_league_2024_2025_arsenal_matches m;",
+    "result_set": [
+        {
+            "opponent_team": "Manchester City",
+            "match_date_year": 2024,
+            "match_date_month": null,
+            "match_date_day": 17
+        },
+        {
+            "opponent_team": "Liverpool",
+            "match_date_year": 2024,
+            "match_date_month": null,
+            "match_date_day": 24
+        },
+        {
+            "opponent_team": "Tottenham Hotspur",
+            "match_date_year": 2024,
+            "match_date_month": null,
+            "match_date_day": 1
+        },
+        {
+            "opponent_team": "Chelsea",
+            "match_date_year": 2024,
+            "match_date_month": null,
+            "match_date_day": 14
+        },
+        {
+            "opponent_team": "Manchester United",
+            "match_date_year": 2024,
+            "match_date_month": null,
+            "match_date_day": 28
+        },
+        {
+            "opponent_team": "Newcastle United",
+            "match_date_year": 2024,
+            "match_date_month": null,
+            "match_date_day": 5
+        },
+        {
+            "opponent_team": "Nottingham Forest",
+            "match_date_year": 2024,
+            "match_date_month": null,
+            "match_date_day": 19
+        },
+        {
+            "opponent_team": "West Ham United",
+            "match_date_year": 2024,
+            "match_date_month": null,
+            "match_date_day": 2
+        },
+        {
+            "opponent_team": "Wolverhampton Wanderers",
+            "match_date_year": 2024,
+            "match_date_month": null,
+            "match_date_day": 9
+        },
+        {
+            "opponent_team": "Aston Villa",
+            "match_date_year": 2024,
+            "match_date_month": null,
+            "match_date_day": 23
+        },
+        {
+            "opponent_team": "Bournemouth",
+            "match_date_year": 2024,
+            "match_date_month": null,
+            "match_date_day": 7
+        },
+        {
+            "opponent_team": "Brighton & Hove Albion",
+            "match_date_year": 2024,
+            "match_date_month": null,
+            "match_date_day": 14
+        },
+        {
+            "opponent_team": "Crystal Palace",
+            "match_date_year": 2024,
+            "match_date_month": null,
+            "match_date_day": 26
+        },
+        {
+            "opponent_team": "Everton",
+            "match_date_year": 2025,
+            "match_date_month": null,
+            "match_date_day": 1
+        },
+        {
+            "opponent_team": "Fulham",
+            "match_date_year": 2025,
+            "match_date_month": null,
+            "match_date_day": 11
+        },
+        {
+            "opponent_team": "Leeds United",
+            "match_date_year": 2025,
+            "match_date_month": null,
+            "match_date_day": 18
+        },
+        {
+            "opponent_team": "Leicester City",
+            "match_date_year": 2025,
+            "match_date_month": null,
+            "match_date_day": 1
+        },
+        {
+            "opponent_team": "Southampton",
+            "match_date_year": 2025,
+            "match_date_month": null,
+            "match_date_day": 8
+        }
+    ],
+    "logprobs": [
+        -0.029389333904833333,
+        -0.152379232148,
+        -0.013618428681686666,
+        -0.0260813369528,
+        -0.1319004782,
+        -7.158290238571428e-05,
+        -0.14213468220616,
+        -0.09111440540814,
+        -0.00028135373331,
+        -0.1412260019462857,
+        -0.008314823965333335,
+        -0.01836403585986364,
+        -0.10135267066666666,
+        -0.0010638391743916667,
+        -0.0008528491365685715,
+        -0.02126325713722143,
+        -1.4832469357142858e-05,
+        -0.00012647482488
+    ],
+    "tokens": 2319,
+    "time": 18.89428400993347
+}

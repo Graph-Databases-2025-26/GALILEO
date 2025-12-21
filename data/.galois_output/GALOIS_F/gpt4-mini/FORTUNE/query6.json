@@ -1,0 +1,8 @@
+{
+    "query_id": 6,
+    "sql": "select ceo from target.fortune_2024 f where femaleceo = true and f.Companytype = 'Private';",
+    "result_set": [],
+    "logprobs": [],
+    "tokens": 1586,
+    "time": 2.293518543243408
+}

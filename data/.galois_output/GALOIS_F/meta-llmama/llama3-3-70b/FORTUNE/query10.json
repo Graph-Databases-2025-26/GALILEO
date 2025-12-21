@@ -1,0 +1,20 @@
+{
+    "query_id": 10,
+    "sql": "select company, headquartersstate, ticker, ceo, founder_is_ceo, femaleceo, number_of_employees from target.fortune_2024 where headquarterscity = 'Santa Clara' and rank < 70;",
+    "result_set": [
+        {
+            "company": "Intel",
+            "headquartersstate": "California",
+            "ticker": "INTC",
+            "ceo": "Pat Gelsinger",
+            "founder_is_ceo": true,
+            "femaleceo": false,
+            "number_of_employees": 120000
+        }
+    ],
+    "logprobs": [
+        -0.09217787404610332
+    ],
+    "tokens": 2032,
+    "time": 6.551592588424683
+}

@@ -65,12 +65,18 @@ class LLMBaseWrapper(ABC):
         """
         
         pass
+    
+    @abstractmethod
+    def get_logprobs_content(self, raw_response: BaseMessage) -> int:
         
+        pass
+    
     def get_llm_instance(self) -> BaseChatModel:
         if not self.llm_instance:
             self.llm_instance = self._create_llm_instance(self.config)
         
         return self.llm_instance
+    
     
 class OpenRouterWrapper(LLMBaseWrapper):
     def get_provider_name(self) -> str:
@@ -87,6 +93,8 @@ class OpenRouterWrapper(LLMBaseWrapper):
                 max_tokens=config.open_router.max_tokens,
                 api_key=config.open_router.api_key,
                 base_url=config.open_router.endpoint,
+                logprobs= True,
+                top_logprobs= 1
             )
 
         else:
@@ -94,6 +102,11 @@ class OpenRouterWrapper(LLMBaseWrapper):
 
     def get_output_tokens(self, raw_response: BaseMessage) -> int:
         return raw_response.usage_metadata.get("output_tokens", 0)
+    
+    def get_logprobs_content(self, raw_response: BaseMessage):
+        if raw_response.response_metadata and raw_response.response_metadata.get("logprobs"):
+            return raw_response.response_metadata.get("logprobs").get("content")
+        return None
 
 class GeminiWrapper(LLMBaseWrapper):
     """
@@ -113,6 +126,8 @@ class GeminiWrapper(LLMBaseWrapper):
                 temperature = config.gemini.temperature,
                 max_output_tokens = config.gemini.max_output_tokens,
                 google_api_key = config.gemini.api_key,
+                logprobs= True,
+                top_logprobs= 1
             )
             
         else:
@@ -120,6 +135,11 @@ class GeminiWrapper(LLMBaseWrapper):
 
     def get_output_tokens(self, raw_response: BaseMessage) -> int:
         return raw_response.usage_metadata.get("output_tokens", 0)
+    
+    def get_logprobs_content(self, raw_response: BaseMessage):
+        if raw_response.response_metadata and raw_response.response_metadata.get("logprobs"):
+            return raw_response.response_metadata["logprobs"].get("content")
+        return None
 
 
 class WatsonxWrapper(LLMBaseWrapper):
@@ -131,7 +151,7 @@ class WatsonxWrapper(LLMBaseWrapper):
         return "watsonx"
         
     def _create_llm_instance(self, config):
-        
+                    
         if config.watsonx.api_key:
             
             LOG.info(f"Creating Watsonx LLM: model ...")
@@ -153,7 +173,7 @@ class WatsonxWrapper(LLMBaseWrapper):
                 # 4. ANTI-LOOP: Light penalty to avoid infinite repetitions
                 "repetition_penalty": 1.05,
 
-                "min_new_tokens": 1
+                "min_new_tokens": 1,
             }
             
             return ChatWatsonx(
@@ -161,6 +181,8 @@ class WatsonxWrapper(LLMBaseWrapper):
                 api_key = config.watsonx.api_key,
                 url = config.watsonx.endpoint, 
                 project_id = config.watsonx.project_id,
+                logprobs=True,
+                top_logprobs=1,
                 params = generation_params
             )
             
@@ -170,3 +192,5 @@ class WatsonxWrapper(LLMBaseWrapper):
     def get_output_tokens(self, raw_response: BaseMessage) -> int:
         return raw_response.usage_metadata.get("output_tokens", 0) 
        
+    def get_logprobs_content(self, raw_response: BaseMessage):
+       return raw_response.response_metadata.get("logprobs").get("content")

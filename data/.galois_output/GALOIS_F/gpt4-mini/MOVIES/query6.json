@@ -1,0 +1,19 @@
+{
+    "query_id": 6,
+    "sql": "SELECT m.originaltitle, m.startyear, m.genres, m.birthyear, m.deathyear, m.runtimeminutes FROM target.movies m WHERE m.director = 'Steven Spielberg' AND m.startyear > 1990 AND m.startyear < 2000;",
+    "result_set": [
+        {
+            "originaltitle": "Saving Private Ryan",
+            "startyear": 1998,
+            "genres": "Adventure,Drama",
+            "birthyear": 1946,
+            "deathyear": null,
+            "runtimeminutes": 169
+        }
+    ],
+    "logprobs": [
+        -0.047806987998942674
+    ],
+    "tokens": 963,
+    "time": 6.328967094421387
+}

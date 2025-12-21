@@ -1,0 +1,60 @@
+{
+    "query_id": 4,
+    "sql": "SELECT m.originaltitle, m.startyear FROM target.movies m WHERE m.director='Steven Spielberg' AND m.startyear > 2000;",
+    "result_set": [
+        {
+            "originaltitle": "The BFG",
+            "startyear": 2016
+        },
+        {
+            "originaltitle": "Ready Player One",
+            "startyear": 2018
+        },
+        {
+            "originaltitle": "Bridge of Spies",
+            "startyear": 2015
+        },
+        {
+            "originaltitle": "War of the Worlds",
+            "startyear": 2005
+        },
+        {
+            "originaltitle": "War Horse",
+            "startyear": 2011
+        },
+        {
+            "originaltitle": "Lincoln",
+            "startyear": 2012
+        },
+        {
+            "originaltitle": "West Side Story",
+            "startyear": 2021
+        },
+        {
+            "originaltitle": "The Terminal",
+            "startyear": 2004
+        },
+        {
+            "originaltitle": "The Adventures of Tintin",
+            "startyear": 2011
+        },
+        {
+            "originaltitle": "The Post",
+            "startyear": 2017
+        }
+    ],
+    "logprobs": [
+        -8.5149344e-07,
+        -1.0728802571428572e-06,
+        -7.301550124999999e-07,
+        -1.922235885e-06,
+        -6.755180916666667e-07,
+        -2.860999305e-06,
+        -2.4522920042857144e-06,
+        -1.1722211666666667e-06,
+        -2.7418098e-07,
+        -7.947266666666667e-07
+    ],
+    "tokens": 2147,
+    "time": 10.995349407196045
+}

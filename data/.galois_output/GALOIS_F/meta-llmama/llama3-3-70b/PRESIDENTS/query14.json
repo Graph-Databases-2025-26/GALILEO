@@ -1,0 +1,110 @@
+{
+    "query_id": 14,
+    "sql": "SELECT p.name, p.party FROM target.world_presidents p WHERE p.country='United States';",
+    "result_set": [
+        {
+            "name": "Woodrow Wilson",
+            "party": "Democratic"
+        },
+        {
+            "name": "Harry S. Truman",
+            "party": "Democratic"
+        },
+        {
+            "name": "George W. Bush",
+            "party": "Republican"
+        },
+        {
+            "name": "Bill Clinton",
+            "party": "Democratic"
+        },
+        {
+            "name": "Gerald Ford",
+            "party": "Republican"
+        },
+        {
+            "name": "Warren G. Harding",
+            "party": "Republican"
+        },
+        {
+            "name": "Zachary Taylor",
+            "party": "Whig"
+        },
+        {
+            "name": "Theodore Roosevelt",
+            "party": "Republican"
+        },
+        {
+            "name": "Grover Cleveland",
+            "party": "Democratic"
+        },
+        {
+            "name": "Franklin D. Roosevelt",
+            "party": "Democratic"
+        },
+        {
+            "name": "Richard Nixon",
+            "party": "Republican"
+        },
+        {
+            "name": "George H.W. Bush",
+            "party": "Republican"
+        },
+        {
+            "name": "Jimmy Carter",
+            "party": "Democratic"
+        },
+        {
+            "name": "Barack Obama",
+            "party": "Democratic"
+        },
+        {
+            "name": "Herbert Hoover",
+            "party": "Republican"
+        },
+        {
+            "name": "Donald Trump",
+            "party": "Republican"
+        },
+        {
+            "name": "Lyndon B. Johnson",
+            "party": "Democratic"
+        },
+        {
+            "name": "John F. Kennedy",
+            "party": "Democratic"
+        },
+        {
+            "name": "Ronald Reagan",
+            "party": "Republican"
+        },
+        {
+            "name": "Joe Biden",
+            "party": "Democratic"
+        }
+    ],
+    "logprobs": [
+        -0.0005865849979666667,
+        -1.8051595914285715e-06,
+        -7.493136542857144e-07,
+        -1.0013554800000001e-06,
+        -2.3444328333333332e-06,
+        -9.8347291e-07,
+        -4.7683625e-07,
+        -1.0072881546666666e-05,
+        -1.5099783833333335e-06,
+        -1.13248560625e-06,
+        -1.8596577400000002e-06,
+        -6.25847285e-07,
+        -2.1696014000000004e-06,
+        -6.556501833333334e-07,
+        -7.549907899999999e-07,
+        -3.004062596e-06,
+        -8.7916573e-07,
+        -5.108960428571428e-07,
+        -1.7285299966666664e-06,
+        -9.298309e-07
+    ],
+    "tokens": 1966,
+    "time": 22.167810440063477
+}

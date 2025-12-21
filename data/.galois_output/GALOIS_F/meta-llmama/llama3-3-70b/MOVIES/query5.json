@@ -1,0 +1,80 @@
+{
+    "query_id": 5,
+    "sql": "SELECT m.originaltitle, m.startyear, m.genres, m.birthyear FROM target.movies m WHERE m.director='Steven Spielberg' AND m.startyear > 2000;",
+    "result_set": [
+        {
+            "originaltitle": "War Horse",
+            "startyear": 2011,
+            "genres": "Adventure,Drama,War",
+            "birthyear": 1946
+        },
+        {
+            "originaltitle": "Lincoln",
+            "startyear": 2012,
+            "genres": "Biography,Drama,History",
+            "birthyear": 1946
+        },
+        {
+            "originaltitle": "Bridge of Spies",
+            "startyear": 2015,
+            "genres": "Drama,History,Thriller",
+            "birthyear": 1946
+        },
+        {
+            "originaltitle": "The BFG",
+            "startyear": 2016,
+            "genres": "Adventure,Fantasy",
+            "birthyear": 1946
+        },
+        {
+            "originaltitle": "Ready Player One",
+            "startyear": 2018,
+            "genres": "Action,Adventure,Sci-Fi",
+            "birthyear": 1946
+        },
+        {
+            "originaltitle": "The Terminal",
+            "startyear": 2004,
+            "genres": "Comedy,Drama,Romance",
+            "birthyear": 1946
+        },
+        {
+            "originaltitle": "War of the Worlds",
+            "startyear": 2005,
+            "genres": "Adventure,Sci-Fi,Thriller",
+            "birthyear": 1946
+        },
+        {
+            "originaltitle": "Catch Me If You Can",
+            "startyear": 2002,
+            "genres": "Biography,Crime,Drama",
+            "birthyear": 1946
+        },
+        {
+            "originaltitle": "Indiana Jones and the Kingdom of the Crystal Skull",
+            "startyear": 2008,
+            "genres": "Action,Adventure",
+            "birthyear": 1946
+        },
+        {
+            "originaltitle": "Munich",
+            "startyear": 2005,
+            "genres": "Drama,History,Thriller",
+            "birthyear": 1946
+        }
+    ],
+    "logprobs": [
+        -0.07292091125732222,
+        -0.00010094893812800002,
+        -0.000108847996875,
+        -2.7665409384999997e-05,
+        -3.5220437299999995e-05,
+        -0.05649198997553602,
+        -0.033636547647252726,
+        -0.04473015335444615,
+        -0.03995513659089437,
+        -0.005902656923209091
+    ],
+    "tokens": 3610,
+    "time": 21.372315645217896
+}

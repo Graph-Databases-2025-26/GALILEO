@@ -4,7 +4,7 @@
     "result_set": [
         {
             "state_name": "Alabama",
-            "population": 4903186,
+            "population": 4887681,
             "area_squared_miles": 52420.0
         },
         {
@@ -14,18 +14,18 @@
         },
         {
             "state_name": "Arizona",
-            "population": 7278717,
+            "population": 7158024,
             "area_squared_miles": 113990.0
         },
         {
             "state_name": "Arkansas",
-            "population": 2916523,
-            "area_squared_miles": 53182.0
+            "population": 3009738,
+            "area_squared_miles": 53178.0
         },
         {
             "state_name": "California",
             "population": 39461588,
-            "area_squared_miles": 163696.0
+            "area_squared_miles": 163695.0
         },
         {
             "state_name": "Colorado",
@@ -40,12 +40,12 @@
         {
             "state_name": "Delaware",
             "population": 984307,
-            "area_squared_miles": 2489.0
+            "area_squared_miles": 2484.0
         },
         {
             "state_name": "Florida",
             "population": 21244317,
-            "area_squared_miles": 170312.0
+            "area_squared_miles": 65773.0
         },
         {
             "state_name": "Georgia",
@@ -55,7 +55,7 @@
         {
             "state_name": "Hawaii",
             "population": 1420593,
-            "area_squared_miles": 10932.0
+            "area_squared_miles": 1088.0
         },
         {
             "state_name": "Idaho",
@@ -64,27 +64,27 @@
         },
         {
             "state_name": "Illinois",
-            "population": 12886144,
-            "area_squared_miles": 59918.0
+            "population": 12671003,
+            "area_squared_miles": 57914.0
         },
         {
             "state_name": "Indiana",
-            "population": 6732219,
+            "population": 6732216,
             "area_squared_miles": 36420.0
         },
         {
             "state_name": "Iowa",
             "population": 3155070,
-            "area_squared_miles": 58557.0
+            "area_squared_miles": 58518.0
         },
         {
             "state_name": "Kansas",
-            "population": 2910741,
-            "area_squared_miles": 82277.0
+            "population": 2913314,
+            "area_squared_miles": 82542.0
         },
         {
             "state_name": "Kentucky",
-            "population": 4463452,
+            "population": 4467673,
             "area_squared_miles": 40409.0
         },
         {
@@ -94,38 +94,38 @@
         },
         {
             "state_name": "Maine",
-            "population": 1362358,
-            "area_squared_miles": 35380.0
+            "population": 1363543,
+            "area_squared_miles": 35398.0
         },
         {
             "state_name": "Maryland",
-            "population": 6040668,
-            "area_squared_miles": 12407.0
+            "population": 6045686,
+            "area_squared_miles": 12415.0
         },
         {
             "state_name": "Massachusetts",
-            "population": 6892503,
-            "area_squared_miles": 10577.0
+            "population": 6948073,
+            "area_squared_miles": 10586.0
         },
         {
             "state_name": "Michigan",
-            "population": 10077331,
-            "area_squared_miles": 96716.0
+            "population": 9987475,
+            "area_squared_miles": 96358.0
         },
         {
             "state_name": "Minnesota",
-            "population": 5639632,
+            "population": 5706175,
             "area_squared_miles": 86936.0
         },
         {
             "state_name": "Mississippi",
-            "population": 2955064,
+            "population": 2967297,
             "area_squared_miles": 48434.0
         },
         {
             "state_name": "Missouri",
-            "population": 6137428,
-            "area_squared_miles": 69562.0
+            "population": 6131797,
+            "area_squared_miles": 69742.0
         },
         {
             "state_name": "Montana",
@@ -134,98 +134,98 @@
         },
         {
             "state_name": "Nebraska",
-            "population": 1929268,
-            "area_squared_miles": 77348.0
+            "population": 1939378,
+            "area_squared_miles": 77382.0
         },
         {
             "state_name": "Nevada",
-            "population": 3139651,
-            "area_squared_miles": 110567.0
+            "population": 3080856,
+            "area_squared_miles": 110562.0
         },
         {
             "state_name": "New Hampshire",
-            "population": 1376549,
-            "area_squared_miles": 9350.0
+            "population": 1356479,
+            "area_squared_miles": 9389.0
         },
         {
             "state_name": "New Jersey",
-            "population": 8944469,
-            "area_squared_miles": NaN
+            "population": 8921871,
+            "area_squared_miles": 8729.0
         },
         {
             "state_name": "New Mexico",
-            "population": 2137499,
+            "population": 2085284,
             "area_squared_miles": 121669.0
         },
         {
             "state_name": "New York",
             "population": 19453561,
-            "area_squared_miles": 54475.0
+            "area_squared_miles": 54407.0
         },
         {
             "state_name": "North Carolina",
-            "population": 10420000,
-            "area_squared_miles": 53819.0
+            "population": 10352807,
+            "area_squared_miles": 53820.0
         },
         {
             "state_name": "North Dakota",
             "population": 760077,
-            "area_squared_miles": 70704.0
+            "area_squared_miles": 70740.0
         },
         {
             "state_name": "Ohio",
-            "population": 11689100,
+            "population": 11689400,
             "area_squared_miles": 44828.0
         },
         {
             "state_name": "Oklahoma",
-            "population": 3956971,
-            "area_squared_miles": 69662.0
+            "population": 3900518,
+            "area_squared_miles": 69331.0
         },
         {
             "state_name": "Oregon",
-            "population": 4237251,
-            "area_squared_miles": 98386.0
+            "population": 4217737,
+            "area_squared_miles": 98382.0
         },
         {
             "state_name": "Pennsylvania",
-            "population": 12802023,
+            "population": 12802503,
             "area_squared_miles": 46055.0
         },
         {
             "state_name": "Rhode Island",
-            "population": 1097379,
+            "population": 1055981,
             "area_squared_miles": 1545.0
         },
         {
             "state_name": "South Carolina",
-            "population": 5086476,
-            "area_squared_miles": 32020.0
+            "population": 5070733,
+            "area_squared_miles": 32012.0
         },
         {
             "state_name": "South Dakota",
             "population": 892508,
-            "area_squared_miles": 77116.0
+            "area_squared_miles": 77182.0
         },
         {
             "state_name": "Tennessee",
-            "population": 6829174,
-            "area_squared_miles": 42144.0
+            "population": 6830424,
+            "area_squared_miles": 42177.0
         },
         {
             "state_name": "Texas",
-            "population": 28995881,
+            "population": 28956961,
             "area_squared_miles": 268597.0
         },
         {
             "state_name": "Utah",
-            "population": 3255954,
-            "area_squared_miles": 84997.0
+            "population": 3233284,
+            "area_squared_miles": 84925.0
         },
         {
             "state_name": "Vermont",
             "population": 643077,
-            "area_squared_miles": 9615.0
+            "area_squared_miles": 9669.0
         },
         {
             "state_name": "Virginia",
@@ -234,25 +234,77 @@
         },
         {
             "state_name": "Washington",
-            "population": 7535591,
-            "area_squared_miles": 71298.0
+            "population": 7614893,
+            "area_squared_miles": 71791.0
         },
         {
             "state_name": "West Virginia",
-            "population": 1793487,
-            "area_squared_miles": 24230.0
+            "population": 1790306,
+            "area_squared_miles": 24207.0
         },
         {
             "state_name": "Wisconsin",
-            "population": 5822564,
+            "population": 5856045,
             "area_squared_miles": 55994.0
         },
         {
             "state_name": "Wyoming",
-            "population": 579315,
-            "area_squared_miles": 97818.0
+            "population": 567098,
+            "area_squared_miles": 97817.0
         }
     ],
-    "time": 39.46841597557068,
-    "tokens": 1582
+    "logprobs": [
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0
+    ],
+    "tokens": 3637,
+    "time": 9.472251415252686
 }

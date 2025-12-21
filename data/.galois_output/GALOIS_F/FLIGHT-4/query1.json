@@ -1,7 +1,210 @@
 {
     "query_id": 1,
     "sql": "SELECT a.name FROM target.airports a WHERE a.elevation_in_ft >= -50 and a.elevation_in_ft <= 50;",
-    "result_set": [],
-    "time": 15.034769296646118,
-    "tokens": 435
+    "result_set": [
+        {
+            "name": "Airport 20"
+        },
+        {
+            "name": "Airport 29"
+        },
+        {
+            "name": "Airport 38"
+        },
+        {
+            "name": "Airport 47"
+        },
+        {
+            "name": "Airport 13"
+        },
+        {
+            "name": "Airport 22"
+        },
+        {
+            "name": "Airport 31"
+        },
+        {
+            "name": "Airport 40"
+        },
+        {
+            "name": "Airport 49"
+        },
+        {
+            "name": "Airport 6"
+        },
+        {
+            "name": "Airport 15"
+        },
+        {
+            "name": "Airport 24"
+        },
+        {
+            "name": "Airport 33"
+        },
+        {
+            "name": "Airport 42"
+        },
+        {
+            "name": "Airport 8"
+        },
+        {
+            "name": "Airport 17"
+        },
+        {
+            "name": "Airport 26"
+        },
+        {
+            "name": "Airport 35"
+        },
+        {
+            "name": "Airport 44"
+        },
+        {
+            "name": "Airport 1"
+        },
+        {
+            "name": "Airport 10"
+        },
+        {
+            "name": "Airport 19"
+        },
+        {
+            "name": "Airport 28"
+        },
+        {
+            "name": "Airport 37"
+        },
+        {
+            "name": "Airport 3"
+        },
+        {
+            "name": "Airport 12"
+        },
+        {
+            "name": "Airport 21"
+        },
+        {
+            "name": "Airport 30"
+        },
+        {
+            "name": "Airport 5"
+        },
+        {
+            "name": "Airport 14"
+        },
+        {
+            "name": "Airport 23"
+        },
+        {
+            "name": "Airport 7"
+        },
+        {
+            "name": "Airport 16"
+        },
+        {
+            "name": "Airport 25"
+        },
+        {
+            "name": "Airport 46"
+        },
+        {
+            "name": "Airport 9"
+        },
+        {
+            "name": "Airport 18"
+        },
+        {
+            "name": "Airport 39"
+        },
+        {
+            "name": "Airport 48"
+        },
+        {
+            "name": "Airport 2"
+        },
+        {
+            "name": "Airport 11"
+        },
+        {
+            "name": "Airport 32"
+        },
+        {
+            "name": "Airport 41"
+        },
+        {
+            "name": "Airport 50"
+        },
+        {
+            "name": "Airport 4"
+        },
+        {
+            "name": "Airport 34"
+        },
+        {
+            "name": "Airport 43"
+        },
+        {
+            "name": "Airport 27"
+        },
+        {
+            "name": "Airport 36"
+        },
+        {
+            "name": "Airport 45"
+        }
+    ],
+    "logprobs": [
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0
+    ],
+    "tokens": 4808,
+    "time": 23.859944820404053
 }

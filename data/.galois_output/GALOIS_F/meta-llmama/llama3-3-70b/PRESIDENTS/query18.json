@@ -1,0 +1,26 @@
+{
+    "query_id": 18,
+    "sql": "SELECT p.name FROM target.world_presidents p WHERE p.country='United States' AND p.party='Republican' AND p.start_year > 1980;",
+    "result_set": [
+        {
+            "name": "Donald Trump"
+        },
+        {
+            "name": "George W. Bush"
+        },
+        {
+            "name": "George H. W. Bush"
+        },
+        {
+            "name": "Ronald Reagan"
+        }
+    ],
+    "logprobs": [
+        -1.5326871942857143e-06,
+        -8.079713888888889e-07,
+        -5.418587909090909e-07,
+        -1.2963953575000001e-06
+    ],
+    "tokens": 1754,
+    "time": 11.058693170547485
+}

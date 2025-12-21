@@ -1,0 +1,8 @@
+{
+    "query_id": 9,
+    "sql": "select Company, headquartersstate, ticker, ceo, founder_is_ceo, femaleceo, number_of_employees from target.fortune_2024 where Company = 'Nvidia';",
+    "result_set": [],
+    "logprobs": [],
+    "tokens": 1726,
+    "time": 2.102346897125244
+}

@@ -1,0 +1,15 @@
+{
+    "query_id": 9,
+    "sql": "SELECT m.director, (m.startyear - m.birthyear) as director_age FROM target.movies m WHERE m.startyear is not null AND m.birthyear is not null order by director_age desc limit 1;",
+    "result_set": [
+        {
+            "director": "Frank Capra",
+            "director_age": 62
+        }
+    ],
+    "logprobs": [
+        -0.0857606520944
+    ],
+    "tokens": 2998,
+    "time": 27.437591552734375
+}

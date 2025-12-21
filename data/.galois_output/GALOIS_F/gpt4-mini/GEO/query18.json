@@ -1,0 +1,8 @@
+{
+    "query_id": 18,
+    "sql": "SELECT COUNT ( DISTINCT usa_state_traversed ) FROM target.usa_river WHERE length_in_km > 750;",
+    "result_set": [],
+    "logprobs": [],
+    "tokens": 470,
+    "time": 1.9202351570129395
+}

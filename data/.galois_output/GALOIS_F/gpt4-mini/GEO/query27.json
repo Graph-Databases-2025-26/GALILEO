@@ -1,0 +1,70 @@
+{
+    "query_id": 27,
+    "sql": "SELECT us.state_name, us.population, us.capital FROM target.usa_state us WHERE us.population > 5000000;",
+    "result_set": [
+        {
+            "state_name": "California",
+            "population": 39538223,
+            "capital": "Sacramento"
+        },
+        {
+            "state_name": "Texas",
+            "population": 29145505,
+            "capital": "Austin"
+        },
+        {
+            "state_name": "Florida",
+            "population": 21538187,
+            "capital": "Tallahassee"
+        },
+        {
+            "state_name": "New York",
+            "population": 20201249,
+            "capital": "Albany"
+        },
+        {
+            "state_name": "Pennsylvania",
+            "population": 13002700,
+            "capital": "Harrisburg"
+        },
+        {
+            "state_name": "Illinois",
+            "population": 12812508,
+            "capital": "Springfield"
+        },
+        {
+            "state_name": "Ohio",
+            "population": 11799448,
+            "capital": "Columbus"
+        },
+        {
+            "state_name": "Georgia",
+            "population": 10711908,
+            "capital": "Atlanta"
+        },
+        {
+            "state_name": "North Carolina",
+            "population": 10439388,
+            "capital": "Raleigh"
+        },
+        {
+            "state_name": "Michigan",
+            "population": 10077331,
+            "capital": "Lansing"
+        }
+    ],
+    "logprobs": [
+        -0.0022315150238772694,
+        -1.6548355546319726e-05,
+        -0.002103099281189965,
+        -4.4641756980061995e-05,
+        -0.02026461961175663,
+        -0.0010950660974534305,
+        -0.000930869086666064,
+        -0.005055059111805349,
+        -0.0005454956913776446,
+        -0.0007839742228081074
+    ],
+    "tokens": 1046,
+    "time": 7.765809774398804
+}

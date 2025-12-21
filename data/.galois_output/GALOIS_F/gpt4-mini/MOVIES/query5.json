@@ -1,0 +1,17 @@
+{
+    "query_id": 5,
+    "sql": "SELECT m.originaltitle, m.startyear, m.genres, m.birthyear FROM target.movies m WHERE m.director='Steven Spielberg' AND m.startyear > 2000;",
+    "result_set": [
+        {
+            "originaltitle": "The BFG",
+            "startyear": 2016,
+            "genres": "Adventure,Drama",
+            "birthyear": 1946
+        }
+    ],
+    "logprobs": [
+        -0.18584524873155
+    ],
+    "tokens": 880,
+    "time": 4.150339603424072
+}

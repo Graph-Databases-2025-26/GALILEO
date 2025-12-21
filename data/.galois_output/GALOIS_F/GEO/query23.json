@@ -2,6 +2,7 @@
     "query_id": 23,
     "sql": "SELECT t2.capital FROM target.usa_city AS t1 JOIN target.usa_state AS t2 ON t1.city_name=t2.capital WHERE t1.population <= 150000;",
     "result_set": [],
-    "time": 28.441890954971313,
-    "tokens": 1156
+    "logprobs": [],
+    "tokens": 9719,
+    "time": 88.19347929954529
 }

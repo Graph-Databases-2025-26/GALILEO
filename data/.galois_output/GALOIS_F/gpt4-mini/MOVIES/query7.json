@@ -1,0 +1,8 @@
+{
+    "query_id": 7,
+    "sql": "SELECT m.startyear, count(*) as numMovies FROM target.movies m WHERE m.director = 'Steven Spielberg' AND m.startyear is not null group by m.startyear;",
+    "result_set": [],
+    "logprobs": [],
+    "tokens": 710,
+    "time": 1.2604317665100098
+}

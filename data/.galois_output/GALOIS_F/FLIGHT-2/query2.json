@@ -3,9 +3,12 @@
     "sql": "SELECT count(*) FROM target.usa_flights f;",
     "result_set": [
         {
-            "count_star()": 30
+            "count_star()": 25
         }
     ],
-    "time": 26.846794843673706,
-    "tokens": 944
+    "logprobs": [
+        -999.0
+    ],
+    "tokens": 2194,
+    "time": 11.540810585021973
 }

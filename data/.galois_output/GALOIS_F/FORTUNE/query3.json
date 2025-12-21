@@ -1,0 +1,8 @@
+{
+    "query_id": 3,
+    "sql": "select Company, headquartersstate from target.fortune_2024 where number_of_employees > 1000000;",
+    "result_set": [],
+    "logprobs": [],
+    "tokens": 4058,
+    "time": 18.017765283584595
+}

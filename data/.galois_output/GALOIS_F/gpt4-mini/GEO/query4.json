@@ -1,0 +1,14 @@
+{
+    "query_id": 4,
+    "sql": "SELECT population FROM target.usa_city WHERE city_name = 'tempe';",
+    "result_set": [
+        {
+            "population": 181000
+        }
+    ],
+    "logprobs": [
+        -0.3072803639806807
+    ],
+    "tokens": 648,
+    "time": 2.3984575271606445
+}

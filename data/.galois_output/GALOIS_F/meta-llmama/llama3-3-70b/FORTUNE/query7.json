@@ -1,0 +1,26 @@
+{
+    "query_id": 7,
+    "sql": "select company from target.fortune_2024 where best_companies_to_work_for = true and industry = 'Airlines';",
+    "result_set": [
+        {
+            "Company": "Delta Air Lines"
+        },
+        {
+            "Company": "Alaska Air Group"
+        },
+        {
+            "Company": "Virgin America"
+        },
+        {
+            "Company": "Southwest Airlines"
+        }
+    ],
+    "logprobs": [
+        -0.00525575831681,
+        -7.1525404e-07,
+        -0.077377522308712,
+        -5.9604633333333334e-08
+    ],
+    "tokens": 2766,
+    "time": 13.834094762802124
+}

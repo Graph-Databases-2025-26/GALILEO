@@ -1,0 +1,80 @@
+{
+    "query_id": 5,
+    "sql": "select home_team,away_team,home_goals,away_goals from target.premier_league_2024_2025_match_result;",
+    "result_set": [
+        {
+            "home_team": "Manchester City",
+            "away_team": "Arsenal",
+            "home_goals": 2,
+            "away_goals": 1
+        },
+        {
+            "home_team": "Liverpool",
+            "away_team": "Chelsea",
+            "home_goals": 1,
+            "away_goals": 0
+        },
+        {
+            "home_team": "Tottenham Hotspur",
+            "away_team": "Manchester United",
+            "home_goals": 3,
+            "away_goals": 2
+        },
+        {
+            "home_team": "West Ham United",
+            "away_team": "Leicester City",
+            "home_goals": 2,
+            "away_goals": 1
+        },
+        {
+            "home_team": "Newcastle United",
+            "away_team": "Aston Villa",
+            "home_goals": 1,
+            "away_goals": 0
+        },
+        {
+            "home_team": "Brentford",
+            "away_team": "Everton",
+            "home_goals": 3,
+            "away_goals": 2
+        },
+        {
+            "home_team": "Crystal Palace",
+            "away_team": "Nottingham Forest",
+            "home_goals": 2,
+            "away_goals": 1
+        },
+        {
+            "home_team": "Brighton & Hove Albion",
+            "away_team": "Wolverhampton Wanderers",
+            "home_goals": 1,
+            "away_goals": 0
+        },
+        {
+            "home_team": "Bournemouth",
+            "away_team": "Southampton",
+            "home_goals": 3,
+            "away_goals": 2
+        },
+        {
+            "home_team": "Sheffield United",
+            "away_team": "Fulham",
+            "home_goals": 2,
+            "away_goals": 1
+        }
+    ],
+    "logprobs": [
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0
+    ],
+    "tokens": 1591,
+    "time": 22.727928400039673
+}

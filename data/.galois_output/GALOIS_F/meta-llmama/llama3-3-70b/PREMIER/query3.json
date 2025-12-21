@@ -1,0 +1,74 @@
+{
+    "query_id": 3,
+    "sql": "select m.player_of_the_match from target.premier_league_2024_2025_match_result m;",
+    "result_set": [
+        {
+            "player_of_the_match": "R. Koch"
+        },
+        {
+            "player_of_the_match": "L. Thompson"
+        },
+        {
+            "player_of_the_match": "A. Mac Allister"
+        },
+        {
+            "player_of_the_match": "K. Paal"
+        },
+        {
+            "player_of_the_match": "N. Pope"
+        },
+        {
+            "player_of_the_match": "M. Gibbs-White"
+        },
+        {
+            "player_of_the_match": "K. Havertz"
+        },
+        {
+            "player_of_the_match": "B. Johnson"
+        },
+        {
+            "player_of_the_match": "E. Haaland"
+        },
+        {
+            "player_of_the_match": "J. Ramsey"
+        },
+        {
+            "player_of_the_match": "O. Norwood"
+        },
+        {
+            "player_of_the_match": "Y. Wissa"
+        },
+        {
+            "player_of_the_match": "A. Isak"
+        },
+        {
+            "player_of_the_match": "H. Kane"
+        },
+        {
+            "player_of_the_match": "A. Onana"
+        },
+        {
+            "player_of_the_match": "G. Garner"
+        }
+    ],
+    "logprobs": [
+        -0.6210099697333333,
+        -0.6240673828061833,
+        -0.067178889201856,
+        -0.075074452270825,
+        -0.2948502775,
+        -0.222306013841856,
+        -0.17679205730232,
+        -0.38613490254259997,
+        -0.26111182807425,
+        -0.26368610666666664,
+        -0.059173026448874996,
+        -0.0069340569975,
+        -0.18016704675,
+        -0.21492490333333336,
+        -0.23990327725750002,
+        -1.0434671666666666
+    ],
+    "tokens": 2466,
+    "time": 17.65086555480957
+}

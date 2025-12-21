@@ -1,0 +1,210 @@
+{
+    "query_id": 19,
+    "sql": "SELECT DISTINCT capital FROM target.usa_state;",
+    "result_set": [
+        {
+            "capital": "Springfield"
+        },
+        {
+            "capital": "Honolulu"
+        },
+        {
+            "capital": "Cheyenne"
+        },
+        {
+            "capital": "Albany"
+        },
+        {
+            "capital": "Boise"
+        },
+        {
+            "capital": "Austin"
+        },
+        {
+            "capital": "Montpelier"
+        },
+        {
+            "capital": "Indianapolis"
+        },
+        {
+            "capital": "Concord"
+        },
+        {
+            "capital": "Phoenix"
+        },
+        {
+            "capital": "Dover"
+        },
+        {
+            "capital": "Jefferson City"
+        },
+        {
+            "capital": "Hartford"
+        },
+        {
+            "capital": "Salt Lake City"
+        },
+        {
+            "capital": "Charleston"
+        },
+        {
+            "capital": "Carson City"
+        },
+        {
+            "capital": "Baton Rouge"
+        },
+        {
+            "capital": "Little Rock"
+        },
+        {
+            "capital": "Jackson"
+        },
+        {
+            "capital": "Annapolis"
+        },
+        {
+            "capital": "Tallahassee"
+        },
+        {
+            "capital": "Denver"
+        },
+        {
+            "capital": "Atlanta"
+        },
+        {
+            "capital": "Lincoln"
+        },
+        {
+            "capital": "Des Moines"
+        },
+        {
+            "capital": "Richmond"
+        },
+        {
+            "capital": "Frankfort"
+        },
+        {
+            "capital": "Trenton"
+        },
+        {
+            "capital": "Santa Fe"
+        },
+        {
+            "capital": "Salem"
+        },
+        {
+            "capital": "Raleigh"
+        },
+        {
+            "capital": "Bismarck"
+        },
+        {
+            "capital": "Harrisburg"
+        },
+        {
+            "capital": "Augusta"
+        },
+        {
+            "capital": "Oklahoma City"
+        },
+        {
+            "capital": "Madison"
+        },
+        {
+            "capital": "Nashville"
+        },
+        {
+            "capital": "Saint Paul"
+        },
+        {
+            "capital": "Montgomery"
+        },
+        {
+            "capital": "Columbus"
+        },
+        {
+            "capital": "Juneau"
+        },
+        {
+            "capital": "Helena"
+        },
+        {
+            "capital": "Sacramento"
+        },
+        {
+            "capital": "Pierre"
+        },
+        {
+            "capital": "Columbia"
+        },
+        {
+            "capital": "Boston"
+        },
+        {
+            "capital": "Olympia"
+        },
+        {
+            "capital": "Topeka"
+        },
+        {
+            "capital": "Providence"
+        },
+        {
+            "capital": "Lansing"
+        }
+    ],
+    "logprobs": [
+        -2.7655791e-05,
+        -7.1525525e-07,
+        -1.1920926666666667e-07,
+        -1.5894568e-07,
+        -1.19209275e-07,
+        -0.00035112893,
+        -1.7444055666666668e-05,
+        -3.5762775e-07,
+        -3.5762779e-07,
+        -1.1682442e-05,
+        0.0,
+        -8.34464e-07,
+        0.0,
+        -2.7815489999999997e-07,
+        -8.9406899e-07,
+        -6.397505933333334e-06,
+        -2.5509829863333338e-05,
+        -2.3841852e-07,
+        -3.4570635e-06,
+        0.0,
+        -6.1094015e-06,
+        -3.0278701e-05,
+        -2.2530301e-05,
+        -1.788139e-07,
+        -3.5762775e-07,
+        -5.960464e-08,
+        -2.3841815999999997e-06,
+        -7.947285e-08,
+        -2.3841852e-07,
+        0.0,
+        -2.14576265e-06,
+        0.0,
+        -6.357826133333333e-07,
+        -6.198845e-06,
+        -3.4866387199999996e-05,
+        -4.7683693e-07,
+        0.0,
+        -0.28797440960464,
+        -6.7944675e-05,
+        -3.973642666666667e-08,
+        -7.7485975e-07,
+        -7.5697325e-06,
+        -5.960461e-07,
+        -1.788139e-07,
+        -4.1723242e-07,
+        -4.7683704e-07,
+        -5.960461e-07,
+        0.0,
+        -5.543201e-06,
+        0.0
+    ],
+    "tokens": 2197,
+    "time": 18.317426919937134
+}

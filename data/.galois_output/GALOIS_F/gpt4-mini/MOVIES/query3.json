@@ -1,0 +1,15 @@
+{
+    "query_id": 3,
+    "sql": "SELECT m.originaltitle, m.startyear FROM target.movies m WHERE m.director='Richard Thorpe' AND m.startyear > 1950;",
+    "result_set": [
+        {
+            "originaltitle": "The Great Car Robbery",
+            "startyear": 1951
+        }
+    ],
+    "logprobs": [
+        -0.27156569155374655
+    ],
+    "tokens": 838,
+    "time": 4.570004463195801
+}

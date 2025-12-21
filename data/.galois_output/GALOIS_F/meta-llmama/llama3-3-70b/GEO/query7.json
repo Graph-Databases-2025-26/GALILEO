@@ -1,0 +1,14 @@
+{
+    "query_id": 7,
+    "sql": "SELECT avg(population) FROM target.usa_state;",
+    "result_set": [
+        {
+            "avg(population)": 7235054.90625
+        }
+    ],
+    "logprobs": [
+        -0.5089806239010177
+    ],
+    "tokens": 2063,
+    "time": 16.678953409194946
+}

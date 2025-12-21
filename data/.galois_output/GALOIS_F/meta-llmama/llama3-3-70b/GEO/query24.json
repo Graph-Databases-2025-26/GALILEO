@@ -1,0 +1,82 @@
+{
+    "query_id": 24,
+    "sql": "SELECT state_name, population, area_squared_miles FROM target.usa_state;",
+    "result_set": [
+        {
+            "state_name": "Alaska",
+            "population": 4887681,
+            "area_squared_miles": 52420.0
+        },
+        {
+            "state_name": "Texas",
+            "population": 7158024,
+            "area_squared_miles": 113990.0
+        },
+        {
+            "state_name": "California",
+            "population": 331449281,
+            "area_squared_miles": 121666.0
+        },
+        {
+            "state_name": "New York",
+            "population": 10525600,
+            "area_squared_miles": 53087.0
+        },
+        {
+            "state_name": "Florida",
+            "population": 10077331,
+            "area_squared_miles": 59828.0
+        },
+        {
+            "state_name": "Montana",
+            "population": 892508,
+            "area_squared_miles": 62410.0
+        },
+        {
+            "state_name": "Illinois",
+            "population": 10687723,
+            "area_squared_miles": 70237.0
+        },
+        {
+            "state_name": "Washington",
+            "population": 579315,
+            "area_squared_miles": 78360.0
+        },
+        {
+            "state_name": "Georgia",
+            "population": 2943120,
+            "area_squared_miles": 84817.0
+        },
+        {
+            "state_name": "North Carolina",
+            "population": 2915918,
+            "area_squared_miles": 96077.0
+        },
+        {
+            "state_name": "Michigan",
+            "population": 28995881,
+            "area_squared_miles": 97085.0
+        },
+        {
+            "state_name": "Arizona",
+            "population": 4535889,
+            "area_squared_miles": 97976.0
+        }
+    ],
+    "logprobs": [
+        -0.16627564768958888,
+        -0.0210968556997325,
+        -0.25276973392588004,
+        -0.17604755840425557,
+        -0.232865897629725,
+        -0.25130007418515005,
+        -0.5667860034788889,
+        -0.3191000268551428,
+        -0.521624171375,
+        -0.41160336114555557,
+        -0.29243809990116,
+        -0.478810393125
+    ],
+    "tokens": 2061,
+    "time": 8.323706865310669
+}

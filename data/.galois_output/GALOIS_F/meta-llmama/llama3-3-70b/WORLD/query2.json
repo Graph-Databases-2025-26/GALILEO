@@ -1,0 +1,158 @@
+{
+    "query_id": 2,
+    "sql": "SELECT name FROM target.country WHERE CAST(independence_year AS INTEGER) > 1950;",
+    "result_set": [
+        {
+            "name": "Maldives"
+        },
+        {
+            "name": "Ghana"
+        },
+        {
+            "name": "Kyrgyzstan"
+        },
+        {
+            "name": "Benin"
+        },
+        {
+            "name": "Senegal"
+        },
+        {
+            "name": "Ukraine"
+        },
+        {
+            "name": "Eritrea"
+        },
+        {
+            "name": "Belize"
+        },
+        {
+            "name": "Comoros"
+        },
+        {
+            "name": "Côte d'Ivoire"
+        },
+        {
+            "name": "Georgia"
+        },
+        {
+            "name": "Qatar"
+        },
+        {
+            "name": "Namibia"
+        },
+        {
+            "name": "Madagascar"
+        },
+        {
+            "name": "Equatorial Guinea"
+        },
+        {
+            "name": "Monaco"
+        },
+        {
+            "name": "Somalia"
+        },
+        {
+            "name": "Micronesia"
+        },
+        {
+            "name": "Tuvalu"
+        },
+        {
+            "name": "Trinidad and Tobago"
+        },
+        {
+            "name": "Zimbabwe"
+        },
+        {
+            "name": "Kuwait"
+        },
+        {
+            "name": "Turks and Caicos Islands"
+        },
+        {
+            "name": "Swaziland"
+        },
+        {
+            "name": "Malawi"
+        },
+        {
+            "name": "Bahamas"
+        },
+        {
+            "name": "Samoa"
+        },
+        {
+            "name": "Saint Vincent and the Grenadines"
+        },
+        {
+            "name": "Malta"
+        },
+        {
+            "name": "Kenya"
+        },
+        {
+            "name": "Mauritius"
+        },
+        {
+            "name": "Papua New Guinea"
+        },
+        {
+            "name": "Niger"
+        },
+        {
+            "name": "Wallis and Futuna"
+        },
+        {
+            "name": "Kazakhstan"
+        },
+        {
+            "name": "Cambodia"
+        },
+        {
+            "name": "Ethiopia"
+        }
+    ],
+    "logprobs": [
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0
+    ],
+    "tokens": 6731,
+    "time": 59.52231574058533
+}

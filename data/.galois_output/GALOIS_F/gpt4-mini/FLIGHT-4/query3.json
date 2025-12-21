@@ -1,0 +1,17 @@
+{
+    "query_id": 3,
+    "sql": "SELECT name, city, country, elevation_in_ft FROM target.airports WHERE city = 'New York';",
+    "result_set": [
+        {
+            "name": "John F. Kennedy International Airport",
+            "city": "New York",
+            "country": "United States",
+            "elevation_in_ft": 13
+        }
+    ],
+    "logprobs": [
+        -0.047608192341920645
+    ],
+    "tokens": 833,
+    "time": 2.8340706825256348
+}

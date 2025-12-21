@@ -3,10 +3,13 @@
     "sql": "SELECT p.party, count(p.party) num FROM target.world_presidents p WHERE p.country='United States' group by p.party order by num desc limit 1;",
     "result_set": [
         {
-            "party": "Republican",
-            "num": 18
+            "party": "Democratic",
+            "num": 24
         }
     ],
-    "time": 24.221139192581177,
-    "tokens": 945
+    "logprobs": [
+        -999.0
+    ],
+    "tokens": 6105,
+    "time": 158.07395911216736
 }

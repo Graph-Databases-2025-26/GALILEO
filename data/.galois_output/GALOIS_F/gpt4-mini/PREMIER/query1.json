@@ -1,0 +1,17 @@
+{
+    "query_id": 1,
+    "sql": "select m.opponent_team, m.match_date_year, m.match_date_month, m.match_date_day from target.premier_league_2024_2025_arsenal_matches m;",
+    "result_set": [
+        {
+            "opponent_team": "Manchester City",
+            "match_date_year": 2024,
+            "match_date_month": null,
+            "match_date_day": 15
+        }
+    ],
+    "logprobs": [
+        -0.14207520237437166
+    ],
+    "tokens": 595,
+    "time": 3.8918488025665283
+}

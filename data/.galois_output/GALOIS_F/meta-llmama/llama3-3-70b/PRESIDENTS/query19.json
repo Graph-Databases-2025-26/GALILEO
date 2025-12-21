@@ -1,0 +1,138 @@
+{
+    "query_id": 19,
+    "sql": "SELECT p.name, p.start_year, p.end_year, p.cardinal_number, p.party FROM target.world_presidents p WHERE p.country='United States';",
+    "result_set": [
+        {
+            "name": "Abraham Lincoln",
+            "start_year": 1861,
+            "end_year": 1861,
+            "cardinal_number": "16th",
+            "party": "Republican"
+        },
+        {
+            "name": "Andrew Johnson",
+            "start_year": 1865,
+            "end_year": 1865,
+            "cardinal_number": "17th",
+            "party": "National Union"
+        },
+        {
+            "name": "Ulysses S. Grant",
+            "start_year": 1869,
+            "end_year": 1869,
+            "cardinal_number": "18th",
+            "party": "Republican"
+        },
+        {
+            "name": "Rutherford B. Hayes",
+            "start_year": 1877,
+            "end_year": 1877,
+            "cardinal_number": "19th",
+            "party": "Republican"
+        },
+        {
+            "name": "James A. Garfield",
+            "start_year": 1881,
+            "end_year": 1881,
+            "cardinal_number": "20th",
+            "party": "Republican"
+        },
+        {
+            "name": "Chester A. Arthur",
+            "start_year": 1881,
+            "end_year": 1885,
+            "cardinal_number": "21st",
+            "party": "Republican"
+        },
+        {
+            "name": "Grover Cleveland",
+            "start_year": 1885,
+            "end_year": 1889,
+            "cardinal_number": "22nd",
+            "party": "Democratic"
+        },
+        {
+            "name": "Benjamin Harrison",
+            "start_year": 1889,
+            "end_year": 1893,
+            "cardinal_number": "23rd",
+            "party": "Republican"
+        },
+        {
+            "name": "William McKinley",
+            "start_year": 1897,
+            "end_year": 1901,
+            "cardinal_number": "25th",
+            "party": "Republican"
+        },
+        {
+            "name": "Theodore Roosevelt",
+            "start_year": 1901,
+            "end_year": 1909,
+            "cardinal_number": "26th",
+            "party": "Republican"
+        },
+        {
+            "name": "William Howard Taft",
+            "start_year": 1909,
+            "end_year": 1913,
+            "cardinal_number": "27th",
+            "party": "Republican"
+        },
+        {
+            "name": "Woodrow Wilson",
+            "start_year": 1913,
+            "end_year": 1921,
+            "cardinal_number": "28th",
+            "party": "Democratic"
+        },
+        {
+            "name": "Warren G. Harding",
+            "start_year": 1921,
+            "end_year": 1923,
+            "cardinal_number": "29th",
+            "party": "Republican"
+        },
+        {
+            "name": "Calvin Coolidge",
+            "start_year": 1923,
+            "end_year": 1929,
+            "cardinal_number": "30th",
+            "party": "Republican"
+        },
+        {
+            "name": "Herbert Hoover",
+            "start_year": 1929,
+            "end_year": 1933,
+            "cardinal_number": "31st",
+            "party": "Republican"
+        },
+        {
+            "name": "Franklin D. Roosevelt",
+            "start_year": 1933,
+            "end_year": 1945,
+            "cardinal_number": "32nd",
+            "party": "Democratic"
+        }
+    ],
+    "logprobs": [
+        -0.06695469115387916,
+        -0.04512520808994,
+        -1.348547975e-06,
+        -0.0002719286583235714,
+        -8.770380814285715e-07,
+        -0.00014483685267714286,
+        -8.639207295250001e-05,
+        -6.62583344e-06,
+        -4.271657983333333e-07,
+        -9.73540270833333e-07,
+        -1.647673419846154e-05,
+        -3.874297025e-07,
+        -3.320826057142857e-07,
+        -6.969144138461538e-07,
+        -1.1383826506666666e-05,
+        -4.0020193714285717e-07
+    ],
+    "tokens": 2407,
+    "time": 27.476982831954956
+}

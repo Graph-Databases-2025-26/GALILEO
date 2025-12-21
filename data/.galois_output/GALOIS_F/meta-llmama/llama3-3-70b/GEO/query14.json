@@ -1,0 +1,58 @@
+{
+    "query_id": 14,
+    "sql": "SELECT DISTINCT lake_name FROM target.usa_lake WHERE area_squared_km > 750;",
+    "result_set": [
+        {
+            "lake_name": "Lake Huron"
+        },
+        {
+            "lake_name": "Lake Sakakawea"
+        },
+        {
+            "lake_name": "Lake Superior"
+        },
+        {
+            "lake_name": "Lake Oahe"
+        },
+        {
+            "lake_name": "Lake Ontario"
+        },
+        {
+            "lake_name": "Lake St. Clair"
+        },
+        {
+            "lake_name": "Lake of the Woods"
+        },
+        {
+            "lake_name": "Lake Winnipeg"
+        },
+        {
+            "lake_name": "Lake Pontchartrain"
+        },
+        {
+            "lake_name": "Great Salt Lake"
+        },
+        {
+            "lake_name": "Lake Michigan"
+        },
+        {
+            "lake_name": "Lake Erie"
+        }
+    ],
+    "logprobs": [
+        -0.11239181064979285,
+        -0.1459719638164111,
+        -0.015075586488734999,
+        -0.1644671419069375,
+        -0.12071762860463335,
+        -0.00486033684213,
+        -0.027466152465005,
+        -0.18906667827788334,
+        -0.0414425100193375,
+        -9.213611693714286e-05,
+        -0.17861691458288,
+        -0.09635237113950668
+    ],
+    "tokens": 2244,
+    "time": 17.286641836166382
+}

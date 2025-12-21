@@ -1,0 +1,70 @@
+{
+    "query_id": 7,
+    "sql": "SELECT m.startyear, count(*) as numMovies FROM target.movies m WHERE m.director = 'Steven Spielberg' AND m.startyear is not null group by m.startyear;",
+    "result_set": [
+        {
+            "startyear": 2016,
+            "numMovies": 1
+        },
+        {
+            "startyear": 1997,
+            "numMovies": 1
+        },
+        {
+            "startyear": 2001,
+            "numMovies": 1
+        },
+        {
+            "startyear": 2005,
+            "numMovies": 1
+        },
+        {
+            "startyear": 1975,
+            "numMovies": 1
+        },
+        {
+            "startyear": 1971,
+            "numMovies": 1
+        },
+        {
+            "startyear": 2002,
+            "numMovies": 1
+        },
+        {
+            "startyear": 2011,
+            "numMovies": 2
+        },
+        {
+            "startyear": 1979,
+            "numMovies": 1
+        },
+        {
+            "startyear": 1985,
+            "numMovies": 1
+        },
+        {
+            "startyear": 2018,
+            "numMovies": 1
+        },
+        {
+            "startyear": 2015,
+            "numMovies": 1
+        }
+    ],
+    "logprobs": [
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0
+    ],
+    "tokens": 3005,
+    "time": 40.10290503501892
+}

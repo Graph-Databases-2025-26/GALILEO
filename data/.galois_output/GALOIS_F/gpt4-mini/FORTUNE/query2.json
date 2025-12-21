@@ -1,0 +1,15 @@
+{
+    "query_id": 2,
+    "sql": "select Company, ceo from target.fortune_2024 f where f.headquartersstate = 'Oklahoma';",
+    "result_set": [
+        {
+            "Company": "University of Oklahoma",
+            "CEO": "David L. Boren"
+        }
+    ],
+    "logprobs": [
+        -0.28909048612536026
+    ],
+    "tokens": 1698,
+    "time": 1.896312952041626
+}

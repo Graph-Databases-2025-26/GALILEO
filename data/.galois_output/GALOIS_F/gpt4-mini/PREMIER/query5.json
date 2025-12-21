@@ -1,0 +1,17 @@
+{
+    "query_id": 5,
+    "sql": "select home_team,away_team,home_goals,away_goals from target.premier_league_2024_2025_match_result;",
+    "result_set": [
+        {
+            "home_team": "Manchester United",
+            "away_team": "Chelsea",
+            "home_goals": 2,
+            "away_goals": 1
+        }
+    ],
+    "logprobs": [
+        -0.3314276599407293
+    ],
+    "tokens": 755,
+    "time": 3.0992367267608643
+}

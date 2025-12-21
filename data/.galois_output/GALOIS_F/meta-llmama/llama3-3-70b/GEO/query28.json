@@ -1,0 +1,80 @@
+{
+    "query_id": 28,
+    "sql": "SELECT us.state_name, us.capital FROM target.usa_state us WHERE us.population > 5000000 AND us.density < 1000;",
+    "result_set": [
+        {
+            "state_name": "Illinois",
+            "capital": "Springfield"
+        },
+        {
+            "state_name": "Arizona",
+            "capital": "Phoenix"
+        },
+        {
+            "state_name": "Ohio",
+            "capital": "Columbus"
+        },
+        {
+            "state_name": "North Carolina",
+            "capital": "Raleigh"
+        },
+        {
+            "state_name": "Missouri",
+            "capital": "Jefferson City"
+        },
+        {
+            "state_name": "Virginia",
+            "capital": "Richmond"
+        },
+        {
+            "state_name": "Pennsylvania",
+            "capital": "Harrisburg"
+        },
+        {
+            "state_name": "South Carolina",
+            "capital": "Columbia"
+        },
+        {
+            "state_name": "New York",
+            "capital": "Albany"
+        },
+        {
+            "state_name": "Georgia",
+            "capital": "Atlanta"
+        },
+        {
+            "state_name": "Massachusetts",
+            "capital": "Boston"
+        },
+        {
+            "state_name": "Washington",
+            "capital": "Olympia"
+        },
+        {
+            "state_name": "Texas",
+            "capital": "Austin"
+        },
+        {
+            "state_name": "Maryland",
+            "capital": "Annapolis"
+        }
+    ],
+    "logprobs": [
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0
+    ],
+    "tokens": 2812,
+    "time": 33.080331563949585
+}

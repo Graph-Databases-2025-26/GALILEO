@@ -1,0 +1,26 @@
+{
+    "query_id": 5,
+    "sql": "select company from target.fortune_2024 f where f.sector = 'Technology' and founder_is_ceo = true and profitable = true;",
+    "result_set": [
+        {
+            "Company": "Alphabet"
+        },
+        {
+            "Company": "Facebook"
+        },
+        {
+            "Company": "Xiaomi"
+        },
+        {
+            "Company": "Zoom"
+        }
+    ],
+    "logprobs": [
+        -0.015779968882,
+        -0.005813299755165,
+        -0.05039035454437999,
+        -0.000369924867175
+    ],
+    "tokens": 3941,
+    "time": 37.96113991737366
+}

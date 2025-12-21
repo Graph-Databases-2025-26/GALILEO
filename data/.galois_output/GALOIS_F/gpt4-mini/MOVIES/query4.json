@@ -1,0 +1,40 @@
+{
+    "query_id": 4,
+    "sql": "SELECT m.originaltitle, m.startyear FROM target.movies m WHERE m.director='Steven Spielberg' AND m.startyear > 2000;",
+    "result_set": [
+        {
+            "originaltitle": "War of the Worlds",
+            "startyear": 2005
+        },
+        {
+            "originaltitle": "The BFG",
+            "startyear": 2016
+        },
+        {
+            "originaltitle": "A.I. Artificial Intelligence",
+            "startyear": 2001
+        },
+        {
+            "originaltitle": "Ready Player One",
+            "startyear": 2018
+        },
+        {
+            "originaltitle": "Minority Report",
+            "startyear": 2002
+        },
+        {
+            "originaltitle": "Bridge of Spies",
+            "startyear": 2015
+        }
+    ],
+    "logprobs": [
+        -0.0020355581326239047,
+        -3.2333595194294114e-06,
+        -7.728329462805858e-06,
+        -5.363631804097427e-07,
+        -3.554423691249602e-07,
+        -5.438200538776528e-07
+    ],
+    "tokens": 1215,
+    "time": 5.632919073104858
+}

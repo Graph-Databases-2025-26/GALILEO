@@ -1,0 +1,8 @@
+{
+    "query_id": 24,
+    "sql": "SELECT state_name, population, area_squared_miles FROM target.usa_state;",
+    "result_set": [],
+    "logprobs": [],
+    "tokens": 483,
+    "time": 0.8651227951049805
+}

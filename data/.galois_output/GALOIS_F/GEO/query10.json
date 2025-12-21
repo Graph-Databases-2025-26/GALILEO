@@ -1,41 +1,8 @@
 {
     "query_id": 10,
     "sql": "SELECT DISTINCT lake_name FROM target.usa_lake WHERE area_squared_km > 450;",
-    "result_set": [
-        {
-            "lake_name": "Lake Powell"
-        },
-        {
-            "lake_name": "Lake Mead"
-        },
-        {
-            "lake_name": "Lake Michigan"
-        },
-        {
-            "lake_name": "Lake Huron"
-        },
-        {
-            "lake_name": "Lake Superior"
-        },
-        {
-            "lake_name": "Lake Sakakawea"
-        },
-        {
-            "lake_name": "Lake Tahoe"
-        },
-        {
-            "lake_name": "Lake Erie"
-        },
-        {
-            "lake_name": "Lake Oahe"
-        },
-        {
-            "lake_name": "Lake Pontchartrain"
-        },
-        {
-            "lake_name": "Lake Ontario"
-        }
-    ],
-    "time": 21.052834510803223,
-    "tokens": 720
+    "result_set": [],
+    "logprobs": [],
+    "tokens": 1323,
+    "time": 5.239004850387573
 }

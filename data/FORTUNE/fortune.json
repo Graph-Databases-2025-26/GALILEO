@@ -1,7 +1,7 @@
 {
   "tables": [
     {
-      "name": "fortune1000_2024",
+      "name": "fortune_2024",
       "keys": [
         "Company"
       ],

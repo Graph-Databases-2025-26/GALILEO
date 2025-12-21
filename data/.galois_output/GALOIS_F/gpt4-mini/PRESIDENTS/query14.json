@@ -1,0 +1,15 @@
+{
+    "query_id": 14,
+    "sql": "SELECT p.name, p.party FROM target.world_presidents p WHERE p.country='United States';",
+    "result_set": [
+        {
+            "name": "Joe Biden",
+            "party": "Democratic Party"
+        }
+    ],
+    "logprobs": [
+        -1.4623334923921253e-06
+    ],
+    "tokens": 763,
+    "time": 2.5764670372009277
+}

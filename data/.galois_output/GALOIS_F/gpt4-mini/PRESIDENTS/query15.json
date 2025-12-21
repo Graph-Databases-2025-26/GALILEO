@@ -1,0 +1,15 @@
+{
+    "query_id": 15,
+    "sql": "SELECT p.name, p.party FROM target.world_presidents p WHERE p.country='United States' AND p.party='Republican';",
+    "result_set": [
+        {
+            "name": "Donald Trump",
+            "party": "Republican"
+        }
+    ],
+    "logprobs": [
+        -4.137329500035018e-06
+    ],
+    "tokens": 771,
+    "time": 3.2025368213653564
+}

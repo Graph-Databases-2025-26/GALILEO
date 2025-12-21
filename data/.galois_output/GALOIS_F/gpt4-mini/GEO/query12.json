@@ -1,0 +1,8 @@
+{
+    "query_id": 12,
+    "sql": "SELECT state_name FROM target.usa_city WHERE city_name = 'springfield' AND population > 62000;",
+    "result_set": [],
+    "logprobs": [],
+    "tokens": 658,
+    "time": 3.0986573696136475
+}

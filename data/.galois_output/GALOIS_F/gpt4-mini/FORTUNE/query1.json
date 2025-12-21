@@ -1,0 +1,8 @@
+{
+    "query_id": 1,
+    "sql": "select f.rank, f.Company from target.fortune_2024 f order by f.rank asc limit 10;",
+    "result_set": [],
+    "logprobs": [],
+    "tokens": 1578,
+    "time": 4.076268196105957
+}

@@ -1,0 +1,14 @@
+{
+    "query_id": 4,
+    "sql": "select m.player_of_the_match from target.premier_league_2024_2025_match_result m where m.player_of_the_match_team = 'Manchester United';",
+    "result_set": [
+        {
+            "player_of_the_match": "M. Rashford"
+        }
+    ],
+    "logprobs": [
+        -0.02174651632654667
+    ],
+    "tokens": 2428,
+    "time": 38.56090211868286
+}

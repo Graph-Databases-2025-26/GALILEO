@@ -1,0 +1,60 @@
+{
+    "query_id": 1,
+    "sql": "select f.rank, f.company from target.fortune_2024 f order by f.rank asc limit 10;",
+    "result_set": [
+        {
+            "rank": 1,
+            "Company": "Apple"
+        },
+        {
+            "rank": 2,
+            "Company": "Amazon"
+        },
+        {
+            "rank": 4,
+            "Company": "CVS Health"
+        },
+        {
+            "rank": 5,
+            "Company": "UnitedHealth Group"
+        },
+        {
+            "rank": 6,
+            "Company": "Alphabet"
+        },
+        {
+            "rank": 7,
+            "Company": "Chevron"
+        },
+        {
+            "rank": 8,
+            "Company": "McKesson"
+        },
+        {
+            "rank": 9,
+            "Company": "Berkshire Hathaway"
+        },
+        {
+            "rank": 10,
+            "Company": "Exxon Mobil"
+        },
+        {
+            "rank": 11,
+            "Company": "Toyota Motor"
+        }
+    ],
+    "logprobs": [
+        -0.1947157988139,
+        -5.960462499999999e-07,
+        -0.00099644905232,
+        -0.028349131325325,
+        -0.31209818363,
+        -0.40982231148827997,
+        -0.0792769122163125,
+        -0.052210806403093335,
+        -0.16566065480232,
+        -0.0011293058986666666
+    ],
+    "tokens": 3769,
+    "time": 27.24553632736206
+}

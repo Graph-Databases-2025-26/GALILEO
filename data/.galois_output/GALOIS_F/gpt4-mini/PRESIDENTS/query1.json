@@ -1,0 +1,15 @@
+{
+    "query_id": 1,
+    "sql": "SELECT DISTINCT p.name, p.party FROM target.world_presidents p WHERE p.country='Venezuela';",
+    "result_set": [
+        {
+            "name": "Nicolás Maduro",
+            "party": "United Socialist Party of Venezuela"
+        }
+    ],
+    "logprobs": [
+        -0.011598351138583022
+    ],
+    "tokens": 786,
+    "time": 2.785977602005005
+}

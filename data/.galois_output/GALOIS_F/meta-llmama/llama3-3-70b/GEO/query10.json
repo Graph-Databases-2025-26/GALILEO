@@ -1,0 +1,38 @@
+{
+    "query_id": 10,
+    "sql": "SELECT DISTINCT lake_name FROM target.usa_lake WHERE area_squared_km > 450;",
+    "result_set": [
+        {
+            "lake_name": "Lake Michigan"
+        },
+        {
+            "lake_name": "Lake Ontario"
+        },
+        {
+            "lake_name": "Lake Erie"
+        },
+        {
+            "lake_name": "Great Salt Lake"
+        },
+        {
+            "lake_name": "Lake Huron"
+        },
+        {
+            "lake_name": "Lake Tahoe"
+        },
+        {
+            "lake_name": "Lake Superior"
+        }
+    ],
+    "logprobs": [
+        -0.07428732479895,
+        -0.2724333576288333,
+        -0.03687767168996666,
+        -0.004300288601325714,
+        -0.06146080217935714,
+        -0.12949737871057998,
+        -0.00588319635855
+    ],
+    "tokens": 1724,
+    "time": 23.63128161430359
+}

@@ -1,0 +1,20 @@
+{
+    "query_id": 9,
+    "sql": "select company, headquartersstate, ticker, ceo, founder_is_ceo, femaleceo, number_of_employees from target.fortune_2024 where company = 'Nvidia';",
+    "result_set": [
+        {
+            "company": "Nvidia",
+            "headquartersstate": "California",
+            "ticker": "NVDA",
+            "ceo": "Jensen Huang",
+            "founder_is_ceo": true,
+            "femaleceo": false,
+            "number_of_employees": 28900
+        }
+    ],
+    "logprobs": [
+        -0.15238311772319582
+    ],
+    "tokens": 1933,
+    "time": 5.335164546966553
+}

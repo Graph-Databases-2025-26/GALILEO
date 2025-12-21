@@ -1,0 +1,14 @@
+{
+    "query_id": 16,
+    "sql": "SELECT count(p.party) FROM target.world_presidents p WHERE p.country='United States' AND p.party='Republican';",
+    "result_set": [
+        {
+            "count(p.party)": 15
+        }
+    ],
+    "logprobs": [
+        -0.06439773012663934
+    ],
+    "tokens": 2599,
+    "time": 27.605162143707275
+}

@@ -1,0 +1,70 @@
+{
+    "query_id": 2,
+    "sql": "select company, ceo from target.fortune_2024 f where f.headquartersstate = 'Oklahoma';",
+    "result_set": [
+        {
+            "Company": "Williams Companies",
+            "CEO": "Alan Armstrong"
+        },
+        {
+            "Company": "Love's Travel Stops & Country Stores",
+            "CEO": "Sheldon Love"
+        },
+        {
+            "Company": "Helmerich & Payne",
+            "CEO": "John Lindsay"
+        },
+        {
+            "Company": "Enable Midstream Partners",
+            "CEO": "Rod Sailor"
+        },
+        {
+            "Company": "Chesapeake Energy",
+            "CEO": "Mike Wichterich"
+        },
+        {
+            "Company": "Paycom Software",
+            "CEO": "Chad Richison"
+        },
+        {
+            "Company": "Magellan Midstream Partners",
+            "CEO": "Aaron Milford"
+        },
+        {
+            "Company": "WPX Energy",
+            "CEO": "Clay Gaspar"
+        },
+        {
+            "Company": "Devon Energy",
+            "CEO": "Rick Muncrief"
+        },
+        {
+            "Company": "OGE Energy Corp",
+            "CEO": "Sean Trauschke"
+        },
+        {
+            "Company": "Oneok",
+            "CEO": "Pierce Norton"
+        },
+        {
+            "Company": "SandRidge Energy",
+            "CEO": "Carl Giesler"
+        }
+    ],
+    "logprobs": [
+        -0.0032906794301142857,
+        -0.009495353583066923,
+        -4.0133413769e-05,
+        -0.03625531768133778,
+        -0.02489361648749,
+        -1.3649200818e-05,
+        -0.00039837235073818174,
+        -0.08780752801818201,
+        -0.012895530797349999,
+        -0.0014585755030963633,
+        -0.0037321877736350003,
+        -0.02192339135926818
+    ],
+    "tokens": 3598,
+    "time": 28.116523027420044
+}

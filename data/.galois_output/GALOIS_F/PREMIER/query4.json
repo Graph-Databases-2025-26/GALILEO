@@ -1,0 +1,26 @@
+{
+    "query_id": 4,
+    "sql": "select m.player_of_the_match from target.premier_league_2024_2025_match_result m where m.player_of_the_match_team = 'Manchester United';",
+    "result_set": [
+        {
+            "player_of_the_match": "D. Welbeck"
+        },
+        {
+            "player_of_the_match": "D. Welbeck"
+        },
+        {
+            "player_of_the_match": "D. Welbeck"
+        },
+        {
+            "player_of_the_match": "D. Welbeck"
+        }
+    ],
+    "logprobs": [
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0
+    ],
+    "tokens": 6161,
+    "time": 95.62608051300049
+}

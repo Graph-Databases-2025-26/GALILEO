@@ -1,0 +1,46 @@
+{
+    "query_id": 3,
+    "sql": "select m.player_of_the_match from target.premier_league_2024_2025_match_result m;",
+    "result_set": [
+        {
+            "player_of_the_match": "D. Welbeck"
+        },
+        {
+            "player_of_the_match": "M. de Ligt"
+        },
+        {
+            "player_of_the_match": "I. Ndiaye"
+        },
+        {
+            "player_of_the_match": "D. Welbeck"
+        },
+        {
+            "player_of_the_match": "M. de Ligt"
+        },
+        {
+            "player_of_the_match": "D. Welbeck"
+        },
+        {
+            "player_of_the_match": "M. de Ligt"
+        },
+        {
+            "player_of_the_match": "I. Ndiaye"
+        },
+        {
+            "player_of_the_match": "D. Welbeck"
+        }
+    ],
+    "logprobs": [
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0
+    ],
+    "tokens": 1851,
+    "time": 6.599302291870117
+}

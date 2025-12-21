@@ -1,0 +1,8 @@
+{
+    "query_id": 2,
+    "sql": "select Company, ceo from target.fortune_2024 f where f.headquartersstate = 'Oklahoma';",
+    "result_set": [],
+    "logprobs": [],
+    "tokens": 14606,
+    "time": 54.53345990180969
+}

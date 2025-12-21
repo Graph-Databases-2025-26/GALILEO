@@ -1,0 +1,30 @@
+{
+    "query_id": 3,
+    "sql": "SELECT m.originaltitle, m.startyear FROM target.movies m WHERE m.director='Richard Thorpe' AND m.startyear > 1950;",
+    "result_set": [
+        {
+            "originaltitle": "Tip on a Dead Jockey",
+            "startyear": 1957
+        },
+        {
+            "originaltitle": "The Adventures of Quentin Durward",
+            "startyear": 1955
+        },
+        {
+            "originaltitle": "Ten Thousand Bedrooms",
+            "startyear": 1957
+        },
+        {
+            "originaltitle": "Jailhouse Rock",
+            "startyear": 1957
+        }
+    ],
+    "logprobs": [
+        -1.6472438954545454e-06,
+        -1.6384857843636364e-05,
+        -1.1488304706249999e-05,
+        -5.563089777777778e-07
+    ],
+    "tokens": 2738,
+    "time": 22.022640466690063
+}

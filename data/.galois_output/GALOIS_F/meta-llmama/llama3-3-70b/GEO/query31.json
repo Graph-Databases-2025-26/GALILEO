@@ -1,0 +1,82 @@
+{
+    "query_id": 31,
+    "sql": "SELECT us.state_name, us.capital, us.population FROM target.usa_state us WHERE us.population > 3000000 AND us.population < 8000000 AND us.area_squared_miles > 50000 order by us.population;",
+    "result_set": [
+        {
+            "state_name": "Nevada",
+            "capital": "Carson City",
+            "population": 3139641
+        },
+        {
+            "state_name": "Iowa",
+            "capital": "Des Moines",
+            "population": 3155070
+        },
+        {
+            "state_name": "Utah",
+            "capital": "Salt Lake City",
+            "population": 3255954
+        },
+        {
+            "state_name": "Oklahoma",
+            "capital": "Oklahoma City",
+            "population": 3920861
+        },
+        {
+            "state_name": "Oregon",
+            "capital": "Salem",
+            "population": 4237251
+        },
+        {
+            "state_name": "Louisiana",
+            "capital": "Baton Rouge",
+            "population": 4648794
+        },
+        {
+            "state_name": "Alabama",
+            "capital": "Montgomery",
+            "population": 4887681
+        },
+        {
+            "state_name": "Minnesota",
+            "capital": "St. Paul",
+            "population": 5639632
+        },
+        {
+            "state_name": "Colorado",
+            "capital": "Denver",
+            "population": 5691287
+        },
+        {
+            "state_name": "Wisconsin",
+            "capital": "Madison",
+            "population": 5822564
+        },
+        {
+            "state_name": "Arizona",
+            "capital": "Phoenix",
+            "population": 7158024
+        },
+        {
+            "state_name": "Washington",
+            "capital": "Olympia",
+            "population": 7535591
+        }
+    ],
+    "logprobs": [
+        -0.07937392237415385,
+        -8.600524037727272e-05,
+        -0.13546505121231667,
+        -0.1838529843937764,
+        -0.040328300052905,
+        -0.0004881052447183334,
+        -0.05960519366042301,
+        -0.13305768014580732,
+        -0.005271522783200001,
+        -0.013403665133252729,
+        -0.0770354783294589,
+        -0.11378132982418636
+    ],
+    "tokens": 5230,
+    "time": 40.91003727912903
+}

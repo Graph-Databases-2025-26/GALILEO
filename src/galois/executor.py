@@ -1,4 +1,3 @@
-import re
 from typing import Any, Dict, List, Optional, Union
 from langchain_core.runnables import RunnableLambda
 from langchain_core.prompts import ChatPromptTemplate
@@ -16,7 +15,7 @@ from src.llm import get_llm_wrapper
 from src.utils import parse_sql, log_init
 from src.utils import LOG, ERR_LLM_PARSING_FAILURE
 
-import json, time
+import json, time, re
 
 #JSON Template for testing prupose
 JS_TEMPLATE = """
@@ -85,6 +84,7 @@ class GaloisExecutor:
         """
         
         memory: List[Dict[str, Any]] = Field(default_factory=list, description="Internal list of input/output records.")
+        logprobs: List[float] = Field(default_factory=list, description="List of mean logprobs for each stored tuple." )
         key_values: set = Field(default_factory=set, description="Set of unique key value tuples for deduplication.")
         tokens: int = Field(default=0, description="Total number of tokens processed." )
         time: float = Field(default=0.0, description="A timestamp or measure of processing time." )
@@ -100,6 +100,16 @@ class GaloisExecutor:
             """
             
             return ["history"] 
+
+
+        @property
+        def get_logprobs(self) -> List[float]:
+            """
+            Returns the list of mean logprobs for all stored unique records.
+            
+            Returns:
+            """
+            return list(self.logprobs)
 
 
         @property
@@ -123,7 +133,7 @@ class GaloisExecutor:
                 List[Dict[str, Any]]: The list of stored unique records.
             """
             
-            return self.memory
+            return list(self.memory)
 
         @property
         def get_time(self) -> List[Dict[str, Any]]:
@@ -173,30 +183,56 @@ class GaloisExecutor:
             Raises:
                 NoNewTuplesFound: If no new unique tuple is added to the memory after processing the output.
             """
+                       
+            tmp_set = self.key_values.copy()
             
-            tmp_set =self.key_values.copy()
-            
-            for resp in outputs["response"]:
-                tmp_kv = self._get_key_values(resp, outputs["key"])
 
-                if tmp_kv not in self.key_values:
-                    self.memory.append(resp)
-                    self.key_values.add(tmp_kv)
-        
-            self.time = self.time + outputs["time"]
-            self.tokens = self.tokens + outputs["tokens"]
-        
+            if(outputs.get("logprobs")): 
+                for (t, t_logp) in zip(outputs["response"], outputs["logprobs"]):
+                    
+                    tmp_kv = self._get_key_values(t, outputs["key"])
+
+                    if tmp_kv not in self.key_values:
+                        self.memory.append(t)
+                        self.key_values.add(tmp_kv)
+                        self.logprobs.append(t_logp)
+                        
+            else:
+                for resp in outputs["response"]:
+                    tmp_kv = self._get_key_values(resp, outputs["key"])
+
+                    if tmp_kv not in self.key_values:
+                        self.memory.append(resp)
+                        self.key_values.add(tmp_kv)
+
+            self.time += outputs["time"]
+            self.tokens += outputs["tokens"]
+
             if len(tmp_set) == len(self.key_values): 
                 raise NoNewTuplesFound("Interrupted Iteration: no new unique tuples were found.")
             
-            LOG.debug(f"History: {self.memory}")
-            
+            if(outputs.get("logprobs")): 
+                LOG.debug("-----------------------HISTORY AND LOGPROBS-----------------------")
+                for t, t_logpb in zip(self.memory, self.logprobs):
+                    LOG.debug(f"{t} [{t_logpb}]")
+            else:
+                LOG.debug("-----------------------HISTORY-----------------------")
+                for t in self.memory:
+                    LOG.debug(f"{t}")
+  
+        
+          
         def clear(self) -> None:
             """
             Clears the memory and the key set, resetting the state.
             """
             
-            self.memory = []  
+            self.memory.clear()
+            self.key_values.clear()
+            self.logprobs.clear()
+            
+            self.tokens = 0
+            self.time = 0
              
 
         def _get_key_values(self, record: Dict[str, Any], keys: List[str]) -> tuple:
@@ -410,6 +446,73 @@ class GaloisExecutor:
         return f_response
     
     
+    def _extract_logprobs_per_tuple(self, raw_response) -> List[float]:
+        """
+        Estrae le logprobs medie per ogni tupla, assicurandosi di ignorare 
+        sia la punteggiatura che i nomi degli attributi (chiavi).
+        """
+        logprobs_data = self.llm_wrapper.get_logprobs_content(raw_response)
+        if not logprobs_data:
+            return []
+
+        tuple_averages = []
+        current_tuple_probs = []
+        
+        in_tuple = False
+        is_value_zone = False  # True quando siamo dopo il ':' ma prima di ',' o '}'
+        
+        # Punteggiatura strutturale JSON da escludere dai calcoli delle celle
+        structural_chars = {'{', '}', '[', ']', ':', ',', '"', "'"}
+
+        for item in logprobs_data:
+            token = item.get('token', '')
+            # Pulizia per il controllo dei simboli, ma manteniamo l'originale per il log
+            clean_token = token.strip() 
+            prob = item.get('logprob', 0)
+
+            # 1. Gestione confini Oggetto
+            if '{' in token:
+                in_tuple = True
+                is_value_zone = False
+                current_tuple_probs = []
+                continue
+            
+            if '}' in token:
+                if in_tuple and current_tuple_probs:
+                    avg = sum(current_tuple_probs) / len(current_tuple_probs)
+                    tuple_averages.append(avg)
+                in_tuple = False
+                is_value_zone = False
+                continue
+
+            if not in_tuple:
+                continue
+
+            # 2. Rilevamento Zona Valore
+            # Se troviamo ':', tutto quello che segue (fino a ',' o '}') è un VALORE della cella
+            if ':' in token:
+                is_value_zone = True
+                continue
+            
+            # Se troviamo una virgola, la zona valore finisce (inizierà una nuova chiave)
+            if ',' in token:
+                is_value_zone = False
+                continue
+
+            # 3. Filtraggio e Raccolta
+            # Consideriamo il token solo se:
+            # - Siamo nella zona valore (dopo i ':')
+            # - Il token non è un carattere strutturale vuoto o punteggiatura
+            if is_value_zone:
+                # Rimuoviamo eventuali virgolette residue che l'LLM potrebbe aver incluso nel token
+                if clean_token not in structural_chars and clean_token != "":
+                    current_tuple_probs.append(prob)
+                    #LOG.info(f"CELL DATA: {token} | Prob: {prob}") # Per debug
+
+        LOG.debug(f"TUPLE MEAN LOGPROS: {tuple_averages}")
+        return tuple_averages
+        
+    
     def key_scan(self, query: str, columns: Optional[List[str]] = None, conditions_to_push: Optional[List[str]] = None, max_iter: Optional[int] = None) -> Dict[str, Any]:
         """
         Executes the Key-Scan algorithm iteratively using the LLM.
@@ -446,18 +549,24 @@ class GaloisExecutor:
                     raw_response = chain.invoke(input_d)
 
                 t_end = time.time()
-                
+                              
                 content_fixed = raw_response.content.replace("\\'", "'")
                 content_fixed = repair_json_content(content_fixed)
                 response = self.resp_parser.parse(content_fixed)
-                LOG.info(f"LLM Response Parsed: {response.root}")
+                
+                LOG.debug(f"RAW RESPONSE: {raw_response.content}")
+                LOG.debug(f"PARSED RESPONSE: {response.root}")
+                
+                LOG.info(f"-----------------------LLM PARSED RESPONSE-----------------------")
+                for t in response.root:
+                    LOG.info(f"{t}")
                 
                 self.g_memory.save_context(
                     {}, 
                     {
-                        "response": response.root, 
+                        "response": response.root,
                         "key": self.schema_mgr.get_attributes(parse_sql(query)["from_table"], "key"), 
-                        "tokens": raw_response.usage_metadata.get("output_tokens", 0),
+                        "tokens": raw_response.usage_metadata.get("total_tokens", 0),
                         "time" : t_end - t_start   
                     }
                 )
@@ -481,13 +590,21 @@ class GaloisExecutor:
         response = self.resp_parser.parse(content_fixed)
         
         f_response = self._build_full_response(self.schema_mgr.get_attributes(parse_sql(query)["from_table"], "key"), response.root)   
+        tuple_logprobs = self._extract_logprobs_per_tuple(raw_response)
         
         outputs = {
             "response": f_response,
+            "logprobs": tuple_logprobs,
             "time": self.g_memory.get_time + t_end - t_start,
-            "tokens": self.g_memory.get_tokens + raw_response.usage_metadata.get("output_tokens", 0)
+            "tokens": self.g_memory.get_tokens + raw_response.usage_metadata.get("total_tokens", 0)
         }
-        LOG.info(f"LLM Response Parsed: {outputs}")
+        
+        LOG.info(f"-----------------------LLM FINAL OUTPUT-----------------------")
+        for t, t_logp in zip(outputs["response"], outputs["logprobs"]):
+            LOG.info(f"{t}  [{t_logp:.2e}]")
+        
+        LOG.info(f"Time: [{outputs['time']}]")
+        LOG.info(f"Tokens: [{outputs['tokens']}]")
         
         self.g_memory.clear()
         
@@ -512,26 +629,23 @@ class GaloisExecutor:
         if max_iter is None:
             max_iter = self.max_iter
         
-        parsed = parse_sql(query)
-        original_where = parsed.get("where_conditions") or []
-
-# None -> use original WHERE, [] -> push nothing, [..] -> push those
-        where_conditions = original_where if conditions_to_push is None else conditions_to_push
-
-        input_d = {"query": query, "columns":columns, "prompt_t": "table_f", "conditions": where_conditions, "history": ""}
+        input_d = {"query": query, "columns":columns, "prompt_t": "table_f", "conditions": conditions_to_push, "history": ""}
         chain = self._build_galois_chain(self.llm_wrapper)
         
+        # --- [INTEGRATED FROM OLD EXECUTOR] Stats Variables ---
         input_tokens_by_iter: List[int] = []
         iters_done = 0
+        # -------------------------------------------------------
 
         i = 0
         while i < max_iter:
             
-            t_start = time.time()
+            t_start =time.time()
+            
             try:
-                # ----- Exp-6 input-token estimate for this iteration prompt -----
+                # --- [INTEGRATED FROM OLD EXECUTOR] Input Token Estimation ---
+                # This estimates input tokens for Exp-6 stats before making the call
                 try:
-                    # build the same human prompt text you will send (best-effort)
                     tmp_input = dict(input_d)
                     if i > 0:
                         tmp_input.update({"prompt_t": "table_i", **self.g_memory.load_memory_variables({})})
@@ -545,6 +659,7 @@ class GaloisExecutor:
                         prompt_input_tokens = 0
                 except Exception:
                     prompt_input_tokens = 0
+                # -------------------------------------------------------------
 
                 if i == 0:
                     raw_response = chain.invoke(input_d)
@@ -556,23 +671,33 @@ class GaloisExecutor:
                 
                 t_end = time.time()
 
-                # count this iteration EVEN if it terminates
+                # --- [INTEGRATED FROM OLD EXECUTOR] Update Stats ---
                 input_tokens_by_iter.append(prompt_input_tokens)
                 iters_done = i + 1
+                # ----------------------------------------------------
 
                 content_fixed = raw_response.content.replace("\\'", "'")
                 content_fixed = repair_json_content(content_fixed)
                 content_fixed = re.sub(r"(?<=\d),(?=\d)", "", content_fixed) #remove commas in numbers
                 response = self.resp_parser.parse(content_fixed)
-                LOG.info(f"LLM Response Parsed: {response.root}")
+                
+                LOG.debug(f"RAW RESPONSE: {raw_response.content}")
+                LOG.debug(f"PARSED RESPONSE: {response.root}")
+                
+                tuple_logprobs = self._extract_logprobs_per_tuple(raw_response)
+                
+                LOG.info(f"-----------------------LLLM PARSED RESPONSE-----------------------")
+                for t, t_logp in zip(response.root, tuple_logprobs):
+                    LOG.info(f"{t}  [{t_logp:.2e}]")
                 
                 self.g_memory.save_context(
                     {}, 
                     {
                         "response": response.root, 
                         "key": self.schema_mgr.get_attributes(parse_sql(query)["from_table"], "key"), 
-                        "tokens": raw_response.usage_metadata.get("output_tokens", 0),
-                        "time" : t_end - t_start   
+                        "tokens": raw_response.usage_metadata.get("total_tokens", 0),
+                        "time" : t_end - t_start , 
+                        "logprobs": tuple_logprobs
                     }
                 )
                 i += 1
@@ -581,21 +706,29 @@ class GaloisExecutor:
                 LOG.info("No new unique tuples were added in this iteration.")
                 break
 
-        output ={
+        outputs ={
             "response": self.g_memory.get_memory,
+            "logprobs": self.g_memory.get_logprobs,
             "time": self.g_memory.get_time,
             "tokens": self.g_memory.get_tokens,
+            # --- [INTEGRATED FROM OLD EXECUTOR] Extra Stats ---
             "n_iters": iters_done,
             "input_tokens_by_iter": input_tokens_by_iter,
             "input_tokens_total_all_iters": sum(input_tokens_by_iter),
+            # ---------------------------------------------------
         }
-        LOG.info(f"LLM Response Parsed: {output}")
         
+        LOG.info(f"-----------------------LLM FINAL OUTPUT-----------------------")
+        for t, t_logp in zip(outputs["response"], outputs["logprobs"]):
+            LOG.info(f"{t}  [{t_logp:.2e}]")
+            
+        LOG.info(f"Time: [{outputs['time']}]")
+        LOG.info(f"Tokens: [{outputs['tokens']}]")
+            
         self.g_memory.clear()
         
-        return output
-
-    import re
+        return outputs
+    
 
 def repair_json_content(json_str: str) -> str:
     """

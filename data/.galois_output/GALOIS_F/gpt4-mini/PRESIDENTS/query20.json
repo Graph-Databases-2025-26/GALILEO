@@ -1,0 +1,15 @@
+{
+    "query_id": 20,
+    "sql": "SELECT p.party, count(p.party) num FROM target.world_presidents p WHERE p.country='United States' group by p.party order by num desc limit 1;",
+    "result_set": [
+        {
+            "party": "Democratic",
+            "num": 1
+        }
+    ],
+    "logprobs": [
+        -0.00017949985565084918
+    ],
+    "tokens": 784,
+    "time": 5.363267183303833
+}

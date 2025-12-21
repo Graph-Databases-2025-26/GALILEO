@@ -1,0 +1,8 @@
+{
+    "query_id": 7,
+    "sql": "select Company from target.fortune_2024 where best_companies_to_work_for = true and industry = 'Airlines';",
+    "result_set": [],
+    "logprobs": [],
+    "tokens": 2273,
+    "time": 3.944221019744873
+}

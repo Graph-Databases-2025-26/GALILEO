@@ -1,0 +1,220 @@
+{
+    "query_id": 1,
+    "sql": "select m.opponent_team, m.match_date_year, m.match_date_month, m.match_date_day from target.premier_league_2024_2025_arsenal_matches m;",
+    "result_set": [
+        {
+            "opponent_team": "Manchester City",
+            "match_date_year": 2024,
+            "match_date_month": 8,
+            "match_date_day": 1
+        },
+        {
+            "opponent_team": "Manchester United",
+            "match_date_year": 2024,
+            "match_date_month": 9,
+            "match_date_day": 15
+        },
+        {
+            "opponent_team": "Liverpool",
+            "match_date_year": 2024,
+            "match_date_month": 9,
+            "match_date_day": 22
+        },
+        {
+            "opponent_team": "Chelsea",
+            "match_date_year": 2024,
+            "match_date_month": 9,
+            "match_date_day": 29
+        },
+        {
+            "opponent_team": "Tottenham Hotspur",
+            "match_date_year": 2024,
+            "match_date_month": 10,
+            "match_date_day": 6
+        },
+        {
+            "opponent_team": "Leeds United",
+            "match_date_year": 2024,
+            "match_date_month": 10,
+            "match_date_day": 20
+        },
+        {
+            "opponent_team": "West Ham United",
+            "match_date_year": 2024,
+            "match_date_month": 10,
+            "match_date_day": 27
+        },
+        {
+            "opponent_team": "Aston Villa",
+            "match_date_year": 2024,
+            "match_date_month": 11,
+            "match_date_day": 3
+        },
+        {
+            "opponent_team": "Bournemouth",
+            "match_date_year": 2024,
+            "match_date_month": 11,
+            "match_date_day": 10
+        },
+        {
+            "opponent_team": "Crystal Palace",
+            "match_date_year": 2024,
+            "match_date_month": 11,
+            "match_date_day": 24
+        },
+        {
+            "opponent_team": "Everton",
+            "match_date_year": 2024,
+            "match_date_month": 12,
+            "match_date_day": 1
+        },
+        {
+            "opponent_team": "Fulham",
+            "match_date_year": 2024,
+            "match_date_month": 12,
+            "match_date_day": 4
+        },
+        {
+            "opponent_team": "Newcastle United",
+            "match_date_year": 2024,
+            "match_date_month": 12,
+            "match_date_day": 8
+        },
+        {
+            "opponent_team": "Brighton & Hove Albion",
+            "match_date_year": 2024,
+            "match_date_month": 12,
+            "match_date_day": 15
+        },
+        {
+            "opponent_team": "Wolverhampton Wanderers",
+            "match_date_year": 2024,
+            "match_date_month": 12,
+            "match_date_day": 22
+        },
+        {
+            "opponent_team": "Manchester City",
+            "match_date_year": 2025,
+            "match_date_month": 1,
+            "match_date_day": 3
+        },
+        {
+            "opponent_team": "Manchester United",
+            "match_date_year": 2025,
+            "match_date_month": 1,
+            "match_date_day": 12
+        },
+        {
+            "opponent_team": "Liverpool",
+            "match_date_year": 2025,
+            "match_date_month": 1,
+            "match_date_day": 19
+        },
+        {
+            "opponent_team": "Chelsea",
+            "match_date_year": 2025,
+            "match_date_month": 1,
+            "match_date_day": 26
+        },
+        {
+            "opponent_team": "Tottenham Hotspur",
+            "match_date_year": 2025,
+            "match_date_month": 2,
+            "match_date_day": 2
+        },
+        {
+            "opponent_team": "Leeds United",
+            "match_date_year": 2025,
+            "match_date_month": 2,
+            "match_date_day": 16
+        },
+        {
+            "opponent_team": "West Ham United",
+            "match_date_year": 2025,
+            "match_date_month": 2,
+            "match_date_day": 23
+        },
+        {
+            "opponent_team": "Aston Villa",
+            "match_date_year": 2025,
+            "match_date_month": 3,
+            "match_date_day": 2
+        },
+        {
+            "opponent_team": "Bournemouth",
+            "match_date_year": 2025,
+            "match_date_month": 3,
+            "match_date_day": 16
+        },
+        {
+            "opponent_team": "Crystal Palace",
+            "match_date_year": 2025,
+            "match_date_month": 3,
+            "match_date_day": 30
+        },
+        {
+            "opponent_team": "Everton",
+            "match_date_year": 2025,
+            "match_date_month": 4,
+            "match_date_day": 6
+        },
+        {
+            "opponent_team": "Fulham",
+            "match_date_year": 2025,
+            "match_date_month": 4,
+            "match_date_day": 13
+        },
+        {
+            "opponent_team": "Newcastle United",
+            "match_date_year": 2025,
+            "match_date_month": 4,
+            "match_date_day": 20
+        },
+        {
+            "opponent_team": "Brighton & Hove Albion",
+            "match_date_year": 2025,
+            "match_date_month": 4,
+            "match_date_day": 27
+        },
+        {
+            "opponent_team": "Wolverhampton Wanderers",
+            "match_date_year": 2025,
+            "match_date_month": 5,
+            "match_date_day": 4
+        }
+    ],
+    "logprobs": [
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0
+    ],
+    "tokens": 2790,
+    "time": 21.84706401824951
+}

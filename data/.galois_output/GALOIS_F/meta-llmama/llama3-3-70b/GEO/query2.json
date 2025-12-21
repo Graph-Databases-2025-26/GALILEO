@@ -1,0 +1,122 @@
+{
+    "query_id": 2,
+    "sql": "SELECT city_name FROM target.usa_city WHERE population > 150000;",
+    "result_set": [
+        {
+            "city_name": "Memphis"
+        },
+        {
+            "city_name": "Nashville"
+        },
+        {
+            "city_name": "San Diego"
+        },
+        {
+            "city_name": "Boston"
+        },
+        {
+            "city_name": "Denver"
+        },
+        {
+            "city_name": "Houston"
+        },
+        {
+            "city_name": "Las Vegas"
+        },
+        {
+            "city_name": "Washington D.C."
+        },
+        {
+            "city_name": "Chicago"
+        },
+        {
+            "city_name": "New York City"
+        },
+        {
+            "city_name": "Tulsa"
+        },
+        {
+            "city_name": "Los Angeles"
+        },
+        {
+            "city_name": "Minneapolis"
+        },
+        {
+            "city_name": "Phoenix"
+        },
+        {
+            "city_name": "Dallas"
+        },
+        {
+            "city_name": "Raleigh"
+        },
+        {
+            "city_name": "Sacramento"
+        },
+        {
+            "city_name": "Milwaukee"
+        },
+        {
+            "city_name": "Miami"
+        },
+        {
+            "city_name": "Philadelphia"
+        },
+        {
+            "city_name": "San Jose"
+        },
+        {
+            "city_name": "Portland"
+        },
+        {
+            "city_name": "Oakland"
+        },
+        {
+            "city_name": "Virginia Beach"
+        },
+        {
+            "city_name": "Seattle"
+        },
+        {
+            "city_name": "Kansas City"
+        },
+        {
+            "city_name": "San Antonio"
+        },
+        {
+            "city_name": "Oklahoma City"
+        }
+    ],
+    "logprobs": [
+        -4.1482856699999996e-05,
+        -3.33785888e-07,
+        -0.319910978953856,
+        -0.13023813482159333,
+        -0.0025463318043333336,
+        -0.147887925168675,
+        -3.576264275e-06,
+        -0.0008786223851560001,
+        -0.101922397034675,
+        -0.15396104924686668,
+        -8.860056e-05,
+        -0.00096851535556,
+        -0.004117459265999999,
+        -0.001192235676225,
+        -0.07531165144795,
+        -0.00937381105232,
+        -0.0251639276867,
+        -0.17392418102075,
+        -0.033449207618233334,
+        -0.002401533677625,
+        -0.02405245320806,
+        -0.0012320246914266665,
+        -0.0005797602481250001,
+        -0.035558173063875,
+        -0.15810485741966668,
+        -0.0017483622663750002,
+        -0.00020008200840000001,
+        -0.010732311655833333
+    ],
+    "tokens": 2964,
+    "time": 21.36781144142151
+}

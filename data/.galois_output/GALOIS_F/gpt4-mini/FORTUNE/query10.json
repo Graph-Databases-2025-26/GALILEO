@@ -1,0 +1,8 @@
+{
+    "query_id": 10,
+    "sql": "select Company, headquartersstate, ticker, ceo, founder_is_ceo, femaleceo, number_of_employees from target.fortune_2024 where headquarterscity = 'Santa Clara' and rank < 70;",
+    "result_set": [],
+    "logprobs": [],
+    "tokens": 1779,
+    "time": 2.15085768699646
+}

@@ -10,7 +10,7 @@
         {
             "state_name": "Alaska",
             "capital": "Juneau",
-            "area_squared_miles": 663268.0
+            "area_squared_miles": 571374.0
         },
         {
             "state_name": "Arizona",
@@ -20,7 +20,7 @@
         {
             "state_name": "Arkansas",
             "capital": "Little Rock",
-            "area_squared_miles": 53182.0
+            "area_squared_miles": 53128.0
         },
         {
             "state_name": "California",
@@ -40,22 +40,22 @@
         {
             "state_name": "Delaware",
             "capital": "Dover",
-            "area_squared_miles": 2489.0
+            "area_squared_miles": 2480.0
         },
         {
             "state_name": "Florida",
             "capital": "Tallahassee",
-            "area_squared_miles": 170312.0
+            "area_squared_miles": 65773.0
         },
         {
             "state_name": "Georgia",
             "capital": "Atlanta",
-            "area_squared_miles": 59425.0
+            "area_squared_miles": 59415.0
         },
         {
             "state_name": "Hawaii",
             "capital": "Honolulu",
-            "area_squared_miles": 10932.0
+            "area_squared_miles": 10200.0
         },
         {
             "state_name": "Idaho",
@@ -65,7 +65,7 @@
         {
             "state_name": "Illinois",
             "capital": "Springfield",
-            "area_squared_miles": 59918.0
+            "area_squared_miles": 57954.0
         },
         {
             "state_name": "Indiana",
@@ -75,7 +75,7 @@
         {
             "state_name": "Iowa",
             "capital": "Des Moines",
-            "area_squared_miles": 58557.0
+            "area_squared_miles": 58518.0
         },
         {
             "state_name": "Kansas",
@@ -90,27 +90,27 @@
         {
             "state_name": "Louisiana",
             "capital": "Baton Rouge",
-            "area_squared_miles": 51843.0
+            "area_squared_miles": 51820.0
         },
         {
             "state_name": "Maine",
             "capital": "Augusta",
-            "area_squared_miles": 35380.0
+            "area_squared_miles": 35398.0
         },
         {
             "state_name": "Maryland",
             "capital": "Annapolis",
-            "area_squared_miles": 12407.0
+            "area_squared_miles": 12415.0
         },
         {
             "state_name": "Massachusetts",
             "capital": "Boston",
-            "area_squared_miles": 10577.0
+            "area_squared_miles": 10538.0
         },
         {
             "state_name": "Michigan",
             "capital": "Lansing",
-            "area_squared_miles": 96716.0
+            "area_squared_miles": 96257.0
         },
         {
             "state_name": "Minnesota",
@@ -125,7 +125,7 @@
         {
             "state_name": "Missouri",
             "capital": "Jefferson City",
-            "area_squared_miles": 69562.0
+            "area_squared_miles": 69542.0
         },
         {
             "state_name": "Montana",
@@ -135,27 +135,22 @@
         {
             "state_name": "Nebraska",
             "capital": "Lincoln",
-            "area_squared_miles": 77348.0
+            "area_squared_miles": 77382.0
         },
         {
             "state_name": "Nevada",
             "capital": "Carson City",
-            "area_squared_miles": 110567.0
+            "area_squared_miles": 110540.0
         },
         {
             "state_name": "New Hampshire",
             "capital": "Concord",
-            "area_squared_miles": 9350.0
+            "area_squared_miles": 9237.0
         },
         {
             "state_name": "New Jersey",
             "capital": "Trenton",
-            "area_squared_miles": 8722.0
-        },
-        {
-            "state_name": null,
-            "capital": null,
-            "area_squared_miles": NaN
+            "area_squared_miles": 8720.0
         },
         {
             "state_name": "New Mexico",
@@ -165,17 +160,17 @@
         {
             "state_name": "New York",
             "capital": "Albany",
-            "area_squared_miles": 54776.0
+            "area_squared_miles": 54400.0
         },
         {
             "state_name": "North Carolina",
             "capital": "Raleigh",
-            "area_squared_miles": 53819.0
+            "area_squared_miles": 53842.0
         },
         {
             "state_name": "North Dakota",
             "capital": "Bismarck",
-            "area_squared_miles": 70704.0
+            "area_squared_miles": 70740.0
         },
         {
             "state_name": "Ohio",
@@ -185,17 +180,17 @@
         {
             "state_name": "Oklahoma",
             "capital": "Oklahoma City",
-            "area_squared_miles": 69662.0
+            "area_squared_miles": 69331.0
         },
         {
             "state_name": "Oregon",
             "capital": "Salem",
-            "area_squared_miles": 98386.0
+            "area_squared_miles": 106177.0
         },
         {
             "state_name": "Pennsylvania",
             "capital": "Harrisburg",
-            "area_squared_miles": 46055.0
+            "area_squared_miles": 46047.0
         },
         {
             "state_name": "Rhode Island",
@@ -205,12 +200,12 @@
         {
             "state_name": "South Carolina",
             "capital": "Columbia",
-            "area_squared_miles": 32020.0
+            "area_squared_miles": 32079.0
         },
         {
             "state_name": "South Dakota",
             "capital": "Pierre",
-            "area_squared_miles": 77116.0
+            "area_squared_miles": 77182.0
         },
         {
             "state_name": "Tennessee",
@@ -225,12 +220,12 @@
         {
             "state_name": "Utah",
             "capital": "Salt Lake City",
-            "area_squared_miles": 84997.0
+            "area_squared_miles": 84925.0
         },
         {
             "state_name": "Vermont",
             "capital": "Montpelier",
-            "area_squared_miles": 9615.0
+            "area_squared_miles": 9691.0
         },
         {
             "state_name": "Virginia",
@@ -240,24 +235,76 @@
         {
             "state_name": "Washington",
             "capital": "Olympia",
-            "area_squared_miles": 71298.0
+            "area_squared_miles": 73107.0
         },
         {
             "state_name": "West Virginia",
             "capital": "Charleston",
-            "area_squared_miles": 24230.0
+            "area_squared_miles": 24205.0
         },
         {
             "state_name": "Wisconsin",
             "capital": "Madison",
-            "area_squared_miles": 55994.0
+            "area_squared_miles": 55949.0
         },
         {
             "state_name": "Wyoming",
             "capital": "Cheyenne",
-            "area_squared_miles": 97818.0
+            "area_squared_miles": 97817.0
         }
     ],
-    "time": 37.37952923774719,
-    "tokens": 1577
+    "logprobs": [
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0
+    ],
+    "tokens": 3606,
+    "time": 30.85907793045044
 }

@@ -1,0 +1,95 @@
+{
+    "query_id": 15,
+    "sql": "SELECT p.name, p.party FROM target.world_presidents p WHERE p.country='United States' AND p.party='Republican';",
+    "result_set": [
+        {
+            "name": "Calvin Coolidge",
+            "party": "Republican"
+        },
+        {
+            "name": "William McKinley",
+            "party": "Republican"
+        },
+        {
+            "name": "George W. Bush",
+            "party": "Republican"
+        },
+        {
+            "name": "Gerald Ford",
+            "party": "Republican"
+        },
+        {
+            "name": "Warren G. Harding",
+            "party": "Republican"
+        },
+        {
+            "name": "Theodore Roosevelt",
+            "party": "Republican"
+        },
+        {
+            "name": "Benjamin Harrison",
+            "party": "Republican"
+        },
+        {
+            "name": "Dwight D. Eisenhower",
+            "party": "Republican"
+        },
+        {
+            "name": "Richard Nixon",
+            "party": "Republican"
+        },
+        {
+            "name": "George H.W. Bush",
+            "party": "Republican"
+        },
+        {
+            "name": "James A. Garfield",
+            "party": "Republican"
+        },
+        {
+            "name": "Rutherford B. Hayes",
+            "party": "Republican"
+        },
+        {
+            "name": "Herbert Hoover",
+            "party": "Republican"
+        },
+        {
+            "name": "Abraham Lincoln",
+            "party": "Republican"
+        },
+        {
+            "name": "Donald Trump",
+            "party": "Republican"
+        },
+        {
+            "name": "Ronald Reagan",
+            "party": "Republican"
+        },
+        {
+            "name": "Ulysses S. Grant",
+            "party": "Republican"
+        }
+    ],
+    "logprobs": [
+        -7.152540799999999e-07,
+        -1.5695825833333333e-06,
+        -1.5156531828571429e-06,
+        -1.4106373333333334e-06,
+        -3.7252866500000004e-07,
+        -2.721923546666667e-06,
+        -1.3112974716666667e-06,
+        -5.960448333333334e-07,
+        -1.454349688e-06,
+        -4.619352575e-07,
+        -1.98183875e-06,
+        -1.95203776e-06,
+        -3.774957133333333e-07,
+        -0.00036263725154666665,
+        -3.0994282e-06,
+        -2.9206145466666667e-06,
+        -3.86230947e-06
+    ],
+    "tokens": 3008,
+    "time": 41.26218557357788
+}

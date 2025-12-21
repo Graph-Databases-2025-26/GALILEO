@@ -3,156 +3,200 @@
     "sql": "SELECT DISTINCT capital FROM target.usa_state;",
     "result_set": [
         {
-            "capital": "Indianapolis"
-        },
-        {
-            "capital": "Trenton"
-        },
-        {
-            "capital": "Frankfort"
-        },
-        {
-            "capital": "Phoenix"
-        },
-        {
-            "capital": "Juneau"
-        },
-        {
-            "capital": "Harrisburg"
-        },
-        {
-            "capital": "Augusta"
-        },
-        {
-            "capital": "Lansing"
-        },
-        {
-            "capital": "Austin"
-        },
-        {
-            "capital": "Salem"
-        },
-        {
-            "capital": "Hartford"
-        },
-        {
-            "capital": "Montpelier"
-        },
-        {
-            "capital": "Pierre"
-        },
-        {
-            "capital": "Cheyenne"
-        },
-        {
-            "capital": "Madison"
-        },
-        {
-            "capital": "Baton Rouge"
-        },
-        {
-            "capital": "Topeka"
-        },
-        {
-            "capital": "Bismarck"
-        },
-        {
-            "capital": "Denver"
-        },
-        {
-            "capital": "Jackson"
-        },
-        {
-            "capital": "Columbia"
-        },
-        {
-            "capital": "Helena"
-        },
-        {
-            "capital": "Saint Paul"
-        },
-        {
-            "capital": "Tallahassee"
-        },
-        {
-            "capital": "Columbus"
-        },
-        {
-            "capital": "Boston"
-        },
-        {
-            "capital": "Olympia"
-        },
-        {
-            "capital": "Carson City"
-        },
-        {
-            "capital": "Annapolis"
-        },
-        {
-            "capital": "Boise"
-        },
-        {
-            "capital": "Honolulu"
-        },
-        {
-            "capital": "Nashville"
+            "capital": "Montgomery"
         },
         {
             "capital": "Springfield"
         },
         {
-            "capital": "Montgomery"
+            "capital": "Juneau"
         },
         {
-            "capital": "Lincoln"
+            "capital": "Olympia"
         },
         {
-            "capital": "Oklahoma City"
-        },
-        {
-            "capital": "Sacramento"
-        },
-        {
-            "capital": "Salt Lake City"
-        },
-        {
-            "capital": "Santa Fe"
-        },
-        {
-            "capital": "Jefferson City"
-        },
-        {
-            "capital": "Des Moines"
-        },
-        {
-            "capital": "Charleston"
-        },
-        {
-            "capital": "Albany"
-        },
-        {
-            "capital": "Concord"
+            "capital": "Madison"
         },
         {
             "capital": "Providence"
         },
         {
-            "capital": "Richmond"
+            "capital": "Jefferson City"
         },
         {
-            "capital": "Dover"
+            "capital": "Annapolis"
+        },
+        {
+            "capital": "Oklahoma City"
+        },
+        {
+            "capital": "Lincoln"
+        },
+        {
+            "capital": "Boise"
+        },
+        {
+            "capital": "St Paul"
+        },
+        {
+            "capital": "Salt Lake City"
+        },
+        {
+            "capital": "Columbia"
+        },
+        {
+            "capital": "Indianapolis"
+        },
+        {
+            "capital": "Jackson"
+        },
+        {
+            "capital": "Baton Rouge"
+        },
+        {
+            "capital": "Little Rock"
+        },
+        {
+            "capital": "Lansing"
+        },
+        {
+            "capital": "Topeka"
+        },
+        {
+            "capital": "Hartford"
         },
         {
             "capital": "Raleigh"
         },
         {
-            "capital": "Atlanta"
+            "capital": "Augusta"
         },
         {
-            "capital": "Little Rock"
+            "capital": "Dover"
+        },
+        {
+            "capital": "Charleston"
+        },
+        {
+            "capital": "Trenton"
+        },
+        {
+            "capital": "Montpelier"
+        },
+        {
+            "capital": "Cheyenne"
+        },
+        {
+            "capital": "Honolulu"
+        },
+        {
+            "capital": "Denver"
+        },
+        {
+            "capital": "Pierre"
+        },
+        {
+            "capital": "Richmond"
+        },
+        {
+            "capital": "Carson City"
+        },
+        {
+            "capital": "Salem"
+        },
+        {
+            "capital": "Nashville"
+        },
+        {
+            "capital": "Bismarck"
+        },
+        {
+            "capital": "Concord"
+        },
+        {
+            "capital": "Helena"
+        },
+        {
+            "capital": "Albany"
+        },
+        {
+            "capital": "Frankfort"
+        },
+        {
+            "capital": "Boston"
+        },
+        {
+            "capital": "Sacramento"
+        },
+        {
+            "capital": "Harrisburg"
+        },
+        {
+            "capital": "Santa Fe"
+        },
+        {
+            "capital": "Austin"
+        },
+        {
+            "capital": "Tallahassee"
+        },
+        {
+            "capital": "Phoenix"
+        },
+        {
+            "capital": "Atlanta"
         }
     ],
-    "time": 23.285308361053467,
-    "tokens": 863
+    "logprobs": [
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0
+    ],
+    "tokens": 1997,
+    "time": 6.609222650527954
 }

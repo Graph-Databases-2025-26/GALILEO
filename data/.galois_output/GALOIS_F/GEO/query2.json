@@ -3,159 +3,72 @@
     "sql": "SELECT city_name FROM target.usa_city WHERE population > 150000;",
     "result_set": [
         {
-            "city_name": "Cincinnati"
+            "city_name": "Charlotte"
         },
         {
-            "city_name": "St. Petersburg"
+            "city_name": "Albuquerque"
         },
         {
-            "city_name": "New York"
+            "city_name": "Denver"
         },
         {
-            "city_name": "San Diego"
+            "city_name": "Tucson"
         },
         {
             "city_name": "Oakland"
         },
         {
-            "city_name": "Irvine"
-        },
-        {
-            "city_name": "Salt Lake City"
-        },
-        {
-            "city_name": "Lubbock"
-        },
-        {
-            "city_name": "Little Rock"
-        },
-        {
-            "city_name": "Wichita"
-        },
-        {
-            "city_name": "Fort Worth"
-        },
-        {
-            "city_name": "Fort Wayne"
-        },
-        {
-            "city_name": "Honolulu"
-        },
-        {
-            "city_name": "Boise"
-        },
-        {
-            "city_name": "Milwaukee"
-        },
-        {
-            "city_name": "Richmond"
-        },
-        {
-            "city_name": "Los Angeles"
-        },
-        {
-            "city_name": "Glendale"
-        },
-        {
-            "city_name": "Birmingham"
-        },
-        {
             "city_name": "Oklahoma City"
         },
         {
-            "city_name": "Mobile"
+            "city_name": "Phoenix"
         },
         {
-            "city_name": "Arlington"
+            "city_name": "Baltimore"
         },
         {
-            "city_name": "Chula Vista"
+            "city_name": "Jacksonville"
+        },
+        {
+            "city_name": "New York"
+        },
+        {
+            "city_name": "Des Moines"
+        },
+        {
+            "city_name": "Washington"
         },
         {
             "city_name": "Philadelphia"
         },
         {
-            "city_name": "Colorado Springs"
+            "city_name": "Los Angeles"
         },
         {
-            "city_name": "Tampa"
-        },
-        {
-            "city_name": "Riverside"
-        },
-        {
-            "city_name": "Sacramento"
-        },
-        {
-            "city_name": "Fresno"
-        },
-        {
-            "city_name": "Atlanta"
-        },
-        {
-            "city_name": "Anchorage"
-        },
-        {
-            "city_name": "Tallahassee"
+            "city_name": "Houston"
         },
         {
             "city_name": "Chicago"
-        },
-        {
-            "city_name": "Sioux Falls"
-        },
-        {
-            "city_name": "Reno"
-        },
-        {
-            "city_name": "Plano"
-        },
-        {
-            "city_name": "New Orleans"
-        },
-        {
-            "city_name": "Louisville"
-        },
-        {
-            "city_name": "Henderson"
-        },
-        {
-            "city_name": "Corpus Christi"
-        },
-        {
-            "city_name": "Eugene"
-        },
-        {
-            "city_name": "Winston-Salem"
-        },
-        {
-            "city_name": "Las Vegas"
-        },
-        {
-            "city_name": "Stockton"
-        },
-        {
-            "city_name": "St. Paul"
-        },
-        {
-            "city_name": "Seattle"
-        },
-        {
-            "city_name": "Cleveland"
-        },
-        {
-            "city_name": "Columbus"
-        },
-        {
-            "city_name": "Raleigh"
-        },
-        {
-            "city_name": "Spokane"
-        },
-        {
-            "city_name": "Lexington"
         }
     ],
-    "time": 84.96923923492432,
-    "tokens": 3094
+    "logprobs": [
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0
+    ],
+    "tokens": 6786,
+    "time": 150.25635647773743
 }

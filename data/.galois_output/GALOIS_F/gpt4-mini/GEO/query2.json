@@ -1,0 +1,50 @@
+{
+    "query_id": 2,
+    "sql": "SELECT city_name FROM target.usa_city WHERE population > 150000;",
+    "result_set": [
+        {
+            "city_name": "Houston"
+        },
+        {
+            "city_name": "Philadelphia"
+        },
+        {
+            "city_name": "Los Angeles"
+        },
+        {
+            "city_name": "Dallas"
+        },
+        {
+            "city_name": "San Jose"
+        },
+        {
+            "city_name": "Austin"
+        },
+        {
+            "city_name": "San Diego"
+        },
+        {
+            "city_name": "San Antonio"
+        },
+        {
+            "city_name": "Phoenix"
+        },
+        {
+            "city_name": "Chicago"
+        }
+    ],
+    "logprobs": [
+        -0.11924298468136385,
+        -0.00910802941325528,
+        -0.21220536900048045,
+        -0.1645573340015858,
+        -0.12104595583816433,
+        -0.5784146338359761,
+        -0.1108550675213337,
+        -0.10584249792321998,
+        -0.2570424042371968,
+        -0.13610899045655955
+    ],
+    "tokens": 1100,
+    "time": 10.00528359413147
+}

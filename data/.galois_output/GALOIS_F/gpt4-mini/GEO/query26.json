@@ -1,0 +1,16 @@
+{
+    "query_id": 26,
+    "sql": "SELECT state_name, population, area_squared_miles FROM target.usa_state WHERE capital = 'frankfort';",
+    "result_set": [
+        {
+            "state_name": "Kentucky",
+            "population": 446840,
+            "area_squared_miles": 40408.0
+        }
+    ],
+    "logprobs": [
+        -0.07592830645021112
+    ],
+    "tokens": 600,
+    "time": 1.3572149276733398
+}

@@ -1,0 +1,15 @@
+{
+    "query_id": 8,
+    "sql": "select Company, ceo from target.fortune_2024 f where f.profitable = true and f.femaleceo = true and f.headquartersstate = 'Texas';",
+    "result_set": [
+        {
+            "Company": "General Motors",
+            "CEO": "Mary Barra"
+        }
+    ],
+    "logprobs": [
+        -0.0389846765286198
+    ],
+    "tokens": 1725,
+    "time": 1.7967722415924072
+}

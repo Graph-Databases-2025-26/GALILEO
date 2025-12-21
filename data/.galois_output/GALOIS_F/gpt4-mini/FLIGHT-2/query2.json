@@ -1,0 +1,8 @@
+{
+    "query_id": 2,
+    "sql": "SELECT count(*) FROM target.usa_flights f;",
+    "result_set": [],
+    "logprobs": [],
+    "tokens": 464,
+    "time": 1.6695637702941895
+}

@@ -1,0 +1,14 @@
+{
+    "query_id": 2,
+    "sql": "select count(*) from target.premier_league_2024_2025_arsenal_matches m where m.match_date_month = 8;",
+    "result_set": [
+        {
+            "count_star()": 3
+        }
+    ],
+    "logprobs": [
+        -0.0200227469
+    ],
+    "tokens": 2665,
+    "time": 29.685382604599
+}

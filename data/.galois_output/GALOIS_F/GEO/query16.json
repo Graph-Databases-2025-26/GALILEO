@@ -6,6 +6,9 @@
             "count(DISTINCT state_name)": 0
         }
     ],
-    "time": 43.29106259346008,
-    "tokens": 1794
+    "logprobs": [
+        0.0
+    ],
+    "tokens": 1438,
+    "time": 7.984761714935303
 }

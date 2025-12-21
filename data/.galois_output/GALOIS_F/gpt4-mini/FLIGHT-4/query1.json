@@ -1,0 +1,8 @@
+{
+    "query_id": 1,
+    "sql": "SELECT a.name FROM target.airports a WHERE a.elevation_in_ft >= -50 and a.elevation_in_ft <= 50;",
+    "result_set": [],
+    "logprobs": [],
+    "tokens": 727,
+    "time": 2.008056163787842
+}

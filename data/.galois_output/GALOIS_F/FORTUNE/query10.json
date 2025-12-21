@@ -1,0 +1,30 @@
+{
+    "query_id": 10,
+    "sql": "select Company, headquartersstate, ticker, ceo, founder_is_ceo, femaleceo, number_of_employees from target.fortune_2024 where headquarterscity = 'Santa Clara' and rank < 70;",
+    "result_set": [
+        {
+            "Company": "NVIDIA Corp.",
+            "headquartersstate": "California",
+            "ticker": "NVDA",
+            "ceo": "Jensen Huang",
+            "founder_is_ceo": false,
+            "femaleceo": false,
+            "number_of_employees": 30000
+        },
+        {
+            "Company": "Citrix Systems Inc.",
+            "headquartersstate": "California",
+            "ticker": "CTXS",
+            "ceo": "Michael R. Lawrie",
+            "founder_is_ceo": false,
+            "femaleceo": false,
+            "number_of_employees": 100000
+        }
+    ],
+    "logprobs": [
+        -999.0,
+        -999.0
+    ],
+    "tokens": 3369,
+    "time": 12.425002574920654
+}

@@ -3,19 +3,19 @@
     "sql": "SELECT us.state_name, us.capital, us.population FROM target.usa_state us WHERE us.population > 3000000 AND us.population < 8000000 AND us.area_squared_miles > 50000 order by us.population;",
     "result_set": [
         {
-            "state_name": "Nevada",
-            "capital": "Carson City",
-            "population": 3132532
-        },
-        {
             "state_name": "Iowa",
             "capital": "Des Moines",
             "population": 3155070
         },
         {
+            "state_name": "Nevada",
+            "capital": "Carson City",
+            "population": 3164028
+        },
+        {
             "state_name": "Utah",
             "capital": "Salt Lake City",
-            "population": 3255954
+            "population": 3438575
         },
         {
             "state_name": "Oklahoma",
@@ -25,44 +25,64 @@
         {
             "state_name": "Oregon",
             "capital": "Salem",
-            "population": 4237251
+            "population": 4317621
         },
         {
             "state_name": "Louisiana",
             "capital": "Baton Rouge",
-            "population": 4648794
+            "population": 4648877
         },
         {
             "state_name": "Alabama",
             "capital": "Montgomery",
-            "population": 4903186
+            "population": 4948713
         },
         {
             "state_name": "Minnesota",
             "capital": "St. Paul",
-            "population": 5639632
+            "population": 5706175
         },
         {
             "state_name": "Colorado",
             "capital": "Denver",
-            "population": 5691287
+            "population": 5758744
         },
         {
             "state_name": "Wisconsin",
             "capital": "Madison",
-            "population": 5822564
+            "population": 5856045
+        },
+        {
+            "state_name": "Missouri",
+            "capital": "Jefferson City",
+            "population": 6137428
         },
         {
             "state_name": "Arizona",
             "capital": "Phoenix",
-            "population": 7278717
+            "population": 7158024
         },
         {
             "state_name": "Washington",
             "capital": "Olympia",
-            "population": 7535591
+            "population": 7614898
         }
     ],
-    "time": 58.70297455787659,
-    "tokens": 1911
+    "logprobs": [
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0
+    ],
+    "tokens": 10115,
+    "time": 185.12945127487183
 }

@@ -3,9 +3,12 @@
     "sql": "SELECT count(distinct government_form) FROM target.country WHERE continent = 'Africa';",
     "result_set": [
         {
-            "count(DISTINCT government_form)": 3
+            "count(DISTINCT government_form)": 2
         }
     ],
-    "time": 77.00231456756592,
-    "tokens": 3043
+    "logprobs": [
+        -999.0
+    ],
+    "tokens": 9760,
+    "time": 78.36069941520691
 }

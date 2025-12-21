@@ -3,10 +3,13 @@
     "sql": "SELECT m.startyear, count(*) as count FROM target.movies m WHERE m.director = 'Tim Burton' group by m.startyear order by count desc limit 1;",
     "result_set": [
         {
-            "startyear": 2012,
-            "count": 1
+            "startyear": 2005,
+            "count": 2
         }
     ],
-    "time": 39.68151021003723,
-    "tokens": 1565
+    "logprobs": [
+        -999.0
+    ],
+    "tokens": 2206,
+    "time": 33.96642589569092
 }

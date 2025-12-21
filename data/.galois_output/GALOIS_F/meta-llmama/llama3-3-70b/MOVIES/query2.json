@@ -1,0 +1,38 @@
+{
+    "query_id": 2,
+    "sql": "SELECT m.originaltitle FROM target.movies m WHERE m.director='Steven Spielberg';",
+    "result_set": [
+        {
+            "originaltitle": "Jurassic Park"
+        },
+        {
+            "originaltitle": "E.T. the Extra-Terrestrial"
+        },
+        {
+            "originaltitle": "War of the Worlds"
+        },
+        {
+            "originaltitle": "Indiana Jones and the Raiders of the Lost Ark"
+        },
+        {
+            "originaltitle": "Saving Private Ryan"
+        },
+        {
+            "originaltitle": "Schindler's List"
+        },
+        {
+            "originaltitle": "Jaws"
+        }
+    ],
+    "logprobs": [
+        -7.390969359999999e-07,
+        -5.483615299999999e-07,
+        -1.8575764008333335e-05,
+        -1.994039482727273e-06,
+        -3.457050528e-06,
+        -7.527134714285713e-06,
+        -2.145758125e-06
+    ],
+    "tokens": 2101,
+    "time": 13.91914963722229
+}

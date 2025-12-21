@@ -1,0 +1,8 @@
+{
+    "query_id": 14,
+    "sql": "SELECT DISTINCT lake_name FROM target.usa_lake WHERE area_squared_km > 750;",
+    "result_set": [],
+    "logprobs": [],
+    "tokens": 458,
+    "time": 1.2029969692230225
+}

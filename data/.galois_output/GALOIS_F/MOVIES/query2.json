@@ -3,75 +3,12 @@
     "sql": "SELECT m.originaltitle FROM target.movies m WHERE m.director='Steven Spielberg';",
     "result_set": [
         {
-            "originaltitle": "Empire of the Sun"
-        },
-        {
-            "originaltitle": "Indiana Jones and the Raiders of the Lost Ark"
-        },
-        {
-            "originaltitle": "Hook"
-        },
-        {
-            "originaltitle": "The Terminal"
-        },
-        {
-            "originaltitle": "Jaws"
-        },
-        {
-            "originaltitle": "Schindler's List"
-        },
-        {
-            "originaltitle": "Munich"
-        },
-        {
             "originaltitle": "E.T. the Extra-Terrestrial"
-        },
-        {
-            "originaltitle": "Saving Private Ryan"
-        },
-        {
-            "originaltitle": "Jurassic Park"
-        },
-        {
-            "originaltitle": "War of the Worlds"
-        },
-        {
-            "originaltitle": "A.I. Artificial Intelligence"
-        },
-        {
-            "originaltitle": "Sugarland Express"
-        },
-        {
-            "originaltitle": "Amistad"
-        },
-        {
-            "originaltitle": "The Color Purple"
-        },
-        {
-            "originaltitle": "Lincoln"
-        },
-        {
-            "originaltitle": "1941"
-        },
-        {
-            "originaltitle": "Always"
-        },
-        {
-            "originaltitle": "Minority Report"
-        },
-        {
-            "originaltitle": "Catch Me If You Can"
-        },
-        {
-            "originaltitle": "Close Encounters of the Third Kind"
-        },
-        {
-            "originaltitle": "War Horse"
-        },
-        {
-            "originaltitle": "Duel"
         }
     ],
-    "time": 24.5930917263031,
-    "tokens": 675
+    "logprobs": [
+        -999.0
+    ],
+    "tokens": 1814,
+    "time": 9.19430661201477
 }

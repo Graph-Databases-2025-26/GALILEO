@@ -1,0 +1,8 @@
+{
+    "query_id": 4,
+    "sql": "select m.player_of_the_match from target.premier_league_2024_2025_match_result m where m.player_of_the_match_team = 'Manchester United';",
+    "result_set": [],
+    "logprobs": [],
+    "tokens": 604,
+    "time": 1.1068000793457031
+}

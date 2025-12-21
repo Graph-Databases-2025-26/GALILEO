@@ -3,72 +3,15 @@
     "sql": "SELECT m.originaltitle, m.startyear, m.genres, m.birthyear FROM target.movies m WHERE m.director='Steven Spielberg' AND m.startyear > 2000;",
     "result_set": [
         {
-            "originaltitle": "Minority Report",
+            "originaltitle": "Catch Me If You Can",
             "startyear": 2002,
-            "genres": "Action,Sci-Fi,Thriller",
-            "birthyear": 1946
-        },
-        {
-            "originaltitle": "The Terminal",
-            "startyear": 2004,
-            "genres": "Comedy,Drama,Romance",
-            "birthyear": 1946
-        },
-        {
-            "originaltitle": "War of the Worlds",
-            "startyear": 2005,
-            "genres": "Action,Adventure,Sci-Fi",
-            "birthyear": 1946
-        },
-        {
-            "originaltitle": "Indiana Jones and the Kingdom of the Crystal Skull",
-            "startyear": 2008,
-            "genres": "Action,Adventure,Fantasy",
-            "birthyear": 1946
-        },
-        {
-            "originaltitle": "The Adventures of Tintin",
-            "startyear": 2011,
-            "genres": "Action,Adventure,Animation",
-            "birthyear": 1946
-        },
-        {
-            "originaltitle": "Lincoln",
-            "startyear": 2012,
-            "genres": "Biography,Drama,History",
-            "birthyear": 1946
-        },
-        {
-            "originaltitle": "Bridge of Spies",
-            "startyear": 2015,
-            "genres": "Drama,History,Thriller",
-            "birthyear": 1946
-        },
-        {
-            "originaltitle": "The Post",
-            "startyear": 2017,
-            "genres": "Drama,History,Thriller",
-            "birthyear": 1946
-        },
-        {
-            "originaltitle": "Ready Player One",
-            "startyear": 2018,
-            "genres": "Action,Adventure,Sci-Fi",
-            "birthyear": 1946
-        },
-        {
-            "originaltitle": "West Side Story",
-            "startyear": 2021,
-            "genres": "Crime,Drama,Musical",
-            "birthyear": 1946
-        },
-        {
-            "originaltitle": "The Fabelmans",
-            "startyear": 2023,
-            "genres": "Biography,Drama",
+            "genres": "Biography,Crime,Drama",
             "birthyear": 1946
         }
     ],
-    "time": 23.060238122940063,
-    "tokens": 867
+    "logprobs": [
+        -999.0
+    ],
+    "tokens": 5638,
+    "time": 50.8920361995697
 }

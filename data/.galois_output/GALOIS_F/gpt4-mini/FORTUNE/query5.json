@@ -1,0 +1,8 @@
+{
+    "query_id": 5,
+    "sql": "select Company from target.fortune_2024 f where f.sector = 'Technology' and founder_is_ceo = true and profitable = true;",
+    "result_set": [],
+    "logprobs": [],
+    "tokens": 1615,
+    "time": 1.1378557682037354
+}

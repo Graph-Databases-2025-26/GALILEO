@@ -1,11 +1,8 @@
 {
     "query_id": 22,
     "sql": "SELECT p.name FROM target.world_presidents p WHERE p.country='United States' AND p.party='Whig' order by p.end_year desc limit 1;",
-    "result_set": [
-        {
-            "name": "Millard Fillmore"
-        }
-    ],
-    "time": 29.95699429512024,
-    "tokens": 1373
+    "result_set": [],
+    "logprobs": [],
+    "tokens": 5591,
+    "time": 49.291433572769165
 }

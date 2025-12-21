@@ -1,0 +1,14 @@
+{
+    "query_id": 2,
+    "sql": "SELECT max(elevation_in_ft) FROM target.airports WHERE country = 'Iceland';",
+    "result_set": [
+        {
+            "max(elevation_in_ft)": 7
+        }
+    ],
+    "logprobs": [
+        -0.3248187352974
+    ],
+    "tokens": 1892,
+    "time": 9.08821988105774
+}

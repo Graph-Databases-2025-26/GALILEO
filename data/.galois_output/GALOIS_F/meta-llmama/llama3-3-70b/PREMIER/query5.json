@@ -1,0 +1,129 @@
+{
+    "query_id": 5,
+    "sql": "select home_team,away_team,home_goals,away_goals from target.premier_league_2024_2025_match_result;",
+    "result_set": [
+        {
+            "home_team": "Swansea City",
+            "away_team": "Reading",
+            "home_goals": 2,
+            "away_goals": 1
+        },
+        {
+            "home_team": "Wycombe Wanderers",
+            "away_team": "Watford",
+            "home_goals": 1,
+            "away_goals": 0
+        },
+        {
+            "home_team": "Fulham",
+            "away_team": "Brighton & Hove Albion",
+            "home_goals": 1,
+            "away_goals": 1
+        },
+        {
+            "home_team": "Nottingham Forest",
+            "away_team": "Derby County",
+            "home_goals": 2,
+            "away_goals": 2
+        },
+        {
+            "home_team": "Middlesbrough",
+            "away_team": "Leeds United",
+            "home_goals": 0,
+            "away_goals": 1
+        },
+        {
+            "home_team": "Sheffield United",
+            "away_team": "Huddersfield Town",
+            "home_goals": 1,
+            "away_goals": 2
+        },
+        {
+            "home_team": "Southampton",
+            "away_team": "Burnley",
+            "home_goals": 3,
+            "away_goals": 1
+        },
+        {
+            "home_team": "Wolverhampton Wanderers",
+            "away_team": "Crystal Palace",
+            "home_goals": 1,
+            "away_goals": 1
+        },
+        {
+            "home_team": "Chelsea",
+            "away_team": "Arsenal",
+            "home_goals": 2,
+            "away_goals": 2
+        },
+        {
+            "home_team": "Liverpool",
+            "away_team": "Manchester City",
+            "home_goals": 1,
+            "away_goals": 1
+        },
+        {
+            "home_team": "Sunderland",
+            "away_team": "Sheffield Wednesday",
+            "home_goals": 0,
+            "away_goals": 0
+        },
+        {
+            "home_team": "Leicester City",
+            "away_team": "Aston Villa",
+            "home_goals": 2,
+            "away_goals": 0
+        },
+        {
+            "home_team": "West Ham United",
+            "away_team": "Newcastle United",
+            "home_goals": 1,
+            "away_goals": 1
+        },
+        {
+            "home_team": "Manchester United",
+            "away_team": "Tottenham Hotspur",
+            "home_goals": 1,
+            "away_goals": 2
+        },
+        {
+            "home_team": "Everton",
+            "away_team": "Bournemouth",
+            "home_goals": 1,
+            "away_goals": 0
+        },
+        {
+            "home_team": "Queens Park Rangers",
+            "away_team": "Norwich City",
+            "home_goals": 2,
+            "away_goals": 1
+        },
+        {
+            "home_team": "Stoke City",
+            "away_team": "Preston North End",
+            "home_goals": 0,
+            "away_goals": 1
+        }
+    ],
+    "logprobs": [
+        -0.06413621339175428,
+        -0.07887502269029376,
+        -0.033472903901,
+        -0.049639643651160005,
+        -0.15698480982428334,
+        -0.065922049920928,
+        -0.06413038368203333,
+        -0.09993939778559799,
+        -0.08690786851745999,
+        -0.21882847868379995,
+        -0.10521673095347875,
+        -0.05376066615116,
+        -0.062807028953475,
+        -0.10873681907994442,
+        -0.15062599411508001,
+        -0.024408670640642224,
+        -0.039235674000000005
+    ],
+    "tokens": 2848,
+    "time": 23.557692289352417
+}

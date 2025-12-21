@@ -4,115 +4,145 @@
     "result_set": [
         {
             "state_name": "Arizona",
-            "population": 7278717.0,
+            "population": 7158024,
             "capital": "Phoenix"
         },
         {
             "state_name": "California",
-            "population": 39461588.0,
+            "population": 39461588,
             "capital": "Sacramento"
         },
         {
             "state_name": "Colorado",
-            "population": 5691287.0,
+            "population": 5758744,
             "capital": "Denver"
         },
         {
             "state_name": "Florida",
-            "population": 21244317.0,
+            "population": 21244317,
             "capital": "Tallahassee"
         },
         {
             "state_name": "Georgia",
-            "population": 10511131.0,
+            "population": 10511131,
             "capital": "Atlanta"
         },
         {
             "state_name": "Illinois",
-            "population": 12880632.0,
+            "population": 12671821,
             "capital": "Springfield"
         },
         {
             "state_name": "Indiana",
-            "population": 6732219.0,
+            "population": 6732216,
             "capital": "Indianapolis"
         },
         {
             "state_name": "Maryland",
-            "population": 6040668.0,
+            "population": 6045685,
             "capital": "Annapolis"
         },
         {
             "state_name": "Massachusetts",
-            "population": 6892503.0,
+            "population": 6945838,
             "capital": "Boston"
         },
         {
             "state_name": "Michigan",
-            "population": 10077331.0,
+            "population": 10007155,
             "capital": "Lansing"
         },
         {
             "state_name": "Minnesota",
-            "population": 5648222.0,
-            "capital": "Saint Paul"
+            "population": 5706515,
+            "capital": "St. Paul"
         },
         {
             "state_name": "Missouri",
-            "population": 6137428.0,
+            "population": 6136315,
             "capital": "Jefferson City"
         },
         {
             "state_name": "New Jersey",
-            "population": 8944461.0,
+            "population": 8882193,
             "capital": "Trenton"
         },
         {
             "state_name": "New York",
-            "population": 19453561.0,
+            "population": 19453561,
             "capital": "Albany"
         },
         {
             "state_name": "North Carolina",
-            "population": 10420000.0,
+            "population": 10551147,
             "capital": "Raleigh"
         },
         {
+            "state_name": "Ohio",
+            "population": 11683044,
+            "capital": "Columbus"
+        },
+        {
             "state_name": "Pennsylvania",
-            "population": 12802023.0,
+            "population": 12800876,
             "capital": "Harrisburg"
         },
         {
             "state_name": "South Carolina",
-            "population": 5086476.0,
+            "population": 5070735,
             "capital": "Columbia"
         },
         {
             "state_name": "Tennessee",
-            "population": 6838459.0,
+            "population": 6838898,
             "capital": "Nashville"
         },
         {
             "state_name": "Texas",
-            "population": 28995881.0,
+            "population": 29145561,
             "capital": "Austin"
         },
         {
             "state_name": "Virginia",
-            "population": 8535759.0,
+            "population": 8535516,
             "capital": "Richmond"
         },
         {
             "state_name": "Washington",
-            "population": 7535591.0,
+            "population": 7719703,
             "capital": "Olympia"
         },
         {
             "state_name": "Wisconsin",
-            "population": 5822564.0,
+            "population": 5856045,
             "capital": "Madison"
         }
     ],
-    "time": 30.230421781539917,
-    "tokens": 1376
+    "logprobs": [
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0
+    ],
+    "tokens": 4042,
+    "time": 61.90046238899231
 }

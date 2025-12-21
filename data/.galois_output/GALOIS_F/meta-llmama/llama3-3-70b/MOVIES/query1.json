@@ -1,0 +1,22 @@
+{
+    "query_id": 1,
+    "sql": "SELECT m.originaltitle FROM target.movies m WHERE m.director='Richard Thorpe';",
+    "result_set": [
+        {
+            "originaltitle": "The Great Caruso"
+        },
+        {
+            "originaltitle": "Ivanhoe"
+        },
+        {
+            "originaltitle": "Knights of the Round Table"
+        }
+    ],
+    "logprobs": [
+        -9.366262261428572e-06,
+        -1.2119301833333333e-05,
+        -3.457025584444444e-06
+    ],
+    "tokens": 2756,
+    "time": 22.667142868041992
+}

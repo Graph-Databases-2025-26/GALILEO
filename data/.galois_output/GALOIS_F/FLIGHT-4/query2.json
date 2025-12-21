@@ -6,6 +6,9 @@
             "max(elevation_in_ft)": null
         }
     ],
-    "time": 19.653128385543823,
-    "tokens": 618
+    "logprobs": [
+        0.0
+    ],
+    "tokens": 1519,
+    "time": 4.216968774795532
 }

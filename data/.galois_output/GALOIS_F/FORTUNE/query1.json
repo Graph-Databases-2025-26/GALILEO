@@ -1,0 +1,60 @@
+{
+    "query_id": 1,
+    "sql": "select f.rank, f.Company from target.fortune_2024 f order by f.rank asc limit 10;",
+    "result_set": [
+        {
+            "Rank": 1,
+            "Company": "Apple Inc."
+        },
+        {
+            "Rank": 2,
+            "Company": "Berkshire Hathaway Inc."
+        },
+        {
+            "Rank": 3,
+            "Company": "JPMorgan Chase & Co."
+        },
+        {
+            "Rank": 4,
+            "Company": "Amazon.com Inc."
+        },
+        {
+            "Rank": 5,
+            "Company": "Alphabet Inc."
+        },
+        {
+            "Rank": 6,
+            "Company": "Microsoft Corp."
+        },
+        {
+            "Rank": 7,
+            "Company": "Tesla Inc."
+        },
+        {
+            "Rank": 8,
+            "Company": "Coca-Cola Co."
+        },
+        {
+            "Rank": 9,
+            "Company": "Walmart Inc."
+        },
+        {
+            "Rank": 10,
+            "Company": "Meta Platforms Inc."
+        }
+    ],
+    "logprobs": [
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0
+    ],
+    "tokens": 6552,
+    "time": 32.76518988609314
+}

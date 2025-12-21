@@ -1,0 +1,15 @@
+{
+    "query_id": 7,
+    "sql": "SELECT p.party, count(p.party) num FROM target.world_presidents p WHERE p.country='Venezuela' group by p.party order by num desc limit 1;",
+    "result_set": [
+        {
+            "party": "United Socialist Party of Venezuela",
+            "num": 1
+        }
+    ],
+    "logprobs": [
+        -0.023048891594017264
+    ],
+    "tokens": 783,
+    "time": 2.410451889038086
+}

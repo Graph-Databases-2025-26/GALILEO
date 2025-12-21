@@ -2,6 +2,7 @@
     "query_id": 1,
     "sql": "SELECT area_squared_miles FROM target.usa_state WHERE state_name = 'new mexico';",
     "result_set": [],
-    "time": 18.611403703689575,
-    "tokens": 573
+    "logprobs": [],
+    "tokens": 1729,
+    "time": 9.985853910446167
 }

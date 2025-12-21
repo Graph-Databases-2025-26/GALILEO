@@ -1,0 +1,42 @@
+{
+    "query_id": 24,
+    "sql": "SELECT p.name, p.party, start_year, end_year, p.cardinal_number FROM target.world_presidents p WHERE p.country ='United States' AND start_year > 1900 AND end_year < 2000 AND party ='Democratic';",
+    "result_set": [
+        {
+            "name": "Harry S. Truman",
+            "party": "Democratic",
+            "start_year": 1945,
+            "end_year": 1953,
+            "cardinal_number": "33rd"
+        },
+        {
+            "name": "John F. Kennedy",
+            "party": "Democratic",
+            "start_year": 1961,
+            "end_year": 1961,
+            "cardinal_number": "35th"
+        },
+        {
+            "name": "Lyndon B. Johnson",
+            "party": "Democratic",
+            "start_year": 1963,
+            "end_year": 1969,
+            "cardinal_number": "36th"
+        },
+        {
+            "name": "Jimmy Carter",
+            "party": "Democratic",
+            "start_year": 1977,
+            "end_year": 1977,
+            "cardinal_number": "39th"
+        }
+    ],
+    "logprobs": [
+        -5.521113156538462e-05,
+        -0.0012058942224923075,
+        -2.4693324714285716e-07,
+        -0.03594180093378
+    ],
+    "tokens": 2900,
+    "time": 21.45298933982849
+}

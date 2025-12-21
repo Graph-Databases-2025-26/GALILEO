@@ -1,0 +1,8 @@
+{
+    "query_id": 4,
+    "sql": "select headquarterscity from target.fortune_2024 f where f.industry = 'Airlines';",
+    "result_set": [],
+    "logprobs": [],
+    "tokens": 1581,
+    "time": 1.214005470275879
+}

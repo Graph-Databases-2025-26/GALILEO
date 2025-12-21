@@ -1,40 +1,8 @@
 {
     "query_id": 6,
     "sql": "SELECT m.originaltitle, m.startyear, m.genres, m.birthyear, m.deathyear, m.runtimeminutes FROM target.movies m WHERE m.director = 'Steven Spielberg' AND m.startyear > 1990 AND m.startyear < 2000;",
-    "result_set": [
-        {
-            "originaltitle": "Hook",
-            "startyear": 1991,
-            "genres": "Adventure,Fantasy",
-            "birthyear": 1946,
-            "deathyear": null,
-            "runtimeminutes": 115
-        },
-        {
-            "originaltitle": "Jurassic Park",
-            "startyear": 1993,
-            "genres": "Action,Adventure,Science Fiction",
-            "birthyear": 1946,
-            "deathyear": null,
-            "runtimeminutes": 127
-        },
-        {
-            "originaltitle": "Amistad",
-            "startyear": 1997,
-            "genres": "Drama,History",
-            "birthyear": 1946,
-            "deathyear": null,
-            "runtimeminutes": 146
-        },
-        {
-            "originaltitle": "Saving Private Ryan",
-            "startyear": 1998,
-            "genres": "Action,Drama,War",
-            "birthyear": 1946,
-            "deathyear": null,
-            "runtimeminutes": 162
-        }
-    ],
-    "time": 14.08502721786499,
-    "tokens": 519
+    "result_set": [],
+    "logprobs": [],
+    "tokens": 3736,
+    "time": 15.329390287399292
 }

@@ -1,0 +1,14 @@
+{
+    "query_id": 9,
+    "sql": "SELECT p.name FROM target.world_presidents p where p.country='Venezuela' AND p.party = 'Military' order by p.end_year desc limit 1;",
+    "result_set": [
+        {
+            "name": "Marcos Pérez Jiménez"
+        }
+    ],
+    "logprobs": [
+        -1.555127954e-05
+    ],
+    "tokens": 2157,
+    "time": 19.381492614746094
+}

@@ -1,0 +1,78 @@
+{
+    "query_id": 17,
+    "sql": "SELECT p.name FROM target.world_presidents p WHERE p.country='United States' AND p.party='Republican';",
+    "result_set": [
+        {
+            "name": "Calvin Coolidge"
+        },
+        {
+            "name": "William McKinley"
+        },
+        {
+            "name": "George W. Bush"
+        },
+        {
+            "name": "Gerald Ford"
+        },
+        {
+            "name": "Warren G. Harding"
+        },
+        {
+            "name": "Theodore Roosevelt"
+        },
+        {
+            "name": "Benjamin Harrison"
+        },
+        {
+            "name": "Dwight D. Eisenhower"
+        },
+        {
+            "name": "Richard Nixon"
+        },
+        {
+            "name": "George H.W. Bush"
+        },
+        {
+            "name": "James A. Garfield"
+        },
+        {
+            "name": "Rutherford B. Hayes"
+        },
+        {
+            "name": "Herbert Hoover"
+        },
+        {
+            "name": "Abraham Lincoln"
+        },
+        {
+            "name": "Donald Trump"
+        },
+        {
+            "name": "Ronald Reagan"
+        },
+        {
+            "name": "Ulysses S. Grant"
+        }
+    ],
+    "logprobs": [
+        -6.471349042857143e-07,
+        -1.39077015e-06,
+        -1.379415365714286e-06,
+        -1.4106373333333334e-06,
+        -4.0233076e-07,
+        -5.2848627583333335e-06,
+        -1.3907700499999999e-06,
+        -5.430632533333333e-07,
+        -1.3828239679999998e-06,
+        -4.9173757625e-07,
+        -1.98183875e-06,
+        -1.50500841e-06,
+        -4.768366383333333e-07,
+        -0.00010820692642666666,
+        -3.6716279999999996e-06,
+        -2.4239134966666666e-06,
+        -3.9099914700000004e-06
+    ],
+    "tokens": 3004,
+    "time": 38.70247936248779
+}

@@ -1,0 +1,35 @@
+{
+    "query_id": 28,
+    "sql": "SELECT us.state_name, us.capital FROM target.usa_state us WHERE us.population > 5000000 AND us.density < 1000;",
+    "result_set": [
+        {
+            "state_name": "Pennsylvania",
+            "capital": "Harrisburg"
+        },
+        {
+            "state_name": "New York",
+            "capital": "Albany"
+        },
+        {
+            "state_name": "Texas",
+            "capital": "Austin"
+        },
+        {
+            "state_name": "Illinois",
+            "capital": "Springfield"
+        },
+        {
+            "state_name": "Florida",
+            "capital": "Tallahassee"
+        }
+    ],
+    "logprobs": [
+        -0.16171971695288015,
+        -0.10393902766557375,
+        -0.161880477420274,
+        -0.11059522530206954,
+        -0.17812665263733152
+    ],
+    "tokens": 967,
+    "time": 7.070255279541016
+}

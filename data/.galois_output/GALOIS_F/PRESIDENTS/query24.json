@@ -3,18 +3,60 @@
     "sql": "SELECT p.name, p.party, start_year, end_year, p.cardinal_number FROM target.world_presidents p WHERE p.country ='United States' AND start_year > 1900 AND end_year < 2000 AND party ='Democratic';",
     "result_set": [
         {
+            "name": "Woodrow Wilson",
+            "party": "Democratic",
+            "start_year": 1913,
+            "end_year": 1921,
+            "cardinal_number": "34th"
+        },
+        {
+            "name": "Franklin D. Roosevelt",
+            "party": "Democratic",
+            "start_year": 1933,
+            "end_year": 1945,
+            "cardinal_number": "32nd"
+        },
+        {
+            "name": "Harry S. Truman",
+            "party": "Democratic",
+            "start_year": 1945,
+            "end_year": 1953,
+            "cardinal_number": "33rd"
+        },
+        {
+            "name": "Dwight D. Eisenhower",
+            "party": "Democratic",
+            "start_year": 1953,
+            "end_year": 1961,
+            "cardinal_number": "34th"
+        },
+        {
             "name": "John F. Kennedy",
             "party": "Democratic",
             "start_year": 1961,
             "end_year": 1963,
-            "cardinal_number": "32nd"
+            "cardinal_number": "35th"
         },
         {
             "name": "Lyndon B. Johnson",
             "party": "Democratic",
             "start_year": 1963,
             "end_year": 1969,
-            "cardinal_number": "35th"
+            "cardinal_number": "36th"
+        },
+        {
+            "name": "Richard Nixon",
+            "party": "Democratic",
+            "start_year": 1969,
+            "end_year": 1974,
+            "cardinal_number": "37th"
+        },
+        {
+            "name": "Gerald R. Ford",
+            "party": "Democratic",
+            "start_year": 1974,
+            "end_year": 1977,
+            "cardinal_number": "38th"
         },
         {
             "name": "Jimmy Carter",
@@ -22,8 +64,35 @@
             "start_year": 1977,
             "end_year": 1981,
             "cardinal_number": "39th"
+        },
+        {
+            "name": "Ronald Reagan",
+            "party": "Democratic",
+            "start_year": 1981,
+            "end_year": 1989,
+            "cardinal_number": "40th"
+        },
+        {
+            "name": "George H.W. Bush",
+            "party": "Democratic",
+            "start_year": 1989,
+            "end_year": 1993,
+            "cardinal_number": "41st"
         }
     ],
-    "time": 14.555286645889282,
-    "tokens": 502
+    "logprobs": [
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0
+    ],
+    "tokens": 2044,
+    "time": 10.876721382141113
 }
