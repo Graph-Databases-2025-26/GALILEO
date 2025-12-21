@@ -1,0 +1,11 @@
+{
+    "result_set": [
+        {
+            "state_name": "<value_1>",
+            "capital": "<value_2>",
+            "area_squared_miles": "<value_3>"
+        }
+    ],
+    "time": 2.353,
+    "tokens": 103
+}

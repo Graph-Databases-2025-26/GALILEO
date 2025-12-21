@@ -1,0 +1,12 @@
+{
+    "result_set": [
+        {
+            "state_name": "California",
+            "capital": "Sacramento",
+            "population": 4700000,
+            "area_squared_miles": 56153
+        }
+    ],
+    "time": 1.682,
+    "tokens": 50
+}

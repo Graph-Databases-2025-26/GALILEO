@@ -1,0 +1,27 @@
+{
+    "result_set": [
+        {
+            "state_name": "Illinois"
+        },
+        {
+            "state_name": "Massachusetts"
+        },
+        {
+            "state_name": "Missouri"
+        },
+        {
+            "state_name": "New Jersey"
+        },
+        {
+            "state_name": "Ohio"
+        },
+        {
+            "state_name": "Oregon"
+        },
+        {
+            "state_name": "Tennessee"
+        }
+    ],
+    "time": 2.196,
+    "tokens": 85
+}

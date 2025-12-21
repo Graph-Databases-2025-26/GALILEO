@@ -1,0 +1,24 @@
+{
+    "result_set": [
+        {
+            "lake_name": "Shasta Lake",
+            "area_squared_km": 116.0,
+            "country_name": "USA",
+            "state_name": "California"
+        },
+        {
+            "lake_name": "Lake Tahoe",
+            "area_squared_km": 495.0,
+            "country_name": "USA",
+            "state_name": "California"
+        },
+        {
+            "lake_name": "Mono Lake",
+            "area_squared_km": 65.0,
+            "country_name": "USA",
+            "state_name": "California"
+        }
+    ],
+    "time": 2.771,
+    "tokens": 119
+}

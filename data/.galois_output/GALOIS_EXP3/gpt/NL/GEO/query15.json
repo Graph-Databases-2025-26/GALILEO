@@ -1,0 +1,12 @@
+{
+    "result_set": [
+        {
+            "city_name": "Austin",
+            "population": null,
+            "country_name": "USA",
+            "state_name": "Texas"
+        }
+    ],
+    "time": 1.297,
+    "tokens": 39
+}

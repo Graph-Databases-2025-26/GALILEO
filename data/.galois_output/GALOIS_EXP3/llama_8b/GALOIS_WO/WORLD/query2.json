@@ -1,0 +1,14 @@
+{
+    "query_id": 2,
+    "sql": "SELECT name FROM target.country WHERE CAST(independence_year AS INTEGER) > 1950;",
+    "result_set": [
+        {
+            "name": "Namibia"
+        }
+    ],
+    "logprobs": [
+        -999.0
+    ],
+    "tokens": 1852,
+    "time": 11.797978162765503
+}

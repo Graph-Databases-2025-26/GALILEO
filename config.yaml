@@ -30,7 +30,7 @@ watsonx:
   max_tokens: 4096
 
 open_router:
-  model: "meta-llama/llama-3.1-8b-instruct"
+  model: "openai/gpt-4o-mini"
   temperature: 0
   max_tokens: 4096
 

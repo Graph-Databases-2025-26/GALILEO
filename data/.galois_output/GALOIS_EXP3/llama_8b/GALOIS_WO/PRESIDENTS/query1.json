@@ -1,0 +1,8 @@
+{
+    "query_id": 1,
+    "sql": "SELECT DISTINCT p.name, p.party FROM target.world_presidents p WHERE p.country='Venezuela';",
+    "result_set": [],
+    "logprobs": [],
+    "tokens": 2891,
+    "time": 48.17582297325134
+}

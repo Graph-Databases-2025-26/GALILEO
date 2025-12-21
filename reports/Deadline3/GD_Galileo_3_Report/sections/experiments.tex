@@ -124,6 +124,37 @@ These results further validate the robustness of the GALOIS optimization framewo
 
 
 \subsection{Experiment 3: Impact of LLMs parameters}
+
+\begin{table}[H]
+    \centering
+    \caption{AVG-Score of different LLMs GALOIS PAPER}
+    \begin{tabular}{lccccc}
+        \toprule
+        \multicolumn{1}{c}{LLM} & NL & SQL & \textsc{Galois}$_{WO}$ & \textsc{Galois}$_{A}$ & \textsc{Galois}$_{F}$ \\
+        \midrule
+        GPT-4o \textsc{mini} & 0.258 & 0.240 & 0.456 & 0.457 & \textbf{0.468} \\
+        LLaMA 3.1 8B         & 0.230 & 0.372 & 0.375 & 0.520 & \textbf{0.528} \\
+        LLaMA 3.1 70B        & 0.254 & 0.481 & 0.531 & 0.592 & \textbf{0.622} \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \caption{AVG-Score of different LLMs OUR RUNS}
+    \begin{tabular}{lccccc}
+        \toprule
+        \multicolumn{1}{c}{LLM} & NL & SQL & \textsc{Galois}$_{WO}$ & \textsc{Galois}$_{A}$ & \textsc{Galois}$_{F}$ \\
+        \midrule
+        GPT-4o \textsc{mini} & 0.073 & 0.295 & 0.013 & 0.298 & \textbf{0} \\
+        LLaMA 3.1 8B         & 0.268 & 0.372 & 0.189 & 0.376 & \textbf{0} \\
+        LLaMA 3.1 70B        & 0.287 & 0.355 & 0.191 & 0.436 & \textbf{0.338} \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+
+
 \subsection{Experiment 4: Impact of retrieved values}
 
 Here we implemented an automated evaluation pipeline  ("Impact of Rarity and Temporality"), focusing on the \textbf{PRESIDENTS} domain. The primary objective is to quantify how the frequency of data in pre-training (popularity) and its temporal recency influence the ability of Large Language Models (LLMs)  to measure two specific biases.

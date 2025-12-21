@@ -1,0 +1,19 @@
+{
+    "query_id": 6,
+    "sql": "SELECT m.originaltitle, m.startyear, m.genres, m.birthyear, m.deathyear, m.runtimeminutes FROM target.movies m WHERE m.director = 'Steven Spielberg' AND m.startyear > 1990 AND m.startyear < 2000;",
+    "result_set": [
+        {
+            "originaltitle": "Schindler's List",
+            "startyear": 1993,
+            "genres": "Biography,Drama,History",
+            "birthyear": null,
+            "deathyear": null,
+            "runtimeminutes": 195
+        }
+    ],
+    "logprobs": [
+        -999.0
+    ],
+    "tokens": 2836,
+    "time": 11.406745195388794
+}

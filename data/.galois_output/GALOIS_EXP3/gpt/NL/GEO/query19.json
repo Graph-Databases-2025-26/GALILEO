@@ -1,0 +1,15 @@
+{
+    "result_set": [
+        {
+            "capital": "Washington, D.C."
+        },
+        {
+            "capital": "Austin"
+        },
+        {
+            "capital": "Sacramento"
+        }
+    ],
+    "time": 1.484,
+    "tokens": 41
+}

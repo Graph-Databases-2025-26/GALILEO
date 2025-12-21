@@ -1,0 +1,80 @@
+{
+    "query_id": 14,
+    "sql": "SELECT p.name, p.party FROM target.world_presidents p WHERE p.country='United States';",
+    "result_set": [
+        {
+            "name": "John F. Kennedy",
+            "party": ""
+        },
+        {
+            "name": "George W. Bush",
+            "party": ""
+        },
+        {
+            "name": "Abraham Lincoln",
+            "party": ""
+        },
+        {
+            "name": "Donald Trump",
+            "party": ""
+        },
+        {
+            "name": "Richard Nixon",
+            "party": ""
+        },
+        {
+            "name": "George Washington",
+            "party": ""
+        },
+        {
+            "name": "Bill Clinton",
+            "party": ""
+        },
+        {
+            "name": "Barack Obama",
+            "party": ""
+        },
+        {
+            "name": "Joe Biden",
+            "party": ""
+        },
+        {
+            "name": "Gerald Ford",
+            "party": ""
+        },
+        {
+            "name": "Dwight D. Eisenhower",
+            "party": ""
+        },
+        {
+            "name": "George H.W. Bush",
+            "party": ""
+        },
+        {
+            "name": "Jimmy Carter",
+            "party": ""
+        },
+        {
+            "name": "Ronald Reagan",
+            "party": ""
+        }
+    ],
+    "logprobs": [
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0
+    ],
+    "tokens": 1788,
+    "time": 18.282989501953125
+}

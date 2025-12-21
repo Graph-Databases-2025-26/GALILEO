@@ -1,0 +1,194 @@
+{
+    "query_id": 19,
+    "sql": "SELECT DISTINCT capital FROM target.usa_state;",
+    "result_set": [
+        {
+            "capital": "Madison"
+        },
+        {
+            "capital": "Jefferson City"
+        },
+        {
+            "capital": "Juneau"
+        },
+        {
+            "capital": "Providence"
+        },
+        {
+            "capital": "Annapolis"
+        },
+        {
+            "capital": "Oklahoma City"
+        },
+        {
+            "capital": "Portland"
+        },
+        {
+            "capital": "Austin"
+        },
+        {
+            "capital": "Tallahassee"
+        },
+        {
+            "capital": "Jackson"
+        },
+        {
+            "capital": "Indianapolis"
+        },
+        {
+            "capital": "Lansing"
+        },
+        {
+            "capital": "Boise"
+        },
+        {
+            "capital": "St Paul"
+        },
+        {
+            "capital": "Richmond"
+        },
+        {
+            "capital": "Denver"
+        },
+        {
+            "capital": "Concord"
+        },
+        {
+            "capital": "Columbus"
+        },
+        {
+            "capital": "Salem"
+        },
+        {
+            "capital": "Augusta"
+        },
+        {
+            "capital": "Dover"
+        },
+        {
+            "capital": "Raleigh"
+        },
+        {
+            "capital": "Boston"
+        },
+        {
+            "capital": "Albany"
+        },
+        {
+            "capital": "Harrisburg"
+        },
+        {
+            "capital": "Lincoln"
+        },
+        {
+            "capital": "Columbia"
+        },
+        {
+            "capital": "Cheyenne"
+        },
+        {
+            "capital": "Charleston"
+        },
+        {
+            "capital": "Trenton"
+        },
+        {
+            "capital": "Montgomery"
+        },
+        {
+            "capital": "Springfield"
+        },
+        {
+            "capital": "Frankfort"
+        },
+        {
+            "capital": "Sacramento"
+        },
+        {
+            "capital": "Helena"
+        },
+        {
+            "capital": "Topeka"
+        },
+        {
+            "capital": "Baton Rouge"
+        },
+        {
+            "capital": "Little Rock"
+        },
+        {
+            "capital": "Atlanta"
+        },
+        {
+            "capital": "Santa Fe"
+        },
+        {
+            "capital": "Des Moines"
+        },
+        {
+            "capital": "Bismarck"
+        },
+        {
+            "capital": "Nashville"
+        },
+        {
+            "capital": "Carson City"
+        },
+        {
+            "capital": "Montpelier"
+        },
+        {
+            "capital": "Honolulu"
+        }
+    ],
+    "logprobs": [
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0
+    ],
+    "tokens": 2023,
+    "time": 11.862804651260376
+}

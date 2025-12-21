@@ -1,0 +1,8 @@
+{
+    "query_id": 12,
+    "sql": "SELECT p.party, count(p.party) num FROM target.world_presidents p WHERE p.country ='Venezuela' AND start_year > 1800 AND end_year < 1900 group by p.party order by num desc;",
+    "result_set": [],
+    "logprobs": [],
+    "tokens": 5802,
+    "time": 106.80164909362793
+}

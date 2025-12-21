@@ -1,0 +1,24 @@
+{
+    "result_set": [
+        {
+            "lake_name": "<value_1>",
+            "area_squared_km": "<value_2>",
+            "country_name": "United States",
+            "state_name": "<value_3>"
+        },
+        {
+            "lake_name": "<value_4>",
+            "area_squared_km": "<value_5>",
+            "country_name": "United States",
+            "state_name": "<value_6>"
+        },
+        {
+            "lake_name": "<value_7>",
+            "area_squared_km": "<value_8>",
+            "country_name": "United States",
+            "state_name": "<value_9>"
+        }
+    ],
+    "time": 3.11,
+    "tokens": 130
+}

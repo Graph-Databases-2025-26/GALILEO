@@ -4,11 +4,11 @@
             "state_name": "New Mexico",
             "population": null,
             "area_squared_miles": null,
-            "country_name": "United States",
+            "country_name": "USA",
             "capital": null,
             "density": null
         }
     ],
-    "time": 1.664,
-    "tokens": 59
+    "time": 1.851,
+    "tokens": 58
 }

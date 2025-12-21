@@ -1,0 +1,14 @@
+{
+    "query_id": 2,
+    "sql": "SELECT m.originaltitle FROM target.movies m WHERE m.director='Steven Spielberg';",
+    "result_set": [
+        {
+            "originaltitle": "Schindler's List"
+        }
+    ],
+    "logprobs": [
+        -999.0
+    ],
+    "tokens": 2362,
+    "time": 10.954875230789185
+}

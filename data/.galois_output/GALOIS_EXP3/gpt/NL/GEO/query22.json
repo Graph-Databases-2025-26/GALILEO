@@ -1,0 +1,10 @@
+{
+    "result_set": [
+        {
+            "capital": "Phoenix",
+            "state_name": "Arizona"
+        }
+    ],
+    "time": 1.092,
+    "tokens": 26
+}

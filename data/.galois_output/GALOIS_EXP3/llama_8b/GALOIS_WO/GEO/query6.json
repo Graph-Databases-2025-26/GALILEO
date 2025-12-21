@@ -1,0 +1,8 @@
+{
+    "query_id": 6,
+    "sql": "SELECT lake_name FROM target.usa_lake WHERE state_name = 'california' and area_squared_km > 450;",
+    "result_set": [],
+    "logprobs": [],
+    "tokens": 9787,
+    "time": 134.18610978126526
+}

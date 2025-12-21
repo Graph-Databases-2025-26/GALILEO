@@ -1,0 +1,12 @@
+{
+    "result_set": [
+        {
+            "river_name": "Rio Grande",
+            "length_in_km": 3034,
+            "country_name": "USA",
+            "usa_state_traversed": "Texas"
+        }
+    ],
+    "time": 1.748,
+    "tokens": 48
+}

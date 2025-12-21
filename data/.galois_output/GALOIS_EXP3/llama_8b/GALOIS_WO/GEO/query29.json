@@ -1,0 +1,73 @@
+{
+    "query_id": 29,
+    "sql": "SELECT us.state_name, us.capital, us.density, us.population FROM target.usa_state us WHERE us.population > 5000000 AND us.density < 1000 AND us.area_squared_miles < 50000;",
+    "result_set": [
+        {
+            "state_name": "Virginia",
+            "capital": "Richmond",
+            "density": 83.0,
+            "population": 8535519
+        },
+        {
+            "state_name": "Tennessee",
+            "capital": "Nashville",
+            "density": 158.0,
+            "population": 6505238
+        },
+        {
+            "state_name": "South Carolina",
+            "capital": "Columbia",
+            "density": 157.0,
+            "population": 5027298
+        },
+        {
+            "state_name": "Ohio",
+            "capital": "Columbus",
+            "density": 259.0,
+            "population": 11556904
+        },
+        {
+            "state_name": "Massachusetts",
+            "capital": "Boston",
+            "density": 692.0,
+            "population": 7231514
+        },
+        {
+            "state_name": "New York",
+            "capital": "Albany",
+            "density": 371.0,
+            "population": 20319735
+        },
+        {
+            "state_name": "Indiana",
+            "capital": "Indianapolis",
+            "density": 184.0,
+            "population": 6732219
+        },
+        {
+            "state_name": "Michigan",
+            "capital": "Lansing",
+            "density": 108.0,
+            "population": 10342858
+        },
+        {
+            "state_name": "Pennsylvania",
+            "capital": "Harrisburg",
+            "density": 280.0,
+            "population": 12880955
+        }
+    ],
+    "logprobs": [
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0
+    ],
+    "tokens": 4557,
+    "time": 54.30494666099548
+}

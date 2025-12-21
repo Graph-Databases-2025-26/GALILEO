@@ -1,0 +1,15 @@
+{
+    "query_id": 20,
+    "sql": "SELECT p.party, count(p.party) num FROM target.world_presidents p WHERE p.country='United States' group by p.party order by num desc limit 1;",
+    "result_set": [
+        {
+            "party": "Republican",
+            "num": 40
+        }
+    ],
+    "logprobs": [
+        -999.0
+    ],
+    "tokens": 6134,
+    "time": 65.96071553230286
+}

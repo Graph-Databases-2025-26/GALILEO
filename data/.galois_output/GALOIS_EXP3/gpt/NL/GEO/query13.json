@@ -1,0 +1,30 @@
+{
+    "result_set": [
+        {
+            "lake_name": "Lake Michigan",
+            "area_squared_km": 57800,
+            "country_name": "United States",
+            "state_name": "Michigan"
+        },
+        {
+            "lake_name": "Lake Huron",
+            "area_squared_km": 59100,
+            "country_name": "United States",
+            "state_name": "Michigan"
+        },
+        {
+            "lake_name": "Lake Erie",
+            "area_squared_km": 25700,
+            "country_name": "United States",
+            "state_name": "Michigan"
+        },
+        {
+            "lake_name": "Lake Superior",
+            "area_squared_km": 82100,
+            "country_name": "United States",
+            "state_name": "Michigan"
+        }
+    ],
+    "time": 3.53,
+    "tokens": 155
+}

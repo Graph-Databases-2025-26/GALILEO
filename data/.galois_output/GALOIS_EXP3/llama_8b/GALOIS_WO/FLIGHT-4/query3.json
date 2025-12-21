@@ -1,0 +1,8 @@
+{
+    "query_id": 3,
+    "sql": "SELECT name, city, country, elevation_in_ft FROM target.airports WHERE city = 'New York';",
+    "result_set": [],
+    "logprobs": [],
+    "tokens": 2582,
+    "time": 6.346438646316528
+}

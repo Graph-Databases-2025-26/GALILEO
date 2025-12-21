@@ -1,0 +1,148 @@
+{
+    "query_id": 27,
+    "sql": "SELECT us.state_name, us.population, us.capital FROM target.usa_state us WHERE us.population > 5000000;",
+    "result_set": [
+        {
+            "state_name": "Virginia",
+            "population": 8535515,
+            "capital": "Richmond"
+        },
+        {
+            "state_name": "Tennessee",
+            "population": 6833195,
+            "capital": "Nashville"
+        },
+        {
+            "state_name": "Texas",
+            "population": 29145561,
+            "capital": "Austin"
+        },
+        {
+            "state_name": "Georgia",
+            "population": 10511131,
+            "capital": "Atlanta"
+        },
+        {
+            "state_name": "Colorado",
+            "population": 5758743,
+            "capital": "Denver"
+        },
+        {
+            "state_name": "Illinois",
+            "population": 12671821,
+            "capital": "Springfield"
+        },
+        {
+            "state_name": "Arizona",
+            "population": 7278717,
+            "capital": "Phoenix"
+        },
+        {
+            "state_name": "Washington",
+            "population": 7726191,
+            "capital": "Olympia"
+        },
+        {
+            "state_name": "South Carolina",
+            "population": 5127968,
+            "capital": "Columbia"
+        },
+        {
+            "state_name": "Wisconsin",
+            "population": 5856044,
+            "capital": "Madison"
+        },
+        {
+            "state_name": "California",
+            "population": 39461588,
+            "capital": "Sacramento"
+        },
+        {
+            "state_name": "Missouri",
+            "population": 6139425,
+            "capital": "Jefferson City"
+        },
+        {
+            "state_name": "Ohio",
+            "population": 11683070,
+            "capital": "Columbus"
+        },
+        {
+            "state_name": "Florida",
+            "population": 21477737,
+            "capital": "Tallahassee"
+        },
+        {
+            "state_name": "Massachusetts",
+            "population": 6945833,
+            "capital": "Boston"
+        },
+        {
+            "state_name": "New York",
+            "population": 19453561,
+            "capital": "Albany"
+        },
+        {
+            "state_name": "Indiana",
+            "population": 6732217,
+            "capital": "Indianapolis"
+        },
+        {
+            "state_name": "Maryland",
+            "population": 6045685,
+            "capital": "Annapolis"
+        },
+        {
+            "state_name": "North Carolina",
+            "population": 10551347,
+            "capital": "Raleigh"
+        },
+        {
+            "state_name": "Michigan",
+            "population": 10007155,
+            "capital": "Lansing"
+        },
+        {
+            "state_name": "Pennsylvania",
+            "population": 12913918,
+            "capital": "Harrisburg"
+        },
+        {
+            "state_name": "Minnesota",
+            "population": 5706175,
+            "capital": "St Paul"
+        },
+        {
+            "state_name": "New Jersey",
+            "population": 8921873,
+            "capital": "Trenton"
+        }
+    ],
+    "logprobs": [
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0,
+        -999.0
+    ],
+    "tokens": 2818,
+    "time": 20.36108636856079
+}
