@@ -50,6 +50,12 @@ BASELINE_OUTPUT = {
             "S" : SUBMISSIONS_PATH_GALOIS / "S",
             "WO" : SUBMISSIONS_PATH_GALOIS / "WO"
         },
+    "EXP3" : {
+                "NL_GPT" : SUBMISSIONS_PATH_GALOIS / "GALOIS_EXP3" / "gpt" / "NL",
+                "SQL_GPT" : SUBMISSIONS_PATH_GALOIS / "GALOIS_EXP3" / "gpt" / "SQL",
+                "NL_8B" : SUBMISSIONS_PATH_GALOIS / "GALOIS_EXP3" / "llama_8b" / "NL",
+                "SQL_8B" : SUBMISSIONS_PATH_GALOIS / "GALOIS_EXP3" / "llama_8b" / "SQL"
+            },
 }
 
 

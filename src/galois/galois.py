@@ -649,7 +649,9 @@ def save_galois_results(results_list, variant, provider, dataset_name):
     variant_dir_name = f"GALOIS_{variant.upper()}"
     dataset_dir_name = dataset_name.upper()
 
-    target_dir = base_dir / variant_dir_name / dataset_dir_name
+    #target_dir = base_dir / variant_dir_name / dataset_dir_name
+    target_dir = base_dir / "GALOIS_EXP3" / "llama_8b" / variant_dir_name/ dataset_dir_name
+
     target_dir.mkdir(parents=True, exist_ok=True)
 
     count = 0
