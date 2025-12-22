@@ -157,7 +157,7 @@ def parse_sql(sql_query: str) -> Dict[str, Any]:
             # as the core GALOIS optimizer logic focuses on SELECT, FROM, WHERE.
         }
 
-        LOG.info(f"[Parser] Target Table: {parsed_plan['from_table']} | Joins: {len(parsed_plan['joins'])} | Where Conditions: {len(parsed_plan['where_conditions'])}")
+        LOG.debug(f"[Parser] Target Table: {parsed_plan['from_table']} | Joins: {len(parsed_plan['joins'])} | Where Conditions: {len(parsed_plan['where_conditions'])}")
         return parsed_plan
 
     except Exception as e:

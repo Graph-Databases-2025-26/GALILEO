@@ -458,7 +458,7 @@ class Galois:
                     
                     # 1. FIX LOGPROBS MISSING
                     if "_galois_logprob" not in df.columns:
-                        # LOG.warning(f"Logprobs missing for {clean_name}. Filling default -999.0")
+                        #LOG.warning(f"Logprobs missing for {clean_name}. Filling default -999.0")
                         df["_galois_logprob"] = -999.0
                     
                     # 2. FIX AMBIGUITY: Rinomina la colonna in modo univoco (es. _gp_usa_city)
@@ -570,6 +570,8 @@ class Galois:
 
             LOG.info(f"Executing Local SQL Query: {clean_sql_query}")
             result_df = con.execute(clean_sql_query).df()
+
+            LOG.debug(f"Final results after the post-processing: : {result_df}")
             
             # --- 4. POST-PROCESSING (Calculation of final _galois_logprob) ---
             
