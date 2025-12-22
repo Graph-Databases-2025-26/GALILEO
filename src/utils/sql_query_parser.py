@@ -39,9 +39,9 @@ def parse_sql(sql_query: str) -> Dict[str, Any]:
         LOG.warning(f"Warning: parse_sql received a tuple. Assuming (filename, sql) format.")
         # Find the first string in the tuple that looks like a query
         sql_query_string = ""
-        for item in sql_query_string:
+        for item in sql_query:
             if isinstance(item, str) and (item.strip().upper().startswith("SELECT") or item.strip().startswith("--")):
-                sql_query_string_str_str = item
+                sql_query_string = item
                 break
         if not sql_query_string:
             raise ValueError(f"Could not find a valid SQL string in the input tuple: {sql_query_string}")
@@ -157,7 +157,7 @@ def parse_sql(sql_query: str) -> Dict[str, Any]:
             # as the core GALOIS optimizer logic focuses on SELECT, FROM, WHERE.
         }
 
-        #LOG.info(f"SQL query parsed successfully (using sqlglot):\n{json.dumps(parsed_plan, indent=2)}")
+        LOG.info(f"[Parser] Target Table: {parsed_plan['from_table']} | Joins: {len(parsed_plan['joins'])} | Where Conditions: {len(parsed_plan['where_conditions'])}")
         return parsed_plan
 
     except Exception as e:

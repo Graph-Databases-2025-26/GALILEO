@@ -94,14 +94,22 @@ class Galois:
         Instantiates the Executor and runs the query according to the plan.
         """
         LOG.info(f"\n--- STARTING GALOIS EXECUTION: {variant_name} ---")
-        LOG.info(f"Physical Strategy: {self.physical_strategy}")
-        LOG.info(f"Pushing Conditions: {plan['conditions_to_push']}")
+        LOG.info(f"\n{'=' * 40}")
+        LOG.info(f" PHASE 1: LOGICAL OPTIMIZATION ({variant_name})")
+        LOG.info(f"{'=' * 40}")
+        LOG.info(f"Query Plan:")
+        LOG.info(f" - Original Query: {plan['original_query']}")
+        LOG.info(f" - Conditions Pushed to LLM: {plan['conditions_to_push']}")
 
         #creating an instance of ConfidenceEstimator
         galois_estimator = ConfidenceEstimator(self.llm_wrapper, self.dataset, system_prompt_galois_confidence(), human_prompt_galois_confidence("QUERY"))
 
         #DEFAULT value of final_strategy
         final_strategy = "KEY"
+
+        LOG.info(f"\n{'=' * 40}")
+        LOG.info(f" PHASE 2: PHYSICAL OPTIMIZATION")
+        LOG.info(f"{'=' * 40}")
 
         num_select_columns = len(plan['select_columns'])
         if num_select_columns == 0:
@@ -121,7 +129,8 @@ class Galois:
         else:
             final_strategy = self.physical_strategy.upper()
 
-        LOG.info(f"Final Strategy Selected: {final_strategy}")
+        LOG.info(f"Confidence Estimator Result: {final_strategy}")
+        LOG.info(f"Selected Scan Strategy: {final_strategy} SCAN")
 
         #Retrieve the conditions
         all_conditions = self.parsed_sql['where_conditions']
@@ -129,7 +138,9 @@ class Galois:
 
         #Find the residual conditions
         residual_conditions = [c for c in all_conditions if c not in pushed_conditions]
-        
+        LOG.info(f" - Residual Conditions (Post-Process): {residual_conditions}")
+
+
         per_table_stats = [] #to collect per-table scan info
 
         try:
@@ -157,6 +168,11 @@ class Galois:
             total_execution_time = 0
             total_tokens_used = 0
             data_lake = {}
+
+            LOG.info(f"\n{'=' * 40}")
+            LOG.info(f" PHASE 3: EXECUTION (LLM INTERACTION)")
+            LOG.info(f"{'=' * 40}")
+
             for t_info in tables_to_scan:
                 t_name = t_info['name']
                 t_alias = t_info['alias']
@@ -240,6 +256,7 @@ class Galois:
                     for row, lp in zip(rows, logprobs):
                         row["_galois_logprob"] = lp
 
+                """
                 LOG.info("-----------------TUPLE-----------------")
                 for t in rows:
                     LOG.info(f"{t}")
@@ -247,6 +264,8 @@ class Galois:
                 LOG.info("-----------------LOGPROBS-----------------")
                 for lgp in logprobs:
                     LOG.info(f"{lgp}")
+                """
+                LOG.info(f"   -> [Batch Complete] Retrieved {len(rows)} rows from LLM for table '{t_name}'.")
 
                 total_execution_time += f_response.get("time", 0)
                 total_tokens_used += f_response.get("tokens", 0)
@@ -416,6 +435,11 @@ class Galois:
 
         # execute local join using duckdb in-memory on the data provided by LLM
         LOG.info(f"--- ASSEMBLING DATA LOCALLY ({len(data_map)} tables) ---")
+        LOG.info(f"\n{'=' * 40}")
+        LOG.info(f" PHASE 4: LOCAL JOIN & POST-PROCESSING")
+        LOG.info(f"{'=' * 40}")
+        LOG.info(f"Assembling data in DuckDB memory from {len(data_map)} sources...")
+
         con = duckdb.connect(database=':memory:')
         
         # Mappa per tracciare le colonne logprob rinominate: {table_name: unique_col_name}

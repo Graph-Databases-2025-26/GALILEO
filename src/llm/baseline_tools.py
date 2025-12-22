@@ -91,9 +91,11 @@ def save_baseline_to_json(dataset: str, baseline: list[dict], llm_wrapper: LLMBa
         b_type: The type of baseline run ("SQL", "NL", "PZSQL" or "PZNL").
     """
 
-    #bline_folder = BASELINE_OUTPUT[b_type][llm_wrapper.get_provider_name().upper()]/dataset
-    bline_folder = BASELINE_OUTPUT["EXP3"]["NL_GPT"] / dataset
-    print(bline_folder)
+    bline_folder = BASELINE_OUTPUT[b_type][llm_wrapper.get_provider_name().upper()]/dataset
+
+    #for EXP3 runs only
+    #bline_folder = BASELINE_OUTPUT["EXP3"]["NL_GPT"] / dataset
+    #print(bline_folder)
     
     bline_folder.mkdir(parents=True, exist_ok=True)    
 

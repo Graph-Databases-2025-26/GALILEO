@@ -680,13 +680,17 @@ class GaloisExecutor:
                 content_fixed = repair_json_content(content_fixed)
                 content_fixed = re.sub(r"(?<=\d),(?=\d)", "", content_fixed) #remove commas in numbers
                 response = self.resp_parser.parse(content_fixed)
-                
-                LOG.debug(f"RAW RESPONSE: {raw_response.content}")
-                LOG.debug(f"PARSED RESPONSE: {response.root}")
+
+
+                #LOG.debug(f"RAW RESPONSE: {raw_response.content}")
+                #LOG.debug(f"PARSED RESPONSE: {response.root}")
                 
                 tuple_logprobs = self._extract_logprobs_per_tuple(raw_response)
                 
-                LOG.info(f"-----------------------LLLM PARSED RESPONSE-----------------------")
+                #LOG.info(f"-----------------------LLLM PARSED RESPONSE-----------------------")
+
+                LOG.info(f"[Iteration {i + 1}] LLM returned {len(response.root)} tuples. (Tokens: {raw_response.usage_metadata.get('total_tokens', 0)})")
+
                 for t, t_logp in zip(response.root, tuple_logprobs):
                     LOG.info(f"{t}  [{t_logp:.2e}]")
                 
@@ -718,7 +722,8 @@ class GaloisExecutor:
             # ---------------------------------------------------
         }
         
-        LOG.info(f"-----------------------LLM FINAL OUTPUT-----------------------")
+        #LOG.info(f"-----------------------LLM FINAL OUTPUT-----------------------")
+        LOG.info(f"Scan Completed. Total unique tuples collected: {len(outputs['response'])}.")
         for t, t_logp in zip(outputs["response"], outputs["logprobs"]):
             LOG.info(f"{t}  [{t_logp:.2e}]")
             

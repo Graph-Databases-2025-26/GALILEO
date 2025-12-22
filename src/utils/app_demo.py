@@ -62,7 +62,13 @@ def run_galois_demo(variant_key):
     try:
         cfg = Config_Loader().get_config()
         dataset = "WORLD"
-        sql_query = debug_query().format()
+        #sql_query = debug_query().format()
+        sql_query = """SELECT distinct t2.region
+                        FROM target.country_language AS t1
+                        JOIN target.country AS t2
+                        ON t1.country_code_3_letters = t2.code_3_letters
+                        WHERE t1.language = 'English'
+                        OR t1.language = 'Dutch';"""
 
         g = Galois(
             config=cfg,

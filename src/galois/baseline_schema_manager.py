@@ -32,7 +32,7 @@ class GaloisWOSchemaManager(BaseSchemaManager):
         """
         
         attrs = super().get_attributes(table_name, attribute_set)
-        LOG.info(f"[GaloisWOSchemaManager] Retrieved '{attribute_set}' attributes for table '{table_name}': {attrs}")
+        LOG.debug(f"[GaloisWOSchemaManager] Retrieved '{attribute_set}' attributes for table '{table_name}': {attrs}")
         return attrs
     
 
