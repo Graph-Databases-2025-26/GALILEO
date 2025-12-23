@@ -85,8 +85,6 @@ class OpenRouterWrapper(LLMBaseWrapper):
     def _create_llm_instance(self, config):
         if config.open_router.api_key:
 
-            LOG.info(f"Creating OpenRouter LLM ...")
-
             return ChatOpenAI(
                 model=config.open_router.model,
                 temperature=config.open_router.temperature,
@@ -119,7 +117,6 @@ class GeminiWrapper(LLMBaseWrapper):
     def _create_llm_instance(self, config):
         if config.gemini.api_key:
             
-            LOG.info(f"Creating Gemini LLM ...")
             
             return ChatGoogleGenerativeAI(
                 model = config.gemini.model,
@@ -153,8 +150,7 @@ class WatsonxWrapper(LLMBaseWrapper):
     def _create_llm_instance(self, config):
                     
         if config.watsonx.api_key:
-            
-            LOG.info(f"Creating Watsonx LLM: model ...")
+        
 
             generation_params = {
                 # 1. QUANTITY: Reads 4096 from your YAML.

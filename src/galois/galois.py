@@ -16,7 +16,7 @@ from src.galois.galois_estimator import ConfidenceEstimator
 from src.utils.constants import SUBMISSIONS_PATH_GALOIS
 from src.utils.get_db_schema_galois import GaloisSchemaManager
 from src.utils.logging_config import LOG, log_init
-from src.galois.galois_executor import GaloisExecutor
+# Alias maintained from your original code
 from src.galois.executor import GaloisExecutor as Francesco_Executor
 
 
@@ -25,35 +25,42 @@ class Galois:
     Main orchestration class for the GALOIS system.
 
     1. Initialization: Sets up LLM, Schema Manager, and parses the SQL query.
-    2. Logical Optimization: Decides WHICH conditions to push down to the LLM (e.g., Push-All, No-Push).
-       (Fig. 2)
+    2. Logical Optimization: Decides WHICH conditions to push down to the LLM.
     3. Physical Optimization: Decides HOW to query the LLM (Table-Scan vs Key-Scan).
-       (Section 4 - Physical Optimizations)
     4. Execution: Delegates the actual work to GaloisExecutor.
     """
     ScanStrategy = Literal["table", "key", "auto"]
+    
     def __init__(self,
                  config: Any,
                  dataset: str,
                  sql_query: str,
-                 physical_strategy: ScanStrategy = "auto"):
+                 physical_strategy: ScanStrategy = "auto",
+                 confidence_threshold: float = None): 
         """
         Args:
-            config: Configuration object containing LLM API keys and settings.
-            dataset: Name of the dataset (used to load the DuckDB schema).
-            sql_query: The raw SQL query string to execute.
-            physical_strategy: 'table' (Alg. 1), 'key' (Alg. 2), or 'auto' (dynamic selection).
+            config: Configuration object.
+            dataset: Name of the dataset.
+            sql_query: The raw SQL query string.
+            physical_strategy: 'table', 'key', or 'auto'.
+            confidence_threshold: (Optional) Threshold for switching strategies (Exp 7).
         """
         self.config = config
         self.dataset = dataset
         self.sql_query = sql_query
         self.physical_strategy = physical_strategy
+        
+        # Gestione della soglia (Exp 7 logic)
+        if confidence_threshold is not None:
+            self.confidence_threshold = confidence_threshold
+        else:
+            self.confidence_threshold = getattr(config.galois_execution, 'confidence_threshold', 0.8)
 
-        #Initialize LLM Wrapper
+        # Initialize LLM Wrapper
         self.llm_wrapper = get_llm_wrapper(config)
 
-        #Parse the SQL query
-        LOG.info(f"Galois System: Parsing query for dataset {dataset}")
+        # Parse the SQL query
+        LOG.info(f"INFO | [GALOIS] Parsing query for dataset '{dataset}'")
         self.parsed_sql = sql_query_parser.parse_sql(sql_query)
 
         self.schema_map = {}
@@ -73,15 +80,11 @@ class Galois:
 
         finally:
             temp_manager.con.close()
-            LOG.debug(" Pending connection closed correctly.")
 
     def build_execution_plan(self, conditions_to_push: List[str]) -> Dict[str, Any]:
         """
-        Helper method to construct the 'Query Plan' dictionary expected by the Executor.
-        This merges the static parsed info (SELECT, FROM) with the
-        dynamic logical choice (which WHERE conditions to push).
+        Helper method to construct the 'Query Plan' dictionary.
         """
-
         return {
             "select_columns": self.parsed_sql['select_columns'],
             "from_table": self.parsed_sql['from_table'],
@@ -89,152 +92,141 @@ class Galois:
             "original_query": self.sql_query
         }
 
-    def  execute_variant(self, plan: Dict[str, Any], variant_name: str, debug: bool = False):
+    def execute_variant(self, plan: Dict[str, Any], variant_name: str, debug: bool = False):
         """
         Instantiates the Executor and runs the query according to the plan.
+        Updated for Exp-7: Uses confidence score vs threshold to select Physical Strategy.
         """
-        LOG.info(f"\n--- STARTING GALOIS EXECUTION: {variant_name} ---")
-        LOG.info(f"\n{'=' * 40}")
-        LOG.info(f" PHASE 1: LOGICAL OPTIMIZATION ({variant_name})")
-        LOG.info(f"{'=' * 40}")
-        LOG.info(f"Query Plan:")
-        LOG.info(f" - Original Query: {plan['original_query']}")
-        LOG.info(f" - Conditions Pushed to LLM: {plan['conditions_to_push']}")
+        LOG.info(f"INFO | [GALOIS] Starting Variant: {variant_name}")
+        LOG.info(f"PLAN | [GALOIS] Requested Strategy: {self.physical_strategy}")
+        LOG.info(f"PLAN | [GALOIS] Conditions to Push: {plan['conditions_to_push']}")
 
-        #creating an instance of ConfidenceEstimator
-        galois_estimator = ConfidenceEstimator(self.llm_wrapper, self.dataset, system_prompt_galois_confidence(), human_prompt_galois_confidence("QUERY"))
+        # Instantiate ConfidenceEstimator
+        galois_estimator = ConfidenceEstimator(
+            self.llm_wrapper, 
+            self.dataset, 
+            system_prompt_galois_confidence(), 
+            human_prompt_galois_confidence("QUERY")
+        )
 
-        #DEFAULT value of final_strategy
-        final_strategy = "KEY"
-
-        LOG.info(f"\n{'=' * 40}")
-        LOG.info(f" PHASE 2: PHYSICAL OPTIMIZATION")
-        LOG.info(f"{'=' * 40}")
-
+        final_strategy = "KEY" # Default safe fallback
         num_select_columns = len(plan['select_columns'])
+        
         if num_select_columns == 0:
-            LOG.error("No columns in SELECT clause. Defaulting to TABLE strategy.")
-            final_strategy = "KEY"
-        else:
-            final_strategy = "KEY"
+            LOG.warning("WARN | [GALOIS] No columns in SELECT clause. Defaulting to KEY strategy.")
 
-        # Determine physical strategy
+        # --- PHYSICAL OPTIMIZATION LOGIC (Updated) ---
         if self.physical_strategy == "auto":
-            LOG.info("STARTING CONFIDENCE PROCESS FOR TABLE OR KEY SCAN")
-            llm_confidence_result = galois_estimator.estimate_confidence_query(self.config, self.parsed_sql["from_table"], plan['original_query'], num_select_columns)
-            if llm_confidence_result in ["TABLE", "KEY"]:
-                final_strategy = llm_confidence_result
+            LOG.info(f"PLAN | [GALOIS] Auto-Strategy Check (Threshold: {self.confidence_threshold})")
+            
+            # 1. Ottieni lo score numerico (0.0 - 1.0)
+            confidence_score = galois_estimator.estimate_confidence_query(
+                self.config, 
+                self.parsed_sql["from_table"], 
+                plan['original_query'], 
+                num_select_columns
+            )
+            
+            if not isinstance(confidence_score, (float, int)):
+                LOG.error(f"ERR  | [GALOIS] Invalid confidence score: {confidence_score}. Defaulting to 0.0")
+                confidence_score = 0.0
+
+            # 2. Decisione basata sulla soglia
+            decision = "KEY SCAN" if confidence_score >= self.confidence_threshold else "TABLE SCAN"
+            
+            # Log pulito della decisione
+            LOG.info(f"PLAN | [GALOIS] Score: {confidence_score:.4f} vs {self.confidence_threshold} -> Decision: {decision}")
+
+            if confidence_score >= self.confidence_threshold:
+                final_strategy = "KEY"
             else:
-                LOG.error("LLM  didn't reply with a confidence about  'TABLE' OR 'KEY'")
+                final_strategy = "TABLE"
+                
         else:
             final_strategy = self.physical_strategy.upper()
+            LOG.info(f"PLAN | [GALOIS] Manual Strategy Selected: {final_strategy}")
 
-        LOG.info(f"Confidence Estimator Result: {final_strategy}")
-        LOG.info(f"Selected Scan Strategy: {final_strategy} SCAN")
-
-        #Retrieve the conditions
+        # Retrieve the conditions
         all_conditions = self.parsed_sql['where_conditions']
         pushed_conditions = plan['conditions_to_push']
-
-        #Find the residual conditions
         residual_conditions = [c for c in all_conditions if c not in pushed_conditions]
-        LOG.info(f" - Residual Conditions (Post-Process): {residual_conditions}")
-
-
-        per_table_stats = [] #to collect per-table scan info
+        
+        per_table_stats = [] 
 
         try:
-
             ####### HANDLING JOIN ########
             tables_to_scan = []
 
             from_tbl = self.parsed_sql['from_table']
             from_als = self.parsed_sql.get('from_alias') or from_tbl
+            tables_to_scan.append({"name": from_tbl, "alias": from_als})
 
-            #add the main table
-            tables_to_scan.append({
-                "name": from_tbl,
-                "alias": from_als
-            })
-
-            #add the tables involved in join
             if 'joins' in self.parsed_sql:
                 for join in self.parsed_sql['joins']:
-                    tables_to_scan.append({
-                        "name": join['table'],
-                        "alias": join['alias']
-                    })
+                    tables_to_scan.append({"name": join['table'], "alias": join['alias']})
 
             total_execution_time = 0
             total_tokens_used = 0
             data_lake = {}
 
-            LOG.info(f"\n{'=' * 40}")
-            LOG.info(f" PHASE 3: EXECUTION (LLM INTERACTION)")
-            LOG.info(f"{'=' * 40}")
-
             for t_info in tables_to_scan:
                 t_name = t_info['name']
                 t_alias = t_info['alias']
-                LOG.info(f"--- FETCHING DATA FOR TABLE: {t_name} (Alias: {t_alias}) ---")
-
-                #retrieve the target columns for that table
+                
+                # retrieve target columns
                 cols_to_pass = self._get_involved_columns(
                     sql_query=plan['original_query'],
                     table_name=t_name,
                     alias=t_alias
                 )
-                if cols_to_pass:
-                    LOG.info(f"--- OPTIMIZED SCAN FOR {t_name}: Requesting columns {cols_to_pass} ---")
-                    simple_query = f"SELECT {', '.join(cols_to_pass)} FROM {t_name}"  # Solo visuale
-                else:
-                    LOG.info(f"--- FULL SCAN FOR {t_name} (Wildcard or All) ---")
-                    simple_query = f"SELECT * FROM {t_name}"  # Solo visuale
-                #target_cols = plan['select_columns']
+                
+                # Costruzione query semplice per display/passaggio
+                cols_str = ", ".join(cols_to_pass) if cols_to_pass else "*"
+                simple_query = f"SELECT {cols_str} FROM {t_name}"
 
-
-                #filter the WHERE conditions that are addicted to this particular alias
+                # Filter specific push conditions
                 current_push_conditions = []
                 for cond in plan['conditions_to_push']:
                     if f"{t_alias}." in cond or len(tables_to_scan) == 1:
                         current_push_conditions.append(cond)
 
-                LOG.info(f"--- FETCHING DATA FOR TABLE: {t_name} (Alias: {t_alias}) ---")
-                if current_push_conditions:
-                    LOG.info(f"   -> Pushing filters: {current_push_conditions}")
-                else:
-                    LOG.info(f"   -> No specific filters identified (Scan Full or Join-only)")
+                # --- NEW LOG STYLE FOR EXECUTION ---
+                cols_log = str(cols_to_pass) if cols_to_pass else "ALL (*)"
+                LOG.info(f"EXEC | [{self.dataset}] Scanning Table: {t_name} (Alias: {t_alias})")
+                LOG.info(f"EXEC | [{self.dataset}] Filters: {current_push_conditions} | Columns: {cols_log}")
+                # -----------------------------------
 
+                # EXECUTE SCAN
                 if final_strategy == "KEY":
-                    LOG.info(f"Executing KEY SCAN on {t_name}")
-
-                    ################
-                    #DO KEY SCAN
-                    ################
                     key_executor = Francesco_Executor(self.config, self.dataset)
                     try:
-                        f_response = key_executor.key_scan(query=simple_query, columns=cols_to_pass, conditions_to_push=current_push_conditions, max_iter=plan.get("max_iter"))
+                        f_response = key_executor.key_scan(
+                            query=simple_query, 
+                            columns=cols_to_pass, 
+                            conditions_to_push=current_push_conditions, 
+                            max_iter=plan.get("max_iter")
+                        )
                     finally:
-                        # close connection
                         if hasattr(key_executor, 'schema_mgr') and hasattr(key_executor.schema_mgr, 'dispose_manager'):
                             key_executor.schema_mgr.dispose_manager()
 
                 else:
-                    #DO TABLE SCAN
-                    LOG.info(f"Executing TABLE SCAN on {t_name}")
                     table_executor = Francesco_Executor(self.config, self.dataset)
                     try:
-                        f_response = table_executor.table_scan(query=simple_query, columns=cols_to_pass, conditions_to_push=current_push_conditions, max_iter=plan.get("max_iter"))
+                        f_response = table_executor.table_scan(
+                            query=simple_query, 
+                            columns=cols_to_pass, 
+                            conditions_to_push=current_push_conditions, 
+                            max_iter=plan.get("max_iter")
+                        )
                     finally:
-                        # Close connection
                         if hasattr(table_executor, 'schema_mgr'):
                             if hasattr(table_executor.schema_mgr, 'dispose_manager'):
                                 table_executor.schema_mgr.dispose_manager()
                             elif hasattr(table_executor.schema_mgr, 'close'):
                                 table_executor.schema_mgr.close()
                 
-                
-                scan_used = "KEY" if final_strategy == "KEY" else "TABLE" #for logging
+                scan_used = "KEY" if final_strategy == "KEY" else "TABLE"
                 per_table_stats.append({ 
                     "table": t_name, 
                     "alias": t_alias,
@@ -243,39 +235,31 @@ class Galois:
                     "pushed_conditions": current_push_conditions,
                     "time": f_response.get("time", 0),
                     "tokens": f_response.get("tokens", 0),
-                    # exp 6 stats
                     "n_iters": f_response.get("n_iters"),
                     "input_tokens_by_iter": f_response.get("input_tokens_by_iter"),
                     "input_tokens_total_all_iters": f_response.get("input_tokens_total_all_iters"),
-                    }) 
+                }) 
 
-                rows = f_response["response"]
+                rows = f_response.get("response", [])
                 logprobs = f_response.get("logprobs", [])
 
+                # Injection Logprobs
                 if logprobs and len(rows) == len(logprobs):
                     for row, lp in zip(rows, logprobs):
                         row["_galois_logprob"] = lp
 
-                """
-                LOG.info("-----------------TUPLE-----------------")
-                for t in rows:
-                    LOG.info(f"{t}")
-                
-                LOG.info("-----------------LOGPROBS-----------------")
-                for lgp in logprobs:
-                    LOG.info(f"{lgp}")
-                """
-                LOG.info(f"   -> [Batch Complete] Retrieved {len(rows)} rows from LLM for table '{t_name}'.")
-
                 total_execution_time += f_response.get("time", 0)
                 total_tokens_used += f_response.get("tokens", 0)
                 data_lake[t_name] = rows
-            #Local join and post processing
+            
+            # Local join and post processing
             results = self.perform_local_join_and_query(plan['original_query'], data_lake)
+            
             stats = {
                 "total_time": total_execution_time,
                 "total_tokens": total_tokens_used
             }
+            
             if not debug:
               return results, stats
             
@@ -286,73 +270,45 @@ class Galois:
                 "conditions_to_push": pushed_conditions,
                 "residual_conditions": residual_conditions,
                 "tables": per_table_stats,
-                }
+            }
             return results, stats, debug_info
 
         except Exception as e:
-            LOG.error(f"Error during the plan selection execution of the query {plan['original_query']} : {e}")
+            LOG.error(f"ERR  | [GALOIS] Execution failed for query '{plan['original_query']}': {e}")
             raise e
 
-    # --- LOGICAL OPTIMIZATION VARIANTS (Fig.2 in the paper)
+
+    # --- LOGICAL OPTIMIZATION VARIANTS ---
+
     def run_no_push(self, debug:bool =False) -> tuple[list[dict[str, Any]], dict[str, int]]:
         """
-        Variant: GALOIS_WO (Without Optimizations / No-Push)
-
-        Logic:
-        - Do NOT push any WHERE conditions to the LLM Scan.
-        - Retrieve ALL data (or keys) from the table using KEY-SCAN.
-        - Filtering effectively happens in post-processing (or manually later).
-
-        Corresponds to plan (n1) in Fig. 2.
+        Variant: GALOIS_WO (No-Push). Do NOT push any WHERE conditions.
         """
-        # We pass an empty list of conditions
         plan = self.build_execution_plan(conditions_to_push=[])
-        #Force GaloisWO to use KeyScan as indicated in the former paper
         self.physical_strategy = "key"
-        return self.execute_variant(plan, "GALOIS_WO (No-Push)",debug=debug)
+        return self.execute_variant(plan, "GALOIS_WO (No-Push)", debug=debug)
 
     def run_push_all(self, debug: bool = False) -> tuple[list[dict[str, Any]], dict[str, int]]:
         """
-        Variant: GALOIS_A (Push-All)
-
-        Logic:
-        - Push ALL SQL WHERE conditions into the LLM prompt.
-        - Relies on the LLM to understand and filter everything.
-
-        Corresponds to plan (p1) in Fig. 2.
+        Variant: GALOIS_A (Push-All). Push ALL SQL WHERE conditions.
         """
-        #setting table scan
         self.physical_strategy = "table"
-        # We pass all conditions found by the parser
         all_conditions = self.parsed_sql['where_conditions']
         plan = self.build_execution_plan(conditions_to_push=all_conditions)
-        return self.execute_variant(plan, "GALOIS_A (Push-All)",debug=debug)
+        return self.execute_variant(plan, "GALOIS_A (Push-All)", debug=debug)
 
     def run_push_selective(self, debug: bool = False) -> tuple[list[dict[str, Any]], dict[str, int]]:
         """
-        Variant: GALOIS_S (Push-Selective)
-
-        Logic:
-        - Push only the 'most selective' condition.
-        - NOTE: True selectivity estimation requires DB statistics or LLM estimation.
-        - Simple Heuristic Implementation: Push the FIRST condition only.
-
-        Corresponds to plan (s1) in Fig. 2.
+        Variant: GALOIS_S (Push-Selective). Push only 'most selective' conditions.
         """
-
-        #set table scan
         self.physical_strategy = "table"
-
-        #Instantiate an estimator object
+        
         estimator = ConfidenceEstimator(self.llm_wrapper, self.dataset, system_prompt_galois_confidence(), human_prompt_galois_confidence("CONDITION"))
-
         all_conditions = self.parsed_sql['where_conditions']
-        LOG.info(f"[GALOIS_S] Analyzing selectivity for: {all_conditions}")
-
-        #interacting with LLM for the confidence estimation
+        
+        LOG.info(f"PLAN | [GALOIS_S] Analyzing selectivity for: {all_conditions}")
         selective_conditions = estimator.estimate_confidence_conditions(self.parsed_sql['from_table'], all_conditions)
 
-        #apply the logic of GALOIS S
         num_high = len(selective_conditions)
         conditions_to_push = []
         variant_desc = ""
@@ -367,32 +323,19 @@ class Galois:
             conditions_to_push = []
             variant_desc = "GALOIS_S: Low Selectivity (No Push)"
 
-        LOG.info(f"Selectivity Analysis Result: {num_high} selective conditions found. Action: {variant_desc}")
-
+        LOG.info(f"PLAN | [GALOIS_S] Result: {num_high} selective conditions found. Action: {variant_desc}")
         plan = self.build_execution_plan(conditions_to_push=conditions_to_push)
-        return self.execute_variant(plan, variant_desc,debug=debug)
+        return self.execute_variant(plan, variant_desc, debug=debug)
 
     
     def run_push_confident(self, debug: bool = False) -> tuple[list[dict[str, Any]], dict[str, int]]:
         """
-        Variant: GALOIS_F (Full / Push-Confident)
-
-        Logic:
-        - Push conditions based on LLM confidence.
-        - This requires a preliminary "Estimator" step (not yet implemented).
-        - Fallback: Currently behaves like Push-All (GALOIS_A) as a placeholder.
-
-        Corresponds to plan (c1) in Fig. 2.
+        Variant: GALOIS_F (Push-Confident). Push conditions based on LLM confidence.
         """
-
-        #Initialize the Estimator
         estimator = ConfidenceEstimator(self.llm_wrapper, self.dataset, system_prompt_galois_confidence(), human_prompt_galois_confidence("CONDITION"))
 
-        #Obtain the original conditions
         all_conditions = self.parsed_sql['where_conditions']
-        LOG.info(f"Conditions to Push: {all_conditions}")
 
-        #Filter the conditions based on LLM confidence
         if not all_conditions:
             confidence_conditions = []
         else:
@@ -406,43 +349,27 @@ class Galois:
         execution_variant = ""
 
         if num_confident == 0:
-            # Case 0: No "HIGH" confidence -> No Pushdown
             conditions_to_push = []
             execution_variant = "GALOIS_F (Push-Confident): No-Push Heuristic"
-            LOG.info("Heuristic: 0 confident conditions -> Pushing NONE.")
-
+            LOG.info("PLAN | [GALOIS_F] Heuristic: 0 confident conditions -> Pushing NONE.")
         elif num_confident == 1:
-            # Caso 1: Only one "HIGH" confidence-> Pushdown that condition
             conditions_to_push = confidence_conditions
             execution_variant = "GALOIS_F (Push-Confident): Single-Push Heuristic"
-            LOG.info(f"Heuristic: 1 confident condition -> Pushing ONLY: {conditions_to_push}")
-
-
+            LOG.info(f"PLAN | [GALOIS_F] Heuristic: 1 confident condition -> Pushing ONLY: {conditions_to_push}")
         elif num_confident > 1:
-            # Caso >1: MOre than one "HIGH" confidence-> Pushdown all original conditions
             conditions_to_push = all_conditions
             execution_variant = "GALOIS_F (Push-Confident): Push-All Heuristic"
-            LOG.info("Heuristic: >1 confident conditions -> Pushing ALL original conditions.")
+            LOG.info("PLAN | [GALOIS_F] Heuristic: >1 confident conditions -> Pushing ALL original conditions.")
 
-        #Build and execute the plan
-        #The conditions that are not involved here will be ignored by the Scan.
         plan = self.build_execution_plan(conditions_to_push=conditions_to_push)
-
-        return self.execute_variant(plan, execution_variant,debug=debug)
+        return self.execute_variant(plan, execution_variant, debug=debug)
 
 
     def perform_local_join_and_query(self, original_sql: str, data_map: Dict[str, List[Dict[str, Any]]]) -> List[Dict[str, Any]]:
 
-        # execute local join using duckdb in-memory on the data provided by LLM
-        LOG.info(f"--- ASSEMBLING DATA LOCALLY ({len(data_map)} tables) ---")
-        LOG.info(f"\n{'=' * 40}")
-        LOG.info(f" PHASE 4: LOCAL JOIN & POST-PROCESSING")
-        LOG.info(f"{'=' * 40}")
-        LOG.info(f"Assembling data in DuckDB memory from {len(data_map)} sources...")
-
+        LOG.info(f"DATA | [LOCAL] Assembling data from {len(data_map)} tables...")
         con = duckdb.connect(database=':memory:')
         
-        # Mappa per tracciare le colonne logprob rinominate: {table_name: unique_col_name}
         gp_columns_map = {}
 
         try:
@@ -451,23 +378,18 @@ class Galois:
                 clean_name = table_real_name.strip()
                 
                 if not rows:
-                    LOG.warning(f"No data found for table {table_real_name}. Join might result in a empty set.")
+                    LOG.warning(f"WARN | [LOCAL] No data for table '{table_real_name}'. Join might be empty.")
                     df = pd.DataFrame()
                 else:
                     df = pd.DataFrame(rows)
                     
-                    # 1. FIX LOGPROBS MISSING
                     if "_galois_logprob" not in df.columns:
-                        #LOG.warning(f"Logprobs missing for {clean_name}. Filling default -999.0")
                         df["_galois_logprob"] = -999.0
                     
-                    # 2. FIX AMBIGUITY: Rinomina la colonna in modo univoco (es. _gp_usa_city)
-                    # Così in una JOIN avremo _gp_usa_city E _gp_usa_state senza conflitti.
                     unique_gp_col = f"_gp_{clean_name}"
                     df.rename(columns={"_galois_logprob": unique_gp_col}, inplace=True)
                     gp_columns_map[clean_name] = unique_gp_col
 
-                    # Substitutes the "null" strings
                     df.replace(r'(?i)^\s*(null|none|nan|n/a)\s*$', None, regex=True, inplace=True)
                     df.replace(["None", "nan", "NaN"], None, inplace=True)
 
@@ -476,10 +398,8 @@ class Galois:
 
                     # --- CASTING ---
                     for col in df.columns:
-                        # Skip casting per le colonne logprob (hanno il nome nuovo ora)
                         if col == unique_gp_col:
                             continue
-                            
                         col_lower = col.lower()
                         db_type = schema_cols_lower.get(col_lower, "")
                         numeric_series = pd.to_numeric(df[col], errors='coerce')
@@ -500,16 +420,14 @@ class Galois:
                             else:
                                 df[col] = df[col].astype(object).where(df[col].notnull(), None)
 
-                    # Strip strings
                     for col in df.select_dtypes(include=['object']).columns:
                         df[col] = df[col].map(lambda x: x.strip() if isinstance(x, str) else x)
 
                 con.register(clean_name, df)
-                LOG.info(f"Registered view: '{clean_name}'")
+                # LOG.debug(f"Registered view: '{clean_name}'")
 
-            # --- PULIZIA QUERY ---
+            # --- QUERY CLEANING ---
             clean_sql_query = original_sql
-            # ... (Logica pulizia standard rimossa per brevità, mantieni quella che avevi) ...
             clean_lines = []
             for line in clean_sql_query.split('\n'):
                 stripped = line.strip()
@@ -523,17 +441,14 @@ class Galois:
                 clean_sql_query = clean_sql_query[match.start():]
             clean_sql_query = clean_sql_query.replace("target.", "")
 
-            # --- 3. INIEZIONE SMART (Join + Aggregation Aware) ---
+            # --- INIEZIONE SMART ---
             injected_cols = []
             try:
                 parsed_expression = parse_one(clean_sql_query)
                 
                 if isinstance(parsed_expression, exp.Select):
-                    # Identifica quali tabelle sono usate nella query
-                    # (sqlglot trova i nodi Table, usiamo .name per matchare con data_map)
                     query_tables = set(t.name.lower() for t in parsed_expression.find_all(exp.Table))
                     
-                    # Identifica se c'è aggregazione (GROUP BY o funzioni agg)
                     has_agg = False
                     if parsed_expression.args.get("group"): 
                         has_agg = True
@@ -542,118 +457,72 @@ class Galois:
                             has_agg = True
                             break
                     
-                    # Per ogni tabella registrata, se è usata nella query, iniettiamo la sua colonna _gp
                     for t_name, gp_col in gp_columns_map.items():
                         if t_name.lower() in query_tables:
-                            
                             col_expr = exp.Column(this=gp_col)
-                            
                             if has_agg:
-                                # Se è aggregata, usiamo AVG per ogni colonna coinvolta
-                                # AVG(_gp_table1)
                                 inj_expr = exp.Avg(this=col_expr)
-                                # Alias necessario per mantenere il nome pulito nel DF
                                 inj_expr = exp.Alias(this=inj_expr, alias=exp.Identifier(this=gp_col, quoted=False))
                             else:
-                                # Se non è aggregata, prendiamo la colonna raw
                                 inj_expr = col_expr
-
                             parsed_expression.select(inj_expr, append=True, copy=False)
                             injected_cols.append(gp_col)
                     
                     clean_sql_query = parsed_expression.sql()
-                    LOG.info(f"Query rewrite (Hybrid Join): {clean_sql_query}")
-
             except Exception as e:
-                LOG.warning(f"Injection failed: {e}")
+                LOG.warning(f"WARN | [LOCAL] Injection failed: {e}")
 
-
-            LOG.info(f"Executing Local SQL Query: {clean_sql_query}")
+            # --- NEW LOG STYLE FOR SQL ---
+            # Remove newlines for cleaner logging
+            log_query = clean_sql_query.replace('\n', ' ').strip()
+            LOG.info(f"SQL  | [LOCAL] Generated Query: {log_query}")
+            
             result_df = con.execute(clean_sql_query).df()
-
-            LOG.debug(f"Final results after the post-processing: : {result_df}")
             
-            # --- 4. POST-PROCESSING (Calculation of final _galois_logprob) ---
-            
-            # Identify which _gp_* columns were actually injected
+            # --- POST-PROCESSING ---
             actual_injected = [c for c in injected_cols if c in result_df.columns]
             
             if actual_injected:
-                # Calculate row-wise mean of logprobs
                 result_df["_galois_logprob"] = result_df[actual_injected].mean(axis=1)
-                
-                # --- FIX FOR NaN (e.g., result of AVG on empty groups) ---
-                # We replace NaN with 0.0 (High Confidence) or -999.0 (Low Confidence).
-                # 0.0 is usually preferred for COUNT=0 situations.
                 result_df["_galois_logprob"] = result_df["_galois_logprob"].fillna(0.0)
-                
-                # Remove temporary columns
                 result_df.drop(columns=actual_injected, inplace=True)
             else:
-                # If no logprobs were injected/found, apply default
                 if "_galois_logprob" not in result_df.columns:
                      result_df["_galois_logprob"] = -999.0
 
             return cast(List[Dict[str, Any]], result_df.to_dict(orient='records'))
             
         except Exception as e:
-            LOG.error(f"Error during execution: {e}")
+            LOG.error(f"ERR  | [LOCAL] Execution failed: {e}")
             return []
         finally:
             con.close()
 
 
     def _get_involved_columns(self, sql_query: str, table_name: str, alias: str) -> Optional[List[str]]:
-        """
-        Analizza la query SQL completa ed estrae TUTTE le colonne (SELECT, JOIN, WHERE, GROUP BY, ecc.)
-        che appartengono alla tabella specificata o al suo alias.
-
-        Args:
-            sql_query: La query SQL originale completa.
-            table_name: Il nome reale della tabella (es. 'world_presidents').
-            alias: L'alias usato nella query (es. 'p'). Può essere None o stringa vuota.
-
-        Returns:
-            List[str]: Lista di nomi colonna puliti (es. ['name', 'party']) da scaricare.
-            None: Se c'è un errore o un Wildcard (*), indica di scaricare TUTTO.
-        """
         try:
-            # Parsa la query SQL completa.
-            # parse_one gestisce automaticamente la complessità sintattica.
             parsed = parse_one(sql_query, read="duckdb")
         except Exception as e:
-            LOG.warning(f"Sqlglot parsing failed for table {table_name}: {e}. Fallback to ALL columns.")
+            LOG.warning(f"WARN | [SQLGLOT] Parsing failed for table {table_name}: {e}. Fallback to ALL columns.")
             return None
 
-        # Se c'è un asterisco (*) globale nella query, non rischiamo filtri: scarichiamo tutto.
         if parsed.find(exp.Star):
             return None
 
         found_columns = set()
-
-        # Costruiamo il set dei nomi validi (Table Name + Alias) normalizzati in minuscolo
         target_names = {table_name.lower()}
         if alias:
             target_names.add(alias.lower())
 
-        # Cerchiamo tutte le colonne ovunque appaiano (SELECT, WHERE, JOIN, funzioni...)
         for col in parsed.find_all(exp.Column):
             col_name = col.name
-            table_ref = col.table  # Questo è il prefisso (es. 'p' in 'p.name')
-
+            table_ref = col.table
             if table_ref:
-                # CASO 1: C'è un prefisso (es. p.name)
-                # La colonna è nostra SOLO se il prefisso corrisponde alla tabella o all'alias
                 if table_ref.lower() in target_names:
                     found_columns.add(col_name)
             else:
-                # CASO 2: Nessun prefisso (es. 'name')
-                # Euristica di sicurezza: Se non c'è prefisso, assumiamo che la colonna
-                # possa appartenere a questa tabella. È meglio scaricare una colonna in più
-                # (che poi DuckDB ignorerà se non serve) piuttosto che una in meno.
                 found_columns.add(col_name)
 
-        # Se non abbiamo trovato nulla (caso raro), ritorniamo None per sicurezza (scarica tutto)
         if not found_columns:
             return None
 
@@ -662,7 +531,7 @@ class Galois:
 
 def save_galois_results(results_list, variant, provider, dataset_name):
     """
-    Salva i risultati di GALOIS in JSON per la valutazione, separando result_set e logprobs.
+    Saves GALOIS results in JSON for evaluation.
     """
     variant_key = f"GALOIS_{variant}"
 
@@ -670,33 +539,26 @@ def save_galois_results(results_list, variant, provider, dataset_name):
         base_dir = SUBMISSIONS_PATH_GALOIS
     except KeyError:
         base_dir = Path(f"./experiments/galois_{variant.lower()}/{provider.lower()}")
-        LOG.warning(f"Output path for {variant_key} not found in config. Using default: {base_dir}")
+        LOG.warning(f"WARN | [SAVE] Output path for {variant_key} not found. Using default: {base_dir}")
 
     variant_dir_name = f"GALOIS_{variant.upper()}"
     dataset_dir_name = dataset_name.upper()
 
-    #target_dir = base_dir / variant_dir_name / dataset_dir_name
-    target_dir = base_dir / "GALOIS_EXP3" / "llama_8b" / variant_dir_name/ dataset_dir_name
-
+    target_dir = base_dir / variant_dir_name / dataset_dir_name
     target_dir.mkdir(parents=True, exist_ok=True)
 
     count = 0
     for result_container in results_list:
-        # result_container è il dizionario creato in main.py che contiene:
-        # "query_id", "sql", "result_set" (le righe sporche), "time", "tokens"
-        
         query_id = result_container.get("query_id", "unknown")
         rows = result_container.get("result_set", [])
         
         clean_rows = []
         extracted_logprobs = []
         
-        # Pulizia delle righe
         if isinstance(rows, list):
             for row in rows:
                 if isinstance(row, dict):
                     row_copy = row.copy()
-                    # Estrai la logprob se presente (iniettata da execute_variant -> perform_local_join)
                     lp = row_copy.pop("_galois_logprob", None)
                     extracted_logprobs.append(lp if lp is not None else -999.0)
                     clean_rows.append(row_copy)
@@ -704,12 +566,11 @@ def save_galois_results(results_list, variant, provider, dataset_name):
                     clean_rows.append(row)
                     extracted_logprobs.append(-999.0)
         
-        # Creiamo l'oggetto finale da salvare
         output_obj = {
             "query_id": query_id,
             "sql": result_container.get("sql", ""),
-            "result_set": clean_rows,          # Righe PULITE per galois_eval.py
-            "logprobs": extracted_logprobs,    # Logprobs separate per exp3.py (Fig 7)
+            "result_set": clean_rows,          
+            "logprobs": extracted_logprobs,    
             "tokens": result_container.get("tokens", 0),
             "time": result_container.get("time", 0)
         }
@@ -723,10 +584,9 @@ def save_galois_results(results_list, variant, provider, dataset_name):
                 json.dump(output_obj, f, indent=4, ensure_ascii=False)
             count += 1
         except Exception as e:
-            LOG.error(f"Failed to save result for {output_filename}: {e}")
+            LOG.error(f"ERR  | [SAVE] Failed to save result for {output_filename}: {e}")
 
-    LOG.info(f"Successfully saved {count} files in {target_dir}")
-    LOG.info(json.dumps(output_obj, indent=4))
+    LOG.info(f"INFO | [SAVE] Successfully saved {count} files in {target_dir}")
     return str(target_dir)
 
 
@@ -746,15 +606,14 @@ def main():
                      """
     dataset_name = "GEO"
     try:
-        # Initialize GALOIS
         galois_system = Galois(
             config=config,
             dataset=dataset_name,
             sql_query=sql_query_test,
-            physical_strategy="key"  # Forziamo Table Scan per vedere i due scaricamenti
+            physical_strategy="key" 
         )
 
-        results = galois_system.run_push_confident()
+        results, stats = galois_system.run_push_confident() # Unpacking tuple return
 
         print("\n==========================================")
         print(f"   RISULTATO JOIN ({len(results)} righe)")
@@ -762,53 +621,7 @@ def main():
         print(json.dumps(results, indent=2))
 
     except Exception as e:
-        LOG.error(f"Error in the  test: {e}", exc_info=True)
-
-"""
-    # A. Definizione del Test
-    # Usiamo il dataset PRESIDENTS perché hai caricato 'presidents.duckdb'
-    dataset_name = "geo"
-    dataset_path = DATA_ROOT / dataset_name.upper()
-
-    # Una query SQL presa dal tuo file 'queries_presidents.sql' (Query 2)
-    # Nota: GALOIS gestirà il parsing di "target.world_presidents"
-
-    #sql_query = "SELECT p.name, p.party FROM target.world_presidents p WHERE p.country='Venezuela' AND p.party='Liberal';"
-
-    queries = load_queries_from_folder(dataset_path)
-    for query in queries:
-
-        LOG.info(f"Dataset: {dataset_name}")
-        LOG.info(f"Query SQL: {query}")
-
-
-        try:
-            # Initialization of GALOIS SYSTEM
-            # Instanciation SchemaManager, the Parser and the LLM Wrapper
-            galois_system = Galois(
-                config=config,
-                dataset=dataset_name,
-                sql_query=query,
-                physical_strategy="auto"  # Forziamo Algoritmo 1 (Table-Scan) per il primo test
-            )
-
-            # C. Esecuzione (Variante: Push-All)
-            # Questa variante "spinge" tutti i filtri (Venezuela + Liberal) nel prompt
-            print("\n>>> Start Execution: We trust the LLM confidence:")
-            results = galois_system.run_push_confident()
-
-            print("\n==========================================")
-            print(f"   RESULTS ({len(results)} rows founded)")
-            print("==========================================")
-            print(json.dumps(results, indent=2))
-
-            print("------------------------------------------")
-
-        except Exception as e:
-            LOG.error(f"Error during the test {e}", exc_info=True)
-            """
-
-
+        LOG.error(f"Error in the test: {e}", exc_info=True)
 
 
 if __name__ == "__main__":

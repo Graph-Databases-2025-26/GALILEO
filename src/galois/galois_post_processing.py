@@ -16,7 +16,7 @@ class GaloisPostProcessor:
         if not residual_conditions:
             return rows
 
-        LOG.info(f"[PostProcessor] Filtering {len(rows)} rows via Relational API. Conditions: {residual_conditions}")
+        LOG.info(f"PROC | [FILTER] Processing {len(rows)} rows | Conditions: {residual_conditions}")
 
         try:
             # Setup in-memory database
@@ -34,15 +34,14 @@ class GaloisPostProcessor:
             filtered_relation = relation.filter(combined_condition)
 
             # Execute and convert (lazy evaluation)
-            # The query is executed only when calling .df() or .fetchall()
             filtered_df = filtered_relation.df()
             # Convert to list of dictionaries
             result_rows = filtered_df.to_dict(orient='records')
 
-            LOG.info(f"[PostProcessor] Result: {len(result_rows)} rows remaining.")
+            LOG.info(f"PROC | [FILTER] Filtering Complete: {len(result_rows)} rows remaining.")
             return cast(List[Dict[str,Any]], result_rows)
 
         except Exception as e:
-            LOG.error(f"[PostProcessor] Relational API Error: {e}")
+            LOG.error(f"ERR  | [FILTER] Relational API Error: {e}")
             # Fallback: return original data in case of critical error
             return rows

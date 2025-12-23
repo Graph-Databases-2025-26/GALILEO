@@ -11,7 +11,7 @@ from src.llm.llm_wrappers import LLMBaseWrapper
 class ConfidenceEstimator:
     """
     Component that implements the estimation logic of the confidence score.
-    In practice it check each WHERE clause of the sql query and decide if it is safe to pushdawn to the LLM
+    It checks each WHERE clause of the sql query and decides if it is safe to push down to the LLM.
     """
 
     def __init__(self, llm_wrapper: LLMBaseWrapper, dataset: str , confidence_prompt_template_system: str, confidence_prompt_template_human: str):
@@ -20,22 +20,22 @@ class ConfidenceEstimator:
 
     def estimate_confidence_conditions(self, table: str, conditions: List[str]) -> List[str]:
         """
-        Analyze a list of conditions and returns those with an high confidence for the LLM
+        Analyze a list of conditions and returns those with a high confidence for the LLM.
         """
 
         if not conditions:
             return []
 
-        LOG.info(f"Estimating confidence for {conditions} conditions")
+        LOG.info(f"PLAN | [ESTIMATOR] Analyzing {len(conditions)} conditions for table '{table}'")
 
-        #schema for the context
+        # Schema for the context
         schema_manager = None
         try:
             schema_manager = GaloisSchemaManager(self.dataset)
             attrs = schema_manager.get_attributes(table)
             schema_summary = f"Table {table} columns: {', '.join(attrs)}"
         except Exception as e:
-            LOG.error(f"Error getting schema for confidence: {e}")
+            LOG.error(f"ERR  | [ESTIMATOR] Error getting schema: {e}")
             return []
         finally:
             if schema_manager:
@@ -48,45 +48,39 @@ class ConfidenceEstimator:
                 "query": cond,
                 "schema_summary": schema_summary
             }
-                #Build the prompt, GET_CONFIDENCE_ESTIMATION_PROMPT MUST BE IMPLEMENTED IN PROMPT CLASS
-                #prompt_context = get_confidence_estimation_prompt(table, schema_summary)
-
-                #Call the LLM
+            
             try:
-                #USE OUR STRUCTURE FOR INVOKING THE LLM
-
-                #response = self.llm.invoke(HumanMessage(content=prompt_context))
-                #confidence = response.content.strip().upper()
+                # Call the LLM
                 confidence_response = self.chain.invoke(chain_input)
                 confidence = confidence_response.strip().upper()
-                LOG.info(f"Condition: '{cond}' -> Confidence: {confidence}")
+                
+                is_high = "HIGH" in confidence
+                action = "PUSH" if is_high else "DENY"
+                
+                # Log sintetico
+                LOG.info(f"PLAN | [ESTIMATOR] Cond: '{cond}' | Conf: {confidence} -> Action: {action}")
 
-                if "HIGH" in confidence:
-                    LOG.info(f" - Condition '{cond}': HIGH confidence -> PUSH")
+                if is_high:
                     confident_conditions.append(cond)
-                else:
-                    LOG.info(f" - Condition '{cond}': LOW confidence -> DENY")
 
             except Exception as e:
-                LOG.error(f"Error while estimating confidence for condition '{cond}': {e}. Dafaulting to LOW")
+                LOG.error(f"ERR  | [ESTIMATOR] Failed checking '{cond}': {e}. Default: DENY")
 
         return confident_conditions
-
-
-    def estimate_confidence_query(self, config,  table: str, sql_query: str, num_select_columns: int):
+    
+    
+    def estimate_confidence_query(self, config,  table: str, sql_query: str, num_select_columns: int) -> float:
         """
-        This method will be used by the execute_variant method for interacting with LLM asking for the confidence score about the query execution plan
-        knowing the database schema of that specific dataset
+        Returns the confidence score (0.0 - 1.0) for the query execution plan.
+        Returns 0.0 in case of errors (fallback to safe TABLE scan).
         """
         if not sql_query or not table:
-            LOG.error("Cannot estimate confidence for empty query or table")
+            LOG.error("ERR  | [ESTIMATOR] Cannot estimate confidence: empty query or table")
+            return 0.0
 
         if num_select_columns <= 0:
-            LOG.error(
-                "Number of SELECT columns must be positive for confidence calculation. Dafaulting to TABLE strategy.")
-            return "TABLE"
-
-        confidence_threshold = config.galois_execution.confidence_threshold
+            LOG.error("ERR  | [ESTIMATOR] SELECT cols must be positive. Default: 0.0")
+            return 0.0
 
         schema_manager = None
         try:
@@ -94,8 +88,8 @@ class ConfidenceEstimator:
             attrs = schema_manager.get_attributes(table)
             schema_summary = f"Table {table} columns: {', '.join(attrs)}"
         except Exception as e:
-            LOG.error(f"Error getting schema for query confidence: {e}")
-            return "TABLE"
+            LOG.error(f"ERR  | [ESTIMATOR] Schema error: {e}")
+            return 0.0
         finally:
             if schema_manager:
                 schema_manager.close()
@@ -108,53 +102,36 @@ class ConfidenceEstimator:
 
         try:
             confidence_response = self.chain.invoke(chain_input)
-            LOG.info(f"CONFIDENCE RESPONSE: {confidence_response}")
+            # LOG.debug(f"DBUG | [ESTIMATOR] Raw Response: {confidence_response}") 
+            
             matches = re.findall(r"(\d+(?:\.\d+)?)", confidence_response)
-            LOG.info(f"SCORE: {matches}")
-            llm_raw_confidence = None
-            numerical_score = None
+            
+            numerical_score = 0.0
             if matches:
                 try:
                     llm_raw_confidence = float(matches[0])
-                    LOG.info(f"LLM RAW NUMERICAL SCORE: {llm_raw_confidence}")
-
-                    #calculate the score
+                    # calculate the score (propagated confidence)
                     numerical_score = llm_raw_confidence ** num_select_columns
-                    LOG.info(f"PROPAGATED CONFIDENCE SCORE (conf(q)): {numerical_score}")
+                    
+                    LOG.info(f"PLAN | [ESTIMATOR] Query Score: {numerical_score:.4f} (Base: {llm_raw_confidence}, Cols: {num_select_columns})")
                 except Exception as e:
-                    LOG.error(f"Error converting score '{matches[0]}' to int: {e}")
+                    LOG.error(f"ERR  | [ESTIMATOR] Score conversion error: {e}")
+                    return 0.0
             else:
-                LOG.error("No numeric score found in confidence response")
-                return "TABLE"
+                LOG.error("ERR  | [ESTIMATOR] No numeric score found")
+                return 0.0
 
-            LOG.info(f"Query: '{sql_query}' -> Confidence: {numerical_score}")
-
-            if numerical_score >= confidence_threshold:
-                return "KEY"
-            else:
-                return "TABLE"
+            return numerical_score
 
         except Exception as e:
-            LOG.error(f"Error while estimating confidence for query '{sql_query}': {e}.")
-            return None
+            LOG.error(f"ERR  | [ESTIMATOR] Estimation failed: {e}")
+            return 0.0
 
     @staticmethod
     def build_galois_chain(llm_model: LLMBaseWrapper, system_prompt: str, humanPrompt: str):
         """
-        Constructs a Chain lcel Expression Language (LCEL) chain for the GALOIS LLM estimation task.
-
-        Expected Input (dictionary):
-        {
-            "table": "table_name",
-            "condition": "where_condition",
-            "schema_summary": "columns_list"
-        }
-
-        Expected Output:
-        String ("HIGH" or "LOW")
+        Constructs a Chain lcel Expression Language (LCEL) chain.
         """
-
-        # Define the prompt template
         system_prompt = system_prompt
         human_prompt = humanPrompt
 
@@ -163,14 +140,8 @@ class ConfidenceEstimator:
             ("human", human_prompt)
         ])
 
-        # Obtain the llm wrapper instance
         llm = llm_model.get_llm_instance()
-
-        # Using a simple string parser (clean extra spaces)
         parser = StrOutputParser()
-
-        # Embedd the chain LCEL
         chain = confidence_prompt | llm | parser
 
         return chain
-
