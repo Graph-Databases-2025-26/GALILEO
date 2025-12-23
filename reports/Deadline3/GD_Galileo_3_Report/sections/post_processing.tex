@@ -1,20 +1,21 @@
 \section{Post-Processing}
-The Post-Processing module serves as the deterministic convergence point of the architecture, addressing the inherent impedance mismatch between the probabilistic output of the Large Language Model and the strict requirements of the SQL standard.
-This phase transforms the raw tuple sets retrieved by the Executor into a consistent relational state, enabling the execution of complex logical operations that cannot be reliably offloaded to the generative model.
 
- \subsection{Robust JSON Repairing}
- To address the issue of invalid JSON syntax produced by LLMs (e.g., trailing commas, missing null values, or markdown code blocks), we implemented a deterministic sanitization routine (\texttt{repair\_json\_content}) within the Executor. Before parsing, the raw response creates a sanitized string using regular expressions to strip Markdown tags and fix common syntax errors (such as converting empty assignments key: , to key: null,). This preprocessing step significantly reduced parsing failures.
+The Post-Processing module serves as the deterministic convergence point of the architecture, addressing the inherent impedance mismatch between the probabilistic output of the Large Language Model and the strict requirements of the SQL standard. This phase transforms the raw tuple sets retrieved by the Executor into a consistent relational state, enabling the execution of complex logical operations that cannot be reliably offloaded to the generative model.
 
- \subsection{Data Aggregation and Virtualization}
- Upon the completion of the physical scan phase (whether Table-Scan or Key-Scan), the retrieved tuples are aggregated into a local staging structure, referred to as the \textbf{"Data Lake"} which maps table names to lists of dictionaries. To bridge the gap to a relational environment, the system instantiates an ephemeral, in-memory DuckDB connection. The aggregated data is converted into Pandas DataFrames and registered as virtual views within this database instance, effectively creating a transient relational schema populated by the LLM-generated data.
+\subsection{Robust JSON Repairing}
+To address the issue of invalid JSON syntax produced by LLMs (e.g., trailing commas, missing null values, or markdown code blocks), we implemented a deterministic sanitization routine (\texttt{repair\_json\_content}) within the Executor. Before parsing, the raw response creates a sanitized string using regular expressions to strip Markdown tags and fix common syntax errors (such as converting empty assignments \texttt{key: ,} to \texttt{key: null,}). This preprocessing step significantly reduced parsing failures.
 
- \subsection{Heuristic Type Inference and Sanitization}
- The system implements a strict type inference policy to preserve data integrity. The \texttt{perform\_local\_join\_and\_query} method employs specific regular expressions to identify and normalize various string representations of null produced by LLMs (e.g., 'nan', 'null', 'n/a') into native Python \texttt{None} objects. Furthermore, a strict casting policy is applied via Pandas: columns are converted to numeric types only if the conversion preserves data integrity (checking the ratio of numeric vs. non-null values); otherwise, they revert to object types to avoid data loss during the virtualization in DuckDB. This zero-tolerance approach ensures that alphanumeric identifiers or mixed-format codes are not erroneously coerced into null values.
+\subsection{Data Aggregation and Virtualization}
+Upon the completion of the physical scan phase (whether \textit{Table-Scan} or \textit{Key-Scan}), the retrieved tuples are aggregated into a local staging structure, referred to as the \textbf{Data Lake}, which maps table names to lists of dictionaries. To bridge the gap to a relational environment, the system instantiates an ephemeral, in-memory \texttt{DuckDB} connection. The aggregated data is converted into \texttt{Pandas} DataFrames and registered as virtual views within this database instance, effectively creating a transient relational schema populated by the LLM-generated data.
 
- \subsection{Deterministic Query Execution}
- Once the data is virtualized and typed, the system executes the logical query plan locally. This step involves running the original SQL query (sanitized of specific schema prefixes like \textbf{.target}) against the virtual tables. This local execution performs two vital functions:
+\subsection{Heuristic Type Inference and Sanitization}
+The system implements a strict type inference policy to preserve data integrity. The \texttt{perform\_local\_join\_and\_query} method employs specific regular expressions to identify and normalize various string representations of null produced by LLMs (e.g., \texttt{'nan'}, \texttt{'null'}, \texttt{'n/a'}) into native Python \texttt{None} objects. Furthermore, a strict casting policy is applied via \texttt{Pandas}: columns are converted to numeric types only if the conversion preserves data integrity (checking the ratio of numeric vs. non-null values); otherwise, they revert to object types to avoid data loss during the virtualization in \texttt{DuckDB}. This zero-tolerance approach ensures that alphanumeric identifiers or mixed-format codes are not erroneously coerced into null values.
 
- \begin{itemize}
-    \item \textbf{Join Reconstruction}: It re-establishes the relational links between disparate datasets that were retrieved via independent scan operations, ensuring the correct implementation of INNER or LEFT joins defined in the original AST.
-    \item \textbf{Residual Filtering}: It applies the \textbf{residual\_conditions} predicates identified during the Logical Optimization phase as too complex or numerically precise for the LLM (e.g., strict inequalities like length\_in\_km\ > 750). This ensures that the final result set adheres strictly to the logical constraints of the user's query, filtering out any hallucinations or imprecise data artifacts introduced by the model.
- \end{itemize}
+\subsection{Deterministic Query Execution}
+Once the data is virtualized and typed, the system executes the logical query plan locally. This step involves running the original SQL query (sanitized of specific schema prefixes like \texttt{.target}) against the virtual tables. This local execution performs two vital functions:
+
+\paragraph{Join Reconstruction}
+It re-establishes the relational links between disparate datasets that were retrieved via independent scan operations, ensuring the correct implementation of \texttt{INNER} or \texttt{LEFT} joins defined in the original AST.
+
+\paragraph{Residual Filtering}
+It applies the \texttt{residual\_conditions} predicates identified during the Logical Optimization phase as too complex or numerically precise for the LLM (e.g., strict inequalities like \texttt{length\_in\_km > 750}). This ensures that the final result set adheres strictly to the logical constraints of the user's query, filtering out any hallucinations or imprecise data artifacts introduced by the model.

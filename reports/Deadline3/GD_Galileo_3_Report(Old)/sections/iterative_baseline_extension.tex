@@ -1,0 +1,189 @@
+\section{Iterative Baseline Extension}
+
+\subsection{Motivation and Objective}
+
+Building on the unified execution pipeline introduced in previous phases, this task
+extends both the SQL and NL baselines with a controlled iterative retrieval mechanism.
+The goal is to improve result completeness by allowing the LLM to generate multiple
+partial result sets across successive calls, while preserving full compatibility with the
+project’s standardized JSON output schema.
+
+This mechanism addresses cases where a single LLM invocation fails to recover the
+entire expected answer set due to truncation, prompt limitations, or generation
+variability. Iteration provides a systematic way to accumulate non-overlapping tuples
+across rounds.
+
+\subsection{Design Principles and Architectural Integration}
+
+The iterative enhancement was introduced without modifying the core architecture.
+A configurable parameter \texttt{max\_iter} (defined in \texttt{config.yaml}) controls the
+behavior and ensures consistent execution across providers.
+
+The integration adheres to the following principles:
+
+\begin{itemize}
+    \item \textbf{Provider-Agnostic Execution.} Iteration is implemented at the baseline level 
+    (SQL and NL), leaving LLM instantiation and LCEL chain construction unchanged.
+    This guarantees full compatibility with any provider supported through the Adapter 
+    and Factory patterns.
+
+    \item \textbf{Minimal Invasiveness.} No modifications were made to the LCEL chain,
+    output parser, or prompt template. Iteration is strictly an additional layer wrapped
+    around the existing call--parse--store cycle.
+
+    \item \textbf{Deduplicated Accumulation.} Each iteration contributes new tuples 
+    based on strict key-wise comparison. A local accumulator collects all rows returned 
+    in previous rounds, preventing redundancy and guaranteeing stable output.
+
+    \item \textbf{Early Stopping Criterion.} To avoid unnecessary LLM calls, the system
+    terminates early if an iteration yields zero new rows. This rule applies identically
+    to SQL and NL baselines.
+\end{itemize}
+
+\subsection{Iterative Execution Workflow}
+
+For each query (SQL baseline) or natural language prompt (NL baseline), the extended
+workflow proceeds as follows:
+
+\begin{enumerate}
+    \item \textbf{Initialization.}  
+    Create an accumulator for unique tuples and load \texttt{max\_iter}.
+
+    \item \textbf{Repeated Invocation.}
+    At each iteration, the baseline executes:
+    \begin{enumerate}
+        \item construction of the LCEL chain with the existing prompt template,
+        \item LLM invocation using the configured provider,
+        \item parse the response via the Pydantic output parser.
+    \end{enumerate}
+
+    \item \textbf{Deduplication and Union.}  
+    Compare new tuples to the accumulator using canonical JSON formatting; retain
+    only unseen tuples.
+
+    \item \textbf{Stopping Condition.}  
+    Terminate when no new tuples are found.
+
+    \item \textbf{Persistence.}  
+    After early stopping or reaching \texttt{max\_iter}, serialize:
+    \begin{itemize}
+        \item the union of all retrieved tuples,
+        \item total elapsed time,
+        \item aggregated token usage.
+    \end{itemize}
+\end{enumerate}
+
+\subsection{Baseline-Specific Considerations}
+
+\paragraph{SQL Baseline.}  
+Iteration compensates for incomplete tuple enumeration in a single pass. Because SQL
+inputs are fully specified, repeated calls primarily improve recall.
+
+\paragraph{NL Baseline.}  
+Iteration mitigates incomplete enumerations and semantic drift in free-form queries.
+Early stopping is essential to prevent hallucinated or reformulated rows once the LLM
+stabilizes on a fixed subset.
+
+\subsection{Outcome and Observations}
+
+Controlled iteration increases tuple coverage while remaining fully aligned with the
+evaluation framework. The design preserves modularity, provider-agnosticism, and the
+standardized JSON format established in previous phases.
+
+The mechanism also maintains conceptual continuity with iterative operators in the
+GALOIS framework (e.g., Key-Scan), providing a foundation for more advanced
+retrieval strategies in future work.
+
+\section{Evaluation of the Iterative Baselines}
+We evaluated the iterative SQL and NL baselines on the full benchmark suite
+(FLIGHT-2, FLIGHT-4, GEO, MOVIES, PRESIDENTS, WORLD).
+
+\subsection{Iterative Execution Results}
+First of all for what concerns the \texttt{llama-3.3-70b-instruct} model, the following table highlights the differences in terms of metrics between results presented in the original GALOIS paper and our implementation with iterative extension:
+
+\begin{table}[!ht]
+\centering
+
+%=================== FIRST TABLE (ALTO) ===================%
+\small
+\begin{tabular}{lrrr}
+\hline
+Metric & PAPER & Ours & $\Delta$(\text{PAPER} - \text{Ours}) \\ 
+\hline
+F1-Cell        & 0.431 & 0.403 & 0.028 \\
+Cardinality    & 0.659 & 0.465 & 0.194 \\
+Tuple Constr.  & 0.351 & 0.197 & 0.154 \\
+\textbf{AVG-Score} & \textbf{0.481} & \textbf{0.355} & \textbf{0.126} \\
+\#Tokens (M)   & 0.330 & 0.008 & 0.322 \\
+Avg Time       & 61.400 & 5.263 & 56.137 \\
+\hline
+\end{tabular}
+\caption{sql\_baseline}
+\label{sql_baseline}
+
+% --- PUNTO CRUCIALE: ---
+\par\vspace{1cm} % \par chiude il paragrafo (manda a capo), \vspace crea lo spazio
+% -----------------------
+
+%=================== SECOND TABLE (BASSO) ===================%
+\small
+\begin{tabular}{lrrr}
+\hline
+Metric & PAPER & Ours & $\Delta$(\text{PAPER} - \text{Ours}) \\
+\hline
+F1-Cell        & 0.237 & 0.271 & -0.034 \\
+Cardinality    & 0.462 & 0.500 & -0.038 \\
+Tuple Constr.  & 0.065 & 0.091 & -0.026 \\
+\textbf{AVG-Score} & \textbf{0.254} & \textbf{0.287} & \textbf{-0.033} \\
+\#Tokens (M)   & 0.830 & 0.005 & 0.825 \\
+Avg Time       & 120.000 & 2.206 & 117.794 \\
+\hline
+\end{tabular}
+\caption{nl\_baseline}
+\label{nl_baseline}
+
+\end{table}
+
+Maintaining consistency with the previous report, the following table show the results obtained with the iterative extension for both baselines using \texttt{gemini-2.5-flash} models:
+\begin{table}[h!]
+\centering
+\begin{tabular}{lcc}
+\toprule
+Metric & NL & SQL \\
+\midrule
+F1-CELL       & 0.425 & 0.456 \\
+CARDINALITY   & 0.696 & 0.607 \\
+TUPLE-CONSTR. & 0.262 & 0.245 \\
+\#TOKENS (M)   & 0.028 & 0.067 \\
+AVG-TIME (s)  & 5.035 & 9.681 \\
+\textbf{AVG-SCORE} & \textbf{0.461} & \textbf{0.436} \\
+\bottomrule
+\end{tabular}
+\caption{Iterative Results for \texttt{gemini-2.5-flash}.}
+\label{tab:iter_gemini}
+\end{table}
+
+
+The iterative execution impacts the behavior of both baselines in distinct
+ways. In the SQL setting, the model benefits from task repetition, often
+recovering additional valid tuples that were missed in the first pass. This
+results in higher tuple–level completeness and, in many cases, improvements in
+the \textsc{F1-Cell} and \textsc{Cardinality} metrics.  
+For NL queries, which are inherently more open–ended, the iterative mechanism
+still enhances tuple coverage, though with a less uniform effect across
+datasets.
+
+\subsection{Comparison with Non-Iterative Baselines}
+To contextualize the effect of iteration, we compare the results above with the
+single-pass baselines. Overall, the iterative variant provides measurable gains 
+in tuple completeness and global \textsc{Avg-Score}, especially in datasets where 
+the model tended to omit large fractions of the answer in a single call.  
+As expected, the iterative mechanism also increases the total number of
+generated tokens and the average execution time. However, these costs remain
+moderate and proportional to the configured value of \texttt{max\_iter}.
+
+In conclusion, iterative execution improves robustness and recall, providing a
+more stable foundation for evaluating LLM behavior under both SQL and NL
+interfaces.
+
+

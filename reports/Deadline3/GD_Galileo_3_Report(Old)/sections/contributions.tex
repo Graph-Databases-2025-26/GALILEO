@@ -1,0 +1,61 @@
+\section{Contributions}
+\label{sec:contributions}
+\paragraph{\textbf{Alessio Demo (Badge number: 2142885)}}
+\begin{itemize}[leftmargin=*]
+    \item \textbf{First Deadline:}  Developed function database connection and instance creation of DuckDB database manager for each dataset using the ingest files (.duckdb files).
+    Developed function for retrieving the SQL queries from .sql files, processing the queries and executing them on DuckDB database instance and finally store it in a json file. 
+    \item \textbf{Second Deadline:} Implemented the Baseline NL function for interacting with the LLM with a backoff in case of gemini returns a free-plan limitation exception, save the results in FULL JSON format and next using it in the main script. Unit tests for the baseline\_tools script using pytest. RAG task implementation using external libraries for creating the embeddings and evaluate the similarity between them in relation to a given prompt.
+    Developed scripts for getting the db schema from DuckDB database for each dataset and the SQL query parsing, that will be used in the GALOIS implementation in the next tasks.
+    \item \textbf{ThirdDeadline:} Deployed the query parser that translates SQL queries to an abstract syntax tree that
+    makes it more easy to manipulate. Developed the Galois class that implements the logic
+    handling the choice of physical and logical optimization techniques, also implemented
+    the class GaloisEstimator that interacts with LLM for confidence rates involved in the
+    process. Furthermore builded up the post-processing process that handles the execution
+    of original query on the data frame containing the LLM response, and JOIN operations
+    between multiple tables. Added costs optimization logic that asks the LLM to provide
+    data only for the attributes that are involved in each query, instead of asking the entire
+    set of attributes that make up the table.
+    Developed Experiment 4, Experiment 5 and Experiment 8.
+\end{itemize}
+Writing the reports sections reporting the complete pipeline followed for developing the stuff above.
+
+\paragraph{\textbf{Francesco Pivotto (Badge number: 2158296)}}
+\begin{itemize}[leftmargin=*]
+    \item \textbf{First Deadline:} Implemented a modular project structure by relocating core logic to \texttt{src/} and consolidating configuration and database management logic within dedicated utility modules (\texttt{config/loaders.py}). 
+    Established the framework for multi-provider support by adding initial integration for the \texttt{Grok LLM}, including dedicated configuration points (\texttt{.env}, \texttt{config.yaml}, \texttt{loaders.py}).
+    
+    \item \textbf{Second Deadline:} Completed initial implementation of the SQL baseline, including the core logic for connecting to \texttt{DuckDB} and structuring query execution via the Watsonx provider.
+    Fixed critical issues in environment variable loading, ensuring robust and standardized retrieval of secrets and settings via the central configuration object (using \texttt{loaders.py}).
+    Modularized the \texttt{sql\_baseline} module, incorporating the LCEL Pattern to prepare for dynamic LLM selection.
+    Centralized general utility functions by moving helpers into \texttt{baseline\_tools}.
+    Introduced the dedicated \textbf{\texttt{llm\_wrapper}} class to handle all LLM connection logic, API parameter management, and calls.
+
+    \item \textbf{Third Deadline:} Implemented the core Galois Execution Engine ($\texttt{GaloisExecutor}$) and integrated its iterative physical operators ($\texttt{Table-Scan}$ and $\texttt{Key-Scan}$). \\
+    Decoupled the entire schema management architecture into modular components \\ ($\texttt{base\_schema\_manager.py}$, $\texttt{schema\_factory.py}$).\\
+    Added logic to the Galois executor module to reproduce experiments 3 and 7 from the Galois paper.\\
+    
+
+\end{itemize}
+
+\paragraph{\textbf{Giorgia Amato (Badge number: 2159999)}}
+\begin{itemize}[leftmargin=*]
+    \item \textbf{First Deadline:} Contributed to the project initialization by setting up the repository structure, environment configuration, and shared utility scripts.
+    Added support for \texttt{EXPLAIN} and \texttt{EXPLAIN ANALYZE} with JSON serialization, implemented automatic JSON generation for query outputs, and improved logging, debugging, and testing utilities.
+
+    \item \textbf{Second Deadline:} Developed the Gemini-based SQL baseline, including IK/MC query handling, schema and raw-data injection into prompts, structured JSON parsing via Pydantic models, and robust error/timeout management.
+    Refactored and extended unit tests for baseline tools and added new tests validating LLM interaction and Gemini-based SQL execution.
+
+    \item \textbf{Third Deadline:} Implemented the iterative extensions for both SQL and NL baselines, introducing configurable execution via a \texttt{max\_iter} parameter, tuple deduplication across iterations, and early-stopping conditions when no new tuples are returned.
+    Standardized the aggregation and reporting of token usage and latency metrics for iterative executions, ensuring full compatibility with the existing JSON output schema.
+
+    Implemented the \textbf{GALOIS-WO Table-Scan} pipeline, including the \texttt{GaloisExecutor}, the iterative execution loop (initial and iterative prompts), stopping criteria, and robust JSON parsing and deduplication logic to guarantee unique tuple collection.
+    Developed the \texttt{GaloisWOSchemaManager} for DuckDB schema inspection, table and attribute discovery, table-name resolution, key extraction, and automatic JSON schema example generation.
+
+    Designed and implemented the \textbf{demo\_process\_single\_query} debugging utility, enabling step-by-step inspection of GALOIS execution variants (WO, A, S, F), including parser output, execution plans, intermediate debug information, statistics, and partial result inspection.
+
+    Fully implemented \textbf{Experiment~2 (Physical and Logical Optimization)}, including the experiment runner, evaluation pipeline, metric computation, result aggregation, and reproducible summary generation, ensuring strict alignment with the experimental protocol described in the GALOIS paper.
+
+    Initiated the implementation of \textbf{Experiment~6 (Evolution of Prompt Size)}, defining the experimental logic, metrics, and execution structure for measuring prompt growth across iterations in GALOIS; the completion and extension of this experiment were subsequently carried out by another team member.
+    
+    Contributed to the writing and refinement of the report sections describing the iterative baselines, the GALOIS-WO Table-Scan algorithm, Experiment~2, and the corresponding numerical results.
+\end{itemize}

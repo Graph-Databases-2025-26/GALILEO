@@ -142,18 +142,17 @@ The algorithm accepts the following parameters:
 
 \newpage
 \subsection{Adaptive Strategy Selection and Confidence Estimation}\label{subsec:conf_est}
+The framework incorporates an adaptive execution layer that dynamically mediates the selection between the $\text{Table-Scan}$ and $\text{Key-Scan}$ operators. This decision is parameterized by a Confidence Estimator, which quantitatively assesses the expected factual data retrieval reliability based on the $Q$'s schema complexity and the LLM's raw confidence score.
+\\\\
+The confidence estimation model incorporates a decay factor sensitive to the number of projected columns. The final confidence score $\text{C}_{final}$ is calculated from the LLM's intrinsic raw confidence ($\text{C}_{raw}$) by applying an exponential decay based on $\text{N}_{cols}$, the cardinality of attributes in the $\text{SELECT}$ clause:
 
-The framework incorporates an adaptive execution layer that dynamically mediates the selection between the \textit{Table-Scan} and \textit{Key-Scan} operators. This decision is parameterized by a Confidence Estimator, which quantitatively assesses the expected factual data retrieval reliability based on the schema complexity of the query ($Q$) and the LLM's raw confidence score.
-
-The confidence estimation model incorporates a decay factor sensitive to the number of projected columns. The final confidence score $C_{final}$ is calculated from the LLM's intrinsic raw confidence ($C_{raw}$) by applying an exponential decay based on $N_{cols}$, representing the cardinality of attributes in the \texttt{SELECT} clause:
-
-\[
-C_{final} = (C_{raw})^{N_{cols}}
-\]
-
-This formulation rigorously models the non-linear increase in difficulty for the LLM to generate a coherent, fully populated tuple set as the schema width grows.
-
-\paragraph{Execution Strategy Selection Heuristic}
-The selection logic compares the derived score against a predefined operational threshold ($\tau$). If $C_{final}$ exceeds $\tau$, the system prioritizes the \textit{Key-Scan} approach. This two-phase method aligns with a Chain-of-Thought reasoning process, which is generally associated with higher accuracy and factuality when the model exhibits sufficient confidence. Conversely, if $C_{final}$ falls below $\tau$, or if the schema is judged to be excessively wide ($N_{cols} \gg 1$), the framework defaults to the \textit{Table-Scan} operator. \textit{Table-Scan} is considered the more robust strategy when factual confidence is low, as it reduces the reasoning complexity of the initial extraction target.
-
-This adaptive mechanism is fundamental for optimizing the execution of the full \textsc{Galois}$_{F}$ logical plan by selecting the most appropriate physical operator based on a data-driven confidence metric.
+$$
+\text{C}_{final} = (\text{C}_{raw})^{\text{N}_{cols}}
+$$
+This formulation rigorously models the non-linear increase in difficulty for the LLM to generate a coherent, fully populated tuple set as the schema width grows.\\
+Execution Strategy Selection Heuristic:
+\begin{itemize}
+    \item If $\text{C}_{final}$ exceeds a predefined operational threshold ($\tau$), the system prioritizes the Key-Scan approach. This two-phase method aligns with a Chain-of-Thought reasoning process, which is generally associated with higher accuracy and factuality when the model exhibits sufficient confidence.
+    \item Conversely, if $\text{C}_{final}$ falls below $\tau$, or if the schema is judged to be excessively wide ($\text{N}_{cols} \gg 1$), the framework defaults to the Table-Scan operator. $\text{Table-Scan}$ is considered the more robust strategy when the factual confidence is low, as it reduces the complexity of the initial extraction target (the full tuple vs. just the key).
+\end{itemize}
+This adaptive mechanism is fundamental for optimizing the execution of the full GALOIS-F logical plan by selecting the most appropriate physical operator based on a data-driven confidence metric.

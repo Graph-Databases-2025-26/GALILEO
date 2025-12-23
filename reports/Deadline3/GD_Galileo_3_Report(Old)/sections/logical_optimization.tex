@@ -1,0 +1,16 @@
+\section{Logical Optimization (Query PLanning)}
+
+The Logical Optimization phase determines what information needs to be extracted from the LLM and which filtering conditions should be "pushed down" to the generative model versus applied locally. This decision-making process is critical to balancing the trade-off between retrieval precision and the risk of hallucination.
+
+\subsection{Predicate Push-Down Strategy}
+The system implements a flexible planning mechanism capable of generating different execution plans based on the configured optimization level. The planner analyzes the \textbf{WHERE} clause of the parsed SQL query and partitions the conditions into two sets: \textbf{conditions\_to\_push} (integrated into the prompt) and \textbf{residual\_conditions} (deferred to the post-processor).
+The framework supports four distinct logical variants:\begin{itemize}
+    \item \textbf{No-Push (GALOIS-WO)}: Treats the LLM purely as a data source. No filtering conditions are included in the prompt; the system retrieves the entire extension of the table (or its keys) using the key-scan and performs all filtering locally.
+    \item \textbf{Push-All (GALOIS-A)}: Maximizes delegation by translating all SQL predicates into natural language constraints within the prompt. This assumes high model capability in understanding and applying complex logic.
+    \item \textbf{Push-Selective (GALOIS-S)}: A heuristic approach that identifies and pushes only the most selective condition, using the LLM's confidence self-assessment as a proxy to determine which conditions are “safe” or “selective” enough to be handled directly by the generative model and aims to reduce the search space without overwhelming the model context.
+    \item \textbf{Push-Confident(GALOIS-F)}: An adaptive strategy that utilizes a \textbf{ConfidenceEstimator}. The system queries the LLM to self-evaluate its confidence in correctly assessing specific predicates (returning a "HIGH" or "LOW" score). Only conditions with high confidence scores are pushed down, while ambiguous ones are retained for local execution.
+    Furthermore the LLM also does an estimation process over the Physical optimization to apply looking to the entire query, the details will be discussed in section \ref{subsec:conf_est}. 
+\end{itemize}
+
+\subsection{Join Handling Details}
+For multi-table queries, the logical planner decomposes the join operation into independent scan tasks. The system identifies all tables involved in the query (FROM clause and JOIN clauses) and generates a sub-plan for each. The planner ensures that alias references in the SQL query are correctly mapped to their respective table scans, allowing the Executor to fetch data for each relation independently before they are rejoined in the Post-Processing phase.

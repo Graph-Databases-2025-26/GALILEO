@@ -1,101 +1,97 @@
 \section{Numerical Results}
 \label{results_galois}
-In this section we will show a comparison between the metrics of original GALOIS paper written by the authors, and the metrics that we obtained from our GALOIS implementation.
+In this section, we present a comparison between the metrics reported in the original \textsc{Galois} paper and those obtained from our implementation.
 
-%===========================================================
-\subsection{GALOIS WO Results comparison}
-
-\begin{table}[H] % [H] forza la tabella a stare QUI
-\centering
-\begin{tabular}{lrrr}
-\hline
-Metric & PAPER & Ours & $\Delta(\text{PAPER} - \text{Ours})$ \\
-\hline
-F1-Cell       & 0.518 & 0.157 & 0.361 \\
-Cardinality   & 0.691 & 0.357 & 0.334 \\
-Tuple Constr. & 0.389 & 0.060 & 0.329 \\
-\textbf{AVG-Score} & \textbf{0.531} & \textbf{0.191} & \textbf{0.340} \\
-\#Tokens (M)  & 19.710 &  0.163    &  19.709     \\
-Avg Time      & 1460.0 &  43.103    &   1416.897    \\
-\hline
-\end{tabular}
-\caption{GaloisWO comparison}
-\label{galoisWO_results}
-\end{table}
-
-%===========================================================
-\subsection{GALOIS S Results comparison}
+\subsection{GALOIS Variant Comparison}
 
 \begin{table}[H]
-\centering
-\begin{tabular}{lrrr}
-\hline
-Metric & PAPER & Ours & $\Delta(\text{PAPER} - \text{Ours})$ \\
-\hline
-F1-Cell       & 0.480 & 0.434 & 0.046 \\
-Cardinality   & 0.655 & 0.667 & -0.012 \\
-Tuple Constr. & 0.365 & 0.297 & 0.068 \\
-\textbf{AVG-Score} & \textbf{0.500} & \textbf{0.466} & \textbf{0.034} \\
-\#Tokens (M)  & 0.960 &  0.088    &   0.872    \\
-Avg Time      & 130.00 &  17.952   &   112.048    \\
-\hline
-\end{tabular}
-\caption{GaloisS comparison}
-\label{galoiss_results}
+    \centering
+    \footnotesize % Riduce il font per far stare due tabelle affiancate
+    \setlength{\tabcolsep}{3pt} % Riduce lo spazio tra le colonne
+    
+    % --- RIGA 1: WO (Sinistra) e S (Destra) ---
+    \begin{minipage}[t]{0.48\textwidth}
+        \centering
+        \caption{\textsc{Galois}$_{WO}$ Comparison}
+        \label{tab:galoisWO_results}
+        \begin{tabular}{lrrr}
+            \toprule
+            \textbf{Metric} & \textbf{PAPER} & \textbf{Ours} & $\mathbf{\Delta}$ \\
+            \midrule
+            F1-Cell & 0.518 & 0.157 & 0.361 \\
+            Cardinality & 0.691 & 0.357 & 0.334 \\
+            Tuple Constr. & 0.389 & 0.060 & 0.329 \\
+            \textbf{AVG} & \textbf{0.531} & \textbf{0.191} & \textbf{0.340} \\
+            \#Tokens (M) & 19.71 & 0.16 & 19.71 \\
+            Avg Time & 1460.0 & 43.1 & 1416.9 \\
+            \bottomrule
+        \end{tabular}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{0.48\textwidth}
+        \centering
+        \caption{\textsc{Galois}$_{S}$ Comparison}
+        \label{tab:galoiss_results}
+        \begin{tabular}{lrrr}
+            \toprule
+            \textbf{Metric} & \textbf{PAPER} & \textbf{Ours} & $\mathbf{\Delta}$ \\
+            \midrule
+            F1-Cell & 0.480 & 0.434 & 0.046 \\
+            Cardinality & 0.655 & 0.667 & -0.012 \\
+            Tuple Constr. & 0.365 & 0.297 & 0.068 \\
+            \textbf{AVG} & \textbf{0.500} & \textbf{0.466} & \textbf{0.034} \\
+            \#Tokens (M) & 0.96 & 0.09 & 0.87 \\
+            Avg Time & 130.0 & 18.0 & 112.0 \\
+            \bottomrule
+        \end{tabular}
+    \end{minipage}
+
+    \vspace{0.5cm} % Spazio verticale tra le due righe
+
+    % --- RIGA 2: A (Sinistra) e F (Destra) ---
+    \begin{minipage}[t]{0.48\textwidth}
+        \centering
+        \caption{\textsc{Galois}$_{A}$ Comparison}
+        \label{tab:galoisA_results}
+        \begin{tabular}{lrrr}
+            \toprule
+            \textbf{Metric} & \textbf{PAPER} & \textbf{Ours} & $\mathbf{\Delta}$ \\
+            \midrule
+            F1-Cell & 0.543 & 0.417 & 0.126 \\
+            Cardinality & 0.799 & 0.614 & 0.185 \\
+            Tuple Constr. & 0.448 & 0.279 & 0.169 \\
+            \textbf{AVG} & \textbf{0.592} & \textbf{0.436} & \textbf{0.156} \\
+            \#Tokens (M) & 0.95 & 0.08 & 0.87 \\
+            Avg Time & 120.5 & 24.5 & 96.0 \\
+            \bottomrule
+        \end{tabular}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{0.48\textwidth}
+        \centering
+        \caption{\textsc{Galois}$_{F}$ Comparison}
+        \label{tab:galoisF_results}
+        \begin{tabular}{lrrr}
+            \toprule
+            \textbf{Metric} & \textbf{PAPER} & \textbf{Ours} & $\mathbf{\Delta}$ \\
+            \midrule
+            F1-Cell & 0.563 & 0.319 & 0.244 \\
+            Cardinality & 0.835 & 0.528 & 0.307 \\
+            Tuple Constr. & 0.464 & 0.166 & 0.298 \\
+            \textbf{AVG} & \textbf{0.622} & \textbf{0.338} & \textbf{0.284} \\
+            \#Tokens (M) & 1.72 & 0.14 & 1.58 \\
+            Avg Time & 47.4 & 26.2 & 21.2 \\
+            \bottomrule
+        \end{tabular}
+    \end{minipage}
 \end{table}
+As illustrated in the tables above, the most significant performance divergence is observed in the \textsc{Galois}$_{WO}$ version. This shortfall can be attributed to three primary factors: the probabilistic nature of "Context-Free" retrieval, the loss of semantic cohesion in the \texttt{Key-Scan} operator, and the depth of iteration in simulated table scans.
 
-%===========================================================
-\subsection{GALOIS A Results comparison}
+\paragraph{Context-Free Retrieval and Popularity Bias}
+The primary cause of the low recall in \textsc{Galois}$_{WO}$ is the absence of predicate pushdown. By design, this variant forces the logical plan to strip all \texttt{WHERE} clauses, presenting the LLM with a generic query (e.g., "List all presidents" instead of "List presidents of Venezuela"). Unlike a deterministic database storage engine that scans all records faithfully, an LLM behaves as a probabilistic engine heavily influenced by popularity bias. Without the "guidance" of specific filters in the prompt, the model tends to generate only general or highly popular entities. Since the Post-Processing module can only filter data that has been successfully retrieved, the lack of relevant entries renders the local filtering phase ineffective.
 
-\begin{table}[H]
-\centering
-\begin{tabular}{lrrr}
-\hline
-Metric & PAPER & Ours & $\Delta(\text{PAPER} - \text{Ours})$ \\
-\hline
-F1-Cell       & 0.543 & 0.417 & 0.126 \\
-Cardinality   & 0.799 & 0.614 & 0.185 \\
-Tuple Constr. & 0.448 & 0.279 & 0.169 \\
-\textbf{AVG-Score} & \textbf{0.592} & \textbf{0.436} & \textbf{0.156} \\
-\#Tokens (M)  & 0.950 & 0.076    &  0.874     \\
-Avg Time      & 120.50 & 24.481   &  96.019     \\
-\hline
-\end{tabular}
-\caption{GaloisA comparison}
-\label{galoisA_results}
-\end{table}
+\paragraph{Semantic Decohesion in the Key-Scan Operator}
+Our implementation highlights a structural weakness in the \texttt{Key-Scan} physical operator, specifically in how it decouples the retrieval of keys (Phase 1) from their attributes (Phase 2). In a standard \texttt{Table-Scan} (used in \textsc{Galois}$_{A}$ and \textsc{Galois}$_{S}$), the co-occurrence of related tokens in the generation window (e.g., generating "Venezuela" immediately next to a candidate name) helps the LLM's self-attention mechanism maintain semantic consistency. By isolating the key generation, the \texttt{Key-Scan} loses this context. Furthermore, in a "No-Push" scenario, the first phase often wastes significant token budget generating irrelevant keys, which are then discarded during post-processing, drastically reducing the system's overall efficiency.
 
-%===========================================================
-\subsection{GALOIS F Results comparison}
-
-\begin{table}[H]
-\centering
-\begin{tabular}{lrrr}
-\hline
-Metric & PAPER & Ours & $\Delta(\text{PAPER} - \text{Ours})$ \\
-\hline
-F1-Cell       & 0.563 & 0.319 & 0.244 \\
-Cardinality   & 0.835 & 0.528 & 0.307 \\
-Tuple Constr. & 0.464 & 0.166 & 0.298 \\
-\textbf{AVG-Score} & \textbf{0.622} & \textbf{0.338} & \textbf{0.284} \\
-\#Tokens (M)  & 1.720 &   0.142   &  1.578     \\
-Avg Time      & 47.400 &  26.196   &  21.204     \\
-\hline
-\end{tabular}
-\caption{GaloisF comparison}
-\label{galoisF_results}
-\end{table}
-
-As we can see from the tables above, we obtained the worst results from GALOIS WO version due to three factors:
-the probabilistic nature of "Context-Free" retrieval, the loss of semantic cohesion in the Key-Scan operator, and the depth of iteration in simulated table scans.
-\begin{itemize}
-    \item \textbf{Context-Free Retrieval and Popularity Bias}:The primary cause of the low recall in GALOIS WO is the absence of predicate pushdown. By design, GALOIS WO forces the logical plan to strip all \texttt{WHERE} clauses , presenting the LLM with a generic query (e.g., "List all presidents" instead of "List presidents of Venezuela"). Unlike a deterministic database storage engine that scans all records faithfully, an LLM is a probabilistic engine heavily influenced by popularity bias. Without the "guidance" of specific filters in the prompt, the model generates general entities.
-    Since the GaloisPostProcessor can only filter data that has been successfully retrieved analyzing the former query, the lack of relevant entries renders the local filtering phase ineffective.
-    \item \textbf{Semantic Decohesion in the Key-Scan Operator}: Our implementation highlights a structural weakness in the Key-Scan physical operator, in details it decouples the retrieval of keys (Phase 1) from their attributes (Phase 2).
-    In a standard Table-Scan (used in GALOIS A/S), the co-occurrence of related tokens in the generation window (e.g., generating "Venezuela" immediately next to a candidate name) helps the LLM's self-attention mechanism maintain semantic consistency.
-    By isolating the key generation, the Key-Scan loses this context, furthermore in a "No-Push" scenario, the first phase wastes significant token budget generating irrelevant keys, which are then discarded during post-processing, drastically reducing the system's overall efficiency.
-    \item \textbf{The Trade-off Between Execution Time and Scan Depth}:A critical divergence from the reference paper is observed in the average execution time.
-    This discrepancy indicates that our implementation imposes a stricter limit on iterations (\texttt{max\_iter} defaults to 4 in \texttt{executor.py}). To successfully simulate a "Full Table Scan" on an LLM—essentially brute-forcing the model to output its entire knowledge base for a given entity—a system must iterate significantly longer to bypass the initial layer of popular results. Our lower execution time suggests that the retrieval process is terminated prematurely, capturing only the "surface" data.
-    This suggests that GALOIS WO is theoretically viable only with massive iteration depth, which may be inefficient for real-world applications due to latency and token cost constraints.
-    Conversely, GALOIS S and A perform better because the prompt acts as a "soft index" allowing the LLM to jump directly to the relevant data partition without requiring exhaustive iteration.
-\end{itemize}
+\paragraph{The Trade-off Between Execution Time and Scan Depth}
+A critical divergence from the reference paper is observed in the average execution time. This discrepancy indicates that our implementation imposes a stricter limit on iterations (\texttt{max\_iter} defaults to 4 in \texttt{executor.py}). To successfully simulate a "Full Table Scan" on an LLM—essentially brute-forcing the model to output its entire knowledge base for a given entity—a system must iterate significantly longer to bypass the initial layer of popular results. Our lower execution time suggests that the retrieval process is terminated prematurely, capturing only the "surface" data. This implies that \textsc{Galois}$_{WO}$ is theoretically viable only with massive iteration depth, which may be inefficient for real-world applications due to latency and token cost constraints. Conversely, \textsc{Galois}$_{S}$ and \textsc{Galois}$_{A}$ perform better because the prompt acts as a "soft index," allowing the LLM to jump directly to the relevant data partition without requiring exhaustive iteration.

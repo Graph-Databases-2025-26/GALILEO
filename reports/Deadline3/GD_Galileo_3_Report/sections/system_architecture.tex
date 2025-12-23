@@ -1,45 +1,24 @@
-\section{GALOIS goal and System Architecture}
+\section{\textsc{Galois} Goal and System Architecture}
 
-Large Language Models (LLMs) can answer declarative queries expressed in Natural
-Language (NL) or SQL, but their one-shot responses frequently fail to recover complete
-and factually consistent tuples when queries involve filtering, joins, or aggregations. As
-highlighted in the GALOIS paper, direct prompting exhibits limited recall and incomplete
-enumeration, making LLMs unreliable as standalone query processors.
-\\
-The GALOIS framework mitigates these limitations by treating the LLM as a latent
-knowledge store and decomposing execution into logical and physical operators, in
-analogy with traditional DBMSs. Rather than issuing a single prompt, GALOIS executes
-structured scan and filtering strategies (Table Scan, Key Scan) together with multiple
-logical planning variants (push-all, push-selective, push-wo, and the optimized
-GALOIS-F). This operator-based design improves tuple completeness and stabilizes
-execution across heterogeneous query types.
+Large Language Models (LLMs) can answer declarative queries expressed in Natural Language (NL) or SQL, but their one-shot responses frequently fail to recover complete and factually consistent tuples when queries involve filtering, joins, or aggregations. As highlighted in the \textsc{Galois} paper, direct prompting exhibits limited recall and incomplete enumeration, making LLMs unreliable as standalone query processors.
+
+The \textsc{Galois} framework mitigates these limitations by treating the LLM as a latent knowledge store and decomposing execution into logical and physical operators, in analogy with traditional DBMSs. Rather than issuing a single prompt, \textsc{Galois} executes structured scan and filtering strategies (such as \texttt{Table-Scan} and \texttt{Key-Scan}) together with multiple logical planning variants (\texttt{push-all}, \texttt{push-selective}, \texttt{push-wo}, and the optimized \textsc{Galois}$_{F}$). This operator-based design improves tuple completeness and stabilizes execution across heterogeneous query types.
 
 Our implementation orchestrates the interaction between a declarative SQL interface and the probabilistic nature of LLMs through four distinct stages: parsing, logical planning, physical execution, and local post-processing. This section details the core components implemented in the \texttt{Galois} orchestration class.
 
-
 \subsection{Orchestration and Schema Management}
 
-\begin{sloppypar}
-The entry point of the system is the \texttt{Galois} class, which initializes the workflow by parsing the input SQL query into an Abstract Syntax Tree (AST) using the \texttt{sql\_query\_parser} module. Unlike standard text-to-SQL approaches, GALOIS does not immediately prompt the LLM with the raw query, instead it inspects the database structure using the \texttt{GaloisSchemaManager}.
-This component connects to a read-only DuckDB instance to retrieve accurate metadata (column names, primary keys, and data types). This schema awareness allows the system to construct semantically valid JSON schemas for the prompts, ensuring that the LLM's output adheres to the strict typing required for the subsequent relational operations.
-\\\textbf{Data-Driven Schema Enrichment}: The Schema Manager has been enhanced to support few-shot context injection. For textual columns (VARCHAR/TEXT) that are not primary keys, the manager queries the underlying DuckDB instance to retrieve a small sample of actual values (e.g., 3 examples).
-These examples are injected directly into the JSON schema description passed to the LLM ("description": "Examples: ..."), providing the model with immediate context about data formatting and distribution.
+The entry point of the system is the \texttt{Galois} class, which initializes the workflow by parsing the input SQL query into an Abstract Syntax Tree (AST) using the \texttt{sql\_query\_parser} module. Unlike standard text-to-SQL approaches, \textsc{Galois} does not immediately prompt the LLM with the raw query; instead, it inspects the database structure using the \texttt{GaloisSchemaManager}. This component connects to a read-only \texttt{DuckDB} instance to retrieve accurate metadata (column names, primary keys, and data types). This schema awareness allows the system to construct semantically valid JSON schemas for the prompts, ensuring that the LLM's output adheres to the strict typing required for the subsequent relational operations.
 
-\end{sloppypar}
+\textbf{Data-Driven Schema Enrichment}: The \texttt{GaloisSchemaManager} has been enhanced to support few-shot context injection. For textual columns (\texttt{VARCHAR} or \texttt{TEXT}) that are not primary keys, the manager queries the underlying \texttt{DuckDB} instance to retrieve a small sample of actual values (e.g., 3 examples). These examples are injected directly into the JSON schema description passed to the LLM (e.g., under the key \texttt{"description"}), providing the model with immediate context about data formatting and distribution.
 
 \subsection{The Execution Engine}
-The retrieval logic is encapsulated within the \texttt{GaloisExecutor} class. This component abstracts the complexity of the LLM interaction (via LangChain) and implements the iterative retrieval loops.
 
-\textbf{State Management and Deduplication}: To handle the context window limitations of LLMs, the executor utilizes a custom \texttt{GaloisMemory} class. This memory component maintains a history of retrieved tuples and implements a strict deduplication mechanism based on primary key hashing \texttt{(\_get\_key\_values)}. This ensures that subsequent iterations (up to a configurable max\_iter) prompt the model to generate only novel data.
+The retrieval logic is encapsulated within the \texttt{GaloisExecutor} class. This component abstracts the complexity of the LLM interaction (via \texttt{LangChain}) and implements the iterative retrieval loops.
 
-\textbf{Iterative Scan Operators}: The executor supports two physical operators:
-\begin{itemize}
-    \item \textbf{Table-Scan}: Iteratively requests complete tuples (keys and attributes) until convergence or iteration limits are reached.
-    \item \textbf{Key-Scan}: Decomposes retrieval into two phases. First, it iterates to collect all unique primary keys. Once the keys are consolidated, it issues a final "Tuple Request"  to retrieve non-key attributes for the collected identifiers.
-\end{itemize}
+\textbf{State Management and Deduplication}: To handle the context window limitations of LLMs, the executor utilizes a custom \texttt{GaloisMemory} class. This memory component maintains a history of retrieved tuples and implements a strict deduplication mechanism based on primary key hashing using the internal helper \texttt{\_get\_key\_values}. This ensures that subsequent iterations (up to a configurable \texttt{max\_iter}) prompt the model to generate only novel data.
 
-
-
+\textbf{Iterative Scan Operators}: The executor supports two physical operators. The \texttt{Table-Scan} iteratively requests complete tuples (keys and attributes) until convergence or iteration limits are reached. Alternatively, the \texttt{Key-Scan} decomposes retrieval into two phases: first, it iterates to collect all unique primary keys; once the keys are consolidated, it issues a final "Tuple Request" to retrieve non-key attributes for the collected identifiers.
 
 
 
