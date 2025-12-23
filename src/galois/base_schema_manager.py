@@ -133,7 +133,7 @@ class BaseSchemaManager:
             w_idx = 3
             w_name = 30
             
-            # Prefisso di allineamento
+            # alignment prefix
             p = "     | "
             
             LOG.info(f"{p}┌{'─'*w_idx}┬{'─'*w_name}┐")

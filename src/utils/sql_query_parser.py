@@ -95,7 +95,7 @@ def parse_sql(sql_query: str) -> Dict[str, Any]:
             join_table = join.this.name
             join_alias = join.this.alias or join_table
 
-            # Estrae la condizione ON (es. p.country = c.name)
+            # Extracts the ON condition (e.g. p.country = c.name)
             on_expression = join.args.get("on")
             on_condition = on_expression.sql(dialect="duckdb") if on_expression else None
 

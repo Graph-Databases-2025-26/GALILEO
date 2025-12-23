@@ -272,7 +272,7 @@ class GaloisExecutor:
         Logs a batch of results using a single line summary.
         """
         count = len(rows)
-        # Log minimalista su una riga per l'iterazione
+        # minimalist one line log for iteration
         if count > 0:
             first_key = list(rows[0].keys())[0]
             example_val = str(rows[0][first_key])
@@ -289,14 +289,14 @@ class GaloisExecutor:
         
         LOG.info(f"RSLT | [FINAL] Scan Completed: {count} unique tuples | Time: {time_val:.2f}s | Tokens: {tokens}")
 
-        # Prefisso di allineamento
+        # alignment prefix
         p = "     | "
 
         if not response:
             LOG.info(f"{p}(No data collected)")
             return
 
-        # 1. Determine columns and widths
+        #  Determine columns and widths
         columns = list(response[0].keys())
         col_widths = {col: len(col) for col in columns}
         
@@ -314,7 +314,7 @@ class GaloisExecutor:
         
         lp_width = 15 
 
-        # 2. Draw Table
+        #  Draw Table
         # Top Border
         top_border = f"{p}┌" + "┬".join("─" * w for w in col_widths.values()) + f"┬{'─'*lp_width}┐"
         LOG.info(top_border)

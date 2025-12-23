@@ -20,7 +20,7 @@ def _log_schema_flat(prefix_tag: str, table_name: str, schema: dict):
         w_key = 6
         w_extra = 40
 
-        # Prefisso di allineamento (5 spazi + pipe + spazio)
+        # alignment prefix 5 spaces pipe space
         p = "     | "
 
         # Costruzione Tabella

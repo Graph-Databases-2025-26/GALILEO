@@ -5,10 +5,7 @@ from typing import Literal, Any, List, Dict, cast, Optional
 import duckdb
 import pandas as pd
 from sqlglot import parse_one, exp
-
 from src.config import Config_Loader
-from src.db.run_explain_plans import DATA_ROOT
-from src.galois.galois_post_processing import GaloisPostProcessor
 from src.llm import get_llm_wrapper
 from src.galois.galois_prompts import system_prompt_galois_confidence, human_prompt_galois_confidence
 from src.utils import sql_query_parser, load_queries_from_folder
@@ -50,7 +47,7 @@ class Galois:
         self.sql_query = sql_query
         self.physical_strategy = physical_strategy
         
-        # Gestione della soglia (Exp 7 logic)
+        # Threshold handling (Exp 7 logic)
         if confidence_threshold is not None:
             self.confidence_threshold = confidence_threshold
         else:
@@ -119,7 +116,7 @@ class Galois:
         if self.physical_strategy == "auto":
             LOG.info(f"PLAN | [GALOIS] Auto-Strategy Check (Threshold: {self.confidence_threshold})")
             
-            # 1. Ottieni lo score numerico (0.0 - 1.0)
+            #  Get the numerical score (0.0 - 1.0)
             confidence_score = galois_estimator.estimate_confidence_query(
                 self.config, 
                 self.parsed_sql["from_table"], 
@@ -131,10 +128,10 @@ class Galois:
                 LOG.error(f"ERR  | [GALOIS] Invalid confidence score: {confidence_score}. Defaulting to 0.0")
                 confidence_score = 0.0
 
-            # 2. Decisione basata sulla soglia
+            #  threshold-based-decision
             decision = "KEY SCAN" if confidence_score >= self.confidence_threshold else "TABLE SCAN"
             
-            # Log pulito della decisione
+            # clean decision log
             LOG.info(f"PLAN | [GALOIS] Score: {confidence_score:.4f} vs {self.confidence_threshold} -> Decision: {decision}")
 
             if confidence_score >= self.confidence_threshold:
@@ -180,7 +177,7 @@ class Galois:
                     alias=t_alias
                 )
                 
-                # Costruzione query semplice per display/passaggio
+                # simple query construction for display step
                 cols_str = ", ".join(cols_to_pass) if cols_to_pass else "*"
                 simple_query = f"SELECT {cols_str} FROM {t_name}"
 
@@ -441,7 +438,7 @@ class Galois:
                 clean_sql_query = clean_sql_query[match.start():]
             clean_sql_query = clean_sql_query.replace("target.", "")
 
-            # --- INIEZIONE SMART ---
+            # --- SMART INJECTION---
             injected_cols = []
             try:
                 parsed_expression = parse_one(clean_sql_query)
@@ -595,7 +592,7 @@ def main():
     log_init()
     
     print("==========================================")
-    print("   TEST MINIMALE GALOIS (Python Port)     ")
+    print("   TEST GALOIS (Python Port)     ")
     print("==========================================")
 
     sql_query_test = """
@@ -616,7 +613,7 @@ def main():
         results, stats = galois_system.run_push_confident() # Unpacking tuple return
 
         print("\n==========================================")
-        print(f"   RISULTATO JOIN ({len(results)} righe)")
+        print(f"   JOIN RESULT ({len(results)} rows)")
         print("==========================================")
         print(json.dumps(results, indent=2))
 

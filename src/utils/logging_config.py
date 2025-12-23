@@ -16,21 +16,21 @@ def log_init() -> None:
     LOGS_DIR.mkdir(parents=True, exist_ok=True)
     LOG_FILE = LOGS_DIR / "pipeline.log"
     
-    # Rimuove il logger di default per evitare duplicati
+    # removes the default logger to avoid duplicates
     logger.remove()  
 
     # 1. Console output (Hybrid Style: Timestamp + Cyan Message)
     logger.add(
         sys.stdout,
-        # Data/Ora in Verde | Messaggio in Azzurro (Cyan)
-        # Rimuoviamo {level} per risparmiare spazio e mantenere i tuoi tag personalizzati (PLAN, EXEC) puliti
+        # Date/Time in Green | Message in Cyan
+        # We remove {level} to save space and keep your custom tags (PLAN, EXEC) clean
         format="<green>{time:YYYY-MM-DD HH:mm:ss.SSS}</green> | <cyan>{message}</cyan>",
         level="INFO",
         colorize=True,
     )
 
-    # 2. File output (Verbose / Debug Style)
-    # Mantiene timestamp e livelli per tracciabilità storica su file
+    #  File output (Verbose / Debug Style)
+    # Keeps timestamp and levels for historical traceability in log files
     logger.add(
         LOG_FILE,
         rotation="5 MB",          # start new file every 5 MB

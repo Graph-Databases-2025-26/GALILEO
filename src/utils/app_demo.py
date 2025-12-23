@@ -1,5 +1,4 @@
 import streamlit as st
-import json
 import pandas as pd
 import sys
 import os
@@ -13,24 +12,23 @@ from src.config.loaders import Config_Loader
 from src.utils.constants import debug_query
 from src.utils import sql_query_parser
 from src.galois.galois import Galois
-# Importiamo LOG direttamente dal tuo config
 from src.utils.logging_config import LOG
 
 st.set_page_config(page_title="Galois Framework Demo", layout="wide")
 
 
-# --- CUSTOM SINK PER LOGURU ---
+# --- CUSTOM SINK FOR LOGURU ---
 class StreamlitSink:
     """
-    Una classe che agisce come 'file-like object' per Loguru.
-    Accumula i log in una lista invece che scriverli su disco/console.
+    A class that acts like a file-like object for Loguru.
+    It accumulates logs in a list instead of writing them to disk/console.
     """
 
     def __init__(self):
         self.logs = []
 
     def write(self, message):
-        # Loguru passa il messaggio come stringa (già formattata)
+        # Loguru passes the message as a (already formatted) string
         self.logs.append(message)
 
     def get_content(self):
@@ -38,25 +36,25 @@ class StreamlitSink:
 
 
 def run_galois_demo(variant_key):
-    # 1. Creiamo il nostro "secchio" per i log
+    # 1. Create our "bucket" for logs
     sink = StreamlitSink()
 
-    # 2. AGGANCIAMO LOGURU
-    # Definiamo un filtro custom:
-    # - "src": "DEBUG" -> Mostra tutto il debug del tuo codice
-    # - "": "WARNING"  -> Per tutto il resto (httpx, ibm, etc), mostra solo errori gravi
+    # 2. ATTACH LOGURU
+    # Define a custom filter:
+    # - "src": "DEBUG" -> Show all debug from your code
+    # - "": "WARNING"  -> For everything else (httpx, ibm, etc), show only serious errors
     log_filter = {
         "src": "DEBUG",
         "": "WARNING"
     }
 
-    # LOG.add restituisce un ID numerico che serve per rimuovere l'handler dopo
+    # LOG.add returns a numeric ID used to remove the handler later
     handler_id = LOG.add(
         sink.write,
         format="{time:HH:mm:ss} | {level: <8} | {name}:{line} - {message}",
-        level="DEBUG",  # Livello minimo globale (poi filtrato dal dizionario sopra)
+        level="DEBUG",  # Global minimum level (then filtered by the dict above)
         filter=log_filter,
-        colorize=False  # Streamlit non supporta i colori ANSI nel blocco code standard
+        colorize=False  # Streamlit does not support ANSI colors in the standard code block
     )
 
     try:
@@ -84,21 +82,21 @@ def run_galois_demo(variant_key):
             "F": g.run_push_confident,
         }
 
-        # Esecuzione (con debug=True che attiva i log interni)
+        # Execution (with debug=True to enable internal logs)
         results, stats, debug_info = strategies[variant_key](debug=True)
 
-        # Recuperiamo il testo accumulato
+        # Retrieve accumulated text
         captured_logs = sink.get_content()
 
     finally:
-        # 3. PULIZIA FONDAMENTALE
-        # Rimuoviamo il sink per non avere log doppi/tripli se ripremi il bottone
+        # 3. ESSENTIAL CLEANUP
+        # Remove the sink to avoid duplicate/triple logs if the button is pressed again
         LOG.remove(handler_id)
 
     return sql_query, results, stats, debug_info, captured_logs
 
 
-# --- INTERFACCIA STREAMLIT ---
+# --- STREAMLIT INTERFACE ---
 st.title("🛡️ Galois Framework Interactive Demo")
 st.markdown("Analysis of SQL query optimization on unstructured data via LLM.")
 
@@ -125,18 +123,18 @@ if run_btn:
         try:
             sql_q, res, stats, d_info, logs = run_galois_demo(variant)
 
-            # 1. LOG DI ESECUZIONE
+            # 1. EXECUTION LOGS
             st.subheader("📟 Execution Logs (Backend Trace)")
             with st.expander("View Detailed Logs (Terminal Style)", expanded=True):
                 if not logs.strip():
                     st.warning("⚠️ No logs captured. Verify that src modules are using 'LOG.debug()' or 'LOG.info()'")
                 else:
-                    # Usiamo language="bash" o "log" per dare un po' di colore ai timestamp/info
+                    # Use language="bash" or "log" to give some color to timestamps/info
                     st.code(logs, language="bash")
 
             st.divider()
 
-            # 2. Parsing e Stats
+            # 2. Parsing and Stats
             c1, c2 = st.columns(2)
             with c1:
                 st.subheader("🔍 Parser Output")
