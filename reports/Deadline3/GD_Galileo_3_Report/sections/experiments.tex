@@ -55,12 +55,7 @@ All experiments are conducted on the \textbf{GEO} dataset, which queries the int
 
 \paragraph{Physical Optimization.}
 At the physical level, \textsc{GALOIS} selects how data is retrieved from the LLM. 
-For each query, we compare three execution strategies:
-\begin{itemize}
-    \item \textbf{Table-Scan}: retrieves full tuples in a single scan, providing broader context to the LLM.
-    \item \textbf{Key-Scan}: first retrieves key values and then populates remaining attributes, using a chain-of-thought style interaction.
-    \item \textbf{AUTO}: lets \textsc{GALOIS} automatically choose between Table-Scan and Key-Scan based on the confidence estimator described in the paper.
-\end{itemize}
+For each query, we compare three execution strategies: \textbf{Table-Scan}, \textbf{Key-Scan}, \textbf{AUTO}.
 
 We report both the average result quality and the total token consumption. 
 Additionally, we evaluate the \emph{AUTO accuracy}, i.e., how often the automatically selected strategy matches the best-performing fixed strategy (Table-Scan or Key-Scan) for a given query.
@@ -69,7 +64,7 @@ Additionally, we evaluate the \emph{AUTO accuracy}, i.e., how often the automati
     \centering
     \caption{Physical optimization results on GEO (AVG-Score and token usage).}
     \label{tab:exp2-physical}
-    \resizebox{0.75\textwidth}{!}{
+    \resizebox{0.6\textwidth}{!}{
     \begin{tabular}{lcc}
         \toprule
         \textbf{Strategy} & \textbf{AVG-Score} & \textbf{Tokens (M)} \\
@@ -85,12 +80,7 @@ The results show that, on GEO, \textbf{Table-Scan achieves the highest average q
 The AUTO strategy closely follows the best fixed plan, confirming that the confidence-based physical planner behaves robustly, although the gain over Table-Scan is limited for this dataset.
 
 \paragraph{Logical Optimization.}
-To isolate the impact of logical planning decisions, we fix the physical strategy to \textbf{Table-Scan} and evaluate different predicate pushdown strategies, as described in the paper:
-\begin{itemize}
-    \item \textbf{NO-PUSH}: no conditions are pushed down into the LLMScan.
-    \item \textbf{PUSH-ALL} (\textsc{GALOIS\textsubscript{A}}): all WHERE conditions are pushed down.
-    \item \textbf{PUSH-CONFIDENT} (\textsc{GALOIS\textsubscript{F}}): only conditions selected by the confidence estimator are pushed down.
-\end{itemize}
+To isolate the impact of logical planning decisions, we fix the physical strategy to \textbf{Table-Scan} and evaluate different predicate pushdown (\textbf{NO-PUSH}, \textbf{PUSH-ALL}, \textbf{PUSH-CONFIDENT}) strategies, as described in the paper.
 
 Only queries with at least two WHERE conditions are considered, in accordance with the experimental protocol of the original work.
 
@@ -98,7 +88,7 @@ Only queries with at least two WHERE conditions are considered, in accordance wi
     \centering
     \caption{Logical optimization results on GEO with fixed Table-Scan.}
     \label{tab:exp2-logical}
-    \resizebox{0.75\textwidth}{!}{
+    \resizebox{0.65\textwidth}{!}{
     \begin{tabular}{lcc}
         \toprule
         \textbf{Strategy} & \textbf{AVG-Score} & \textbf{Tokens (M)} \\
