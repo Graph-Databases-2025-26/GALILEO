@@ -5,34 +5,41 @@ While Logical Optimization defines the declarative scope of the data retrieval t
 \subsection{Table-Scan Algorithm Technical Specification}
 
 \subsubsection{Description}
-The \texttt{Table-Scan} algorithm is a single-phase, iterative extraction technique that leverages an LLM to retrieve a complete collection of unique, full-schema records (tuples) satisfying the input $Q$. This operator is designed to maximize coverage by focusing on the generation and accumulation of entire records in each iteration step, contrasting with multi-phase strategies.
-
-\begin{enumerate}
-    \item Iterative Tuple Collection (Algorithm \ref{alg:table_scan}, Lines 4--19): The algorithm executes a loop, repeatedly invoking the LLM chain to discover and accumulate novel, complete unique tuples that conform to the constraints of $Q$.
-    \begin{itemize}
-        \item The initial invocation utilizes a base input prompt derived from $Q$.
-        \item Subsequent iterations, $i > 0$, dynamically modify the input request by injecting the historical context ($\mathcal{H}$) of previously accumulated tuples. This mechanism guides the LLM to seek novel, uncollected records, thereby enforcing deduplication and maximizing the result set.
-        \item The process is bounded by $I_{max}$ and features a termination condition: if the post-response parsing step confirms the absence of new unique tuples ($\mathcal{R}_{new} = \emptyset$), the loop is prematurely exited (handling the $\text{Convergence}$ criterion).
-    \end{itemize}
-    \item Finalization and Cleanup (Lines 22--24): Upon termination, the consolidated set of unique tuples residing in the internal $\mathcal{M}$ (Memory) structure is designated as the $\mathcal{R}_{final}$. The state of the internal memory/history is subsequently reset.
-\end{enumerate}
+The \texttt{Table-Scan} algorithm is a single-phase, iterative extraction technique that leverages an LLM to retrieve a complete collection of unique, full-schema records (tuples) satisfying the input query $Q$. This operator is designed to maximize coverage by focusing on the generation and accumulation of entire records in each iteration step, contrasting with multi-phase strategies.
+\\\\
+The execution process begins with an iterative tuple collection loop (Algorithm \ref{alg:table_scan}, Lines 4--19), which repeatedly invokes the LLM chain to discover and accumulate novel, unique tuples that conform to the constraints of $Q$. The initial invocation ($i=0$) utilizes a base input prompt derived directly from the query. For subsequent iterations ($i > 0$), the algorithm dynamically modifies the input request by injecting the historical context ($\mathcal{H}$) of previously accumulated tuples. This mechanism guides the LLM to seek novel, uncollected records, thereby enforcing deduplication and maximizing the result set. The process is bounded by a maximum number of iterations ($I_{max}$), but it also features an early termination condition: if the post-response parsing step confirms the absence of new unique tuples ($\mathcal{R}_{new} = \emptyset$), the loop is prematurely exited to handle convergence efficiently.
+\\\\
+Upon termination of the loop, the finalization phase (Lines 22--24) retrieves the consolidated set of unique tuples stored in the internal memory structure ($\mathcal{M}$), designating it as the final result set $\mathcal{R}_{final}$. The state of the internal memory and history is subsequently reset to ensure clean execution for future queries.
 
 \subsubsection{Inputs}
-\begin{itemize}
-    \item $Q$: The declarative data retrieval statement (e.g., an SQL-like query).
-    \item $\mathcal{P}_{pushdown}$: An optional set of \texttt{WHERE} clause predicates pushed down to refine the extraction scope.
-    \item $I_{max}$: An optional integer parameter specifying the maximum number of LLM invocations.
-\end{itemize}
+The algorithm requires the following parameters for execution:
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|l|p{0.75\linewidth}|}
+        \hline
+        \textbf{Parameter} & \textbf{Description} \\
+        \hline
+        $Q$ & The declarative data retrieval statement (e.g., an SQL-like query). \\
+        \hline
+        $\mathcal{P}_{pushdown}$ & An optional set of \texttt{WHERE} clause predicates pushed down to refine the extraction scope. \\
+        \hline
+        $I_{max}$ & An optional integer parameter specifying the maximum number of LLM invocations. \\
+        \hline
+    \end{tabular}
+    \caption{Input Parameters for Table-Scan}
+    \label{tab:table_scan_inputs}
+\end{table}
 
 \begin{algorithm}
 \caption{Table-Scan Algorithm}
 \label{alg:table_scan}
 \begin{algorithmic}[1]
 \Function{Table\_Scan}{$Q$, $\mathcal{P}_{pushdown}$, $I_{max}$}
-    \State $\mathcal{I} \gets \Call{BuildInitialRequest}{Q}$ 
+    \State $\mathcal{I} \gets \Call{BuildInitialRequest}{Q}$
     \State $\mathcal{C} \gets \Call{InitializeLLMInteractionChain}{}$
     \State $i \gets 0$
-    \State $\mathcal{H} \gets \emptyset$ 
+    \State $\mathcal{H} \gets \emptyset$
     \\
     \While{$i < I_{max}$}
         \If{$i = 0$}
@@ -41,10 +48,10 @@ The \texttt{Table-Scan} algorithm is a single-phase, iterative extraction techni
             \State $\mathcal{I} \gets \Call{UpdateRequestWithHistory}{\mathcal{H}}$
             \State $\mathcal{R}_{raw} \gets \mathcal{C}.\Call{Invoke}{\mathcal{I}}$
         \EndIf
-        \\  
+        \\
         \State $\mathcal{R}_{parsed} \gets \Call{ParseLLMResponse}{\mathcal{R}_{raw}}$
         \State $\mathcal{R}_{new} \gets \Call{IdentifyNewUniqueTuples}{\mathcal{R}_{parsed}, \mathcal{H}}$
-        \If{$\mathcal{R}_{new} = \emptyset$} 
+        \If{$\mathcal{R}_{new} = \emptyset$}
             \State \textbf{break}
         \EndIf
         \\
@@ -64,35 +71,41 @@ The \texttt{Table-Scan} algorithm is a single-phase, iterative extraction techni
 \subsection{Key-Scan Algorithm Technical Specification}
 
 \subsubsection{Description}
-The \texttt{Key-Scan} algorithm constitutes a specialized, two-phase iterative data extraction strategy . It employs an LLM to retrieve the required record set by prioritizing the discovery and consolidation of unique primary/candidate key values before performing a final request for associated, non-key attributes. This two-phase approach inherently ensures record uniqueness and may improve token efficiency by minimizing the size of the history context injected into the prompt.
-
-\begin{enumerate}
-    \item Iterative Key Collection (Algorithm \ref{alg:key_scan}, Lines 4--19): This phase iteratively invokes the LLM chain to discover and accumulate a complete, unique set of $\mathcal{K}$ (key values) relevant to $Q$.
-    \begin{itemize}
-        \item The first iteration uses a prompt formulated to extract only the key attributes.
-        \item Subsequent iterations modify the input request by embedding a history ($\mathcal{H}$) of previously collected key values, steering the LLM's generation toward novel, uncollected records.
-        \item The loop is governed by $I_{max}$ and terminates if the parsing step confirms that no new unique key values ($\mathcal{K}_{new} = \emptyset$) were returned by the LLM (Convergence).
-    \end{itemize}
-    \item Final Attribute Retrieval (Tail Request) (Lines 22--26): Upon key collection convergence, the consolidated set of $\mathcal{K}_{all}$ is compiled. A single, dedicated final request (the \textit{Tail Request}) is issued to the LLM to efficiently fetch all missing non-key attributes ($\mathcal{A}$) corresponding to the collected keys.
-\end{enumerate}
-The function concludes by performing a relational join operation between the collected keys and the attributes from the final response to construct the $\mathcal{R}_{final}$ of complete, de-duplicated records.
+The \texttt{Key-Scan} algorithm constitutes a specialized, two-phase iterative data extraction strategy. It employs an LLM to retrieve the required record set by prioritizing the discovery and consolidation of unique primary or candidate key values before performing a final request for associated, non-key attributes. This two-phase approach inherently ensures record uniqueness and improves token efficiency by minimizing the size of the history context injected into the prompt.
+\\\\
+The first phase, Iterative Key Collection (Algorithm \ref{alg:key_scan}, Lines 4--19), iteratively invokes the LLM chain to discover and accumulate a complete, unique set of key values ($\mathcal{K}$) relevant to the query $Q$. The initial iteration uses a prompt formulated to extract only the key attributes. Subsequent iterations dynamically modify the input request by embedding a history ($\mathcal{H}$) of previously collected key values, steering the LLM's generation toward novel, uncollected records. This loop is governed by a maximum iteration limit ($I_{max}$) and a convergence condition: it terminates early if the parsing step confirms that no new unique key values ($\mathcal{K}_{new} = \emptyset$) were returned.
+\\\\
+Upon convergence of the key collection, the algorithm proceeds to the Final Attribute Retrieval phase (Lines 22--26). The consolidated set of all unique keys ($\mathcal{K}_{all}$) is compiled, and a single, dedicated final request (the \textit{Tail Request}) is issued to the LLM. This request efficiently fetches all missing non-key attributes ($\mathcal{A}$) corresponding to the collected keys. The function concludes by performing a relational join operation between the collected keys and the attributes from the final response to construct the final set of complete, de-duplicated records ($\mathcal{R}_{final}$).
 
 \subsubsection{Inputs}
-\begin{itemize}
-    \item $Q$: The SQL-like data retrieval statement.
-    \item $\mathcal{P}_{pushdown}$: A list of \texttt{WHERE} clause predicates for extraction refinement.
-    \item $I_{max}$: An optional integer parameter bounding the iterative key collection phase.
-\end{itemize}
+The algorithm accepts the following parameters:
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|l|p{0.75\linewidth}|}
+        \hline
+        \textbf{Parameter} & \textbf{Description} \\
+        \hline
+        $Q$ & The SQL-like data retrieval statement. \\
+        \hline
+        $\mathcal{P}_{pushdown}$ & A list of \texttt{WHERE} clause predicates for extraction refinement. \\
+        \hline
+        $I_{max}$ & An optional integer parameter bounding the iterative key collection phase. \\
+        \hline
+    \end{tabular}
+    \caption{Input Parameters for Key-Scan}
+    \label{tab:key_scan_inputs}
+\end{table}
 
 \begin{algorithm}
 \caption{Key-Scan Algorithm}
 \label{alg:key_scan}
 \begin{algorithmic}[1]
 \Function{Key\_Scan}{$Q$, $\mathcal{P}_{pushdown}$, $I_{max}$}
-    \State $\mathcal{I} \gets \Call{BuildInitialRequest}{Q}$ 
+    \State $\mathcal{I} \gets \Call{BuildInitialRequest}{Q}$
     \State $\mathcal{C} \gets \Call{InitializeLLMInteractionChain}{}$
     \State $i \gets 0$
-    \State $\mathcal{H} \gets \emptyset$ 
+    \State $\mathcal{H} \gets \emptyset$
     \\
     \While{$i < I_{max}$}
         \If{$i = 0$}
@@ -102,7 +115,7 @@ The function concludes by performing a relational join operation between the col
             \State $\mathcal{R}_{raw} \gets \mathcal{C}.\Call{Invoke}{\mathcal{I}}$
         \EndIf
         \\
-        \State $\mathcal{K}_{parsed} \gets \Call{ParseLLMResponse}{\mathcal{R}_{raw}}$ 
+        \State $\mathcal{K}_{parsed} \gets \Call{ParseLLMResponse}{\mathcal{R}_{raw}}$
         \State $\mathcal{K}_{new} \gets \Call{IdentifyNewUniqueKeys}{\mathcal{K}_{parsed}, \mathcal{H}}$
         \If{$\mathcal{K}_{new} = \emptyset$}
             \State \textbf{break}
@@ -113,12 +126,12 @@ The function concludes by performing a relational join operation between the col
     \EndWhile
     \\
     \State $\mathcal{K}_{all} \gets \Call{RetrieveAllCollectedUniqueKeys}{\mathcal{H}}$
-    \State $\mathcal{I}_{final} \gets \Call{BuildFinalAttributeRequest}{\mathcal{K}_{all}}$ 
+    \State $\mathcal{I}_{final} \gets \Call{BuildFinalAttributeRequest}{\mathcal{K}_{all}}$
     \State $\mathcal{R}_{final\_raw} \gets \mathcal{C}.\Call{Invoke}{\mathcal{I}_{final}}$
     
-    \State $\mathcal{A}_{parsed} \gets \Call{ParseFinalResponse}{\mathcal{R}_{final\_raw}}$ 
+    \State $\mathcal{A}_{parsed} \gets \Call{ParseFinalResponse}{\mathcal{R}_{final\_raw}}$
     
-    \State $\mathcal{R}_{final} \gets \Call{RelationalJoin}{\mathcal{K}_{all}, \mathcal{A}_{parsed}}$ 
+    \State $\mathcal{R}_{final} \gets \Call{RelationalJoin}{\mathcal{K}_{all}, \mathcal{A}_{parsed}}$
     
     \State $\Call{ClearState}{\mathcal{H}}$
     \\
@@ -130,15 +143,13 @@ The function concludes by performing a relational join operation between the col
 \newpage
 \subsection{Adaptive Strategy Selection and Confidence Estimation}\label{subsec:conf_est}
 The framework incorporates an adaptive execution layer that dynamically mediates the selection between the $\text{Table-Scan}$ and $\text{Key-Scan}$ operators. This decision is parameterized by a Confidence Estimator, which quantitatively assesses the expected factual data retrieval reliability based on the $Q$'s schema complexity and the LLM's raw confidence score.
-
+\\\\
 The confidence estimation model incorporates a decay factor sensitive to the number of projected columns. The final confidence score $\text{C}_{final}$ is calculated from the LLM's intrinsic raw confidence ($\text{C}_{raw}$) by applying an exponential decay based on $\text{N}_{cols}$, the cardinality of attributes in the $\text{SELECT}$ clause:
 
 $$
 \text{C}_{final} = (\text{C}_{raw})^{\text{N}_{cols}}
 $$
-
-This formulation rigorously models the non-linear increase in difficulty for the LLM to generate a coherent, fully populated tuple set as the schema width grows.
-
+This formulation rigorously models the non-linear increase in difficulty for the LLM to generate a coherent, fully populated tuple set as the schema width grows.\\
 Execution Strategy Selection Heuristic:
 \begin{itemize}
     \item If $\text{C}_{final}$ exceeds a predefined operational threshold ($\tau$), the system prioritizes the Key-Scan approach. This two-phase method aligns with a Chain-of-Thought reasoning process, which is generally associated with higher accuracy and factuality when the model exhibits sufficient confidence.

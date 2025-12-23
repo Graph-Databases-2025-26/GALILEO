@@ -83,7 +83,6 @@ class ChartPlotter:
         # Ho cambiato -0.25 in -0.35 per spostarla più in basso
         ax.legend(loc='lower center', bbox_to_anchor=(0.5, -0.35), ncol=3, frameon=True)
         
-        plt.title("Threshold Calibration (My Experiments)", fontsize=14, pad=15)
         # Aumenta leggermente il padding inferiore per far spazio alla legenda
         plt.subplots_adjust(bottom=0.25)
         plt.savefig(output_filename, dpi=300, bbox_inches="tight")

@@ -123,11 +123,17 @@ In particular, we observe the same qualitative trends:
 These results further validate the robustness of the GALOIS optimization framework across datasets and implementations.
 
 
-\subsection{Experiment 3: Impact of LLMs parameters}
+\subsection{Experiment 3: Impact of LLM Parameters}
+
+This section presents a study designed to evaluate how the choice of Large Language Model (LLM) and its parameter size influences the performance of the \textsc{Galois} system. We tested the framework using three distinct models: GPT-4o \textsc{mini}, LLaMA 3.1 8B (instruct), and LLaMA 3.3 70B (instruct). 
+\\\\
+The primary objective was to assess whether the increased reasoning capabilities and parametric knowledge of larger models are essential for the effective execution of the logical and physical optimizations proposed in \textsc{Galois}. Furthermore, we investigated the reliability of the models' confidence scores (logprobs) as a mechanism for filtering results, aiming to balance precision and recall. 
+\\\\
+Performance is measured using the \textsc{Avg-Score}, comparing the fully optimized system (\textsc{Galois}$_{F}$) against simpler variants (\textsc{Galois}$_{WO}$, \textsc{Galois}$_{A}$) and standard baselines (NL and SQL).
 
 \begin{table}[H]
     \centering
-    \caption{AVG-Score of different LLMs GALOIS PAPER}
+    \caption{AVG-Score of different LLMs (GALOIS PAPER)}
     \begin{tabular}{lccccc}
         \toprule
         \multicolumn{1}{c}{LLM} & NL & SQL & \textsc{Galois}$_{WO}$ & \textsc{Galois}$_{A}$ & \textsc{Galois}$_{F}$ \\
@@ -141,18 +147,44 @@ These results further validate the robustness of the GALOIS optimization framewo
 
 \begin{table}[H]
     \centering
-    \caption{AVG-Score of different LLMs OUR RUNS}
+    \caption{AVG-Score of different LLMs (OUR RUNS)}
     \begin{tabular}{lccccc}
         \toprule
         \multicolumn{1}{c}{LLM} & NL & SQL & \textsc{Galois}$_{WO}$ & \textsc{Galois}$_{A}$ & \textsc{Galois}$_{F}$ \\
         \midrule
-        GPT-4o \textsc{mini} & 0.073 & 0.295 & 0.013 & 0.298 & \textbf{0} \\
-        LLaMA 3.1 8B         & 0.268 & 0.372 & 0.189 & 0.376 & \textbf{0} \\
+        GPT-4o \textsc{mini} & 0.073 & 0.295 & 0.013 & 0.298 & \textbf{0.166} \\
+        LLaMA 3.1 8B         & 0.268 & 0.372 & 0.189 & 0.376 & \textbf{0.189} \\
         LLaMA 3.1 70B        & 0.287 & 0.355 & 0.191 & 0.436 & \textbf{0.338} \\
         \bottomrule
     \end{tabular}
 \end{table}
 
+\subsubsection{Discussion of Results}
+The comparison between the reference benchmarks and our reproduction runs highlights several critical divergences regarding the efficacy of the optimization pipeline. In the original paper, there is a constant and continuous improvement as model size increases and as optimizations are applied. Specifically, \textsc{Galois}$_{F}$ is always the superior configuration, reaching an AVG-Score of 0.622 with LLaMA 3.1 70B.
+\\\\
+However, our reproduction data suggests a regression in full optimization. Unlike the reference paper, where \textsc{Galois}$_{F}$ provides the best results, our experiments show that \textsc{Galois}$_{F}$ consistently underperforms compared to \textsc{Galois}$_{A}$. This indicates that the additional logic in the full pipeline—likely the dynamic switching to the \textit{Key-Scan} operator or the confidence-based plan selection—is introducing errors rather than resolving them. Additionally, the baseline performance of the unoptimized \textsc{Galois}$_{WO}$ yields significantly lower scores in our runs compared to the paper. This suggests that the fundamental iterative retrieval mechanism without pushdown conditions is struggling to retrieve relevant tuples in our setup.
+
+\subsubsection{Confidence Estimation Analysis}
+
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{images/Galois_exp_3.png}
+        \caption{Original Paper Results}
+        \label{fig:galois_original_exp3}
+    \end{minipage}\hfill
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{images/exp-3.png}
+        \caption{Our Reproduction Results}
+        \label{fig:our_exp3}
+    \end{minipage}
+\end{figure}
+
+The results in Figure \ref{fig:our_exp3} confirm the expected trade-off: as the threshold $p$ increases from 0.6 to 0.995, the \textbf{Precision} improves notably in our runs, rising from approximately 0.75 to over 0.90. This demonstrates that the model's internal confidence is a reliable proxy for the factual correctness of the generated data; when the model is confident, the data is likely correct.
+\\\\
+However, the charts also reveal the root cause of the lower overall scores observed in Table 2. While the original paper (left) shows \textbf{Recall} starting above 0.60, our reproduction (right) shows Recall starting at a very low baseline (approximately 0.26 at $p=0.6$). Even with lenient filtering, the system retrieves less than 30\% of the expected tuples. This low initial recall explains why the AVG-Scores in our reproduction are capped: even if precision is high, the system simply fails to extract the majority of the required information from the model's parametric knowledge.
 
 
 \subsection{Experiment 4: Impact of retrieved values}
@@ -257,10 +289,50 @@ GALOIS F achieves the best overall efficiency, further lowering the token usage 
     \textit{Note: Results aggregated over 77 queries from IK datasets.}
 \end{table}
 
+\newpage
+
 \subsection{Experiment 7: Threshold Setup}
+This experiment focuses on calibrating the confidence threshold parameter, denoted as $\tau$, which governs the \textsc{Galois} physical optimizer. The system uses this threshold to dynamically choose between two physical operators: \textit{Table-Scan} (retrieving full tuples with broader context) and \textit{Key-Scan} (iterative retrieval using Chain-of-Thought reasoning).
+\\\\
+The selection logic dictates that if the estimated confidence of the model for the query exceeds $\tau$, \textsc{Galois} employs the \textit{Key-Scan} operator; conversely, if the confidence falls below $\tau$, the system reverts to the \textit{Table-Scan} strategy. To determine the optimal $\tau$, we executed the system on the GEO-TEST dataset (used as a calibration set to avoid overfitting on the main benchmarks) while varying $\tau$ from $1.0$ (forcing \textit{Table-Scan}) down to $0.0$ (forcing \textit{Key-Scan}). We evaluated three models: LLaMA 3.3 70B, LLaMA 3.1 8B, and GPT-4o \textsc{mini}.
+
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{images/Galois_exp_7.png}
+        \caption{Original Paper Results}
+        \label{fig:galois_original_exp7}
+    \end{minipage}\hfill
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{images/exp-7.png}
+        \caption{Our Reproduction Results}
+        \label{fig:our_exp7}
+    \end{minipage}
+    \label{fig:threshold_comparison}
+\end{figure}
+
+\subsubsection{Analysis of Calibration Results}
+
+The results of our calibration runs, depicted in Figure \ref{fig:our_exp7} (right), present a distinct behavior compared to the findings in the original \textsc{Galois} paper (left).
+
+\paragraph{Performance Discrepancy}
+First, consistent with Experiment 3, the absolute performance in our runs is significantly lower. The original paper reports peak AVG-Scores between 0.4 and 0.6. In contrast, our best-performing model (LLaMA 3.3 70B) peaks at approximately 0.25, and GPT-4o \textsc{mini} peaks at 0.20.
+
+\paragraph{Model-Specific Behavior and Optimal Thresholds}
+The calibration curves reveal divergent optimal strategies for the different model sizes.\\\\
+For \textbf{GPT-4o \textsc{mini}}, the curve demonstrates a negative correlation between \textit{Key-Scan} usage and quality. The highest score is achieved at $\tau=1$ (pure \textit{Table-Scan}), and performance degrades as $\tau$ decreases. This contrasts with the paper, which identified an optimal $\tau=0.8$, suggesting that the iterative \textit{Key-Scan} operator in our implementation is detrimental for this model, likely due to context fragmentation or the "zero recall" issue identified in the previous study.
+\\\\
+Conversely, \textbf{LLaMA 3.3 70B} exhibits the opposite behavior. Performance gradually improves as we lower the threshold, peaking at $\tau=0.1$ and $\tau=0$ (pure \textit{Key-Scan}). While the original paper found an optimal $\tau=0.6$, our data suggests that for the largest model, the \textit{Table-Scan} is insufficient, and the model relies entirely on the granular, iterative retrieval of \textit{Key-Scan} to achieve its maximum accuracy. 
+\\\\
+Finally, the behavior of \textbf{LLaMA 3.1 8B} is noisy, with local maxima at both $\tau=1$ and $\tau=0.1$. This inconsistency suggests that the 8B model struggles to maintain stability in either mode, making it sensitive to the specific prompt structure rather than the logical operator choice.
+\\\\
+In conclusion, our calibration suggests that the dynamic switching mechanism (using intermediate $\tau$ values) is less effective in our current reproduction than in the original study. The models tend to prefer binary extremes: the smaller model requires the context of \textit{Table-Scan}, while the larger model requires the reasoning steps of \textit{Key-Scan}.
+
 \subsection{Experiment 8: Errors w.r.t. the optimal plan}
 \textbf{Objective}: This experiment aims to quantify the efficacy of the \textbf{Logical Planner} (the component deciding which strategy to adopt) by measuring the "Optimality Gap". The Optimality Gap represents the performance difference between the automatic choice made by \texttt{GALOIS\_F} and the theoretical optimal choice ("Oracle") that the system could have made if it had selected the best possible strategy for every single query.
-For every query present in the target datasets (GEO, WORLD, MOVIES), the runner  executes the configurations in "brute-force" mode.
+For every query present in the target datasets (GEO, WORLD, MOVIES), the runner  executes the configurations in "brute-force" mode.\\\\
 \\\textbf{Oracle Definition and Gap Calculation}: For each query $q$, we define the Oracle score ($S_{opt}$) as the maximum score obtainable among the available strategies:$$S_{opt}(q) = \max(S_{GALOIS\_A}(q), S_{GALOIS\_WO}(q), S_{GALOIS\_F}(q))$$.\\ \textbf{The Optimality Gap} is calculated as the average difference between the Oracle and the adaptive variant:$$Gap = \frac{1}{N} \sum_{q \in Q} (S_{opt}(q) - S_{GALOIS\_F}(q))$$ A gap close to 0 indicates that the GALOIS\_F automatic selector is choosing the best available strategy almost every time. A high gap suggests that, although a winning strategy exists for that query (e.g., Key-Scan), the system erroneously opted for another
 Results in Figure \ref{fig:exp8} report the AVG-Score on All the queries in the dataset, and we also break the AVG-Score for each dataset.
 
