@@ -141,6 +141,18 @@ The `main.py` script accepts parameters to specify which datasets to process.
 | **WINDOWS (Bash/IDE Terminal)** | `python setup_project.py; .venv\Scripts\python -m src.main <datasets> --mode --provider` | `... src.main GEO MOVIES --mode sql --provider watsonx`                |
 | **WINDOWS (Native CMD)** | `python setup_project.py && .venv\Scripts\python -m src.main <datasets> --mode --provider`                | `... src.main world flight-2 presidents --mode sql --provider watsonx`                              |
 
+### 2. Running GALOIS Versions (WO, S, A, F)
+Below is the list of commands to execute different configurations of the **Galois** system on all datasets.
+
+| Variant | Description | Command |
+| :--- | :--- | :--- |
+| **Without Optimization (WO)** | Base execution without pushdown optimizations. | `python -m src.main all --galois wo` |
+| **Selective (S)** | Execution with selective predicate pushdown. | `python -m src.main all --galois s` |
+| **Push All (A)** | Execution forcing pushdown of all predicates. | `python -m src.main all --galois a` |
+| **Full / Confident (F)** | Execution in Full (Confident) mode. | `python -m src.main all --galois f` |
+
+
+
 #### Dataset Parameters
 The command line **has priority** over the configuration file.
 

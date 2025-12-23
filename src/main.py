@@ -79,6 +79,9 @@ def main():
             elif args.mode in ["NL", "SQL", "sql", "nl"]:
                 datasets = IK_DATASETS
                 LOG.info("INIT | [MAIN] Target: IK_DATASETS (Standard)")
+            elif args.galois:
+                datasets = IK_DATASETS
+                LOG.info("INIT | [MAIN] Target: IK_DATASETS (Galois Default)")
         else:
             datasets = requested
             LOG.info(f"INIT | [MAIN] Target Specific: {datasets}")
@@ -97,6 +100,7 @@ def main():
         # ------------------------------------------
         # NL SQL BASELINES BLOCK
         # ------------------------------------------
+        """
         if args.mode:
             mode_upper = args.mode.upper()
             
@@ -147,7 +151,7 @@ def main():
                 else:
                     LOG.warning(f"WARN | [BOTH] Dataset {dataset} not supported for combined run.")
 
-        
+        """
         # ------------------------------------------
         # GALOIS BLOCK
         # ------------------------------------------
