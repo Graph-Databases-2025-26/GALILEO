@@ -1,4 +1,4 @@
-llm_provider: "watsonx"
+llm_provider: "open_router"
 
 database:
   run:  GEO, Movies
@@ -30,7 +30,7 @@ watsonx:
   max_tokens: 4096
 
 open_router:
-  model: "openai/gpt-4o-mini"
+  model: "meta-llama/llama-3.3-70b-instruct"
   temperature: 0
   max_tokens: 4096
 

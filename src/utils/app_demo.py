@@ -12,7 +12,7 @@ from src.config.loaders import Config_Loader
 from src.utils.constants import debug_query
 from src.utils import sql_query_parser
 from src.galois.galois import Galois
-from src.utils.logging_config import LOG
+from src.utils import LOG, log_init
 
 st.set_page_config(page_title="Galois Framework Demo", layout="wide")
 
@@ -38,21 +38,22 @@ class StreamlitSink:
 def run_galois_demo(variant_key):
     # 1. Create our "bucket" for logs
     sink = StreamlitSink()
+    log_init()
 
     # 2. ATTACH LOGURU
     # Define a custom filter:
     # - "src": "DEBUG" -> Show all debug from your code
     # - "": "WARNING"  -> For everything else (httpx, ibm, etc), show only serious errors
     log_filter = {
-        "src": "DEBUG",
+        "src": "INFO",
         "": "WARNING"
     }
 
     # LOG.add returns a numeric ID used to remove the handler later
     handler_id = LOG.add(
         sink.write,
-        format="{time:HH:mm:ss} | {level: <8} | {name}:{line} - {message}",
-        level="DEBUG",  # Global minimum level (then filtered by the dict above)
+        format="{time:YYYY-MM-DD HH:mm:ss.SSS} | {message}",
+        level="INFO",  # Global minimum level (then filtered by the dict above)
         filter=log_filter,
         colorize=False  # Streamlit does not support ANSI colors in the standard code block
     )
